@@ -1,0 +1,174 @@
+﻿using Database;
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using Warehouse.Model;
+using Communication;
+using System.Windows.Data;
+using System.Runtime.Serialization;
+using Telegrams;
+
+namespace Warehouse.ConveyorUnits
+{
+
+    [Serializable]
+    public class SegmentException : Exception
+    {
+        public SegmentException(string s) : base(s)
+        { }
+    }
+
+
+    [DataContract]
+    public class SegmentInfo : ConveyorBasicInfo
+    {
+    }
+
+    public abstract class Segment
+    {
+        [XmlIgnore]
+        public BasicWarehouse Warehouse;
+        [XmlAttribute]
+        public string Name { get; set; }
+        [XmlAttribute]
+        public string CommunicatorName { get; set; }
+        [XmlAttribute]
+        public int PLC_ID { get; set; }
+        [XmlIgnore]
+        public BasicCommunicator Communicator { get; set; }
+        protected bool _oldOnline;
+
+        [XmlIgnore]
+        public List<Action<ConveyorBasicInfo>> NotifyVM { get; set; }
+        [XmlIgnore]
+        public bool UINotified { get; set; }
+        protected Telegram PLC_Status;
+        private object _lock;
+
+
+    
+
+        public Segment()
+        {
+            NotifyVM = new List<Action<ConveyorBasicInfo>>();
+            _lock = new object();
+            BindingOperations.EnableCollectionSynchronization(NotifyVM, _lock);
+            UINotified = false;
+        }
+
+        public virtual void OnlineTrigger()
+        {
+            if (Communicator.Online() && !_oldOnline)
+            {
+                Startup();
+                DirectVMNotify();
+            }
+            if (!Communicator.Online() && _oldOnline)
+            {
+                DirectVMNotify();
+            }
+            _oldOnline = Communicator.Online();
+        }
+
+        public virtual void Refresh()
+        {
+            try
+            {
+                OnlineTrigger();
+                if (Communicator.Online())
+                  ForceNotifyVM();
+                Strategy();
+            }
+            catch (Exception ex)
+            {
+                Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new SegmentException(String.Format("{0} Segment.Refresh failed.", Name));
+            }
+        }
+
+        public virtual void Strategy()
+        {
+            try
+            {
+                var sc = Warehouse.DBService.FindSimpleSegmentCommand(Name);
+                if (sc != null)
+                {
+                    switch (sc.Task)
+                    {
+                        case SimpleSegmentCommand.EnumTask.AutoOff:
+                            AutomaticOff(sc.ID);
+                            break;
+                        case SimpleSegmentCommand.EnumTask.AutoOn:
+                            AutomaticOn(sc.ID);
+                            break;
+                        case SimpleSegmentCommand.EnumTask.Reset:
+                            Reset(sc.ID);
+                            break;
+                        case SimpleSegmentCommand.EnumTask.Info:
+                            Info(sc.ID);
+                            break;
+                    }
+
+                    sc.Status = SimpleCommand.EnumStatus.Finished;
+                    Warehouse.DBService.UpdateSimpleCommand(sc);
+                }
+            }
+            catch (Exception ex)
+            {
+                Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new SegmentException(String.Format("{0} Segment.Strategy failed.", Name));
+            }
+        }
+
+        public abstract void AutomaticOn(Int32 id);
+        public abstract void AutomaticOff(Int32 id);
+
+        public abstract void Info(Int32 id);
+
+        public abstract void Reset(Int32 id);
+
+        public abstract void Startup();
+
+        public abstract void SetClock(Int32 id);
+
+        public virtual void ForceNotifyVM()
+        {
+        }
+
+        public void CallNotifyVM(ConveyorBasicInfo cbi)
+        {
+            foreach (var n in NotifyVM)
+                try
+                {
+                    n.Invoke(cbi); // , null, null);
+                }
+                catch (Exception ex)
+                {
+                    Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, String.Format("{0} ConveyorBasic.CallNotifyVM failed. Reason:{1} ", Name, ex.Message));
+                }
+        }
+
+        public virtual void Initialize(BasicWarehouse w)
+        {
+            try
+            {
+                Warehouse = w;
+                Communicator = Warehouse.Communicator[CommunicatorName];
+                Communicator.OnRefresh.Add(new Action(Refresh));
+            }
+            catch (Exception ex)
+            {
+                Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new SegmentException(String.Format("{0} Segment.Initialize failed ", Name));
+            }
+        }
+
+        public abstract void DirectVMNotify();
+
+    }
+
+
+
+
+
+}

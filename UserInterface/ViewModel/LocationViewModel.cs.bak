@@ -1,0 +1,132 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using System.Collections.ObjectModel;
+using UserInterface.Services;
+using UserInterface.Messages;
+using Infralution.Localization.Wpf;
+using System.Globalization;
+using Database;
+using System.Windows.Controls;
+using System.ComponentModel;
+using Warehouse.Model;
+using GalaSoft.MvvmLight.Ioc;
+
+namespace UserInterface.ViewModel
+{
+    public sealed class LocationViewModel: ViewModelBase, IDataErrorInfo
+    {
+        #region members
+        private PlaceID _place;
+        private bool _allPropertiesValid = false;
+        private DataAccessService _dataService;
+        private BasicWarehouse _warehouse;
+        #endregion
+
+        #region properties
+        public PlaceID Place
+        {
+            get { return _place; }
+            set
+            {
+                if (_place != value)
+                {
+                    _place = value;
+                    RaisePropertyChanged("Place");
+                }
+            }
+        }
+
+        public string ID
+        {
+            get { return _place.ID;  }
+            set
+            {
+                if( _place.ID != value )
+                {
+                    _place.ID = value;
+                    RaisePropertyChanged("ID");
+                }
+            }
+        }
+
+        public bool Blocked
+        {
+            get { return _place.Blocked; }
+            set
+            {
+                if( _place.Blocked != value)
+                {
+                    _place.Blocked = value;
+                    RaisePropertyChanged("Blocked");
+                }
+            }
+        }
+
+        public int Size
+        {
+            get { return _place.Size; }
+            set
+            {
+                if (_place.Size != value)
+                {
+                    _place.Size = value;
+                    RaisePropertyChanged("Size");
+                }
+            }
+        }
+
+        public bool AllPropertiesValid
+        {
+            get { return _allPropertiesValid; }
+            set
+            {
+                if (_allPropertiesValid != value)
+                {
+                    _allPropertiesValid = value;
+                    RaisePropertyChanged("AllPropertiesValid");
+                }
+            }
+        }
+        #endregion
+
+        #region constructor
+        public LocationViewModel()
+        {
+            _place = new PlaceID();
+            _dataService = new DataAccessService();
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+        }
+        #endregion
+
+        #region validation
+        public string Error
+        {
+            get { return (Place as IDataErrorInfo).Error; }
+        }
+
+        public string this[string propertyName]
+        {
+            get
+            {
+                string validationResult = String.Empty;
+                switch (propertyName)
+                {
+                    case "Size":
+                       if (ID != null && Size != 1 && Size != 999)
+                            validationResult = ResourceReader.GetString("ERR_RANGE") + " 1-1";
+                        break;
+                }
+                AllPropertiesValid = (validationResult == String.Empty);
+                return validationResult;
+            }
+        }
+        #endregion
+    }
+}

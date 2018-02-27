@@ -1,0 +1,586 @@
+﻿using Database;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Warehouse.DataService
+{
+
+
+    [Serializable]
+    public class DBServiceException : Exception
+    {
+        public DBServiceException(string s) : base(s)
+        {
+        }
+    }
+
+    public class DBService : IDBService
+    {
+        private IEventLog EventLog { get; set; }
+        public const int PLACEID_MULTIPLE = 999;
+        private Random Random { get; set; }
+
+        public DBService(IEventLog w )
+        {
+            EventLog = w;
+            Random = new Random();
+        }
+
+
+        public SimpleSegmentCommand FindSimpleSegmentCommand( string segment)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                    return dc.SimpleCommands.FirstOrDefault(prop => (prop is SimpleSegmentCommand) && (prop as SimpleSegmentCommand).Segment == segment && prop.Status == SimpleCommand.EnumStatus.NotActive) as SimpleSegmentCommand;
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindSimpleSegmentCommand failed ({0})", segment));
+            }
+        }
+
+        public void TestFillReck(string reckLike, int num)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+
+                    var l = (from p in dc.PlaceIDs
+                            where p.ID.StartsWith(reckLike)
+                            join m in dc.Places on p.ID equals m.Place1 into inners
+                            from od in inners.DefaultIfEmpty()
+                             where od == null
+                             select new {Location = p.ID}).ToList();
+
+
+                    num = num > l.Count() ? l.Count() : num;
+                    int max = l.Count();
+
+                    List<int> list = new List<int>();
+
+                    for (int i=0;i<num;i++)
+                    {
+                        int n = Random.Next(0, max--);
+                        list.Add(n);
+                    }
+
+                    for (int i=0;i<num;i++)
+                    {
+                        int mat = Random.Next(1000, 1000000000);
+                        while (FindMaterial(mat) != null)
+                            mat = Random.Next(1000, 1000000000);
+                        FindMaterialID(mat, true);
+                        dc.Places.Add(new Place { Material = mat, Place1 = l[list[i]].Location, Time = DateTime.Now });
+                        l.Remove(l[list[i]]);
+                    }
+                    dc.SaveChanges();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.TestFillReck failed ({0},{1})", reckLike, num));
+            }
+        }
+
+
+        public void TestToOut(string reckLike, int num)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var target = (from p in dc.PlaceIDs
+                                  where p.ID.StartsWith("W:52")
+                                  select p).ToList();
+
+                    var l = (from p in dc.Places
+                             where p.Place1.StartsWith(reckLike)
+                             select p).ToList();                
+
+                    num = num > l.Count() ? l.Count() : num;
+                    int max = l.Count();
+
+                    List<int> list = new List<int>();
+
+                    for (int i = 0; i < num; i++)
+                    {
+                        int n = Random.Next(0, max--);
+                        list.Add(n);
+                    }
+
+                    for (int i = 0; i < num; i++)
+                    {
+                        dc.Commands.Add(new CommandMaterial
+                        {
+                            WMS_ID = 0,
+                            Material = l[list[i]].Material,
+                            Source = l[list[i]].Place1,
+                            Target = target[Random.Next(target.Count)].ID,
+                            Priority = 0, 
+                            Task = Command.EnumCommandTask.Move, 
+                            Status = Command.EnumCommandStatus.NotActive, 
+                            Time = DateTime.Now,
+                            Info = "test"                            
+                        });
+                        l.Remove(l[list[i]]);
+                    }
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.TestToOut failed ({0},{1})", reckLike, num));
+            }
+
+        }
+
+
+
+        public SimpleCraneCommand FindSimpleCraneCommandByID(int id)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.SimpleCommands.Find(id) as SimpleCraneCommand;
+//                    return dc.SimpleCommands.FirstOrDefault(prop => prop.ID == id && prop is SimpleCraneCommand) as SimpleCraneCommand;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindSimpleCraneCommandByID failed ({0})", id));
+            }
+        }
+
+        public SimpleConveyorCommand FindSimpleConveyorCommandByID(int id)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.SimpleCommands.Find(id) as SimpleConveyorCommand;
+//                    return dc.SimpleCommands.FirstOrDefault(prop => prop.ID == id && prop is SimpleConveyorCommand) as SimpleConveyorCommand;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindSimpleConveyorCommandByID failed ({0})", id));
+            }
+
+        }
+
+        public Command FindCommandByID(int id)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.Commands.Find(id);
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindCommandByID failed ({0})", id));
+            }
+        }
+
+
+        public void AddEvent(Event.EnumSeverity s, Event.EnumType t, string str, DateTime dt)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                dc.Events.Add(new Event
+                {
+                    Severity = s,
+                    Type = t,
+                    Text = str,
+                    Time = dt
+                });
+                dc.SaveChanges();
+            }
+        }
+
+
+        public void AddSimpleCommand(SimpleCommand cmd)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    dc.SimpleCommands.Add(cmd);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.AddSimpleCommand failed ({0})", cmd != null ? cmd.ToString() : "null"));
+            }
+
+        }
+
+
+        public void UpdateSimpleCommand(SimpleCommand cmd)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    dc.SimpleCommands.Attach(cmd);
+                    dc.Entry(cmd).State = System.Data.Entity.EntityState.Modified;
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.UpdateSimpleCommand failed ({0})", cmd != null ? cmd.ToString() : "null"));
+            }
+        }
+
+
+        public SimpleConveyorCommand FindFirstFastConveyorSimpleCommand(List<string> devices , bool automatic)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var cmdLinq = (from sc in dc.SimpleCommands
+                                   where sc.Status == SimpleCommand.EnumStatus.NotActive &&
+                                         sc is SimpleConveyorCommand &&
+                                         ((automatic && sc.Command_ID != null) || (!automatic && sc.Command_ID == null)) &&
+                                         sc.Task >= SimpleCommand.EnumTask.Delete &&
+                                         devices.Any(prop => prop == sc.Source)
+                                   select sc).FirstOrDefault() as SimpleConveyorCommand;
+                    return cmdLinq;
+                }                
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindFirstFastConveyorSimpleCommand failed ({0})", automatic));
+            }
+        }
+
+        public SimpleCraneCommand FindFirstFastSimpleCraneCommand(string unit, bool automatic)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.SimpleCommands.FirstOrDefault(sc =>
+                                       sc.Status == SimpleCommand.EnumStatus.NotActive &&
+                                       sc is SimpleCraneCommand &&
+                                       ((automatic && sc.Command_ID != null) || (!automatic && sc.Command_ID == null)) &&
+                                       (sc as SimpleCraneCommand).Unit == unit &&
+                                       sc.Task >= SimpleCommand.EnumTask.Delete) as SimpleCraneCommand;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindFirstFastCraneSimpleCommand failed ({0},{1})", unit, automatic));
+            }
+        }
+
+
+        public SimpleConveyorCommand FindFirstSimpleConveyorCommand(int material, string source, bool automatic)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.SimpleCommands.FirstOrDefault(p => p is SimpleConveyorCommand && p.Material == material &&
+                                                              ((automatic && p.Command_ID != null) || (!automatic && p.Command_ID == null)) &&
+                                                              p.Status == SimpleCommand.EnumStatus.NotActive && p.Source == source &&
+                                                              p.Task == SimpleCommand.EnumTask.Move) as SimpleConveyorCommand;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindFirstSimpleConveyorCommand failed ({0},{1},{2})", material, source, automatic));
+            }
+        }
+
+
+        public SimpleCraneCommand FindFirstSimpleCraneCommand(string unit, bool automatic)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.SimpleCommands.FirstOrDefault(p => p is SimpleCraneCommand &&
+                                                              ((automatic && p.Command_ID != null) || (!automatic && p.Command_ID == null)) &&
+                                                              p.Status == SimpleCommand.EnumStatus.NotActive && 
+                                                              (p as SimpleCraneCommand).Unit == unit && 
+                                                              p.Task <= SimpleCommand.EnumTask.Drop) as SimpleCraneCommand;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindFirstSimpleCraneCommand failed ({0},{1})", unit, automatic));
+            }
+
+        }
+
+        public Command FindFirstCommandStillInWarehouse(List<short> shelve, bool automatic)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    List<string> term = new List<string>();
+                    foreach (short s in shelve)
+                        term.Add(String.Format("W:{0:00}", s));
+                    if (term.Count() == 0)
+                        return null;
+                    var command = (from cmd in dc.Commands
+                                join p in dc.Places on (cmd as CommandMaterial).Material equals p.Material
+                                where p.Place1 == (cmd as CommandMaterial).Source &&
+                                      cmd.Status < Command.EnumCommandStatus.Canceled &&
+                                      term.Any(p => (cmd as CommandMaterial).Source.StartsWith(p))
+                                select cmd).FirstOrDefault();
+                    return command;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindFirstCommandStillInWarehouse failed ({0})", automatic));
+            }
+        }
+
+        public CommandMaterial FindFirstCommand(int material, bool automatic)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return (CommandMaterial)dc.Commands.FirstOrDefault(prop => (prop as CommandMaterial).Material == material &&
+                                                              ((automatic && prop.WMS_ID != 0) || (!automatic && prop.WMS_ID == 0)) &&
+                                                                prop.Status < Command.EnumCommandStatus.Canceled);
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindFirstCommand failed ({0},{1})", material, automatic));
+            }
+        }
+
+        public void UpdateCommand(Command cmd)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    dc.Commands.Attach(cmd);
+                    dc.Entry(cmd).State = System.Data.Entity.EntityState.Modified;
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.UpdateCommand failed ({0})", cmd != null ? cmd.ToString() : "null"));
+            }
+        }
+
+
+
+        public Place MaterialCreate(string place, int material, bool create)
+        {
+            try
+            {
+                FindMaterialID(material, create);
+                using (var dc = new MFCSEntities())
+                {
+                    Place p = new Place { Place1 = place, Material = material, Time = DateTime.Now };
+                    dc.Places.Add(p);
+                    dc.SaveChanges();
+                    EventLog?.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material, String.Format("{0} created ({1})", place, material));
+                    return p;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.MaterialCreate failed ({0},{1},{2})", place, material, create));
+            }
+
+        }
+   
+
+        public Place FindPlace(string source)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.Places.FirstOrDefault(prop => prop.Place1 == source);
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindPlace failed ({0})", source));
+            }
+        }
+
+        public void MaterialDelete(string place, int material)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    Place p = dc.Places.FirstOrDefault( prop => prop.Place1 == place && prop.Material == material);
+                    if (p != null)
+                    {
+                        dc.Places.Attach(p);
+                        dc.Places.Remove(p);
+                        dc.SaveChanges();
+                    }
+                    else
+                        throw new DBServiceException("Place not correctly occupied.");
+                }
+                EventLog?.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material, String.Format("{0} removed ({1}) ", place, material));
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.MaterialDelete failed ({0},{1})", place, material));
+            }
+        }
+
+        public void InitialNotify(string source, int material)
+        {
+            try
+            {
+                Place s = FindPlace(source);
+                Place s1 = FindMaterial(material);
+
+                if (s == null && material != 0)
+                {
+                    if (s1 != null)
+                        MaterialDelete(s1.Place1, s1.Material);
+                    MaterialCreate(source, material, true);
+                }
+                else if (s != null && material != s.Material)
+                {
+                    MaterialDelete(s.Place1, s.Material);
+                    if (material != 0)
+                        MaterialCreate(source, material, true);
+                }
+                EventLog?.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material, String.Format("{0} InitialNotify({1})", source, material));
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.InitialNotify failed ({0},{1})", source, material));
+            }
+
+        }
+    
+        public void MaterialMove(int material, string source, string target)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    Place s = dc.Places.FirstOrDefault( prop => prop.Place1 == source && prop.Material == material);
+                    Place t = dc.Places.FirstOrDefault( prop => prop.Place1 == target);
+                    PlaceID tID = dc.PlaceIDs.Find(target);
+                    if (tID == null)
+                        throw new DBServiceException(String.Format("{0} PlaceID unknown", target));
+                    if (s == null)
+                        throw new DBServiceException(String.Format("{0} source empty or wrong barcode", source));
+                    if (t != null && tID.Size != PLACEID_MULTIPLE)
+                        throw new DBServiceException(String.Format("{0} is not empty", target));
+
+                    dc.Places.Attach(s);
+                    dc.Places.Remove(s);
+                    dc.SaveChanges();
+                    t = new Place { Place1 = target, Material = material, Time = DateTime.Now };
+                    dc.Places.Add(t);
+                    dc.SaveChanges();
+                    EventLog?.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material, String.Format("{0}=>{1} ({2})", source, target, material));
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.MaterialMove failed ({0},{1},{2})", material, source, target));
+            }
+        }
+
+        public PlaceID FindPlaceID(string source)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.PlaceIDs.Find(source);
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindPlace failed ({0})", source));
+            }
+        }
+
+        public Place FindMaterial(int? material)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.Places.FirstOrDefault(prop => prop.Material == material);
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindMaterial failed ({0})", material));
+            }
+
+        }
+
+        public MaterialID FindMaterialID(int material, bool create)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    MaterialID matID = dc.MaterialIDs.Find((int)material);
+                    // only for test - unkwnon palets are automatically created
+                    if (matID == null && create)
+                    {
+                        matID = new MaterialID { ID = (int)material, Size = 1, Weight = 800 };
+                        dc.MaterialIDs.Add(matID);
+                        dc.SaveChanges();
+                    }
+                    return matID;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindMaterialID failed ({0},{1})", material, create));
+            }
+
+        }
+    }
+}

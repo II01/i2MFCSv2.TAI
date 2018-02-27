@@ -1,0 +1,242 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
+using System.Collections.ObjectModel;
+using UserInterface.Services;
+using UserInterface.Messages;
+using Infralution.Localization.Wpf;
+using System.Globalization;
+using Database;
+using Warehouse.Model;
+using GalaSoft.MvvmLight.Ioc;
+
+namespace UserInterface.ViewModel
+{
+    public sealed class WarehouseViewModel: ViewModelBase
+    {
+
+        public BasicWarehouse Warehouse { get; set; }
+
+        enum CommandType { None, Delete, Create, Move };
+
+        private DataAccessService _dataService;
+
+        private ObservableCollection<MaterialViewModel> _placeList;
+        private MaterialViewModel _selectedPlace;
+        private MaterialViewModel _detailedPlace;
+        private bool _editEnabled;
+        private bool _editLocEnabled;
+        private bool _editTUEnabled;
+
+        CommandType _cmdtype;
+
+        public ICommand Refresh { get; private set; }
+        public ICommand Delete { get; private set; }
+        public ICommand Create { get; private set; }
+        public ICommand Move { get; private set; }
+        public ICommand Cancel { get; private set; }
+        public ICommand Confirm { get; private set; }
+
+        public ObservableCollection<MaterialViewModel> PlaceList
+        {
+            get { return _placeList; }
+            set
+            {
+                if (_placeList != value)
+                {
+                    _placeList = value;
+                    RaisePropertyChanged("PlaceList");
+                }
+            }
+        }
+
+        public MaterialViewModel SelectedPlace
+        {
+            get { return _selectedPlace; }
+            set
+            {
+                if( _selectedPlace != value)
+                {
+                    _selectedPlace = value;
+                    RaisePropertyChanged("SelectedPlace");
+                    if(_selectedPlace != null)
+                    {
+                        DetailedPlace.ID = _selectedPlace.ID;
+                        DetailedPlace.Location = _selectedPlace.Location;
+                    }
+                }
+            }
+        }
+        public MaterialViewModel DetailedPlace
+        {
+            get { return _detailedPlace; }
+            set
+            {
+                if (_detailedPlace != value)
+                {
+                    _detailedPlace = value;
+                    RaisePropertyChanged("DetailedPlace");
+                }
+            }
+        }
+
+        public bool EditEnabled
+        {
+            get { return _editEnabled; }
+            set
+            {
+                if (_editEnabled != value)
+                {
+                    _editEnabled = value;
+                    RaisePropertyChanged("EditEnabled");
+                }
+            }
+        }
+        public bool EditLocEnabled
+        {
+            get { return _editLocEnabled; }
+            set
+            {
+                if (_editLocEnabled != value)
+                {
+                    _editLocEnabled = value;
+                    RaisePropertyChanged("EditLocEnabled");
+                }
+            }
+        }
+
+        public bool EditTUEnabled
+        {
+            get { return _editTUEnabled; }
+            set
+            {
+                if (_editTUEnabled != value)
+                {
+                    _editTUEnabled = value;
+                    RaisePropertyChanged("EditTUEnabled");
+                }
+            }
+        }
+
+
+        public WarehouseViewModel()
+        {
+            _dataService = new DataAccessService();
+            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
+            Create = new RelayCommand(() => ExecuteCreate(), CanExecuteCreate);
+            Move = new RelayCommand(() => ExecuteMove(), CanExecuteMove);
+            Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
+            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
+            _editEnabled = false;
+            _editLocEnabled = false;
+            _editTUEnabled = false;
+
+            PlaceList = _dataService.GetPlaces();
+            DetailedPlace = new MaterialViewModel();
+            _cmdtype = CommandType.None;
+
+            Warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+
+        }
+
+        private void ExecuteRefresh()
+        {
+            PlaceList = _dataService.GetPlaces();
+            RaisePropertyChanged("PlaceList");
+        }
+        private void ExecuteDelete()
+        {
+            _cmdtype = CommandType.Delete;
+            EditLocEnabled = false;
+            EditTUEnabled = false;
+            EditEnabled = true;
+        }
+
+        private bool CanExecuteDelete()
+        {
+            if (SelectedPlace != null)
+                return SelectedPlace.ID > 0;
+            return false;
+        }
+        private void ExecuteCreate()
+        {
+            DetailedPlace.EnabledLocation = true;
+            DetailedPlace.EnabledMaterial = true;
+            DetailedPlace.Location = "";
+            DetailedPlace.ID = 0;
+            _cmdtype = CommandType.Create;
+            EditLocEnabled = true;
+            EditTUEnabled = false;
+            EditEnabled = true;
+        }
+        private bool CanExecuteCreate()
+        {
+            if (SelectedPlace != null)
+                return SelectedPlace.ID == 0;
+            return false;
+        }
+        private void ExecuteMove()
+        {
+            DetailedPlace.EnabledLocation = true;
+            _cmdtype = CommandType.Move;
+            EditLocEnabled = true;
+            EditTUEnabled = false;
+            EditEnabled = true;
+        }
+        private bool CanExecuteMove()
+        {
+            if (SelectedPlace != null)
+                return SelectedPlace.ID > 0;
+            return false;
+        }
+        private void ExecuteCancel()
+        {
+            DetailedPlace.EnabledLocation = false;
+            DetailedPlace.EnabledMaterial = false;
+            _cmdtype = CommandType.None;
+            EditLocEnabled = false;
+            EditTUEnabled = false;
+            EditEnabled = false;
+        }
+        private bool CanExecuteCancel()
+        {
+            return EditEnabled;
+        }
+
+        private void ExecuteConfirm()
+        {
+            switch (_cmdtype)
+            {
+                case CommandType.Delete:
+                    Warehouse.DeleteMaterial((UInt32) DetailedPlace.ID, DetailedPlace.Location, null);
+                    break;
+                case CommandType.Create:
+                    Warehouse.CreateMaterial((UInt32) DetailedPlace.ID, DetailedPlace.Location, null);
+                    break;
+                case CommandType.Move:
+                    //todo complete Delete+Create together
+
+                    Warehouse.DeleteMaterial((UInt32)DetailedPlace.ID, Warehouse.DBService.FindMaterial(DetailedPlace.ID).Place1, null);
+                    Warehouse.CreateMaterial((UInt32)DetailedPlace.ID, DetailedPlace.Location, null);
+                    break;
+            }
+            _cmdtype = CommandType.None;
+            EditLocEnabled = false;
+            EditTUEnabled = false;
+            EditEnabled = false;
+        }
+
+        private bool CanExecuteConfirm()
+        {
+            return EditEnabled;
+        }
+
+    }
+}

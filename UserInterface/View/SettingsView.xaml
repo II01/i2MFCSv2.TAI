@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="UserInterface.View.SettingsView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:local="clr-namespace:UserInterface.UserControls"
+        mc:Ignorable="d ignore"
+        DataContext="{Binding Settings, Source={StaticResource Locator}}"
+        MinWidth="1000"
+        MinHeight="750">
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+            <TextBlock Text="{Resx Settings}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
+        </Border>
+        <Grid Grid.Row="1" MinHeight="600" MinWidth="1000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0"  Text="{Resx User}" HorizontalAlignment="Left" Margin="10,10,10,10" />
+            <TextBox Grid.Row="0" Grid.Column="1" Height="40" VerticalContentAlignment="Center"
+                     Text="{Binding User}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0"  Text="{Resx Password}" HorizontalAlignment="Left" Margin="10,10,10,10" />
+            <PasswordBox Name="pbSuperUser" Grid.Row="1" Grid.Column="1" Height="40" VerticalContentAlignment="Center"
+                         local:PasswordHelper.Attach="True" 
+                         local:PasswordHelper.Password="{Binding Password, Mode=TwoWay}"/>
+            <StackPanel Grid.Row="2" Grid.Column="1" Margin="0,0,0,0" Orientation="Horizontal">
+                <Button Name="bLogin" Grid.Row="0" Grid.Column="2" Margin="0,10,10,10" Width="100" Height="30" Content="{Resx Login}" Command="{Binding Login}"/>
+                <Button Name="bLogout" Grid.Row="0" Grid.Column="2" Margin="0,10,0,10" Width="100" Height="30" Content="{Resx Logout}" Command="{Binding Logout}"/>
+            </StackPanel>
+            <TextBlock Text="{Resx Change_language}" Grid.Row="3" HorizontalAlignment="Left" Margin="10,10,10,10"></TextBlock>
+            <Button Content="{Resx Other_language}" Grid.Row="3" Grid.Column="1" Width="100" Height="30" HorizontalAlignment="Left" Command="{Binding SwitchLanguage}" />
+            <TextBlock Text="{Resx Database_management}" Grid.Row="6" HorizontalAlignment="Left" Margin="10,10,10,10"></TextBlock>
+            <StackPanel Grid.Row="6" Grid.Column="1" Margin="0,0,0,0" Orientation="Horizontal">
+                <Button Grid.Row="0" Grid.Column="2" Margin="0,10,10,10" Width="100" Height="30" Content="{Resx ReduceDB}" 
+                        Command="{Binding ReduceDB}" IsEnabled="{Binding EnabledReduceDB}"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

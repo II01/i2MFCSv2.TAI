@@ -1,0 +1,136 @@
+﻿/*
+  In App.xaml:
+  <Application.Resources>
+      <vm:ViewModelLocatorTemplate xmlns:vm="clr-namespace:UserInterface.ViewModel"
+                                   x:Key="Locator" />
+  </Application.Resources>
+  
+  In the View:
+  DataContext="{Binding Source={StaticResource Locator}, Path=ViewModelName}"
+*/
+
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Ioc;
+using Microsoft.Practices.ServiceLocation;
+using UserInterface.Model;
+using UserInterface.ViewModel;
+
+namespace UserInterface.ViewModel
+{
+    /// <summary>
+    /// This class contains static references to all the view models in the
+    /// application and provides an entry point for the bindings.
+    /// <para>
+    /// See http://www.mvvmlight.net
+    /// </para>
+    /// </summary>
+    public class ViewModelLocator
+    {
+        static ViewModelLocator()
+        {
+            ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
+
+   //         if (ViewModelBase.IsInDesignModeStatic)
+   //         {
+   //             SimpleIoc.Default.Register<IDataService, Design.DesignDataService>();
+   //         }
+   //         else
+            {
+                SimpleIoc.Default.Register<IDataService, DataService>();
+            }
+
+            SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<AlarmsViewModel>();
+            SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<SimpleCommandsViewModel>();
+            SimpleIoc.Default.Register<MaterialsViewModel>();
+            SimpleIoc.Default.Register<LocationsViewModel>();
+            SimpleIoc.Default.Register<EventsViewModel>();
+            SimpleIoc.Default.Register<ControlPanelViewModel>();
+            SimpleIoc.Default.Register<CommandsViewModel>();
+        }
+
+        /// <summary>
+        /// Gets the Main property.
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1822:MarkMembersAsStatic", 
+         Justification = "This non-static member is needed for data binding purposes.")]
+        public MainViewModel Main
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<MainViewModel>();
+            }
+        }
+
+        public AlarmsViewModel Alarms
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<AlarmsViewModel>();
+            }
+        }
+
+        public SettingsViewModel Settings
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<SettingsViewModel>();
+            }
+        }
+
+        public SimpleCommandsViewModel SimpleCommands
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<SimpleCommandsViewModel>();
+            }
+        }
+
+        public MaterialsViewModel Materials
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<MaterialsViewModel>();
+            }
+        }
+
+        public LocationsViewModel Locations
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<LocationsViewModel>();
+            }
+        }
+
+        public EventsViewModel Events
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<EventsViewModel>();
+            }
+        }
+
+        public ControlPanelViewModel ControlPanel
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ControlPanelViewModel>();
+            }
+        }
+        public CommandsViewModel Commands
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<CommandsViewModel>();
+            }
+        }
+        /// <summary>
+        /// Cleans up all the resources.
+        /// </summary>
+        public static void Cleanup()
+        {
+        }
+
+    }
+}

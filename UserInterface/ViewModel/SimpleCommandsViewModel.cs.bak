@@ -1,0 +1,393 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using System.Collections.ObjectModel;
+using UserInterface.Services;
+using UserInterface.Messages;
+using Infralution.Localization.Wpf;
+using System.Globalization;
+using Warehouse;
+using Database;
+using System.Windows;
+using Microsoft.Practices.ServiceLocation;
+using Warehouse.Model;
+
+namespace UserInterface.ViewModel
+{
+    public abstract class SimpleCommandViewModel: ViewModelBase
+    {
+        protected SimpleCommand _command;
+
+        public SimpleCommand Command
+        {
+            get { return _command; }
+            set
+            {
+                if( _command != value )
+                {
+                    _command = value;
+                    RaisePropertyChanged("Command");
+                }
+            }
+        }
+
+        public int? Command_ID
+        {
+            get { return _command.Command_ID; }
+            set
+            {
+                if (_command.Command_ID != value)
+                {
+                    _command.Command_ID = value;
+                    RaisePropertyChanged("Command_ID");
+                }
+            }
+        }
+
+        public int Material
+        {
+            get { return _command.Material; }
+            set
+            {
+                if (_command.Material != value)
+                {
+                    _command.Material = value;
+                    RaisePropertyChanged("Material");
+                }
+            }
+        }
+        public string Source
+        {
+            get { return _command.Source; }
+            set
+            {
+                if (_command.Source != value)
+                {
+                    _command.Source = value;
+                    RaisePropertyChanged("Source");
+                }
+            }
+        }
+        public SimpleCommand.EnumStatus Status
+        {
+            get { return _command.Status; }
+            set
+            {
+                if (_command.Status != value)
+                {
+                    _command.Status = value;
+                    RaisePropertyChanged("Status");
+                }
+            }
+        }
+        public SimpleCommand.EnumTask Task
+        {
+            get { return _command.Task; }
+            set
+            {
+                if (_command.Task != value)
+                {
+                    _command.Task = value;
+                    RaisePropertyChanged("Task");
+                }
+            }
+        }
+        public DateTime Time
+        {
+            get { return _command.Time; }
+            set
+            {
+                if (_command.Time != value)
+                {
+                    _command.Time = value;
+                    RaisePropertyChanged("Time");
+                }
+            }
+        }
+    }
+
+
+    public class SimpleCraneCommandViewModel : SimpleCommandViewModel
+    {
+        public string Unit
+        {
+            get { return (_command as SimpleCraneCommand).Unit; }
+            set
+            {
+                if((_command as SimpleCraneCommand).Unit != value )
+                {
+                    (_command as SimpleCraneCommand).Unit = value;
+                    RaisePropertyChanged("Unit");
+                }
+            }
+        }
+
+    }
+
+    public class SimpleConveyorCommandViewModel : SimpleCommandViewModel
+    {
+        public string Target
+        {
+            get { return (_command as SimpleConveyorCommand).Target; }
+            set
+            {
+                if ((_command as SimpleConveyorCommand).Target != value)
+                {
+                    (_command as SimpleConveyorCommand).Target = value;
+                    RaisePropertyChanged("Target");
+                }
+            }
+        }
+
+    }
+
+    public sealed class SimpleCommandsViewModel : ViewModelBase
+    {
+        public enum CommandType {None = 0, Add, Restart, Delete };
+
+        private BasicWarehouse _warehouse;
+        private DataAccessService _dataService;
+
+        private bool _isEnabledCtrl;
+        private bool _isEnabledField;
+        private bool _isEnabledEditDel;
+        private bool _isEnabledCC;
+        private CommandType _selectedCommand;
+        private SimpleCommandViewModel _selectedContent;
+        private SimpleCommandViewModel _detailedContent;
+        private SimpleCommandViewModel _manageContent;
+
+        private ObservableCollection<SimpleCommandViewModel> _simpleCommandList;
+
+
+        public ICommand RefreshCmd { get; private set; }
+        public ICommand ConveyorCmd { get; private set; }
+        public ICommand CraneCmd { get; private set; }
+        public ICommand RestartCmd { get; private set; }
+        public ICommand DeleteCmd { get; private set; }
+        public ICommand Confirm { get; private set; }
+        public ICommand Cancel { get; private set; }
+        public bool IsEnabledCtrl
+        {
+            get { return _isEnabledCtrl; }
+            set
+            {
+                if (_isEnabledCtrl != value)
+                {
+                    _isEnabledCtrl = value;
+                    RaisePropertyChanged("IsEnabledCtrl");
+                }
+            }
+        }
+
+
+        public ObservableCollection<SimpleCommandViewModel> SimpleCommandList
+        {
+            get { return _simpleCommandList; }
+            set
+            {
+                if (_simpleCommandList != value)
+                {
+                    _simpleCommandList = value;
+                    RaisePropertyChanged("SimpleCommandList");
+                }
+            }
+        }
+
+
+        public bool IsEnabledEditDel
+        {
+            get { return _isEnabledEditDel; }
+            set
+            {
+                if (_isEnabledEditDel != value)
+                {
+                    _isEnabledEditDel = value;
+                    RaisePropertyChanged("IsEnabledEditDel");
+                }
+            }
+        }
+        public bool IsEnabledField
+        {
+            get { return _isEnabledField; }
+            set
+            {
+                if (_isEnabledField != value)
+                {
+                    _isEnabledField = value;
+                    RaisePropertyChanged("IsEnabledField");
+                }
+            }
+        }
+        public bool IsEnabledCC
+        {
+            get { return _isEnabledCC; }
+            set
+            {
+                if (_isEnabledCC != value)
+                {
+                    _isEnabledCC = value;
+                    RaisePropertyChanged("IsEnabledCC");
+                }
+            }
+        }
+        public SimpleCommandViewModel SelectedContent
+        {
+            get { return _selectedContent; }
+            set
+            {
+                if (_selectedContent != value)
+                {
+                    _selectedContent = value;
+                    DetailedContent = SelectedContent;
+                    IsEnabledEditDel = SelectedContent != null;
+                    RaisePropertyChanged("SelectedContent");
+                }
+            }
+        }
+
+        public SimpleCommandViewModel DetailedContent
+        {
+            get { return _detailedContent; }
+            set
+            {
+                if (_detailedContent != value)
+                {
+                    _detailedContent = value;
+                    RaisePropertyChanged("DetailedContent");
+                }
+            }
+        }
+
+        public BasicWarehouse Warehouse
+        {
+            get { return _warehouse; }
+            set
+            {
+                if (value != _warehouse)
+                {
+                    _warehouse = value;
+                    RaisePropertyChanged("Warehouse");
+                }
+            }
+        }
+
+        public SimpleCommandsViewModel()
+        {
+            Warehouse = ServiceLocator.Current.GetInstance<MainViewModel>().Warehouse;
+
+            _dataService = new DataAccessService();
+
+            SimpleCommandList = _dataService.GetSimpleCommands();
+
+            IsEnabledCtrl = true;
+            IsEnabledEditDel = false;
+            IsEnabledField = false;
+            IsEnabledCC = false;
+            _selectedCommand = CommandType.None;
+
+            SelectedContent = null;
+
+            RefreshCmd = new RelayCommand(() => ExecuteRefreshCommand());
+            ConveyorCmd = new RelayCommand(() => ExecuteConveyorCommand());
+            CraneCmd = new RelayCommand(() => ExecuteCraneCommand());
+            RestartCmd = new RelayCommand(() => ExecuteRestart());
+            DeleteCmd = new RelayCommand(() => ExecuteDelete());
+            Confirm = new RelayCommand(() => ExecuteConfirm());
+            Cancel = new RelayCommand(() => ExecuteCancel());
+
+        }
+        public void ExecuteRefreshCommand()
+        {
+            SimpleCommandList = _dataService.GetSimpleCommands();
+        }
+
+        public void ExecuteConveyorCommand()
+        {
+            IsEnabledCtrl = false;
+            IsEnabledEditDel = false;
+            IsEnabledField = true;
+            IsEnabledCC = true;
+            _selectedCommand = CommandType.Add;
+            _manageContent = new SimpleConveyorCommandViewModel { Command = new SimpleConveyorCommand() }; // (SimpleCommandViewModel)Activator.CreateInstance(typeof(SimpleConveyorCommandViewModel));
+            
+            DetailedContent = _manageContent;
+        }
+
+        public void ExecuteCraneCommand()
+        {
+            IsEnabledCtrl = false;
+            IsEnabledEditDel = false;
+            IsEnabledField = true;
+            IsEnabledCC = true;
+            _selectedCommand = CommandType.Add;
+            _manageContent = new SimpleCraneCommandViewModel { Command = new SimpleCraneCommand() }; // (SimpleCommandViewModel)Activator.CreateInstance(typeof(SimpleCraneCommandViewModel));
+            DetailedContent = _manageContent;
+        }
+        public void ExecuteRestart()
+        {
+            if( SelectedContent != null)
+            {
+                IsEnabledCtrl = false;
+                IsEnabledEditDel = false;
+                IsEnabledField = true;
+                IsEnabledCC = true;
+                _selectedCommand = CommandType.Restart;
+            }
+        }
+        public void ExecuteDelete()
+        {
+            if (SelectedContent != null)
+            {
+                IsEnabledCtrl = false;
+                IsEnabledEditDel = false;
+                IsEnabledField = false;
+                IsEnabledCC = true;
+                _selectedCommand = CommandType.Delete;
+            }
+        }
+        public void ExecuteCancel()
+        {
+            IsEnabledCtrl = true;
+            IsEnabledEditDel = SelectedContent != null;
+            IsEnabledField = false;
+            IsEnabledCC = false;
+            DetailedContent = SelectedContent;
+        }
+        public void ExecuteConfirm()
+        {
+            IsEnabledCtrl = true;
+            IsEnabledEditDel = SelectedContent != null;
+            IsEnabledField = false;
+            IsEnabledCC = false;
+            switch (_selectedCommand)
+            {
+                case CommandType.Add:
+                    // execute cmd based on DetailedContent
+                    DetailedContent.Time = DateTime.Now;
+                    _dataService.SimpleCommandAdd(DetailedContent.Command);
+                    SimpleCommandList.Add(DetailedContent);
+                    break;
+                case CommandType.Restart:
+                    DetailedContent.Time = DateTime.Now;
+                    DetailedContent.Status = SimpleCommand.EnumStatus.NotActive;
+                    _dataService.SimpleCommandUpdate(DetailedContent.Command);
+                    break;
+                case CommandType.Delete:
+                    DetailedContent.Time = DateTime.Now;
+                    DetailedContent.Status = SimpleCommand.EnumStatus.Canceled;
+                    _dataService.SimpleCommandUpdate(DetailedContent.Command);
+                    break;
+                default:
+                    break;
+            }
+            DetailedContent = SelectedContent;
+        }
+    }
+}

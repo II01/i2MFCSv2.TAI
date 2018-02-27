@@ -1,0 +1,76 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Telegrams;
+
+namespace Warehouse.SimpleCommands
+{
+    public class SimpleCraneCommand : SimpleCommand
+    {
+        private string _unit;
+
+        public string Unit
+        {
+            get { return _unit; }
+            set
+            {
+                if (_unit != value)
+                {
+                    _unit = value;
+                    RaisePropertyChanged("Unit");
+                }
+            }
+        }
+
+        public SimpleCraneCommand() : base()
+        { }
+
+ /*       public SimpleCraneCommand(SimpleCraneCommand scc) : base()
+        {
+            ID = scc.ID;
+            Command_ID = scc.Command_ID;
+            Status = scc.Status;
+            Time = scc.Time;
+            Task = scc.Task;
+            Material = scc.Material;
+            Source = scc.Source;
+            Unit = scc.Unit;
+        }
+
+
+        // unit, source, status can't be at this stage assigned
+        public SimpleCraneCommand(TelegramCraneTO tel) : base()
+            {
+            this.ID = tel.MFCS_ID;
+            this.Material = tel.Palette.Barcode;
+            switch (tel.Order)
+            {
+                case TelegramCraneTO.ORDER_GOTO: Task = EnumTask.Move; break;
+                case TelegramCraneTO.ORDER_PICKUP: Task = EnumTask.Pick; break;
+                case TelegramCraneTO.ORDER_DROP: Task = EnumTask.Drop; break;
+                case TelegramCraneTO.ORDER_CANCEL: Task = EnumTask.Cancel; break;
+                case TelegramCraneTO.ORDER_CREATEPALETTE: Task = EnumTask.Create; break;
+                case TelegramCraneTO.ORDER_DELETEPALETTE: Task = EnumTask.Delete; break;
+                default: break;
+            }
+            this.Time = DateTime.Now;
+        }
+*/
+        public override string ToString()
+        {
+            switch (Task)
+            {
+                case EnumTask.Cancel:
+                case EnumTask.Create:
+                case EnumTask.Delete: return String.Format("Command {0}:{1} {2} {3} on {4} {5}", ID, Unit, Task, Material, Source, Status);
+                case EnumTask.Move: return String.Format("Command {0}:{1} {2} {3} {4}", ID, Unit, Task, Source, Status);
+
+                case EnumTask.Drop:
+                case EnumTask.Pick: return String.Format("Command {0}:{1} {2} {3} {4} {5} {6}", ID, Unit, Task, Material, Task == EnumTask.Drop ? "to" : "from", Source, Status);
+            }
+            return "uknown";
+        }
+    }
+}

@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="UserInterface.View.SimpleCommandConveyorView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
+        xmlns:src="clr-namespace:UserInterface.View"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"     
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d ignore"
+        d:DesignWidth="300"
+        d:DesignHeight="200">
+
+    <!-- conveyor command -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width ="*"/>
+            <ColumnDefinition Width ="35"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Resx Task}" Grid.Row="0" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx TU}" Grid.Row="1" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx From}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx To}" Grid.Row="3" Margin="0,0,0,10"/>
+
+        <ComboBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" IsEnabled="True"
+                  SelectedItem="{Binding TaskConveyor, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Source={StaticResource SimpleCommandsConveyorList}}" 
+                  IsSynchronizedWithCurrentItem="True"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10"
+                 Text = "{Binding Path=MaterialStr, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Grid.Row="1" Grid.Column="3" MinWidth="25" MinHeight="25" Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,10"
+                Content="{Resx BarcodeShort}" 
+                Command="{Binding GetBarcode}"/>
+        <ComboBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10"
+                  IsEditable="True"
+                  SelectedItem = "{Binding Path=Source, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                  ItemsSource="{Binding Sources}"/>
+        <Button Grid.Row="2" Grid.Column="3" MinWidth="25" MinHeight="25" Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,10"
+                Content="{Resx LocationShort}" 
+                Command="{Binding GetLocation}"/>
+        <ComboBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10"
+                  IsEditable="True"
+                  SelectedItem = "{Binding Path=Target, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                  ItemsSource="{Binding Targets}"/>
+    </Grid>
+</UserControl>

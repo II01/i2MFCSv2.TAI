@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="081e5af52c114129b707e1860fbab722" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="MFCSModel.Command" Width="1.5" PointX="7" PointY="8.375" />
+        <EntityTypeShape EntityType="MFCSModel.MaterialID" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="MFCSModel.Movement" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="MFCSModel.Place" Width="1.5" PointX="0.5" PointY="5.625" />
+        <EntityTypeShape EntityType="MFCSModel.PlaceID" Width="1.5" PointX="2.875" PointY="5.375" />
+        <AssociationConnector Association="MFCSModel.FK_material_MatetrialID" />
+        <AssociationConnector Association="MFCSModel.FK_place_PlaceID" />
+        <EntityTypeShape EntityType="MFCSModel.Event" Width="1.5" PointX="10.75" PointY="0.5" />
+        <EntityTypeShape EntityType="MFCSModel.Alarm" Width="1.5" PointX="8.75" PointY="0.5" />
+        <EntityTypeShape EntityType="MFCSModel.SimpleCommand" Width="1.875" PointX="13.125" PointY="1.375" />
+        <AssociationConnector Association="MFCSModel.FK__SimpleCom__Mater__68D28DBC" />
+        <AssociationConnector Association="MFCSModel.FK__SimpleCom__Sourc__69C6B1F5" />
+        <EntityTypeShape EntityType="MFCSModel.SimpleConveyorCommand" Width="1.5" PointX="12.25" PointY="5.625" />
+        <InheritanceConnector EntityType="MFCSModel.SimpleConveyorCommand" />
+        <EntityTypeShape EntityType="MFCSModel.SimpleCraneCommand" Width="1.5" PointX="10.125" PointY="5.5" />
+        <InheritanceConnector EntityType="MFCSModel.SimpleCraneCommand" />
+        <AssociationConnector Association="MFCSModel.FK__SimpleCom__Comma__025D5595" />
+        <AssociationConnector Association="MFCSModel.FK_Material_MaterialID" />
+        <EntityTypeShape EntityType="MFCSModel.SimpleSegmentCommand" Width="1.5" PointX="14.25" PointY="5.625" IsExpanded="true" />
+        <InheritanceConnector EntityType="MFCSModel.SimpleSegmentCommand" />
+        <EntityTypeShape EntityType="MFCSModel.CommandMaterial" Width="1.5" PointX="5.25" PointY="8.75" />
+        <InheritanceConnector EntityType="MFCSModel.CommandMaterial" />
+        <EntityTypeShape EntityType="MFCSModel.CommandSegment" Width="1.5" PointX="9.375" PointY="8.5" />
+        <InheritanceConnector EntityType="MFCSModel.CommandSegment" />
+        <AssociationConnector Association="MFCSModel.CommandMaterialMaterialID" />
+        <AssociationConnector Association="MFCSModel.CommandMaterialPlaceIDS" />
+        <AssociationConnector Association="MFCSModel.CommandMaterialPlaceID" />
+        <AssociationConnector Association="MFCSModel.SimpleConveyorCommandPlaceID" />
+        <EntityTypeShape EntityType="MFCSModel.CommandCommand" Width="1.5" PointX="9.375" PointY="10" />
+        <InheritanceConnector EntityType="MFCSModel.CommandCommand" />
+        <EntityTypeShape EntityType="MFCSModel.User" Width="1.5" PointX="5.375" PointY="3.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

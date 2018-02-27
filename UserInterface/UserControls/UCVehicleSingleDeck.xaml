@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="UserInterface.UserControls.UCVehicleSingleDeck"
+             ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UserInterface.UserControls"
+             xmlns:vm="clr-namespace:UserInterface.ViewModel"
+             mc:Ignorable="d" 
+             x:Name="SCADAvehicleSingle"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <local:DeviceStateEnumToBrush x:Key="DeviceStateEnumToBrush" />
+    </UserControl.Resources>
+    
+    <Grid ToolTipService.ShowDuration="3600000" Width="190" Height="75" >
+        <Grid.ToolTip>
+            <ToolTip FlowDirection="LeftToRight">
+                <ToolTip.Background>
+                    <SolidColorBrush Color="White" Opacity=".8"/>
+                </ToolTip.Background>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch">
+                    <TextBlock Text="{Binding DeviceName}" FontWeight="Bold" FontSize="{StaticResource SmallFontSize}"/>
+                    <Border BorderThickness="1" BorderBrush="SkyBlue" HorizontalAlignment="Stretch"/>
+                    <ItemsControl ItemsSource="{Binding DeviceDetails}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.Resources>
+                            <DataTemplate DataType="{x:Type vm:DetailString}">
+                                <local:UCDetailString/>
+                            </DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:DetailBool}">
+                                <local:UCDetailBool/>
+                            </DataTemplate>
+                        </ItemsControl.Resources>
+                    </ItemsControl>
+                </StackPanel>
+            </ToolTip>
+        </Grid.ToolTip>
+        <Grid.ContextMenu>
+            <ContextMenu FlowDirection="LeftToRight" ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}">
+                <MenuItem Header="{Resx Reset}" 
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.Reset}"/>
+                <MenuItem Header="{Resx Auto_on}" 
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.AutoOn}"/>
+                <MenuItem Header="{Resx Auto_off}" 
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.AutoOff}"/>
+                <MenuItem Header="{Resx Home}" 
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.Home}"
+                          IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"/>
+                <MenuItem Header="{Resx Maintenance_on}" 
+                          IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.LongTermBlockOn}"/>
+                <MenuItem Header="{Resx Maintenance_off}" 
+                          IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.LongTermBlockOff}"/>
+                <MenuItem Header="{Resx RefreshImage}" 
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.Refresh}"
+                          IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
+                <MenuItem Header="{Resx Set_time}" 
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.SetTime}"
+                          IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Fill="White"/>
+        <Border CornerRadius="8" BorderThickness="2" BorderBrush="SkyBlue" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Border CornerRadius="8" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                BorderBrush="{Binding State, Converter={StaticResource DeviceStateEnumToBrush}}" >
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <local:UCConveyor HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="0" Margin="3,0,0,0" 
+                                Sensor1Visibility="Visible" Sensor2Visibility="Visible" FlowDirection="LeftToRight"
+                                Grid.Column="0"
+                                DataContext="{Binding Deck}"/>
+                <Grid VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="6,0,3,0" FlowDirection="LeftToRight"
+                      Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="12"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Column="0" Grid.Row="0" Text="{Resx LocationShort}" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="0" Grid.Row="1" Text="{Resx StateMachineShort}" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="0" Grid.Row="2" Text="{Resx TaskShort}" FontWeight="Bold"/>
+                    <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Location}" />
+                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding StateMachine}" />
+                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding Task}" />
+                </Grid>
+            </Grid>
+        </Border>
+     </Grid>
+</UserControl>

@@ -1,0 +1,321 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using UserInterface.ViewModel;
+using Database;
+
+namespace UserInterface.Services
+{
+    /// <summary>
+        /// The Interface defining methods for Create Employee and Read All Employees  
+        /// </summary>
+    public interface IDataAccessService
+    {
+        ObservableCollection<AlarmViewModel> GetAlarms();
+        int UpdateAlarmStatus(AlarmViewModel a, string status);
+    }
+
+    /// <summary>
+        /// Class implementing IDataAccessService interface and implementing
+        /// its methods by making call to the Entities using CompanyEntities object
+        /// </summary>
+    public class DataAccessService : IDataAccessService
+    {
+        public DataAccessService()
+        {
+        }
+        public ObservableCollection<AlarmViewModel> GetAlarms()
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = from a in dc.Alarms
+                        select new AlarmViewModel
+                        {
+                            Id = a.ID,
+                            AlarmID = a.AlarmID,
+                            Text = a.AlarmDetail.Text.Message,
+                            Unit = a.TextU.Message,
+                            StatusID = a.StatusID,
+                            Status = a.TextS.Message,
+                            Severity = a.AlarmDetail.Text.Message,
+                            ArrivedTime = a.ArrivedTime,
+                            AckTime = a.AckTime,
+                            RemovedTime = a.RemovedTime
+                        };
+                return new ObservableCollection<AlarmViewModel>(l.ToList());
+            }
+        }
+
+
+        public AlarmViewModel InsertAlarm(string alarmID, string unitID, string status)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                Alarm a = new Alarm { ID = 0, AlarmID = alarmID, UnitID = unitID, StatusID = status, ArrivedTime = DateTime.Now, AckTime = null, RemovedTime = null };
+                dc.Alarms.Add(a);
+                dc.SaveChanges();
+
+                var l = (from aa in dc.Alarms
+                         where aa.ID == a.ID
+                         select new AlarmViewModel
+                         {
+                             Id = aa.ID,
+                             AlarmID = aa.AlarmID,
+                             Text = aa.AlarmDetail.Text.Message,
+                             Unit = aa.TextU.Message,
+                             StatusID = aa.StatusID,
+                             Status = aa.TextS.Message,
+                             Severity = aa.AlarmDetail.Text.Message,
+                             ArrivedTime = aa.ArrivedTime,
+                             AckTime = aa.AckTime,
+                             RemovedTime = aa.RemovedTime
+                         }).First();
+                return l;
+            }
+        }
+
+        public int UpdateAlarmStatus(AlarmViewModel alarm, string status)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = (from a in dc.Alarms
+                         where a.ID == alarm.Id
+                         select a).FirstOrDefault();
+                if (l != null)
+                {
+                    l.StatusID = status; 
+                }
+                if (status == "STATUS.2")
+                {
+                    l.AckTime = DateTime.Now;
+                }
+                else if (status == "STATUS.4")
+                {
+                    l.RemovedTime = DateTime.Now;
+                }
+                dc.SaveChanges();
+
+                alarm.Status = l.TextS.Message;
+                alarm.AckTime = l.AckTime;
+                alarm.RemovedTime = l.RemovedTime;
+            }
+            return 0;
+        }
+
+        public void SwitchLanguage(int language)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                dc.SwitchLanguage(language);
+            }
+        }
+
+        public ObservableCollection<LocationViewModel> GetLocations()
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = from p in dc.PlaceIDs
+                        select
+                        new LocationViewModel { ID = p.ID, Size = p.Size, Blocked = p.Blocked };
+                return new ObservableCollection<LocationViewModel>(l);     //.Take<PlaceViewModel>(160).ToList());
+            }
+        }
+
+        public IQueryable<LocationViewModel> GetLocationsBlock(int pageoffset, int count)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var y =  (from p in dc.PlaceIDs orderby p.ID select 
+                        new LocationViewModel {ID = p.ID, Size=p.Size, Blocked=p.Blocked }).Skip(pageoffset).Take(count);
+                return y;
+            }
+        }
+
+
+        public int UpdateLocation(LocationViewModel location)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = (from p in dc.PlaceIDs
+                         where p.ID == location.ID
+                         select p).FirstOrDefault();
+                if (l != null)
+                {
+                    l.Size = location.Size;
+                    l.Blocked = location.Blocked;
+                }
+                dc.SaveChanges();
+            }
+            return 0;
+        }
+
+        public bool LocationExists(string loc)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = (from p in dc.PlaceIDs
+                         where p.ID == loc
+                         select p).FirstOrDefault();
+                return l != null;
+            }
+        }
+
+        public ObservableCollection<MaterialViewModel> GetPlaces()
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = from p in dc.PlaceIDs
+                        join m in dc.Places on p.ID equals m.Place1 into inners
+                        from od in inners.DefaultIfEmpty()
+                        select
+                        new MaterialViewModel { Location = p.ID, ID = od == null ? 0 : od.Material };
+                return new ObservableCollection<MaterialViewModel>(l);
+            }
+        }
+
+        public int DeletePlace(Place place)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = (from p in dc.Places
+                         where p.Place1 == place.Place1
+                         select p).FirstOrDefault();
+                var m = (from p in dc.MaterialIDs
+                         where p.ID == place.Material
+                         select p).FirstOrDefault();
+                if ( l!= null && m != null)
+                {
+                    dc.Places.Remove(l);
+                    dc.MaterialIDs.Remove(m);
+                    dc.SaveChanges();
+                }
+            }
+            return 0;
+        }
+        public int CreatePlace(Place place)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                dc.MaterialIDs.Add(new MaterialID { ID = place.Material, Size = 1, Weight = 800 });
+                dc.Places.Add(place);
+                dc.SaveChanges();
+            }
+            return 0;
+        }
+
+        public int MoveFromPlace(Place place, string newloc)
+        {
+            DeletePlace(place);
+            place.Place1 = newloc;
+            CreatePlace(place);
+            return 0;
+        }
+
+        public int UpdatePlace(Place place)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = (from p in dc.Places
+                         where p.Place1 == place.Place1
+                         select p).FirstOrDefault();
+                if (l != null)
+                {
+                    l.Material = place.Material;
+                    l.Time = DateTime.Now;
+                    dc.SaveChanges();
+                }
+            }
+            return 0;
+        }
+        public ObservableCollection<SimpleCommandViewModel> GetSimpleCommands()
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = from c in dc.SimpleCommands
+                        where c.Status < SimpleCommand.EnumStatus.Canceled
+                        select c;
+
+                var res = new ObservableCollection<SimpleCommandViewModel>();
+                foreach (var cmd in l)
+                {
+                    res.Add(cmd is SimpleCraneCommand ? (SimpleCommandViewModel)new SimpleCraneCommandViewModel { Command = cmd } : (SimpleCommandViewModel)new SimpleConveyorCommandViewModel { Command = cmd });
+                }
+                return res;
+            }
+        }
+        public bool SimpleCommandAdd(SimpleCommand cmd)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                dc.SimpleCommands.Add(cmd);
+                dc.SaveChanges();
+                return true;
+            }
+        }
+        public bool SimpleCommandUpdate(SimpleCommand cmd)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                dc.SimpleCommands.Attach(cmd);
+                dc.Entry(cmd).State = System.Data.Entity.EntityState.Modified;
+                dc.SaveChanges();
+                return true;
+            }
+        }
+        public ObservableCollection<CommandViewModel> GetCommands()
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = from c in dc.Commands
+                        select c;
+
+                var res = new ObservableCollection<CommandViewModel>();
+                foreach (var cmd in l)
+                    res.Add(new CommandViewModel { Command = cmd });
+
+                return res;
+            }
+        }
+
+        public ObservableCollection<SimpleCommandViewModel> GetCommandSimpleCommands(CommandViewModel command)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                var l = from c in dc.SimpleCommands
+                        where c.Command_ID == command.Command.ID
+                        select c;
+
+                var res = new ObservableCollection<SimpleCommandViewModel>();
+                foreach (var cmd in l)
+                {
+                    res.Add(cmd is SimpleCraneCommand ? 
+                            (SimpleCommandViewModel)new SimpleCraneCommandViewModel { Command = cmd } : 
+                            (SimpleCommandViewModel)new SimpleConveyorCommandViewModel { Command = cmd });
+                }
+                return res;
+            }
+        }
+        public bool CommandAdd(Command cmd)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                dc.Commands.Add(cmd);
+                dc.SaveChanges();
+                return true;
+            }
+        }
+        public bool CommandUpdate(Command cmd)
+        {
+            using (var dc = new MFCSEntities())
+            {
+                dc.Commands.Attach(cmd);
+                dc.Entry(cmd).State = System.Data.Entity.EntityState.Modified;
+                dc.SaveChanges();
+                return true;
+            }
+        }
+    }
+}

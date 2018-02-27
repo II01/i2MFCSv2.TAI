@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Telegrams" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Warehouse.ConveyorUnits" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Database" />
+  <xs:element name="RegisterCommunicator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegisterCommunicatorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterCommunicator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnRegisterCommunicatorResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TelegramNotifyRcv">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Telegrams" minOccurs="0" name="tel" nillable="true" type="q1:Telegram" />
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TelegramNotifyRcvResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TelegramNotifySend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Telegrams" minOccurs="0" name="tel" nillable="true" type="q2:Telegram" />
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TelegramNotifySendResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TelegramSend">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Telegrams" minOccurs="0" name="tel" nillable="true" type="q3:Telegram" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TelegramSendResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIRegister">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIRegisterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIUnRegister">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIUnRegisterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIConveyorBasicUINotify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Warehouse.ConveyorUnits" minOccurs="0" name="c" nillable="true" type="q4:ConveyorBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIConveyorBasicUINotifyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIAddEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Database" minOccurs="0" name="s" type="q5:EnumEventSeverity" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Database" minOccurs="0" name="t" type="q6:EnumEventType" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIAddEventResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

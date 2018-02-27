@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MFCSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Alarm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AlarmID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Severity" Type="int" Nullable="false" />
+          <Property Name="ArrivedTime" Type="datetime" Nullable="false" />
+          <Property Name="AckTime" Type="datetime" />
+          <Property Name="RemovedTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Command">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="WMS_ID" Type="int" Nullable="false" />
+          <Property Name="Task" Type="int" Nullable="false" />
+          <Property Name="Material" Type="int" />
+          <Property Name="Source" Type="nvarchar" MaxLength="20" />
+          <Property Name="Target" Type="nvarchar" MaxLength="20" />
+          <Property Name="Segment" Type="nvarchar" MaxLength="20" />
+          <Property Name="CommandID" Type="int" />
+          <Property Name="Priority" Type="int" Nullable="false" />
+          <Property Name="Info" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Reason" Type="int" />
+          <Property Name="Discrimator" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Severity" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MaterialID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Movement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Material" Type="int" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Task" Type="int" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Material" />
+          </Key>
+          <Property Name="Place" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Material" Type="int" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlaceID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="Blocked" Type="bit" Nullable="false" />
+          <Property Name="Reserved" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SimpleCommand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Command_ID" Type="int" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="20" />
+          <Property Name="Material" Type="int" />
+          <Property Name="Source" Type="nvarchar" MaxLength="20" />
+          <Property Name="Target" Type="nvarchar" MaxLength="20" />
+          <Property Name="Task" Type="int" Nullable="false" />
+          <Property Name="Segment" Type="nvarchar" MaxLength="20" />
+          <Property Name="CancelID" Type="int" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Reason" Type="int" />
+          <Property Name="Discrimator" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="User" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="AccessLevel" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AccessLevel" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Command__Materia__4EA972BC">
+          <End Role="MaterialID" Type="Self.MaterialID" Multiplicity="0..1" />
+          <End Role="Command" Type="Self.Command" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Command">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Command__Source__4F9D96F5">
+          <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
+          <End Role="Command" Type="Self.Command" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Command">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Command__Target__5091BB2E">
+          <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
+          <End Role="Command" Type="Self.Command" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Command">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SimpleCom__Comma__5556704B">
+          <End Role="Command" Type="Self.Command" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SimpleCommand" Type="Self.SimpleCommand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Command">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleCommand">
+              <PropertyRef Name="Command_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SimpleCom__Mater__564A9484">
+          <End Role="MaterialID" Type="Self.MaterialID" Multiplicity="0..1" />
+          <End Role="SimpleCommand" Type="Self.SimpleCommand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleCommand">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SimpleCom__Sourc__573EB8BD">
+          <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
+          <End Role="SimpleCommand" Type="Self.SimpleCommand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleCommand">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SimpleCom__Targe__5832DCF6">
+          <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
+          <End Role="SimpleCommand" Type="Self.SimpleCommand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleCommand">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_MaterialID">
+          <End Role="MaterialID" Type="Self.MaterialID" Multiplicity="1" />
+          <End Role="Movement" Type="Self.Movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Movement">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_material_MatetrialID">
+          <End Role="MaterialID" Type="Self.MaterialID" Multiplicity="1" />
+          <End Role="Place" Type="Self.Place" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_place_PlaceID">
+          <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="1" />
+          <End Role="Place" Type="Self.Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="Place" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MFCSModelStoreContainer">
+          <EntitySet Name="Alarm" EntityType="Self.Alarm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Command" EntityType="Self.Command" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MaterialID" EntityType="Self.MaterialID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movement" EntityType="Self.Movement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlaceID" EntityType="Self.PlaceID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SimpleCommand" EntityType="Self.SimpleCommand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [User].[ID] AS [ID], 
+    [User].[User] AS [User], 
+    [User].[Password] AS [Password], 
+    [User].[AccessLevel] AS [AccessLevel]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Command__Materia__4EA972BC" Association="Self.FK__Command__Materia__4EA972BC">
+            <End Role="MaterialID" EntitySet="MaterialID" />
+            <End Role="Command" EntitySet="Command" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Command__Source__4F9D96F5" Association="Self.FK__Command__Source__4F9D96F5">
+            <End Role="PlaceID" EntitySet="PlaceID" />
+            <End Role="Command" EntitySet="Command" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Command__Target__5091BB2E" Association="Self.FK__Command__Target__5091BB2E">
+            <End Role="PlaceID" EntitySet="PlaceID" />
+            <End Role="Command" EntitySet="Command" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SimpleCom__Comma__5556704B" Association="Self.FK__SimpleCom__Comma__5556704B">
+            <End Role="Command" EntitySet="Command" />
+            <End Role="SimpleCommand" EntitySet="SimpleCommand" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SimpleCom__Mater__564A9484" Association="Self.FK__SimpleCom__Mater__564A9484">
+            <End Role="MaterialID" EntitySet="MaterialID" />
+            <End Role="SimpleCommand" EntitySet="SimpleCommand" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SimpleCom__Sourc__573EB8BD" Association="Self.FK__SimpleCom__Sourc__573EB8BD">
+            <End Role="PlaceID" EntitySet="PlaceID" />
+            <End Role="SimpleCommand" EntitySet="SimpleCommand" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SimpleCom__Targe__5832DCF6" Association="Self.FK__SimpleCom__Targe__5832DCF6">
+            <End Role="PlaceID" EntitySet="PlaceID" />
+            <End Role="SimpleCommand" EntitySet="SimpleCommand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_MaterialID" Association="Self.FK_Material_MaterialID">
+            <End Role="MaterialID" EntitySet="MaterialID" />
+            <End Role="Movement" EntitySet="Movement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_material_MatetrialID" Association="Self.FK_material_MatetrialID">
+            <End Role="MaterialID" EntitySet="MaterialID" />
+            <End Role="Place" EntitySet="Place" />
+          </AssociationSet>
+          <AssociationSet Name="FK_place_PlaceID" Association="Self.FK_place_PlaceID">
+            <End Role="PlaceID" EntitySet="PlaceID" />
+            <End Role="Place" EntitySet="Place" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MFCSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MFCSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Commands" EntityType="MFCSModel.Command" />
+          <EntitySet Name="MaterialIDs" EntityType="MFCSModel.MaterialID" />
+          <EntitySet Name="Movements" EntityType="MFCSModel.Movement" />
+          <EntitySet Name="Places" EntityType="MFCSModel.Place" />
+          <EntitySet Name="PlaceIDs" EntityType="MFCSModel.PlaceID" />
+          <AssociationSet Name="FK_material_MatetrialID" Association="MFCSModel.FK_material_MatetrialID">
+            <End Role="MaterialID" EntitySet="MaterialIDs" />
+            <End Role="Place" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_place_PlaceID" Association="MFCSModel.FK_place_PlaceID">
+            <End Role="PlaceID" EntitySet="PlaceIDs" />
+            <End Role="Place" EntitySet="Places" />
+          </AssociationSet>
+          <EntitySet Name="Events" EntityType="MFCSModel.Event" />
+          <EntitySet Name="Alarms" EntityType="MFCSModel.Alarm" />
+          <FunctionImport Name="SwitchLanguage">
+          <Parameter Name="lang" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="SimpleCommands" EntityType="MFCSModel.SimpleCommand" />
+          <AssociationSet Name="FK__SimpleCom__Mater__68D28DBC" Association="MFCSModel.FK__SimpleCom__Mater__68D28DBC">
+            <End Role="MaterialID" EntitySet="MaterialIDs" />
+            <End Role="SimpleCommand" EntitySet="SimpleCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SimpleCom__Sourc__69C6B1F5" Association="MFCSModel.FK__SimpleCom__Sourc__69C6B1F5">
+            <End Role="PlaceID" EntitySet="PlaceIDs" />
+            <End Role="SimpleCommand" EntitySet="SimpleCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SimpleCom__Comma__025D5595" Association="MFCSModel.FK__SimpleCom__Comma__025D5595">
+            <End Role="Command" EntitySet="Commands" />
+            <End Role="SimpleCommand" EntitySet="SimpleCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_MaterialID" Association="MFCSModel.FK_Material_MaterialID">
+            <End Role="MaterialID" EntitySet="MaterialIDs" />
+            <End Role="Movement" EntitySet="Movements" />
+          </AssociationSet>
+          <AssociationSet Name="CommandMaterialMaterialID" Association="MFCSModel.CommandMaterialMaterialID">
+            <End Role="CommandMaterial" EntitySet="Commands" />
+            <End Role="MaterialID" EntitySet="MaterialIDs" />
+          </AssociationSet>
+          <AssociationSet Name="CommandMaterialPlaceIDS" Association="MFCSModel.CommandMaterialPlaceIDS">
+            <End Role="CommandMaterial" EntitySet="Commands" />
+            <End Role="PlaceID" EntitySet="PlaceIDs" />
+          </AssociationSet>
+          <AssociationSet Name="CommandMaterialPlaceID" Association="MFCSModel.CommandMaterialPlaceID">
+            <End Role="CommandMaterial" EntitySet="Commands" />
+            <End Role="PlaceID" EntitySet="PlaceIDs" />
+          </AssociationSet>
+          <AssociationSet Name="SimpleConveyorCommandPlaceID" Association="MFCSModel.SimpleConveyorCommandPlaceID">
+            <End Role="SimpleConveyorCommand" EntitySet="SimpleCommands" />
+            <End Role="PlaceID" EntitySet="PlaceIDs" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="MFCSModel.User" />
+          </EntityContainer>
+        <EnumType Name="EnumCommandStatus" a:ExternalTypeName="Command.EnumCommandStatus" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          </EnumType>
+        <EntityType Name="Command">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WMS_ID" Type="Int32" Nullable="false" />
+          <Property Name="Task" Type="MFCSModel.EnumCommandTask" Nullable="false" />
+          <Property Name="Info" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="MFCSModel.EnumCommandStatus" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
+          <Property Name="Priority" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SimpleCommands" Relationship="MFCSModel.FK__SimpleCom__Comma__025D5595" FromRole="Command" ToRole="SimpleCommand" />
+          <Property Name="Reason" Type="MFCSModel.EnumCommandReason" />
+        </EntityType>
+        <EntityType Name="MaterialID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Places" Relationship="MFCSModel.FK_material_MatetrialID" FromRole="MaterialID" ToRole="Place" />
+          <NavigationProperty Name="SimpleCommands" Relationship="MFCSModel.FK__SimpleCom__Mater__68D28DBC" FromRole="MaterialID" ToRole="SimpleCommand" />
+          <NavigationProperty Name="Movements" Relationship="MFCSModel.FK_Material_MaterialID" FromRole="MaterialID" ToRole="Movement" />
+          <NavigationProperty Name="CommandMaterials" Relationship="MFCSModel.CommandMaterialMaterialID" FromRole="MaterialID" ToRole="CommandMaterial" />
+        </EntityType>
+        <EntityType Name="Movement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Material" Type="Int32" Nullable="false" />
+          <Property Name="Position" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="MaterialID" Relationship="MFCSModel.FK_Material_MaterialID" FromRole="Movement" ToRole="MaterialID" />
+          <Property Name="Task" Type="MFCSModel.EnumMovementTask" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Material" />
+          </Key>
+          <Property Name="Place1" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Material" Type="Int32" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="MaterialID" Relationship="MFCSModel.FK_material_MatetrialID" FromRole="Place" ToRole="MaterialID" />
+          <NavigationProperty Name="PlaceID" Relationship="MFCSModel.FK_place_PlaceID" FromRole="Place" ToRole="PlaceID" />
+        </EntityType>
+        <EntityType Name="PlaceID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="Blocked" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Place" Relationship="MFCSModel.FK_place_PlaceID" FromRole="PlaceID" ToRole="Place" />
+          <NavigationProperty Name="SimpleCommands" Relationship="MFCSModel.FK__SimpleCom__Sourc__69C6B1F5" FromRole="PlaceID" ToRole="SimpleCommand" />
+          <Property Name="Reserved" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CommandMaterials" Relationship="MFCSModel.CommandMaterialPlaceIDS" FromRole="PlaceID" ToRole="CommandMaterial" />
+          <NavigationProperty Name="CommandMaterialsT" Relationship="MFCSModel.CommandMaterialPlaceID" FromRole="PlaceID" ToRole="CommandMaterial" />
+          <NavigationProperty Name="SimpleConveyorCommands" Relationship="MFCSModel.SimpleConveyorCommandPlaceID" FromRole="PlaceID" ToRole="SimpleConveyorCommand" />
+        </EntityType>
+        <Association Name="FK_material_MatetrialID">
+          <End Type="MFCSModel.MaterialID" Role="MaterialID" Multiplicity="1" />
+          <End Type="MFCSModel.Place" Role="Place" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_place_PlaceID">
+          <End Type="MFCSModel.PlaceID" Role="PlaceID" Multiplicity="1" />
+          <End Type="MFCSModel.Place" Role="Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="Place1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Severity" Type="MFCSModel.EnumSeverity" Nullable="false" />
+          <Property Name="Type" Type="MFCSModel.EnumType" Nullable="false" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EnumType Name="EnumSeverity" a:ExternalTypeName="Event.EnumSeverity" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Member Name="Event" Value="0" />
+          <Member Name="Error" />
+        </EnumType>
+        <EnumType Name="EnumType" a:ExternalTypeName="Event.EnumType" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Member Name="Material" Value="0" />
+          <Member Name="Command" />
+          <Member Name="Program" />
+          <Member Name="Exception" />
+          <Member Name="WMS" />
+        </EnumType>
+        <EnumType Name="EnumCommandTask" a:ExternalTypeName="Command.EnumCommandTask" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Member Name="Move" Value="0" />
+          <Member Name="CreateMaterial" Value="1" />
+          <Member Name="DeleteMaterial" Value="2" />
+          <Member Name="SegmentInfo" Value="10" />
+          <Member Name="SegmentOn" Value="11" />
+          <Member Name="SegmentOff" Value="12" />
+          <Member Name="SegmentReset" Value="13" />
+          <Member Name="CancelCommand" Value="100" />
+          <Member Name="InfoMaterial" Value="3" />
+          <Member Name="InfoCommand" Value="101" />
+        </EnumType>
+        <EntityType Name="Alarm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AlarmID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArrivedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AckTime" Type="DateTime" Precision="3" />
+          <Property Name="RemovedTime" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="MFCSModel.EnumAlarmStatus" Nullable="false" />
+          <Property Name="Severity" Type="MFCSModel.EnumAlarmSeverity" Nullable="false" />
+          <Property Name="Unit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          </EntityType>
+        <EntityType Name="SimpleCommand" Abstract="true">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Command_ID" Type="Int32" Nullable="true" />
+          <Property Name="Material" Type="Int32" />
+          <Property Name="Source" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Task" Type="MFCSModel.EnumTask" Nullable="false" />
+          <Property Name="Status" Type="MFCSModel.EnumStatus" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="MaterialID" Relationship="MFCSModel.FK__SimpleCom__Mater__68D28DBC" FromRole="SimpleCommand" ToRole="MaterialID" />
+          <NavigationProperty Name="PlaceID" Relationship="MFCSModel.FK__SimpleCom__Sourc__69C6B1F5" FromRole="SimpleCommand" ToRole="PlaceID" />
+          <NavigationProperty Name="Command" Relationship="MFCSModel.FK__SimpleCom__Comma__025D5595" FromRole="SimpleCommand" ToRole="Command" />
+          <Property Name="CancelID" Type="Int32" />
+          <Property Name="Reason" Type="MFCSModel.EnumReason" />
+        </EntityType>
+        <Association Name="FK__SimpleCom__Mater__68D28DBC">
+          <End Type="MFCSModel.MaterialID" Role="MaterialID" Multiplicity="0..1" />
+          <End Type="MFCSModel.SimpleCommand" Role="SimpleCommand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleCommand">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SimpleCom__Sourc__69C6B1F5">
+          <End Type="MFCSModel.PlaceID" Role="PlaceID" Multiplicity="0..1" />
+          <End Type="MFCSModel.SimpleCommand" Role="SimpleCommand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleCommand">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="EnumTask" a:ExternalTypeName="SimpleCommand.EnumTask" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          </EnumType>
+        <EnumType Name="EnumStatus" a:ExternalTypeName="SimpleCommand.EnumStatus" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+          <Member Name="NotActive" Value="0" />
+          <Member Name="Written" />
+          <Member Name="InPlc" />
+          <Member Name="Canceled" />
+          <Member Name="Finished" />
+        </EnumType>
+        <EntityType Name="SimpleConveyorCommand" BaseType="MFCSModel.SimpleCommand" >
+          <Property Name="Target" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PlaceID2" Relationship="MFCSModel.SimpleConveyorCommandPlaceID" FromRole="SimpleConveyorCommand" ToRole="PlaceID" />
+        </EntityType>
+        <EntityType Name="SimpleCraneCommand" BaseType="MFCSModel.SimpleCommand" >
+          <Property Name="Unit" Type="String" Unicode="true" FixedLength="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__SimpleCom__Comma__025D5595">
+          <End Type="MFCSModel.Command" Role="Command" Multiplicity="0..1" >
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="MFCSModel.SimpleCommand" Role="SimpleCommand" Multiplicity="*" >
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="Command">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleCommand">
+              <PropertyRef Name="Command_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_MaterialID">
+          <End Type="MFCSModel.MaterialID" Role="MaterialID" Multiplicity="1" />
+          <End Type="MFCSModel.Movement" Role="Movement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Movement">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SimpleSegmentCommand" BaseType="MFCSModel.SimpleCommand" >
+          <Property Name="Segment" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CommandMaterial" BaseType="MFCSModel.Command" >
+          <Property Name="Material" Type="Int32" Nullable="true" />
+          <Property Name="Source" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="true" />
+          <Property Name="Target" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="true" />
+          <NavigationProperty Name="MaterialID" Relationship="MFCSModel.CommandMaterialMaterialID" FromRole="CommandMaterial" ToRole="MaterialID" />
+          <NavigationProperty Name="PlaceID" Relationship="MFCSModel.CommandMaterialPlaceIDS" FromRole="CommandMaterial" ToRole="PlaceID" />
+          <NavigationProperty Name="PlaceIDT" Relationship="MFCSModel.CommandMaterialPlaceID" FromRole="CommandMaterial" ToRole="PlaceID" />
+        </EntityType>
+        <EntityType Name="CommandSegment" BaseType="MFCSModel.Command" >
+          <Property Name="Segment" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="true" />
+        </EntityType>
+        <Association Name="CommandMaterialMaterialID">
+          <End Type="MFCSModel.CommandMaterial" Role="CommandMaterial" Multiplicity="*" />
+          <End Type="MFCSModel.MaterialID" Role="MaterialID" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="MaterialID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommandMaterial">
+              <PropertyRef Name="Material" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CommandMaterialPlaceIDS">
+          <End Type="MFCSModel.CommandMaterial" Role="CommandMaterial" Multiplicity="*" />
+          <End Type="MFCSModel.PlaceID" Role="PlaceID" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommandMaterial">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CommandMaterialPlaceID">
+          <End Type="MFCSModel.CommandMaterial" Role="CommandMaterial" Multiplicity="*" />
+          <End Type="MFCSModel.PlaceID" Role="PlaceID" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="CommandMaterial">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SimpleConveyorCommandPlaceID">
+          <End Type="MFCSModel.SimpleConveyorCommand" Role="SimpleConveyorCommand" Multiplicity="*" />
+          <End Type="MFCSModel.PlaceID" Role="PlaceID" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SimpleConveyorCommand">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="EnumAlarmStatus" a:ExternalTypeName="Alarm.EnumAlarmStatus" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="EnumAlarmSeverity" a:ExternalTypeName="Alarm.EnumAlarmSeverity" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="CommandCommand" BaseType="MFCSModel.Command" >
+          <Property Name="CommandID" Type="Int32" />
+        </EntityType>
+        <EnumType Name="EnumMovementTask">
+          <Member Name="Create" Value="1" />
+          <Member Name="Move" Value="2" />
+          <Member Name="Delete" Value="3" />
+        </EnumType>
+        <EnumType Name="EnumReason" a:ExternalTypeName="SimpleCommand.EnumReason" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EnumType Name="EnumCommandReason" a:ExternalTypeName="Command.EnumCommandReason" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="User1" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="AccessLevel" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccessLevel" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MFCSModelStoreContainer" CdmEntityContainer="MFCSEntities">
+          <EntitySetMapping Name="Commands">
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.Command)">
+              <MappingFragment StoreEntitySet="Command">
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WMS_ID" ColumnName="WMS_ID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.CommandSegment)">
+              <MappingFragment StoreEntitySet="Command">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Segment" ColumnName="Segment" />
+                <Condition ColumnName="Discrimator" Value="Segment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.CommandMaterial)">
+              <MappingFragment StoreEntitySet="Command">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <Condition ColumnName="Discrimator" Value="Material" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.CommandCommand)">
+              <MappingFragment StoreEntitySet="Command">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CommandID" ColumnName="CommandID" />
+                <Condition ColumnName="Discrimator" Value="Command" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MaterialIDs">
+            <EntityTypeMapping TypeName="MFCSModel.MaterialID">
+              <MappingFragment StoreEntitySet="MaterialID">
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movements">
+            <EntityTypeMapping TypeName="MFCSModel.Movement">
+              <MappingFragment StoreEntitySet="Movement">
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Places">
+            <EntityTypeMapping TypeName="MFCSModel.Place">
+              <MappingFragment StoreEntitySet="Place">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Place1" ColumnName="Place" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlaceIDs">
+            <EntityTypeMapping TypeName="MFCSModel.PlaceID">
+              <MappingFragment StoreEntitySet="PlaceID">
+                <ScalarProperty Name="Reserved" ColumnName="Reserved" />
+                <ScalarProperty Name="Blocked" ColumnName="Blocked" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="MFCSModel.Event">
+              <MappingFragment StoreEntitySet="Event">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Severity" ColumnName="Severity" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Alarms">
+            <EntityTypeMapping TypeName="MFCSModel.Alarm">
+              <MappingFragment StoreEntitySet="Alarm">
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Severity" ColumnName="Severity" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="RemovedTime" ColumnName="RemovedTime" />
+                <ScalarProperty Name="AckTime" ColumnName="AckTime" />
+                <ScalarProperty Name="ArrivedTime" ColumnName="ArrivedTime" />
+                <ScalarProperty Name="AlarmID" ColumnName="AlarmID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimpleCommands">
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.SimpleCommand)">
+              <MappingFragment StoreEntitySet="SimpleCommand">
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="CancelID" ColumnName="CancelID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Command_ID" ColumnName="Command_ID" />
+                <ScalarProperty Name="Material" ColumnName="Material" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.SimpleConveyorCommand)">
+              <MappingFragment StoreEntitySet="SimpleCommand">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <Condition ColumnName="Discrimator" Value="Conveyor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.SimpleCraneCommand)">
+              <MappingFragment StoreEntitySet="SimpleCommand">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <Condition ColumnName="Discrimator" Value="Crane" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(MFCSModel.SimpleSegmentCommand)">
+              <MappingFragment StoreEntitySet="SimpleCommand">
+                <ScalarProperty Name="Segment" ColumnName="Segment" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <Condition ColumnName="Discrimator" Value="Segment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MFCSModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="User1" ColumnName="User" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

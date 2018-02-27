@@ -1,0 +1,141 @@
+﻿using Database;
+using GalaSoft.MvvmLight;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UserInterface.ViewModel
+{
+    public abstract class SimpleCommandViewModel : ViewModelBase
+    {
+        #region members
+        protected SimpleCommand _command;
+        bool _allPropertiesValid;
+        #endregion
+
+        #region properties
+        public SimpleCommand Command
+        {
+            get { return _command; }
+            set
+            {
+                if (_command != value)
+                {
+                    _command = value;
+                    RaisePropertyChanged("Command");
+                }
+            }
+        }
+        public bool AllPropertiesValid
+        {
+            get { return _allPropertiesValid; }
+            set
+            {
+                if (_allPropertiesValid != value)
+                {
+                    _allPropertiesValid = value;
+                    RaisePropertyChanged("AllPropertiesValid");
+                }
+            }
+        }
+        public int ID
+        {
+            get { return _command.ID; }
+            set
+            {
+                if (_command.ID != value)
+                {
+                    _command.ID = value;
+                    RaisePropertyChanged("ID");
+                }
+            }
+        }
+        public int? Command_ID
+        {
+            get { return _command.Command_ID; }
+            set
+            {
+                if (_command.Command_ID != value)
+                {
+                    _command.Command_ID = value;
+                    RaisePropertyChanged("Command_ID");
+                }
+            }
+        }
+
+        public int Material
+        {
+            get { return _command.Material; }
+            set
+            {
+                if (_command.Material != value)
+                {
+                    _command.Material = value;
+                    RaisePropertyChanged("Material");
+                }
+            }
+        }
+        public string Source
+        {
+            get { return _command.Source; }
+            set
+            {
+                if (_command.Source != value)
+                {
+                    _command.Source = value;
+                    RaisePropertyChanged("Source");
+                }
+            }
+        }
+        public SimpleCommand.EnumStatus Status
+        {
+            get { return _command.Status; }
+            set
+            {
+                if (_command.Status != value)
+                {
+                    _command.Status = value;
+                    RaisePropertyChanged("Status");
+                }
+            }
+        }
+        public SimpleCommand.EnumTask Task
+        {
+            get { return _command.Task; }
+            set
+            {
+                if (_command.Task != value)
+                {
+                    _command.Task = value;
+                    RaisePropertyChanged("Task");
+                }
+            }
+        }
+        public DateTime Time
+        {
+            get { return _command.Time; }
+            set
+            {
+                if (_command.Time != value)
+                {
+                    _command.Time = value;
+                    RaisePropertyChanged("Time");
+                }
+            }
+        }
+
+        public string TaskDescription
+        {
+            get
+            {
+                return "";
+            }
+            set { }
+        }
+
+        #endregion
+    }
+
+}

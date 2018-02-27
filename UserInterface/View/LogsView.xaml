@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="UserInterface.View.LogsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
+             xmlns:local="clr-namespace:UserInterface.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+                <TextBlock Text="Locations" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
+            </Border>
+            <DataGrid Grid.Row="1"  
+                    Name="dgLogs" 
+                    AutoGenerateColumns="False" 
+                    ItemsSource="{Binding LogList}" 
+                    dgx:DataGridFilter.IsAutoFilterEnabled="True"
+                    dgx:Tools.ApplyInitialSorting="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Timestamp" Width="150" Binding="{Binding TimeStamp}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="String1" Width="150" Binding="{Binding Description1}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="String2" Width="150" Binding="{Binding Description2}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="String3" Width="150" Binding="{Binding Description3}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <!--                <DataGridTextColumn Header="String3" Width="150" Binding="{Binding YesNo}" dgx:DataGridFilterColumn.Template="{StaticResource MultipleChoiceFilter}/> -->
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+</UserControl>

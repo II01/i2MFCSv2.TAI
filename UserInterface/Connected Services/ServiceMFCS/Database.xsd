@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Database" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Database" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="EnumEventSeverity">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Event" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumEventSeverity" nillable="true" type="tns:EnumEventSeverity" />
+  <xs:simpleType name="EnumEventType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Material" />
+      <xs:enumeration value="Command" />
+      <xs:enumeration value="Program" />
+      <xs:enumeration value="Exception" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumEventType" nillable="true" type="tns:EnumEventType" />
+</xs:schema>

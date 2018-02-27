@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BasicWarehouse Name="MFCS_DogusCay"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xsi:schemaLocation="http://www.w3.org/2001/XMLSchema BasicWarehouse.xsd"
+                >
+
+  <StrategyActive>true</StrategyActive>
+  <TxtLog>false</TxtLog>
+
+  <!-- Communicators -->
+  <CommunicatorList>
+
+    <BasicCommunicator Name="PLC_Crane1" PLC_ID ="201" MFCS_ID="1" xsi:type="Communicator">
+      <RefreshTimeSeconds>5</RefreshTimeSeconds>
+      <SendTimeOutSeconds>40</SendTimeOutSeconds>
+      <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
+      <Version>CRANE</Version>
+      <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
+      <StringSendIPEndPoint>192.168.1.204:2001</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.1.204:2002</StringRcvIPEndPoint>
+    </BasicCommunicator>
+
+    <BasicCommunicator Name="PLC_Crane2" PLC_ID="202" MFCS_ID="1" xsi:type="Communicator">
+      <RefreshTimeSeconds>5</RefreshTimeSeconds>
+      <SendTimeOutSeconds>40</SendTimeOutSeconds>
+      <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
+      <Version>CRANE</Version>
+      <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
+      <StringSendIPEndPoint>192.168.1.204:2003</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.1.204:2004</StringRcvIPEndPoint>
+    </BasicCommunicator>
+
+    <BasicCommunicator Name="PLC_Crane3" PLC_ID="203" MFCS_ID="1" xsi:type="Communicator">
+      <RefreshTimeSeconds>5</RefreshTimeSeconds>
+      <SendTimeOutSeconds>40</SendTimeOutSeconds>
+      <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
+      <Version>CRANE</Version>
+      <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
+      <StringSendIPEndPoint>192.168.1.204:2005</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.1.204:2006</StringRcvIPEndPoint>
+    </BasicCommunicator>
+
+    <BasicCommunicator Name="PLC_Conveyor" PLC_ID="101" MFCS_ID="1" xsi:type="Communicator" >
+      <RefreshTimeSeconds>5</RefreshTimeSeconds>
+      <SendTimeOutSeconds>40</SendTimeOutSeconds>
+      <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
+      <Version>TRANSPORT</Version>
+      <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
+      <StringSendIPEndPoint>192.168.1.203:2001</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.1.203:2002</StringRcvIPEndPoint>
+    </BasicCommunicator>
+
+  </CommunicatorList>
+
+  <!-- Segments -->
+  <SegmentList>
+
+    <Segment Name="C1" CommunicatorName="PLC_Crane1" PLC_ID="1" xsi:type="SegmentCrane">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="100001" Offset="0" Range="128"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="C2" CommunicatorName="PLC_Crane2" PLC_ID="2" xsi:type="SegmentCrane">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="200001" Offset="0" Range="128"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="S3" CommunicatorName="PLC_Crane3" PLC_ID="3" xsi:type="SegmentCrane">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="300001" Offset="0" Range="128"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T" CommunicatorName="PLC_Conveyor" PLC_ID="0" xsi:type="SegmentMainPanel">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="000001" Offset="0" Range="128"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T01" CommunicatorName="PLC_Conveyor" PLC_ID="1" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="001101" Offset="0" Range="20"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T02A" CommunicatorName="PLC_Conveyor" PLC_ID="2" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="002101" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T02B" CommunicatorName="PLC_Conveyor" PLC_ID="3" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="002201" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03A" CommunicatorName="PLC_Conveyor" PLC_ID="4" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003101" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03B" CommunicatorName="PLC_Conveyor" PLC_ID="5" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003201" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03C" CommunicatorName="PLC_Conveyor" PLC_ID="6" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003301" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03D" CommunicatorName="PLC_Conveyor" PLC_ID="7" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003401" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03E" CommunicatorName="PLC_Conveyor" PLC_ID="8" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003501" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03F" CommunicatorName="PLC_Conveyor" PLC_ID="9" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003601" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03G" CommunicatorName="PLC_Conveyor" PLC_ID="10" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003701" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T03H" CommunicatorName="PLC_Conveyor" PLC_ID="11" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="003801" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T04A" CommunicatorName="PLC_Conveyor" PLC_ID="20" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="004101" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T04B" CommunicatorName="PLC_Conveyor" PLC_ID="21" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="004201" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T11A" CommunicatorName="PLC_Conveyor" PLC_ID="12" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="011101" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T11B" CommunicatorName="PLC_Conveyor" PLC_ID="13" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="011201" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T12A" CommunicatorName="PLC_Conveyor" PLC_ID="14" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="012101" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T12B" CommunicatorName="PLC_Conveyor" PLC_ID="15" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="012201" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T21A" CommunicatorName="PLC_Conveyor" PLC_ID="16" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="021101" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T21B" CommunicatorName="PLC_Conveyor" PLC_ID="17" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="021201" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T22A" CommunicatorName="PLC_Conveyor" PLC_ID="18" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="022101" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+    <Segment Name="T22B" CommunicatorName="PLC_Conveyor" PLC_ID="19" xsi:type="SegmentConveyor">
+      <SegmentInfo>
+        <AlarmList>
+          <ALARM ID="022201" Offset="0" Range="10"/>
+        </AlarmList>
+      </SegmentInfo>
+    </Segment>
+
+  </SegmentList>
+
+  <!-- Cranes -->
+  <CraneList>
+
+    <Crane Name="C101" Segment="C1" PLC_ID="101" CommunicatorName="PLC_Crane1"  WriteToDB="Always">
+      <ConveyorAddress>101</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <CraneAddress Shelve="0" Travel="101" Height="0" Depth="0"/>
+      <Shelve>
+        <short>11</short>
+        <short>12</short>
+      </Shelve>
+      <OutRouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T122" Cost="1"/>
+        </XmlRoute>
+      </OutRouteDef>
+      <CraneInfo>
+        <SensorList>
+          <Sensor Offset="5" Description="Occupied" Reference="OCC"/>
+          <Sensor Offset="10" Description="Middle" Reference="MID"/>
+        </SensorList>
+      </CraneInfo>
+      <HomePosition>T114</HomePosition>
+      <FinalDevice>true</FinalDevice>
+    </Crane>
+    <Crane Name="C102" Segment="C1" PLC_ID="102" CommunicatorName="PLC_Crane1" WriteToDB="Always">
+      <ConveyorAddress>102</ConveyorAddress>
+      <CraneAddress Shelve="0" Travel="102" Height="0" Depth="0"/>
+      <Shelve>
+        <short>11</short>
+        <short>12</short>
+      </Shelve>
+      <OutRouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T121" Cost="1"/>
+        </XmlRoute>
+      </OutRouteDef>
+      <CraneInfo>
+        <SensorList>
+          <Sensor Offset="6" Description="Occupied" Reference="OCC"/>
+          <Sensor Offset="12" Description="Middle" Reference="MID"/>
+        </SensorList>
+      </CraneInfo>
+      <HomePosition>T115</HomePosition>
+      <FinalDevice>true</FinalDevice>
+    </Crane>
+
+    <Crane Name="C201" Segment="C2" PLC_ID="201" CommunicatorName="PLC_Crane2" WriteToDB="Always">
+      <ConveyorAddress>201</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <CraneAddress Shelve="0" Travel="201" Height="0" Depth="0"/>
+      <Shelve>
+        <short>21</short>
+        <short>22</short>
+      </Shelve>
+      <OutRouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T222" Cost="1"/>
+        </XmlRoute>
+      </OutRouteDef>
+      <CraneInfo>
+        <SensorList>
+          <Sensor Offset="5" Description="Occupied" Reference="OCC"/>
+          <Sensor Offset="10" Description="Middle" Reference="MID"/>
+        </SensorList>
+      </CraneInfo>
+      <HomePosition>T214</HomePosition>
+      <FinalDevice>true</FinalDevice>
+    </Crane>
+    <Crane Name="C202" Segment="C2" PLC_ID="202" CommunicatorName="PLC_Crane2" WriteToDB="Always">
+      <ConveyorAddress>202</ConveyorAddress>
+      <CraneAddress Shelve="0" Travel="202" Height="0" Depth="0"/>
+      <Shelve>
+        <short>21</short>
+        <short>22</short>
+      </Shelve>
+      <OutRouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T221" Cost="1"/>
+        </XmlRoute>
+      </OutRouteDef>
+      <CraneInfo>
+        <SensorList>
+          <Sensor Offset="6" Description="Occupied" Reference="OCC"/>
+          <Sensor Offset="12" Description="Middle" Reference="MID"/>
+        </SensorList>
+      </CraneInfo>
+      <HomePosition>T215</HomePosition>
+      <FinalDevice>true</FinalDevice>
+    </Crane>
+
+    <Crane Name="C301" Segment="S3" PLC_ID="301" CommunicatorName="PLC_Crane3" WriteToDB="Always">
+      <ConveyorAddress>301</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <CraneAddress Shelve="0" Travel="301" Height="0" Depth="0"/>
+      <Shelve>
+        <short>32</short>
+      </Shelve>
+      <OutRouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T041" Cost="1"/>
+          <XmlRouteNode Next="T042" Cost="1"/>
+        </XmlRoute>
+      </OutRouteDef>
+      <CraneInfo>
+        <SensorList>
+          <Sensor Offset="5" Description="Occupied" Reference="OCC"/>
+          <Sensor Offset="6" Description="Middle" Reference="MID"/>
+        </SensorList>
+      </CraneInfo>
+      <HomePosition>T038</HomePosition>
+      <FinalDevice>false</FinalDevice>
+    </Crane>
+
+  </CraneList>
+
+  <!-- Conveyors -->
+  <ConveyorList>
+
+    <Conveyor Name="T013" Segment="T01" PLC_ID="013" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="Conveyor">
+      <XmlRouteNode Next="T014" Cost="1"/>      
+      <ConveyorAddress>013</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="001021" Offset="20" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="8" Description="Occupied" Reference="32B1"/>
+          <Sensor Offset="9" Description="Aligned" Reference="32B2"/>
+          <Sensor Offset="10" Description="Bottom" Reference="33B2"/>
+          <Sensor Offset="11" Description="Top" Reference="33B1"/>
+        </SensorList>
+      </ConveyorInfo>    
+    </Conveyor>
+
+    <Conveyor Name="T014" Segment="T01" PLC_ID="014" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="ConveyorJunction">
+      <ConveyorAddress>014</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="001031" Offset="30" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="16" Description="Occupied" Reference="32B1"/>
+          <Sensor Offset="17" Description="Aligned" Reference="32B2"/>
+          <Sensor Offset="18" Description="Bottom" Reference="33B2"/>
+          <Sensor Offset="19" Description="Top" Reference="33B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T015" Cost="1"/>
+          <XmlRouteNode Next="T021" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+    </Conveyor>
+
+    <Conveyor Name="T015" Segment="T01" PLC_ID="015" CommunicatorName="PLC_Conveyor" WriteToDB="Never" xsi:type="ConveyorOutputDefault">
+      <ConveyorAddress>015</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="001041" Offset="40" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="24" Description="Occupied" Reference="32B1"/>
+          <Sensor Offset="25" Description="Aligned" Reference="32B2"/>
+          <Sensor Offset="26" Description="Bottom" Reference="33B2"/>
+          <Sensor Offset="27" Description="Top" Reference="33B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T021" Segment="T02A" PLC_ID="021" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T022" Cost="1"/>
+      <ConveyorAddress>021</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="002111" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T022" Segment="T02A" PLC_ID="022" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T023" Cost="1"/>
+      <ConveyorAddress>022</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="002121" Offset="20" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T023" Segment="T02A" PLC_ID="023" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T024" Cost="1"/>
+      <ConveyorAddress>023</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="002131" Offset="30" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T024" Segment="T02A" PLC_ID="024" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T025" Cost="1"/>
+      <ConveyorAddress>024</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="002141" Offset="40" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T025" Segment="T02B" PLC_ID="025" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorJunction">
+      <ConveyorAddress>025</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="002201" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T031" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+    </Conveyor>TZ
+
+    <Conveyor Name="T031" Segment="T03A" PLC_ID="031" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorJunction">
+      <ConveyorAddress>031</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003111" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T032" Cost="1"/>
+          <XmlRouteNode Next="T111" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+    </Conveyor>
+
+    <Conveyor Name="T032" Segment="T03B" PLC_ID="032" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T033" Cost="1"/>
+      <ConveyorAddress>032</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003211" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T033" Segment="T03C" PLC_ID="033" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T034" Cost="1"/>
+      <ConveyorAddress>033</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003311" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T034" Segment="T03D" PLC_ID="034" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T035" Cost="1"/>
+      <ConveyorAddress>034</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003411" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T035" Segment="T03E" PLC_ID="035" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorJunction">
+      <ConveyorAddress>035</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003511" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T036" Cost="1"/>
+          <XmlRouteNode Next="T211" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+    </Conveyor>
+
+    <Conveyor Name="T036" Segment="T03F" PLC_ID="036" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T037" Cost="1"/>
+      <ConveyorAddress>036</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003611" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T037" Segment="T03G" PLC_ID="037" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T038" Cost="1"/>
+      <ConveyorAddress>037</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003711" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T038" Segment="T03H" PLC_ID="038" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="C301" Cost="1"/>
+      <ConveyorAddress>038</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="003811" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="038" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T041" Segment="T04A" PLC_ID="041" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIOAndOutput">
+      <ConveyorAddress>041</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="004111" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="041" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T042" Segment="T04B" PLC_ID="042" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIOAndOutput">
+      <ConveyorAddress>042</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="004211" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="042" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T111" Segment="T11A" PLC_ID="111" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T112" Cost="1"/>
+      <ConveyorAddress>111</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="011111" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T112" Segment="T11A" PLC_ID="112" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T113" Cost="1"/>
+      <ConveyorAddress>112</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="011121" Offset="20" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T113" Segment="T11A" PLC_ID="113" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T114" Cost="1"/>
+      <ConveyorAddress>113</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="011131" Offset="30" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T114" Segment="T11A" PLC_ID="114" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="C101" Cost="1"/>
+      <ConveyorAddress>114</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="011141" Offset="40" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T115" Cost="1"/>
+          <XmlRouteNode Next="C101" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+      <CraneAddress Shelve="0" Travel="114" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T115" Segment="T11B" PLC_ID="115" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="C102" Cost="1"/>
+      <ConveyorAddress>115</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="011211" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="115" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T121" Segment="T12A" PLC_ID="121" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="T122" Cost="1"/>
+      <ConveyorAddress>121</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022111" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="121" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T122" Segment="T12B" PLC_ID="122" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="T123" Cost="1"/>
+      <ConveyorAddress>122</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022121" Offset="20" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="122" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T123" Segment="T12B" PLC_ID="123" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T124" Cost="1"/>
+      <ConveyorAddress>123</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022131" Offset="30" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T124" Segment="T12B" PLC_ID="124" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T125" Cost="1"/>
+      <ConveyorAddress>124</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022141" Offset="40" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T125" Segment="T12B" PLC_ID="125" CommunicatorName="PLC_Conveyor" WriteToDB="Always" AcumulationMark="true" xsi:type="ConveyorJunction">
+      <ConveyorAddress>125</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022211" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T033" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+    </Conveyor>
+
+    <Conveyor Name="T211" Segment="T21A" PLC_ID="211" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T212" Cost="1"/>
+      <ConveyorAddress>211</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="021111" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T212" Segment="T21A" PLC_ID="212" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T213" Cost="1"/>
+      <ConveyorAddress>212</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="021121" Offset="20" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T213" Segment="T21A" PLC_ID="213" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T214" Cost="1"/>
+      <ConveyorAddress>213</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="021131" Offset="30" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T214" Segment="T21A" PLC_ID="214" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="C201" Cost="1"/>
+      <ConveyorAddress>214</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="021141" Offset="40" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T215" Cost="1"/>
+          <XmlRouteNode Next="C201" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+      <CraneAddress Shelve="0" Travel="214" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T215" Segment="T21B" PLC_ID="215" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="C202" Cost="1"/>
+      <ConveyorAddress>215</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="021211" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="215" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T221" Segment="T22A" PLC_ID="221" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="T222" Cost="1"/>
+      <ConveyorAddress>221</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022111" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="221" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T222" Segment="T22B" PLC_ID="222" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
+      <XmlRouteNode Next="T223" Cost="1"/>
+      <ConveyorAddress>222</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022121" Offset="20" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <CraneAddress Shelve="0" Travel="222" Height="0" Depth="1"/>
+    </Conveyor>
+
+    <Conveyor Name="T223" Segment="T22B" PLC_ID="223" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T224" Cost="1"/>
+      <ConveyorAddress>223</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022131" Offset="30" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T224" Segment="T22B" PLC_ID="224" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
+      <XmlRouteNode Next="T225" Cost="1"/>
+      <ConveyorAddress>224</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022141" Offset="40" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+    </Conveyor>
+
+    <Conveyor Name="T225" Segment="T22B" PLC_ID="225" CommunicatorName="PLC_Conveyor" AcumulationMark="true" WriteToDB="Always" xsi:type="ConveyorJunction">
+      <ConveyorAddress>225</ConveyorAddress>
+      <FLocation X="10" Y="10" Z="10"/>
+      <ConveyorInfo>
+        <AlarmList>
+          <ALARM ID="022211" Offset="10" Range="10"/>
+        </AlarmList>
+        <SensorList>
+          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+        </SensorList>
+      </ConveyorInfo>
+      <RouteDef>
+        <XmlRoute>
+          <XmlRouteNode Next="T037" Cost="1"/>
+        </XmlRoute>
+      </RouteDef>
+    </Conveyor>
+
+  </ConveyorList>
+
+  <!-- Strategies -->
+  <StrategyList>
+
+    <BasicStrategy Name="Strategy-C101-C102" xsi:type="StrategyDoubleForkCrane">
+      <Crane1Name>C101</Crane1Name>
+      <Crane2Name>C102</Crane2Name>
+      <LinkedInputConveyors>
+        <LinkedConveyor>
+          <ConveyorCrane1Name>T114</ConveyorCrane1Name>
+          <ConveyorCrane2Name>T115</ConveyorCrane2Name>
+        </LinkedConveyor>
+      </LinkedInputConveyors>
+    </BasicStrategy>
+
+    <BasicStrategy Name="Strategy-C201-C202" xsi:type="StrategyDoubleForkCrane">
+      <Crane1Name>C201</Crane1Name>
+      <Crane2Name>C202</Crane2Name>
+      <LinkedInputConveyors>
+        <LinkedConveyor>
+          <ConveyorCrane1Name>T214</ConveyorCrane1Name>
+          <ConveyorCrane2Name>T215</ConveyorCrane2Name>
+        </LinkedConveyor>
+      </LinkedInputConveyors>
+    </BasicStrategy>
+
+    <BasicStrategy Name="Strategy-C301" xsi:type="StrategyCrane">
+      <CraneName>C301</CraneName>
+    </BasicStrategy>
+
+    <BasicStrategy Name="StrategyG" xsi:type="StrategyGeneral">
+      <CommunicatorName>PLC_Conveyor</CommunicatorName>
+    </BasicStrategy>
+
+  </StrategyList>
+
+</BasicWarehouse>

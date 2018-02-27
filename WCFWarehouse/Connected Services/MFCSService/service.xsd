@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Database" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Warehouse.ConveyorUnits" />
+  <xs:element name="UIRegister">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIRegisterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIUnRegister">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="communicatorName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIUnRegisterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="remote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="automatic" type="xs:boolean" />
+        <xs:element minOccurs="0" name="run" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Reset">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="segment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="segment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoOn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="segment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AutoOff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="segment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LongTermBlockOn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="segment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RebuildRoutes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ignoreBlocked" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RouteExists">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="target" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isSimpleCommand" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RouteExistsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RouteExistsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LongTermBlockOff">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="segment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetClock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="segment" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceIDChanged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Database" minOccurs="0" name="place" nillable="true" type="q1:PlaceID" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIConveyorBasicUINotify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Warehouse.ConveyorUnits" minOccurs="0" name="c" nillable="true" type="q2:ConveyorBasicInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UIAddEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Database" minOccurs="0" name="s" type="q3:Event.EnumSeverity" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Database" minOccurs="0" name="t" type="q4:Event.EnumType" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SystemMode">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="remote" type="xs:boolean" />
+        <xs:element minOccurs="0" name="automatic" type="xs:boolean" />
+        <xs:element minOccurs="0" name="run" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

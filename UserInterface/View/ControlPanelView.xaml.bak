@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="UserInterface.View.ControlPanelView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        xmlns:vm="clr-namespace:UserInterface.ViewModel"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+        d:DesignWidth="758.959" d:DesignHeight="330.13">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,-3,0,0" Grid.Column="0">
+            <GroupBox Header="Mode" VerticalAlignment="Top">
+                <StackPanel Orientation="Horizontal" DataContext="{Binding Main, Source={StaticResource Locator}}">
+                    <CheckBox Content="WMS" MinWidth="100" FontWeight="Bold" IsChecked="{Binding Warehouse.SteeringCommands.RemoteMode, Mode=TwoWay}"></CheckBox>
+                    <CheckBox Content="AUTO" MinWidth="100" FontWeight="Bold" IsChecked="{Binding Warehouse.SteeringCommands.AutomaticMode, Mode=TwoWay}"></CheckBox>
+                    <CheckBox Content="RUN" MinWidth="100" FontWeight="Bold" IsChecked="{Binding Warehouse.SteeringCommands.Run, Mode=TwoWay}"></CheckBox>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <ItemsControl 
+            ItemsSource="{Binding DeviceList, Mode=OneWay}" 
+            HorizontalAlignment="Right"
+            Grid.Column="1">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10,0,0,0" >
+                        <Rectangle RadiusX="4" RadiusY="4" Fill="{Binding StateView}" Height="6" VerticalAlignment="Stretch"/>
+                        <Button
+                            Content="{Binding Content}" 
+                            MinWidth="100" 
+                            MinHeight="50"
+                            Margin="0,3,0,0"
+                            Command="{Binding CmdReset}">
+                            <Button.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Info" Command="{Binding CmdInfo}"/>
+                                    <MenuItem Header="Set time" Command="{Binding CmdSetClock}"/>
+                                    <MenuItem Header="Reset" Command="{Binding CmdReset}"/>
+                                    <MenuItem Header="Auto on" Command="{Binding CmdAutoOn}"/>
+                                    <MenuItem Header="Auto off" Command="{Binding CmdAutoOff}"/>
+                                </ContextMenu>
+                            </Button.ContextMenu>
+                        </Button>
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</UserControl>

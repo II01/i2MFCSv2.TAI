@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using System.Collections.ObjectModel;
+using UserInterface.Services;
+using UserInterface.Messages;
+using Infralution.Localization.Wpf;
+using System.Globalization;
+using Database;
+
+namespace UserInterface.ViewModel
+{
+    public sealed class MaterialViewModel: ViewModelBase
+    {
+
+        private bool _enabledMaterial;
+        private bool _enabledLocation;
+        private MaterialID _material;
+        private string _location;
+
+        public bool EnabledMaterial
+        {
+            get { return _enabledMaterial; }
+            set
+            {
+                if (_enabledMaterial != value)
+                {
+                    _enabledMaterial = value;
+                    RaisePropertyChanged("EnabledMaterial");
+                }
+            }
+        }
+
+        public bool EnabledLocation
+        {
+            get { return _enabledLocation; }
+            set
+            {
+                if (_enabledLocation != value)
+                {
+                    _enabledLocation = value;
+                    RaisePropertyChanged("EnabledLocation");
+                }
+            }
+        }
+        public string Location
+        {
+            get { return _location; }
+            set
+            {
+                if (_location != value)
+                {
+                    _location = value;
+                    RaisePropertyChanged("Location");
+                }
+            }
+        }
+
+        public int ID
+        {
+            get { return _material.ID;  }
+            set
+            {
+                if(_material.ID != value)
+                {
+                    _material.ID = value;
+                    RaisePropertyChanged("ID");
+                }
+            }
+        }
+
+        public int Size
+        {
+            get { return _material.Size; }
+            set
+            {
+                if( _material.Size != value)
+                {
+                    _material.Size= value;
+                    RaisePropertyChanged("Size");
+                }
+            }
+        }
+
+        public int Weight
+        {
+            get { return _material.Weight; }
+            set
+            {
+                if (_material.Weight!= value)
+                {
+                    _material.Weight = value;
+                    RaisePropertyChanged("Weight");
+                }
+            }
+        }
+
+        public MaterialViewModel()
+        {
+            _material = new MaterialID();
+        }
+
+    }
+}

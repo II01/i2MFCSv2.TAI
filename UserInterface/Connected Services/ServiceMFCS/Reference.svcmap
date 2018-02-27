@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="affffa83-85db-4cd1-9dd6-52a80e955061" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:9000/MFCS/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="51f4d89a-f57b-478e-a1b2-1aebaed1384a" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="7839e241-1a12-4c96-9b68-64966c8efd6a" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="058866cf-8e3c-423d-9752-824677205b91" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+    <MetadataFile FileName="Telegrams.xsd" MetadataType="Schema" ID="14efa0d7-d301-4c7f-b04a-007070c48059" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+    <MetadataFile FileName="Warehouse.ConveyorUnits.xsd" MetadataType="Schema" ID="520ad898-f340-41f0-a6b3-825563f76b38" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="391619cb-bb4e-459e-8e22-b5d95bca697b" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+    <MetadataFile FileName="System.Collections.xsd" MetadataType="Schema" ID="09f09228-a997-44c0-8a69-982074b20078" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+    <MetadataFile FileName="Database.xsd" MetadataType="Schema" ID="79d29f0b-cacb-4616-831e-0cbd91a35b0a" SourceId="1" SourceUrl="net.tcp://localhost:9000/MFCS/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

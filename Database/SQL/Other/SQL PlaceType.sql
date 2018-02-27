@@ -1,0 +1,7 @@
+﻿
+USE MFCS
+UPDATE dbo.PlaceID
+SET Size = 999 WHERE (ID LIKE 'W:5%') 
+
+SELECT * FROM dbo.PlaceID
+WHERE ID LIKE 'W:5%'

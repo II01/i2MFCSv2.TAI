@@ -1,0 +1,273 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.Messaging;
+using System.Collections.ObjectModel;
+using UserInterface.Services;
+using UserInterface.Messages;
+using Infralution.Localization.Wpf;
+using System.Globalization;
+using Database;
+using System.Windows;
+using System.Windows.Media;
+using GalaSoft.MvvmLight.Ioc;
+using Warehouse.Model;
+
+namespace UserInterface.ViewModel
+{
+    public enum DeviceDesignation { Conveyor, Crane1, Crane2, Crane3, Shuttle4, Shuttle5};
+    public enum DeviceState { None, Offline, Manual, Alarm, AutoOff, AutoOn}
+
+    public sealed class ControlPanelDevice: ViewModelBase
+    {
+        private string _stateView;
+        private DeviceState _deviceState = DeviceState.None;
+        public string Content{ get; set; }
+        public string DeviceID { get; set; }
+        public ICommand CmdInfo { get; set; }
+        public ICommand CmdReset { get; set; }
+        public ICommand CmdAutoOn { get; set; }
+        public ICommand CmdAutoOff { get; set; }
+        public ICommand CmdSetClock { get; set; }
+
+        public string StateView
+        {
+            get { return _stateView; }
+            set
+            {
+                if (_stateView != value)
+                {
+                    _stateView = value;
+                    RaisePropertyChanged("StateView");
+                }
+            }
+        }
+
+        public DeviceState DeviceState
+        {
+            get { return _deviceState; }
+            set
+            {
+                if( _deviceState != value)
+                {
+                    _deviceState = value;
+                    RaisePropertyChanged("DeviceState");
+                    switch(_deviceState)
+                    {
+                        case DeviceState.Alarm:
+                            StateView = "Red";
+                            break;
+                        case DeviceState.Manual:
+                            StateView = "DarkGray";
+                            break;
+                        case DeviceState.AutoOff:
+                            StateView = "Yellow";
+                            break;
+                        case DeviceState.AutoOn:
+                            StateView = "Green";
+                            break;
+                        default:
+                            StateView = "LightGray";
+                            break;
+                    }
+                }
+            }
+        }
+
+        public ControlPanelDevice()
+        {
+        }
+    }
+
+    public sealed class ControlPanelViewModel : ViewModelBase
+    {
+        private ObservableCollection<ControlPanelDevice> _deviceList;
+
+        private bool _toggle;
+        public ICommand CmdRemoteButton { get; set; }
+
+        public bool Toggle
+        {
+            get { return _toggle; }
+            set
+            {
+                if (_toggle != value)
+                {
+                    _toggle = value;
+                    RaisePropertyChanged("Toggle");
+                }
+            }
+        }
+
+        public ObservableCollection<ControlPanelDevice> DeviceList
+        {
+            get { return _deviceList; }
+            set
+            {
+                if (_deviceList != value)
+                {
+                    _deviceList = value;
+                    RaisePropertyChanged("DeviceList");
+                }
+            }
+        }
+
+        public ControlPanelViewModel()
+        {
+            CmdRemoteButton = new RelayCommand(() => ExecuteButton());
+
+            DeviceList = new ObservableCollection<ControlPanelDevice>();
+            DeviceList.Add(new ControlPanelDevice
+            {
+                Content = "Conveyor",
+                CmdInfo = new RelayCommand(() => ExecuteInfo(DeviceDesignation.Conveyor)),
+                CmdReset = new RelayCommand(() => ExecuteReset(DeviceDesignation.Conveyor)),
+                CmdAutoOn = new RelayCommand(() => ExecuteAutoOn(DeviceDesignation.Conveyor)),
+                CmdAutoOff = new RelayCommand(() => ExecuteAutoOff(DeviceDesignation.Conveyor)),
+                CmdSetClock = new RelayCommand(() => ExecuteSetClock(DeviceDesignation.Conveyor)),
+                DeviceState = DeviceState.Alarm
+            });
+            DeviceList.Add(new ControlPanelDevice
+            {
+                Content = "Crane 1",
+                CmdInfo = new RelayCommand(() => ExecuteInfo(DeviceDesignation.Crane1)),
+                CmdReset = new RelayCommand(() => ExecuteReset(DeviceDesignation.Crane1)),
+                CmdAutoOn = new RelayCommand(() => ExecuteAutoOn(DeviceDesignation.Crane1)),
+                CmdAutoOff = new RelayCommand(() => ExecuteAutoOff(DeviceDesignation.Crane1)),
+                CmdSetClock = new RelayCommand(() => ExecuteSetClock(DeviceDesignation.Conveyor)),
+                DeviceState = DeviceState.Manual
+            });
+            DeviceList.Add(new ControlPanelDevice
+            {
+                Content = "Crane 2",
+                CmdInfo = new RelayCommand(() => ExecuteInfo(DeviceDesignation.Crane2)),
+                CmdReset = new RelayCommand(() => ExecuteReset(DeviceDesignation.Crane2)),
+                CmdAutoOn = new RelayCommand(() => ExecuteAutoOn(DeviceDesignation.Crane2)),
+                CmdAutoOff = new RelayCommand(() => ExecuteAutoOff(DeviceDesignation.Crane2)),
+                CmdSetClock = new RelayCommand(() => ExecuteSetClock(DeviceDesignation.Conveyor)),
+                DeviceState = DeviceState.Offline
+            });
+            DeviceList.Add(new ControlPanelDevice
+            {
+                Content = "Crane 3",
+                CmdInfo = new RelayCommand(() => ExecuteInfo(DeviceDesignation.Crane3)),
+                CmdReset = new RelayCommand(() => ExecuteReset(DeviceDesignation.Crane3)),
+                CmdAutoOn = new RelayCommand(() => ExecuteAutoOn(DeviceDesignation.Crane3)),
+                CmdAutoOff = new RelayCommand(() => ExecuteAutoOff(DeviceDesignation.Crane3)),
+                CmdSetClock = new RelayCommand(() => ExecuteSetClock(DeviceDesignation.Conveyor)),
+                DeviceState = DeviceState.AutoOn
+            });
+            DeviceList.Add(new ControlPanelDevice
+            {
+                Content = "Shuttle 4",
+                CmdInfo = new RelayCommand(() => ExecuteInfo(DeviceDesignation.Shuttle4)),
+                CmdReset = new RelayCommand(() => ExecuteReset(DeviceDesignation.Shuttle4)),
+                CmdAutoOn = new RelayCommand(() => ExecuteAutoOn(DeviceDesignation.Shuttle4)),
+                CmdAutoOff = new RelayCommand(() => ExecuteAutoOff(DeviceDesignation.Shuttle4)),
+                CmdSetClock = new RelayCommand(() => ExecuteSetClock(DeviceDesignation.Conveyor)),
+                DeviceState = DeviceState.AutoOff
+            });
+            DeviceList.Add(new ControlPanelDevice
+            {
+                Content = "Shuttle 5",
+                CmdInfo = new RelayCommand(() => ExecuteInfo(DeviceDesignation.Shuttle5)),
+                CmdReset = new RelayCommand(() => ExecuteReset(DeviceDesignation.Shuttle5)),
+                CmdAutoOn = new RelayCommand(() => ExecuteAutoOn(DeviceDesignation.Shuttle5)),
+                CmdAutoOff = new RelayCommand(() => ExecuteAutoOff(DeviceDesignation.Shuttle5)),
+                CmdSetClock = new RelayCommand(() => ExecuteSetClock(DeviceDesignation.Conveyor)),
+                DeviceState = DeviceState.Alarm
+            });
+        }
+
+        public void ExecuteInfo(DeviceDesignation device)
+        {
+            BasicWarehouse _warehouse;
+
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+
+            switch( device )
+            {
+                case DeviceDesignation.Conveyor:
+                    _warehouse.SegmentList.ForEach(p => p.Info(0));
+                    break;
+                default:
+                    break;
+            }
+        }
+   
+
+        public void ExecuteReset(DeviceDesignation device)
+        {
+            BasicWarehouse _warehouse;
+
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+
+            switch (device)
+            {
+                case DeviceDesignation.Conveyor:
+                    _warehouse.SegmentList.ForEach(p => p.Reset(0));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void ExecuteAutoOn(DeviceDesignation device)
+        {
+            BasicWarehouse _warehouse;
+
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+
+            switch (device)
+            {
+                case DeviceDesignation.Conveyor:
+                    _warehouse.SegmentList.ForEach(p => p.AutomaticOn(0));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public void ExecuteAutoOff(DeviceDesignation device)
+        {
+            BasicWarehouse _warehouse;
+
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+
+            switch (device)
+            {
+                case DeviceDesignation.Conveyor:
+                    _warehouse.SegmentList.ForEach(p => p.AutomaticOff(0));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        public void ExecuteSetClock(DeviceDesignation device)
+        {
+            BasicWarehouse _warehouse;
+
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+
+            switch (device)
+            {
+                case DeviceDesignation.Conveyor:
+                    _warehouse.SegmentList.ForEach(p => p.SetClock(0));
+                    break;
+                default:
+                    break;
+            }
+        }
+        public void ExecuteButton()
+        {
+            SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse.SteeringCommands.RemoteMode = !SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse.SteeringCommands.RemoteMode;
+        }
+    }
+}

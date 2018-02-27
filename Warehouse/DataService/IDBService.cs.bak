@@ -1,0 +1,58 @@
+﻿using System;
+using System.Collections.Generic;
+using Database;
+
+namespace Warehouse.DataService
+{
+
+    public interface IDBService
+    {
+        SimpleSegmentCommand FindSimpleSegmentCommand(string segment);
+        void TestFillReck(string reckLike, int num);
+
+        void TestToOut(string reckLike, int num);
+
+
+
+        SimpleCraneCommand FindSimpleCraneCommandByID(int id);
+        SimpleConveyorCommand FindSimpleConveyorCommandByID(int id);
+        Command FindCommandByID(int id);
+
+        void AddEvent(Event.EnumSeverity s, Event.EnumType t, string str, DateTime dt);
+
+
+        void AddSimpleCommand(SimpleCommand cmd);
+
+        void UpdateSimpleCommand(SimpleCommand cmd);
+
+        SimpleConveyorCommand FindFirstFastConveyorSimpleCommand(List<string> devices, bool automatic);
+
+        SimpleCraneCommand FindFirstFastSimpleCraneCommand(string unit, bool automatic);
+
+
+        SimpleConveyorCommand FindFirstSimpleConveyorCommand(int material, string source, bool automatic);
+
+
+        SimpleCraneCommand FindFirstSimpleCraneCommand(string unit, bool automatic);
+
+        Command FindFirstCommandStillInWarehouse(List<short> shelve, bool automatic);
+        CommandMaterial FindFirstCommand(int material, bool automatic);
+
+        void UpdateCommand(Command cmd);
+
+        Place MaterialCreate(string place, int material, bool create);
+
+        Place FindPlace(string source);
+
+        void MaterialDelete(string place, int material);
+
+        void InitialNotify(string source, int material);
+
+        void MaterialMove(int material, string source, string target);
+        PlaceID FindPlaceID(string source);
+
+        Place FindMaterial(int? material);
+
+        MaterialID FindMaterialID(int material, bool create);
+    }
+}

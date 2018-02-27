@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="BasicWarehouse" nillable="true" type="BasicWarehouse" />
+  <xs:complexType name="BasicWarehouse">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="StrategyActive" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TxtLog" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicatorList" type="ArrayOfBasicCommunicator" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SegmentList" type="ArrayOfSegment" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CraneList" type="ArrayOfCrane" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConveyorList" type="ArrayOfConveyor" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StrategyList" type="ArrayOfBasicStrategy" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WMS" type="BasicWMS" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfBasicCommunicator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicCommunicator" nillable="true" type="BasicCommunicator" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BasicCommunicator" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="RefreshTimeSeconds" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SendTimeOutSeconds" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RcvTimeOutSeconds" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Version" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="KeepALiveTimeSeconds" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="PLC_ID" type="xs:short" use="required" />
+    <xs:attribute name="MFCS_ID" type="xs:short" use="required" />
+  </xs:complexType>
+  <xs:complexType name="EmptyCommunicator">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BasicCommunicator" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Communicator">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BasicCommunicator">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="StringSendIPEndPoint" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="StringRcvIPEndPoint" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSegment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Segment" nillable="true" type="Segment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Segment" abstract="true">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="CommunicatorName" type="xs:string" />
+    <xs:attribute name="PLC_ID" type="xs:short" use="required" />
+  </xs:complexType>
+  <xs:complexType name="SegmentMainPanel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Segment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="SegmentInfo" type="ConveyorInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConveyorInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ConveyorBasicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="StateList" type="ArrayOfState" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConveyorBasicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AlarmList" type="ArrayOfALARM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SensorList" type="ArrayOfSensor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfALARM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ALARM" nillable="true" type="ALARM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ALARM">
+    <xs:attribute name="ID" type="xs:int" use="required" />
+    <xs:attribute name="Offset" type="xs:int" use="required" />
+    <xs:attribute name="Range" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSensor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sensor" nillable="true" type="Sensor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Sensor">
+    <xs:attribute name="Offset" type="xs:int" use="required" />
+    <xs:attribute name="Description" type="xs:string" />
+    <xs:attribute name="Reference" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="CraneInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ConveyorBasicInfo" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfState">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="State" nillable="true" type="State" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="State">
+    <xs:attribute name="Offset" type="xs:int" use="required" />
+    <xs:attribute name="Description" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SegmentConveyor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="SegmentMainPanel" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SegmentCrane">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Segment">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="SegmentInfo" type="CraneInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCrane">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Crane" nillable="true" type="Crane" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Crane">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ConveyorBasic">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CraneAddress" type="LPosition" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Shelve" type="ArrayOfShort" />
+          <xs:element minOccurs="0" maxOccurs="1" name="OutRouteDef" type="RouteDef" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CraneInfo" type="CraneInfo" />
+          <xs:element minOccurs="0" maxOccurs="1" name="HomePosition" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="FinalDevice" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConveyorBasic" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="XmlRouteNode" type="XmlRouteNode" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConveyorAddress" type="xs:short" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FLocation" type="FLocation" />
+    </xs:sequence>
+    <xs:attribute name="Segment" type="xs:string" />
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="PLC_ID" type="xs:short" use="required" />
+    <xs:attribute name="WriteToDB" type="WriteToDB" use="required" />
+    <xs:attribute name="CommunicatorName" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="XmlRouteNode">
+    <xs:attribute name="Next" type="xs:string" />
+    <xs:attribute name="Cost" type="xs:double" use="required" />
+  </xs:complexType>
+  <xs:complexType name="FLocation">
+    <xs:attribute name="X" type="xs:int" use="required" />
+    <xs:attribute name="Y" type="xs:int" use="required" />
+    <xs:attribute name="Z" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="WriteToDB">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Never" />
+      <xs:enumeration value="Try" />
+      <xs:enumeration value="Always" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Conveyor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ConveyorBasic">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ConveyorInfo" type="ConveyorInfo" />
+        </xs:sequence>
+        <xs:attribute default="false" name="AcumulationMark" type="xs:boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConveyorOutputDefault">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Conveyor" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConveyorIOAndOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Conveyor">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CraneAddress" type="LPosition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LPosition">
+    <xs:attribute name="Shelve" type="xs:int" use="required" />
+    <xs:attribute name="Travel" type="xs:int" use="required" />
+    <xs:attribute name="Height" type="xs:int" use="required" />
+    <xs:attribute name="Depth" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ConveyorOutput">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Conveyor" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ConveyorJunction">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Conveyor">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="RouteDef" type="RouteDef" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="RouteDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="XmlRoute" type="ArrayOfXmlRouteNode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfXmlRouteNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="XmlRouteNode" nillable="true" type="XmlRouteNode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConveyorIO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ConveyorJunction">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CraneAddress" type="LPosition" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MainPanel">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Conveyor" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfShort">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="short" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfConveyor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Conveyor" nillable="true" type="Conveyor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfBasicStrategy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicStrategy" nillable="true" type="BasicStrategy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BasicStrategy" abstract="true">
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="StrategyGeneral">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BasicStrategy">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CommunicatorName" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StrategyCrane">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BasicStrategy">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CraneName" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StrategyDoubleForkCrane">
+    <xs:complexContent mixed="false">
+      <xs:extension base="BasicStrategy">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Crane1Name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Crane2Name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LinkedInputConveyors" type="ArrayOfLinkedConveyor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLinkedConveyor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinkedConveyor" nillable="true" type="LinkedConveyor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LinkedConveyor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ConveyorCrane1Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConveyorCrane2Name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BasicWMS">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="WMSSimulation" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

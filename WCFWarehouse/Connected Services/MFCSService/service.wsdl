@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MFCSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_INotifyUI_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256>
+                </sp:Basic256>
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict>
+                </sp:Strict>
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Database" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Warehouse.ConveyorUnits" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System.Collections" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Telegrams" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Warehouse.Common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INotifyUI_UIRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:UIRegister" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_UIRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UIRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_UIUnRegister_InputMessage">
+    <wsdl:part name="parameters" element="tns:UIUnRegister" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_UIUnRegister_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UIUnRegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_SetMode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetMode" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_Reset_InputMessage">
+    <wsdl:part name="parameters" element="tns:Reset" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_Info_InputMessage">
+    <wsdl:part name="parameters" element="tns:Info" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_AutoOn_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoOn" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_AutoOff_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutoOff" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_LongTermBlockOn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LongTermBlockOn" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_RebuildRoutes_InputMessage">
+    <wsdl:part name="parameters" element="tns:RebuildRoutes" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_RouteExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:RouteExists" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_RouteExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RouteExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_LongTermBlockOff_InputMessage">
+    <wsdl:part name="parameters" element="tns:LongTermBlockOff" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_SetClock_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetClock" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_PlaceIDChanged_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlaceIDChanged" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_UIConveyorBasicUINotify_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UIConveyorBasicUINotify" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_UIAddEvent_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UIAddEvent" />
+  </wsdl:message>
+  <wsdl:message name="INotifyUI_SystemMode_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SystemMode" />
+  </wsdl:message>
+  <wsdl:portType name="INotifyUI">
+    <wsdl:operation name="UIRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/UIRegister" message="tns:INotifyUI_UIRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotifyUI/UIRegisterResponse" message="tns:INotifyUI_UIRegister_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UIUnRegister">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/UIUnRegister" message="tns:INotifyUI_UIUnRegister_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotifyUI/UIUnRegisterResponse" message="tns:INotifyUI_UIUnRegister_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMode">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/SetMode" message="tns:INotifyUI_SetMode_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Reset">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/Reset" message="tns:INotifyUI_Reset_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/Info" message="tns:INotifyUI_Info_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoOn">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/AutoOn" message="tns:INotifyUI_AutoOn_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutoOff">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/AutoOff" message="tns:INotifyUI_AutoOff_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LongTermBlockOn">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/LongTermBlockOn" message="tns:INotifyUI_LongTermBlockOn_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RebuildRoutes">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/RebuildRoutes" message="tns:INotifyUI_RebuildRoutes_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RouteExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/RouteExists" message="tns:INotifyUI_RouteExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INotifyUI/RouteExistsResponse" message="tns:INotifyUI_RouteExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LongTermBlockOff">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/LongTermBlockOff" message="tns:INotifyUI_LongTermBlockOff_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClock">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/SetClock" message="tns:INotifyUI_SetClock_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlaceIDChanged">
+      <wsdl:input wsaw:Action="http://tempuri.org/INotifyUI/PlaceIDChanged" message="tns:INotifyUI_PlaceIDChanged_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UIConveyorBasicUINotify">
+      <wsdl:output wsaw:Action="http://tempuri.org/INotifyUI/UIConveyorBasicUINotify" message="tns:INotifyUI_UIConveyorBasicUINotify_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UIAddEvent">
+      <wsdl:output wsaw:Action="http://tempuri.org/INotifyUI/UIAddEvent" message="tns:INotifyUI_UIAddEvent_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemMode">
+      <wsdl:output wsaw:Action="http://tempuri.org/INotifyUI/SystemMode" message="tns:INotifyUI_SystemMode_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_INotifyUI" type="tns:INotifyUI">
+    <wsp:PolicyReference URI="#NetTcpBinding_INotifyUI_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="UIRegister">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/UIRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UIUnRegister">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/UIUnRegister" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMode">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/SetMode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Reset">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/Reset" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Info">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/Info" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AutoOn">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/AutoOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AutoOff">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/AutoOff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="LongTermBlockOn">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/LongTermBlockOn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RebuildRoutes">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/RebuildRoutes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RouteExists">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/RouteExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LongTermBlockOff">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/LongTermBlockOff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SetClock">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/SetClock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="PlaceIDChanged">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/PlaceIDChanged" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="UIConveyorBasicUINotify">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/UIConveyorBasicUINotify" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UIAddEvent">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/UIAddEvent" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemMode">
+      <soap12:operation soapAction="http://tempuri.org/INotifyUI/SystemMode" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MFCSService">
+    <wsdl:port name="NetTcpBinding_INotifyUI" binding="tns:NetTcpBinding_INotifyUI">
+      <soap12:address location="net.tcp://localhost:9050/MFCS/" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost:9050/MFCS/</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

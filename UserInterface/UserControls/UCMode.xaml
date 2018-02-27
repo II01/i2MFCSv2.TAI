@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="UserInterface.UserControls.UCMode"
+             ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UserInterface.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="80" d:DesignWidth="120">
+    <UserControl.Resources>
+        <local:ModeToBrush x:Key="ModeToBrush" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>        
+        
+        <StackPanel Grid.Column ="0" Margin="0,0,0,0" >
+            <Rectangle RadiusX="4" RadiusY="4" Height="6" VerticalAlignment="Stretch"
+                       Fill="{Binding StateRun, Converter={StaticResource ModeToBrush}}"/>
+            <Button
+                Content="{Binding CommandSource}" 
+                MinWidth="120" 
+                MinHeight="50"
+                Margin="0,3,0,0"  
+                Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.Start}">
+                <Button.ContextMenu>
+                    <ContextMenu ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}">
+                        <MenuItem Header="{Resx Execute_WMS_commands}" 
+                                  IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"
+                                  Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.ModeWMS}"/>
+                        <MenuItem Header="{Resx Execute_MFCS_commands}" 
+                                  IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"
+                                  Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.ModeMFCS}"/>
+                        <MenuItem Header="{Resx Start}" 
+                                  Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.Start}"/>
+                        <MenuItem Header="{Resx Stop}" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}" 
+                                  Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.Stop}"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column ="1" Margin="10,0,0,0" Visibility="{Binding CommandTypeVisibility, Converter={StaticResource BoolToVisibility}}">
+            <Rectangle RadiusX="4" RadiusY="4" Height="6" VerticalAlignment="Stretch" Visibility="Hidden"
+                       Fill="{Binding StateAuto, Converter={StaticResource ModeToBrush}}"/>
+            <Button
+                Content="{Binding CommandType}" 
+                MinWidth="120" 
+                MinHeight="50"
+                Margin="0,3,0,0"  
+                IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"                
+                Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.ToggleAuto}">
+                <Button.ContextMenu>
+                    <ContextMenu ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}">
+                        <MenuItem Header="{Resx Execute_commands}" 
+                                  IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"                                  
+                                  Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.SetAuto}"/>
+                        <MenuItem Header="{Resx Execute_simple_commands_only}" 
+                                  IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"                                  
+                                  Command="{Binding Command}" CommandParameter="{x:Static local:ModeCommandEnum.SetNotAuto}"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

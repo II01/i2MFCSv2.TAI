@@ -1,0 +1,287 @@
+﻿using Database;
+using GalaSoft.MvvmLight.Command;
+using System;
+using System.Diagnostics;
+using System.Linq;
+using UserInterface.Services;
+using UserInterface.UserControls;
+using Warehouse.ConveyorUnits;
+using Warehouse.Model;
+using Warehouse.Strategy;
+using WCFClients;
+
+namespace UserInterface.ViewModel
+{
+    public sealed class VisuVehicleSingleDeckViewModel: VisuDeviceBasicViewModel
+    {
+        #region members
+        private DataAccessService _dataService;
+        private SegmentCrane _segment;
+        private VisuConveyorViewModel _deck;
+        private DeviceStateEnum _state;
+        private string _location;
+        private int _stateMachine;
+        private string _task;
+        private int _position;
+        #endregion
+
+        #region properties
+        public RelayCommand<DeviceCommandEnum> Command { get; set; }
+        public string Strategy { get; set; }
+        public VisuConveyorViewModel Deck
+        {
+            get { return _deck; }
+            set
+            {
+                if (_deck != value)
+                {
+                    _deck = value;
+                    RaisePropertyChanged("Deck");
+                }
+            }
+        }
+
+        public DeviceStateEnum State
+        {
+            get { return _state; }
+            set
+            {
+                if (_state != value)
+                {
+                    _state = value;
+                    RaisePropertyChanged("State");
+                }
+            }
+        }
+        public string Location
+        {
+            get { return _location; }
+            set
+            {
+                if (_location != value)
+                {
+                    _location = value;
+                    RaisePropertyChanged("Location");
+                }
+            }
+        }
+        public int StateMachine
+        {
+            get { return _stateMachine; }
+            set
+            {
+                if (_stateMachine != value)
+                {
+                    _stateMachine = value;
+                    RaisePropertyChanged("StateMachine");
+                }
+            }
+        }
+        public string Task
+        {
+            get { return _task; }
+            set
+            {
+                if (_task != value)
+                {
+                    _task = value;
+                    RaisePropertyChanged("Task");
+                }
+            }
+        }
+        public int Position
+        {
+            get { return _position; }
+            set
+            {
+                if (_position != value)
+                {
+                    _position = value;
+                    RaisePropertyChanged("Position");
+                }
+            }
+        }
+        #endregion
+
+        #region initialization
+
+        public void InitializeDetails()
+        {
+            try
+            {
+                DetailsAddOrUpdate("MODE", 0, "Mode", "", ResourceReader.GetString("Offline"));
+                DetailsAddOrUpdate("SM", 0, "State machine", "", "");
+                DetailsAddOrUpdate("POS", 0, "Positions", "", "");
+                DetailsAddOrUpdate("POSL", 2, "Logical", "", "");
+                DetailsAddOrUpdate("POSP", 2, "Physical", "", "");
+                if (Deck.Model != null)
+                {
+                    DetailsAddOrUpdate("DECK", 0, (Deck.Model as Crane).Name, "", "");
+                    DetailsAddOrUpdate("TU", 2, "TU", "", "");
+                    DetailsAddOrUpdate("CMD", 2, "Tasks", "", "");
+                    DetailsAddOrUpdate("CMDE", 4, "Execute", "", "");
+                    DetailsAddOrUpdate("CMDB", 4, "Buffer", "", "");
+                    DetailsAddOrUpdate("SENS", 2, "Sensors", "", "");
+                    int i = 0;
+                    if ((Deck.Model as Crane).CraneInfo != null && (Deck.Model as Crane).CraneInfo.SensorList != null)
+                        (Deck.Model as Crane).CraneInfo.SensorList.ForEach(s => DetailsAddOrUpdate(string.Format("SENS_{0}", i++), 4, s.Description, s.Reference, false));
+                }
+            }
+            catch(Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+
+        public override void Initialize(BasicWarehouse warehouse)
+        {
+            try
+            {
+                base.Initialize(warehouse);
+                _dataService = new DataAccessService();
+
+                StrategyCrane strategy = (StrategyCrane)_warehouse.StrategyList.FirstOrDefault(p => p.Name == Strategy);
+                if (strategy != null)
+                {
+                    Deck.Model = _warehouse.Crane.ContainsKey(strategy.CraneName) ? _warehouse.Crane[strategy.CraneName] : null;
+                    if(Deck.Model != null)
+                    {
+                        Deck.DeviceName = (Deck.Model as Crane).Name;
+                        (Deck.Model as Crane).NotifyVM.Add(new Action<ConveyorBasicInfo>((p => OnDataChange(p as CraneInfo))));
+                        _segment = (SegmentCrane)_warehouse.SegmentList.FirstOrDefault(p => p.Name == (Deck.Model as Crane).Segment);
+                    }
+                    InitializeDetails();
+
+                    Command = new RelayCommand<DeviceCommandEnum>((p) => ExecuteCommand(p));
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public VisuVehicleSingleDeckViewModel()
+        {
+            Deck = new VisuConveyorViewModel { };
+        }
+        #endregion
+
+        #region functions
+        public void OnDataChange(CraneInfo info)
+        {
+            try
+            {
+                if (info == null)
+                    throw new UIException("info is null");
+                if (info.Status == null)
+                    throw new UIException("c.CraneInfo.Status is null");
+                if( info.FPosition == null)
+                    throw new UIException("c.CraneInfo.FPosition is null");
+                if (info.LPosition == null)
+                    throw new UIException("c.CraneInfo.LPosition is null");                
+                if(Deck.Model == null)
+                    throw new UIException("Deck.Model is null");
+
+                if (!info.Online)
+                    State = DeviceStateEnum.Offline;
+                else if (info.Status[9])
+                    State = DeviceStateEnum.LongTermBlock;
+                else if (info.Status[1])
+                    State = DeviceStateEnum.Alarm;
+                else if (info.Status[0])
+                    State = DeviceStateEnum.AutoRun;
+                else if (info.Status[7])
+                    State = DeviceStateEnum.Remote;
+                else
+                    State = DeviceStateEnum.Local;
+
+                Position = info.FPosition.X;
+                Location = info.LPosition.R == 0 ? string.Format("T{0:d3}", info.LPosition.X) :
+                                                   string.Format("W:{0:d2}:{1:d2}:{2:d1}:{3:d1}", info.LPosition.R,
+                                                                                                  info.LPosition.X,
+                                                                                                  info.LPosition.Y,
+                                                                                                  info.LPosition.Z);
+                StateMachine = info.StateMachine;
+                Task = info.LastCommand;
+//                if (info.LastCommand != null && info.LastCommand.Status < Database.SimpleCommand.EnumStatus.Canceled)
+//                    Task = string.Format("{0}: {1}", info.LastCommand.Task.ToString()[0], info.LastCommand.Source);
+//                else
+//                    Task = "";
+
+                Deck.TransportUnit = info.Palette != null ? (int)info.Palette.Barcode : 0;
+                if (info.SensorList != null)
+                {
+                    Deck.Sensor1Value = info.SensorList.Count() > 0 ? info.SensorList[0].Active : false;
+                    Deck.Sensor2Value = info.SensorList.Count() > 1 ? info.SensorList[1].Active : false;
+                    Deck.Sensor3Value = info.SensorList.Count() > 2 ? info.SensorList[2].Active : false;
+                }
+
+                DetailsValueUpdate("MODE", info.Status != null ? StatusToString(info.Online, info.Status[7], info.Status[1], info.Status[0], info.Status[9]) : "");
+                DetailsValueUpdate("SM", info.StateMachine.ToString());
+                DetailsValueUpdate("POSL", Location);
+                DetailsValueUpdate("POSP", info.FPosition != null ? String.Format("X:{0} Y:{1} Z:{2}", info.FPosition.X * 10, info.FPosition.Y * 10, info.FPosition.Z * 10) : "");
+                DetailsValueUpdate("TU", info.Palette != null && info.Palette.Barcode != 0 ? info.Palette.Barcode.ToString() : "");
+                DetailsValueUpdate("CMDE", info.LastCommand);  //CraneCommandToString(info.LastCommand));
+                DetailsValueUpdate("CMDB", info.LastCommand); // CraneCommandToString(info.LastBufferCommand));
+                int i = 0;
+                if (info.SensorList != null)
+                    info.SensorList.ForEach(s => DetailsValueUpdate(string.Format("SENS_{0}", i++), s.Active));
+
+                Deck.DeviceDetails = DeviceDetails;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private void ExecuteCommand(DeviceCommandEnum dc)
+        {
+            try
+            {
+                switch (dc)
+                {
+                    case DeviceCommandEnum.Refresh:
+                        (_warehouse.WCFClient as WCFUIClient).NotifyUIClient.Info(_segment.Name);
+                        break;
+                    case DeviceCommandEnum.Reset:
+                        (_warehouse.WCFClient as WCFUIClient).NotifyUIClient.Reset(_segment.Name);
+                        break;
+                    case DeviceCommandEnum.AutoOn:
+                        (_warehouse.WCFClient as WCFUIClient).NotifyUIClient.AutoOn(_segment.Name);
+                        break;
+                    case DeviceCommandEnum.AutoOff:
+                        (_warehouse.WCFClient as WCFUIClient).NotifyUIClient.AutoOff(_segment.Name);
+                        break;
+                    case DeviceCommandEnum.Home:
+                        _dataService.SimpleCommandAdd(
+                            new SimpleCraneCommand
+                            {
+                                Unit = ((Crane)Deck.Model).Name,
+                                Task = SimpleCommand.EnumTask.Move,
+                                Source = ((Crane)Deck.Model).InConveyor[0].Name,
+                                Material = null,
+                                Time = DateTime.Now,
+                            });
+                        break;
+                    case DeviceCommandEnum.SetTime:
+                        // _segment?.SetClock(0);
+                        break;
+                    case DeviceCommandEnum.LongTermBlock:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        #endregion
+    }
+}

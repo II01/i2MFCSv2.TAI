@@ -1,0 +1,58 @@
+﻿using System;
+using System.Windows.Controls;
+using Telegrams;
+using UserInterface.ViewModel;
+using Warehouse;
+using Warehouse.SimpleCommands;
+using Warehouse.ConveyorUnits;
+using Warehouse.Common;
+
+namespace UserInterface.View
+{
+
+    public class SimpleJoinedCommands
+    {
+        public DateTime Time { get; set; }
+        public int MFCS_ID { get; set; }
+        public string Sender {get; set;}
+
+    }
+    /// <summary>
+    /// Description for AlarmOverviewView.
+    /// </summary>
+    public partial class SimpleCommandsView : UserControl
+
+    {
+        /// <summary>
+        /// Initializes a new instance of the AlarmOverviewView class.
+        /// </summary>
+        public SimpleCommandsView()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_Click_1(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var w = ((SimpleCommandsViewModel)DataContext).Warehouse;
+
+            w.ActiveCommands.Add(new SimpleConveyorCommand
+            {
+                 Command_ID = 2,
+                 Material = 1234,
+                 Source = "T002",
+                 Target = "T003",
+                 Task = SimpleCommand.EnumTask.Move,
+                 Time = DateTime.Now
+            });
+            w.ActiveCommands.Add(new SimpleCraneCommand
+            {
+                Command_ID = 3,
+                Material = 1235,
+                Source = "W:11:11:1:1",
+                Unit = "301",
+                Task = SimpleCommand.EnumTask.Drop,
+                Time = DateTime.Now
+            });
+        }
+    }
+}

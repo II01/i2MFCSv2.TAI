@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Database" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Database" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="PlaceID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Blocked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CommandMaterials" nillable="true" type="tns:ArrayOfCommandMaterial" />
+      <xs:element minOccurs="0" name="CommandMaterialsT" nillable="true" type="tns:ArrayOfCommandMaterial" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Place" nillable="true" type="tns:ArrayOfPlace" />
+      <xs:element minOccurs="0" name="Reserved" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SimpleCommands" nillable="true" type="tns:ArrayOfSimpleCommand" />
+      <xs:element minOccurs="0" name="SimpleConveyorCommands" nillable="true" type="tns:ArrayOfSimpleConveyorCommand" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlaceID" nillable="true" type="tns:PlaceID" />
+  <xs:complexType name="ArrayOfCommandMaterial">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommandMaterial" nillable="true" type="tns:CommandMaterial" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommandMaterial" nillable="true" type="tns:ArrayOfCommandMaterial" />
+  <xs:complexType name="CommandMaterial">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Command">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Material" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="MaterialID" nillable="true" type="tns:MaterialID" />
+          <xs:element minOccurs="0" name="PlaceID" nillable="true" type="tns:PlaceID" />
+          <xs:element minOccurs="0" name="PlaceIDT" nillable="true" type="tns:PlaceID" />
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CommandMaterial" nillable="true" type="tns:CommandMaterial" />
+  <xs:complexType name="Command">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Priority" type="xs:int" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="tns:Command.EnumCommandReason" />
+      <xs:element minOccurs="0" name="SimpleCommands" nillable="true" type="tns:ArrayOfSimpleCommand" />
+      <xs:element minOccurs="0" name="Status" type="tns:Command.EnumCommandStatus" />
+      <xs:element minOccurs="0" name="Task" type="tns:Command.EnumCommandTask" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="WMS_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Command" nillable="true" type="tns:Command" />
+  <xs:simpleType name="Command.EnumCommandReason">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="PLC" />
+      <xs:enumeration value="MFCS" />
+      <xs:enumeration value="Operator" />
+      <xs:enumeration value="LocationEmpty" />
+      <xs:enumeration value="LocationFull" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Command.EnumCommandReason" nillable="true" type="tns:Command.EnumCommandReason" />
+  <xs:complexType name="ArrayOfSimpleCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SimpleCommand" nillable="true" type="tns:SimpleCommand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSimpleCommand" nillable="true" type="tns:ArrayOfSimpleCommand" />
+  <xs:complexType name="SimpleCommand">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="SimpleCommand" nillable="true" type="tns:SimpleCommand" />
+  <xs:simpleType name="Command.EnumCommandStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotActive" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Command.EnumCommandStatus" nillable="true" type="tns:Command.EnumCommandStatus" />
+  <xs:simpleType name="Command.EnumCommandTask">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Move" />
+      <xs:enumeration value="CreateMaterial" />
+      <xs:enumeration value="DeleteMaterial" />
+      <xs:enumeration value="InfoMaterial" />
+      <xs:enumeration value="InfoSlot" />
+      <xs:enumeration value="SegmentInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SegmentOn">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SegmentOff">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SegmentReset">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">13</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SegmentHome">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">14</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CancelCommand">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="InfoCommand">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Command.EnumCommandTask" nillable="true" type="tns:Command.EnumCommandTask" />
+  <xs:complexType name="MaterialID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommandMaterials" nillable="true" type="tns:ArrayOfCommandMaterial" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Movements" nillable="true" type="tns:ArrayOfMovement" />
+      <xs:element minOccurs="0" name="Places" nillable="true" type="tns:Place" />
+      <xs:element minOccurs="0" name="SimpleCommands" nillable="true" type="tns:ArrayOfSimpleCommand" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+      <xs:element minOccurs="0" name="Weight" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MaterialID" nillable="true" type="tns:MaterialID" />
+  <xs:complexType name="ArrayOfMovement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Movement" nillable="true" type="tns:Movement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMovement" nillable="true" type="tns:ArrayOfMovement" />
+  <xs:complexType name="Movement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Material" type="xs:int" />
+      <xs:element minOccurs="0" name="MaterialID" nillable="true" type="tns:MaterialID" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Task" nillable="true" type="tns:EnumMovementTask" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Movement" nillable="true" type="tns:Movement" />
+  <xs:simpleType name="EnumMovementTask">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Create">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Move">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Delete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumMovementTask" nillable="true" type="tns:EnumMovementTask" />
+  <xs:complexType name="Place">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Material" type="xs:int" />
+      <xs:element minOccurs="0" name="MaterialID" nillable="true" type="tns:MaterialID" />
+      <xs:element minOccurs="0" name="Place1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlaceID" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Place" nillable="true" type="tns:Place" />
+  <xs:complexType name="ArrayOfPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Place" nillable="true" type="tns:Place" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlace" nillable="true" type="tns:ArrayOfPlace" />
+  <xs:complexType name="ArrayOfSimpleConveyorCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SimpleConveyorCommand" nillable="true" type="tns:SimpleConveyorCommand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSimpleConveyorCommand" nillable="true" type="tns:ArrayOfSimpleConveyorCommand" />
+  <xs:complexType name="SimpleConveyorCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SimpleCommand">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PlaceID2" nillable="true" type="tns:PlaceID" />
+          <xs:element minOccurs="0" name="Target" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SimpleConveyorCommand" nillable="true" type="tns:SimpleConveyorCommand" />
+  <xs:complexType name="SimpleCraneCommand">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SimpleCommand">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SimpleCraneCommand" nillable="true" type="tns:SimpleCraneCommand" />
+  <xs:simpleType name="Event.EnumSeverity">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Event" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Event.EnumSeverity" nillable="true" type="tns:Event.EnumSeverity" />
+  <xs:simpleType name="Event.EnumType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Material" />
+      <xs:enumeration value="Command" />
+      <xs:enumeration value="Program" />
+      <xs:enumeration value="Exception" />
+      <xs:enumeration value="WMS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Event.EnumType" nillable="true" type="tns:Event.EnumType" />
+</xs:schema>

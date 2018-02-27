@@ -1,0 +1,24 @@
+﻿using System;
+using System.Runtime.Serialization;
+
+namespace Database
+{
+    [Serializable]
+    public class SimpleCommandException : Exception
+    {
+        public SimpleCommandException(string s) : base()
+        { }
+    }
+
+    [DataContract]
+    public partial class SimpleCommand
+    {
+        public enum EnumTask { Move=11, Pick, Drop, Delete = 97, Create, Cancel, Reset, Info, AutoOn, AutoOff };
+        public enum EnumStatus { NotActive=0, Written, InPlc, Canceled, Finished}
+
+    }
+
+
+
+    
+}

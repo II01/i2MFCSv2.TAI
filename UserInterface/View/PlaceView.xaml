@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="UserInterface.View.PlaceView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        xmlns:src="clr-namespace:UserInterface.View"
+        xmlns:vm="clr-namespace:UserInterface.ViewModel"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" d:DesignWidth="758.959" d:DesignHeight="330.13">
+    <Grid Grid.Column="1" Grid.Row="1" Margin="20,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition MinWidth ="200" Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Location:" Grid.Row="0" Margin="0,0,0,10"/>
+        <TextBlock Text="Blocked:" Grid.Row="1" Margin="0,0,0,10"/>
+        <TextBlock Text="Class:" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBox Name = "tbLocation" Grid.Row="0" Grid.Column="2" Margin="0,0,0,10"
+                         Text = "{Binding Path=ID, Mode=OneWay}" IsEnabled="False"/>
+        <CheckBox Name = "cbBlocked" Grid.Row="1" Grid.Column="2" Margin="0,0,0,10"
+                         IsChecked = "{Binding Path=Blocked}" IsEnabled="{Binding Enabled}" />
+        <TextBox Name = "tbSize" Grid.Row="2" Grid.Column="2" Margin="0,0,0,10"
+                         IsEnabled="{Binding Enabled}">
+            <TextBox.Text>
+                <Binding Path="Size" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <vm:InRangeRule Min="1" Max="1"/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="UserInterface.View.SimpleCommandsView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:local="clr-namespace:UserInterface.Auxiliary"
+        xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
+        xmlns:src="clr-namespace:UserInterface.View"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"     
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d ignore"
+        DataContext="{Binding SimpleCommands, Source={StaticResource Locator}}"
+        d:DesignWidth="1000"
+        d:DesignHeight="750">
+
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
+                                        Path=(FrameworkElement.ActualHeight), 
+                                        RelativeSource={RelativeSource AncestorType=UserControl},
+                                        ConverterParameter=-100|1.00}"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+                <TextBlock Text="Simple commands" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
+            </Border>
+        <DataGrid 
+                x:Name="dgSimpleCommands" Grid.Row="1" 
+                dgx:DataGridFilter.IsAutoFilterEnabled="True"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                CanUserAddRows="False"
+                AutoGenerateColumns="False" 
+                IsReadOnly="True"
+                FontSize="{StaticResource BaseFontSize}"
+                ItemsSource="{Binding SimpleCommandList}"
+                SelectedItem ="{Binding SelectedContent}">
+            <DataGrid.Columns >
+                    <DataGridTextColumn Header="ID" Width="80" Binding="{Binding Command_ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="Task" Width="80" Binding="{Binding Task}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="TU" Width="80" Binding="{Binding Material}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="Source" Width="80" Binding="{Binding Source}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="Target" Width="80" Binding="{Binding Target}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="Unit" Width="80" Binding="{Binding Unit}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="Status" Width="80" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="Time" Width="160" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Orientation="Vertical" HorizontalAlignment="Right" Margin="20,0,0,0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="bRefreshCmd" Margin="10,0,0,10" MinWidth="120" Content="Refresh" Command="{Binding RefreshCmd}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="bAddConveyorCmd" Margin="10,0,10,0" MinWidth="120" Content="Add conveyor" Command="{Binding ConveyorCmd}" IsEnabled="{Binding IsEnabledCtrl}"/>
+                    <Button Name="bAddCraneCmd" Margin="0,0,0,0" MinWidth="120" Content="Add vehicle" Command="{Binding CraneCmd}" IsEnabled="{Binding IsEnabledCtrl}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                    <Button Name="bRestart" Margin="0,10,10,10" MinWidth="120" Content="Restart" Command="{Binding RestartCmd}" IsEnabled="{Binding IsEnabledEditDel}"/>
+                    <Button Name="bDelete" Margin="0,10,0,10" MinWidth="120" Content="Delete" Command="{Binding DeleteCmd}" IsEnabled="{Binding IsEnabledEditDel}"/>
+                </StackPanel>
+                <ContentControl x:Name="ccCommand" 
+                        IsEnabled="{Binding IsEnabledField}"
+                        Content="{Binding DetailedContent}"
+                        Margin="20,0,0,0"                       
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Top"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="bCancel" Margin="0,10,10,10" MinWidth="120" Content="Cancel" Command="{Binding Cancel}" Visibility="{Binding IsEnabledCC, Converter={StaticResource BoolToVisibility} }"/>
+                    <Button Name="bConfirm" Margin="0,10,0,10" MinWidth="120" Content="Confirm" Command="{Binding Confirm}" Visibility="{Binding IsEnabledCC, Converter={StaticResource  BoolToVisibility}}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+</UserControl>

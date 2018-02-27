@@ -1,0 +1,214 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
+using System.Collections.ObjectModel;
+using UserInterface.Services;
+using UserInterface.Messages;
+using Infralution.Localization.Wpf;
+using System.Globalization;
+using Database;
+using Warehouse.Model;
+using GalaSoft.MvvmLight.Ioc;
+using System.ComponentModel;
+
+namespace UserInterface.ViewModel
+{
+    public sealed class LocationsViewModel: ViewModelBase
+    {
+
+        #region members
+        private ObservableCollection<LocationViewModel> _locationList;
+        private LocationViewModel _selectedLocation;
+        private LocationViewModel _detailedLocation;
+        private DataAccessService _dataService;
+        private bool _editEnabled;
+        private bool _enabledCC;
+        private BasicWarehouse _warehouse;
+        #endregion
+
+        #region properites
+        public ICommand Edit { get; private set; }
+        public ICommand Confirm { get; private set; }
+        public ICommand Cancel { get; private set; }
+        public ICommand Refresh { get; private set; }
+
+        public ObservableCollection<LocationViewModel> LocationList
+        {
+            get { return _locationList; }
+            set
+            {
+                if (_locationList != value)
+                {
+                    _locationList = value;
+                    RaisePropertyChanged("LocationList");
+                }
+            }
+        }
+
+        public LocationViewModel SelectedLocation
+        {
+            get
+            {
+                return _selectedLocation;
+            }
+            set
+            {
+                if (_selectedLocation != value)
+                {
+                    _selectedLocation = value;
+                    RaisePropertyChanged("SelectedLocation");
+                    if ( _selectedLocation != null)
+                    {
+                        DetailedLocation.ID = SelectedLocation.ID;
+                        DetailedLocation.Blocked = SelectedLocation.Blocked;
+                        DetailedLocation.Size = SelectedLocation.Size;
+                    }
+                }
+            }
+        }
+
+        public LocationViewModel DetailedLocation
+        {
+            get { return _detailedLocation; }
+            set
+            {
+                if (_detailedLocation != value)
+                {
+                    _detailedLocation = value;
+                    RaisePropertyChanged("DetailedLocation");
+                }
+            }
+        }
+
+        public bool EditEnabled
+        {
+            get { return _editEnabled; }
+            set
+            {
+                if(_editEnabled != value)
+                {
+                    _editEnabled = value;
+                    RaisePropertyChanged("EditEnabled");
+                }
+            }
+        }
+        public bool EnabledCC
+        {
+            get { return _enabledCC; }
+            set
+            {
+                if (_enabledCC != value)
+                {
+                    _enabledCC = value;
+                    RaisePropertyChanged("EnabledCC");
+                }
+            }
+        }
+        #endregion
+
+        #region constructor
+        public LocationsViewModel()
+        {
+            _dataService = new DataAccessService();
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+
+            try
+            {
+                LocationList = _dataService.GetLocations();
+            }
+            catch(Exception e)
+            {
+                _warehouse.AddEvent(EnumEventSeverity.Error, EnumEventType.Exception, e.Message);
+            }
+            DetailedLocation = new LocationViewModel();
+
+            EditEnabled = false;
+            EnabledCC = false;
+
+            Edit = new RelayCommand(() => ExecuteEdit(), CanExecuteEdit);
+            Cancel = new RelayCommand(() => ExecuteCancel() , CanExecuteCancel);
+            Confirm = new RelayCommand(() => ExecuteConfirm() , CanExecuteConfirm);
+            Refresh = new RelayCommand(() => ExecuteRefresh());
+        }
+        #endregion
+
+        #region buttons
+        private void ExecuteEdit()
+        {
+            EditEnabled = true;
+            EnabledCC = true;
+        }
+
+        private bool CanExecuteEdit()
+        {
+            return !EditEnabled && (SelectedLocation != null);
+        }
+
+        private void ExecuteCancel()
+        {
+            EditEnabled = false;
+            EnabledCC = false;
+            DetailedLocation.ID = SelectedLocation.ID;
+            DetailedLocation.Blocked = SelectedLocation.Blocked;
+            DetailedLocation.Size = SelectedLocation.Size;
+        }
+        private bool CanExecuteCancel()
+        {
+            return EditEnabled;
+        }
+        private void ExecuteConfirm()
+        {
+            EditEnabled = false;
+            EnabledCC = false;
+            try
+            {
+                _dataService.UpdateLocation(DetailedLocation);
+                SelectedLocation.Blocked = DetailedLocation.Blocked;
+                SelectedLocation.Size = DetailedLocation.Size;
+                _warehouse.AddEvent(EnumEventSeverity.Event, EnumEventType.Material, 
+                                    String.Format("Location changed: id: {0}, blocked: {1}, size: {2}", 
+                                                  DetailedLocation.ID, 
+                                                  DetailedLocation.Blocked, 
+                                                  DetailedLocation.Size));
+                if(SelectedLocation.ID != DetailedLocation.ID)
+                {
+                    try
+                    {
+                        LocationList = _dataService.GetLocations();
+                    }
+                    catch (Exception e)
+                    {
+                        _warehouse.AddEvent(EnumEventSeverity.Error, EnumEventType.Exception, e.Message);
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(EnumEventSeverity.Error, EnumEventType.Exception, e.Message);
+            }
+        }
+        private bool CanExecuteConfirm()
+        {
+            return EditEnabled && DetailedLocation.AllPropertiesValid;
+        }
+        private void ExecuteRefresh()
+        {
+            try
+            {
+                LocationList = _dataService.GetLocations();
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(EnumEventSeverity.Error, EnumEventType.Exception, e.Message);
+            }
+        }
+        #endregion
+    }
+}

@@ -1,0 +1,179 @@
+﻿using Database;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Warehouse.ConveyorUnits;
+
+namespace Warehouse.Model
+{
+    public partial class BasicWarehouse
+    {
+        private List<ConveyorBasic> visited = null;
+
+
+        public class RouteDescription
+        {
+            public ConveyorBasic First { get; set; }
+            public ConveyorBasic Next { get; set; }
+            public ConveyorBasic Final { get; set; }
+
+            public override string ToString()
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat("[{0} : {1} .. {2}]", First.Name, Next.Name, Final.Name);
+                return sb.ToString();
+            }
+        }
+
+
+        public class Route
+        {
+            public List<RouteDescription> Items { get; set; }
+            public double Cost { get; set; }
+            public override string ToString()
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat("Cost = {0}, {1}", Cost, Items[0].ToString());
+                for (int i = 1; i < Items.Count; i++)
+                    sb.AppendFormat(" -> {0}", Items[i].ToString());
+                return sb.ToString();
+            }
+        }
+
+        public void BuildRoutes()
+        {
+            try
+            {
+                visited = new List<ConveyorBasic>();
+                foreach (Crane c in Crane.Values)
+                {
+                    visited.Clear();
+                    var d = BuildRouteCost(c);
+                    if (d.Item2)
+                    {
+                        if (c.OutRouteDef == null)
+                            c.OutRouteDef = new RouteDef();
+                        c.OutRouteDef.FinalRouteCost = d.Item1;
+                    }
+
+                    if (c.OutRouteDef != null)
+                        foreach (Route r in c.OutRouteDef.FinalRouteCost)
+                            AddEvent(Database.Event.EnumSeverity.Event, Database.Event.EnumType.Program, String.Format("New route: {0}, {1}", c.Name, r.ToString()));
+
+                }
+                foreach (ConveyorBasic t in ConveyorList)
+                    if (t is ConveyorJunction)
+                    {
+                        ConveyorJunction cj = t as ConveyorJunction;
+                        visited.Clear();
+                        var d = BuildRouteCost(t);
+                        if (d.Item2)
+                            cj.RouteDef.FinalRouteCost = d.Item1;
+
+                        if (cj.RouteDef.FinalRouteCost != null)
+                            foreach (Route r in cj.RouteDef.FinalRouteCost)
+                                AddEvent(Database.Event.EnumSeverity.Event, Database.Event.EnumType.Program, String.Format("New route: {0}, {1}", cj.Name, r.ToString()));
+                    }
+            }
+            catch (Exception ex)
+            {
+                AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new BasicWarehouseException(String.Format("{0} Warehouse.BuildRoutes failed", Name));
+            }
+        }
+
+
+        private ConveyorBasic FindNextNonConveyor (ConveyorBasic cb)
+        {
+            try
+            {
+                ConveyorBasic res = cb;
+                while (res != null)
+                {
+                    if (res is ConveyorJunction || res is IConveyorIO || res is IConveyorOutput || res is Crane || res is IConveyorDefault || res is ConveyorOutputDefault)
+                        return res;
+                    res = res.Route.Next;
+                }
+                return res;
+            }
+            catch (Exception ex)
+            {
+                AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new BasicWarehouseException(String.Format("{0} Graph.FindNextNonCoveyor failed", cb != null ? cb.Name : "null"));
+            }
+        }
+
+        private Tuple<List<Route>,bool> BuildRouteCost(ConveyorBasic t, int level = 0)
+        {
+
+            if (visited.Contains(t))
+                return new Tuple<List<Route>, bool>(null,false);
+            if (t is ConveyorJunction)
+            {
+                visited.Add(t);
+                ConveyorJunction jt = t as ConveyorJunction;
+                List<Route> newRes = new List<Route>();
+                Tuple<List<Route>, bool> res = null;
+                foreach (RouteNode jt1 in jt.RouteDef.Node)
+                {
+                    ConveyorBasic final = FindNextNonConveyor(jt1.Next);
+                    if (final == null)
+                        res = new Tuple<List<Route>, bool>(new List<Route>(), true);
+                    else
+                        res = BuildRouteCost(final, level+1);
+
+                    if (res.Item2)
+                    {
+                        RouteDescription rd = new RouteDescription { First = jt, Next = jt1.Next, Final = final };
+                        res.Item1.ForEach(p => { p.Items.Insert(0, rd); p.Cost += jt1.Cost; });
+                        res.Item1.ForEach(p => newRes.Add(p));
+                    }
+                }
+                visited.Remove(t);
+                return new Tuple<List<Route>, bool>(newRes, newRes.Count > 0);
+            }
+            else if (t is Crane)
+            {
+                visited.Add(t);
+                Crane jt = t as Crane;
+                List<Route> newRes = new List<Route>();
+
+                // crane could be final location
+                bool shuttle = true;
+                if (jt.Shelve != null && jt.Shelve.Count > 0)
+                {
+                    shuttle = false;
+                    RouteDescription rd = new RouteDescription { First = jt, Next = jt, Final = jt };
+                    newRes.Add(new Route { Items = new List<RouteDescription> { rd } , Cost = 0 });
+                }
+
+                Tuple<List<Route>, bool> res = null;
+
+                if (jt.OutRouteDef != null && jt.OutRouteDef.Node != null)
+                    foreach (RouteNode jt1 in jt.OutRouteDef.Node)
+                    {
+                        ConveyorBasic final = FindNextNonConveyor(jt1.Next);
+                        if (final == null)
+                            res = new Tuple<List<Route>, bool>(new List<Route>(), true);
+                        else
+                            res = BuildRouteCost(final, level+1);
+
+                        if (res.Item2 &&  (level == 0 || shuttle) )  
+                        { 
+                            RouteDescription rd = new RouteDescription { First = jt, Next = jt1.Next, Final = final };
+                            res.Item1.ForEach(p => { p.Items.Insert(0, rd); p.Cost += jt1.Cost; });
+                            res.Item1.ForEach(p => newRes.Add(p));
+                        }
+                    }
+                visited.Remove(t);
+                return new Tuple<List<Route>, bool>(newRes, newRes.Count > 0);
+            }
+            else if (t is IConveyorOutput)
+            {
+                RouteDescription rd = new RouteDescription { First = t, Next = t, Final = t };
+                return new Tuple<List<Route>, bool>(new List<Route> { new Route { Cost = 0, Items = new List<RouteDescription> { rd } } }, true);
+            }
+            throw new BasicWarehouseException("Unknown type in path calculation...");
+        }
+    }
+}

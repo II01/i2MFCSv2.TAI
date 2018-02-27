@@ -1,0 +1,428 @@
+﻿using System;
+using System.Linq;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using System.Collections.ObjectModel;
+using UserInterface.Services;
+using Database;
+using Warehouse.Model;
+using System.Diagnostics;
+
+namespace UserInterface.ViewModel
+{
+    public sealed class CommandsViewModel : ViewModelBase
+    {
+        public enum CommandType { None = 0, Add, Restart, Delete };
+
+        #region members
+
+        private DataAccessService _dataService;
+        private BasicWarehouse _warehouse;
+
+        private bool _isEnabledField;
+        private bool _isEnabledCC;
+
+        private string _generateLoc;
+        private int _generateQuantity;
+
+        private CommandType _selectedCommand;
+        private ObservableCollection<CommandViewModel> _commandList;
+        private ObservableCollection<SimpleCommandViewModel> _simpleCommandList;
+        private CommandViewModel _selectedContent;
+        private CommandViewModel _detailedContent;
+        private CommandViewModel _manageContent;
+        #endregion
+
+        #region properites
+        public RelayCommand GenerateCmd { get; private set; }
+        public RelayCommand GeneratePallets { get; private set; }
+        public RelayCommand RefreshCmd { get; private set; }
+        public RelayCommand AddCmd { get; private set; }
+        public RelayCommand RestartCmd { get; private set; }
+        public RelayCommand DeleteCmd { get; private set; }
+        public RelayCommand Confirm { get; private set; }
+        public RelayCommand Cancel { get; private set; }
+
+        public ObservableCollection<CommandViewModel> CommandList
+        {
+            get { return _commandList; }
+            set
+            {
+                if (_commandList != value)
+                {
+                    _commandList = value;
+                    RaisePropertyChanged("CommandList");
+                }
+            }
+        }
+        public ObservableCollection<SimpleCommandViewModel> SimpleCommandList
+        {
+            get { return _simpleCommandList; }
+            set
+            {
+                if (_simpleCommandList != value)
+                {
+                    _simpleCommandList = value;
+                    RaisePropertyChanged("SimpleCommandList");
+                }
+            }
+        }
+
+        public bool IsEnabledField
+        {
+            get { return _isEnabledField; }
+            set
+            {
+                if (_isEnabledField != value)
+                {
+                    _isEnabledField = value;
+                    RaisePropertyChanged("IsEnabledField");
+                }
+            }
+        }
+        public bool IsEnabledCC
+        {
+            get { return _isEnabledCC; }
+            set
+            {
+                if (_isEnabledCC != value)
+                {
+                    _isEnabledCC = value;
+                    RaisePropertyChanged("IsEnabledCC");
+                }
+            }
+        }
+        public CommandViewModel SelectedContent
+        {
+            get { return _selectedContent; }
+            set
+            {
+                if (_selectedContent != value)
+                {
+                    _selectedContent = value;
+
+                    RaisePropertyChanged("SelectedContent");
+                    try
+                    {
+                        DetailedContent = SelectedContent;
+                        if( DetailedContent != null)
+                            SimpleCommandList = _dataService.GetCommandSimpleCommands(DetailedContent);
+                    }
+                    catch (Exception e)
+                    {
+                        _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
+                                            string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                    }
+                }
+            }
+        }
+
+        public CommandViewModel DetailedContent
+        {
+            get { return _detailedContent; }
+            set
+            {
+                if (_detailedContent != value)
+                {
+                    _detailedContent = value;
+                    RaisePropertyChanged("DetailedContent");
+                }
+            }
+        }
+
+        public string GenerateLoc
+        {
+            get { return _generateLoc; }
+            set
+            {
+                if (value != _generateLoc)
+                {
+                    _generateLoc = value;
+                    RaisePropertyChanged("GenerateLoc");
+                }
+            }
+        }
+
+        public int GenerateQuantity
+        {
+            get { return _generateQuantity; }
+            set
+            {
+                if (value != _generateQuantity)
+                {
+                    _generateQuantity = value;
+                    RaisePropertyChanged("GenerateQuantity");
+                }
+            }
+        }
+        #endregion
+
+        #region initialization
+        public CommandsViewModel()
+        {
+            SimpleCommandList = new ObservableCollection<SimpleCommandViewModel>();
+
+            IsEnabledCC = false;
+            IsEnabledField = false;
+
+            _selectedCommand = CommandType.None;
+            SelectedContent = null;
+
+            GenerateCmd = new RelayCommand(() => ExecuteGenerateCmd());
+            GeneratePallets = new RelayCommand(() => ExecuteGeneratePallets());
+            RefreshCmd = new RelayCommand(() => ExecuteRefresh(), CanExecuteRefresh);
+            AddCmd = new RelayCommand(() => ExecuteAdd(), CanExecuteAdd);
+            RestartCmd = new RelayCommand(() => ExecuteRestart(), CanExecuteRestart);
+            DeleteCmd = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
+            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
+            Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
+        }
+        public void Initialize(BasicWarehouse warehouse)
+        {
+            _warehouse = warehouse;
+            try
+            {
+                _dataService = new DataAccessService();
+                CommandList = _dataService.GetCommands();
+                foreach (CommandViewModel c in CommandList)
+                    c.Initialize(warehouse);
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        #endregion
+
+        #region commands
+        public void ExecuteGenerateCmd()
+        {
+            try
+            {
+                _warehouse.TestToOut(GenerateLoc, GenerateQuantity);
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void ExecuteGeneratePallets()
+        {
+            try
+            {
+                _warehouse.TestFillRack(GenerateLoc, GenerateQuantity);
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void ExecuteRefresh()
+        {
+            try
+            {
+                CommandViewModel cmd = SelectedContent;
+                CommandList = _dataService.GetCommands();
+                foreach (var c in CommandList)
+                    c.Initialize(_warehouse);
+                if( cmd != null )
+                    SelectedContent = CommandList.FirstOrDefault(p => p.ID == cmd.ID);
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public bool CanExecuteRefresh()
+        {
+            try
+            {
+                return !IsEnabledCC;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+        public void ExecuteAdd()
+        {
+            try
+            {
+                IsEnabledCC = true;
+                IsEnabledField = true;
+                _selectedCommand = CommandType.Add;
+                _manageContent = new CommandViewModel { Command = new Command() };
+                _manageContent.Initialize(_warehouse);
+                DetailedContent = _manageContent;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public bool CanExecuteAdd()
+        {
+            try
+            {
+                return !IsEnabledCC;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
+        public void ExecuteRestart()
+        {
+            try
+            {
+                if (SelectedContent != null)
+                {
+                    IsEnabledCC = true;
+                    IsEnabledField = false;
+                    _selectedCommand = CommandType.Restart;
+                    DetailedContent = SelectedContent;
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public bool CanExecuteRestart()
+        {
+            try
+            {
+                return !IsEnabledCC && (SelectedContent != null) && (SelectedContent.Command.Status != EnumCommandStatus.Active);
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+        public void ExecuteDelete()
+        {
+            try
+            {
+                if (SelectedContent != null)
+                {
+                    IsEnabledCC = true;
+                    IsEnabledField = false;
+                    _selectedCommand = CommandType.Delete;
+                    DetailedContent = SelectedContent;
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public bool CanExecuteDelete()
+        {
+            try
+            {
+                return !IsEnabledCC && (SelectedContent != null) && (SelectedContent.Command.Status == EnumCommandStatus.NotActive);
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
+        public void ExecuteCancel()
+        {
+            try
+            {
+                IsEnabledField = false;
+                IsEnabledCC = false;
+                DetailedContent = SelectedContent;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public bool CanExecuteCancel()
+        {
+            try
+            {
+                return IsEnabledCC;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+        public void ExecuteConfirm()
+        {
+            IsEnabledField = false;
+            IsEnabledCC = false;
+
+            try
+            {
+                switch (_selectedCommand)
+                {
+                    case CommandType.Add:
+                        DetailedContent.Time = DateTime.Now;
+                        _dataService.CommandAdd(DetailedContent.Command);
+                        CommandList.Add(DetailedContent);
+                        break;
+                    case CommandType.Restart:
+                        DetailedContent.Time = DateTime.Now;
+                        DetailedContent.Status = Database.EnumCommandStatus.NotActive;
+                        _dataService.CommandUpdate(DetailedContent.Command);
+                        break;
+                    case CommandType.Delete:
+                        DetailedContent.Time = DateTime.Now;
+                        DetailedContent.Status = Database.EnumCommandStatus.Canceled;
+                        _dataService.CommandUpdate(DetailedContent.Command);
+                        break;
+                    default:
+                        break;
+                }
+                DetailedContent = SelectedContent;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public bool CanExecuteConfirm()
+        {
+            try
+            {
+                return IsEnabledCC && (DetailedContent != null) && DetailedContent.AllPropertiesValid;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+        #endregion
+    }
+}

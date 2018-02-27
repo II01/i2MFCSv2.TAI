@@ -1,0 +1,183 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Telegrams;
+using Database;
+using Warehouse.Model;
+using Communication;
+
+namespace Warehouse.ConveyorUnits
+{
+
+
+
+    public class SegmentCrane : Segment
+    {
+        private List<Crane> SegmentCranes { get; set; } 
+        public CraneInfo SegmentInfo { get; set; }
+
+        public override void OnlineTrigger()
+        {
+            if (Communicator.Online() && !_oldOnline)
+            {
+                Startup();
+                DirectVMNotify();
+                SegmentCranes.ForEach(prop => prop.DirectVMNotify());
+            }
+            if (!Communicator.Online() && _oldOnline)
+            {
+                DirectVMNotify();
+                SegmentCranes.ForEach(prop => prop.DirectVMNotify());
+            }
+            _oldOnline = Communicator.Online();
+        }
+
+
+        public override void Startup()
+        {
+            Info(0);
+        }
+
+        public override void Refresh()
+        {
+            base.Refresh();
+            if (!UINotified)
+            {
+                SegmentCranes.ForEach(prop => prop.DirectVMNotify());
+                DirectVMNotify();
+                UINotified = true;    
+            }
+        }
+
+        public override void AutomaticOn(Int32 id)
+        {
+            Communicator.AddSendTelegram(new TelegramCraneStatus
+            {
+                MFCS_ID = id,
+                ID = (short)PLC_ID,
+                Sender = Communicator.MFCS_ID,
+                Receiver = Communicator.PLC_ID,
+                Order = TelegramTransportStatus.ORDER_AUTOON
+            });
+            Warehouse.AddEvent(Database.Event.EnumSeverity.Event, Database.Event.EnumType.Program, String.Format("Segment {0} AutomaticOn called.", Name));
+        }
+
+        public override void AutomaticOff(Int32 id)
+        {
+            Communicator.AddSendTelegram(new TelegramCraneStatus
+            {
+                MFCS_ID = id,
+                ID = (short)PLC_ID,
+                Sender = Communicator.MFCS_ID,
+                Receiver = Communicator.PLC_ID,
+                Order = TelegramTransportStatus.ORDER_AUTOOFF
+            });
+            Warehouse.AddEvent(Database.Event.EnumSeverity.Event, Database.Event.EnumType.Program, String.Format("Segment {0} AutomaticOff called.", Name));
+        }
+
+        public override void Info(Int32 id)
+        {
+            Communicator.AddSendTelegram(new TelegramCraneStatus
+            {
+                MFCS_ID = id,
+                ID = (short)PLC_ID,
+                Sender = Communicator.MFCS_ID,
+                Receiver = Communicator.PLC_ID,
+                Order = TelegramTransportStatus.ORDER_INFO
+            });
+            Warehouse.AddEvent(Database.Event.EnumSeverity.Event, Database.Event.EnumType.Program, String.Format("Segment {0} refresh called.", Name));
+        }
+
+        public override void Reset(Int32 id)
+        {
+            Communicator.AddSendTelegram(new TelegramCraneStatus
+            {
+                MFCS_ID = id,
+                ID = (short)PLC_ID,
+                Sender = Communicator.MFCS_ID,
+                Receiver = Communicator.PLC_ID,
+                Order = TelegramTransportStatus.ORDER_RESET
+            });
+            Warehouse.AddEvent(Database.Event.EnumSeverity.Event, Database.Event.EnumType.Program, String.Format("Segment {0} reset called.", Name));
+        }
+
+        public override void SetClock(Int32 id)
+        {
+            Warehouse.AddEvent(Database.Event.EnumSeverity.Event, Database.Event.EnumType.Program, String.Format("Segment {0} SetClock called.", Name));
+        }
+
+        public override void DirectVMNotify()
+        {
+            if (SegmentInfo != null && PLC_Status != null)
+            {
+                TelegramCraneStatus tel = PLC_Status as TelegramCraneStatus;
+                SegmentInfo.LPosition = tel.LPosition;
+                SegmentInfo.FPosition = tel.FPosition;
+                SegmentInfo.StateMachine = tel.StateMachine;
+                SegmentInfo.AlarmID = tel.AlarmID;
+                SegmentInfo.Fault = tel.Fault;
+                SegmentInfo.SetAlarms(tel.CurrentAlarms);
+                SegmentInfo.SetSensors(tel.Status);
+                SegmentInfo.Status = tel.Status;
+                SegmentInfo.Online = Communicator.Online();
+                SegmentInfo.Name = Name;
+                CallNotifyVM(SegmentInfo);
+            }
+        }
+
+        public void OnTelegramCraneStatus(Telegram t)
+        {
+            try
+            {
+                SegmentCranes.ForEach(prop => prop.OnTelegramCraneStatus(t));
+                PLC_Status = t;
+                if (SegmentInfo != null && t != null)
+                {
+                    TelegramCraneStatus tel = t as TelegramCraneStatus;
+                    SegmentInfo.LPosition = tel.LPosition;
+                    SegmentInfo.FPosition = tel.FPosition;
+                    SegmentInfo.StateMachine = tel.StateMachine;
+                    SegmentInfo.AlarmID = tel.AlarmID;
+                    SegmentInfo.Fault = tel.Fault;
+                    SegmentInfo.SetAlarms(tel.CurrentAlarms);
+                    SegmentInfo.SetSensors(tel.Status);
+                    SegmentInfo.Status = tel.Status;
+                    SegmentInfo.Online = Communicator.Online();
+                    SegmentInfo.Name = Name;
+                    CallNotifyVM(SegmentInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new SegmentException(String.Format("{0} SegmentCrane.OnTelegramCraneStatus failed.", Name));
+            }
+        }
+
+        public override void Initialize(BasicWarehouse w)
+        {
+            try
+            {
+                base.Initialize(w);
+                Communicator.DispatchRcv.Add(
+                            new DispatchNode
+                            {
+                                DispatchTerm = (t) => (t is TelegramCraneStatus) &&
+                                                     (t as TelegramCraneStatus).ID == PLC_ID,
+                                DispatchTo = OnTelegramCraneStatus
+                            });
+                SegmentCranes = (from c in Warehouse.CraneList
+                                 where c.Segment == Name
+                                 select c).ToList();
+            }
+            catch (Exception ex)
+            {
+                Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new SegmentException(String.Format("{0} SegmentCrane.Initialize failed ", Name));
+            }
+        }
+
+
+
+    }
+}

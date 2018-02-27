@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="UserInterface.View.AlarmOverviewView"       
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
+        xmlns:src="clr-namespace:UserInterface.View"
+        xmlns:vm="clr-namespace:UserInterface.ViewModel"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        mc:Ignorable="d"
+        DataContext="{Binding AlarmOverview, Source={StaticResource Locator}}"
+        d:DesignWidth="1280"             
+        d:DesignHeight="720">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="MultipleChoiceFilter">
+            <src:MultipleChoiceFilter Filter="{Binding Path=Filter, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dgx:DataGridFilterColumnControl}}"/>
+        </ControlTemplate>
+        <CollectionViewSource Source="{Binding AlarmList}" x:Key="AlarmItems">
+        </CollectionViewSource>
+        <src:AddMultConverter x:Key="AddMultConverter" />
+    </UserControl.Resources>
+
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Border BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+            <TextBlock Text="Alarms" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30"/>
+        </Border>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" >
+                <Button x:Name="btnRefresh" Content="Refresh" Width="80" Height="40" VerticalAlignment="Top" FontSize="15" Margin="0,5,5,5" Command="{Binding UpdateAlarmCommand}" />
+                <Button x:Name="btnInsert" Content="Insert" Width="80" Height="40" VerticalAlignment="Top" FontSize="15" Margin="5,5,5,5" Command="{Binding InsertAlarmCommand}"/>
+                <Button x:Name="btnAck" Content="Ack" Width="80" Height="40" VerticalAlignment="Top" FontSize="15" Margin="5,5,5,5" Command="{Binding AckAlarmCommand}"/>
+            </StackPanel>
+            <DataGrid 
+                x:Name="dgAlarms" Grid.Row="1" 
+                ItemsSource="{Binding Source={StaticResource AlarmItems}}" 
+                dgx:DataGridFilter.IsAutoFilterEnabled="True"
+                SelectedItem="{Binding SelectedAlarm}" 
+                Height="{Binding Converter={StaticResource AddMultConverter}, 
+                       Path=(FrameworkElement.ActualHeight), 
+                       RelativeSource={RelativeSource AncestorType=UserControl},
+                       ConverterParameter=-130|1.0}"
+                Width="{Binding Converter={StaticResource AddMultConverter}, 
+                       Path=(FrameworkElement.ActualWidth), 
+                       RelativeSource={RelativeSource AncestorType=UserControl},
+                       ConverterParameter=0|1.0}"                
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                CanUserAddRows="False"
+                AutoGenerateColumns="False" 
+                IsReadOnly="True"
+                dgx:Tools.ApplyInitialSorting="True"                
+                Grid.ColumnSpan="2" FontSize="15">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding StatusID}" Value="STATUS.1">
+                                <Setter Property="Foreground" Value="Red"></Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding StatusID}" Value="STATUS.2">
+                                <Setter Property="Foreground" Value="Green"></Setter>
+                            </DataTrigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="SkyBlue" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="AJDI" SortDirection="Descending"  MinWidth="100" Binding="{Binding Id}" dgx:DataGridFilterColumn.IsFilterVisible="False"/>
+                    <DataGridTextColumn Header="junit" MinWidth="100" Binding="{Binding Unit}" dgx:DataGridFilterColumn.Template="{StaticResource MultipleChoiceFilter}" />
+                    <DataGridTextColumn Header="status" MinWidth="100" Binding="{Binding Status}" dgx:DataGridFilterColumn.Template="{StaticResource MultipleChoiceFilter}"/>
+                    <DataGridTextColumn Header="tekst" MinWidth="100" Binding="{Binding Text}" />
+                    <DataGridTextColumn Header="arajvd" MinWidth="100" Binding="{Binding ArrivedTime}" />
+                    <DataGridTextColumn Header="rimovd" MinWidth="100" Binding="{Binding RemovedTime}"  />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </StackPanel>
+</UserControl>

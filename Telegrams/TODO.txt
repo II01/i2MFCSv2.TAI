@@ -1,0 +1,25 @@
+﻿
+FAZA I - ureditev projekta
+
+1. Stestiraj double cikle
+2. Stestiraj preffered pick
+3. Dokončaj preverjanje cilja za palete (štetje palet na cilju+preostale komande). Spremeni to da lahko pridejo
+   nove palete tudi iz drugih IOConveyor na poti!
+4. Naredi funkcijo ki vrne vsa mesta na lokalnem transportu! Iz tega bo nadaljna pot lažja. 
+5. Uredi kodo v smislu sporočil+dupliranja kode 
+6. FindBestOutput spremeni na način da upošteva tudi zasedena mesta. 
+7. Komande ki se nastavijo na InPlc (status 2) se ne končajo!
+8. Brisanje baz, backup
+9. Obveščanje o premikih materijala
+
+FAZA II - optimizacija s pomočjo resne simulacije
+1. Razmisli o pristopu
+
+
+PROBLEMI : 
+ExecuteRefresh vrgel exception, ki ga nihče ne ujame!
+
+
+
+
+

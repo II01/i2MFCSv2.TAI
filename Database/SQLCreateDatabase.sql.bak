@@ -1,0 +1,369 @@
+﻿USE MFCS
+
+IF object_id('dbo.Numbers') IS NOT NULL
+	DROP TABLE dbo.Numbers
+GO
+
+IF object_id('dbo.Event') IS NOT NULL
+	DROP TABLE dbo.Event
+GO
+
+IF object_id('dbo.Movement') IS NOT NULL
+	DROP TABLE dbo.Movement
+GO
+
+IF object_id('dbo.SimpleCraneCommand') IS NOT NULL
+	DROP TABLE dbo.SimpleCraneCommand
+GO
+
+
+IF object_id('dbo.SimpleCommand') IS NOT NULL
+	DROP TABLE dbo.SimpleCommand
+GO
+
+IF object_id('dbo.Command') IS NOT NULL
+	DROP TABLE dbo.Command
+GO
+
+
+IF object_id('dbo.Place') IS NOT NULL
+	DROP TABLE dbo.Place
+GO
+
+
+IF object_id('dbo.PlaceID') IS NOT NULL
+	DROP TABLE dbo.PlaceID 
+GO
+
+IF object_id('dbo.MaterialID') IS NOT NULL
+	DROP TABLE dbo.MaterialID
+GO
+
+
+
+if OBJECT_ID('dbo.SwitchLanguage') is not null
+	DROP PROCEDURE [dbo].[SwitchLanguage]
+
+if OBJECT_ID('dbo.Alarm') is not null 
+	DROP TABLE [dbo].[Alarm]
+	GO
+
+if OBJECT_ID('dbo.AlarmDetail') is not null 
+	DROP TABLE [dbo].[AlarmDetail]
+	GO
+
+if OBJECT_ID('dbo.Text') is not null 
+	DROP table [dbo].[Text]
+	GO
+
+
+
+CREATE TABLE [dbo].[PlaceID]
+(
+	ID NVARCHAR(20) PRIMARY KEY,
+	Size INT NOT NULL,
+	Blocked BIT NOT NULL,
+	Reserved BIT NOT NULL
+)
+GO
+
+CREATE Table [dbo].[MaterialID]
+(
+	ID INT PRIMARY KEY,
+	Size INT NOT NULL,
+	Weight INT NOT NULL 
+)
+GO
+
+CREATE Table [dbo].[Place]
+(
+	Place NVARCHAR(20) NOT NULL, 
+	Material INT NOT NULL,
+	Time DATETIME NOT NULL DEFAULT GETDATE(),
+
+	CONSTRAINT PK_material PRIMARY KEY (Material),
+	INDEX IX_Place NONCLUSTERED (Place),
+---	CONSTRAINT PK_place PRIMARY KEY (Place),
+	CONSTRAINT FK_place_PlaceID FOREIGN KEY (Place) REFERENCES dbo.PlaceID (ID),  
+	CONSTRAINT FK_material_MatetrialID FOREIGN KEY (Material) REFERENCES dbo.MaterialID (ID)
+	--- CONSTRAINT  
+)
+GO
+
+CREATE TABLE [dbo].[Command]
+(
+	ID INT IDENTITY PRIMARY KEY,
+	WMS_ID INT NOT NULL, 
+	Task INT NOT NULL,
+	Material INT NOT NULL FOREIGN KEY (Material) REFERENCES [dbo].MaterialID(ID), 
+	Source NVARCHAR(20) NOT NULL FOREIGN KEY (Source) REFERENCES [dbo].PlaceID(ID),
+	Target NVARCHAR(20)  NOT NULL FOREIGN KEY (Target) REFERENCES [dbo].PlaceID(ID),
+	Priority INT NOT NULL,
+	Info NVARCHAR(50), 
+	Status INT NOT NULL,
+	Time DATETIME DEFAULT GETDATE()
+
+	INDEX IX_Material NONCLUSTERED (Material), 
+	INDEX IX_Source NONCLUSTERED (Source), 
+	INDEX IX_Target NONCLUSTERED (Target)
+
+)
+GO
+
+CREATE TABLE [dbo].[SimpleCommand]
+(
+	ID INT IDENTITY PRIMARY KEY,
+	Command_ID INT FOREIGN KEY (Command_ID) REFERENCES [dbo].Command(ID),
+	Unit NVARCHAR(20),
+	Material INT NOT NULL FOREIGN KEY (Material) REFERENCES [dbo].MaterialID(ID), 
+	Source NVARCHAR(20) NOT NULL FOREIGN KEY (Source) REFERENCES [dbo].PlaceID(ID),
+	Target NVARCHAR(20) FOREIGN KEY (Source) REFERENCES [dbo].PlaceID(ID),
+	Task INT NOT NULL,
+	Segment NVARCHAR(20), 
+	CancelID INT,
+	Status INT NOT NULL,
+	Discrimator NVARCHAR(50) NOT NULL DEFAULT('Crane'),
+	Time DATETIME DEFAULT GETDATE() NOT NULL	 
+
+	INDEX IX_Unit NONCLUSTERED (Unit), 
+	INDEX IX_Material NONCLUSTERED (Material), 
+	INDEX IX_Source NONCLUSTERED (Source),
+	INDEX IX_Target NONCLUSTERED (Target)
+)
+GO
+
+
+CREATE TABLE [dbo].[Movement]
+(
+	ID INT IDENTITY PRIMARY KEY, 
+	Material INT NOT NULL,
+	Position NVARCHAR(20) NOT NULL,
+	Time DATETIME NOT NULL DEFAULT GETDATE()
+
+	CONSTRAINT FK_Material_MaterialID FOREIGN KEY (Material) REFERENCES [dbo].MaterialID(ID), 
+	INDEX IX_Material NONCLUSTERED (Material)
+
+)
+GO
+
+CREATE TABLE [dbo].[Event]
+(
+	ID INT IDENTITY PRIMARY KEY,
+	Severity INT NOT NULL, 
+	Type INT NOT NULL, 
+	Text NVARCHAR(300) NOT NULL,
+	[Time] DATETIME NOT NULL DEFAULT GETDATE()
+)
+	
+CREATE TABLE [dbo].[Text]
+(
+	[ValueID] NVARCHAR(50) NOT NULL,
+    [Language] INT NOT NULL, 
+    [Message] NVARCHAR(50) NULL, 
+	CONSTRAINT [PK_StatusDetail] PRIMARY KEY ([ValueID], [Language])
+)
+
+GO
+
+CREATE TABLE [dbo].[AlarmDetail]
+(
+	[ValueID] NVARCHAR(50) NOT NULL,
+    [Language] INT NOT NULL,
+	[SeverityID] NVARCHAR(50) NOT NULL,
+	CONSTRAINT [PK_AlarmDetail] PRIMARY KEY ([ValueID], [Language]),
+	CONSTRAINT [FK_SeverityID_ToText] FOREIGN KEY ([SeverityID],[Language]) REFERENCES [Text]([ValueID],[Language]) 
+			   ON DELETE CASCADE ON UPDATE CASCADE
+
+)
+
+GO
+
+CREATE TABLE [dbo].[Alarm]
+(
+	[ID] INT NOT NULL IDENTITY, 
+    [UnitID] NVARCHAR(50) NOT NULL, 
+    [AlarmID] NVARCHAR(50) NOT NULL, 
+    [StatusID] NVARCHAR(50) NOT NULL, 
+	[Language] INT NOT NULL,
+    [ArrivedTime] DATETIME NOT NULL, 
+    [AckTime] DATETIME NULL, 
+    [RemovedTime] DATETIME NULL,
+	CONSTRAINT [PK_Alarm] PRIMARY KEY  ([ID]) ,
+	CONSTRAINT [FK_AlarmID_ToTextA] FOREIGN KEY ([AlarmID], [Language]) REFERENCES [AlarmDetail]([ValueID],[Language]) ,
+	CONSTRAINT [FK_UnitID_ToTextU] FOREIGN KEY ([UnitID], [Language]) REFERENCES [Text]([ValueID], [Language]) ,
+	CONSTRAINT [FK_StatusID_ToTextS] FOREIGN KEY ([StatusID], [Language]) REFERENCES [Text]([ValueID], [Language]) ,
+)
+
+GO
+
+CREATE PROCEDURE [dbo].[SwitchLanguage]
+	@lang int = 1
+AS
+
+	ALTER TABLE [dbo].[AlarmDetail] NOCHECK CONSTRAINT ALL
+	ALTER TABLE [dbo].[Alarm] NOCHECK CONSTRAINT ALL
+
+	UPDATE [dbo].[AlarmDetail]
+	SET [Language] = @lang
+
+	UPDATE [dbo].[Alarm]
+	SET [Language] = @lang
+
+	ALTER TABLE [dbo].[AlarmDetail] WITH CHECK CHECK CONSTRAINT ALL
+	ALTER TABLE [dbo].[Alarm] WITH CHECK CHECK CONSTRAINT ALL
+
+RETURN 0
+
+GO
+
+
+
+--- prepare table with numbers for future use	 
+SELECT TOP (1000) n = CONVERT(INT, ROW_NUMBER() OVER (ORDER BY s1.[object_id]))
+INTO dbo.Numbers
+FROM sys.all_objects AS s1 CROSS JOIN sys.all_objects AS s2
+OPTION (MAXDOP 1);
+
+GO
+
+--- create some input ---
+INSERT INTO [Text]
+([ValueID],[Language],[Message]) VALUES
+('ALARM.1', 0, 'alarm1'),
+('ALARM.1', 1, 'ALARM1'),
+('ALARM.2', 0, 'alarm2'),
+('ALARM.2', 1, 'ALARM2'),
+('ALARM.3', 0, 'alarm3'),
+('ALARM.3', 1, 'ALARM3'),
+('SEVERITY.1', 0, 'info'),
+('SEVERITY.1', 1, 'INFO'),
+('SEVERITY.2', 0, 'warning'),
+('SEVERITY.2', 1, 'WARNING'),
+('SEVERITY.3', 0, 'error'),
+('SEVERITY.3', 1, 'ERROR'),
+('STATUS.1', 0, 'active'),
+('STATUS.1', 1, 'ACTIVE'),
+('STATUS.2', 0, 'ack'),
+('STATUS.2', 1, 'ACK'),
+('STATUS.3', 0, 'gone'),
+('STATUS.3', 1, 'GONE'),
+('CRANE.1', 0, 'crane 1'),
+('CRANE.1', 1, 'CRANE 1'),
+('CRANE.2', 0, 'crane 2'),
+('CRANE.2', 1, 'CRANE 2')
+
+INSERT INTO	[AlarmDetail]
+([ValueID],[Language],[SeverityID]) VALUES
+('ALARM.1', 0, 'SEVERITY.1'),
+('ALARM.2', 0, 'SEVERITY.2'),
+('ALARM.3', 0, 'SEVERITY.3')
+
+INSERT INTO [Alarm] 
+([UnitID],[AlarmID],[StatusID],[Language],[ArrivedTime],[AckTime],[RemovedTime])
+VALUES 
+('CRANE.1','ALARM.1','STATUS.1',0,'01-01-2017 13:34:09','01-01-2017 13:35:09', '01-01-2017 13:37:09') , 
+('CRANE.2','ALARM.1','STATUS.2',0,'02-01-2017 13:34:09', NULL, NULL) ,
+('CRANE.1','ALARM.2','STATUS.3',0,'03-01-2017 13:34:09',null, null) ,
+('CRANE.1','ALARM.1','STATUS.1',0,'04-01-2017 13:34:09','04-01-2017 13:35:09', '04-01-2017 13:37:09')
+
+GO
+
+
+INSERT INTO [PlaceID] values 
+	('C101', 1, 0, 0),
+	('C201', 1, 0, 0),
+	('C301', 1, 0, 0),
+	('C401', 1, 0, 0),
+	('C501', 1, 0, 0),
+	('C502', 1, 0, 0),
+	('T002', 1, 0, 0),
+	('T003', 1, 0, 0),
+	('T004', 1, 0, 0),
+	('T005', 1, 0, 0),
+	('T010', 1, 0, 0),
+	('T011', 1, 0, 0),
+	('T012', 1, 0, 0),
+	('T021', 1, 0, 0),
+	('T022', 1, 0, 0),
+	('T023', 1, 0, 0),
+	('T024', 1, 0, 0),
+	('T110', 1, 0, 0),
+	('T111', 1, 0, 0),
+	('T112', 1, 0, 0),
+	('T121', 1, 0, 0),
+	('T122', 1, 0, 0),
+	('T211', 1, 0, 0),
+	('T212', 1, 0, 0),
+	('T221', 1, 0, 0),
+	('T222', 1, 0, 0),
+	('T311', 1, 0, 0),
+	('T312', 1, 0, 0),
+	('T321', 1, 0, 0),
+	('T322', 1, 0, 0)
+
+declare @r int
+declare @rr int
+declare @x int
+declare @y int
+declare @z int
+declare @loc nvarchar(20)
+set @r = 0
+while(@r < 6) begin
+	set @rr = (@r/2+1) * 10 + (@r % 2+1)
+	set @r = @r + 1
+	set @x=0
+	while(@x < 60) begin
+		set @x = @x + 1
+		set @y=0
+		while(@y < 8) begin
+			set @y = @y + 1
+			set @z=0
+			while(@z < 2) begin
+				set @z = @z + 1
+				set @loc = 'W:' + RIGHT('00'+CAST(@rr AS VARCHAR(2)),2) + ':' + RIGHT('00'+CAST(@x AS VARCHAR(2)),2) + ':' + CAST(@y AS VARCHAR(1)) + ':' + CAST(@z AS VARCHAR(1))
+				INSERT INTO [PlaceID] values (@loc, 1, 0, 0)
+			end
+		end
+	end
+end
+set @x=0
+while(@x < 24) begin
+	set @x = @x + 1
+	set @loc = 'W:52:' + RIGHT('00'+CAST(@x AS VARCHAR(2)),2) + ':1:1'
+	INSERT INTO [PlaceID] values (@loc, 999, 0, 0)
+end
+
+GO
+
+DELETE FROM [PlaceID] WHERE [ID]='W:32:47:1:1'
+DELETE FROM [PlaceID] WHERE [ID]='W:32:47:1:2'
+DELETE FROM [PlaceID] WHERE [ID]='W:32:48:1:1'
+DELETE FROM [PlaceID] WHERE [ID]='W:32:48:1:2'
+DELETE FROM [PlaceID] WHERE [ID]='W:32:49:1:1'
+DELETE FROM [PlaceID] WHERE [ID]='W:32:49:1:2'
+DELETE FROM [PlaceID] WHERE [ID]='W:32:50:1:1'
+DELETE FROM [PlaceID] WHERE [ID]='W:32:50:1:2'
+
+GO
+
+INSERT INTO [MaterialID] values 
+(100001, 1, 100),
+(100002, 1, 200),
+(100003, 1, 300),
+(100004, 1, 400),
+(100005, 1, 500),
+(100006, 1, 600),
+(100007, 1, 700),
+(100008, 1, 800),
+(100009, 1, 900),
+(100010, 1, 1000)
+
+GO
+
+
+INSERT INTO [Place] values
+('T002', 100001, '9.3.2017'),
+('T003', 100002, '9.3.2017'),
+('W:11:01:1:1', 100003, '9.3.2017')
+
+GO

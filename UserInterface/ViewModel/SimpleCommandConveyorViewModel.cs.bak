@@ -1,0 +1,107 @@
+﻿using Database;
+using GalaSoft.MvvmLight.Ioc;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UserInterface.Services;
+using Warehouse.Model;
+
+namespace UserInterface.ViewModel
+{
+    public class SimpleCommandConveyorViewModel : SimpleCommandViewModel, IDataErrorInfo
+    {
+        #region members
+        private DataAccessService _dataService;
+        private BasicWarehouse _warehouse;
+        #endregion
+
+        #region properties
+        public string Target
+        {
+            get { return (_command as SimpleConveyorCommand).Target; }
+            set
+            {
+                if ((_command as SimpleConveyorCommand).Target != value)
+                {
+                    (_command as SimpleConveyorCommand).Target = value;
+                    RaisePropertyChanged("Target");
+                }
+            }
+        }
+
+        public string TaskDescription
+        {
+            get { return Task.ToString() + " " + 
+                         ResourceReader.GetString("TU") + ": " + _command.Material + " " +
+                         ResourceReader.GetString("FROM") + ": " + _command.Source + " " +
+                         ResourceReader.GetString("TO") + ": " + (_command as SimpleConveyorCommand).Target;}
+            set {}
+        }
+
+        public List<String> Devices { get; set; }
+        #endregion
+
+        #region constructor
+        public SimpleCommandConveyorViewModel(): base()
+        {
+            _dataService = new DataAccessService();
+            _warehouse = SimpleIoc.Default.GetInstance<MainViewModel>().Warehouse;
+            Devices = _warehouse.ConveyorList.ConvertAll(n => n.Name);
+            Devices.Sort();
+        }
+
+        #endregion
+
+        #region validation
+        public string Error
+        {
+            get { return ResourceReader.GetString("ERR_FIELD"); }
+        }
+
+        public string this[string propertyName]
+        {
+            get
+            {
+                try
+                {
+                    string validationResult = String.Empty;
+                    switch (propertyName)
+                    {
+                        case "Task":
+                            if (Task != SimpleCommand.EnumTask.Move && Task != SimpleCommand.EnumTask.Create && Task != SimpleCommand.EnumTask.Delete)
+                                validationResult = ResourceReader.GetString("ERR_TASK");
+                            break;
+                        case "Material":
+                            if (Material <= 0)
+                                validationResult = ResourceReader.GetString("ERR_MATERIALNOTVALID");
+                            else if (!_dataService.MaterialExists(Material))
+                                validationResult = ResourceReader.GetString("ERR_MATERIALUNKNOWN");
+                            break;
+                        case "Source":
+                            if( !Devices.Any(p => p == Source))
+                                validationResult = ResourceReader.GetString("ERR_LOCATION");
+                            break;
+                        case "Target":
+                            if (!Devices.Any(p => p == Target))
+                                validationResult = ResourceReader.GetString("ERR_LOCATION");
+                            break;
+                    }
+                    AllPropertiesValid = (validationResult == String.Empty);
+                    return validationResult;
+                }
+                catch (Exception e)
+                {
+                    _warehouse.AddEvent(EnumEventSeverity.Error, EnumEventType.Exception, e.Message);
+                    return ResourceReader.GetString("ERR_EXCEPTION");
+                }
+
+            }
+        }
+        #endregion
+
+    }
+
+}

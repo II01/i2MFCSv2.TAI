@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Telegrams" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Telegrams" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Telegram">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip" />
+    </xs:sequence>
+    <xs:attribute ref="ser:FactoryType" />
+  </xs:complexType>
+  <xs:element name="Telegram" nillable="true" type="tns:Telegram" />
+  <xs:complexType name="TelegramCraneStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Telegram" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TelegramCraneStatus" nillable="true" type="tns:TelegramCraneStatus" />
+  <xs:complexType name="TelegramCraneTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Telegram" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TelegramCraneTO" nillable="true" type="tns:TelegramCraneTO" />
+  <xs:complexType name="TelegramTransportTO">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Telegram" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TelegramTransportTO" nillable="true" type="tns:TelegramTransportTO" />
+  <xs:complexType name="TelegramTransportStatus">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Telegram" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TelegramTransportStatus" nillable="true" type="tns:TelegramTransportStatus" />
+  <xs:complexType name="TelegramTransportSetTime">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Telegram" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TelegramTransportSetTime" nillable="true" type="tns:TelegramTransportSetTime" />
+</xs:schema>

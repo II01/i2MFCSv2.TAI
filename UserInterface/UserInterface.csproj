@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{183839C7-3F1B-4ED6-9CC8-80EF65B6E451}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserInterface</RootNamespace>
+    <AssemblyName>i2MFCS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>i2MFCS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataGridExtensions, Version=1.0.36.0, Culture=neutral, PublicKeyToken=43de855f87de903a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataGridExtensions.1.0.36.0\lib\net40-Client\DataGridExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.3.0.19026, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.3.0.19032, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Services\Enums.cs" />
+    <Compile Include="UserControls\PasswordHelper.cs" />
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Model\DataItem.cs" />
+    <Compile Include="Model\DataService.cs" />
+    <Compile Include="Model\IDataService.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Resources.tr-TR.Designer.cs">
+      <DependentUpon>Resources.tr-TR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Services\PropertyValidator.cs" />
+    <Compile Include="Services\ResourceReader.cs" />
+    <Compile Include="Services\UIException.cs" />
+    <Compile Include="UserControls\Common.cs" />
+    <Compile Include="UserControls\UCConveyor.xaml.cs">
+      <DependentUpon>UCConveyor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCDetailBool.xaml.cs">
+      <DependentUpon>UCDetailBool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCDetailString.xaml.cs">
+      <DependentUpon>UCDetailString.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCMode.xaml.cs">
+      <DependentUpon>UCMode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSegment.xaml.cs">
+      <DependentUpon>UCSegment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSegments.xaml.cs">
+      <DependentUpon>UCSegments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCVehicleDoubleDeckFromRight.xaml.cs">
+      <DependentUpon>UCVehicleDoubleDeckFromRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCVehicleDoubleDeck.xaml.cs">
+      <DependentUpon>UCVehicleDoubleDeck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCVehicleSingleDeck.xaml.cs">
+      <DependentUpon>UCVehicleSingleDeck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CommandCommandViewModel.cs" />
+    <Compile Include="ViewModel\HistoryCommandsViewModel.cs" />
+    <Compile Include="ViewModel\EventViewModel.cs" />
+    <Compile Include="ViewModel\HistoryDateTimePickerViewModel.cs" />
+    <Compile Include="ViewModel\HistoryAlarmsViewModel.cs" />
+    <Compile Include="ViewModel\CommandSegmentViewModel.cs" />
+    <Compile Include="ViewModel\CommandViewModel.cs" />
+    <Compile Include="ViewModel\CommandsViewModel.cs" />
+    <Compile Include="ViewModel\CommandMaterialViewModel.cs" />
+    <Compile Include="ViewModel\ControlPanelModeViewModel.cs" />
+    <Compile Include="ViewModel\HistoryEventsViewModel.cs" />
+    <Compile Include="ViewModel\EventsViewModel.cs" />
+    <Compile Include="ViewModel\ControlPanelViewModel.cs" />
+    <Compile Include="ViewModel\MovementViewModel.cs" />
+    <Compile Include="ViewModel\HistoryMovementsViewModel.cs" />
+    <Compile Include="ViewModel\MaterialViewModel.cs" />
+    <Compile Include="ViewModel\LocationViewModel.cs" />
+    <Compile Include="ViewModel\LocationsViewModel.cs" />
+    <Compile Include="ViewModel\MaterialsViewModel.cs" />
+    <Compile Include="ViewModel\SimpleCommandSegmentViewModel.cs" />
+    <Compile Include="ViewModel\SimpleCommandConveyorViewModel.cs" />
+    <Compile Include="ViewModel\SimpleCommandCraneViewModel.cs" />
+    <Compile Include="ViewModel\HistorySimpleCommandsViewModel.cs" />
+    <Compile Include="ViewModel\SimpleCommandsViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\SimpleCommandViewModel.cs" />
+    <Compile Include="ViewModel\VisualizationViewModel.cs" />
+    <Compile Include="ViewModel\VisuConveyorViewModel.cs" />
+    <Compile Include="ViewModel\VisuDetailViewModel.cs" />
+    <Compile Include="ViewModel\VisuDeviceBasicViewModel.cs" />
+    <Compile Include="ViewModel\ControlPanelSegmentsViewModel.cs" />
+    <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
+    <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
+    <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="View\CommandCommandView.xaml.cs">
+      <DependentUpon>CommandCommandView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryCommandsView.xaml.cs">
+      <DependentUpon>HistoryCommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryAlarmsView.xaml.cs">
+      <DependentUpon>HistoryAlarmsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommandSegmentView.xaml.cs">
+      <DependentUpon>CommandSegmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommandsView.xaml.cs">
+      <DependentUpon>CommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Converters.cs" />
+    <Compile Include="View\HistoryDateTimePickerView.xaml.cs">
+      <DependentUpon>HistoryDateTimePickerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryEventsView.xaml.cs">
+      <DependentUpon>HistoryEventsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EventsView.xaml.cs">
+      <DependentUpon>EventsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistoryMovementsView.xaml.cs">
+      <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialView.xaml.cs">
+      <DependentUpon>MaterialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ControlPanelView.xaml.cs">
+      <DependentUpon>ControlPanelView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LocationView.xaml.cs">
+      <DependentUpon>LocationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LocationsView.xaml.cs">
+      <DependentUpon>LocationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleCommandConveyorView.xaml.cs">
+      <DependentUpon>SimpleCommandConveyorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommandMaterialView.xaml.cs">
+      <DependentUpon>CommandMaterialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleCommandCraneView.xaml.cs">
+      <DependentUpon>SimpleCommandCraneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MaterialsView.xaml.cs">
+      <DependentUpon>MaterialsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleCommandSegmentView.xaml.cs">
+      <DependentUpon>SimpleCommandSegmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HistorySimpleCommandsView.xaml.cs">
+      <DependentUpon>HistorySimpleCommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SimpleCommandsView.xaml.cs">
+      <DependentUpon>SimpleCommandsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AlarmsView.xaml.cs">
+      <DependentUpon>AlarmsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AlarmsViewModel.cs" />
+    <Compile Include="ViewModel\AlarmViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\MultipleChoiceFilter.xaml.cs">
+      <DependentUpon>MultipleChoiceFilter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VisualizationView.xaml.cs">
+      <DependentUpon>VisualizationView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="UserControls\UCConveyor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCDetailBool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCDetailString.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCSegment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\UCSegments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UCVehicleDoubleDeckFromRight.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\UCVehicleDoubleDeck.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\UCVehicleSingleDeck.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CommandCommandView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HistoryCommandsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HistoryAlarmsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CommandSegmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CommandsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HistoryDateTimePickerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HistoryEventsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\EventsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\HistoryMovementsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MaterialView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ControlPanelView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LocationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LocationsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SimpleCommandConveyorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\CommandMaterialView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SimpleCommandCraneView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MaterialsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SimpleCommandSegmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HistorySimpleCommandsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SimpleCommandsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\AlarmsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\MultipleChoiceFilter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VisualizationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.tr-TR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{bd2f7644-6b3a-4317-ad0a-93f967958e83}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infralution.Localization.Wpf\Infralution.Localization.Wpf.csproj">
+      <Project>{e3d700d5-bdfb-4777-8e9c-53e8f943ac58}</Project>
+      <Name>Infralution.Localization.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleLog\SimpleLog.csproj">
+      <Project>{da3c1bb1-d620-4d02-abe9-f33d1be327b8}</Project>
+      <Name>SimpleLog</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Telegrams\Telegrams.csproj">
+      <Project>{2da51274-09c9-402a-88bc-604b27d4ef36}</Project>
+      <Name>Telegrams</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Warehouse\Warehouse.csproj">
+      <Project>{f34825a6-cf20-44f3-8964-aac3db3aaa38}</Project>
+      <Name>Warehouse</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfService\WcfService.csproj">
+      <Project>{75143572-376e-4f58-a8a1-436b667de5a0}</Project>
+      <Name>WcfService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WCFWarehouse\WCFWarehouse.csproj">
+      <Project>{FB375F2A-FC12-4B0A-9EE9-F89C1ABA5E49}</Project>
+      <Name>WCFWarehouse</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SplashScreen Include="View\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="i2MFCS.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

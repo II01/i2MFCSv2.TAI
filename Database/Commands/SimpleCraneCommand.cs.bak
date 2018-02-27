@@ -1,0 +1,23 @@
+﻿using System;
+
+namespace Database
+{
+    public partial class SimpleCraneCommand : SimpleCommand
+    {
+        public override string ToString()
+        {
+            switch (Task)
+            {
+                case EnumTask.Cancel:
+                case EnumTask.Create:
+                case EnumTask.Delete: return String.Format("Command {0}: {1} {2} {3} from {4} {5}", ID, Unit, Task, Material, Source, Status);
+                case EnumTask.Move: return String.Format("Command {0}: {1} {2} {3} {4}", ID, Unit, Task, Source, Status);
+
+                case EnumTask.Drop:
+                case EnumTask.Pick: return String.Format("Command {0}: {1} {2} {3} {4} {5} {6}", ID, Unit, Task, Material, Task == EnumTask.Drop ? "to" : "from", Source, Status);
+            }
+            return String.Format("Uknown task {0}", Task);
+        }
+    }
+
+}
