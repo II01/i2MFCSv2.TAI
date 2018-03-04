@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegrams", "Telegrams\Telegrams.csproj", "{2DA51274-09C9-402A-88BC-604B27D4EF36}"
 EndProject
@@ -53,6 +53,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telegrams.Communication", "Telegrams.Communication\Telegrams.Communication.csproj", "{03B1D35C-EBB2-48E5-9DD0-EAA5B73F4150}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLog", "SimpleLog\SimpleLog.csproj", "{DA3C1BB1-D620-4D02-ABE9-F33D1BE327B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseWMS", "DatabaseWMS\DatabaseWMS.csproj", "{8F49C154-D8F5-45EB-8970-A787AC8097D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -130,6 +132,10 @@ Global
 		{DA3C1BB1-D620-4D02-ABE9-F33D1BE327B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA3C1BB1-D620-4D02-ABE9-F33D1BE327B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA3C1BB1-D620-4D02-ABE9-F33D1BE327B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F49C154-D8F5-45EB-8970-A787AC8097D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F49C154-D8F5-45EB-8970-A787AC8097D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F49C154-D8F5-45EB-8970-A787AC8097D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F49C154-D8F5-45EB-8970-A787AC8097D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

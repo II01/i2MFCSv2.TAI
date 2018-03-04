@@ -14,6 +14,7 @@ using System.Diagnostics;
 using WCFClients;
 using System.Threading;
 using SimpleLog;
+using UserInterface.DataServiceWMS;
 
 namespace UserInterface.ViewModel
 {
@@ -50,6 +51,7 @@ namespace UserInterface.ViewModel
         private string _currentTime;
         private string _user;
         private DispatcherTimer _timer;
+        private DBServiceWMS _DBServiceWMS;
         #endregion
 
         #region properties
@@ -190,6 +192,7 @@ namespace UserInterface.ViewModel
                 // initialize warehouse
                 Warehouse = (BasicWarehouse)BasicWarehouse.Deserialize(System.Configuration.ConfigurationManager.AppSettings["xmlconfig"]);
                 Warehouse.DBService = new Warehouse.DataService.DBService(Warehouse);
+                _DBServiceWMS = new DBServiceWMS(Warehouse);
 
                 // create view models - events first
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<EventsViewModel>(), Visible = Visibility.Hidden });    // must be the first
@@ -217,6 +220,9 @@ namespace UserInterface.ViewModel
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryMovementsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryCommandsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistorySimpleCommandsViewModel>(), Visible = Visibility.Hidden });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<SKUIDsViewModel>(), Visible = Visibility.Hidden });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceIDsViewModel>(), Visible = Visibility.Hidden });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceTUIDsViewModel>(), Visible = Visibility.Hidden });
 
                 // intialize view models
                 SimpleIoc.Default.GetInstance<SettingsViewModel>().Initialize(Warehouse);
@@ -231,6 +237,9 @@ namespace UserInterface.ViewModel
                 SimpleIoc.Default.GetInstance<HistoryMovementsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<HistoryCommandsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<HistorySimpleCommandsViewModel>().Initialize(Warehouse);
+                SimpleIoc.Default.GetInstance<SKUIDsViewModel>().Initialize(Warehouse);
+                SimpleIoc.Default.GetInstance<PlaceIDsViewModel>().Initialize(Warehouse);
+                SimpleIoc.Default.GetInstance<PlaceTUIDsViewModel>().Initialize(Warehouse);
 
                 ControlPanelViewModel = SimpleIoc.Default.GetInstance<ControlPanelViewModel>();
                 ((ControlPanelViewModel)ControlPanelViewModel).Initialize(Warehouse);

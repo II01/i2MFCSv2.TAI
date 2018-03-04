@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UserInterface</RootNamespace>
     <AssemblyName>i2MFCS</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -119,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataServiceWMS\DBServiceWMS.cs" />
+    <Compile Include="DataServiceWMS\IDBServiceWMS.cs" />
+    <Compile Include="DataServiceWMS\PlaceTUID.cs" />
+    <Compile Include="DataServiceWMS\TUSKUID.cs" />
     <Compile Include="Services\Enums.cs" />
     <Compile Include="UserControls\PasswordHelper.cs" />
     <Compile Include="Messages\Message.cs" />
@@ -200,6 +204,13 @@
     <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PlaceTUIDsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PlaceIDsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PlaceTUIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\SKUIDsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PlaceIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\TUSKUIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\SKUIDViewModel.cs" />
     <Compile Include="View\CommandCommandView.xaml.cs">
       <DependentUpon>CommandCommandView.xaml</DependentUpon>
     </Compile>
@@ -227,6 +238,24 @@
     </Compile>
     <Compile Include="View\HistoryMovementsView.xaml.cs">
       <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\PlaceTUIDsView.xaml.cs">
+      <DependentUpon>PlaceTUIDsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\PlaceIDsView.xaml.cs">
+      <DependentUpon>PlaceIDsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\PlaceTUIDView.xaml.cs">
+      <DependentUpon>PlaceTUIDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\SKUIDsView.xaml.cs">
+      <DependentUpon>SKUIDsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\PlaceIDView.xaml.cs">
+      <DependentUpon>PlaceIDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\SKUIDView.xaml.cs">
+      <DependentUpon>SKUIDView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MaterialView.xaml.cs">
       <DependentUpon>MaterialView.xaml</DependentUpon>
@@ -349,6 +378,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\WMS\PlaceTUIDsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\PlaceIDsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\PlaceTUIDView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\SKUIDsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\PlaceIDView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\SKUIDView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\MaterialView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -468,6 +521,11 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseWMS\DatabaseWMS.csproj">
+      <Project>{8f49c154-d8f5-45eb-8970-a787ac8097d2}</Project>
+      <Name>DatabaseWMS</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </ProjectReference>
     <ProjectReference Include="..\Database\Database.csproj">
       <Project>{bd2f7644-6b3a-4317-ad0a-93f967958e83}</Project>
       <Name>Database</Name>

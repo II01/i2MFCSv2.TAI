@@ -1,0 +1,767 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="i2MFCS.WMS.Database.Tables.WMSContextModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommandERPs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Command" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Commands">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Order_ID" Type="int" Nullable="false" />
+          <Property Name="TU_ID" Type="int" Nullable="false" />
+          <Property Name="Source" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Target" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ERP_ID" Type="int" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="SubOrderID" Type="int" Nullable="false" />
+          <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="SubOrderName" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="SKU_Qty" Type="float" Nullable="false" />
+          <Property Name="Destination" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
+          <Property Name="SKU_Batch" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PlaceIDs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="PositionTravel" Type="float" Nullable="false" />
+          <Property Name="PositionHoist" Type="float" Nullable="false" />
+          <Property Name="DimensionClass" Type="int" Nullable="false" />
+          <Property Name="FrequencyClass" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Places">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+            <PropertyRef Name="TU_ID" />
+          </Key>
+          <Property Name="PlaceID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="TU_ID" Type="int" Nullable="false" />
+          <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SKU_ID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="DefaultQty" Type="float" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Weight" Type="float" Nullable="false" />
+          <Property Name="FrequencyClass" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TU_ID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DimensionClass" Type="int" Nullable="false" />
+          <Property Name="Blocked" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TUs">
+          <Key>
+            <PropertyRef Name="TU_ID" />
+            <PropertyRef Name="SKU_ID" />
+          </Key>
+          <Property Name="TU_ID" Type="int" Nullable="false" />
+          <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Qty" Type="float" Nullable="false" />
+          <Property Name="Batch" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProdDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_Commands_dbo_Orders_Order_ID">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Commands_dbo_PlaceIDs_Source">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Commands_dbo_PlaceIDs_Target">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1" />
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Commands_dbo_TU_ID_TU_ID">
+          <End Role="TU_ID" Type="Self.TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
+          <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommandERPs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ERP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_PlaceIDs_Destination">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_SKU_ID_SKU_ID">
+          <End Role="SKU_ID" Type="Self.SKU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SKU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="SKU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Places_dbo_PlaceIDs_PlaceID">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Places" Type="Self.Places" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Places">
+              <PropertyRef Name="PlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Places_dbo_TU_ID_TU_ID">
+          <End Role="TU_ID" Type="Self.TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Places" Type="Self.Places" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Places">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TUs_dbo_SKU_ID_SKU_ID">
+          <End Role="SKU_ID" Type="Self.SKU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TUs" Type="Self.TUs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SKU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TUs">
+              <PropertyRef Name="SKU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TUs_dbo_TU_ID_TU_ID">
+          <End Role="TU_ID" Type="Self.TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TUs" Type="Self.TUs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TUs">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="i2MFCSWMSDatabaseTablesWMSContextModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommandERPs" EntityType="Self.CommandERPs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlaceIDs" EntityType="Self.PlaceIDs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SKU_ID" EntityType="Self.SKU_ID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TU_ID" EntityType="Self.TU_ID" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TUs" EntityType="Self.TUs" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_Commands_dbo_Orders_Order_ID" Association="Self.FK_dbo_Commands_dbo_Orders_Order_ID">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Commands_dbo_PlaceIDs_Source" Association="Self.FK_dbo_Commands_dbo_PlaceIDs_Source">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Commands_dbo_PlaceIDs_Target" Association="Self.FK_dbo_Commands_dbo_PlaceIDs_Target">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Commands_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_Commands_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID" Association="Self.FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
+            <End Role="CommandERPs" EntitySet="CommandERPs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_PlaceIDs_Destination" Association="Self.FK_dbo_Orders_dbo_PlaceIDs_Destination">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_SKU_ID_SKU_ID" Association="Self.FK_dbo_Orders_dbo_SKU_ID_SKU_ID">
+            <End Role="SKU_ID" EntitySet="SKU_ID" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Places_dbo_PlaceIDs_PlaceID" Association="Self.FK_dbo_Places_dbo_PlaceIDs_PlaceID">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Places" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Places_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_Places_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="Places" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TUs_dbo_SKU_ID_SKU_ID" Association="Self.FK_dbo_TUs_dbo_SKU_ID_SKU_ID">
+            <End Role="SKU_ID" EntitySet="SKU_ID" />
+            <End Role="TUs" EntitySet="TUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TUs_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_TUs_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="TUs" EntitySet="TUs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="i2MFCS.WMS.Database.Tables.WMSContextModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CommandERPs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Command" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_CommandERPs_ERP_ID" FromRole="CommandERPs" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Commands">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Order_ID" Type="Int32" Nullable="false" />
+          <Property Name="TU_ID" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Target" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Commands_dbo_Orders_Order_ID" FromRole="Commands" ToRole="Orders" />
+          <NavigationProperty Name="PlaceIDs" Relationship="Self.FK_dbo_Commands_dbo_PlaceIDs_Source" FromRole="Commands" ToRole="PlaceIDs" />
+          <NavigationProperty Name="PlaceIDs1" Relationship="Self.FK_dbo_Commands_dbo_PlaceIDs_Target" FromRole="Commands" ToRole="PlaceIDs" />
+          <NavigationProperty Name="TU_ID1" Relationship="Self.FK_dbo_Commands_dbo_TU_ID_TU_ID" FromRole="Commands" ToRole="TU_ID" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ERP_ID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="SubOrderID" Type="Int32" Nullable="false" />
+          <Property Name="SKU_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubOrderName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SKU_Qty" Type="Double" Nullable="false" />
+          <Property Name="Destination" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ReleaseTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SKU_Batch" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CommandERPs" Relationship="Self.FK_dbo_Orders_dbo_CommandERPs_ERP_ID" FromRole="Orders" ToRole="CommandERPs" />
+          <NavigationProperty Name="Commands" Relationship="Self.FK_dbo_Commands_dbo_Orders_Order_ID" FromRole="Orders" ToRole="Commands" />
+          <NavigationProperty Name="PlaceIDs" Relationship="Self.FK_dbo_Orders_dbo_PlaceIDs_Destination" FromRole="Orders" ToRole="PlaceIDs" />
+          <NavigationProperty Name="SKU_ID1" Relationship="Self.FK_dbo_Orders_dbo_SKU_ID_SKU_ID" FromRole="Orders" ToRole="SKU_ID" />
+        </EntityType>
+        <EntityType Name="PlaceIDs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PositionTravel" Type="Double" Nullable="false" />
+          <Property Name="PositionHoist" Type="Double" Nullable="false" />
+          <Property Name="DimensionClass" Type="Int32" Nullable="false" />
+          <Property Name="FrequencyClass" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Commands" Relationship="Self.FK_dbo_Commands_dbo_PlaceIDs_Source" FromRole="PlaceIDs" ToRole="Commands" />
+          <NavigationProperty Name="Commands1" Relationship="Self.FK_dbo_Commands_dbo_PlaceIDs_Target" FromRole="PlaceIDs" ToRole="Commands" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_PlaceIDs_Destination" FromRole="PlaceIDs" ToRole="Orders" />
+          <NavigationProperty Name="Places" Relationship="Self.FK_dbo_Places_dbo_PlaceIDs_PlaceID" FromRole="PlaceIDs" ToRole="Places" />
+        </EntityType>
+        <EntityType Name="Places">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+            <PropertyRef Name="TU_ID" />
+          </Key>
+          <Property Name="PlaceID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TU_ID" Type="Int32" Nullable="false" />
+          <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="PlaceIDs" Relationship="Self.FK_dbo_Places_dbo_PlaceIDs_PlaceID" FromRole="Places" ToRole="PlaceIDs" />
+          <NavigationProperty Name="TU_ID1" Relationship="Self.FK_dbo_Places_dbo_TU_ID_TU_ID" FromRole="Places" ToRole="TU_ID" />
+        </EntityType>
+        <EntityType Name="SKU_ID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DefaultQty" Type="Double" Nullable="false" />
+          <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Weight" Type="Double" Nullable="false" />
+          <Property Name="FrequencyClass" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="Orders" />
+          <NavigationProperty Name="TUs" Relationship="Self.FK_dbo_TUs_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="TUs" />
+        </EntityType>
+        <EntityType Name="TU_ID">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DimensionClass" Type="Int32" Nullable="false" />
+          <Property Name="Blocked" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Commands" Relationship="Self.FK_dbo_Commands_dbo_TU_ID_TU_ID" FromRole="TU_ID" ToRole="Commands" />
+          <NavigationProperty Name="Places" Relationship="Self.FK_dbo_Places_dbo_TU_ID_TU_ID" FromRole="TU_ID" ToRole="Places" />
+          <NavigationProperty Name="TUs" Relationship="Self.FK_dbo_TUs_dbo_TU_ID_TU_ID" FromRole="TU_ID" ToRole="TUs" />
+        </EntityType>
+        <EntityType Name="TUs">
+          <Key>
+            <PropertyRef Name="TU_ID" />
+            <PropertyRef Name="SKU_ID" />
+          </Key>
+          <Property Name="TU_ID" Type="Int32" Nullable="false" />
+          <Property Name="SKU_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Qty" Type="Double" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProdDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="SKU_ID1" Relationship="Self.FK_dbo_TUs_dbo_SKU_ID_SKU_ID" FromRole="TUs" ToRole="SKU_ID" />
+          <NavigationProperty Name="TU_ID1" Relationship="Self.FK_dbo_TUs_dbo_TU_ID_TU_ID" FromRole="TUs" ToRole="TU_ID" />
+        </EntityType>
+        <Association Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
+          <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommandERPs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="ERP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Commands_dbo_Orders_Order_ID">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Commands_dbo_PlaceIDs_Source">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Commands_dbo_PlaceIDs_Target">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1" />
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Commands_dbo_TU_ID_TU_ID">
+          <End Role="TU_ID" Type="Self.TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Commands">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_PlaceIDs_Destination">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Orders_dbo_SKU_ID_SKU_ID">
+          <End Role="SKU_ID" Type="Self.SKU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SKU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="SKU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Places_dbo_PlaceIDs_PlaceID">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Places" Type="Self.Places" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Places">
+              <PropertyRef Name="PlaceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Places_dbo_TU_ID_TU_ID">
+          <End Role="TU_ID" Type="Self.TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Places" Type="Self.Places" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Places">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TUs_dbo_SKU_ID_SKU_ID">
+          <End Role="SKU_ID" Type="Self.SKU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TUs" Type="Self.TUs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SKU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TUs">
+              <PropertyRef Name="SKU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_TUs_dbo_TU_ID_TU_ID">
+          <End Role="TU_ID" Type="Self.TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TUs" Type="Self.TUs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TUs">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EntitiesWMS" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="CommandERPs" EntityType="Self.CommandERPs" />
+          <EntitySet Name="Commands" EntityType="Self.Commands" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="PlaceIDs" EntityType="Self.PlaceIDs" />
+          <EntitySet Name="Places" EntityType="Self.Places" />
+          <EntitySet Name="SKU_ID" EntityType="Self.SKU_ID" />
+          <EntitySet Name="TU_ID" EntityType="Self.TU_ID" />
+          <EntitySet Name="TUs" EntityType="Self.TUs" />
+          <AssociationSet Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID" Association="Self.FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
+            <End Role="CommandERPs" EntitySet="CommandERPs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Commands_dbo_Orders_Order_ID" Association="Self.FK_dbo_Commands_dbo_Orders_Order_ID">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Commands_dbo_PlaceIDs_Source" Association="Self.FK_dbo_Commands_dbo_PlaceIDs_Source">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Commands_dbo_PlaceIDs_Target" Association="Self.FK_dbo_Commands_dbo_PlaceIDs_Target">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Commands_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_Commands_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_PlaceIDs_Destination" Association="Self.FK_dbo_Orders_dbo_PlaceIDs_Destination">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Orders_dbo_SKU_ID_SKU_ID" Association="Self.FK_dbo_Orders_dbo_SKU_ID_SKU_ID">
+            <End Role="SKU_ID" EntitySet="SKU_ID" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Places_dbo_PlaceIDs_PlaceID" Association="Self.FK_dbo_Places_dbo_PlaceIDs_PlaceID">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="Places" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Places_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_Places_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="Places" EntitySet="Places" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TUs_dbo_SKU_ID_SKU_ID" Association="Self.FK_dbo_TUs_dbo_SKU_ID_SKU_ID">
+            <End Role="SKU_ID" EntitySet="SKU_ID" />
+            <End Role="TUs" EntitySet="TUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_TUs_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_TUs_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="TUs" EntitySet="TUs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="i2MFCSWMSDatabaseTablesWMSContextModelStoreContainer" CdmEntityContainer="EntitiesWMS">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommandERPs">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.CommandERPs">
+              <MappingFragment StoreEntitySet="CommandERPs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Command" ColumnName="Command" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Commands">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Commands">
+              <MappingFragment StoreEntitySet="Commands">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="TU_ID" ColumnName="TU_ID" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Orders">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ERP_ID" ColumnName="ERP_ID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="SubOrderID" ColumnName="SubOrderID" />
+                <ScalarProperty Name="SKU_ID" ColumnName="SKU_ID" />
+                <ScalarProperty Name="SubOrderName" ColumnName="SubOrderName" />
+                <ScalarProperty Name="SKU_Qty" ColumnName="SKU_Qty" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="ReleaseTime" ColumnName="ReleaseTime" />
+                <ScalarProperty Name="SKU_Batch" ColumnName="SKU_Batch" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlaceIDs">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.PlaceIDs">
+              <MappingFragment StoreEntitySet="PlaceIDs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PositionTravel" ColumnName="PositionTravel" />
+                <ScalarProperty Name="PositionHoist" ColumnName="PositionHoist" />
+                <ScalarProperty Name="DimensionClass" ColumnName="DimensionClass" />
+                <ScalarProperty Name="FrequencyClass" ColumnName="FrequencyClass" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Places">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Places">
+              <MappingFragment StoreEntitySet="Places">
+                <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+                <ScalarProperty Name="TU_ID" ColumnName="TU_ID" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SKU_ID">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.SKU_ID">
+              <MappingFragment StoreEntitySet="SKU_ID">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DefaultQty" ColumnName="DefaultQty" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="FrequencyClass" ColumnName="FrequencyClass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TU_ID">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.TU_ID">
+              <MappingFragment StoreEntitySet="TU_ID">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DimensionClass" ColumnName="DimensionClass" />
+                <ScalarProperty Name="Blocked" ColumnName="Blocked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TUs">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.TUs">
+              <MappingFragment StoreEntitySet="TUs">
+                <ScalarProperty Name="TU_ID" ColumnName="TU_ID" />
+                <ScalarProperty Name="SKU_ID" ColumnName="SKU_ID" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="ProdDate" ColumnName="ProdDate" />
+                <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

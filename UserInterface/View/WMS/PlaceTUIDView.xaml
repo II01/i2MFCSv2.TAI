@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="UserInterface.View.PlaceTUIDView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        xmlns:src="clr-namespace:UserInterface.View"
+        xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"             
+        xmlns:v="clr-namespace:UserInterface.View"
+        xmlns:vm="clr-namespace:UserInterface.ViewModel"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" d:DesignWidth="758.959" d:DesignHeight="330.13">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="MultipleChoiceFilter">
+            <src:MultipleChoiceFilter Filter="{Binding Path=Filter, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dgx:DataGridFilterColumnControl}}"/>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Grid Grid.Column="1" Grid.Row="1" Margin="20,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Resx TUID}" Grid.Row="0" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx PlaceID}" Grid.Row="1" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx DimensionClass}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Blocked}" Grid.Row="3" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SKUID}" Grid.Row="4" Margin="0,0,0,10" VerticalAlignment="Top"/>
+
+        <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
+                 Text ="{Binding Path=TUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowTUIDChange}"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=PlaceID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding AllowPlaceChange}"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=DimensionClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowFieldChange}"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Blocked,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowFieldChange}"/>
+        <DataGrid Grid.Row="4" Grid.Column ="2" Grid.RowSpan="2"
+            ItemsSource="{Binding DetailList}" Margin="0,0,0,0"
+                        x:Name="dgDetails" 
+                        AutoGenerateColumns="False"
+                        dgx:DataGridFilter.IsAutoFilterEnabled="True"
+                        dgx:Tools.ApplyInitialSorting="True"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        CanUserAddRows="True"
+                        IsReadOnly="{Binding AllowFIeldChange, Converter={StaticResource InvertBool}}"
+                        SelectedItem="{Binding Selected}" 
+                        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
+                                    Binding="{Binding SKUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Description}" Width="*" IsReadOnly="True"
+                                    Binding="{Binding Description}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Qty}"
+                                    Binding="{Binding Qty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}"
+                                    Binding="{Binding Batch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ProdDate}"
+                                    Binding="{Binding ProdDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ExpDate}"
+                                    Binding="{Binding ExpDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+
+</UserControl>

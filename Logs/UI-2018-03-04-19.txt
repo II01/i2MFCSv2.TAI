@@ -1,0 +1,2 @@
+2018-03-04 19:05:35:820->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigUIDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 391)
+

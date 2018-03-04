@@ -146,6 +146,24 @@
         <DataTemplate DataType="{x:Type vm:HistorySimpleCommandsViewModel}">
             <views:HistorySimpleCommandsView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SKUIDsViewModel}">
+            <views:SKUIDsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SKUIDViewModel}">
+            <views:SKUIDView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PlaceIDsViewModel}">
+            <views:PlaceIDsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PlaceIDViewModel}">
+            <views:PlaceIDView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PlaceTUIDsViewModel}">
+            <views:PlaceTUIDsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:PlaceTUIDViewModel}">
+            <views:PlaceTUIDView />
+        </DataTemplate>
 
         <!-- converters -->
         <views:AddMultConverter x:Key="AddMultConverter" />

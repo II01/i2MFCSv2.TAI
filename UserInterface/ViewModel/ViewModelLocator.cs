@@ -76,6 +76,18 @@ namespace UserInterface.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<HistorySimpleCommandsViewModel>(); }
         }
+        public SKUIDsViewModel SKUIDs
+        {
+            get { return ServiceLocator.Current.GetInstance<SKUIDsViewModel>(); }
+        }
+        public PlaceIDsViewModel PlaceIDs
+        {
+            get { return ServiceLocator.Current.GetInstance<PlaceIDsViewModel>(); }
+        }
+        public PlaceTUIDsViewModel PlaceTUIDs
+        {
+            get { return ServiceLocator.Current.GetInstance<PlaceTUIDsViewModel>(); }
+        }
         #endregion
 
         #region initialization
@@ -99,6 +111,9 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<HistoryMovementsViewModel>();
             SimpleIoc.Default.Register<HistoryCommandsViewModel>();
             SimpleIoc.Default.Register<HistorySimpleCommandsViewModel>();
+            SimpleIoc.Default.Register<SKUIDsViewModel>();
+            SimpleIoc.Default.Register<PlaceIDsViewModel>();
+            SimpleIoc.Default.Register<PlaceTUIDsViewModel>();
         }
         public static void Cleanup()
         {
