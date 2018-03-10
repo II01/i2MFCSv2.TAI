@@ -601,7 +601,7 @@ namespace Warehouse.DataService
                     var command =  (from cmd in dc.Commands.OrderByDescending(k => k.Priority).ThenBy(kk => kk.ID)
                                     where cmd is CommandMaterial &&
                                           cmd.Task == Command.EnumCommandTask.Move &&
-                                          ((modeWMS && cmd.WMS_ID != 0) || (!modeWMS && cmd.WMS_ID == 0))
+                                          ((modeWMS) || (!modeWMS && cmd.WMS_ID == 0))
                                     join p in dc.Places on (cmd as CommandMaterial).Material equals p.Material
                                     where p.Place1 == (cmd as CommandMaterial).Source &&
                                           cmd.Status < Command.EnumCommandStatus.Canceled &&
@@ -632,7 +632,7 @@ namespace Warehouse.DataService
                     return (CommandMaterial)dc.Commands.OrderByDescending(k => k.Priority).ThenBy(kk => kk.ID).
                            FirstOrDefault(prop => (prop is CommandMaterial) && (prop as CommandMaterial).Material == material &&
                                                   prop.Task == Command.EnumCommandTask.Move &&
-                                                  ((modeWMS && prop.WMS_ID != 0) || (!modeWMS && prop.WMS_ID == 0)) &&
+                                                  ((modeWMS) || (!modeWMS && prop.WMS_ID == 0)) &&
                                                    prop.Status < Command.EnumCommandStatus.Canceled);
                 }
             }
@@ -652,7 +652,7 @@ namespace Warehouse.DataService
                     return dc.Commands.OrderByDescending(k => k.Priority).ThenBy(kk => kk.ID).
                            FirstOrDefault(p => p.Task != Command.EnumCommandTask.Move && 
                                                p.Status == Command.EnumCommandStatus.NotActive && 
-                                               ((modeWMS && (p.WMS_ID != 0 || p.Task == Command.EnumCommandTask.CancelCommand)) || (!modeWMS && p.WMS_ID == 0))); 
+                                               ((modeWMS) || (!modeWMS && p.WMS_ID == 0))); 
                 }
             }
             catch (Exception ex)

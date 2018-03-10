@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 using Warehouse.WCF;
 using SimpleLog;
 using WCFWarehouse.MFCSService;
+using System.Net;
 
 namespace WCFClients
 {
@@ -22,7 +23,7 @@ namespace WCFClients
         {
             try
             {
-                Warehouse?.OnNewEvent.ForEach(prop => prop.Invoke(time, s, t, text));
+                Warehouse?.OnNewEvent.ForEach(prop => { try { prop.Invoke(time, s, t, text); } catch { } });
                 // Warehouse?.AddEvent((Event.EnumSeverity) s, (Event.EnumType) t, text);
             }
             catch (Exception ex)
@@ -64,7 +65,12 @@ namespace WCFClients
 //                NotifyUIClient.ClientCredentials.Windows.ClientCredential.Password = "password";
 //                NotifyUIClient.ClientCredentials.Windows.ClientCredential.Domain = "domainname";
 
-                NotifyUIClient.UIRegister(Warehouse.Name);  // change this to App.Settings ClientName 
+                string hostName = Dns.GetHostName();
+                string ip = "";
+                var al = Dns.GetHostEntry(hostName).AddressList;
+                if (al.Length > 0)
+                    ip = al[0].ToString();                
+                NotifyUIClient.UIRegister($"{Warehouse.Name}:{hostName}:{ip}");
             }
             catch (Exception ex)
             {

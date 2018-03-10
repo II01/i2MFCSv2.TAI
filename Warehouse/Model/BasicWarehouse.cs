@@ -19,6 +19,7 @@ using System.Diagnostics;
 using SimpleLog;
 using System.Threading;
 using Telegrams;
+using System.Windows.Documents;
 
 namespace Warehouse.Model
 {
@@ -289,6 +290,7 @@ namespace Warehouse.Model
 
         public void CallOnNewEvent(DateTime dt, Event.EnumSeverity s, Event.EnumType t, string text)
         {
+            var l = new List<Action<DateTime, Event.EnumSeverity, Event.EnumType, string>>();
             foreach (var n in OnNewEvent)
                 try
                 {
@@ -296,7 +298,9 @@ namespace Warehouse.Model
                 }
                 catch(Exception)
                 {
+                    l.Add(n);
                 }
+            l.ForEach(p => OnNewEvent.Remove(p));
         }
 
         public void AddEvent(Event.EnumSeverity s, Event.EnumType t, string text)

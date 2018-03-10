@@ -1,0 +1,565 @@
+2018-03-10 21:02:09:089->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:09:119->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:09:809->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:09:849->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:09:869->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:09:989->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:10:029->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:10:079->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:10:299->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:10:309->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:11:379->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:11:439->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:11:782->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|16|202|1|1|16|0|2753
+|T.StartByte=10|T.SecondByte=11|T.Sequence=16|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2753
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:11:812->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|20|201|1|1|16|0|2758
+|T.StartByte=10|T.SecondByte=11|T.Sequence=20|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2758
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:12:462->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:12:552->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:12:784->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:12:808->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:13:218->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:13:568->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:13:598->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:14:708->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:14:738->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:15:828->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:15:858->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:16:898->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:16:928->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|57|203|1|1|16|0|2793
+|T.StartByte=10|T.SecondByte=11|T.Sequence=57|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2793
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:16:938->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:17:798->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:17:808->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:17:988->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:18:038->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:18:268->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:19:057->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:19:127->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:20:035->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:20:089->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:20:114->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:20:165->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:20:209->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:20:229->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:20:250->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:20:258->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:21:251->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:21:357->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:22:315->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:22:465->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:22:808->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:22:817->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:23:270->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:23:396->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:23:506->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:24:500->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:24:593->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:25:580->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:25:659->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:26:647->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:26:737->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:27:791->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:27:803->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:27:811->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:27:820->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:28:284->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:28:863->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:28:911->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:29:945->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:30:013->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:30:233->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:30:260->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:30:277->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:30:459->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:30:467->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:30:479->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:31:044->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:31:104->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:31:988->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|17|202|1|1|16|0|2752
+|T.StartByte=10|T.SecondByte=11|T.Sequence=17|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2752
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:32:008->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|21|201|1|1|16|0|2759
+|T.StartByte=10|T.SecondByte=11|T.Sequence=21|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2759
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:32:107->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:32:190->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:32:823->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:32:832->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:33:162->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:33:273->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:33:292->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:34:242->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:34:341->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:35:346->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:35:414->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:36:440->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:37:204->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|58|203|1|1|16|0|2794
+|T.StartByte=10|T.SecondByte=11|T.Sequence=58|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2794
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:37:550->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:37:839->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:37:845->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:38:307->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:38:639->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:39:552->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:39:695->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:40:481->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:40:490->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:40:499->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:40:657->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:40:663->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:40:684->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:40:715->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:40:739->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:41:818->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:41:889->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:42:845->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:42:850->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:42:919->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:42:925->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:43:310->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:43:980->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:44:000->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:45:033->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:45:109->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:46:108->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:46:232->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:47:266->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:47:279->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:47:854->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:47:877->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:48:312->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:48:347->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:48:363->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:49:436->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:49:455->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:50:654->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:50:666->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:50:679->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:50:694->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:50:706->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:02:50:889->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:50:903->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:50:923->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:02:51:701->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:51:725->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:52:161->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|22|201|1|1|16|0|2756
+|T.StartByte=10|T.SecondByte=11|T.Sequence=22|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2756
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:52:173->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|18|202|1|1|16|0|2755
+|T.StartByte=10|T.SecondByte=11|T.Sequence=18|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2755
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:52:765->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:52:784->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:52:855->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:52:862->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:53:325->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:53:846->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:54:887->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:55:975->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:56:764->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:57:038->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:57:495->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|59|203|1|1|16|0|2795
+|T.StartByte=10|T.SecondByte=11|T.Sequence=59|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2795
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:02:57:857->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:57:877->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:57:903->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:58:148->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:02:58:342->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:02:59:034->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:02:59:252->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:00:160->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:00:288->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:00:916->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:03:00:937->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:03:00:949->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:03:01:154->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:03:01:167->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:03:01:177->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:03:01:225->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:01:393->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:02:268->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:02:471->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:02:872->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:03:02:879->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:03:03:329->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:03:344->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:03:03:529->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:04:370->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:04:639->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:05:521->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:05:691->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:06:665->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:06:765->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:07:772->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:07:886->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:03:07:892->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:03:07:912->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:08:356->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:03:08:889->EXCEPTION:PLC_Conveyor:Unable to write data to the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:09:038->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:09:945->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:10:103->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:11:053->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:11:153->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:11:165->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:03:11:191->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:03:11:202->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-10 21:03:11:367->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:03:11:397->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:03:11:422->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-10 21:03:12:105->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:SendThreading (Communicator.cs 198)
+
+2018-03-10 21:03:12:227->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.:RcvThreading (Communicator.cs 149)
+
+2018-03-10 21:03:12:384->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|23|201|1|1|16|0|2757
+|T.StartByte=10|T.SecondByte=11|T.Sequence=23|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2757
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:03:12:393->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|19|202|1|1|16|0|2754
+|T.StartByte=10|T.SecondByte=11|T.Sequence=19|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2754
+:RcvThreading (Communicator.cs 134)
+
+2018-03-10 21:03:12:902->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-10 21:03:12:910->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+

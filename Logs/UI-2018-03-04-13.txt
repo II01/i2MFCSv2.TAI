@@ -1,8 +1,0 @@
-2018-03-04 13:04:40:464->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigUIDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 391)
-
-2018-03-04 13:12:39:535->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigUIDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 391)
-
-2018-03-04 13:17:42:339->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigUIDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 391)
-
-2018-03-04 13:18:55:475->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigUIDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 391)
-

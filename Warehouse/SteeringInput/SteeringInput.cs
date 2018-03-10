@@ -28,7 +28,7 @@ namespace Warehouse.SteeringInput
                     try
                     {
                         Warehouse?.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, String.Format("Remote mode switched to {0}", _remote));
-                        SteeringNotify.ForEach(prop => prop(RemoteMode, AutomaticMode, Run));
+                        SteeringNotifyAndRemove();
                     }
                     catch
                     { }
@@ -48,7 +48,7 @@ namespace Warehouse.SteeringInput
                     try
                     {
                         Warehouse?.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, String.Format("Automatic mode switched to {0}", _automatic));
-                        SteeringNotify.ForEach(prop => prop(RemoteMode, AutomaticMode, Run));
+                        SteeringNotifyAndRemove();
                     }
                     catch
                     { }
@@ -56,9 +56,27 @@ namespace Warehouse.SteeringInput
             }
         }
 
+        private void SteeringNotifyAndRemove()
+        {
+            var list = new List<Action<bool, bool, bool>>();
+            foreach (var prop in SteeringNotify)
+            {
+                try
+                {
+                    prop(RemoteMode, AutomaticMode, Run);
+                }
+                catch
+                {
+                    list.Add(prop);
+                }
+            }
+            list.ForEach(p => SteeringNotify.Remove(p));
+        }
+
+
         public void DirectVMNotify()
         {
-            SteeringNotify.ForEach(prop => prop(RemoteMode, AutomaticMode, Run));
+            SteeringNotifyAndRemove();
         }
 
         // process runs
@@ -73,7 +91,7 @@ namespace Warehouse.SteeringInput
                     try
                     {
                         Warehouse?.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, String.Format("Run mode switched to {0}", _run));
-                        SteeringNotify.ForEach(prop => prop(RemoteMode, AutomaticMode, Run));
+                        SteeringNotifyAndRemove();
                     }
                     catch { }
                 }

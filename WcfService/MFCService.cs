@@ -45,7 +45,7 @@ namespace WcfService
 
                     if (_callDict.ContainsKey(client))
                     {
-                        _callDict[client].ForEach(prop => prop.Item2.NotifyVM.Remove(prop.Item1));
+                        _callDict[client].ForEach(prop => { try { prop.Item2.NotifyVM.Remove(prop.Item1); } catch { } });
                         _callDict[client].Clear();
                     }
                     else
@@ -53,7 +53,7 @@ namespace WcfService
 
                     if (_callDictSegment.ContainsKey(client))
                     {
-                        _callDictSegment[client].ForEach(prop => prop.Item2.NotifyVM.Remove(prop.Item1));
+                        _callDictSegment[client].ForEach( prop => { try {prop.Item2.NotifyVM.Remove(prop.Item1); } catch { } });
                         _callDictSegment[client].Clear();
                     }
                     else
@@ -66,7 +66,11 @@ namespace WcfService
 
                     if (_callDictEvent.ContainsKey(client))
                     {
-                        Warehouse.OnNewEvent.Remove(_callDictEvent[client]);
+                        try
+                        {
+                            Warehouse.OnNewEvent.Remove(_callDictEvent[client]);
+                        }
+                        catch { }
                         _callDictEvent.Remove(client);
                     }
                     var d1 = new Action<DateTime, Event.EnumSeverity, Event.EnumType, string>(OperationContext.Current.GetCallbackChannel<INotifyUICallback>().UIAddEvent);
@@ -75,7 +79,11 @@ namespace WcfService
 
                     if (_callDictSystemMode.ContainsKey(client))
                     {
-                        Warehouse.SteeringCommands.SteeringNotify.Remove(_callDictSystemMode[client]);
+                        try
+                        {
+                            Warehouse.SteeringCommands.SteeringNotify.Remove(_callDictSystemMode[client]);
+                        }
+                        catch { }
                         _callDictSystemMode.Remove(client);
                     }
 

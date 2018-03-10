@@ -38,8 +38,13 @@ namespace SimpleLog
 
         public static void AddLog(Severity severity, string device, string Message, [CallerMemberName] string member = "", [CallerFilePath] string fileName = "", [CallerLineNumber] int line = 0)
         {
-            string[] str = fileName.Split('\\');
-            AddLog(severity, device, $"{member} ({str[str.Length-1]} {line})", Message);
+            try
+            {
+                string[] str = fileName.Split('\\');
+                AddLog(severity, device, $"{member} ({str[str.Length - 1]} {line})", Message);
+            }
+            catch
+            { }
         }
 
         public static void AddLog(Severity severity, string device, string module, string Message)
@@ -48,14 +53,19 @@ namespace SimpleLog
             if (!On)
                 return;
 
-            lock (_Logging)
+            try
             {
-                using (StreamWriter sw = new StreamWriter(String.Format(FileName, DateTime.Now), true))
+                lock (_Logging)
                 {
-                    sw.WriteLine(String.Format("{0:yyyy-MM-dd HH:mm:ss:fff}->{1}:{2}:{3}:{4}", DateTime.Now, severity, device, Message, module));
-                    sw.WriteLine();
+                    using (StreamWriter sw = new StreamWriter(String.Format(FileName, DateTime.Now), true))
+                    {
+                        sw.WriteLine(String.Format("{0:yyyy-MM-dd HH:mm:ss:fff}->{1}:{2}:{3}:{4}", DateTime.Now, severity, device, Message, module));
+                        sw.WriteLine();
+                    }
                 }
             }
+            catch
+            { }
         }
     }
 }

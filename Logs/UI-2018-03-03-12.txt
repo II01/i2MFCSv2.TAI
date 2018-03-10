@@ -1,6 +1,0 @@
-2018-03-03 12:46:53:554->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigUIDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 391)
-
-2018-03-03 12:57:02:823->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigUIDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 391)
-
-2018-03-03 12:57:17:408->EXCEPTION:MainViewModel:SKUIDsViewModel.Initialize: DBServiceWMS.GetSKUIDs: No connection string named 'EntitiesWMS' could be found in the application config file.:Initialize (MainViewModel.cs 249)
-

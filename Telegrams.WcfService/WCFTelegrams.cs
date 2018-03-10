@@ -17,12 +17,22 @@ namespace Telegrams.WcfService
     {
         private MyRcvTCPClient _comm;
 
+        private IPAddress _IP;
+        private int _port;
+        private TimeSpan _timeout;
+        private string _name;
+        private string _version;
 
         public void Init(string name, string addr, int SendPort, int timeoutSec, string version)
         {
             try
             {
-                _comm = new MyRcvTCPClient { Name = name, IP = IPAddress.Parse(addr), Port = SendPort, TimeOut = TimeSpan.FromSeconds(timeoutSec), Version = version };
+                _IP = IPAddress.Parse(addr);
+                _port = SendPort;
+                _timeout = TimeSpan.FromSeconds(timeoutSec);
+                _name = name;
+                _version = version;
+                _comm = new MyRcvTCPClient { Name = _name, IP = _IP, Port = _port, TimeOut = _timeout, Version = _version };
             }
             catch (Exception ex)
             {
@@ -35,10 +45,19 @@ namespace Telegrams.WcfService
         {
             try
             {
+                if(_comm == null)
+                    _comm = new MyRcvTCPClient { Name = _name, IP = _IP, Port = _port, TimeOut = _timeout, Version = _version };
+
                 return await _comm.Receive().ConfigureAwait(false);
             }
             catch (Exception ex)
             {
+                try
+                {
+                    _comm.Close();
+                }
+                catch { }
+                _comm = null;
                 throw new FaultException(ex.Message);
             }
         }
@@ -88,12 +107,20 @@ namespace Telegrams.WcfService
     public class WCF_SendTelProxy : IWCF_SendTelProxy, IDisposable
     {
         private MySendTCPClient _comm;
+        private IPAddress _IP;
+        private int _port;
+        private TimeSpan _timeout;
+        private string _name;
 
         public void Init(string name, string addr, int SendPort, int timeoutSec, string version)
         {
             try
             {
-                _comm = new MySendTCPClient { Name = name, IP = IPAddress.Parse(addr), Port = SendPort, TimeOut = TimeSpan.FromSeconds(timeoutSec)};
+                _IP = IPAddress.Parse(addr);
+                _port = SendPort;
+                _timeout = TimeSpan.FromSeconds(timeoutSec);
+                _name = name;
+                _comm = new MySendTCPClient { Name = _name, IP = _IP, Port = _port, TimeOut = _timeout};
             }
             catch (Exception ex)
             {
@@ -106,10 +133,18 @@ namespace Telegrams.WcfService
         {
             try
             {
+                if (_comm == null)
+                    _comm = new MySendTCPClient { Name = _name, IP = _IP, Port = _port, TimeOut = _timeout };
                 await _comm.Send(t).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
+                try
+                {
+                    _comm.Close();
+                }
+                catch { }
+                _comm = null;
                 throw new FaultException(ex.Message);
             }
         }
