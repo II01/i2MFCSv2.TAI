@@ -164,6 +164,12 @@
         <DataTemplate DataType="{x:Type vm:PlaceTUIDViewModel}">
             <views:PlaceTUIDView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OrdersViewModel}">
+            <views:OrdersView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OrderViewModel}">
+            <views:OrderView />
+        </DataTemplate>
 
         <!-- converters -->
         <views:AddMultConverter x:Key="AddMultConverter" />

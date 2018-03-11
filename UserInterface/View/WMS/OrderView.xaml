@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="UserInterface.View.OrderView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        xmlns:v="clr-namespace:UserInterface.View"
+        xmlns:vm="clr-namespace:UserInterface.ViewModel"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" d:DesignWidth="758.959" d:DesignHeight="330.13">
+
+    <Grid Grid.Column="1" Grid.Row="1" Margin="20,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Resx ERPID}" Grid.Row="0" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx OrderID}" Grid.Row="1" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Destination}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx ReleaseTime}" Grid.Row="3" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SubOrderID}" Grid.Row="4" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SubOrderName}" Grid.Row="5" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SKUID}" Grid.Row="6" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SKUBatch}" Grid.Row="7" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SKUQty}" Grid.Row="8" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Status}" Grid.Row="9" Margin="0,0,0,10"/>
+
+        <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
+                 Text = "{Binding Path=ERPID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="false"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=OrderID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableOrderEdit}"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Destination,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableOrderEdit}"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=ReleaseTime,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableOrderEdit}"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=SubOrderID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableSubOrderEdit}"/>
+        <TextBox Grid.Row="5" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=SubOrderName,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableSubOrderEdit}"/>
+        <TextBox Grid.Row="6" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=SKUID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableSKUEdit}"/>
+        <TextBox Grid.Row="7" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=SKUBatch,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableSKUEdit}"/>
+        <TextBox Grid.Row="8" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=SKUQty,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableSKUEdit}"/>
+        <TextBox Grid.Row="9" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Status,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
+    </Grid>
+
+</UserControl>

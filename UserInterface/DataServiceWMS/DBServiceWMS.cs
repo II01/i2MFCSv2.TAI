@@ -349,5 +349,240 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public List<Orders> GetOrders(int statusLessOrEqual)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = (from c in dc.Orders
+                             where c.Status <= statusLessOrEqual 
+                             orderby c.OrderID descending, c.SubOrderID ascending 
+                             select c).Take(5000);
+
+                    return l.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public CommandERPs FindCommandERP(int erpid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    return dc.CommandERPs.FirstOrDefault(prop => prop.ID == erpid);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void AddOrder(Orders order)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    if( dc.CommandERPs.FirstOrDefault(p => p.ID == order.ERP_ID) == null)
+                        dc.CommandERPs.Add(new CommandERPs { ID = order.ERP_ID, Command = "Move", Status = 0 });
+                    dc.Orders.Add(order);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void UpdateOrders(int orderid, Orders order)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from or in dc.Orders
+                            where or.OrderID == orderid
+                            select or;
+                    foreach(var o in l)
+                    {
+                        o.OrderID = order.OrderID;
+                        o.Destination = order.Destination;
+                        o.ReleaseTime = order.ReleaseTime;
+                        o.Status = order.Status;
+                    }
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void DeleteOrders(int orderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = from or in dc.Orders
+                                where or.OrderID == orderid
+                                select or;
+                    dc.Orders.RemoveRange(items);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public bool ExistsOrderID(int orderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    return dc.Orders.FirstOrDefault(p => p.OrderID == orderid) != null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void AddSubOrder(Orders order)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    dc.Orders.Add(order);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void UpdateSubOrders(int orderid, int suborderid, Orders order)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from or in dc.Orders
+                            where or.OrderID == orderid && or.SubOrderID == suborderid
+                            select or;
+                    foreach (var o in l)
+                    {
+                        o.SubOrderID = order.SubOrderID;
+                        o.SubOrderName = order.SubOrderName;
+                    }
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void DeleteSubOrders(int orderid, int suborderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = from or in dc.Orders
+                                where or.OrderID == orderid && or.SubOrderID == suborderid
+                                select or;
+                    dc.Orders.RemoveRange(items);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public bool ExistsSubOrderID(int orderid, int suborderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    return dc.Orders.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid) != null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void AddSKU(Orders order)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    dc.Orders.Add(order);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void UpdateSKU(Orders order)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var o = dc.Orders.Find(order.ID);
+
+                    if(o != null)
+                    {
+                        o.SKU_ID = order.SKU_ID;
+                        o.SKU_Batch = order.SKU_Batch;
+                        o.SKU_Qty = order.SKU_Qty;
+                    }
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void DeleteSKU(Orders order)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var item = dc.Orders.Find(order.ID);
+                    dc.Orders.Remove(item);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
     }
 }

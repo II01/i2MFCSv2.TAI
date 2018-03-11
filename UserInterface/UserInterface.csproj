@@ -204,6 +204,8 @@
     <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="ViewModel\WMS\OrdersViewModel.cs" />
+    <Compile Include="ViewModel\WMS\OrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceTUIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceTUIDViewModel.cs" />
@@ -238,6 +240,12 @@
     </Compile>
     <Compile Include="View\HistoryMovementsView.xaml.cs">
       <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\OrdersView.xaml.cs">
+      <DependentUpon>OrdersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\OrderView.xaml.cs">
+      <DependentUpon>OrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\PlaceTUIDsView.xaml.cs">
       <DependentUpon>PlaceTUIDsView.xaml</DependentUpon>
@@ -375,6 +383,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\HistoryMovementsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\OrdersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\OrderView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

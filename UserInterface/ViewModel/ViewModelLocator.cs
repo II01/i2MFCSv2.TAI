@@ -88,6 +88,14 @@ namespace UserInterface.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<PlaceTUIDsViewModel>(); }
         }
+        public OrderViewModel Order
+        {
+            get { return ServiceLocator.Current.GetInstance<OrderViewModel>(); }
+        }
+        public OrdersViewModel Orders
+        {
+            get { return ServiceLocator.Current.GetInstance<OrdersViewModel>(); }
+        }
         #endregion
 
         #region initialization
@@ -114,6 +122,7 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<SKUIDsViewModel>();
             SimpleIoc.Default.Register<PlaceIDsViewModel>();
             SimpleIoc.Default.Register<PlaceTUIDsViewModel>();
+            SimpleIoc.Default.Register<OrdersViewModel>();
         }
         public static void Cleanup()
         {

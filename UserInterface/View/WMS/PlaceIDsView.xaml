@@ -62,13 +62,13 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                     Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
-            <DataGrid.RowDetailsTemplate>
+<!--            <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
                     <StackPanel>
                         <TextBlock Text="{Binding ID}" Margin="10" />
                     </StackPanel>
                 </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
+            </DataGrid.RowDetailsTemplate> -->
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

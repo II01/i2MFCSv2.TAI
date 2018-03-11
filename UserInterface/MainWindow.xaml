@@ -108,11 +108,11 @@
                 <TreeViewItem  Header="{Resx TUs}" 
                            Tag="{Binding PlaceTUIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
-                <TreeViewItem  Header="{Resx CommandERPs}" 
-                           Tag="{Binding CommandERPs, Source={StaticResource Locator}}" 
-                           IsEnabled="True"/>
                 <TreeViewItem  Header="{Resx Orders}" 
                            Tag="{Binding Orders, Source={StaticResource Locator}}" 
+                           IsEnabled="True"/>
+                <TreeViewItem  Header="{Resx CommandERPs}" 
+                           Tag="{Binding CommandERPs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
                 <TreeViewItem  Header="{Resx CommandMFCSs}" 
                            Tag="{Binding CommandMFCSs, Source={StaticResource Locator}}" 
