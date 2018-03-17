@@ -187,7 +187,7 @@ namespace Warehouse.Strategy
                             Place place = Warehouse.DBService.FindPlace((cmd as CommandMaterial).Source);
                             if (place == null)
                                 place = new Place { Place1 = (cmd as CommandMaterial).Source, Material = 0 };
-                            await Warehouse.WMS.SendLocationInfo(place, null);
+                            Warehouse.WMS.SendLocationInfo(place, null);
                             cmd.Status = Command.EnumCommandStatus.Finished;
                             Warehouse.DBService.UpdateCommand(cmd);
                             Warehouse.OnCommandFinish?.Invoke(cmd);

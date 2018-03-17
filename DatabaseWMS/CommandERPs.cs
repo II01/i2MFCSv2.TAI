@@ -23,6 +23,7 @@ namespace DatabaseWMS
         public int ID { get; set; }
         public string Command { get; set; }
         public int Status { get; set; }
+        public System.DateTime Time { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

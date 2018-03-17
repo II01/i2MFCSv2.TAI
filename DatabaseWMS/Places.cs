@@ -17,6 +17,7 @@ namespace DatabaseWMS
         public string PlaceID { get; set; }
         public int TU_ID { get; set; }
         public byte[] TimeStamp { get; set; }
+        public System.DateTime Time { get; set; }
     
         public virtual PlaceIDs PlaceIDs { get; set; }
         public virtual TU_ID TU_ID1 { get; set; }

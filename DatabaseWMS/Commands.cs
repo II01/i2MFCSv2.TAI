@@ -20,6 +20,7 @@ namespace DatabaseWMS
         public string Source { get; set; }
         public string Target { get; set; }
         public int Status { get; set; }
+        public System.DateTime Time { get; set; }
     
         public virtual Orders Orders { get; set; }
         public virtual PlaceIDs PlaceIDs { get; set; }

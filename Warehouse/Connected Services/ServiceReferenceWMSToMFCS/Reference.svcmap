@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="73bdb020-5929-40fa-a77b-edd7634cfd9f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.7.243:9010/i2MFCS.WMS/WMSToMFCS/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="38ee2eb6-7de0-4a75-ac76-9bfd66affdbb" SourceId="1" SourceUrl="http://192.168.7.243:9010/i2MFCS.WMS/WMSToMFCS/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="6a155f25-d217-41ac-93ce-977af5b587e9" SourceId="1" SourceUrl="http://192.168.7.243:9010/i2MFCS.WMS/WMSToMFCS/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="9cc96346-c4ce-4e93-a47c-6a27c58d38a6" SourceId="1" SourceUrl="http://192.168.7.243:9010/i2MFCS.WMS/WMSToMFCS/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

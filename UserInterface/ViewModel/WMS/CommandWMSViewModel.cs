@@ -21,8 +21,6 @@ namespace UserInterface.ViewModel
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
         private bool _validationEnabled;
-        private ObservableCollection<CommandWMSOrder> _detailList;
-        string _commandAsXML;
         #endregion
 
         #region properties

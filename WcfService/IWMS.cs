@@ -4,14 +4,15 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using WcfService.DTO;
 
 namespace WcfService
 {
     [ServiceContract]
     public interface IWMS
     {
-        [OperationContract]
-        string MFCS_Submit(string wmsID, string item, string instruction, string arguments);
+        [OperationContract(IsOneWay =true)]
+        void MFCS_Submit(IEnumerable<DTOCommand> cmds);
     }
 
 }

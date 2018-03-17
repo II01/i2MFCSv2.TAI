@@ -22,6 +22,7 @@
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Command" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Commands">
           <Key>
@@ -33,6 +34,7 @@
           <Property Name="Source" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Target" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -76,6 +78,7 @@
           <Property Name="PlaceID" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="TU_ID" Type="int" Nullable="false" />
           <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="SKU_ID">
           <Key>
@@ -334,6 +337,7 @@
           <Property Name="Command" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_CommandERPs_ERP_ID" FromRole="CommandERPs" ToRole="Orders" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="Commands">
           <Key>
@@ -349,6 +353,7 @@
           <NavigationProperty Name="PlaceIDs" Relationship="Self.FK_dbo_Commands_dbo_PlaceIDs_Source" FromRole="Commands" ToRole="PlaceIDs" />
           <NavigationProperty Name="PlaceIDs1" Relationship="Self.FK_dbo_Commands_dbo_PlaceIDs_Target" FromRole="Commands" ToRole="PlaceIDs" />
           <NavigationProperty Name="TU_ID1" Relationship="Self.FK_dbo_Commands_dbo_TU_ID_TU_ID" FromRole="Commands" ToRole="TU_ID" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -395,6 +400,7 @@
           <Property Name="TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="PlaceIDs" Relationship="Self.FK_dbo_Places_dbo_PlaceIDs_PlaceID" FromRole="Places" ToRole="PlaceIDs" />
           <NavigationProperty Name="TU_ID1" Relationship="Self.FK_dbo_Places_dbo_TU_ID_TU_ID" FromRole="Places" ToRole="TU_ID" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="SKU_ID">
           <Key>
@@ -666,6 +672,7 @@
           <EntitySetMapping Name="CommandERPs">
             <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.CommandERPs">
               <MappingFragment StoreEntitySet="CommandERPs">
+                <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Command" ColumnName="Command" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
@@ -675,6 +682,7 @@
           <EntitySetMapping Name="Commands">
             <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Commands">
               <MappingFragment StoreEntitySet="Commands">
+                <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
                 <ScalarProperty Name="TU_ID" ColumnName="TU_ID" />
@@ -716,6 +724,7 @@
           <EntitySetMapping Name="Places">
             <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Places">
               <MappingFragment StoreEntitySet="Places">
+                <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
                 <ScalarProperty Name="TU_ID" ColumnName="TU_ID" />
                 <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />

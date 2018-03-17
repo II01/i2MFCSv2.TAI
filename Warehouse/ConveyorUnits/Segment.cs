@@ -169,7 +169,7 @@ namespace Warehouse.ConveyorUnits
                 {
                     NotifyVM[i].Invoke(cbi); // , null, null);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     notActive.Add(NotifyVM[i]);
                 }
