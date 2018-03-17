@@ -1057,7 +1057,7 @@ namespace Warehouse.DataService
             catch (Exception ex)
             {
                 EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
-                throw new DBServiceException(String.Format("DBService.UpdateAlarm failed ({0},{1},{2},{3})", unit, alarmid, stat));
+                throw new DBServiceException(String.Format("DBService.UpdateAlarm failed ({0},{1},{2})", unit, alarmid, stat));
             }
         }
 

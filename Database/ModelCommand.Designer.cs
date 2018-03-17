@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\tonib\Documents\Visual Studio 2017\Projects\MFCS\Database\ModelCommand.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\tonib\Documents\Visual Studio 2017\Projects\MFCS\I2MFCSV2\Database\ModelCommand.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

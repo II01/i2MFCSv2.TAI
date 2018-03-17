@@ -1,0 +1,1041 @@
+2018-03-17 16:57:30:068->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 395)
+
+2018-03-17 16:58:15:167->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|66|101|1|1|16|0|2620
+|T.StartByte=10|T.SecondByte=11|T.Sequence=66|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2620
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:20:003->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3689|0|1|2018|3|17|16|58|19|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3689|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=19|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:20:340->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3689|0|1|2018|3|17|16|58|19|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3689|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=19|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:20:779->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3586|0|1|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3586|T.MFCS_ID=0|T.Order=1|T.SegmentID=0|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:20:962->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3586|0|1|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3586|T.MFCS_ID=0|T.Order=1|T.SegmentID=0|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:21:798->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:21:842->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:21:855->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:22:291->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3695|0|1|2018|3|17|16|58|21|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3695|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=21|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:22:386->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3587|0|1|1|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3587|T.MFCS_ID=0|T.Order=1|T.SegmentID=1|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:22:442->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3695|0|1|2018|3|17|16|58|21|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3695|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=21|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:22:720->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3587|0|1|1|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3587|T.MFCS_ID=0|T.Order=1|T.SegmentID=1|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:23:966->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3693|0|1|2018|3|17|16|58|23|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3693|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=23|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:24:100->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3693|0|1|2018|3|17|16|58|23|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3693|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=23|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:24:447->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:24:520->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:24:636->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:25:543->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|32|203|1|1|16|0|2800
+|T.StartByte=10|T.SecondByte=11|T.Sequence=32|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2800
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:25:574->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|80|202|1|1|16|0|2689
+|T.StartByte=10|T.SecondByte=11|T.Sequence=80|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2689
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:26:565->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:26:596->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:26:646->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:26:849->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|70|201|1|1|16|0|2708
+|T.StartByte=10|T.SecondByte=11|T.Sequence=70|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2708
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:26:926->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3584|0|1|2|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3584|T.MFCS_ID=0|T.Order=1|T.SegmentID=2|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:27:050->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3584|0|1|2|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3584|T.MFCS_ID=0|T.Order=1|T.SegmentID=2|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:27:197->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:27:389->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:27:425->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:27:535->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3681|0|1|2018|3|17|16|58|27|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3681|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=27|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:27:690->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3681|0|1|2018|3|17|16|58|27|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3681|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=27|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:27:709->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3585|0|1|3|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3585|T.MFCS_ID=0|T.Order=1|T.SegmentID=3|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:27:879->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3681|0|1|2018|3|17|16|58|27|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3681|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=27|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:27:895->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3585|0|1|3|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3585|T.MFCS_ID=0|T.Order=1|T.SegmentID=3|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:27:941->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3590|0|1|4|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3590|T.MFCS_ID=0|T.Order=1|T.SegmentID=4|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:28:072->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3686|0|1|2018|3|17|16|58|28|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3686|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=28|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:28:107->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3681|0|1|2018|3|17|16|58|27|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3681|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=27|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:28:218->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3591|0|1|5|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3591|T.MFCS_ID=0|T.Order=1|T.SegmentID=5|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:28:602->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3590|0|1|4|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3590|T.MFCS_ID=0|T.Order=1|T.SegmentID=4|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:29:141->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3687|0|1|2018|3|17|16|58|29|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3687|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=29|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:29:232->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3686|0|1|2018|3|17|16|58|28|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3686|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=28|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:29:394->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3588|0|1|6|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3588|T.MFCS_ID=0|T.Order=1|T.SegmentID=6|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:29:515->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3591|0|1|5|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3591|T.MFCS_ID=0|T.Order=1|T.SegmentID=5|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:29:586->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3687|0|1|2018|3|17|16|58|29|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3687|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=29|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:29:652->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3687|0|1|2018|3|17|16|58|29|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3687|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=29|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:29:677->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3589|0|1|7|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3589|T.MFCS_ID=0|T.Order=1|T.SegmentID=7|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:29:934->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3687|0|1|2018|3|17|16|58|29|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3687|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=29|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:30:101->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3588|0|1|6|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3588|T.MFCS_ID=0|T.Order=1|T.SegmentID=6|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:30:127->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3594|0|1|8|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3594|T.MFCS_ID=0|T.Order=1|T.SegmentID=8|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:30:260->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3684|0|1|2018|3|17|16|58|30|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3684|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=30|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:30:604->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3687|0|1|2018|3|17|16|58|29|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3687|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=29|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:30:681->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3595|0|1|9|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3595|T.MFCS_ID=0|T.Order=1|T.SegmentID=9|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:30:756->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3589|0|1|7|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3589|T.MFCS_ID=0|T.Order=1|T.SegmentID=7|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:30:793->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3684|0|1|2018|3|17|16|58|30|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3684|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=30|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:31:055->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3687|0|1|2018|3|17|16|58|29|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3687|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=29|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:31:093->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3592|0|1|10|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3592|T.MFCS_ID=0|T.Order=1|T.SegmentID=10|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:31:282->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3594|0|1|8|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3594|T.MFCS_ID=0|T.Order=1|T.SegmentID=8|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:31:465->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3685|0|1|2018|3|17|16|58|31|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3685|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=31|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:31:636->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3684|0|1|2018|3|17|16|58|30|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3684|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=30|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:31:783->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3593|0|1|11|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3593|T.MFCS_ID=0|T.Order=1|T.SegmentID=11|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:31:877->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3595|0|1|9|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3595|T.MFCS_ID=0|T.Order=1|T.SegmentID=9|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:31:921->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3685|0|1|2018|3|17|16|58|31|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3685|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=31|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:31:990->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3606|0|1|20|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3606|T.MFCS_ID=0|T.Order=1|T.SegmentID=20|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:32:181->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3684|0|1|2018|3|17|16|58|30|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3684|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=30|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:32:261->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:32:292->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3674|0|1|2018|3|17|16|58|32|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3674|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=32|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:32:386->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3607|0|1|21|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3607|T.MFCS_ID=0|T.Order=1|T.SegmentID=21|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:32:451->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:32:541->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:32:598->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3592|0|1|10|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3592|T.MFCS_ID=0|T.Order=1|T.SegmentID=10|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:32:691->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3674|0|1|2018|3|17|16|58|32|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3674|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=32|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:32:813->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3598|0|1|12|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3598|T.MFCS_ID=0|T.Order=1|T.SegmentID=12|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:33:010->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3675|0|1|2018|3|17|16|58|33|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3675|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=33|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:33:128->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3685|0|1|2018|3|17|16|58|31|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3685|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=31|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:33:210->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3599|0|1|13|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3599|T.MFCS_ID=0|T.Order=1|T.SegmentID=13|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:33:622->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3593|0|1|11|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3593|T.MFCS_ID=0|T.Order=1|T.SegmentID=11|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:33:880->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3675|0|1|2018|3|17|16|58|33|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3675|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=33|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:33:940->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3685|0|1|2018|3|17|16|58|31|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3685|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=31|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:33:977->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3596|0|1|14|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3596|T.MFCS_ID=0|T.Order=1|T.SegmentID=14|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:34:123->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3672|0|1|2018|3|17|16|58|34|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3672|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=34|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:34:220->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3606|0|1|20|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3606|T.MFCS_ID=0|T.Order=1|T.SegmentID=20|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:34:254->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3597|0|1|15|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3597|T.MFCS_ID=0|T.Order=1|T.SegmentID=15|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:34:398->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3672|0|1|2018|3|17|16|58|34|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3672|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=34|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:34:500->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3602|0|1|16|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3602|T.MFCS_ID=0|T.Order=1|T.SegmentID=16|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:34:528->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3674|0|1|2018|3|17|16|58|32|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3674|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=32|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:34:919->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3607|0|1|21|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3607|T.MFCS_ID=0|T.Order=1|T.SegmentID=21|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:34:988->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3672|0|1|2018|3|17|16|58|34|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3672|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=34|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:35:175->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3674|0|1|2018|3|17|16|58|32|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3674|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=32|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:35:335->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3603|0|1|17|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3603|T.MFCS_ID=0|T.Order=1|T.SegmentID=17|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:35:472->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3598|0|1|12|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3598|T.MFCS_ID=0|T.Order=1|T.SegmentID=12|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:35:536->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3673|0|1|2018|3|17|16|58|35|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3673|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=35|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:35:779->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3600|0|1|18|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3600|T.MFCS_ID=0|T.Order=1|T.SegmentID=18|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:35:898->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3675|0|1|2018|3|17|16|58|33|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3675|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=33|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:36:084->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3599|0|1|13|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3599|T.MFCS_ID=0|T.Order=1|T.SegmentID=13|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:36:140->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3678|0|1|2018|3|17|16|58|36|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3678|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=36|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:36:226->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3601|0|1|19|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3601|T.MFCS_ID=0|T.Order=1|T.SegmentID=19|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:36:463->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3675|0|1|2018|3|17|16|58|33|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3675|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=33|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:36:593->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:36:654->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3596|0|1|14|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3596|T.MFCS_ID=0|T.Order=1|T.SegmentID=14|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:36:684->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:36:752->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:37:041->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:37:089->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3672|0|1|2018|3|17|16|58|34|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3672|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=34|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:37:190->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:37:230->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:37:603->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3597|0|1|15|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3597|T.MFCS_ID=0|T.Order=1|T.SegmentID=15|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:38:026->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:38:180->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3672|0|1|2018|3|17|16|58|34|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3672|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=34|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:38:392->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:38:461->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:38:538->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|67|101|1|1112|52|0|2341|0|0|0|[1|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=67|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2341|T.MFCS_ID=0|T.Order=0|T.SegmentID=0|T.Status=[1|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:38:566->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:38:593->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3602|0|1|16|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3602|T.MFCS_ID=0|T.Order=1|T.SegmentID=16|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:38:812->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|68|101|1|1101|52|0|3401|0|0|0|14|12|0|0|882|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=68|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=3401|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=14|T.SenderTransport=12|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=882|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:38:918->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3672|0|1|2018|3|17|16|58|34|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3672|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=34|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:39:161->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|68|101|1|1101|52|0|3401|0|0|0|14|12|0|0|882|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=68|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=3401|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=14|T.SenderTransport=12|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=882|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:39:250->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3603|0|1|17|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3603|T.MFCS_ID=0|T.Order=1|T.SegmentID=17|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:39:633->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3673|0|1|2018|3|17|16|58|35|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3673|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=35|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:40:645->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3600|0|1|18|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3600|T.MFCS_ID=0|T.Order=1|T.SegmentID=18|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:40:698->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|69|101|1|1101|52|0|3403|0|0|13|14|13|0|0|881|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|12|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=69|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=3403|T.MFCS_ID=0|T.Order=0|T.Source=13|T.Target=14|T.SenderTransport=13|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=881|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=12|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:40:813->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportSetTime
+|10|11|0|1|101|1000|38|0|3678|0|1|2018|3|17|16|58|36|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1000|T.Length=38|T.TelCode=0|T.CRC=3678|T.MFCS_ID=0|T.Order=1|T.PLCSetTime.Year=2018|T.PLCSetTime.Month=3|T.PLCSetTime.Day=17|T.PLCSetTime.Hour=16|T.PLCSetTime.Minute=58|T.PLCSetTime.Seconds=36|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:41:268->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramTransportStatus
+|10|11|0|1|101|1112|52|0|3601|0|1|19|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3601|T.MFCS_ID=0|T.Order=1|T.SegmentID=19|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=0|T.Fault=0
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:41:348->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|70|101|1|1101|52|0|3403|0|0|13|14|14|0|0|880|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|13|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=70|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=3403|T.MFCS_ID=0|T.Order=0|T.Source=13|T.Target=14|T.SenderTransport=14|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=880|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=13|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:41:565->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|71|101|1|1101|52|0|61898|0|0|0|-1|15|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=71|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61898|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=15|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:41:709->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|72|101|1|1112|52|0|3374|0|0|1|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[1|0|1|0|0|0|0|0|1|0|1|0|0|0|0|0|1|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=72|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3374|T.MFCS_ID=0|T.Order=0|T.SegmentID=1|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[1|0|1|0|0|0|0|0|1|0|1|0|0|0|0|0|1|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:42:955->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|73|101|1|1101|52|0|61917|0|0|0|-1|21|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=73|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61917|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=21|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:43:189->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:43:496->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:43:680->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:46:477->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:47:386->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:47:678->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:48:249->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:48:946->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:49:255->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:49:319->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:49:432->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:49:665->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:49:733->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:49:960->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|74|101|1|1101|52|0|61917|0|0|0|-1|22|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=74|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61917|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=22|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:51:292->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:51:580->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|75|101|1|1101|52|0|61917|0|0|0|-1|23|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=75|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61917|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=23|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:52:174->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:58:54:225->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:54:629->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:54:805->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:54:848->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:55:228->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|76|101|1|1101|52|0|61909|0|0|0|-1|24|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=76|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61909|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=24|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:55:547->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|77|101|1|1112|52|0|3369|0|0|2|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=77|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3369|T.MFCS_ID=0|T.Order=0|T.SegmentID=2|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:56:615->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|78|101|1|1101|52|0|61911|0|0|0|-1|25|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=78|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61911|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=25|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:56:987->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|79|101|1|1112|52|0|2346|0|0|3|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=79|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2346|T.MFCS_ID=0|T.Order=0|T.SegmentID=3|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:58:816->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|80|101|1|1101|52|0|61896|0|0|0|-1|31|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=80|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61896|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=31|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:59:060->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|81|101|1|1112|52|0|2355|0|0|4|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=81|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2355|T.MFCS_ID=0|T.Order=0|T.SegmentID=4|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:58:59:312->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:59:465->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:58:59:699->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:58:59:798->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:00:635->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:00:844->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:01:141->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:01:385->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:01:834->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:02:364->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:03:287->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:03:891->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:05:248->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:05:635->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|82|101|1|1101|52|0|61940|0|0|0|-1|32|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=82|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61940|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=32|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:05:717->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:05:926->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:06:097->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|83|101|1|1112|52|0|2352|0|0|5|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=83|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2352|T.MFCS_ID=0|T.Order=0|T.SegmentID=5|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:07:176->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|84|101|1|1101|52|0|61936|0|0|0|-1|33|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=84|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61936|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=33|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:07:456->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|85|101|1|1112|52|0|1333|0|0|6|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=85|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=1333|T.MFCS_ID=0|T.Order=0|T.SegmentID=6|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:08:431->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|86|101|1|1101|52|0|61936|0|0|0|-1|34|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=86|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61936|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=34|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:08:678->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|87|101|1|1112|52|0|2358|0|0|7|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=87|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2358|T.MFCS_ID=0|T.Order=0|T.SegmentID=7|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:10:505->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:10:832->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:11:020->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:11:229->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:11:522->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:11:572->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:11:877->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:12:444->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:12:837->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:13:114->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|88|101|1|1101|52|0|61936|0|0|0|-1|35|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=88|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61936|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=35|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:13:441->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:13:502->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|89|101|1|1112|52|0|1335|0|0|8|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=89|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=1335|T.MFCS_ID=0|T.Order=0|T.SegmentID=8|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:13:683->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:14:416->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:14:807->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|90|101|1|1101|52|0|61940|0|0|0|-1|36|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=90|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61940|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=36|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:15:098->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|91|101|1|1112|52|0|2356|0|0|9|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=91|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2356|T.MFCS_ID=0|T.Order=0|T.SegmentID=9|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:16:240->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:16:445->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:16:579->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:16:959->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|92|101|1|1101|52|0|61936|0|0|0|-1|37|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=92|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61936|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=37|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:20:573->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:20:725->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|93|101|1|1112|52|0|1329|0|0|10|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=93|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=1329|T.MFCS_ID=0|T.Order=0|T.SegmentID=10|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:21:387->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:21:512->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:21:851->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:22:051->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:22:576->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|94|101|1|1101|52|0|61936|0|0|0|-1|38|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=94|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61936|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=38|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:22:945->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:23:077->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:23:752->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:23:840->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|95|101|1|1112|52|0|2354|0|0|11|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=95|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2354|T.MFCS_ID=0|T.Order=0|T.SegmentID=11|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:23:943->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:24:563->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:24:974->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:25:040->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:25:809->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|96|101|1|1101|52|0|61918|0|0|0|-1|41|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=96|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61918|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=41|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:26:645->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:26:731->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:27:297->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:29:533->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:29:767->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|97|101|1|1112|52|0|2323|0|0|20|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=97|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2323|T.MFCS_ID=0|T.Order=0|T.SegmentID=20|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:32:632->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|98|101|1|1101|52|0|61918|0|0|0|-1|42|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=98|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61918|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=42|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:32:730->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|99|101|1|1112|52|0|2320|0|0|21|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=99|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2320|T.MFCS_ID=0|T.Order=0|T.SegmentID=21|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:33:117->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|0|101|1|1101|52|0|61920|0|0|0|-1|111|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61920|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=111|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:33:144->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:33:959->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:34:017->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:34:862->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:35:137->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:35:177->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:35:306->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|1|101|1|1101|52|0|61950|0|0|0|-1|112|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=1|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61950|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=112|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:36:284->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:36:611->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:38:491->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 16:59:39:871->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|2|101|1|1101|52|0|61948|0|0|0|-1|113|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=2|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61948|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=113|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:41:016->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|3|101|1|1101|52|0|61950|0|0|0|-1|114|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=3|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61950|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=114|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:41:395->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|4|101|1|1112|52|0|3438|0|0|12|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=4|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=3438|T.MFCS_ID=0|T.Order=0|T.SegmentID=12|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|1|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:42:400->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|5|101|1|1101|52|0|61944|0|0|0|-1|115|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=5|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61944|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=115|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:42:720->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportStatus
+|10|11|6|101|1|1112|52|0|2413|0|0|13|[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|101|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=6|T.Sender=101|T.Receiver=1|T.TelType=1112|T.Length=52|T.TelCode=0|T.CRC=2413|T.MFCS_ID=0|T.Order=0|T.SegmentID=13|T.Status=[1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.State=[0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Alarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.FirstAlarmID=0|T.Confirmation=101|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:43:632->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramTransportTO
+|10|11|7|101|1|1101|52|0|61939|0|0|0|-1|121|0|0|0|0|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|106|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=7|T.Sender=101|T.Receiver=1|T.TelType=1101|T.Length=52|T.TelCode=0|T.CRC=61939|T.MFCS_ID=0|T.Order=0|T.Source=0|T.Target=-1|T.SenderTransport=121|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.Previous=0|T.MaxWeight=0|T.Confirmation=106|T.Fault=0
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 16:59:44:046->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 16:59:44:374->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 16:59:45:063->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+

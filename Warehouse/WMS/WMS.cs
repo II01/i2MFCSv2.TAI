@@ -248,7 +248,7 @@ namespace Warehouse.WMS
             }
         }
 
-        public void SendLocationInfo(Place place, Database.EnumMovementTask? task)
+        public async Task SendLocationInfo(Place place, Database.EnumMovementTask? task)
         {
             try
             {
@@ -256,7 +256,7 @@ namespace Warehouse.WMS
                 {
                     if (place.Material < 1000000000)
                     {
-                        client.PlaceChanged(place.Place1, place.Material);
+                        await client.PlaceChangedAsync(place.Place1, place.Material);
                         Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"WMS_PlaceChanged called ({place.Place1}|{place.Material})");
                     }
                     else
@@ -289,7 +289,7 @@ namespace Warehouse.WMS
             {
                 Place p = Warehouse.DBService.FindMaterial(place.Material);
                 if(p == null || (p != null && p.Place1 == place.Place1))
-                    SendLocationInfo(place, task);
+                    Task.WaitAll(SendLocationInfo(place, task));
             }
             catch (Exception e)
             {

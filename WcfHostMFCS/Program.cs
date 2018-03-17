@@ -9,7 +9,8 @@ namespace WcfHostMFCS
     {
         static void Main(string[] args)
         {
-            using (BasicWarehouse Warehouse = BasicWarehouse.Deserialize(System.Configuration.ConfigurationManager.AppSettings["xmlconfig"]))
+            string s = System.Configuration.ConfigurationManager.AppSettings["xmlconfig"];
+            using (BasicWarehouse Warehouse = BasicWarehouse.Deserialize(s))
             {
                 Warehouse.DBService = new Warehouse.DataService.DBService(Warehouse);
                 // Warehouse.WMS = new BasicWMS { WMSSimulation = bool.Parse(System.Configuration.ConfigurationManager.AppSettings["WMSSimulation"]) };
@@ -25,7 +26,7 @@ namespace WcfHostMFCS
 
                 Console.WriteLine("WcfHostMFCS\n-----------");
                 Console.WriteLine("Press SPACE and ENTER to stop ...");
-                char ch='k';
+                char ch = 'k';
                 do
                 {
                     try

@@ -187,7 +187,7 @@ namespace Warehouse.Strategy
                             Place place = Warehouse.DBService.FindPlace((cmd as CommandMaterial).Source);
                             if (place == null)
                                 place = new Place { Place1 = (cmd as CommandMaterial).Source, Material = 0 };
-                            Warehouse.WMS.SendLocationInfo(place, null);
+                            await Warehouse.WMS.SendLocationInfo(place, null);
                             cmd.Status = Command.EnumCommandStatus.Finished;
                             Warehouse.DBService.UpdateCommand(cmd);
                             Warehouse.OnCommandFinish?.Invoke(cmd);
@@ -239,13 +239,14 @@ namespace Warehouse.Strategy
         {
             try
             {
-                if (CurrentTask == null)
+                if (CurrentTask == null || CurrentTask.IsCompleted)
                 {
                     CurrentTask = StrategyAsync();
-                    Task.Run(async () => await CurrentTask).ConfigureAwait(false);
+                    Task task = Task.Run(async () => await CurrentTask);
+                    task.ConfigureAwait(false);
                 }
-                if (CurrentTask != null && CurrentTask.IsCompleted)
-                    CurrentTask = null;
+//                if (CurrentTask != null && CurrentTask.IsCompleted)
+//                    CurrentTask = null;
             }
             catch (Exception e)
             {
