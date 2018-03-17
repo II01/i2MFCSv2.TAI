@@ -39,7 +39,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ERP_ID" Type="int" Nullable="false" />
+          <Property Name="ERP_ID" Type="int" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="SubOrderID" Type="int" Nullable="false" />
           <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
@@ -49,6 +49,13 @@
           <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
           <Property Name="SKU_Batch" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Parameters">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="PlaceIDs">
           <Key>
@@ -97,7 +104,7 @@
           <Property Name="TU_ID" Type="int" Nullable="false" />
           <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Qty" Type="float" Nullable="false" />
-          <Property Name="Batch" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="ProdDate" Type="datetime" Nullable="false" />
           <Property Name="ExpDate" Type="datetime" Nullable="false" />
         </EntityType>
@@ -154,9 +161,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
-          <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CommandERPs">
@@ -256,6 +261,7 @@
           <EntitySet Name="CommandERPs" EntityType="Self.CommandERPs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlaceIDs" EntityType="Self.PlaceIDs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Places" EntityType="Self.Places" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SKU_ID" EntityType="Self.SKU_ID" Schema="dbo" store:Type="Tables" />
@@ -349,7 +355,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ERP_ID" Type="Int32" Nullable="false" />
+          <Property Name="ERP_ID" Type="Int32" />
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="SubOrderID" Type="Int32" Nullable="false" />
           <Property Name="SKU_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
@@ -422,14 +428,14 @@
           <Property Name="TU_ID" Type="Int32" Nullable="false" />
           <Property Name="SKU_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Qty" Type="Double" Nullable="false" />
-          <Property Name="Batch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ProdDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExpDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="SKU_ID1" Relationship="Self.FK_dbo_TUs_dbo_SKU_ID_SKU_ID" FromRole="TUs" ToRole="SKU_ID" />
           <NavigationProperty Name="TU_ID1" Relationship="Self.FK_dbo_TUs_dbo_TU_ID_TU_ID" FromRole="TUs" ToRole="TU_ID" />
         </EntityType>
         <Association Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
-          <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="1">
+          <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -632,7 +638,15 @@
             <End Role="TU_ID" EntitySet="TU_ID" />
             <End Role="TUs" EntitySet="TUs" />
           </AssociationSet>
+          <EntitySet Name="Parameters" EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Parameters" />
         </EntityContainer>
+        <EntityType Name="Parameters">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -738,6 +752,14 @@
                 <ScalarProperty Name="Batch" ColumnName="Batch" />
                 <ScalarProperty Name="ProdDate" ColumnName="ProdDate" />
                 <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parameters">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Parameters">
+              <MappingFragment StoreEntitySet="Parameters">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -52,7 +52,7 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public int ERPID
+        public int? ERPID
         {
             get { return _data.ERP_ID; }
             set
@@ -164,14 +164,14 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public int Status
+        public EnumWMSOrderStatus Status
         {
-            get { return _data.Status; }
+            get { return (EnumWMSOrderStatus)_data.Status; }
             set
             {
-                if (_data.Status!= value)
+                if (_data.Status != (int)value)
                 {
-                    _data.Status = value;
+                    _data.Status = (int)value;
                     RaisePropertyChanged("Status");
                 }
             }
@@ -263,6 +263,9 @@ namespace UserInterface.ViewModel
             _enableSKUEdit = false;
             ReferenceOrderID = 0;
             ReferenceSubOrderID = 0;
+            OrderID = -1;
+            SubOrderID = -1;
+            SKUQty = -1;
             Validator = new PropertyValidator();
             ValidationEnabled = false;
         }
@@ -301,7 +304,7 @@ namespace UserInterface.ViewModel
                             case "ERPID":
                                 break;
                             case "OrderID":
-                                if (OrderID <= 0 || (_dbservicewms.ExistsOrderID(OrderID) && OrderID != ReferenceOrderID  ))
+                                if (OrderID <= 0 || (_dbservicewms.ExistsOrderID(ERPID, OrderID) && OrderID != ReferenceOrderID  ))
                                     validationResult = ResourceReader.GetString("ERR_ORDERID");
                                 break;
                             case "Destination":

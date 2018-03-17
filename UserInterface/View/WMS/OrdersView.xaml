@@ -23,24 +23,32 @@
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                     Path=(FrameworkElement.ActualHeight), 
                                     RelativeSource={RelativeSource AncestorType=UserControl},
-                                    ConverterParameter=-60|1.0}"/>
+                                    ConverterParameter=-160|0.50}"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
+                                    Path=(FrameworkElement.ActualHeight), 
+                                    RelativeSource={RelativeSource AncestorType=UserControl},
+                                    ConverterParameter=-160|0.50}"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="430"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+        <Border Grid.ColumnSpan="3" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
             <TextBlock Text="{Resx Orders}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
         </Border>
-        <DataGrid Grid.Row="1"
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom"/>
+        <DataGrid Grid.Row="2" Grid.RowSpan="3" Margin="0,0,20,0"
             x:Name="dgPlaceIDs" 
-            ItemsSource="{Binding DataList}" 
+            ItemsSource="{Binding DataListOrder}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding Selected}" 
+            SelectedItem="{Binding SelectedOrder}" 
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -57,21 +65,55 @@
                                     Width="*" Binding="{Binding Destination}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ReleaseTime}" 
                                     Width="*" Binding="{Binding ReleaseTime}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
+                                    Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SubOrders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom"/>
+        <DataGrid Grid.Row="2" Grid.Column="1"
+            ItemsSource="{Binding DataListSubOrder}" 
+            dgx:DataGridFilter.IsAutoFilterEnabled="True"
+            dgx:Tools.ApplyInitialSorting="True"
+            SelectedItem="{Binding SelectedSubOrder}" 
+            IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False" 
+            IsReadOnly="True"
+            FontSize="{StaticResource BaseFontSize}">
+            <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderID}" 
                                     Width="*" Binding="{Binding SubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
                                     Width="*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SKUs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom"/>
+        <DataGrid Grid.Row="4" Grid.Column="1"
+            ItemsSource="{Binding DataListSKU}" 
+            dgx:DataGridFilter.IsAutoFilterEnabled="True"
+            dgx:Tools.ApplyInitialSorting="True"
+            SelectedItem="{Binding SelectedSKU}" 
+            IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False" 
+            IsReadOnly="True"
+            FontSize="{StaticResource BaseFontSize}">
+            <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
                                     Width="*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" 
                                     Width="*" Binding="{Binding SKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUQty}" 
                                     Width="*" Binding="{Binding SKUQty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
-                                    Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+
+        
+        <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="6" Margin="40,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>

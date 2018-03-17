@@ -114,8 +114,8 @@
                 <TreeViewItem  Header="{Resx CommandERPs}" 
                            Tag="{Binding CommandERPs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
-                <TreeViewItem  Header="{Resx CommandMFCSs}" 
-                           Tag="{Binding CommandMFCSs, Source={StaticResource Locator}}" 
+                <TreeViewItem  Header="{Resx CommandWMSs}" 
+                           Tag="{Binding CommandWMSs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
             </TreeViewItem>
             <TreeViewItem  Header="{Resx Commands}" 

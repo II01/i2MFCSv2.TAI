@@ -25,6 +25,7 @@
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Places_dbo_TU_ID_TU_ID" ManuallyRouted="false" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_TUs_dbo_SKU_ID_SKU_ID" ManuallyRouted="false" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_TUs_dbo_TU_ID_TU_ID" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Parameters" Width="1.5" PointX="8.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

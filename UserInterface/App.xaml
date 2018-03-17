@@ -170,6 +170,18 @@
         <DataTemplate DataType="{x:Type vm:OrderViewModel}">
             <views:OrderView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CommandERPsViewModel}">
+            <views:CommandERPsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CommandERPViewModel}">
+            <views:CommandERPView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CommandWMSsViewModel}">
+            <views:CommandWMSsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CommandWMSViewModel}">
+            <views:CommandWMSView />
+        </DataTemplate>
 
         <!-- converters -->
         <views:AddMultConverter x:Key="AddMultConverter" />

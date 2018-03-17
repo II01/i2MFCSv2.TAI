@@ -1,0 +1,1517 @@
+2018-03-17 09:21:54:590->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:21:54:920->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:21:55:538->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:21:56:198->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:21:57:628->EXCEPTION:PLC_Conveyor:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Receive/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:57:658->EXCEPTION:PLC_Conveyor:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:00:53.2560000'.:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:21:57:688->EXCEPTION:PLC_Crane2:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Receive/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:57:738->EXCEPTION:PLC_Crane2:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Send/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:21:57:758->EXCEPTION:PLC_Crane1:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Receive/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:57:788->EXCEPTION:PLC_Crane3:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Receive/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:57:906->EXCEPTION:PLC_Crane1:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Send/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:21:57:979->EXCEPTION:PLC_Crane3:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Send/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:21:58:870->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:58:930->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:21:59:030->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:59:070->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:59:140->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:21:59:260->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:21:59:290->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:21:59:420->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:00:150->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:00:200->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:00:230->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:00:300->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:00:450->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:00:490->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:00:550->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:00:620->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:01:385->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:01:515->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:01:665->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:01:905->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:01:955->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:01:965->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:01:985->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:02:115->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:02:595->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:02:625->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:02:975->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:04:855->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:04:875->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:04:885->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:04:895->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:04:905->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:04:915->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:04:925->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:06:285->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:06:335->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:06:355->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:06:365->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:06:395->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:06:495->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:06:555->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:06:605->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:07:515->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:07:535->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:07:545->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:07:545->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:07:555->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:07:685->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:07:715->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:07:765->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:08:595->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:08:665->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:08:686->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:08:696->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:08:706->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:08:786->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:08:806->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:08:826->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:09:676->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:09:706->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:09:716->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:09:766->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:09:776->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:09:816->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:09:836->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:09:846->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:10:716->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:10:756->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:10:766->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:10:796->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:10:826->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:10:876->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:10:886->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable host 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:10:896->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable host 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:11:766->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable network 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:11:796->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable network 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:11:816->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable network 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:11:946->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable network 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:11:976->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable network 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:11:996->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable network 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:12:006->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable network 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:12:026->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable network 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:12:826->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable network 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:12:866->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable network 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:12:906->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable network 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:13:026->EXCEPTION:PLC_Crane2:A socket operation was attempted to an unreachable network 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:13:056->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable network 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:13:076->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable network 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:13:126->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable network 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:13:146->EXCEPTION:PLC_Crane1:A socket operation was attempted to an unreachable network 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:14:066->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:14:286->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:14:296->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:18:936->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:18:996->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:19:176->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:19:186->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:23:957->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:24:067->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|36|202|1|1|16|0|2805
+|T.StartByte=10|T.SecondByte=11|T.Sequence=36|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2805
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:22:24:077->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:24:087->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:24:187->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:24:197->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:24:287->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|25|201|1|1|16|0|2763
+|T.StartByte=10|T.SecondByte=11|T.Sequence=25|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2763
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:22:24:317->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|84|203|1|1|16|0|2692
+|T.StartByte=10|T.SecondByte=11|T.Sequence=84|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2692
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:22:24:327->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:24:337->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:24:337->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:24:457->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:24:467->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:28:968->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:29:148->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:29:188->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:29:188->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:33:975->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:34:195->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:34:205->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:34:215->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:34:345->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:34:485->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:34:495->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:34:515->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:34:595->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:34:615->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:35:055->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:35:155->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:38:986->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:39:206->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:39:236->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:41:136->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:43:986->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:44:216->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:44:216->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:44:526->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:44:626->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:44:636->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:44:746->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:44:756->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:44:766->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:46:186->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:48:999->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:49:229->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:49:239->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:51:209->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:53:999->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:54:239->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:54:239->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:54:759->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:54:779->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:54:779->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:22:54:979->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:54:979->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:54:989->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:22:56:239->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:57:199->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:22:57:209->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:22:59:019->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:59:289->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:22:59:299->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:03:308->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:04:028->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:04:298->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:04:308->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:04:988->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:04:998->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:05:008->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:05:158->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:05:178->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:05:188->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:08:338->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:09:028->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:09:308->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:09:318->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:13:378->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:14:048->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:14:328->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:14:338->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:15:188->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:15:198->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:15:198->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:15:408->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:15:418->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:15:428->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:18:429->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:19:059->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:19:289->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:23:19:299->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:23:19:339->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:19:339->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:24:059->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:25:399->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:25:439->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:25:449->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:25:459->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:25:679->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:25:689->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:25:699->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:30:479->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:35:567->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:35:707->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:35:717->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:35:737->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:35:867->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:35:877->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:35:887->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:40:607->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:41:397->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:23:41:417->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:23:45:888->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:45:898->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:45:908->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:46:068->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:46:078->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:46:108->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:47:468->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:52:508->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:23:56:116->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:56:166->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:56:216->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:23:56:406->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:56:556->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:56:586->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:23:57:696->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:02:896->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:03:596->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:24:03:676->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:24:06:434->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:06:604->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:06:634->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:06:644->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:06:774->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:06:804->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:09:804->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:14:874->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:16:671->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:16:791->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:16:811->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:16:901->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:17:121->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:17:141->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:20:084->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:24:114->EXCEPTION:PLC_Crane2:Receive timed out after 00:01:00. The time allotted to this operation may have been a portion of a longer timeout.:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:24:24:324->EXCEPTION:PLC_Crane1:Receive timed out after 00:01:00. The time allotted to this operation may have been a portion of a longer timeout.:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:24:24:354->EXCEPTION:PLC_Crane3:Receive timed out after 00:01:00. The time allotted to this operation may have been a portion of a longer timeout.:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:24:25:434->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:25:854->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:24:25:874->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:24:26:994->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:27:184->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:27:224->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:27:354->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:27:444->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:27:494->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:30:358->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:30:429->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:30:441->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:32:989->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:35:460->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:35:498->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:35:530->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:37:438->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:37:487->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:37:541->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:37:685->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:37:708->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:37:742->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:38:712->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:40:560->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:40:569->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:40:590->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:44:198->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:45:542->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|37|202|1|1|16|0|2804
+|T.StartByte=10|T.SecondByte=11|T.Sequence=37|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2804
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:24:45:579->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|26|201|1|1|16|0|2760
+|T.StartByte=10|T.SecondByte=11|T.Sequence=26|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2760
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:24:45:609->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|85|203|1|1|16|0|2693
+|T.StartByte=10|T.SecondByte=11|T.Sequence=85|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2693
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:24:45:630->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:45:646->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:45:663->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:47:725->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:47:746->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:47:785->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:48:024->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:48:088->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:48:128->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:48:332->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:24:48:435->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:24:50:667->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:50:688->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:50:717->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:54:696->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:55:673->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:55:687->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:55:731->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:24:58:067->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:58:148->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:58:181->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:24:58:289->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:58:348->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:24:58:361->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:00:130->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:00:745->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:00:760->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:00:769->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:05:328->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:05:749->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|27|201|1|1|16|0|2761
+|T.StartByte=10|T.SecondByte=11|T.Sequence=27|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2761
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:05:767->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|86|203|1|1|16|0|2694
+|T.StartByte=10|T.SecondByte=11|T.Sequence=86|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2694
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:05:782->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|38|202|1|1|16|0|2807
+|T.StartByte=10|T.SecondByte=11|T.Sequence=38|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2807
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:05:796->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:05:805->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:05:816->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:08:357->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:08:475->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:08:523->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:08:714->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:08:727->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:08:758->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:10:444->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:10:810->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:10:822->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:10:852->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:10:874->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:25:10:891->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:25:15:828->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:15:837->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:15:848->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:17:005->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:18:737->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:18:764->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:18:792->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:19:089->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:19:101->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:19:114->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:20:849->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:20:859->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:20:868->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:22:063->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:25:984->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:26:005->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:26:028->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:26:059->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|87|203|1|1|16|0|2695
+|T.StartByte=10|T.SecondByte=11|T.Sequence=87|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2695
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:26:092->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|39|202|1|1|16|0|2806
+|T.StartByte=10|T.SecondByte=11|T.Sequence=39|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2806
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:26:252->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|28|201|1|1|16|0|2766
+|T.StartByte=10|T.SecondByte=11|T.Sequence=28|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2766
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:27:248->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:29:112->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:29:143->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:29:156->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:29:315->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:29:532->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:29:542->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:31:015->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:31:034->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:31:059->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:32:577->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:33:256->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:25:33:264->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:25:36:023->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:36:033->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:36:042->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:39:340->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:39:421->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:39:559->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:39:574->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:39:597->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:39:712->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:39:729->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:41:063->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:41:072->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:41:082->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:44:469->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:46:130->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:46:196->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:46:232->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:46:334->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|40|202|1|1|16|0|2809
+|T.StartByte=10|T.SecondByte=11|T.Sequence=40|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2809
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:46:349->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|88|203|1|1|16|0|2696
+|T.StartByte=10|T.SecondByte=11|T.Sequence=88|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2696
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:46:468->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|29|201|1|1|16|0|2767
+|T.StartByte=10|T.SecondByte=11|T.Sequence=29|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2767
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:25:49:579->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:49:663->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:49:745->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:49:757->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:49:804->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:49:932->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:49:959->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:25:51:161->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:51:183->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:51:205->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:54:757->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:55:589->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:25:55:801->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:25:56:179->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:56:192->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:56:206->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:25:59:868->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:25:59:998->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:00:033->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:00:186->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:00:196->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:00:302->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:01:207->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:01:220->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:01:230->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:01:976->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:06:215->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:06:225->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:06:236->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:06:567->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|89|203|1|1|16|0|2697
+|T.StartByte=10|T.SecondByte=11|T.Sequence=89|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2697
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:06:579->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|41|202|1|1|16|0|2808
+|T.StartByte=10|T.SecondByte=11|T.Sequence=41|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2808
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:06:669->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|30|201|1|1|16|0|2764
+|T.StartByte=10|T.SecondByte=11|T.Sequence=30|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2764
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:07:015->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:10:235->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:10:321->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:10:389->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:10:506->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:10:717->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:10:846->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:11:250->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:11:276->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:11:301->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:12:595->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:16:301->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:16:318->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:16:333->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:18:029->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:26:18:080->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:18:312->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:26:20:566->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:20:742->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:20:846->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:20:900->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:20:946->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:21:134->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:21:393->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:21:415->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:21:428->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:24:499->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:26:446->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:26:461->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:26:480->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:26:823->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|90|203|1|1|16|0|2698
+|T.StartByte=10|T.SecondByte=11|T.Sequence=90|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2698
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:26:837->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|42|202|1|1|16|0|2811
+|T.StartByte=10|T.SecondByte=11|T.Sequence=42|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2811
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:26:856->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|31|201|1|1|16|0|2765
+|T.StartByte=10|T.SecondByte=11|T.Sequence=31|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2765
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:29:548->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:30:880->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:30:979->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:31:117->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:31:135->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:31:164->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:31:272->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:31:505->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:31:531->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:31:552->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:34:600->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:36:510->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:36:518->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:36:530->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:39:652->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:40:581->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-17 09:26:40:720->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-17 09:26:41:139->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:41:181->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:41:293->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-17 09:26:41:305->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:41:361->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:41:439->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-17 09:26:41:512->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:41:520->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:41:530->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:46:527->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:46:537->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:46:549->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:46:819->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-17 09:26:47:006->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|91|203|1|1|16|0|2699
+|T.StartByte=10|T.SecondByte=11|T.Sequence=91|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2699
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:47:025->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|43|202|1|1|16|0|2810
+|T.StartByte=10|T.SecondByte=11|T.Sequence=43|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2810
+:RcvThreading (Communicator.cs 134)
+
+2018-03-17 09:26:47:040->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|32|201|1|1|16|0|2802
+|T.StartByte=10|T.SecondByte=11|T.Sequence=32|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2802
+:RcvThreading (Communicator.cs 134)
+

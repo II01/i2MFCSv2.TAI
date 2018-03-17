@@ -25,7 +25,6 @@ namespace UserInterface.ViewModel
         private ObservableCollection<PlaceTUIDViewModel> _dataList;
         private PlaceTUIDViewModel _selected;
         private PlaceTUIDViewModel _detailed;
-        private PlaceTUIDViewModel _managed;
         private bool _editEnabled;
         private bool _enabledCC;
         private BasicWarehouse _warehouse;
@@ -140,8 +139,6 @@ namespace UserInterface.ViewModel
         {
             Detailed = null;
             Selected = null;
-            _managed = new PlaceTUIDViewModel();
-            _managed.Initialize(_warehouse);
 
             EditEnabled = false;
             EnabledCC = false;
@@ -192,19 +189,20 @@ namespace UserInterface.ViewModel
             {
                 _selectedCommand = CommandType.Edit;
                 EditEnabled = true;
-                EnabledCC = true;                
-                _managed.TUID = Selected.TUID;
-                _managed.PlaceID = Selected.PlaceID;
-                _managed.DimensionClass = Selected.DimensionClass;
-                _managed.Blocked = Selected.Blocked;
-                _managed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
+                EnabledCC = true;
+                Detailed = new PlaceTUIDViewModel();
+                Detailed.Initialize(_warehouse);
+                Detailed.TUID = Selected.TUID;
+                Detailed.PlaceID = Selected.PlaceID;
+                Detailed.DimensionClass = Selected.DimensionClass;
+                Detailed.Blocked = Selected.Blocked;
+                Detailed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
                 foreach (var l in Selected.DetailList)
-                    _managed.DetailList.Add(l);
-                _managed.AllowPlaceChange = false;
-                _managed.AllowTUIDChange = false;
-                _managed.AllowFieldChange = false;
-                _managed.ValidationEnabled = true;
-                Detailed = _managed;
+                    Detailed.DetailList.Add(l);
+                Detailed.AllowPlaceChange = false;
+                Detailed.AllowTUIDChange = false;
+                Detailed.AllowFieldChange = false;
+                Detailed.ValidationEnabled = true;
             }
             catch (Exception e)
             {
@@ -233,21 +231,22 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.Book;
                 EditEnabled = true;
                 EnabledCC = true;
-                _managed.TUID = Selected.TUID;
-                _managed.PlaceID = Selected.PlaceID;
-                _managed.DimensionClass = Selected.DimensionClass;
-                _managed.Blocked = Selected.Blocked;
-                _managed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
+                Detailed = new PlaceTUIDViewModel();
+                Detailed.Initialize(_warehouse);
+                Detailed.TUID = Selected.TUID;
+                Detailed.PlaceID = Selected.PlaceID;
+                Detailed.DimensionClass = Selected.DimensionClass;
+                Detailed.Blocked = Selected.Blocked;
+                Detailed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
                 foreach (var l in Selected.DetailList)
                 {
-                    _managed.DetailList.Add(l);
+                    Detailed.DetailList.Add(l);
                     l.Initialize(_warehouse);
                 }
-                _managed.ValidationEnabled = true;
-                _managed.AllowTUIDChange = false;
-                _managed.AllowPlaceChange = true;
-                _managed.AllowFieldChange = true;
-                Detailed = _managed;
+                Detailed.ValidationEnabled = true;
+                Detailed.AllowTUIDChange = false;
+                Detailed.AllowPlaceChange = true;
+                Detailed.AllowFieldChange = true;
             }
             catch (Exception e)
             {
@@ -277,21 +276,22 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.Delete;
                 EditEnabled = false;
                 EnabledCC = true;
-                _managed.TUID = Selected.TUID;
-                _managed.PlaceID = Selected.PlaceID;
-                _managed.DimensionClass = Selected.DimensionClass;
-                _managed.Blocked = Selected.Blocked;
-                _managed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
+                Detailed = new PlaceTUIDViewModel();
+                Detailed.Initialize(_warehouse);
+                Detailed.TUID = Selected.TUID;
+                Detailed.PlaceID = Selected.PlaceID;
+                Detailed.DimensionClass = Selected.DimensionClass;
+                Detailed.Blocked = Selected.Blocked;
+                Detailed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
                 foreach (var l in Selected.DetailList)
                 {
-                    _managed.DetailList.Add(l);
+                    Detailed.DetailList.Add(l);
                     l.Initialize(_warehouse);
                 }
-                _managed.ValidationEnabled = true;
-                _managed.AllowTUIDChange = false;
-                _managed.AllowPlaceChange = false;
-                _managed.AllowFieldChange = false;
-                Detailed = _managed;
+                Detailed.ValidationEnabled = true;
+                Detailed.AllowTUIDChange = false;
+                Detailed.AllowPlaceChange = false;
+                Detailed.AllowFieldChange = false;
             }
             catch (Exception e)
             {
@@ -320,16 +320,17 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.Add;
                 EditEnabled = true;
                 EnabledCC = true;
-                _managed.TUID = 0;
-                _managed.PlaceID = "";
-                _managed.DimensionClass = 0;
-                _managed.Blocked = 0;
-                _managed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
-                _managed.AllowTUIDChange = true;
-                _managed.AllowPlaceChange = true;
-                _managed.AllowFieldChange = true;
-                _managed.ValidationEnabled = true;
-                Detailed = _managed;
+                Detailed.Initialize(_warehouse);
+                Detailed.TUID = Selected.TUID;
+                Detailed.TUID = 0;
+                Detailed.PlaceID = "";
+                Detailed.DimensionClass = 0;
+                Detailed.Blocked = 0;
+                Detailed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
+                Detailed.AllowTUIDChange = true;
+                Detailed.AllowPlaceChange = true;
+                Detailed.AllowFieldChange = true;
+                Detailed.ValidationEnabled = true;
             }
             catch (Exception e)
             {

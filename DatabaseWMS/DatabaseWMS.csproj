@@ -76,6 +76,9 @@
     <Compile Include="Orders.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Parameters.cs">
+      <DependentUpon>ModelWMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="PlaceIDs.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>

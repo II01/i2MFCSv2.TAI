@@ -39,6 +39,30 @@ namespace UserInterface.Services
     }
 
     [TypeConverter(typeof(LocalizedEnumConverter))]
+    public enum EnumWMSOrderStatus : int
+    {
+        Waiting = 0,
+        Active = 1,
+        Canceled = 2,
+        Finished = 3,
+    }
+    public enum EnumCommandWMSStatus : int
+    {
+        Waiting = 0,
+        Active = 1,
+        Canceled = 2,
+        Finished = 3,
+    }
+
+    [TypeConverter(typeof(LocalizedEnumConverter))]
+    public enum EnumCommandERPStatus : int
+    {
+        Waiting = 0,
+        Active = 1,
+        Canceled = 2,
+        Finished = 3,
+    }
+    [TypeConverter(typeof(LocalizedEnumConverter))]
     public enum EnumCommandTask : int
     {
         Move = 0,

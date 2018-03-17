@@ -96,6 +96,22 @@ namespace UserInterface.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<OrdersViewModel>(); }
         }
+        public CommandERPViewModel CommandERP
+        {
+            get { return ServiceLocator.Current.GetInstance<CommandERPViewModel>(); }
+        }
+        public CommandERPsViewModel CommandERPs
+        {
+            get { return ServiceLocator.Current.GetInstance<CommandERPsViewModel>(); }
+        }
+        public CommandWMSViewModel CommandWMS
+        {
+            get { return ServiceLocator.Current.GetInstance<CommandWMSViewModel>(); }
+        }
+        public CommandWMSsViewModel CommandWMSs
+        {
+            get { return ServiceLocator.Current.GetInstance<CommandWMSsViewModel>(); }
+        }
         #endregion
 
         #region initialization
@@ -123,6 +139,8 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<PlaceIDsViewModel>();
             SimpleIoc.Default.Register<PlaceTUIDsViewModel>();
             SimpleIoc.Default.Register<OrdersViewModel>();
+            SimpleIoc.Default.Register<CommandERPsViewModel>();
+            SimpleIoc.Default.Register<CommandWMSsViewModel>();
         }
         public static void Cleanup()
         {

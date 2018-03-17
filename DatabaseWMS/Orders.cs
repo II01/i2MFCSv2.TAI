@@ -21,7 +21,7 @@ namespace DatabaseWMS
         }
     
         public int ID { get; set; }
-        public int ERP_ID { get; set; }
+        public Nullable<int> ERP_ID { get; set; }
         public int OrderID { get; set; }
         public int SubOrderID { get; set; }
         public string SKU_ID { get; set; }

@@ -358,9 +358,66 @@ namespace UserInterface.DataServiceWMS
                 {
                     var l = (from c in dc.Orders
                              where c.Status <= statusLessOrEqual 
-                             orderby c.OrderID descending, c.SubOrderID ascending 
+                             orderby c.ERP_ID, c.OrderID descending, c.SubOrderID ascending 
                              select c).Take(5000);
 
+                    return l.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public List<Orders> GetOrdersDistinct(int statusLessOrEqual)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = (from c in dc.Orders
+                             where c.Status <= statusLessOrEqual
+                             orderby c.ERP_ID, c.OrderID descending, c.SubOrderID ascending
+                             group c by new {c.ERP_ID, c.OrderID} into lunique
+                             select lunique.FirstOrDefault()).Take(5000);
+                    return l.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public List<Orders> GetSubOrdersDistinct(int? erpid, int orderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = (from c in dc.Orders
+                             where c.ERP_ID == erpid && c.OrderID == orderid
+                             orderby c.SubOrderID ascending
+                             group c by c.SubOrderID into lunique
+                             select lunique.FirstOrDefault()).Take(5000);
+                    return l.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public List<Orders> GetSKUs(int? erpid, int orderid, int suborderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = (from c in dc.Orders
+                             where c.ERP_ID == erpid && c.OrderID == orderid && c.SubOrderID == suborderid
+                             orderby c.SKU_ID ascending
+                             select c).Take(5000);
                     return l.ToList();
                 }
             }
@@ -391,8 +448,6 @@ namespace UserInterface.DataServiceWMS
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    if( dc.CommandERPs.FirstOrDefault(p => p.ID == order.ERP_ID) == null)
-                        dc.CommandERPs.Add(new CommandERPs { ID = order.ERP_ID, Command = "Move", Status = 0 });
                     dc.Orders.Add(order);
                     dc.SaveChanges();
                 }
@@ -446,13 +501,13 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public bool ExistsOrderID(int orderid)
+        public bool ExistsOrderID(int? erpid, int orderid)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    return dc.Orders.FirstOrDefault(p => p.OrderID == orderid) != null;
+                    return dc.Orders.FirstOrDefault(p => p.ERP_ID == erpid && p.OrderID == orderid) != null;
                 }
             }
             catch (Exception e)
@@ -577,6 +632,118 @@ namespace UserInterface.DataServiceWMS
                     var item = dc.Orders.Find(order.ID);
                     dc.Orders.Remove(item);
                     dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public List<CommandERPs> GetCommandERPs(int statusLessOrEqual)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = (from c in dc.CommandERPs
+                                 where c.Status <= statusLessOrEqual
+                                 orderby c.ID descending
+                                 select c).Take(5000);
+                    return items.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void UpdateCommandERP(CommandERPs commanderp)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var item = dc.CommandERPs.FirstOrDefault(p => p.ID == commanderp.ID);
+                    if(item != null)
+                    {
+                        item.Command = commanderp.Command;
+                        item.Status = commanderp.Status;
+                    }
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public List<Commands> GetCommands(int statusLessOrEqual)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = (from c in dc.Commands
+                                 where c.Status <= statusLessOrEqual
+                                 orderby c.ID descending
+                                 select c).Take(5000);
+                    return items.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void UpdateCommand(Commands commandwms)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var item = dc.Commands.FirstOrDefault(p => p.ID == commandwms.ID);
+                    if (item != null)
+                    {
+                        item.Order_ID = commandwms.Order_ID;
+                        item.TU_ID = commandwms.TU_ID;
+                        item.Source = commandwms.Source;
+                        item.Target = commandwms.Target;
+                        item.Status = commandwms.Status;
+                    }
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public List<CommandWMSOrder> GetCommandOrders(int statusLessOrEqual)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = (from c in dc.Commands
+                                 where c.Status <= statusLessOrEqual
+                                 orderby c.ID descending
+                                 select new CommandWMSOrder
+                                 {
+                                     ID = c.ID,
+                                     Order_ID = c.Order_ID,
+                                     TU_ID = c.TU_ID,
+                                     Source = c.Source,
+                                     Target = c.Target,
+                                     Status = c.Status,
+                                     OrderERPID = c.Orders.ERP_ID,
+                                     OrderOrderID = c.Orders.OrderID,
+                                     OrderSubOrderID = c.Orders.SubOrderID,
+                                     OrderSubOrderName = c.Orders.SubOrderName,
+                                     OrderSKUID = c.Orders.SKU_ID,
+                                     OrderSKUBatch = c.Orders.SKU_Batch
+                                 }
+                                 ).Take(5000);
+                    return items.ToList();
                 }
             }
             catch (Exception e)

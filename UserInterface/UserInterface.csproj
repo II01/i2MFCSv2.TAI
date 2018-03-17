@@ -122,6 +122,7 @@
     <Compile Include="DataServiceWMS\DBServiceWMS.cs" />
     <Compile Include="DataServiceWMS\IDBServiceWMS.cs" />
     <Compile Include="DataServiceWMS\PlaceTUID.cs" />
+    <Compile Include="DataServiceWMS\CommandWMSOrder.cs" />
     <Compile Include="DataServiceWMS\TUSKUID.cs" />
     <Compile Include="Services\Enums.cs" />
     <Compile Include="UserControls\PasswordHelper.cs" />
@@ -204,10 +205,14 @@
     <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="ViewModel\WMS\CommandWMSsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\CommandWMSViewModel.cs" />
     <Compile Include="ViewModel\WMS\OrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\OrderViewModel.cs" />
+    <Compile Include="ViewModel\WMS\CommandERPsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceTUIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceIDsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\CommandERPViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceTUIDViewModel.cs" />
     <Compile Include="ViewModel\WMS\SKUIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceIDViewModel.cs" />
@@ -241,11 +246,23 @@
     <Compile Include="View\HistoryMovementsView.xaml.cs">
       <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\WMS\CommandWMSsView.xaml.cs">
+      <DependentUpon>CommandWMSsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\CommandWMSView.xaml.cs">
+      <DependentUpon>CommandWMSView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\WMS\OrdersView.xaml.cs">
       <DependentUpon>OrdersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\OrderView.xaml.cs">
       <DependentUpon>OrderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\CommandERPsView.xaml.cs">
+      <DependentUpon>CommandERPsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\CommandERPView.xaml.cs">
+      <DependentUpon>CommandERPView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\PlaceTUIDsView.xaml.cs">
       <DependentUpon>PlaceTUIDsView.xaml</DependentUpon>
@@ -386,11 +403,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\WMS\CommandWMSsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\CommandWMSView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\WMS\OrdersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WMS\OrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\CommandERPsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\CommandERPView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
