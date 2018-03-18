@@ -47,7 +47,8 @@ namespace UserInterface.ViewModel
                 {
                     _command = value;
                     MaterialStr = ((_command as CommandMaterial).Material.HasValue && (_command as CommandMaterial).Material.Value > 0) ?
-                                  string.Format("P{0:d9}", (_command as CommandMaterial).Material.Value) : "";
+//                                  string.Format("P{0:d9}", (_command as CommandMaterial).Material.Value) : "";
+                                    string.Format("{0:d9}", (_command as CommandMaterial).Material.Value) : "";
                     RaisePropertyChanged("Command");
                 }
             }
@@ -62,7 +63,8 @@ namespace UserInterface.ViewModel
                 {
                     (_command as CommandMaterial).Material = value;
                     MaterialStr = ((_command as CommandMaterial).Material.HasValue && (_command as CommandMaterial).Material.Value > 0) ?
-                                  string.Format("P{0:d9}", (_command as CommandMaterial).Material.Value) : "";
+                                    //string.Format("P{0:d9}", (_command as CommandMaterial).Material.Value) : "";
+                                    string.Format("{0:d9}", (_command as CommandMaterial).Material.Value) : "";
                     RaisePropertyChanged("Material");
                 }
             }
@@ -76,8 +78,8 @@ namespace UserInterface.ViewModel
                 if (_materialStr != value && value.Length <= 10)
                 {
                     _materialStr = value;
-                    if (_materialStr.Length > 0 && _materialStr[0] != 'P')
-                        _materialStr = 'P' + _materialStr;
+//                    if (_materialStr.Length > 0 && _materialStr[0] != 'P')
+//                        _materialStr = 'P' + _materialStr;
                     if (_materialStr.Length == 10 && Int32.TryParse(_materialStr.Substring(1), out int m))
                         (_command as CommandMaterial).Material = m;
                     else

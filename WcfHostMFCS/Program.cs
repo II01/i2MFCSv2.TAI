@@ -13,7 +13,7 @@ namespace WcfHostMFCS
             using (BasicWarehouse Warehouse = BasicWarehouse.Deserialize(s))
             {
                 Warehouse.DBService = new Warehouse.DataService.DBService(Warehouse);
-                // Warehouse.WMS = new BasicWMS { WMSSimulation = bool.Parse(System.Configuration.ConfigurationManager.AppSettings["WMSSimulation"]) };
+                Warehouse.WMS = new BasicWMS { WMSSimulation = bool.Parse(System.Configuration.ConfigurationManager.AppSettings["WMSSimulation"]) };
                 Warehouse.Initialize();
                 Warehouse.BuildRoutes(false);
                 // service host is initialized in this module

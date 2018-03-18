@@ -70,7 +70,8 @@ namespace UserInterface.ViewModel
                 if(_material.ID != value)
                 {
                     _material.ID = value;
-                    IDString = _material.ID > 0 ? string.Format("P{0:d9}", _material.ID) : "";
+//                    IDString = _material.ID > 0 ? string.Format("P{0:d9}", _material.ID) : "";
+                    IDString = _material.ID > 0 ? string.Format("{0:d9}", _material.ID) : "";
                     RaisePropertyChanged("ID");
                 }
             }
@@ -81,12 +82,14 @@ namespace UserInterface.ViewModel
             get { return _idString; }
             set
             {
-                if (_idString != value && value.Length <= 10)
+//                if (_idString != value && value.Length <= 10)
+                if (_idString != value && value.Length <= 9)
                 {
                     _idString = value;
-                    if (_idString.Length > 0 && _idString[0] != 'P')
-                        _idString = 'P' + _idString;
-                    if (_idString.Length == 10 && Int32.TryParse(_idString.Substring(1), out int m))
+//                    if (_idString.Length > 0 && _idString[0] != 'P')
+//                        _idString = 'P' + _idString;
+//                    if (_idString.Length == 10 && Int32.TryParse(_idString.Substring(1), out int m))
+                    if (Int32.TryParse(_idString, out int m))
                         _material.ID = m;
                     else
                         _material.ID = 0;

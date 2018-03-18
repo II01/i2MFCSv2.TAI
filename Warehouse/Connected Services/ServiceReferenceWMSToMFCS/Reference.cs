@@ -15,17 +15,23 @@ namespace Warehouse.ServiceReferenceWMSToMFCS {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceWMSToMFCS.IWMSToMFCS")]
     public interface IWMSToMFCS {
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IWMSToMFCS/CommandStatusChanged")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/CommandStatusChanged", ReplyAction="http://tempuri.org/IWMSToMFCS/CommandStatusChangedResponse")]
         void CommandStatusChanged(int cmdId, int status);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IWMSToMFCS/CommandStatusChanged")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/CommandStatusChanged", ReplyAction="http://tempuri.org/IWMSToMFCS/CommandStatusChangedResponse")]
         System.Threading.Tasks.Task CommandStatusChangedAsync(int cmdId, int status);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IWMSToMFCS/PlaceChanged")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/PlaceChanged", ReplyAction="http://tempuri.org/IWMSToMFCS/PlaceChangedResponse")]
         void PlaceChanged(string placeID, int TU_ID);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IWMSToMFCS/PlaceChanged")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/PlaceChanged", ReplyAction="http://tempuri.org/IWMSToMFCS/PlaceChangedResponse")]
         System.Threading.Tasks.Task PlaceChangedAsync(string placeID, int TU_ID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/DestinationEmptied", ReplyAction="http://tempuri.org/IWMSToMFCS/DestinationEmptiedResponse")]
+        void DestinationEmptied(string place);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/DestinationEmptied", ReplyAction="http://tempuri.org/IWMSToMFCS/DestinationEmptiedResponse")]
+        System.Threading.Tasks.Task DestinationEmptiedAsync(string place);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace Warehouse.ServiceReferenceWMSToMFCS {
         
         public System.Threading.Tasks.Task PlaceChangedAsync(string placeID, int TU_ID) {
             return base.Channel.PlaceChangedAsync(placeID, TU_ID);
+        }
+        
+        public void DestinationEmptied(string place) {
+            base.Channel.DestinationEmptied(place);
+        }
+        
+        public System.Threading.Tasks.Task DestinationEmptiedAsync(string place) {
+            return base.Channel.DestinationEmptiedAsync(place);
         }
     }
 }

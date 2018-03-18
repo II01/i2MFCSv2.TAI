@@ -124,6 +124,7 @@
     <Compile Include="DataServiceWMS\IDBServiceWMS.cs" />
     <Compile Include="DataServiceWMS\PlaceTUID.cs" />
     <Compile Include="DataServiceWMS\CommandWMSOrder.cs" />
+    <Compile Include="DataServiceWMS\PlaceDiff.cs" />
     <Compile Include="DataServiceWMS\TUSKUID.cs" />
     <Compile Include="Services\Enums.cs" />
     <Compile Include="UserControls\PasswordHelper.cs" />
@@ -208,6 +209,7 @@
     <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandWMSsViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandWMSViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PlaceDiffViewModel.cs" />
     <Compile Include="ViewModel\WMS\OrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\OrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandERPsViewModel.cs" />

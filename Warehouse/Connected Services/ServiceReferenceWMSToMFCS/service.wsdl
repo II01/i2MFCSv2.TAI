@@ -9,15 +9,33 @@
   <wsdl:message name="IWMSToMFCS_CommandStatusChanged_InputMessage">
     <wsdl:part name="parameters" element="tns:CommandStatusChanged" />
   </wsdl:message>
+  <wsdl:message name="IWMSToMFCS_CommandStatusChanged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CommandStatusChangedResponse" />
+  </wsdl:message>
   <wsdl:message name="IWMSToMFCS_PlaceChanged_InputMessage">
     <wsdl:part name="parameters" element="tns:PlaceChanged" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToMFCS_PlaceChanged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlaceChangedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToMFCS_DestinationEmptied_InputMessage">
+    <wsdl:part name="parameters" element="tns:DestinationEmptied" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToMFCS_DestinationEmptied_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DestinationEmptiedResponse" />
   </wsdl:message>
   <wsdl:portType name="IWMSToMFCS">
     <wsdl:operation name="CommandStatusChanged">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToMFCS/CommandStatusChanged" message="tns:IWMSToMFCS_CommandStatusChanged_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToMFCS/CommandStatusChangedResponse" message="tns:IWMSToMFCS_CommandStatusChanged_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="PlaceChanged">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToMFCS/PlaceChanged" message="tns:IWMSToMFCS_PlaceChanged_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToMFCS/PlaceChangedResponse" message="tns:IWMSToMFCS_PlaceChanged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DestinationEmptied">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToMFCS/DestinationEmptied" message="tns:IWMSToMFCS_DestinationEmptied_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToMFCS/DestinationEmptiedResponse" message="tns:IWMSToMFCS_DestinationEmptied_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWMSToMFCS" type="tns:IWMSToMFCS">
@@ -27,12 +45,27 @@
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="PlaceChanged">
       <soap:operation soapAction="http://tempuri.org/IWMSToMFCS/PlaceChanged" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DestinationEmptied">
+      <soap:operation soapAction="http://tempuri.org/IWMSToMFCS/DestinationEmptied" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="WMSToMFCS">

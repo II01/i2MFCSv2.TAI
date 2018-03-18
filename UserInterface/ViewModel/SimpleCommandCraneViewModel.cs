@@ -25,7 +25,8 @@ namespace UserInterface.ViewModel
                 if (_command != value)
                 {
                     _command = value;
-                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("P{0:d9}", _command.Material.Value) : "";
+//                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("P{0:d9}", _command.Material.Value) : "";
+                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("{0:d9}", _command.Material.Value) : "";
                     RaisePropertyChanged("Command");
                 }
             }
@@ -39,7 +40,8 @@ namespace UserInterface.ViewModel
                 if (_command.Material != value)
                 {
                     _command.Material = value;
-                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("P{0:d9}", _command.Material.Value) : "";
+//                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("P{0:d9}", _command.Material.Value) : "";
+                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("{0:d9}", _command.Material.Value) : "";
                     RaisePropertyChanged("Material");
                 }
             }
@@ -53,8 +55,8 @@ namespace UserInterface.ViewModel
                 if (_materialStr != value && value.Length <= 10)
                 {
                     _materialStr = value;
-                    if (_materialStr.Length > 0 && _materialStr[0] != 'P')
-                        _materialStr = 'P' + _materialStr;
+//                    if (_materialStr.Length > 0 && _materialStr[0] != 'P')
+//                        _materialStr = 'P' + _materialStr;
                     if (_materialStr.Length == 10 && Int32.TryParse(_materialStr.Substring(1), out int m))
                         _command.Material = m;
                     else
@@ -107,7 +109,8 @@ namespace UserInterface.ViewModel
                     return string.Format("{0} {1}: {2} {3}: {4} {5}:{6}",
                             ResourceReader.GetString(tstr),
                             ResourceReader.GetString("TU"),
-                            _command.Material.HasValue ? string.Format("P{0:d9}", _command.Material.Value) : "",
+//                            _command.Material.HasValue ? string.Format("P{0:d9}", _command.Material.Value) : "",
+                            _command.Material.HasValue ? string.Format("{0:d9}", _command.Material.Value) : "",
                             ResourceReader.GetString("with"),
                             (_command as SimpleCraneCommand).Unit,
                             ResourceReader.GetString("Location"),

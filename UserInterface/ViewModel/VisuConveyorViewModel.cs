@@ -155,7 +155,8 @@ namespace UserInterface.ViewModel
                                    _info.Status[TelegramTransportStatus.STATUS_FAULT], 
                                    _info.Status[TelegramTransportStatus.STATUS_AUTOMATIC], 
                                    _info.Status[TelegramTransportStatus.STATUS_LONGTERMFAULT]) : "");
-                DetailsValueUpdate("TU", string.Format("P{0:d9}", TransportUnit));
+//                DetailsValueUpdate("TU", string.Format("P{0:d9}", TransportUnit));
+                DetailsValueUpdate("TU", string.Format("{0:d9}", TransportUnit));
                 DetailsValueUpdate("CMD", _info.LastCommand != null ? _info.LastCommand : "");
                 if (_info != null && _info.SensorList != null)
                     _info.SensorList.ForEach(s => DetailsValueUpdate(string.Format("SENS_{0}", i++), s.Active));

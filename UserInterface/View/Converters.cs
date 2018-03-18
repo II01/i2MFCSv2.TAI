@@ -166,11 +166,13 @@ namespace UserInterface.View
         {
             try
             {
-                return (value == null || (int)value == 0) ? "P" : string.Format("P{0:d9}", value);
+//                return (value == null || (int)value == 0) ? "P" : string.Format("P{0:d9}", value);
+                return (value == null || (int)value == 0) ? "" : string.Format("{0:d9}", value);
             }
             catch
             {
-                return "P";
+                //                return "P";
+                return "";
             }
         }
 

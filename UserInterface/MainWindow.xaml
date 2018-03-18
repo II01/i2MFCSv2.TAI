@@ -118,21 +118,26 @@
                            Tag="{Binding CommandWMSs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
             </TreeViewItem>
-            <TreeViewItem  Header="{Resx Commands}" 
-                           Tag="{Binding Commands, Source={StaticResource Locator}}" 
-                           IsEnabled="True"/>
-            <TreeViewItem Header="{Resx Transport_units}"
-                          Tag="{Binding Materials, Source={StaticResource Locator}}" 
-                          IsEnabled="True"/>
-            <TreeViewItem Header ="{Resx Extras}" IsExpanded="True" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}">
+            <TreeViewItem Header ="{Resx MFCS}" IsExpanded="True" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}">
                 <TreeViewItem  Header="{Resx Commands}" 
                            Tag="{Binding Commands, Source={StaticResource Locator}}" 
+                           IsEnabled="True"/>
+                <TreeViewItem Header="{Resx Transport_units}"
+                          Tag="{Binding Materials, Source={StaticResource Locator}}" 
+                          IsEnabled="True"/>
+            </TreeViewItem>
+            <TreeViewItem Header ="{Resx Extras}" IsExpanded="True" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}">
+                <TreeViewItem  Header="{Resx Locations}" 
+                           Tag="{Binding Locations, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
                 <TreeViewItem Header="{Resx Events}"
                               Tag="{Binding Events, Source={StaticResource Locator}}" 
                               IsEnabled="True"/>
                 <TreeViewItem Header="{Resx Simple_commands}"
                               Tag="{Binding SimpleCommands, Source={StaticResource Locator}}" 
+                              IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
+                <TreeViewItem Header="{Resx ComparePlaces}"
+                              Tag="{Binding PlaceDiffs, Source={StaticResource Locator}}" 
                               IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
             </TreeViewItem>
             <TreeViewItem Header ="{Resx History}" IsExpanded="True" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}">

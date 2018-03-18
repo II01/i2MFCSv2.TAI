@@ -10,6 +10,7 @@ using Warehouse.Model;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Database;
+using UserInterface.DataServiceWMS;
 
 namespace UserInterface.ViewModel
 {
@@ -190,6 +191,11 @@ namespace UserInterface.ViewModel
         {
             try
             {
+                DBServiceWMS ds = new DBServiceWMS(_warehouse);
+                ds.PlaceWMSandMFCSDiff();
+
+
+/*
                 double dbSizeGBMax = double.Parse(System.Configuration.ConfigurationManager.AppSettings["DataBaseSizeGBMax"]);
                 double dbSizeGBReduced = double.Parse(System.Configuration.ConfigurationManager.AppSettings["DataBaseSizeGBReduced"]);
 
@@ -205,6 +211,8 @@ namespace UserInterface.ViewModel
                     await Task.Run(() => _warehouse.DBService.DBCleaning(reducePerc));
                 }
                 EnabledReduceDB = App.AccessLevel == 2;
+
+*/
             }
             catch (Exception e)
             {

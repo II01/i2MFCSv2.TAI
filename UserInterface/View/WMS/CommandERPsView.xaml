@@ -52,7 +52,7 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ERPID}" 
                                     Width="*" Binding="{Binding ERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Command}" 
-                                    Width="*" Binding="{Binding Command}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="*" Binding="{Binding Command}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                     Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>

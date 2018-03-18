@@ -751,5 +751,95 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public List<PlaceDiff> PlaceWMSandMFCSDiff()
+        {
+            try
+            {
+                using (var dcw = new EntitiesWMS())
+                using (var dcm = new MFCSEntities())
+                {
+                    var itemsw = (from pw in dcw.Places
+                                  select new PlaceDiff{ PlaceWMS = pw.PlaceID, TUID = pw.TU_ID }).ToList();
+                    var itemsm = (from pm in dcm.Places
+                                  select new PlaceDiff{ PlaceMFCS = pm.Place1, TUID = pm.Material }).ToList();
+                    var itemsu = itemsw.Union(itemsm);
+                    var items = itemsu.Select(p => p.TUID).Distinct();
+
+                    var listd = (from i in items
+                                 join iw in itemsw on i equals iw.TUID into joinw
+                                 from jw in joinw.DefaultIfEmpty()
+                                 join im in itemsm on i equals im.TUID into joinm
+                                 from jm in joinm.DefaultIfEmpty()
+                                 where jw?.PlaceWMS != jm?.PlaceMFCS
+                                 select new PlaceDiff { TUID = i, PlaceWMS = jw==null?null:jw.PlaceWMS, PlaceMFCS = jm==null?null:jm.PlaceMFCS }).ToList();
+                    return listd;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void UpdatePlacesMFCS(List<PlaceDiff> list)
+        {
+            try
+            {
+                using (var dcm = new MFCSEntities())
+                {
+                    foreach (var l in list)
+                    {
+                        if (dcm.MaterialIDs.FirstOrDefault(p => p.ID == l.TUID) == null)
+                            dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 1, Weight = 1 });
+                        var place = dcm.Places.FirstOrDefault(pp => pp.Material == l.TUID);
+                        if (place != null)
+                        {
+                            if (l.PlaceWMS != null)
+                                place.Place1 = l.PlaceWMS;
+                            else
+                                dcm.Places.Remove(place);
+                        }
+                        else
+                            dcm.Places.Add(new Place { Material = l.TUID, Place1 = l.PlaceWMS, Time = DateTime.Now });
+                    }
+                    dcm.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void UpdatePlacesWMS(List<PlaceDiff> list)
+        {
+            try
+            {
+                using (var dcw = new EntitiesWMS())
+                {
+                    foreach (var l in list)
+                    {
+                        if (dcw.TU_ID.FirstOrDefault(p => p.ID == l.TUID) == null)
+                            dcw.TU_ID.Add(new TU_ID { ID = l.TUID, DimensionClass = 0, Blocked = 0});
+                        var place = dcw.Places.FirstOrDefault(pp => pp.TU_ID == l.TUID);
+                        if (place != null)
+                        {
+                            if (l.PlaceMFCS != null)
+                                place.PlaceID = l.PlaceMFCS;
+                            else
+                                dcw.Places.Remove(place);
+                        }
+                        else
+                            dcw.Places.Add(new Places { PlaceID = l.PlaceMFCS, TU_ID = l.TUID, Time = DateTime.Now  });
+                    }
+                    dcw.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
     }
 }
+
+

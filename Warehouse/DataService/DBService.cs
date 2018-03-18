@@ -985,7 +985,7 @@ namespace Warehouse.DataService
                     // only for test - unkwnon palets are automatically created
                     if (matID == null && create)
                     {
-                        matID = new MaterialID { ID = (int)material, Size = 1, Weight = 800 };
+                        matID = new MaterialID { ID = (int)material, Size = 1, Weight = 1 };
                         dc.MaterialIDs.Add(matID);
                         dc.SaveChanges();
                     }

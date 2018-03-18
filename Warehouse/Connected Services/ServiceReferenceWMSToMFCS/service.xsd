@@ -8,12 +8,34 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CommandStatusChangedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="PlaceChanged">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="placeID" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PlaceChangedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DestinationEmptied">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="place" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DestinationEmptiedResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

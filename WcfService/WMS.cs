@@ -31,6 +31,9 @@ namespace WcfService
                     {
                         foreach (var c in cmds)
                         {
+                            MaterialID matID = dc.MaterialIDs.Find((int)c.TU_ID);
+                            if (matID == null)
+                                dc.MaterialIDs.Add(new MaterialID { ID = c.TU_ID, Size = 1, Weight = 1 });
                             dc.Commands.Add(new CommandMaterial
                             {
                                 WMS_ID = c.ID,
@@ -41,11 +44,12 @@ namespace WcfService
                                 Priority = 0,
                                 Status = (Command.EnumCommandStatus)c.Status,
                                 Task = Command.EnumCommandTask.Move,
-                                Time = c.Time,
+                                Time = DateTime.Now,
                                 Reason = Command.EnumCommandReason.OK
                             });
                             warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_AddMoveCommands called {c.ToString()}");
                         }
+                        dc.SaveChanges();
                     }
                 }
                 catch (Exception e)

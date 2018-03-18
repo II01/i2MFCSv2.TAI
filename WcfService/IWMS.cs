@@ -11,7 +11,7 @@ namespace WcfService
     [ServiceContract]
     public interface IWMS
     {
-        [OperationContract(IsOneWay =true)]
+        [OperationContract(IsOneWay = false)]
         void MFCS_Submit(IEnumerable<DTOCommand> cmds);
     }
 
