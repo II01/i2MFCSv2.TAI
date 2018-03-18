@@ -55,6 +55,30 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public DateTime? TimeWMS
+        {
+            get { return _placeDiff.TimeWMS; }
+            set
+            {
+                if (_placeDiff.TimeWMS != value)
+                {
+                    _placeDiff.TimeWMS = value;
+                    RaisePropertyChanged("TimeWMS");
+                }
+            }
+        }
+        public DateTime? TimeMFCS
+        {
+            get { return _placeDiff.TimeMFCS; }
+            set
+            {
+                if (_placeDiff.TimeMFCS != value)
+                {
+                    _placeDiff.TimeMFCS = value;
+                    RaisePropertyChanged("TimeMFCS");
+                }
+            }
+        }
         #endregion
 
         #region initialization

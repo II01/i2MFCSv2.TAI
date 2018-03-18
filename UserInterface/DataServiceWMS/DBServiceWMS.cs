@@ -760,9 +760,9 @@ namespace UserInterface.DataServiceWMS
                 using (var dcm = new MFCSEntities())
                 {
                     var itemsw = (from pw in dcw.Places
-                                  select new PlaceDiff{ PlaceWMS = pw.PlaceID, TUID = pw.TU_ID }).ToList();
+                                  select new PlaceDiff{ TUID = pw.TU_ID, PlaceWMS = pw.PlaceID, TimeWMS = pw.Time}).ToList();
                     var itemsm = (from pm in dcm.Places
-                                  select new PlaceDiff{ PlaceMFCS = pm.Place1, TUID = pm.Material }).ToList();
+                                  select new PlaceDiff{ TUID = pm.Material, PlaceMFCS = pm.Place1, TimeMFCS = pm.Time}).ToList();
                     var itemsu = itemsw.Union(itemsm);
                     var items = itemsu.Select(p => p.TUID).Distinct();
 
@@ -772,7 +772,14 @@ namespace UserInterface.DataServiceWMS
                                  join im in itemsm on i equals im.TUID into joinm
                                  from jm in joinm.DefaultIfEmpty()
                                  where jw?.PlaceWMS != jm?.PlaceMFCS
-                                 select new PlaceDiff { TUID = i, PlaceWMS = jw==null?null:jw.PlaceWMS, PlaceMFCS = jm==null?null:jm.PlaceMFCS }).ToList();
+                                 select new PlaceDiff
+                                 {
+                                     TUID = i,
+                                     PlaceWMS = jw == null ? null:jw.PlaceWMS,
+                                     PlaceMFCS = jm == null ? null:jm.PlaceMFCS,
+                                     TimeWMS = jw == null ? null : jw.TimeWMS,
+                                     TimeMFCS = jm == null ? null : jm.TimeMFCS,
+                                 }).ToList();
                     return listd;
                 }
             }

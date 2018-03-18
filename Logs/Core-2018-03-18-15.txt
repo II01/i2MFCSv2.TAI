@@ -1245,3 +1245,5 @@
 
 2018-03-18 15:02:05:666->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
 
+2018-03-18 15:06:37:528->EVENT:Warehouse:Deserialize warehose from ..\\..\\..\\Warehouse\\Config\xmlconfigDogusCay.xml finished.:Deserialize (BasicWarehouse.cs 395)
+

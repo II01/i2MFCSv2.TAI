@@ -12,6 +12,9 @@ namespace UserInterface.DataServiceWMS
         public string PlaceWMS { get; set; }
         public string PlaceMFCS { get; set; }
 
+        public DateTime? TimeWMS { get; set; }
+        public DateTime? TimeMFCS { get; set; }
+
         public PlaceDiff()
         {
         }

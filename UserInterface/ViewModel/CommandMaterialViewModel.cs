@@ -80,7 +80,8 @@ namespace UserInterface.ViewModel
                     _materialStr = value;
 //                    if (_materialStr.Length > 0 && _materialStr[0] != 'P')
 //                        _materialStr = 'P' + _materialStr;
-                    if (_materialStr.Length == 10 && Int32.TryParse(_materialStr.Substring(1), out int m))
+//                    if (_materialStr.Length == 10 && Int32.TryParse(_materialStr.Substring(1), out int m))
+                    if (Int32.TryParse(_materialStr, out int m))
                         (_command as CommandMaterial).Material = m;
                     else
                         (_command as CommandMaterial).Material = 0;

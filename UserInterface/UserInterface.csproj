@@ -207,6 +207,7 @@
     <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PlaceDiffsViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandWMSsViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandWMSViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceDiffViewModel.cs" />
@@ -248,6 +249,9 @@
     </Compile>
     <Compile Include="View\HistoryMovementsView.xaml.cs">
       <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\PlaceDiffsView.xaml.cs">
+      <DependentUpon>PlaceDiffsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\CommandWMSsView.xaml.cs">
       <DependentUpon>CommandWMSsView.xaml</DependentUpon>
@@ -403,6 +407,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\HistoryMovementsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\PlaceDiffsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

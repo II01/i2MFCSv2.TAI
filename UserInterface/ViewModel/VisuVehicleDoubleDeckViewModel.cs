@@ -257,7 +257,7 @@ namespace UserInterface.ViewModel
                     DetailsValueUpdate("POSP", _info[deck].FPosition != null ? String.Format("X:{0} Y:{1} Z:{2}", _info[deck].FPosition.X * 10, _info[deck].FPosition.Y * 10, _info[deck].FPosition.Z * 10) : "");
                     if (Deck[deck].Model != null)
                     {
-                        //                        DetailsValueUpdate(string.Format("TU{0}", deck), Deck[deck].TransportUnit != 0 ? string.Format("P{0:d9}", Deck[deck].TransportUnit) : "");
+//                        DetailsValueUpdate(string.Format("TU{0}", deck), Deck[deck].TransportUnit != 0 ? string.Format("P{0:d9}", Deck[deck].TransportUnit) : "");
                         DetailsValueUpdate(string.Format("TU{0}", deck), Deck[deck].TransportUnit != 0 ? string.Format("{0:d9}", Deck[deck].TransportUnit) : "");
                         DetailsValueUpdate(string.Format("CMDE{0}", deck), _info[deck].LastCommand);
                         DetailsValueUpdate(string.Format("CMDB{0}", deck), _info[deck].LastBufferCommand);
