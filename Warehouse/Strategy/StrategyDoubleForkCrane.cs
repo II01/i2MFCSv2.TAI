@@ -175,7 +175,7 @@ namespace Warehouse.Strategy
                 {
                     if (c2c.Task == SimpleCommand.EnumTask.Pick)
                         Strategy1.PrefferedInput = !Strategy1.PrefferedInput;
-                    Strategy2.WriteCommandToPLC(c1c);
+                    Strategy2.WriteCommandToPLC(c2c);
                 }
 
                 Strategy1.BannedPlaces.Clear();
