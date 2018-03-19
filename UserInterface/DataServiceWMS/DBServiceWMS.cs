@@ -801,10 +801,9 @@ namespace UserInterface.DataServiceWMS
                         var place = dcm.Places.FirstOrDefault(pp => pp.Material == l.TUID);
                         if (place != null)
                         {
+                            dcm.Places.Remove(place);
                             if (l.PlaceWMS != null)
-                                place.Place1 = l.PlaceWMS;
-                            else
-                                dcm.Places.Remove(place);
+                                dcm.Places.Add(new Place { Material = place.Material, Place1 = l.PlaceWMS, Time = DateTime.Now });
                         }
                         else
                             dcm.Places.Add(new Place { Material = l.TUID, Place1 = l.PlaceWMS, Time = DateTime.Now });
@@ -830,10 +829,9 @@ namespace UserInterface.DataServiceWMS
                         var place = dcw.Places.FirstOrDefault(pp => pp.TU_ID == l.TUID);
                         if (place != null)
                         {
+                            dcw.Places.Remove(place);
                             if (l.PlaceMFCS != null)
-                                place.PlaceID = l.PlaceMFCS;
-                            else
-                                dcw.Places.Remove(place);
+                                dcw.Places.Add(new Places { PlaceID = l.PlaceMFCS, TU_ID = place.TU_ID, Time = DateTime.Now });
                         }
                         else
                             dcw.Places.Add(new Places { PlaceID = l.PlaceMFCS, TU_ID = l.TUID, Time = DateTime.Now  });
