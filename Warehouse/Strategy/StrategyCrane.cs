@@ -238,7 +238,7 @@ namespace Warehouse.Strategy
                 bool remote = Warehouse.SteeringCommands.RemoteMode;
 
                 if (Crane.FastCommand == null)
-                    Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, false);
+                    Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
 
                 GetNewCommand(remote);
                 GetNewCommand(remote);

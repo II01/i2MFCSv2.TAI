@@ -730,17 +730,17 @@ namespace UserInterface.DataServiceWMS
                                  select new CommandWMSOrder
                                  {
                                      ID = c.ID,
-                                     Order_ID = c.Order_ID,
+                                     Order_ID = c.Order_ID.HasValue ? c.Order_ID.Value: 0,
                                      TU_ID = c.TU_ID,
                                      Source = c.Source,
                                      Target = c.Target,
                                      Status = c.Status,
-                                     OrderERPID = c.Orders.ERP_ID,
-                                     OrderOrderID = c.Orders.OrderID,
-                                     OrderSubOrderID = c.Orders.SubOrderID,
-                                     OrderSubOrderName = c.Orders.SubOrderName,
-                                     OrderSKUID = c.Orders.SKU_ID,
-                                     OrderSKUBatch = c.Orders.SKU_Batch
+                                     OrderERPID = c.Order_ID.HasValue ? c.Orders.ERP_ID : 0,
+                                     OrderOrderID = c.Order_ID.HasValue ? c.Orders.OrderID : 0,
+                                     OrderSubOrderID = c.Order_ID.HasValue ? c.Orders.SubOrderID : 0,
+                                     OrderSubOrderName = c.Order_ID.HasValue ? c.Orders.SubOrderName : "",
+                                     OrderSKUID = c.Order_ID.HasValue ? c.Orders.SKU_ID : "",
+                                     OrderSKUBatch = c.Order_ID.HasValue ? c.Orders.SKU_Batch : ""
                                  }
                                  ).Take(5000);
                     return items.ToList();

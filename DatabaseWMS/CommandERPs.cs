@@ -24,6 +24,8 @@ namespace DatabaseWMS
         public string Command { get; set; }
         public int Status { get; set; }
         public System.DateTime Time { get; set; }
+        public string Reference { get; set; }
+        public int ERP_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

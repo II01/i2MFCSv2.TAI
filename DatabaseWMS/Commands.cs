@@ -15,7 +15,7 @@ namespace DatabaseWMS
     public partial class Commands
     {
         public int ID { get; set; }
-        public int Order_ID { get; set; }
+        public Nullable<int> Order_ID { get; set; }
         public int TU_ID { get; set; }
         public string Source { get; set; }
         public string Target { get; set; }

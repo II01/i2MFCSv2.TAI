@@ -1,0 +1,2161 @@
+2018-03-19 15:00:00:249->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|31|101|1|1|16|0|2657
+|T.StartByte=10|T.SecondByte=11|T.Sequence=31|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2657
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:02:151->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:02:186->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:02:502->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:03:972->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:07:161->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:07:178->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:07:397->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|81|201|1|1|16|0|2691
+|T.StartByte=10|T.SecondByte=11|T.Sequence=81|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2691
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:07:410->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|84|203|1|1|16|0|2692
+|T.StartByte=10|T.SecondByte=11|T.Sequence=84|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2692
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:07:421->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|74|202|1|1|16|0|2715
+|T.StartByte=10|T.SecondByte=11|T.Sequence=74|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2715
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:07:554->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:08:306->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:08:319->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:08:347->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:08:357->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:08:377->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:08:472->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:08:491->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:08:499->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:09:108->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:12:165->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:12:170->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:12:556->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:14:159->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:17:174->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:17:186->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:17:565->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:18:396->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:18:482->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:18:488->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:18:513->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:18:519->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:18:831->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:18:840->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:18:851->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:19:312->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:20:372->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|32|101|1|1|16|0|2654
+|T.StartByte=10|T.SecondByte=11|T.Sequence=32|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2654
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:22:189->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:22:196->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:22:579->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:24:357->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:27:191->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:27:197->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:27:574->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|82|201|1|1|16|0|2688
+|T.StartByte=10|T.SecondByte=11|T.Sequence=82|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2688
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:27:605->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|75|202|1|1|16|0|2714
+|T.StartByte=10|T.SecondByte=11|T.Sequence=75|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2714
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:27:616->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:27:626->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|85|203|1|1|16|0|2693
+|T.StartByte=10|T.SecondByte=11|T.Sequence=85|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2693
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:28:501->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:28:560->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:28:851->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:28:861->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:28:873->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:29:023->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:29:032->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:29:037->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:29:402->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:32:193->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:32:201->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:32:600->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:34:451->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:37:196->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:37:202->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:37:601->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:38:569->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:38:640->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:39:033->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:39:051->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:39:061->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:39:265->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:39:273->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:39:279->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:39:485->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:40:490->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|33|101|1|1|16|0|2655
+|T.StartByte=10|T.SecondByte=11|T.Sequence=33|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2655
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:42:208->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:42:215->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:42:615->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:44:503->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:47:221->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:47:231->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:47:631->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:47:762->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|83|201|1|1|16|0|2689
+|T.StartByte=10|T.SecondByte=11|T.Sequence=83|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2689
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:47:775->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|76|202|1|1|16|0|2717
+|T.StartByte=10|T.SecondByte=11|T.Sequence=76|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2717
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:47:785->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|86|203|1|1|16|0|2694
+|T.StartByte=10|T.SecondByte=11|T.Sequence=86|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2694
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:00:48:647->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:48:722->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:49:278->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:49:358->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:49:379->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:49:506->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:49:517->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:49:529->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:49:539->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:52:225->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:52:241->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:52:646->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:54:567->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:57:240->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:57:259->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:57:659->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:58:732->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:58:794->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:59:521->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:59:542->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:59:548->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:00:59:583->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:00:59:693->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:59:705->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:00:59:714->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:00:612->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|34|101|1|1|16|0|2652
+|T.StartByte=10|T.SecondByte=11|T.Sequence=34|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2652
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:02:241->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:02:247->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:02:661->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:04:645->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:07:256->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:07:264->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:07:664->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:07:943->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|77|202|1|1|16|0|2716
+|T.StartByte=10|T.SecondByte=11|T.Sequence=77|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2716
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:07:952->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|87|203|1|1|16|0|2695
+|T.StartByte=10|T.SecondByte=11|T.Sequence=87|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2695
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:07:959->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|84|201|1|1|16|0|2694
+|T.StartByte=10|T.SecondByte=11|T.Sequence=84|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2694
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:08:809->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:08:911->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:09:663->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:09:706->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:09:726->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:09:738->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:09:869->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:09:882->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:09:889->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:12:274->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:12:295->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:12:674->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:14:700->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:17:286->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:17:294->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:17:677->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:18:930->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:19:000->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:19:749->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:19:890->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:19:897->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:19:904->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:20:049->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:20:059->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:20:068->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:20:728->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|35|101|1|1|16|0|2653
+|T.StartByte=10|T.SecondByte=11|T.Sequence=35|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2653
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:22:300->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:22:309->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:22:691->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:24:779->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:27:302->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:27:310->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:27:708->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:28:135->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|85|201|1|1|16|0|2695
+|T.StartByte=10|T.SecondByte=11|T.Sequence=85|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2695
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:28:150->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|78|202|1|1|16|0|2719
+|T.StartByte=10|T.SecondByte=11|T.Sequence=78|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2719
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:28:160->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|88|203|1|1|16|0|2696
+|T.StartByte=10|T.SecondByte=11|T.Sequence=88|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2696
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:29:018->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:29:086->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:29:811->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:30:067->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:30:082->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:30:096->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:30:229->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:30:275->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:30:289->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:32:318->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:32:327->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:32:722->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:34:846->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:37:332->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:37:346->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:37:726->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:39:101->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:39:168->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:39:866->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:40:290->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:40:304->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:40:318->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:40:467->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:40:500->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:40:518->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:40:844->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|36|101|1|1|16|0|2650
+|T.StartByte=10|T.SecondByte=11|T.Sequence=36|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2650
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:42:347->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:42:358->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:42:737->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:44:896->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:47:352->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:47:396->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:47:742->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:48:307->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|79|202|1|1|16|0|2718
+|T.StartByte=10|T.SecondByte=11|T.Sequence=79|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2718
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:48:315->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|86|201|1|1|16|0|2692
+|T.StartByte=10|T.SecondByte=11|T.Sequence=86|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2692
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:48:323->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|89|203|1|1|16|0|2697
+|T.StartByte=10|T.SecondByte=11|T.Sequence=89|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2697
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:01:49:188->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:49:273->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:49:918->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:50:511->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:50:538->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:50:555->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:50:779->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:50:809->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:50:818->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:52:364->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:52:385->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:52:757->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:54:962->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:57:383->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:57:407->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:57:770->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:01:59:293->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:01:59:364->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:01:59:998->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:00:818->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:00:917->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:00:947->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:00:965->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|37|101|1|1|16|0|2651
+|T.StartByte=10|T.SecondByte=11|T.Sequence=37|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2651
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:01:059->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:01:081->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:01:098->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:02:422->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:02:444->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:02:788->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:05:038->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:07:433->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:07:444->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:07:788->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:08:491->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|80|202|1|1|16|0|2689
+|T.StartByte=10|T.SecondByte=11|T.Sequence=80|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2689
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:08:505->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|87|201|1|1|16|0|2693
+|T.StartByte=10|T.SecondByte=11|T.Sequence=87|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2693
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:08:514->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|90|203|1|1|16|0|2698
+|T.StartByte=10|T.SecondByte=11|T.Sequence=90|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2698
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:09:386->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:09:445->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:10:077->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:11:097->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:11:115->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:11:124->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:11:256->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:11:277->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:11:284->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:12:441->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:12:453->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:12:827->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:15:107->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:17:463->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:17:476->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:17:871->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:19:469->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:19:548->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:20:134->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:21:079->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|38|101|1|1|16|0|2648
+|T.StartByte=10|T.SecondByte=11|T.Sequence=38|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2648
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:21:287->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:21:295->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:21:306->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:21:446->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:21:454->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:21:461->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:22:474->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:22:497->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:22:883->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:25:193->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:27:502->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:27:534->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:27:905->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:28:676->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|88|201|1|1|16|0|2698
+|T.StartByte=10|T.SecondByte=11|T.Sequence=88|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2698
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:28:686->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|81|202|1|1|16|0|2688
+|T.StartByte=10|T.SecondByte=11|T.Sequence=81|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2688
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:28:698->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|91|203|1|1|16|0|2699
+|T.StartByte=10|T.SecondByte=11|T.Sequence=91|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2699
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:29:557->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:30:241->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:30:588->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:31:469->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:31:478->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:31:485->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:31:641->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:31:651->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:31:658->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:32:504->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:32:538->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:32:919->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:35:259->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:37:506->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:37:552->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:37:948->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:40:314->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:40:644->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:40:759->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:41:199->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|39|101|1|1|16|0|2649
+|T.StartByte=10|T.SecondByte=11|T.Sequence=39|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2649
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:41:665->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:41:692->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:41:701->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:41:844->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:41:855->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:41:863->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:42:520->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:42:568->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:42:962->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:45:360->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:47:521->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:47:569->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:47:974->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:48:890->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|92|203|1|1|16|0|2700
+|T.StartByte=10|T.SecondByte=11|T.Sequence=92|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2700
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:48:901->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|89|201|1|1|16|0|2699
+|T.StartByte=10|T.SecondByte=11|T.Sequence=89|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2699
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:48:910->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|82|202|1|1|16|0|2691
+|T.StartByte=10|T.SecondByte=11|T.Sequence=82|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2691
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:02:50:470->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:50:777->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:50:853->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:51:867->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:51:905->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:51:915->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:02:52:055->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:52:068->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:52:081->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:02:52:538->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:52:583->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:52:988->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:55:508->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:57:540->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:57:585->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:02:57:993->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:00:551->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:00:914->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:01:025->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:01:324->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|40|101|1|1|16|0|2646
+|T.StartByte=10|T.SecondByte=11|T.Sequence=40|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2646
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:03:02:068->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:02:083->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:02:099->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:02:229->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:02:242->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:02:255->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:02:555->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:02:599->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:03:007->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:05:660->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:07:569->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:07:601->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:08:022->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:09:061->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|90|201|1|1|16|0|2696
+|T.StartByte=10|T.SecondByte=11|T.Sequence=90|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2696
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:03:09:074->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|93|203|1|1|16|0|2701
+|T.StartByte=10|T.SecondByte=11|T.Sequence=93|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2701
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:03:09:088->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|83|202|1|1|16|0|2690
+|T.StartByte=10|T.SecondByte=11|T.Sequence=83|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2690
+:RcvThreading (Communicator.cs 134)
+
+2018-03-19 15:03:10:741->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:11:055->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:11:126->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:12:254->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:12:270->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:12:287->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:12:405->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:12:422->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:12:432->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 180)
+
+2018-03-19 15:03:12:584->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:12:614->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:13:037->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:15:771->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:17:627->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:17:643->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:18:042->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:20:815->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:21:162->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:22:427->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:22:451->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:22:478->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:03:22:669->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:22:685->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:23:079->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:25:846->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:27:687->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:27:712->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:28:087->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:30:879->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:32:700->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:32:714->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:33:103->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:35:966->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:37:704->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:37:718->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:38:115->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:40:990->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:41:396->EXCEPTION:PLC_Conveyor:PLC_Conveyor:MyRead:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:03:42:708->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:42:729->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:42:862->EXCEPTION:PLC_Conveyor:Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:03:43:121->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:44:229->EXCEPTION:PLC_Crane3:Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:03:44:419->EXCEPTION:PLC_Crane1:Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:03:44:428->EXCEPTION:PLC_Crane2:Unable to read data from the transport connection: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:03:47:443->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:47:758->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:47:791->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:48:125->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:49:092->EXCEPTION:PLC_Crane1:PLC_Crane1:MyRead:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:03:49:110->EXCEPTION:PLC_Crane3:PLC_Crane3:MyRead:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:03:49:131->EXCEPTION:PLC_Crane2:PLC_Crane2:MyRead:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:03:52:463->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:55:133->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:55:153->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:55:186->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:03:57:484->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:00:133->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:00:167->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:00:198->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:02:536->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:03:424->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:04:897->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:05:138->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:05:241->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:05:269->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:06:251->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:06:448->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:06:511->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:09:619->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:10:169->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:10:244->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:10:263->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:11:140->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:11:156->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:11:180->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:14:653->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:15:156->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramCraneStatus
+|10|11|0|1|202|1212|90|0|3621|0|1|2|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|[0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1212|T.Length=90|T.TelCode=0|T.CRC=3621|T.MFCS_ID=0|T.Order=1|T.ID=2|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.NumCommands=0|T.Command_ID=0|T.BufferCommand_ID=0|T.LPosition.R=0|T.LPosition.X=0|T.LPosition.Y=0|T.LPosition.Z=0|T.FPosition.R=0|T.FPosition.X=0|T.FPosition.Y=0|T.FPosition.Z=0|T.StateMachine=0|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0]|T.CurrentAlarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.AlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:04:15:174->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramCraneStatus
+|10|11|0|1|201|1212|90|0|3621|0|1|1|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|[0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1212|T.Length=90|T.TelCode=0|T.CRC=3621|T.MFCS_ID=0|T.Order=1|T.ID=1|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.NumCommands=0|T.Command_ID=0|T.BufferCommand_ID=0|T.LPosition.R=0|T.LPosition.X=0|T.LPosition.Y=0|T.LPosition.Z=0|T.FPosition.R=0|T.FPosition.X=0|T.FPosition.Y=0|T.FPosition.Z=0|T.StateMachine=0|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0]|T.CurrentAlarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.AlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:04:15:201->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramCraneStatus
+|10|11|0|1|203|1212|90|0|3621|0|1|3|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|[0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1212|T.Length=90|T.TelCode=0|T.CRC=3621|T.MFCS_ID=0|T.Order=1|T.ID=3|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.NumCommands=0|T.Command_ID=0|T.BufferCommand_ID=0|T.LPosition.R=0|T.LPosition.X=0|T.LPosition.Y=0|T.LPosition.Z=0|T.FPosition.R=0|T.FPosition.X=0|T.FPosition.Y=0|T.FPosition.Z=0|T.StateMachine=0|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0]|T.CurrentAlarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.AlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:04:17:164->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:17:187->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:17:203->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:19:689->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:22:180->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:22:200->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:22:216->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:24:716->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:25:499->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:26:969->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:27:182->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:27:215->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:27:225->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:28:282->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:28:527->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:28:756->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:31:542->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:32:200->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:32:227->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:32:239->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:33:171->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:33:195->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:33:220->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:36:611->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:38:312->EXCEPTION:PLC_Crane3:An established connection was aborted by the software in your host machine 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:38:605->EXCEPTION:PLC_Crane1:An established connection was aborted by the software in your host machine 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:38:784->EXCEPTION:PLC_Crane2:An established connection was aborted by the software in your host machine 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:39:207->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:39:237->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:39:265->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:39:363->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:39:732->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:39:814->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:41:655->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:43:210->EXCEPTION:PLC_Crane1:An established connection was aborted by the software in your host machine 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:43:242->EXCEPTION:PLC_Crane3:An established connection was aborted by the software in your host machine 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:43:267->EXCEPTION:PLC_Crane2:An established connection was aborted by the software in your host machine 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:45:986->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramCraneStatus
+|10|11|0|1|201|1212|90|0|3619|0|7|1|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|[0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1212|T.Length=90|T.TelCode=0|T.CRC=3619|T.MFCS_ID=0|T.Order=7|T.ID=1|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.NumCommands=0|T.Command_ID=0|T.BufferCommand_ID=0|T.LPosition.R=0|T.LPosition.X=0|T.LPosition.Y=0|T.LPosition.Z=0|T.FPosition.R=0|T.FPosition.X=0|T.FPosition.Y=0|T.FPosition.Z=0|T.StateMachine=0|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0]|T.CurrentAlarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.AlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:04:46:004->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramCraneStatus
+|10|11|0|1|202|1212|90|0|3619|0|7|2|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|[0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1212|T.Length=90|T.TelCode=0|T.CRC=3619|T.MFCS_ID=0|T.Order=7|T.ID=2|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.NumCommands=0|T.Command_ID=0|T.BufferCommand_ID=0|T.LPosition.R=0|T.LPosition.X=0|T.LPosition.Y=0|T.LPosition.Z=0|T.FPosition.R=0|T.FPosition.X=0|T.FPosition.Y=0|T.FPosition.Z=0|T.StateMachine=0|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0]|T.CurrentAlarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.AlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:04:46:024->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramCraneStatus
+|10|11|0|1|203|1212|90|0|3619|0|7|3|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|[0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1212|T.Length=90|T.TelCode=0|T.CRC=3619|T.MFCS_ID=0|T.Order=7|T.ID=3|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.NumCommands=0|T.Command_ID=0|T.BufferCommand_ID=0|T.LPosition.R=0|T.LPosition.X=0|T.LPosition.Y=0|T.LPosition.Z=0|T.FPosition.R=0|T.FPosition.X=0|T.FPosition.Y=0|T.FPosition.Z=0|T.StateMachine=0|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0]|T.CurrentAlarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.AlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:04:46:697->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:47:528->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:04:48:912->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramCraneStatus
+|10|11|0|1|201|1212|90|0|3621|0|1|1|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|[0|0]|[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|0|0|0
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1212|T.Length=90|T.TelCode=0|T.CRC=3621|T.MFCS_ID=0|T.Order=1|T.ID=1|T.Status=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.NumCommands=0|T.Command_ID=0|T.BufferCommand_ID=0|T.LPosition.R=0|T.LPosition.X=0|T.LPosition.Y=0|T.LPosition.Z=0|T.FPosition.R=0|T.FPosition.X=0|T.FPosition.Y=0|T.FPosition.Z=0|T.StateMachine=0|T.Palette.Type=0|T.Palette.Quantity=0|T.Palette.Barcode=0|T.Palette.Weight=0|T.Palette.FaultCode=[0|0]|T.CurrentAlarms=[0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0]|T.AlarmID=0|T.Confirmation=0|T.Fault=0
+):AddSendTelegram (Communicator.cs 42)
+
+2018-03-19 15:04:48:996->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:04:49:252->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:49:279->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:49:309->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:53:578->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:54:259->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:54:274->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:54:304->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:58:612->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:59:276->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:59:972->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:04:59:983->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:01:393->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:01:781->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:01:853->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:04:350->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:05:292->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:05:516->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:05:625->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:05:735->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:05:766->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:05:799->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:09:630->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:11:151->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:11:403->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:11:802->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:12:101->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:16:436->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:16:960->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:17:249->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:17:511->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:21:447->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:22:632->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:22:778->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:22:828->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:23:518->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:23:917->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:23:950->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:26:449->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:27:475->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:28:151->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:28:222->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:28:337->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:28:427->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:29:078->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:05:29:405->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:29:509->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:30:556->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:30:594->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:31:811->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:31:847->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:31:903->EXCEPTION:PLC_Crane3:An established connection was aborted by the software in your host machine 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:32:146->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:32:862->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:32:904->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:32:965->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:33:195->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:33:251->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:33:925->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:34:003->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:34:052->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:34:275->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:34:376->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:34:979->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:35:052->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:35:117->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:35:333->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:35:431->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:36:028->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:36:086->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:36:159->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:36:381->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:36:481->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:37:068->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:37:127->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:37:214->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:37:415->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:37:520->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:38:128->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:38:176->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:38:249->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:38:451->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:38:554->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:39:207->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:39:365->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:39:445->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:39:545->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:39:635->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:40:436->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:40:544->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:40:573->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:40:655->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:40:694->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:41:469->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:41:655->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:41:695->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:41:769->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:41:808->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:42:514->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:42:697->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:42:743->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:42:814->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:42:853->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:43:572->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:43:739->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:43:792->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:43:852->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:43:900->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:44:613->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:44:787->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:44:829->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:44:885->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:44:944->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:45:643->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:45:745->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:45:832->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:45:879->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:45:925->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:46:019->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:46:375->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:46:397->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:46:690->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:46:778->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:46:863->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:46:919->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:46:960->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:47:067->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:47:415->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:47:432->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:47:721->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:47:818->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:47:900->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:47:961->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:47:987->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:48:093->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:48:454->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:48:471->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:48:758->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:48:843->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:48:937->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:49:003->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:49:020->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:49:139->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:49:489->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:49:516->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:49:838->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:49:861->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:49:954->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:50:034->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:50:052->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:50:180->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:50:533->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:50:546->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:50:894->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:50:910->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:50:973->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:51:068->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:51:157->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:51:208->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:51:572->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:51:613->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:51:933->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:51:953->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:52:004->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:52:094->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:52:194->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:52:237->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:52:638->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:52:653->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:52:975->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:52:994->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:53:032->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:53:127->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:53:253->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:53:277->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:53:686->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:53:701->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:54:002->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:54:016->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:54:068->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:54:147->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:54:325->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:54:368->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:54:792->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:54:842->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:55:040->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:55:066->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:55:120->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:55:189->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:55:382->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:55:424->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:55:867->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:55:903->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:56:120->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:56:184->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:56:201->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:56:383->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:56:463->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:56:510->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:56:914->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:56:951->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:57:184->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:57:244->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:57:273->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:57:476->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:57:532->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:57:566->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:57:949->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:57:987->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:58:239->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:58:290->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:58:309->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:58:520->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:58:585->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:58:639->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:59:000->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:59:033->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:59:270->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:59:318->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:59:344->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:59:551->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:05:59:633->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:05:59:674->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:00:044->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:00:074->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:00:298->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:00:356->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:00:460->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:00:582->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:00:665->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:00:707->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:01:086->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:01:125->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:01:336->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:01:402->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:01:500->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:01:627->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:01:712->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:01:741->EXCEPTION:PLC_Conveyor:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:02:143->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:02:166->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:02:392->EXCEPTION:PLC_Crane3:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:02:450->EXCEPTION:PLC_Crane1:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:02:543->EXCEPTION:PLC_Crane2:An attempt was made to access a socket in a way forbidden by its access permissions 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:02:671->EXCEPTION:PLC_Crane3:A socket operation was attempted to an unreachable host 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:02:763->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:02:800->EXCEPTION:PLC_Conveyor:A socket operation was attempted to an unreachable host 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:08:654->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:08:738->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:08:753->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:09:269->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:13:751->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:13:801->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:13:883->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:14:451->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:18:761->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:18:976->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:19:103->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:19:636->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:23:778->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:24:198->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:24:233->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:24:283->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:24:410->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:24:553->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:24:607->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:24:621->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:24:747->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:24:815->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:24:859->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:24:893->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:30:653->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:30:787->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:30:805->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:31:269->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:35:858->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:36:347->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:36:495->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:37:218->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:40:878->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:41:438->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:41:563->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:42:486->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:45:919->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:46:279->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:46:475->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:46:667->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:46:787->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:46:877->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:06:46:920->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:47:101->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:47:125->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:47:145->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:47:168->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:06:52:835->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:53:345->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:53:373->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:53:410->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:57:845->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:58:443->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:58:493->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:06:58:628->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:02:856->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:03:587->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:03:659->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:03:884->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:07:870->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:08:481->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:07:08:719->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:07:08:736->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:08:800->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:08:845->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:07:08:922->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:07:08:939->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 198)
+
+2018-03-19 15:07:09:140->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 142)
+
+2018-03-19 15:07:09:150->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:07:09:162->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 149)
+
+2018-03-19 15:07:09:239->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 149)
+
