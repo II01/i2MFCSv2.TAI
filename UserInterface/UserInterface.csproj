@@ -214,12 +214,15 @@
     <Compile Include="ViewModel\WMS\OrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\OrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandERPsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\LogsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\LogViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceTUIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandERPViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceTUIDViewModel.cs" />
     <Compile Include="ViewModel\WMS\SKUIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\TUViewModel.cs" />
     <Compile Include="ViewModel\WMS\TUSKUIDViewModel.cs" />
     <Compile Include="ViewModel\WMS\SKUIDViewModel.cs" />
     <Compile Include="View\CommandCommandView.xaml.cs">
@@ -270,6 +273,9 @@
     </Compile>
     <Compile Include="View\WMS\CommandERPView.xaml.cs">
       <DependentUpon>CommandERPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\LogsView.xaml.cs">
+      <DependentUpon>LogsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\PlaceTUIDsView.xaml.cs">
       <DependentUpon>PlaceTUIDsView.xaml</DependentUpon>
@@ -435,6 +441,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WMS\CommandERPView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\LogsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

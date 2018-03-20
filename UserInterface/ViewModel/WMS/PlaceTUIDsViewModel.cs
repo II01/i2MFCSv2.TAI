@@ -88,6 +88,7 @@ namespace UserInterface.ViewModel
                 if (_detailed != value)
                 {
                     _detailed = value;
+                    _detailed?.PopulateList();
                     RaisePropertyChanged("Detailed");
                 }
             }
@@ -161,7 +162,7 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<PlaceTUIDViewModel>();
-                foreach (var p in _dbservicewms.GetPlaceTUIDs())
+/*                foreach (var p in _dbservicewms.GetPlaceTUIDs())
                     DataList.Add(new PlaceTUIDViewModel
                     {
                         TUID = p.TUID,
@@ -171,6 +172,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);
+*/
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -467,7 +469,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                PlaceTUIDViewModel sl = Selected; 
+                int? tuid = Selected?.TUID; 
                 DataList.Clear();
                 foreach (var p in _dbservicewms.GetPlaceTUIDs())
                     DataList.Add(new PlaceTUIDViewModel
@@ -479,8 +481,11 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);
-                if ( sl != null)
-                    Selected = DataList.FirstOrDefault(p => p.TUID == sl.TUID);
+                if (tuid != null)
+                {
+                    Selected = DataList.FirstOrDefault(p => p.TUID == tuid);
+                    Detailed = Selected;
+                }
             }
             catch (Exception e)
             {
@@ -493,7 +498,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is PlaceIDsViewModel)
+                if (vm is PlaceTUIDsViewModel)
                 {
                     ExecuteRefresh();
                 }

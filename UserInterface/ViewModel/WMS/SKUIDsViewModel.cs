@@ -29,6 +29,7 @@ namespace UserInterface.ViewModel
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
+        private ObservableCollection<TUViewModel> _TUList;
         #endregion
 
         #region properites
@@ -51,6 +52,18 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public ObservableCollection<TUViewModel> TUList
+        {
+            get { return _TUList; }
+            set
+            {
+                if (_TUList != value)
+                {
+                    _TUList = value;
+                    RaisePropertyChanged("TUList");
+                }
+            }
+        }
         public SKUIDViewModel SelectedSKUID
         {
             get
@@ -66,7 +79,14 @@ namespace UserInterface.ViewModel
                     try
                     {
                         if (_selectedSKUID != null)
+                        {
                             DetailedSKUID = SelectedSKUID;
+                            TUList.Clear();
+                            var sl = _dbservicewms.GetTUs(DetailedSKUID.ID);
+                            foreach (var s in sl)
+                                TUList.Add(new TUViewModel {TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
+
+                        }
                     }
                     catch (Exception e)
                     {
@@ -135,6 +155,7 @@ namespace UserInterface.ViewModel
         public SKUIDsViewModel()
         {
             DetailedSKUID = new SKUIDViewModel();
+            TUList = new ObservableCollection<TUViewModel>();
             SelectedSKUID = null;
 
             EditEnabled = false;
@@ -156,10 +177,11 @@ namespace UserInterface.ViewModel
             try
             {
                 SKUIDList = new ObservableCollection<SKUIDViewModel>();
-                foreach (var p in _dbservicewms.GetSKUIDs())
+/*                foreach (var p in _dbservicewms.GetSKUIDs())
                     SKUIDList.Add(new SKUIDViewModel { ID = p.ID, Description = p.Description, DefaultQty = p.DefaultQty, Unit = p.Unit, Weight = p.Weight, FrequencyClass = p.FrequencyClass });
                 foreach (var l in SKUIDList)
                     l.Initialize(_warehouse);
+*/
                 DetailedSKUID.Initialize(_warehouse);
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
@@ -343,8 +365,14 @@ namespace UserInterface.ViewModel
                     SKUIDList.Add(new SKUIDViewModel { ID = p.ID, Description = p.Description, DefaultQty = p.DefaultQty, Unit = p.Unit, Weight = p.Weight, FrequencyClass = p.FrequencyClass });
                 foreach (var l in SKUIDList)
                     l.Initialize(_warehouse);
-                if ( sl != null)
+                if (sl != null)
+                {
                     SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == sl.ID);
+                    TUList.Clear();
+                    var sdl = _dbservicewms.GetTUs(DetailedSKUID.ID);
+                    foreach (var s in sdl)
+                        TUList.Add(new TUViewModel { TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
+                }
             }
             catch (Exception e)
             {

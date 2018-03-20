@@ -139,6 +139,9 @@
                 <TreeViewItem Header="{Resx ComparePlaces}"
                               Tag="{Binding PlaceDiffs, Source={StaticResource Locator}}" 
                               IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
+                <TreeViewItem  Header="{Resx WMSLog}" 
+                           Tag="{Binding Logs, Source={StaticResource Locator}}" 
+                           IsEnabled="True"/>
             </TreeViewItem>
             <TreeViewItem Header ="{Resx History}" IsExpanded="True" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}">
                 <TreeViewItem Header="{Resx Alarms}"

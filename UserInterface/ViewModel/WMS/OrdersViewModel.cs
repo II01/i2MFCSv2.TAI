@@ -261,7 +261,7 @@ namespace UserInterface.ViewModel
                 DataListOrder = new ObservableCollection<OrderViewModel>();
                 DataListSubOrder = new ObservableCollection<OrderViewModel>();
                 DataListSKU = new ObservableCollection<OrderViewModel>();
-                foreach (var p in _dbservicewms.GetOrdersDistinct(10))
+/*                foreach (var p in _dbservicewms.GetOrdersDistinct(10))
                     DataListOrder.Add(new OrderViewModel
                     {
                         ID = p.ID,
@@ -278,6 +278,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataListOrder)
                     l.Initialize(_warehouse);
+*/
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -718,7 +719,8 @@ namespace UserInterface.ViewModel
                             }
                             break;
                         case CommandType.DeleteOrder:
-                            _dbservicewms.DeleteOrders(Detailed.OrderID);
+                            Detailed.Status = EnumWMSOrderStatus.Cancel;
+                            _dbservicewms.UpdateOrders(SelectedOrder.OrderID, Detailed.Order);
                             ExecuteRefresh();
                             break;
                         case CommandType.AddSubOrder:
@@ -928,7 +930,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is PlaceIDsViewModel)
+                if (vm is OrdersViewModel)
                 {
                     ExecuteRefresh();
                 }

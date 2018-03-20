@@ -43,8 +43,10 @@ namespace UserInterface.Services
     {
         Waiting = 0,
         Active = 1,
-        Canceled = 2,
-        Finished = 3,
+        OnTarget = 2,
+        ReadyToTake = 3,
+        Cancel = 4,
+        Finished = 5
     }
     public enum EnumCommandWMSStatus : int
     {
@@ -62,6 +64,7 @@ namespace UserInterface.Services
         Canceled = 2,
         Finished = 3,
     }
+    
     [TypeConverter(typeof(LocalizedEnumConverter))]
     public enum EnumCommandTask : int
     {

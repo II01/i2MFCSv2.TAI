@@ -42,7 +42,7 @@
         <Border Grid.ColumnSpan="3" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
             <TextBlock Text="{Resx Orders}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
         </Border>
-        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="2" Grid.RowSpan="3" Margin="0,0,20,0"
             x:Name="dgPlaceIDs" 
             ItemsSource="{Binding DataListOrder}" 
@@ -69,7 +69,7 @@
                                     Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SubOrders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SubOrders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="2" Grid.Column="1"
             ItemsSource="{Binding DataListSubOrder}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
@@ -89,7 +89,7 @@
                                     Width="*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SKUs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom"/>
+        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SKUs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="4" Grid.Column="1"
             ItemsSource="{Binding DataListSKU}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"

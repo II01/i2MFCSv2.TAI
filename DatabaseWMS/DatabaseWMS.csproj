@@ -59,6 +59,9 @@
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Logs.cs">
+      <DependentUpon>ModelWMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelWMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

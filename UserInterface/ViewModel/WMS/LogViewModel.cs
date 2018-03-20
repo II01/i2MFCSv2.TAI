@@ -6,17 +6,13 @@ using System.ComponentModel;
 using Warehouse.Model;
 using System.Diagnostics;
 using UserInterface.DataServiceWMS;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Xml;
-using System.Text;
 
 namespace UserInterface.ViewModel
 {
-    public sealed class CommandWMSViewModel: ViewModelBase, IDataErrorInfo
+    public sealed class LogViewModel: ViewModelBase, IDataErrorInfo
     {
         #region members
-        private CommandWMSOrder _data;
+        private Logs _data;
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
@@ -25,7 +21,7 @@ namespace UserInterface.ViewModel
 
         #region properties
         PropertyValidator Validator { get; set; }
-        public CommandWMSOrder Data
+        public Logs Data
         {
             get { return _data; }
             set
@@ -37,7 +33,7 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public int WMSID
+        public int ID
         {
             get { return _data.ID;  }
             set
@@ -45,36 +41,37 @@ namespace UserInterface.ViewModel
                 if( _data.ID != value )
                 {
                     _data.ID = value;
-                    RaisePropertyChanged("WMSID");
+                    RaisePropertyChanged("ID");
                 }
             }
         }
 
-        public int OrderID
+        public int Severity
         {
-            get { return _data.Order_ID; }
+            get { return _data.Severity; }
             set
             {
-                if( _data.Order_ID != value)
+                if( _data.Severity != value)
                 {
-                    _data.Order_ID = value;
-                    RaisePropertyChanged("OrderID");
+                    _data.Severity = value;
+                    RaisePropertyChanged("Severity");
                 }
             }
         }
 
-        public int TUID
+        public string Message
         {
-            get { return _data.TU_ID; }
+            get { return _data.Message; }
             set
             {
-                if (_data.TU_ID != value)
+                if (_data.Message != value)
                 {
-                    _data.TU_ID = value;
-                    RaisePropertyChanged("TUID");
+                    _data.Message = value;
+                    RaisePropertyChanged("Message");
                 }
             }
         }
+
         public string Source
         {
             get { return _data.Source; }
@@ -87,32 +84,6 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public string Target
-        {
-            get { return _data.Target; }
-            set
-            {
-                if (_data.Target != value)
-                {
-                    _data.Target = value;
-                    RaisePropertyChanged("Target");
-                }
-            }
-        }
-
-        public EnumCommandWMSStatus Status
-        {
-            get { return (EnumCommandWMSStatus)_data.Status; }
-            set
-            {
-                if (_data.Status != (int)value)
-                {
-                    _data.Status = (int)value;
-                    RaisePropertyChanged("Status");
-                }
-            }
-        }
-
         public DateTime Time
         {
             get { return _data.Time; }
@@ -125,80 +96,6 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public int? OrderERPID
-        {
-            get { return _data.OrderERPID; }
-            set
-            {
-                if (_data.OrderERPID != value)
-                {
-                    _data.OrderERPID = value;
-                    RaisePropertyChanged("OrderERPID");
-                }
-            }
-        }
-
-        public int OrderOrderID
-        {
-            get { return _data.OrderOrderID; }
-            set
-            {
-                if (_data.OrderOrderID != value)
-                {
-                    _data.OrderOrderID = value;
-                    RaisePropertyChanged("OrderOrderID");
-                }
-            }
-        }
-        public int OrderSubOrderID
-        {
-            get { return _data.OrderSubOrderID; }
-            set
-            {
-                if (_data.OrderSubOrderID != value)
-                {
-                    _data.OrderSubOrderID = value;
-                    RaisePropertyChanged("OrderSubOrderID");
-                }
-            }
-        }
-        public string OrderSubOrderName
-        {
-            get { return _data.OrderSubOrderName; }
-            set
-            {
-                if (_data.OrderSubOrderName != value)
-                {
-                    _data.OrderSubOrderName = value;
-                    RaisePropertyChanged("OrderSubOrderName");
-                }
-            }
-        }
-        public string OrderSKUID
-        {
-            get { return _data.OrderSKUID; }
-            set
-            {
-                if (_data.OrderSKUID != value)
-                {
-                    _data.OrderSKUID = value;
-                    RaisePropertyChanged("OrderSKUID");
-                }
-            }
-        }
-        public string OrderSKUBatch
-        {
-            get { return _data.OrderSKUBatch; }
-            set
-            {
-                if (_data.OrderSKUBatch != value)
-                {
-                    _data.OrderSKUBatch = value;
-                    RaisePropertyChanged("OrderSKUBatch");
-                }
-            }
-        }
-
         public bool ValidationEnabled
         {
             get { return _validationEnabled; }
@@ -211,6 +108,7 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
         public bool AllPropertiesValid
         {
             get { return _allPropertiesValid; }
@@ -226,18 +124,18 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region initialization
-        public CommandWMSViewModel()
+        public LogViewModel()
         {
-            _data = new CommandWMSOrder();
+            _data = new Logs();
             Validator = new PropertyValidator();
             ValidationEnabled = false;
         }
         public void Initialize(BasicWarehouse warehouse)
         {
+            _warehouse = warehouse;
+            _dbservicewms = new DBServiceWMS(warehouse);
             try
             {
-                _warehouse = warehouse;
-                _dbservicewms = new DBServiceWMS(warehouse);
             }
             catch (Exception e)
             {
@@ -264,7 +162,7 @@ namespace UserInterface.ViewModel
                     {
                         switch (propertyName)
                         {
-                            case "WMSID":
+                            case "ID":
                                 break;
                         }
                     }

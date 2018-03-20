@@ -150,10 +150,11 @@ namespace UserInterface.ViewModel
             try
             {
                 LocationList = new ObservableCollection<LocationViewModel>();
-                foreach (var p in _warehouse.DBService.GetPlaceIDs())
+/*              foreach (var p in _warehouse.DBService.GetPlaceIDs())
                     LocationList.Add(new LocationViewModel { ID = p.ID, Size = p.Size, Blocked = p.Blocked, Reserved = p.Reserved });
                 foreach (var l in LocationList)
                     l.Initialize(_warehouse);
+*/
                 DetailedLocation.Initialize(_warehouse);
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));

@@ -116,6 +116,10 @@ namespace UserInterface.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<PlaceDiffsViewModel>(); }
         }
+        public LogsViewModel Logs
+        {
+            get { return ServiceLocator.Current.GetInstance<LogsViewModel>(); }
+        }
         #endregion
 
         #region initialization
@@ -146,6 +150,7 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<CommandERPsViewModel>();
             SimpleIoc.Default.Register<CommandWMSsViewModel>();
             SimpleIoc.Default.Register<PlaceDiffsViewModel>();
+            SimpleIoc.Default.Register<LogsViewModel>();
         }
         public static void Cleanup()
         {

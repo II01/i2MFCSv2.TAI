@@ -19,19 +19,27 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="400"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <TextBlock Text="{Resx ERPID}" Grid.Row="0" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx Command}" Grid.Row="1" Margin="0,0,0,10" VerticalAlignment="Top"/>
-        <TextBlock Text="{Resx Status}" Grid.Row="2" Margin="0,0,0,10"/>
-        
+        <TextBlock Text="{Resx Reference}" Grid.Row="1" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Command}" Grid.Row="2" Margin="0,0,0,10" VerticalAlignment="Top"/>
+        <TextBlock Text="{Resx Status}" Grid.Row="3" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Time}" Grid.Row="4" Margin="0,0,0,10"/>
+
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=ERPID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" VerticalAlignment="Stretch" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
+        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
+                 Text = "{Binding Path=Reference, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" VerticalAlignment="Stretch" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"
                  Text="{Binding Path=CommandAsXML,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="True" IsReadOnly="True"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10"  
+        <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10"  
                  Text="{Binding Path=Status,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Margin="0,0,0,10"  
+                 Text="{Binding Path=Time,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
     </Grid>
 
 </UserControl>

@@ -133,7 +133,7 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<PlaceDiffViewModel>();
-                foreach (var p in _dbservicewms.PlaceWMSandMFCSDiff())
+/*                foreach (var p in _dbservicewms.PlaceWMSandMFCSDiff())
                     DataList.Add(new PlaceDiffViewModel
                     {
                         TUID = p.TUID,
@@ -142,6 +142,7 @@ namespace UserInterface.ViewModel
                         TimeMFCS = p.TimeMFCS,
                         TimeWMS = p.TimeWMS
                     });
+*/
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -317,7 +318,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is PlaceIDsViewModel)
+                if (vm is PlaceDiffsViewModel)
                 {
                     ExecuteRefresh();
                 }

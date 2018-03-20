@@ -51,6 +51,19 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public string Reference
+        {
+            get { return _data.Reference; }
+            set
+            {
+                if (_data.Reference != value)
+                {
+                    _data.Reference = value;
+                    RaisePropertyChanged("Reference");
+                }
+            }
+        }
+
         public string Command
         {
             get { return _data.Command; }
@@ -99,6 +112,18 @@ namespace UserInterface.ViewModel
                 {
                     _data.Status = (int)value;
                     RaisePropertyChanged("Status");
+                }
+            }
+        }
+        public DateTime Time
+        {
+            get { return _data.Time; }
+            set
+            {
+                if (_data.Time != value)
+                {
+                    _data.Time = value;
+                    RaisePropertyChanged("Time");
                 }
             }
         }

@@ -185,6 +185,9 @@
         <DataTemplate DataType="{x:Type vm:PlaceDiffsViewModel}">
             <views:PlaceDiffsView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:LogsViewModel}">
+            <views:LogsView />
+        </DataTemplate>
 
         <!-- converters -->
         <views:AddMultConverter x:Key="AddMultConverter" />

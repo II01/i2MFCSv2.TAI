@@ -19,9 +19,9 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="Command" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="Time" Type="datetime" Nullable="false" />
           <Property Name="Reference" Type="nvarchar(max)" Nullable="false" />
           <Property Name="ERP_ID" Type="int" Nullable="false" />
@@ -31,11 +31,21 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Order_ID" Type="int" />
           <Property Name="TU_ID" Type="int" Nullable="false" />
           <Property Name="Source" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Target" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
-          <Property Name="Order_ID" Type="int" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Severity" Type="int" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Source" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Time" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Orders">
@@ -44,15 +54,15 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ERP_ID" Type="int" />
-          <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Destination" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="SubOrderID" Type="int" Nullable="false" />
-          <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
+          <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="SubOrderName" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="SKU_Qty" Type="float" Nullable="false" />
+          <Property Name="Destination" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
           <Property Name="SKU_Batch" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Parameters">
           <Key>
@@ -66,11 +76,11 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Status" Type="int" Nullable="false" />
           <Property Name="PositionTravel" Type="float" Nullable="false" />
           <Property Name="PositionHoist" Type="float" Nullable="false" />
           <Property Name="DimensionClass" Type="int" Nullable="false" />
           <Property Name="FrequencyClass" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Places">
           <Key>
@@ -113,7 +123,7 @@
           <Property Name="ProdDate" Type="datetime" Nullable="false" />
           <Property Name="ExpDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <Association Name="FK_dbo_Commands_dbo_Orders_ERP_ID">
+        <Association Name="FK_dbo_Commands_dbo_Orders_Order_ID">
           <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
           <End Role="Commands" Type="Self.Commands" Multiplicity="*" />
           <ReferentialConstraint>
@@ -265,6 +275,7 @@
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommandERPs" EntityType="Self.CommandERPs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlaceIDs" EntityType="Self.PlaceIDs" Schema="dbo" store:Type="Tables" />
@@ -272,7 +283,7 @@
           <EntitySet Name="SKU_ID" EntityType="Self.SKU_ID" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TU_ID" EntityType="Self.TU_ID" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TUs" EntityType="Self.TUs" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_dbo_Commands_dbo_Orders_ERP_ID" Association="Self.FK_dbo_Commands_dbo_Orders_ERP_ID">
+          <AssociationSet Name="FK_dbo_Commands_dbo_Orders_Order_ID" Association="Self.FK_dbo_Commands_dbo_Orders_Order_ID">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="Commands" EntitySet="Commands" />
           </AssociationSet>
@@ -649,6 +660,7 @@
             <End Role="TUs" EntitySet="TUs" />
           </AssociationSet>
           <EntitySet Name="Parameters" EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Parameters" />
+          <EntitySet Name="Logs" EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Logs" />
         </EntityContainer>
         <EntityType Name="Parameters">
           <Key>
@@ -656,6 +668,16 @@
           </Key>
           <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Value" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Severity" Type="Int32" Nullable="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -775,6 +797,17 @@
               <MappingFragment StoreEntitySet="Parameters">
                 <ScalarProperty Name="Value" ColumnName="Value" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Logs">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Severity" ColumnName="Severity" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -156,7 +156,7 @@ namespace UserInterface.ViewModel
             try
             {
                 PlaceIDList = new ObservableCollection<PlaceIDViewModel>();
-                foreach (var p in _dbservicewms.GetPlaceIDs())
+/*                foreach (var p in _dbservicewms.GetPlaceIDs())
                     PlaceIDList.Add(new PlaceIDViewModel
                     {
                         ID = p.ID,
@@ -168,6 +168,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in PlaceIDList)
                     l.Initialize(_warehouse);
+*/
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -312,7 +313,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                PlaceIDViewModel sl = SelectedPlaceID; 
+                string id = SelectedPlaceID?.ID; 
                 PlaceIDList.Clear();
                 foreach (var p in _dbservicewms.GetPlaceIDs())
                     PlaceIDList.Add(new PlaceIDViewModel
@@ -326,8 +327,8 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in PlaceIDList)
                     l.Initialize(_warehouse);
-                if ( sl != null)
-                    SelectedPlaceID = PlaceIDList.FirstOrDefault(p => p.ID == sl.ID);
+                if ( id != null)
+                    SelectedPlaceID = PlaceIDList.FirstOrDefault(p => p.ID == id);
             }
             catch (Exception e)
             {

@@ -107,6 +107,7 @@ namespace UserInterface.DataServiceWMS
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from p in dc.PlaceIDs
+                            where p.DimensionClass >= 0
                             select p;
                     return l.ToList();
                 }
@@ -195,6 +196,26 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public List<TUs> GetTUs(string skuid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from t in dc.TUs
+                            where t.SKU_ID == skuid
+                            orderby t.SKU_ID
+                            select t;
+                    return l.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         public Places FindPlaceByTUID(int tuid)
         {
             try
@@ -735,14 +756,14 @@ namespace UserInterface.DataServiceWMS
                                      Source = c.Source,
                                      Target = c.Target,
                                      Status = c.Status,
+                                     Time = c.Time,
                                      OrderERPID = c.Order_ID.HasValue ? c.Orders.ERP_ID : 0,
                                      OrderOrderID = c.Order_ID.HasValue ? c.Orders.OrderID : 0,
                                      OrderSubOrderID = c.Order_ID.HasValue ? c.Orders.SubOrderID : 0,
                                      OrderSubOrderName = c.Order_ID.HasValue ? c.Orders.SubOrderName : "",
                                      OrderSKUID = c.Order_ID.HasValue ? c.Orders.SKU_ID : "",
                                      OrderSKUBatch = c.Order_ID.HasValue ? c.Orders.SKU_Batch : ""
-                                 }
-                                 ).Take(5000);
+                                 }).Take(5000);
                     return items.ToList();
                 }
             }
@@ -800,12 +821,8 @@ namespace UserInterface.DataServiceWMS
                             dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 1, Weight = 1 });
                         var place = dcm.Places.FirstOrDefault(pp => pp.Material == l.TUID);
                         if (place != null)
-                        {
                             dcm.Places.Remove(place);
-                            if (l.PlaceWMS != null)
-                                dcm.Places.Add(new Place { Material = place.Material, Place1 = l.PlaceWMS, Time = DateTime.Now });
-                        }
-                        else
+                        if(l.PlaceWMS.StartsWith("W"))
                             dcm.Places.Add(new Place { Material = l.TUID, Place1 = l.PlaceWMS, Time = DateTime.Now });
                     }
                     dcm.SaveChanges();
@@ -828,15 +845,27 @@ namespace UserInterface.DataServiceWMS
                             dcw.TU_ID.Add(new TU_ID { ID = l.TUID, DimensionClass = 0, Blocked = 0});
                         var place = dcw.Places.FirstOrDefault(pp => pp.TU_ID == l.TUID);
                         if (place != null)
-                        {
                             dcw.Places.Remove(place);
-                            if (l.PlaceMFCS != null)
-                                dcw.Places.Add(new Places { PlaceID = l.PlaceMFCS, TU_ID = place.TU_ID, Time = DateTime.Now });
-                        }
-                        else
-                            dcw.Places.Add(new Places { PlaceID = l.PlaceMFCS, TU_ID = l.TUID, Time = DateTime.Now  });
+                        dcw.Places.Add(new Places { TU_ID = l.TUID, PlaceID = l.PlaceMFCS, Time = DateTime.Now  });
                     }
                     dcw.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public List<Logs> GetLogs()
+        {
+            try
+            {
+                using (var dcw = new EntitiesWMS())
+                {
+                    var items = (from l in dcw.Logs
+                                 orderby l.ID descending
+                                 select l).Take(5000);
+                    return items.ToList();
                 }
             }
             catch (Exception e)

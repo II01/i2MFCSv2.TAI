@@ -155,15 +155,18 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<CommandERPViewModel>();
-                foreach (var p in _dbservicewms.GetCommandERPs((int)EnumCommandERPStatus.Finished))
+/*                foreach (var p in _dbservicewms.GetCommandERPs((int)EnumCommandERPStatus.Finished))
                     DataList.Add(new CommandERPViewModel
                     {
                         ERPID = p.ID,
                         Command = p.Command,
-                        Status = (EnumCommandERPStatus)p.Status
+                        Reference = p.Reference,
+                        Status = (EnumCommandERPStatus)p.Status,
+                        Time = p.Time
                     });
                 foreach (var l in DataList)
-                    l.Initialize(_warehouse);
+                    l.Initialize(_warehouse); 
+*/
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -255,8 +258,10 @@ namespace UserInterface.ViewModel
                             _dbservicewms.UpdateCommandERP(new CommandERPs { ID = Detailed.ERPID, Command = Detailed.Command, Status = (int)EnumCommandERPStatus.Canceled});
                             Detailed.Status = EnumCommandERPStatus.Canceled;
                             Selected.ERPID = Detailed.ERPID;
+                            Selected.Reference = Detailed.Reference;
                             Selected.Command = Detailed.Command;
                             Selected.Status = Detailed.Status;
+                            Selected.Time = Detailed.Time;
                             break;
                         default:
                             break;
@@ -298,8 +303,10 @@ namespace UserInterface.ViewModel
                     DataList.Add(new CommandERPViewModel
                     {
                         ERPID = p.ID,
+                        Reference = p.Reference,
                         Command = p.Command,
-                        Status = (EnumCommandERPStatus)p.Status
+                        Status = (EnumCommandERPStatus)p.Status,
+                        Time = p.Time
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);
@@ -317,7 +324,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is PlaceIDsViewModel)
+                if (vm is CommandERPsViewModel)
                 {
                     ExecuteRefresh();
                 }

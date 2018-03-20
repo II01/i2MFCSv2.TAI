@@ -227,6 +227,7 @@ namespace UserInterface.ViewModel
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<CommandERPsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<CommandWMSsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceDiffsViewModel>(), Visible = Visibility.Hidden });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<LogsViewModel>(), Visible = Visibility.Hidden });
 
                 // intialize view models
                 SimpleIoc.Default.GetInstance<SettingsViewModel>().Initialize(Warehouse);
@@ -248,6 +249,7 @@ namespace UserInterface.ViewModel
                 SimpleIoc.Default.GetInstance<CommandERPsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<CommandWMSsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<PlaceDiffsViewModel>().Initialize(Warehouse);
+                SimpleIoc.Default.GetInstance<LogsViewModel>().Initialize(Warehouse);
 
                 ControlPanelViewModel = SimpleIoc.Default.GetInstance<ControlPanelViewModel>();
                 ((ControlPanelViewModel)ControlPanelViewModel).Initialize(Warehouse);

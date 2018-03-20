@@ -23,10 +23,16 @@
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                     Path=(FrameworkElement.ActualHeight), 
                                     RelativeSource={RelativeSource AncestorType=UserControl},
-                                    ConverterParameter=-60|1.0}"/>
+                                    ConverterParameter=-120|0.7}"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
+                                    Path=(FrameworkElement.ActualHeight), 
+                                    RelativeSource={RelativeSource AncestorType=UserControl},
+                                    ConverterParameter=-120|0.3}"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -35,7 +41,8 @@
         <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
             <TextBlock Text="{Resx SKUIDs}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
         </Border>
-        <DataGrid Grid.Row="1"
+        <TextBlock Grid.Row="1" Text="{Resx SKUIDs}" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="{StaticResource MidFontSize}" FontWeight="Medium"/>
+        <DataGrid Grid.Row="2"
             x:Name="dgSKUIDs" 
             ItemsSource="{Binding SKUIDList}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
@@ -61,6 +68,32 @@
                                     Width="*" Binding="{Binding Weight}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=FrequencyClass}" 
                                     Width="*" Binding="{Binding FrequencyClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Row="3" Text="{Resx TUs}" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="{StaticResource MidFontSize}" FontWeight="Medium"/>
+        <DataGrid Grid.Row="4"
+            x:Name="dgTUs" 
+            ItemsSource="{Binding TUList}" 
+            dgx:DataGridFilter.IsAutoFilterEnabled="True"
+            dgx:Tools.ApplyInitialSorting="True"
+            IsEnabled="True"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False" 
+            IsReadOnly="True"
+            FontSize="{StaticResource BaseFontSize}">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" 
+                                    Width="*" Binding="{Binding TUID}"   dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}" 
+                                    Width="*" Binding="{Binding Batch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Qty}" 
+                                    Width="*" Binding="{Binding Qty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ProdDate}" 
+                                    Width="*" Binding="{Binding ProdDate}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ExpDate}" 
+                                    Width="*" Binding="{Binding ExpDate}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">

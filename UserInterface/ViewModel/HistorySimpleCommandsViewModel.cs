@@ -155,7 +155,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is HistoryMovementsViewModel)
+                if (vm is HistorySimpleCommandsViewModel)
                 {
                     HistoryDateTimePickerViewModel d;
                     d = new HistoryDateTimePickerViewModel { TimeStamp = DateTime.Now.AddDays(-1) };

@@ -184,10 +184,11 @@ namespace UserInterface.ViewModel
                     });
 
                 PlaceList = new ObservableCollection<MaterialViewModel>();
-                foreach (var p in _warehouse.DBService.GetPlaces())
+/*                foreach (var p in _warehouse.DBService.GetPlaces())
                     PlaceList.Add(new MaterialViewModel { Location = p.Place1, ID = p.Material });
                 foreach (var mvm in PlaceList)
                     mvm.Initialize(_warehouse);
+*/
                 DetailedPlace.Initialize(_warehouse);
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));

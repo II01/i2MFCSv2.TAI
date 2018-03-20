@@ -196,7 +196,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is HistoryEventsViewModel)
+                if (vm is HistoryAlarmsViewModel)
                 {
                     HistoryDateTimePickerViewModel d;
                     d = new HistoryDateTimePickerViewModel { TimeStamp = DateTime.Now.AddDays(-1) };

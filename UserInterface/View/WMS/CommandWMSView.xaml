@@ -29,6 +29,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="{Resx WMSID}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx ERPID}" Grid.Row="1" Margin="0,0,0,10"/>
@@ -41,6 +42,7 @@
         <TextBlock Text="{Resx Source}" Grid.Row="8" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Target}" Grid.Row="9" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Status}" Grid.Row="10" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Time}" Grid.Row="11" Margin="0,0,0,10"/>
 
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=WMSID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
@@ -64,6 +66,8 @@
                  Text="{Binding Path=Target,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
         <TextBox Grid.Row="10" Grid.Column="2" Margin="0,0,0,10"  
                  Text="{Binding Path=Status,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
+        <TextBox Grid.Row="11" Grid.Column="2" Margin="0,0,0,10"  
+                 Text="{Binding Path=Time,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
     </Grid>
 
 </UserControl>

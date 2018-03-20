@@ -155,7 +155,7 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<CommandWMSViewModel>();
-                foreach (var p in _dbservicewms.GetCommandOrders((int)EnumCommandWMSStatus.Finished))
+/*                foreach (var p in _dbservicewms.GetCommandOrders((int)EnumCommandWMSStatus.Finished))
                     DataList.Add(new CommandWMSViewModel
                     {
                         WMSID = p.ID,
@@ -164,6 +164,7 @@ namespace UserInterface.ViewModel
                         Source = p.Source,
                         Target = p.Target,
                         Status = (EnumCommandWMSStatus)p.Status,
+                        Time = p.Time,
                         OrderERPID = p.OrderERPID,
                         OrderOrderID = p.OrderOrderID,
                         OrderSubOrderID = p.OrderSubOrderID,
@@ -173,6 +174,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);
+*/
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -202,6 +204,7 @@ namespace UserInterface.ViewModel
                 Detailed.Source = Selected.Source;
                 Detailed.Target = Selected.Target;
                 Detailed.Status = Selected.Status;
+                Detailed.Time = Selected.Time;
                 Detailed.OrderERPID = Selected.OrderERPID;
                 Detailed.OrderOrderID = Selected.OrderOrderID;
                 Detailed.OrderSubOrderID = Selected.OrderSubOrderID;
@@ -277,7 +280,8 @@ namespace UserInterface.ViewModel
                                     TU_ID = Detailed.TUID,
                                     Source = Detailed.Source,
                                     Target = Detailed.Target,
-                                    Status = (int)EnumCommandWMSStatus.Canceled
+                                    Status = (int)EnumCommandWMSStatus.Canceled,
+                                    Time = DateTime.Now
                                 });
                             Detailed.Status = EnumCommandWMSStatus.Canceled;
                             Selected.Status = Detailed.Status;
@@ -327,6 +331,7 @@ namespace UserInterface.ViewModel
                         Source = p.Source,
                         Target = p.Target,
                         Status = (EnumCommandWMSStatus)p.Status,
+                        Time = p.Time,
                         OrderERPID = p.OrderERPID,
                         OrderOrderID = p.OrderOrderID,
                         OrderSubOrderID = p.OrderSubOrderID,
@@ -350,7 +355,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is PlaceIDsViewModel)
+                if (vm is CommandWMSsViewModel)
                 {
                     ExecuteRefresh();
                 }

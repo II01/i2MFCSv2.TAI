@@ -6,26 +6,24 @@ using System.ComponentModel;
 using Warehouse.Model;
 using System.Diagnostics;
 using UserInterface.DataServiceWMS;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Xml;
-using System.Text;
+using System.Data.SqlTypes;
 
 namespace UserInterface.ViewModel
 {
-    public sealed class CommandWMSViewModel: ViewModelBase, IDataErrorInfo
+    public sealed class TUViewModel: ViewModelBase, IDataErrorInfo
     {
         #region members
-        private CommandWMSOrder _data;
+        private TUs _data;
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
+        private bool _allowChangeIndex;
         private bool _validationEnabled;
         #endregion
 
         #region properties
         PropertyValidator Validator { get; set; }
-        public CommandWMSOrder Data
+        public TUs Data
         {
             get { return _data; }
             set
@@ -37,28 +35,15 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public int WMSID
+        public string SKUID
         {
-            get { return _data.ID;  }
+            get { return _data.SKU_ID;  }
             set
             {
-                if( _data.ID != value )
+                if( _data.SKU_ID != value )
                 {
-                    _data.ID = value;
-                    RaisePropertyChanged("WMSID");
-                }
-            }
-        }
-
-        public int OrderID
-        {
-            get { return _data.Order_ID; }
-            set
-            {
-                if( _data.Order_ID != value)
-                {
-                    _data.Order_ID = value;
-                    RaisePropertyChanged("OrderID");
+                    _data.SKU_ID = value;
+                    RaisePropertyChanged("SKUID");
                 }
             }
         }
@@ -75,130 +60,56 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public string Source
+
+        public double Qty
         {
-            get { return _data.Source; }
+            get { return _data.Qty; }
             set
             {
-                if (_data.Source != value)
+                if (_data.Qty != value)
                 {
-                    _data.Source = value;
-                    RaisePropertyChanged("Source");
-                }
-            }
-        }
-        public string Target
-        {
-            get { return _data.Target; }
-            set
-            {
-                if (_data.Target != value)
-                {
-                    _data.Target = value;
-                    RaisePropertyChanged("Target");
+                    _data.Qty = value;
+                    RaisePropertyChanged("Qty");
                 }
             }
         }
 
-        public EnumCommandWMSStatus Status
+        public string Batch
         {
-            get { return (EnumCommandWMSStatus)_data.Status; }
+            get { return _data.Batch; }
             set
             {
-                if (_data.Status != (int)value)
+                if (_data.Batch != value)
                 {
-                    _data.Status = (int)value;
-                    RaisePropertyChanged("Status");
+                    _data.Batch = value;
+                    RaisePropertyChanged("Batch");
                 }
             }
         }
-
-        public DateTime Time
+        public DateTime ProdDate
         {
-            get { return _data.Time; }
+            get { return _data.ProdDate; }
             set
             {
-                if (_data.Time != value)
+                if (_data.ProdDate != value)
                 {
-                    _data.Time = value;
-                    RaisePropertyChanged("Time");
+                    _data.ProdDate = value;
+                    RaisePropertyChanged("ProdDate");
                 }
             }
         }
-        public int? OrderERPID
+        public DateTime ExpDate
         {
-            get { return _data.OrderERPID; }
+            get { return _data.ExpDate; }
             set
             {
-                if (_data.OrderERPID != value)
+                if (_data.ExpDate != value)
                 {
-                    _data.OrderERPID = value;
-                    RaisePropertyChanged("OrderERPID");
+                    _data.ExpDate = value;
+                    RaisePropertyChanged("ExpDate");
                 }
             }
         }
-
-        public int OrderOrderID
-        {
-            get { return _data.OrderOrderID; }
-            set
-            {
-                if (_data.OrderOrderID != value)
-                {
-                    _data.OrderOrderID = value;
-                    RaisePropertyChanged("OrderOrderID");
-                }
-            }
-        }
-        public int OrderSubOrderID
-        {
-            get { return _data.OrderSubOrderID; }
-            set
-            {
-                if (_data.OrderSubOrderID != value)
-                {
-                    _data.OrderSubOrderID = value;
-                    RaisePropertyChanged("OrderSubOrderID");
-                }
-            }
-        }
-        public string OrderSubOrderName
-        {
-            get { return _data.OrderSubOrderName; }
-            set
-            {
-                if (_data.OrderSubOrderName != value)
-                {
-                    _data.OrderSubOrderName = value;
-                    RaisePropertyChanged("OrderSubOrderName");
-                }
-            }
-        }
-        public string OrderSKUID
-        {
-            get { return _data.OrderSKUID; }
-            set
-            {
-                if (_data.OrderSKUID != value)
-                {
-                    _data.OrderSKUID = value;
-                    RaisePropertyChanged("OrderSKUID");
-                }
-            }
-        }
-        public string OrderSKUBatch
-        {
-            get { return _data.OrderSKUBatch; }
-            set
-            {
-                if (_data.OrderSKUBatch != value)
-                {
-                    _data.OrderSKUBatch = value;
-                    RaisePropertyChanged("OrderSKUBatch");
-                }
-            }
-        }
-
         public bool ValidationEnabled
         {
             get { return _validationEnabled; }
@@ -211,6 +122,7 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
         public bool AllPropertiesValid
         {
             get { return _allPropertiesValid; }
@@ -226,17 +138,20 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region initialization
-        public CommandWMSViewModel()
+        public TUViewModel()
         {
-            _data = new CommandWMSOrder();
+            _data = new TUs();
+            _dbservicewms = new DBServiceWMS(null);
             Validator = new PropertyValidator();
             ValidationEnabled = false;
+            ProdDate = DateTime.Now;
+            ExpDate = DateTime.Now;
         }
         public void Initialize(BasicWarehouse warehouse)
         {
+            _warehouse = warehouse;
             try
             {
-                _warehouse = warehouse;
                 _dbservicewms = new DBServiceWMS(warehouse);
             }
             catch (Exception e)
@@ -250,7 +165,7 @@ namespace UserInterface.ViewModel
         #region validation
         public string Error
         {
-            get { return (this as IDataErrorInfo).Error; }
+            get { return (Data as IDataErrorInfo).Error; }
         }
 
         public string this[string propertyName]
@@ -264,7 +179,21 @@ namespace UserInterface.ViewModel
                     {
                         switch (propertyName)
                         {
-                            case "WMSID":
+                            case "SKUID":
+                                if (_dbservicewms.FindSKUID(SKUID) == null)
+                                    validationResult = ResourceReader.GetString("ERR_SKUID");
+                                break;
+                            case "Qty":
+                                if (Qty <= 0 )
+                                    validationResult = ResourceReader.GetString("ERR_RANGE");
+                                break;
+                            case "ProdDate":
+                                if (ProdDate < SqlDateTime.MinValue.Value || ProdDate > SqlDateTime.MaxValue.Value)
+                                    validationResult = ResourceReader.GetString("ERR_DATE");
+                                break;
+                            case "ExpDate":
+                                if (ExpDate < SqlDateTime.MinValue.Value || ExpDate > SqlDateTime.MaxValue.Value)
+                                    validationResult = ResourceReader.GetString("ERR_DATE");
                                 break;
                         }
                     }

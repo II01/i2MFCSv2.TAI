@@ -19,7 +19,7 @@
                 <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                             Path=(FrameworkElement.ActualHeight), 
                                             RelativeSource={RelativeSource AncestorType=UserControl},
-                                            ConverterParameter=-60|1.0}"/>
+                                            ConverterParameter=-75|1.0}"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

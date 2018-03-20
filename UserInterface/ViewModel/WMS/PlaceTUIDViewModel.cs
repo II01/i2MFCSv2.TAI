@@ -181,10 +181,22 @@ namespace UserInterface.ViewModel
         public void Initialize(BasicWarehouse warehouse)
         {
             _warehouse = warehouse;
-            _dbservicewms = new DBServiceWMS(warehouse);
             try
             {
+                _dbservicewms = new DBServiceWMS(warehouse);
                 DetailList = new ObservableCollection<TUSKUIDViewModel>();
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void PopulateList()
+        {
+            try
+            {
+                DetailList.Clear();
                 foreach (var p in _dbservicewms.GetTUSKUIDs(TUID))
                     DetailList.Add(new TUSKUIDViewModel
                     {
