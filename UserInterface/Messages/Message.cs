@@ -20,4 +20,9 @@ namespace UserInterface.Messages
     {
         public ViewModelBase ViewModel { get; set; }
     }
+
+    public class MessageValidationInfo
+    {
+        public bool AllPropertiesValid { get; set; }
+    }
 }

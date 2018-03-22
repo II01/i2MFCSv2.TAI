@@ -88,7 +88,8 @@ namespace UserInterface.ViewModel
                 if (_detailed != value)
                 {
                     _detailed = value;
-                    _detailed?.PopulateList();
+                    if(_detailed != null && _detailed.DetailList !=null)
+                        _detailed.PopulateList();
                     RaisePropertyChanged("Detailed");
                 }
             }
@@ -194,6 +195,9 @@ namespace UserInterface.ViewModel
                 EnabledCC = true;
                 Detailed = new PlaceTUIDViewModel();
                 Detailed.Initialize(_warehouse);
+                Detailed.AllowPlaceChange = false;
+                Detailed.AllowTUIDChange = false;
+                Detailed.AllowFieldChange = true;
                 Detailed.TUID = Selected.TUID;
                 Detailed.PlaceID = Selected.PlaceID;
                 Detailed.DimensionClass = Selected.DimensionClass;
@@ -201,9 +205,6 @@ namespace UserInterface.ViewModel
                 Detailed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
                 foreach (var l in Selected.DetailList)
                     Detailed.DetailList.Add(l);
-                Detailed.AllowPlaceChange = false;
-                Detailed.AllowTUIDChange = false;
-                Detailed.AllowFieldChange = false;
                 Detailed.ValidationEnabled = true;
             }
             catch (Exception e)
@@ -235,7 +236,11 @@ namespace UserInterface.ViewModel
                 EnabledCC = true;
                 Detailed = new PlaceTUIDViewModel();
                 Detailed.Initialize(_warehouse);
+                Detailed.AllowTUIDChange = false;
+                Detailed.AllowPlaceChange = true;
+                Detailed.AllowFieldChange = false;
                 Detailed.TUID = Selected.TUID;
+                Detailed.ValidationEnabled = true;
                 Detailed.PlaceID = Selected.PlaceID;
                 Detailed.DimensionClass = Selected.DimensionClass;
                 Detailed.Blocked = Selected.Blocked;
@@ -245,10 +250,6 @@ namespace UserInterface.ViewModel
                     Detailed.DetailList.Add(l);
                     l.Initialize(_warehouse);
                 }
-                Detailed.ValidationEnabled = true;
-                Detailed.AllowTUIDChange = false;
-                Detailed.AllowPlaceChange = true;
-                Detailed.AllowFieldChange = true;
             }
             catch (Exception e)
             {
@@ -280,6 +281,10 @@ namespace UserInterface.ViewModel
                 EnabledCC = true;
                 Detailed = new PlaceTUIDViewModel();
                 Detailed.Initialize(_warehouse);
+                Detailed.ValidationEnabled = false;
+                Detailed.AllowTUIDChange = false;
+                Detailed.AllowPlaceChange = false;
+                Detailed.AllowFieldChange = false;
                 Detailed.TUID = Selected.TUID;
                 Detailed.PlaceID = Selected.PlaceID;
                 Detailed.DimensionClass = Selected.DimensionClass;
@@ -290,10 +295,6 @@ namespace UserInterface.ViewModel
                     Detailed.DetailList.Add(l);
                     l.Initialize(_warehouse);
                 }
-                Detailed.ValidationEnabled = true;
-                Detailed.AllowTUIDChange = false;
-                Detailed.AllowPlaceChange = false;
-                Detailed.AllowFieldChange = false;
             }
             catch (Exception e)
             {
@@ -322,17 +323,17 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.Add;
                 EditEnabled = true;
                 EnabledCC = true;
+                Detailed = new PlaceTUIDViewModel();
                 Detailed.Initialize(_warehouse);
-                Detailed.TUID = Selected.TUID;
+                Detailed.AllowTUIDChange = true;
+                Detailed.AllowPlaceChange = true;
+                Detailed.AllowFieldChange = true;
+                Detailed.ValidationEnabled = true;
                 Detailed.TUID = 0;
                 Detailed.PlaceID = "";
                 Detailed.DimensionClass = 0;
                 Detailed.Blocked = 0;
                 Detailed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
-                Detailed.AllowTUIDChange = true;
-                Detailed.AllowPlaceChange = true;
-                Detailed.AllowFieldChange = true;
-                Detailed.ValidationEnabled = true;
             }
             catch (Exception e)
             {
@@ -360,11 +361,9 @@ namespace UserInterface.ViewModel
             {
                 EditEnabled = false;
                 EnabledCC = false;
-                if (Detailed != null)
-                {
-                    Detailed.ValidationEnabled = false;
-                }
                 Detailed = Selected;
+                if (Detailed != null)
+                    Detailed.ValidationEnabled = false;
             }
             catch (Exception e)
             {

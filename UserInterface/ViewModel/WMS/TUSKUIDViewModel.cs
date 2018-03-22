@@ -7,6 +7,8 @@ using Warehouse.Model;
 using System.Diagnostics;
 using UserInterface.DataServiceWMS;
 using System.Data.SqlTypes;
+using GalaSoft.MvvmLight.Messaging;
+using UserInterface.Messages;
 
 namespace UserInterface.ViewModel
 {
@@ -200,6 +202,10 @@ namespace UserInterface.ViewModel
                                 if (Qty <= 0 )
                                     validationResult = ResourceReader.GetString("ERR_RANGE");
                                 break;
+                            case "Batch":
+                                if (Batch == null)
+                                    validationResult = ResourceReader.GetString("ERR_BATCH");
+                                break;
                             case "ProdDate":
                                 if (ProdDate < SqlDateTime.MinValue.Value || ProdDate > SqlDateTime.MaxValue.Value)
                                     validationResult = ResourceReader.GetString("ERR_DATE");
@@ -212,6 +218,7 @@ namespace UserInterface.ViewModel
                     }
                     Validator.AddOrUpdate(propertyName, validationResult == String.Empty);
                     AllPropertiesValid = Validator.IsValid();
+                    Messenger.Default.Send<MessageValidationInfo>(new MessageValidationInfo() { AllPropertiesValid = AllPropertiesValid });
                     return validationResult;
                 }
                 catch (Exception e)

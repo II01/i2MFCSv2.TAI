@@ -8,6 +8,8 @@ using System.Diagnostics;
 using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight.Messaging;
+using UserInterface.Messages;
 
 namespace UserInterface.ViewModel
 {
@@ -23,6 +25,7 @@ namespace UserInterface.ViewModel
         private bool _allowPlaceChange;
         private bool _allowFieldChange;
         private ObservableCollection<TUSKUIDViewModel> _detailList;
+        private bool _subTableValidation;
         #endregion
 
         #region properties
@@ -104,6 +107,19 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public bool SubTableValidation
+        {
+            get { return _subTableValidation; }
+            set
+            {
+                if (_subTableValidation != value)
+                {
+                    _subTableValidation = value;
+                    AllPropertiesValid = Validator.IsValid() &&_subTableValidation;
+                    RaisePropertyChanged("SubTableValidation");
+                }
+            }
+        }
         public bool ValidationEnabled
         {
             get { return _validationEnabled; }
@@ -177,6 +193,8 @@ namespace UserInterface.ViewModel
             _allowTUIDChange = false;
             _allowPlaceChange = false;
             _allowFieldChange = false;
+            _subTableValidation = false;
+            Messenger.Default.Register<MessageValidationInfo>(this, msg => { SubTableValidation = msg.AllPropertiesValid; });
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -246,7 +264,7 @@ namespace UserInterface.ViewModel
                         }
                     }
                     Validator.AddOrUpdate(propertyName, validationResult == String.Empty);
-                    AllPropertiesValid = Validator.IsValid();
+                    AllPropertiesValid = Validator.IsValid() && SubTableValidation;
                     return validationResult;
                 }
                 catch (Exception e)

@@ -55,7 +55,7 @@
                         HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
                         CanUserAddRows="True"
-                        IsReadOnly="{Binding AllowFIeldChange, Converter={StaticResource InvertBool}}"
+                        IsReadOnly="{Binding AllowFieldChange, Converter={StaticResource InvertBool}}"
                         SelectedItem="{Binding Selected}" 
                         >
             <DataGrid.Columns>
@@ -64,9 +64,9 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Description}" Width="*" IsReadOnly="True"
                                     Binding="{Binding Description}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Qty}"
-                                    Binding="{Binding Qty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Binding="{Binding Qty, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}"
-                                    Binding="{Binding Batch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Binding="{Binding Batch, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ProdDate}"
                                     Binding="{Binding ProdDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ExpDate}"
