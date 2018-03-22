@@ -20,7 +20,7 @@ namespace ServiceMFCS
             System.IO.Directory.SetCurrentDirectory(System.AppDomain.CurrentDomain.BaseDirectory);
             Warehouse = BasicWarehouse.Deserialize(System.Configuration.ConfigurationManager.AppSettings["xmlconfig"]);
             Warehouse.DBService = new Warehouse.DataService.DBService(Warehouse);
-            // Warehouse.WMS = new BasicWMS{WMSSimulation = bool.Parse(System.Configuration.ConfigurationManager.AppSettings["WMSSimulation"])};
+            Warehouse.WMS = new BasicWMS{WMSSimulation = bool.Parse(System.Configuration.ConfigurationManager.AppSettings["WMSSimulation"])};
             Warehouse.Initialize();
             Warehouse.BuildRoutes(false);
             Warehouse.WCFHost = new Warehouse.WCF.WCFHost();

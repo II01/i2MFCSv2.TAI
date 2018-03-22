@@ -207,9 +207,13 @@ namespace Warehouse.ConveyorUnits
                 {
                     Warehouse.DBService.InitialNotify(Name, (int)material);
                     Place = Warehouse.DBService.FindPlace(Name);
+                    Warehouse.OnMaterialMove?.Invoke(Place, EnumMovementTask.Move);
                 }
                 else if (material != 0)
+                {
                     Place = new Place { Material = (int)material, Place1 = Name };
+                    Warehouse.OnMaterialMove?.Invoke(Place, EnumMovementTask.Move);
+                }
             }
             catch (Exception ex)
             {
