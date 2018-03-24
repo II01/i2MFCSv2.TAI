@@ -31,23 +31,41 @@ namespace WcfService
                     {
                         foreach (var c in cmds)
                         {
-                            MaterialID matID = dc.MaterialIDs.Find((int)c.TU_ID);
-                            if (matID == null)
-                                dc.MaterialIDs.Add(new MaterialID { ID = c.TU_ID, Size = 1, Weight = 1 });
-                            dc.Commands.Add(new CommandMaterial
+                            if (c.Status != (int)Command.EnumCommandStatus.Canceled)
                             {
-                                WMS_ID = c.Order_ID,
-                                Source = c.Source,
-                                Target = c.Target,
-                                Info = "WMS",
-                                Material = c.TU_ID,
-                                Priority = 0,
-                                Status = (Command.EnumCommandStatus)c.Status,
-                                Task = Command.EnumCommandTask.Move,
-                                Time = DateTime.Now,
-                                Reason = Command.EnumCommandReason.OK
-                            });
-                            warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_AddMoveCommands called {c.ToString()}");
+                                MaterialID matID = dc.MaterialIDs.Find((int)c.TU_ID);
+                                if (matID == null)
+                                    dc.MaterialIDs.Add(new MaterialID { ID = c.TU_ID, Size = 1, Weight = 1 });
+                                dc.Commands.Add(new CommandMaterial
+                                {
+                                    WMS_ID = c.Order_ID,
+                                    Source = c.Source,
+                                    Target = c.Target,
+                                    Info = "WMS",
+                                    Material = c.TU_ID,
+                                    Priority = 0,
+                                    Status = (Command.EnumCommandStatus)c.Status,
+                                    Task = Command.EnumCommandTask.Move,
+                                    Time = DateTime.Now,
+                                    Reason = Command.EnumCommandReason.OK
+                                });
+                                warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_AddMoveCommands called {c.ToString()}");
+                            }
+                            else
+                            {
+                                Command cc = dc.Commands.FirstOrDefault(p => p.WMS_ID == c.Order_ID);
+                                if(cc != null)
+                                {
+                                    dc.Commands.Add(new CommandCommand
+                                    {
+                                        Task = Command.EnumCommandTask.CancelCommand,
+                                        CommandID = cc.WMS_ID,
+                                        Priority = 0,
+                                        Status = Command.EnumCommandStatus.NotActive,
+                                        Time = DateTime.Now
+                                    });
+                                }
+                            }
                         }
                         dc.SaveChanges();
                     }

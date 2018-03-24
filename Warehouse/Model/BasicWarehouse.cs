@@ -462,6 +462,33 @@ namespace Warehouse.Model
             }
         }
 
+        public void OnOtherTelegrams(Telegram t)
+        {
+            try
+            {
+                if (t is TelegramPalletRemoved)
+                {
+                    using (MFCSEntities dc = new MFCSEntities())
+                    {
+                        int idx = t.Sender;
+                        int idxp = ((int)((idx - 1) / 4) + 1) * 10 + (idx - 1) % 4 + 1;
+                        string loc = $"W:32:{idxp:D3}:1:1";
+                        Place place = dc.Places.Where(p => p.Place1 == loc).OrderBy(pp => pp.Time).FirstOrDefault();
+                        {
+                            DBService.MaterialMove(place.Material, loc, "W:out");
+                            Place pl = new Place { Place1 = "W:out", Material = place.Material, Time = DateTime.Now };
+                            OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, String.Format("{0} BasicWarehouse.OnOtherTelegrams failed", Name));
+            }
+        }
+
         public void TestFillRack(string rack, int num)
         {
             if (rack == null || rack.Length == 0)

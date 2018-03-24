@@ -11,6 +11,7 @@ using System.Threading;
 using Warehouse.WCF_RcvTelProxy;
 using Warehouse.WCF_SendTelProxy;
 using Warehouse.ConveyorUnits;
+using Database;
 
 namespace MFCS.Communication
 {
@@ -91,20 +92,14 @@ namespace MFCS.Communication
 
         public override void OnRecTelegram(Telegram t)
         {
-            if (t is TelegramPalletRemoved)
-            {
-                // not connected to Conveyor
-                // TODO 1113
-            }
+            if (SegmentByID.ContainsKey(t.ConveyorID()))
+                (SegmentByID[t.ConveyorID()]).OnRecTelegram(t);
+            if (ConveyorByID.ContainsKey(t.ConveyorID()))
+                (ConveyorByID[t.ConveyorID()]).OnReceiveTelegram(t);
+            if (CraneByID.ContainsKey(t.ConveyorID()))
+                (CraneByID[t.ConveyorID()]).OnReceiveTelegram(t);
             else
-            {
-                if (SegmentByID.ContainsKey(t.ConveyorID()))
-                    (SegmentByID[t.ConveyorID()]).OnRecTelegram(t);
-                if (ConveyorByID.ContainsKey(t.ConveyorID()))
-                    (ConveyorByID[t.ConveyorID()]).OnReceiveTelegram(t);
-                if (CraneByID.ContainsKey(t.ConveyorID()))
-                    (CraneByID[t.ConveyorID()]).OnReceiveTelegram(t);
-            }
+                Warehouse.OnOtherTelegrams(t);
         }
 
 
