@@ -169,8 +169,9 @@ namespace Warehouse.ConveyorUnits
                 {
                     NotifyVM[i].Invoke(cbi); // , null, null);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, $"{Name}.CallNotifyVM failed : {ex.Message}");
                     notActive.Add(NotifyVM[i]);
                 }
             notActive.ForEach(p => NotifyVM.Remove(p));
