@@ -13,6 +13,8 @@ namespace WcfService
     {
         [OperationContract(IsOneWay = false)]
         void MFCS_Submit(IEnumerable<DTOCommand> cmds);
+        void MFCS_PlaceBlock(IEnumerable<string> locs, int blocktype);
+        void MFCS_PlaceUnblock(IEnumerable<string> locs, int blocktype);
     }
 
 }

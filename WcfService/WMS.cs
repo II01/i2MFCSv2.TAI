@@ -65,6 +65,75 @@ namespace WcfService
                 throw new FaultException(ee.Message);
             }
         }
+        public void MFCS_PlaceBlock(IEnumerable<string> locs, int blocktype)
+        {
+            try
+            {
+                ServiceHostBase sh = OperationContext.Current.Host;
+                if (!(sh is WarehouseServiceHost))
+                    throw new WCFServiceException("Host is wrong type.");
+
+                var warehouse = (sh as WarehouseServiceHost).Warehouse;
+                try
+                {
+                    using (MFCSEntities dc = new MFCSEntities())
+                    {
+                        foreach (var l in locs)
+                        {
+                            dc.PlaceIDs.Where(p => p.ID.StartsWith(l)).ToList().ForEach(pl => pl.Blocked = true);
+                            warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_PlaceBlock called ({l})");
+                        }
+                        dc.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception,
+                                        string.Format("{0}.{1}: {2}, MFCS_PlaceBlock exception.",
+                                        this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                    throw new FaultException(e.Message);
+                }
+            }
+            catch (Exception ee)
+            {
+                throw new FaultException(ee.Message);
+            }
+        }
+
+        public void MFCS_PlaceUnblock(IEnumerable<string> locs, int blocktype)
+        {
+            try
+            {
+                ServiceHostBase sh = OperationContext.Current.Host;
+                if (!(sh is WarehouseServiceHost))
+                    throw new WCFServiceException("Host is wrong type.");
+
+                var warehouse = (sh as WarehouseServiceHost).Warehouse;
+                try
+                {
+                    using (MFCSEntities dc = new MFCSEntities())
+                    {
+                        foreach (var l in locs)
+                        {
+                            dc.PlaceIDs.Where(p => p.ID.StartsWith(l)).ToList().ForEach(pl => pl.Blocked = false);
+                            warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_PlaceBlock called ({l})");
+                        }
+                        dc.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception,
+                                        string.Format("{0}.{1}: {2}, MFCS_Submit exception.",
+                                        this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                    throw new FaultException(e.Message);
+                }
+            }
+            catch (Exception ee)
+            {
+                throw new FaultException(ee.Message);
+            }
+        }
     }
 
 

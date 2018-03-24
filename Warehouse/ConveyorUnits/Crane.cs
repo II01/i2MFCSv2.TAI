@@ -319,6 +319,7 @@ namespace Warehouse.ConveyorUnits
                          tel.Confirmation == TelegramCraneTO.CONFIRMATION_FAULT ||
                          tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYMFCS)
                 {
+                    bool finish = false;
                     if (tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYWAREHOUSE)
                         cmd.Reason = SimpleCommand.EnumReason.Warehouse;
                     else if (tel.Confirmation == TelegramCraneTO.CONFIRMATION_FAULT)
@@ -326,14 +327,16 @@ namespace Warehouse.ConveyorUnits
                         cmd.Reason = (Database.SimpleCommand.EnumReason)tel.Fault;
                         if (tel.Fault == TelegramCraneTO.FAULT_CANCEL_NOCMD)
                         {
-                            SimpleCommand ccancel = null;
-                            FinishCommand(tel.Buffer_ID, ccancel, SimpleCommand.EnumStatus.Canceled);
+                            FinishCommand(tel.Buffer_ID, null, SimpleCommand.EnumStatus.Canceled);
+                            finish = true;
                         }
                     }
                     else if (tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYMFCS)
                         cmd.Reason = SimpleCommand.EnumReason.MFCS;
-
-                    FinishCommand(tel.MFCS_ID, cmd, SimpleCommand.EnumStatus.Canceled);
+                    if (finish)
+                        FinishCommand(tel.MFCS_ID, cmd, SimpleCommand.EnumStatus.Finished);
+                    else
+                        FinishCommand(tel.MFCS_ID, cmd, SimpleCommand.EnumStatus.Canceled);
                     if (BufferCommand != null)
                     {
                         BufferCommand.Reason = SimpleCommand.EnumReason.MFCS;
@@ -344,9 +347,8 @@ namespace Warehouse.ConveyorUnits
                                         String.Format("{0} Confirmation({1}), Fault({2})",
                                         cmd.ToString(), tel.Confirmation, tel.Fault));
                     Warehouse.SteeringCommands.Run = (tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYMFCS) ||
-                                                     (tel.Confirmation == TelegramCraneTO.CONFIRMATION_FAULT &&
-                                                      tel.Fault > TelegramCraneTO.FAULT_REPEATORDER) ||
-                                                     (tel.Fault == TelegramCraneTO.FAULT_CANCEL_NOCMD);
+                                                      (tel.Confirmation == TelegramCraneTO.CONFIRMATION_FAULT &&
+                                                       (tel.Fault == TelegramCraneTO.FAULT_CANCEL_NOCMD || tel.Fault > TelegramCraneTO.FAULT_REPEATORDER));
                 }
                 else if (cmd.Status <= SimpleCommand.EnumStatus.InPlc)
                 {
@@ -360,7 +362,6 @@ namespace Warehouse.ConveyorUnits
                 throw new CraneException(String.Format("{0} Crane.WorkCommand failed", Name));
             }
         }
-
 
         public override void FinishCommand(Int32 id, SimpleCommand cmd, SimpleCommand.EnumStatus s)
         {
