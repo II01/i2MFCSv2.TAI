@@ -127,7 +127,7 @@ namespace Warehouse.ConveyorUnits
 
         public override void Startup()
         {
-            SetClock(0);
+            // SetClock(0);
             Info(0);
         }
 

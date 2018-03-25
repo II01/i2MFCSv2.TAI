@@ -20,7 +20,7 @@ namespace Warehouse.ConveyorUnits
         {
             if (Communicator.Online() && !_oldOnline)
             {
-                // Startup();
+                Startup();
                 DirectVMNotify();
                 SegmentCranes.ForEach(prop => prop.DirectVMNotify());
             }
