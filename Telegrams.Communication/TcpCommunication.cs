@@ -81,7 +81,7 @@ namespace Telegrams.Communication
         public short Sequence { get; set; }
 
         // Main thread for sending telegrams
-        public async Task Send(Telegram tel)
+        public async Task<Telegram> Send(Telegram tel)
         {
             try
             {
@@ -108,6 +108,7 @@ namespace Telegrams.Communication
                 }
                 Sequence = (Sequence < 99) ? (short)(Sequence + 1) : (short)0;
                 Log.AddLog(Log.Severity.EVENT, Name, $"Send finished : {tel.ToString()}");
+                return tel;
             }
             catch( Exception ex)
             {

@@ -26,7 +26,9 @@
   </xs:element>
   <xs:element name="SendResponse">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Telegrams" minOccurs="0" name="SendResult" nillable="true" type="q2:Telegram" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
 </xs:schema>

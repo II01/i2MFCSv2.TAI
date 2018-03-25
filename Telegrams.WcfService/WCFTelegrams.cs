@@ -129,13 +129,13 @@ namespace Telegrams.WcfService
         }
 
 
-        public async Task SendAsync(Telegram t)
+        public async Task<Telegram> SendAsync(Telegram t)
         {
             try
             {
                 if (_comm == null)
                     _comm = new MySendTCPClient { Name = _name, IP = _IP, Port = _port, TimeOut = _timeout };
-                await _comm.Send(t).ConfigureAwait(false);
+                return await _comm.Send(t).ConfigureAwait(false);
             }
             catch (Exception ex)
             {

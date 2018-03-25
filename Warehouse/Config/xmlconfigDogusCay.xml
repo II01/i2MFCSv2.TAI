@@ -504,7 +504,7 @@
           <XmlRouteNode Next="T031" Cost="1"/>
         </XmlRoute>
       </RouteDef>
-    </Conveyor>TZ
+    </Conveyor>
 
     <Conveyor Name="T031" Segment="T03A" PLC_ID="031" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorJunction">
       <ConveyorAddress>031</ConveyorAddress>

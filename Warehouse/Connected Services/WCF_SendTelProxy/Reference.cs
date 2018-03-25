@@ -29,10 +29,10 @@ namespace Warehouse.WCF_SendTelProxy {
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Telegrams.TelegramTransportSetTime))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Telegrams.TelegramLife))]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(Telegrams.TelegramACK))]
-        void Send(Telegrams.Telegram t);
+        Telegrams.Telegram Send(Telegrams.Telegram t);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWCF_SendTelProxy/Send", ReplyAction="http://tempuri.org/IWCF_SendTelProxy/SendResponse")]
-        System.Threading.Tasks.Task SendAsync(Telegrams.Telegram t);
+        System.Threading.Tasks.Task<Telegrams.Telegram> SendAsync(Telegrams.Telegram t);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -70,11 +70,11 @@ namespace Warehouse.WCF_SendTelProxy {
             return base.Channel.InitAsync(name, addr, SendPort, timeoutSec, version);
         }
         
-        public void Send(Telegrams.Telegram t) {
-            base.Channel.Send(t);
+        public Telegrams.Telegram Send(Telegrams.Telegram t) {
+            return base.Channel.Send(t);
         }
         
-        public System.Threading.Tasks.Task SendAsync(Telegrams.Telegram t) {
+        public System.Threading.Tasks.Task<Telegrams.Telegram> SendAsync(Telegrams.Telegram t) {
             return base.Channel.SendAsync(t);
         }
     }

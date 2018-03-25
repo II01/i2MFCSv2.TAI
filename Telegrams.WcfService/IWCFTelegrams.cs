@@ -15,7 +15,7 @@ namespace Telegrams.WcfService
         [OperationContract]
         void Init(string name, string addr, int SendPort, int timeoutSec, string version);
         [OperationContract]
-        Task SendAsync(Telegram t);
+        Task<Telegram> SendAsync(Telegram t);
     }
 
     [ServiceContract(SessionMode=SessionMode.Required)]

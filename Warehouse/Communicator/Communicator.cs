@@ -141,6 +141,7 @@ namespace MFCS.Communication
                 }
                 catch( Exception ex)
                 {
+                    OnRefresh?.Invoke();
                     Log.AddLog(Log.Severity.EXCEPTION, Name, ex.Message);
                     await Task.Delay(1000).ConfigureAwait(false);
                 }
