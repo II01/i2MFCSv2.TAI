@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="UserInterface.View.ReleaseOrderView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        xmlns:v="clr-namespace:UserInterface.View"
+        xmlns:vm="clr-namespace:UserInterface.ViewModel"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" d:DesignWidth="758.959" d:DesignHeight="330.13">
+
+    <Grid Margin="20,10,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+            <RowDefinition Height="100"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Resx ERPID}" Grid.Row="0" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx OrderID}" Grid.Row="1" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Destination}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx ReleaseTime}" Grid.Row="4" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Done}" Grid.Row="6" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Finished}" Grid.Row="7" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Status}" Grid.Row="8" Margin="0,0,0,10"/>
+
+        <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
+                 Text = "{Binding Path=ERPID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="false"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=OrderID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="false"/>
+        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Destination,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableOrderEdit}"/>
+        <Grid Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button MinWidth="30" Grid.Column="0" Margin="5,0,5,0" Content="{Resx Ramp1}" 
+                    DataContext="{Binding DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentControl}}}" 
+                    Command ="{Binding SetDestination}" CommandParameter="W:32:01"/>
+            <Button MinWidth="30" Grid.Column="1" Margin="5,0,5,0" Content="{Resx Ramp2}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetDestination}" CommandParameter="W:32:02"/>
+            <Button MinWidth="30" Grid.Column="2" Margin="5,0,5,0" Content="{Resx Ramp3}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetDestination}" CommandParameter="W:32:03"/>
+            <Button MinWidth="30" Grid.Column="3" Margin="5,0,5,0" Content="{Resx Ramp4}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetDestination}" CommandParameter="W:32:04"/>
+            <Button MinWidth="30" Grid.Column="4" Margin="5,0,5,0" Content="{Resx Ramp5}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetDestination}" CommandParameter="W:32:05"/>
+            <Button MinWidth="30" Grid.Column="5" Margin="5,0,5,0" Content="{Resx B2B}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetDestination}" CommandParameter="T04"/>
+        </Grid>
+        <TextBox Grid.Row="4" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=ReleaseTime,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableOrderEdit}"/>
+        <Grid Grid.Row="5" Grid.Column="2" Margin="0,0,0,10" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button MinWidth="30" Grid.Row="0" Grid.Column="0" Margin="5,0,5,0" Content="{Resx Now}" 
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}, AncestorLevel=2},Path=Cancel}" CommandParameter="0"/>
+            <Button MinWidth="30" Grid.Row="0" Grid.Column="1" Margin="5,0,5,0" Content="{Resx Now1}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.SetReleaseTime}" CommandParameter="1"/>
+            <Button MinWidth="30" Grid.Row="0" Grid.Column="2" Margin="5,0,5,0" Content="{Resx Now2}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetReleaseTime}" CommandParameter="2"/>
+            <Button MinWidth="30" Grid.Row="0" Grid.Column="3" Margin="5,0,5,0" Content="{Resx Now3}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetReleaseTime}" CommandParameter="3"/>
+            <Button MinWidth="30" Grid.Row="0" Grid.Column="4" Margin="5,0,5,0" Content="{Resx Now4}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetReleaseTime}" CommandParameter="4"/>
+            <Button MinWidth="30" Grid.Row="0" Grid.Column="5" Margin="5,0,5,0" Content="{Resx Now5}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetReleaseTime}" CommandParameter="5"/>
+            <Button MinWidth="30" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0" Content="{Resx Now6}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContext.SetReleaseTime}" CommandParameter="6"/>
+            <Button MinWidth="30" Grid.Row="2" Grid.Column="2" Margin="5,0,5,0" Content="{Resx Now7}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContent.SetReleaseTime}" CommandParameter="7"/>
+            <Button MinWidth="30" Grid.Row="2" Grid.Column="3" Margin="5,0,5,0" Content="{Resx Now8}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContent.SetReleaseTime}" CommandParameter="8"/>
+            <Button MinWidth="30" Grid.Row="2" Grid.Column="4" Margin="5,0,5,0" Content="{Resx Now9}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContent.SetReleaseTime}" CommandParameter="9"/>
+            <Button MinWidth="30" Grid.Row="2" Grid.Column="5" Margin="5,0,5,0" Content="{Resx Now10}"
+                    Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}},Path=DataContent.SetReleaseTime}" CommandParameter="10"/>
+        </Grid>
+
+        
+
+        <TextBox Grid.Row="6" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=PortionActive,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
+        <TextBox Grid.Row="7" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=PortionDone,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
+        <TextBox Grid.Row="8" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Status,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
+    </Grid>
+
+</UserControl>

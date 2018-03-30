@@ -96,6 +96,14 @@ namespace UserInterface.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<OrdersViewModel>(); }
         }
+        public ReleaseOrderViewModel ReleaseOrder
+        {
+            get { return ServiceLocator.Current.GetInstance<ReleaseOrderViewModel>(); }
+        }
+        public ReleaseOrdersViewModel ReleaseOrders
+        {
+            get { return ServiceLocator.Current.GetInstance<ReleaseOrdersViewModel>(); }
+        }
         public CommandERPViewModel CommandERP
         {
             get { return ServiceLocator.Current.GetInstance<CommandERPViewModel>(); }
@@ -147,6 +155,7 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<PlaceIDsViewModel>();
             SimpleIoc.Default.Register<PlaceTUIDsViewModel>();
             SimpleIoc.Default.Register<OrdersViewModel>();
+            SimpleIoc.Default.Register<ReleaseOrdersViewModel>();
             SimpleIoc.Default.Register<CommandERPsViewModel>();
             SimpleIoc.Default.Register<CommandWMSsViewModel>();
             SimpleIoc.Default.Register<PlaceDiffsViewModel>();

@@ -14,12 +14,6 @@
         d:DesignWidth="1280"
         d:DesignHeight="720">
 
-    <UserControl.Resources>
-        <ControlTemplate x:Key="MultipleChoiceFilter">
-            <src:MultipleChoiceFilter Filter="{Binding Path=Filter, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dgx:DataGridFilterColumnControl}}"/>
-        </ControlTemplate>
-    </UserControl.Resources>
-
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>

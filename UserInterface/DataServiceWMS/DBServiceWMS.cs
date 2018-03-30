@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Database;
 using DatabaseWMS;
+using UserInterface.Services;
 using Warehouse.DataService;
 
 namespace UserInterface.DataServiceWMS
@@ -53,10 +54,9 @@ namespace UserInterface.DataServiceWMS
                     return dc.SKU_ID.FirstOrDefault(prop => prop.ID == skuid);
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
-                throw new DBServiceWMSException(String.Format("DBService.FindPlace failed ({0})", skuid));
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
         public void AddSKUID(SKU_ID SKUID)
@@ -100,14 +100,14 @@ namespace UserInterface.DataServiceWMS
         }
 
 
-        public List<PlaceIDs> GetPlaceIDs()
+        public List<PlaceIDs> GetPlaceIDs(int dimensionClassMin,  int dimensionClassMax)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from p in dc.PlaceIDs
-                            where p.DimensionClass >= 0
+                            where p.DimensionClass >= dimensionClassMin && p.DimensionClass <= dimensionClassMax
                             select p;
                     return l.ToList();
                 }
@@ -118,6 +118,25 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public int CountPlaceIDs(string IDStartsWith)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    if (IDStartsWith == null)
+                        IDStartsWith = "";
+                    var l = from p in dc.PlaceIDs
+                            where p.ID.StartsWith(IDStartsWith)
+                            select p;
+                    return l.Count();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
         public PlaceIDs FindPlaceID(string placeid)
         {
             try
@@ -127,12 +146,30 @@ namespace UserInterface.DataServiceWMS
                     return dc.PlaceIDs.FirstOrDefault(prop => prop.ID == placeid);
                 }
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
-                throw new DBServiceWMSException(String.Format("DBService.FindPlace failed ({0})", placeid));
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public List<Places> GetPlaces(string beginsWithPlaceID)
+        {
+            try
+            {
+                string bstr = "";
+                if (beginsWithPlaceID != null)
+                    bstr = beginsWithPlaceID;
+                using (var dc = new EntitiesWMS())
+                {
+                    return dc.Places.Where( p=> p.PlaceID.StartsWith(bstr)).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         public void UpdatePlaceID(PlaceIDs placeid)
         {
             try
@@ -479,14 +516,14 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public void UpdateOrders(int orderid, Orders order)
+        public void UpdateOrders(int? erpid, int orderid, Orders order)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from or in dc.Orders
-                            where or.OrderID == orderid
+                            where or.ERP_ID == erpid && or.OrderID == orderid
                             select or;
                     foreach(var o in l)
                     {
@@ -503,14 +540,34 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void DeleteOrders(int orderid)
+        public void UpdateOrders(string destinationtStartsWith, EnumWMSOrderStatus status)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from o in dc.Orders
+                            where o.Destination.StartsWith(destinationtStartsWith) && 
+                                  o.Status >= (int)EnumWMSOrderStatus.OnTarget && o.Status <= (int)EnumWMSOrderStatus.ReadyToTake
+                            select o;
+                    foreach (var o in l)
+                        o.Status = (int)EnumWMSOrderStatus.Finished;
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void DeleteOrders(int? erpid, int orderid)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var items = from or in dc.Orders
-                                where or.OrderID == orderid
+                                where or.ERP_ID == erpid && or.OrderID == orderid
                                 select or;
                     dc.Orders.RemoveRange(items);
                     dc.SaveChanges();
@@ -716,6 +773,80 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public List<OrderCommandWMSCount> GetReleaseOrders(int statusLessOrEqual)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = from o in dc.Orders
+                                where o.Status <= statusLessOrEqual
+                                join c in dc.Commands on o.ID equals c.Order_ID into orderCommands
+                                from oc in orderCommands.DefaultIfEmpty()
+                                select new { Orders = o, Commands = oc };
+                    var ords = (from i in items
+                                group i by new { i.Orders.ERP_ID, i.Orders.OrderID } into groupped
+                                select new OrderCommandWMSCount
+                                {
+                                    ERPID = groupped.Key.ERP_ID,
+                                    OrderID = groupped.Key.OrderID,
+                                    Destination = groupped.FirstOrDefault().Orders.Destination,
+                                    ReleaseTime = groupped.FirstOrDefault().Orders.ReleaseTime,
+                                    Status = groupped.FirstOrDefault().Orders.Status,
+                                    CountActive = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting && 
+                                                                      p.Commands.Status == (int)EnumCommandWMSStatus.Active),
+                                    CountCanceled = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting && 
+                                                                        p.Commands.Status == (int)EnumCommandWMSStatus.Canceled),
+                                    CountFinihsed = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting && 
+                                                                        p.Commands.Status == (int)EnumCommandWMSStatus.Finished),
+                                    CountAll = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting)
+                                }).Take(5000);
+                    return ords.ToList();                
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public List<CommandWMSOrder> GetCommandsWMSForOrder(int? erpid, int orderid, int statusLessOrEqual)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = (from o in dc.Orders
+                                 where o.ERP_ID == erpid && o.OrderID == orderid && o.Status <= statusLessOrEqual
+                                 join c in dc.Commands on o.ID equals c.Order_ID
+                                 select new CommandWMSOrder
+                                 {
+                                     ID = c.ID,
+                                     Order_ID = c.Order_ID ?? 0,
+                                     TU_ID = c.TU_ID,
+                                     Source = c.Source,
+                                     Target = c.Target,
+                                     Status = c.Status,
+                                     Time = c.Time,
+                                     OrderERPID = c.Order_ID.HasValue ? c.Orders.ERP_ID : 0,
+                                     OrderOrderID = c.Order_ID.HasValue ? c.Orders.OrderID : 0,
+                                     OrderSubOrderID = c.Order_ID.HasValue ? c.Orders.SubOrderID : 0,
+                                     OrderSubOrderName = c.Order_ID.HasValue ? c.Orders.SubOrderName : "",
+                                     OrderSKUID = c.Order_ID.HasValue ? c.Orders.SKU_ID : "",
+                                     OrderSKUBatch = c.Order_ID.HasValue ? c.Orders.SKU_Batch : ""
+                                 }
+
+                                 ).Take(5000);
+                    return items.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         public void UpdateCommand(Commands commandwms)
         {
             try
@@ -751,7 +882,7 @@ namespace UserInterface.DataServiceWMS
                                  select new CommandWMSOrder
                                  {
                                      ID = c.ID,
-                                     Order_ID = c.Order_ID.HasValue ? c.Order_ID.Value: 0,
+                                     Order_ID = c.Order_ID ?? 0,
                                      TU_ID = c.TU_ID,
                                      Source = c.Source,
                                      Target = c.Target,
@@ -796,10 +927,10 @@ namespace UserInterface.DataServiceWMS
                                  select new PlaceDiff
                                  {
                                      TUID = i,
-                                     PlaceWMS = jw == null ? null:jw.PlaceWMS,
-                                     PlaceMFCS = jm == null ? null:jm.PlaceMFCS,
-                                     TimeWMS = jw == null ? null : jw.TimeWMS,
-                                     TimeMFCS = jm == null ? null : jm.TimeMFCS,
+                                     PlaceWMS = jw?.PlaceWMS,
+                                     PlaceMFCS = jm?.PlaceMFCS,
+                                     TimeWMS = jw?.TimeWMS,
+                                     TimeMFCS = jm?.TimeMFCS,
                                  }).ToList();
                     return listd;
                 }

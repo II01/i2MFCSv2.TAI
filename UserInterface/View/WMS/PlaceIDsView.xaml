@@ -41,6 +41,7 @@
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
             SelectedItem="{Binding SelectedPlaceID}" 
+            SelectionMode="Extended"
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -55,7 +56,7 @@
                                     Width="*" Binding="{Binding PositionTravel}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PositionHoist}" 
                                     Width="*" Binding="{Binding PositionHoist}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=DImensionClass}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=DimensionClass}" 
                                     Width="*" Binding="{Binding DimensionClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=FrequencyClass}" 
                                     Width="*" Binding="{Binding FrequencyClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
@@ -75,7 +76,9 @@
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Name="bEdit" Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/>
+                <Button Margin="10,0,0,20" Content="{Resx Block}" Command="{Binding Block}"/>
+                <Button Margin="10,0,0,20" Content="{Resx Unblock}" Command="{Binding Unblock}"/>
+                <Button Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/>
             </StackPanel>
             <ContentControl x:Name="ccPlaceID" 
                         IsEnabled="{Binding EditEnabled}"                       

@@ -46,16 +46,17 @@
             CanUserAddRows="False"
             AutoGenerateColumns="False" 
             IsReadOnly="True"
+            CellStyle="{StaticResource Body_Content_DataGrid_Top}"
             FontSize="{StaticResource BaseFontSize}">
-            <DataGrid.Columns >
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}"
                                     Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Severity}" 
                                     Width="*" Binding="{Binding Severity}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Source}" 
                                     Width="*" Binding="{Binding Source}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Message}" 
-                                    Width="*" Binding="{Binding Message}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="5*" Binding="{Binding Message}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
                                     Width="*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>

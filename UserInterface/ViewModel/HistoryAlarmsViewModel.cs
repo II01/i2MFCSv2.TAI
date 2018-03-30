@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.CommandWpf;
 using System.Collections.ObjectModel;
 using UserInterface.Services;
 using Warehouse.Model;

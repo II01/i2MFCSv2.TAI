@@ -11,21 +11,24 @@ using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using WCFClients;
 using UserInterface.DataServiceWMS;
+using System.Collections.Generic;
 
 namespace UserInterface.ViewModel
 {
     public sealed class PlaceIDsViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, Edit};
+        public enum CommandType { None = 0, Edit, Block, Unblock};
 
         #region members
         private CommandType _selectedCommand;
         private ObservableCollection<PlaceIDViewModel> _PlaceIDList;
         private PlaceIDViewModel _selectedPlaceID;
+        private List<PlaceIDViewModel> _selectedPlaceIDs;
         private PlaceIDViewModel _detailedPlaceID;
         private PlaceIDViewModel _managePlaceID;
         private bool _editEnabled;
         private bool _enabledCC;
+        private string _blockUnblockLocations;
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
@@ -33,6 +36,8 @@ namespace UserInterface.ViewModel
 
         #region properites
         public RelayCommand Edit { get; private set; }
+        public RelayCommand Block { get; private set; }
+        public RelayCommand Unblock { get; private set; }
         public RelayCommand Confirm { get; private set; }
         public RelayCommand Cancel { get; private set; }
         public RelayCommand Refresh { get; private set; }
@@ -65,13 +70,33 @@ namespace UserInterface.ViewModel
                     try
                     {
                         if (_selectedPlaceID != null)
+                        {
                             DetailedPlaceID = SelectedPlaceID;
+                            BlockUnblockLocations = DetailedPlaceID.ID;
+                            DetailedPlaceID.EditVisible = true;
+                        }
                     }
                     catch (Exception e)
                     {
                         _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
                         throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
                     }
+                }
+            }
+        }
+
+        public List<PlaceIDViewModel> SelectedPlaceIDs
+        {
+            get
+            {
+                return _selectedPlaceIDs;
+            }
+            set
+            {
+                if (_selectedPlaceIDs != value)
+                {
+                    _selectedPlaceIDs = value;
+                    RaisePropertyChanged("SelectedPlaceIDs");
                 }
             }
         }
@@ -98,6 +123,18 @@ namespace UserInterface.ViewModel
                 {
                     _editEnabled = value;
                     RaisePropertyChanged("EditEnabled");
+                }
+            }
+        }
+        public string BlockUnblockLocations
+        {
+            get { return _blockUnblockLocations; }
+            set
+            {
+                if (_blockUnblockLocations != value)
+                {
+                    _blockUnblockLocations = value;
+                    RaisePropertyChanged("BlockUnblockLocartions");
                 }
             }
         }
@@ -144,6 +181,8 @@ namespace UserInterface.ViewModel
             _selectedCommand = CommandType.None;
 
             Edit = new RelayCommand(() => ExecuteEdit(), CanExecuteEdit);
+            Block = new RelayCommand(() => ExecuteBlock(), CanExecuteBlock);
+            Unblock = new RelayCommand(() => ExecuteUnblock(), CanExecuteUnblock);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Refresh = new RelayCommand(() => ExecuteRefresh());
@@ -156,19 +195,7 @@ namespace UserInterface.ViewModel
             try
             {
                 PlaceIDList = new ObservableCollection<PlaceIDViewModel>();
-/*                foreach (var p in _dbservicewms.GetPlaceIDs())
-                    PlaceIDList.Add(new PlaceIDViewModel
-                    {
-                        ID = p.ID,
-                        PositionTravel = p.PositionTravel,
-                        PositionHoist = p.PositionHoist,
-                        DimensionClass = p.DimensionClass,
-                        FrequencyClass = p.FrequencyClass,
-                        Status = p.Status
-                    });
-                foreach (var l in PlaceIDList)
-                    l.Initialize(_warehouse);
-*/
+                SelectedPlaceIDs = new List<PlaceIDViewModel>();
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -181,6 +208,74 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
+        private void ExecuteBlock()
+        {
+            try
+            {
+                _selectedCommand = CommandType.Block;
+                DetailedPlaceID = new PlaceIDViewModel();
+                DetailedPlaceID.Initialize(_warehouse);
+                if (SelectedPlaceID != null)
+                    DetailedPlaceID.ID = SelectedPlaceID.ID;
+                DetailedPlaceID.EditVisible = false;
+                DetailedPlaceID.ValidationEnabled = true;
+                EditEnabled = true;
+                EnabledCC = true;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteBlock()
+        {
+            try
+            {
+                return !EditEnabled && AccessLevel >= 1;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+        private void ExecuteUnblock()
+        {
+            try
+            {
+                _selectedCommand = CommandType.Unblock;
+                DetailedPlaceID = new PlaceIDViewModel();
+                DetailedPlaceID.Initialize(_warehouse);
+                if (SelectedPlaceID != null)
+                    DetailedPlaceID.ID = SelectedPlaceID.ID;
+                DetailedPlaceID.EditVisible = false;
+                DetailedPlaceID.ValidationEnabled = true;
+                EditEnabled = true;
+                EnabledCC = true;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteUnblock()
+        {
+            try
+            {
+                return !EditEnabled && AccessLevel >= 1;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
         private void ExecuteEdit()
         {
             try
@@ -226,6 +321,7 @@ namespace UserInterface.ViewModel
                 EnabledCC = false;
                 if (DetailedPlaceID != null)
                 {
+                    DetailedPlaceID.EditVisible = true;
                     DetailedPlaceID.ValidationEnabled = false;
                 }
                 DetailedPlaceID = SelectedPlaceID;
@@ -252,6 +348,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
+                DetailedPlaceID.EditVisible = true;
                 EditEnabled = false;
                 EnabledCC = false;
                 try
@@ -315,7 +412,7 @@ namespace UserInterface.ViewModel
             {
                 string id = SelectedPlaceID?.ID; 
                 PlaceIDList.Clear();
-                foreach (var p in _dbservicewms.GetPlaceIDs())
+                foreach (var p in _dbservicewms.GetPlaceIDs(0, int.MaxValue))
                     PlaceIDList.Add(new PlaceIDViewModel
                     {
                         ID = p.ID,

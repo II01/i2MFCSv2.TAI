@@ -17,7 +17,6 @@ namespace UserInterface.ViewModel
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
-        private bool _allowChangeIndex;
         private bool _validationEnabled;
         #endregion
 

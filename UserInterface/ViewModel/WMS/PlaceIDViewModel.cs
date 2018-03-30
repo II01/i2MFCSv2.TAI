@@ -17,6 +17,7 @@ namespace UserInterface.ViewModel
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
         private bool _validationEnabled;
+        private bool _editVisible;
         #endregion
 
         #region properties
@@ -109,6 +110,20 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public bool EditVisible
+        {
+            get { return _editVisible; }
+            set
+            {
+                if (_editVisible != value)
+                {
+                    _editVisible = value;
+                    RaisePropertyChanged("EditVisible");
+                }
+            }
+        }
+
         public bool ValidationEnabled
         {
             get { return _validationEnabled; }
@@ -149,6 +164,7 @@ namespace UserInterface.ViewModel
             _dbservicewms = new DBServiceWMS(warehouse);
             try
             {
+                EditVisible = true;
             }
             catch (Exception e)
             {
@@ -175,6 +191,10 @@ namespace UserInterface.ViewModel
                     {
                         switch (propertyName)
                         {
+                            case "ID":
+                                if(_dbservicewms.CountPlaceIDs(ID) == 0)
+                                    validationResult = ResourceReader.GetString("ERR_LOC_RANGE");
+                                break;
                             case "FrequencyClass":
                                 if (FrequencyClass < 0 || (FrequencyClass == 0 && ID.StartsWith("W")))
                                     validationResult = ResourceReader.GetString("ERR_RANGE");

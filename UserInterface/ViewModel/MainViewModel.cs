@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Ioc;
 using GalaSoft.MvvmLight.Messaging;
 using System.Collections.ObjectModel;
@@ -224,6 +224,7 @@ namespace UserInterface.ViewModel
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceIDsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceTUIDsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<OrdersViewModel>(), Visible = Visibility.Hidden });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<ReleaseOrdersViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<CommandERPsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<CommandWMSsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceDiffsViewModel>(), Visible = Visibility.Hidden });
@@ -246,6 +247,7 @@ namespace UserInterface.ViewModel
                 SimpleIoc.Default.GetInstance<PlaceIDsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<PlaceTUIDsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<OrdersViewModel>().Initialize(Warehouse);
+                SimpleIoc.Default.GetInstance<ReleaseOrdersViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<CommandERPsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<CommandWMSsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<PlaceDiffsViewModel>().Initialize(Warehouse);

@@ -120,11 +120,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Connected Services\ProxyWMS_UI\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="DataServiceWMS\DBServiceWMS.cs" />
     <Compile Include="DataServiceWMS\IDBServiceWMS.cs" />
     <Compile Include="DataServiceWMS\PlaceTUID.cs" />
     <Compile Include="DataServiceWMS\CommandWMSOrder.cs" />
     <Compile Include="DataServiceWMS\PlaceDiff.cs" />
+    <Compile Include="DataServiceWMS\OrderCommandWMSCount.cs" />
     <Compile Include="DataServiceWMS\TUSKUID.cs" />
     <Compile Include="Services\Enums.cs" />
     <Compile Include="UserControls\PasswordHelper.cs" />
@@ -207,6 +213,8 @@
     <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="ViewModel\WMS\ReleaseOrdersViewModel.cs" />
+    <Compile Include="ViewModel\WMS\ReleaseOrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceDiffsViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandWMSsViewModel.cs" />
     <Compile Include="ViewModel\WMS\CommandWMSViewModel.cs" />
@@ -222,6 +230,7 @@
     <Compile Include="ViewModel\WMS\PlaceTUIDViewModel.cs" />
     <Compile Include="ViewModel\WMS\SKUIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PlaceViewModel.cs" />
     <Compile Include="ViewModel\WMS\TUViewModel.cs" />
     <Compile Include="ViewModel\WMS\TUSKUIDViewModel.cs" />
     <Compile Include="ViewModel\WMS\SKUIDViewModel.cs" />
@@ -252,6 +261,12 @@
     </Compile>
     <Compile Include="View\HistoryMovementsView.xaml.cs">
       <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\ReleaseOrdersView.xaml.cs">
+      <DependentUpon>ReleaseOrdersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\ReleaseOrderView.xaml.cs">
+      <DependentUpon>ReleaseOrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\PlaceDiffsView.xaml.cs">
       <DependentUpon>PlaceDiffsView.xaml</DependentUpon>
@@ -416,6 +431,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\WMS\ReleaseOrdersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\ReleaseOrderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\WMS\PlaceDiffsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -563,6 +586,25 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\ProxyWMS_UI\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.Tables.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyWMS_UI\service.wsdl" />
+    <None Include="Connected Services\ProxyWMS_UI\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyWMS_UI\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyWMS_UI\UserInterface.ProxyWMS_UI.DTOCommand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -633,6 +675,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="i2MFCS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ProxyWMS_UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyWMS_UI\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyWMS_UI\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyWMS_UI\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Command.CommandStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotActive" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Command.CommandStatus" nillable="true" type="tns:Command.CommandStatus" />
+</xs:schema>

@@ -707,7 +707,7 @@ namespace UserInterface.ViewModel
                             SelectedOrder = DataListOrder.FirstOrDefault(p => p.OrderID == orderid);
                             break;
                         case CommandType.EditOrder:
-                            _dbservicewms.UpdateOrders(SelectedOrder.OrderID, Detailed.Order);
+                            _dbservicewms.UpdateOrders(SelectedOrder.ERPID, SelectedOrder.OrderID, Detailed.Order);
                             var loe = from d in DataListOrder
                                       where d.OrderID == SelectedOrder.OrderID
                                       select d;
@@ -720,7 +720,7 @@ namespace UserInterface.ViewModel
                             break;
                         case CommandType.DeleteOrder:
                             Detailed.Status = EnumWMSOrderStatus.Cancel;
-                            _dbservicewms.UpdateOrders(SelectedOrder.OrderID, Detailed.Order);
+                            _dbservicewms.UpdateOrders(SelectedOrder.ERPID, SelectedOrder.OrderID, Detailed.Order);
                             ExecuteRefresh();
                             break;
                         case CommandType.AddSubOrder:

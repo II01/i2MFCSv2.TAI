@@ -24,7 +24,6 @@ namespace UserInterface.ViewModel
         private CommandType _selectedCommand;
         private ObservableCollection<PlaceDiffViewModel> _dataList;
         private PlaceDiffViewModel _selected;
-        private PlaceDiffViewModel _detailed;
         private bool _editEnabled;
         private bool _enabledCC;
         private BasicWarehouse _warehouse;

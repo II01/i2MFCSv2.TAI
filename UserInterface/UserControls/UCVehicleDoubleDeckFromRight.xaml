@@ -52,12 +52,12 @@
                 <MenuItem Header="{Resx Home}" 
                           Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.Home}"
                           IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"/>
-                <MenuItem Header="{Resx Maintenance_on}" 
+<!--                <MenuItem Header="{Resx Maintenance_on}" 
                           IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"
                           Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.LongTermBlockOn}"/>
                 <MenuItem Header="{Resx Maintenance_off}" 
                           IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}"
-                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.LongTermBlockOff}"/>
+                          Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.LongTermBlockOff}"/> -->
                 <MenuItem Header="{Resx RefreshImage}" 
                           Command="{Binding Command}" CommandParameter="{x:Static local:DeviceCommandEnum.Refresh}"
                           IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>

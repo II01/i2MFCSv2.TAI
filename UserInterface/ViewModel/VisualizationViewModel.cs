@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GalaSoft.MvvmLight;
-using GalaSoft.MvvmLight.Command;
+using GalaSoft.MvvmLight.CommandWpf;
 using Warehouse.Model;
 using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Ioc;

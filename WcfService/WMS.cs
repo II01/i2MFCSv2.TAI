@@ -58,6 +58,7 @@ namespace WcfService
                                 {
                                     dc.Commands.Add(new CommandCommand
                                     {
+                                        WMS_ID = c.Order_ID,
                                         Task = Command.EnumCommandTask.CancelCommand,
                                         CommandID = cc.WMS_ID,
                                         Priority = 0,
