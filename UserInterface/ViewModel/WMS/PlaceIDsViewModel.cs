@@ -12,6 +12,7 @@ using UserInterface.Messages;
 using WCFClients;
 using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
+using UserInterface.ProxyWMS_UI;
 
 namespace UserInterface.ViewModel
 {
@@ -215,10 +216,11 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.Block;
                 DetailedPlaceID = new PlaceIDViewModel();
                 DetailedPlaceID.Initialize(_warehouse);
-                if (SelectedPlaceID != null)
-                    DetailedPlaceID.ID = SelectedPlaceID.ID;
                 DetailedPlaceID.EditVisible = false;
                 DetailedPlaceID.ValidationEnabled = true;
+                DetailedPlaceID.FrequencyClass = 1;
+                if (SelectedPlaceID != null)
+                    DetailedPlaceID.ID = SelectedPlaceID.ID;
                 EditEnabled = true;
                 EnabledCC = true;
             }
@@ -249,10 +251,11 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.Unblock;
                 DetailedPlaceID = new PlaceIDViewModel();
                 DetailedPlaceID.Initialize(_warehouse);
-                if (SelectedPlaceID != null)
-                    DetailedPlaceID.ID = SelectedPlaceID.ID;
                 DetailedPlaceID.EditVisible = false;
                 DetailedPlaceID.ValidationEnabled = true;
+                DetailedPlaceID.FrequencyClass = 1;
+                if (SelectedPlaceID != null)
+                    DetailedPlaceID.ID = SelectedPlaceID.ID;
                 EditEnabled = true;
                 EnabledCC = true;
             }
@@ -364,19 +367,27 @@ namespace UserInterface.ViewModel
                             SelectedPlaceID.DimensionClass = DetailedPlaceID.DimensionClass;
                             SelectedPlaceID.FrequencyClass = DetailedPlaceID.FrequencyClass;
                             SelectedPlaceID.Status = DetailedPlaceID.Status;
-                            /*                            PlaceIDList.Clear();
-                                                        foreach (var p in _dbservicewms.GetPlaceIDs())
-                                                            PlaceIDList.Add(new PlaceIDViewModel {
-                                                                ID = p.ID,
-                                                                PositionTravel = p.PositionTravel,
-                                                                PositionHoist = p.PositionHoist,
-                                                                DimensionClass = p.DimensionClass,
-                                                                FrequencyClass = p.FrequencyClass,
-                                                                Status = p.Status});
-                                                        foreach (var l in PlaceIDList)
-                                                            l.Initialize(_warehouse);*/
                             break;
-                        default:
+                        case CommandType.Block:
+                        case CommandType.Unblock:
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                EnumBlockedWMS reason = (DetailedPlaceID.ID.Length <= 4 && DetailedPlaceID.ID.StartsWith("W")) ? EnumBlockedWMS.Vehicle : EnumBlockedWMS.Rack;
+                                client.BlockLocations(DetailedPlaceID.ID, _selectedCommand == CommandType.Block, (int)reason);
+                                PlaceIDList.Clear();
+                                foreach (var p in _dbservicewms.GetPlaceIDs(0, 999))
+                                PlaceIDList.Add(new PlaceIDViewModel
+                                {
+                                    ID = p.ID,
+                                    PositionTravel = p.PositionTravel,
+                                    PositionHoist = p.PositionHoist,
+                                    DimensionClass = p.DimensionClass,
+                                    FrequencyClass = p.FrequencyClass,
+                                    Status = (EnumBlockedWMS)p.Status
+                                });
+                                foreach (var l in PlaceIDList)
+                                    l.Initialize(_warehouse);
+                            }
                             break;
                     }
                     if (DetailedPlaceID != null)
@@ -420,7 +431,7 @@ namespace UserInterface.ViewModel
                         PositionHoist = p.PositionHoist,
                         DimensionClass = p.DimensionClass,
                         FrequencyClass = p.FrequencyClass,
-                        Status = p.Status
+                        Status = (EnumBlockedWMS)p.Status
                     });
                 foreach (var l in PlaceIDList)
                     l.Initialize(_warehouse);

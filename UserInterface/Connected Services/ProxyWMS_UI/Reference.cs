@@ -377,10 +377,10 @@ namespace UserInterface.ProxyWMS_UI {
         System.Threading.Tasks.Task CancelOrderAsync(UserInterface.ProxyWMS_UI.DTOOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockLocations", ReplyAction="http://tempuri.org/IWMSToUI/BlockLocationsResponse")]
-        void BlockLocations(string[] locStartsWith);
+        void BlockLocations(string locStartsWith, bool block, int reason);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockLocations", ReplyAction="http://tempuri.org/IWMSToUI/BlockLocationsResponse")]
-        System.Threading.Tasks.Task BlockLocationsAsync(string[] locStartsWith);
+        System.Threading.Tasks.Task BlockLocationsAsync(string locStartsWith, bool block, int reason);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -426,12 +426,12 @@ namespace UserInterface.ProxyWMS_UI {
             return base.Channel.CancelOrderAsync(order);
         }
         
-        public void BlockLocations(string[] locStartsWith) {
-            base.Channel.BlockLocations(locStartsWith);
+        public void BlockLocations(string locStartsWith, bool block, int reason) {
+            base.Channel.BlockLocations(locStartsWith, block, reason);
         }
         
-        public System.Threading.Tasks.Task BlockLocationsAsync(string[] locStartsWith) {
-            return base.Channel.BlockLocationsAsync(locStartsWith);
+        public System.Threading.Tasks.Task BlockLocationsAsync(string locStartsWith, bool block, int reason) {
+            return base.Channel.BlockLocationsAsync(locStartsWith, block, reason);
         }
     }
 }

@@ -586,9 +586,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ProxyWMS_UI\Arrays.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO.xsd">
       <SubType>Designer</SubType>
     </None>

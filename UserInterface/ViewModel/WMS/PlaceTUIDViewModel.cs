@@ -24,6 +24,7 @@ namespace UserInterface.ViewModel
         private bool _allowTUIDChange;
         private bool _allowPlaceChange;
         private bool _allowFieldChange;
+        private bool _allowBlockedChange;
         private ObservableCollection<TUSKUIDViewModel> _detailList;
         private bool _subTableValidation;
         #endregion
@@ -81,14 +82,31 @@ namespace UserInterface.ViewModel
             }
         }
 
-        public int Blocked
+        public EnumBlockedWMS Blocked
         {
-            get { return _data.Blocked; }
+            get { return (EnumBlockedWMS)_data.Blocked; }
             set
             {
-                if (_data.Blocked != value)
+                if (_data.Blocked != (int)value)
                 {
-                    _data.Blocked = value;
+                    _data.Blocked = (int)value;
+                    RaisePropertyChanged("Blocked");
+                    RaisePropertyChanged("BlockedQC");
+                }
+            }
+        }
+        public bool BlockedQC
+        {
+            get { return (_data.Blocked & (int)EnumBlockedWMS.Quality)>0; }
+            set
+            {
+                if (((_data.Blocked & (int)EnumBlockedWMS.Quality)>0) != value)
+                {
+                    if (value)
+                        _data.Blocked = _data.Blocked | (int)EnumBlockedWMS.Quality;
+                    else
+                        _data.Blocked = _data.Blocked & (int.MaxValue ^ (int)EnumBlockedWMS.Quality);
+                    RaisePropertyChanged("BlockedQC");
                     RaisePropertyChanged("Blocked");
                 }
             }
@@ -169,6 +187,18 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public bool AllowBlockedChange
+        {
+            get { return _allowBlockedChange; }
+            set
+            {
+                if (_allowBlockedChange != value)
+                {
+                    _allowBlockedChange = value;
+                    RaisePropertyChanged("AllowBlockedChange");
+                }
+            }
+        }
 
         public bool AllPropertiesValid
         {
@@ -193,6 +223,7 @@ namespace UserInterface.ViewModel
             _allowTUIDChange = false;
             _allowPlaceChange = false;
             _allowFieldChange = false;
+            _allowBlockedChange = false;
             _subTableValidation = false;
             Messenger.Default.Register<MessageValidationInfo>(this, msg => { SubTableValidation = msg.AllPropertiesValid; });
         }

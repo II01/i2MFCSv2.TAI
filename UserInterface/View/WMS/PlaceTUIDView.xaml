@@ -19,7 +19,7 @@
         </ControlTemplate>
     </UserControl.Resources>
 
-    <Grid Grid.Column="1" Grid.Row="1" Margin="20,0,0,0">
+    <Grid Grid.Column="1" Grid.Row="1" Margin="20,0,0,20">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="20"/>
@@ -30,23 +30,26 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="{Resx TUID}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx PlaceID}" Grid.Row="1" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx DimensionClass}" Grid.Row="2" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx Blocked}" Grid.Row="3" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx SKUID}" Grid.Row="4" Margin="0,0,0,10" VerticalAlignment="Top"/>
+<!--        <TextBlock Text="{Resx DimensionClass}" Grid.Row="2" Margin="0,0,0,10"/> -->
+        <TextBlock Text="{Resx Blocked}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SKUID}" Grid.Row="3" Margin="0,0,0,10" VerticalAlignment="Top"/>
 
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text ="{Binding Path=TUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowTUIDChange}"/>
         <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=PlaceID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding AllowPlaceChange}"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=DimensionClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowFieldChange}"/>
-        <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=Blocked,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowFieldChange}"/>
-        <DataGrid Grid.Row="4" Grid.Column ="2" Grid.RowSpan="2"
+<!--        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=DimensionClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowFieldChange}"/> -->
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+            <TextBox Margin="0,0,0,10" Width="150"
+                     Text="{Binding Path=Blocked,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
+            <TextBlock Margin="50,0,0,10" Text="{Resx Quality_Control}"/>
+            <CheckBox Margin="10,0,0,10" IsChecked = "{Binding Path=BlockedQC}" IsEnabled="{Binding AllowBlockedChange}"/>
+        </StackPanel>
+        <DataGrid Grid.Row="3" Grid.Column ="2" Grid.RowSpan="2"
             ItemsSource="{Binding DetailList}" Margin="0,0,0,0"
                         x:Name="dgDetails" 
                         AutoGenerateColumns="False"

@@ -118,6 +118,7 @@ namespace UserInterface.ViewModel
                             DetailedOrder = SelectedOrder;
                         }
                         ExecuteRefreshCommandWMS();
+                        VisibleOrder = true;
                     }
                     catch (Exception e)
                     {
@@ -264,7 +265,7 @@ namespace UserInterface.ViewModel
 
             EditEnabled = false;
             EnabledCC = false;
-            VisibleOrder = true;
+            VisibleOrder = false;
             VisibleRamp = false;
 
             _selectedCmd = CommandType.None;
@@ -421,6 +422,7 @@ namespace UserInterface.ViewModel
                 EnabledCC = false;
                 if (DetailedOrder != null)
                 {
+                    DetailedOrder = SelectedOrder;
                     DetailedOrder.ValidationEnabled = false;
                 }
                 VisibleOrder = true;

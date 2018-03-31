@@ -3859,10 +3859,10 @@
     <value>Barcode mismatch: deck C502</value>
   </data>
   <data name="ALARM_50113" xml:space="preserve">
-    <value>  MFCS: unknown error</value>
+    <value>MFCS: unknown error</value>
   </data>
   <data name="ALARM_50114" xml:space="preserve">
-    <value>  MFCS: synchronization failure</value>
+    <value>MFCS: synchronization failure</value>
   </data>
   <data name="ALARM_50115" xml:space="preserve">
     <value>Service M required</value>
@@ -3914,5 +3914,293 @@
   </data>
   <data name="Selected" xml:space="preserve">
     <value>Selected</value>
+  </data>
+  <data name="Shuttle3" xml:space="preserve">
+    <value>Shuttle3</value>
+  </data>
+  <data name="ReleaseOrders" xml:space="preserve">
+    <value>Release Orders</value>
+  </data>
+  <data name="TUs" xml:space="preserve">
+    <value>Transport Units</value>
+  </data>
+  <data name="CommandERPs" xml:space="preserve">
+    <value>ERP Commands</value>
+  </data>
+  <data name="CommandWMSs" xml:space="preserve">
+    <value>WMS Commands</value>
+  </data>
+  <data name="PrepareOrders" xml:space="preserve">
+    <value>Prepare Orders</value>
+  </data>
+  <data name="PlaceIDs" xml:space="preserve">
+    <value>Places</value>
+  </data>
+  <data name="SKUIDs" xml:space="preserve">
+    <value>Stock Keeping Units</value>
+  </data>
+  <data name="ComparePlaces" xml:space="preserve">
+    <value>ComparePlaces</value>
+  </data>
+  <data name="WMSLog" xml:space="preserve">
+    <value>WMS Log</value>
+  </data>
+  <data name="ERPID" xml:space="preserve">
+    <value>ERPID</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="Command" xml:space="preserve">
+    <value>Command</value>
+  </data>
+  <data name="WMSID" xml:space="preserve">
+    <value>WMS ID</value>
+  </data>
+  <data name="OrderID" xml:space="preserve">
+    <value>Order ID</value>
+  </data>
+  <data name="SubOrderID" xml:space="preserve">
+    <value>Suborder ID</value>
+  </data>
+  <data name="SubOrderName" xml:space="preserve">
+    <value>Suborder Name</value>
+  </data>
+  <data name="SKUID" xml:space="preserve">
+    <value>SKUID</value>
+  </data>
+  <data name="SKUBatch" xml:space="preserve">
+    <value>Batch</value>
+  </data>
+  <data name="TUID" xml:space="preserve">
+    <value>TU ID</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="Batch" xml:space="preserve">
+    <value>Batch</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="Destination" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="ReleaseTime" xml:space="preserve">
+    <value>ReleaseTime</value>
+  </data>
+  <data name="SubOrders" xml:space="preserve">
+    <value>Suborders</value>
+  </data>
+  <data name="SKUs" xml:space="preserve">
+    <value>Transport Units</value>
+  </data>
+  <data name="SKUQty" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="AddOrder" xml:space="preserve">
+    <value>Add Order</value>
+  </data>
+  <data name="EditOrder" xml:space="preserve">
+    <value>Edit Order</value>
+  </data>
+  <data name="DeleteOrder" xml:space="preserve">
+    <value>Delete Order</value>
+  </data>
+  <data name="AddSubOrder" xml:space="preserve">
+    <value>Add Suborder</value>
+  </data>
+  <data name="EditSubOrder" xml:space="preserve">
+    <value>Edit Suborder</value>
+  </data>
+  <data name="DeleteSubOrder" xml:space="preserve">
+    <value>Delete Suborder</value>
+  </data>
+  <data name="AddSKU" xml:space="preserve">
+    <value>Add SKU</value>
+  </data>
+  <data name="EditSKU" xml:space="preserve">
+    <value>Edit SKU</value>
+  </data>
+  <data name="DeleteSKU" xml:space="preserve">
+    <value>Delete SKU</value>
+  </data>
+  <data name="PlaceWMS" xml:space="preserve">
+    <value>Place WMS</value>
+  </data>
+  <data name="TimeWMS" xml:space="preserve">
+    <value>Time WMS</value>
+  </data>
+  <data name="PlaceMFCS" xml:space="preserve">
+    <value>Place MFCS</value>
+  </data>
+  <data name="TimeMFCS" xml:space="preserve">
+    <value>Time MFCS</value>
+  </data>
+  <data name="UpdateWMS" xml:space="preserve">
+    <value>Update WMS</value>
+  </data>
+  <data name="UpdateMFCS" xml:space="preserve">
+    <value>Update MFCS</value>
+  </data>
+  <data name="PositionTravel" xml:space="preserve">
+    <value>Position Travel</value>
+  </data>
+  <data name="PositionHoist" xml:space="preserve">
+    <value>Position Hoist</value>
+  </data>
+  <data name="DimensionClass" xml:space="preserve">
+    <value>Dimension class</value>
+  </data>
+  <data name="FrequencyClass" xml:space="preserve">
+    <value>Frequency Class</value>
+  </data>
+  <data name="Block" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="Unblock" xml:space="preserve">
+    <value>Unblock</value>
+  </data>
+  <data name="PlaceID" xml:space="preserve">
+    <value>Place ID</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Book" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="ProdDate" xml:space="preserve">
+    <value>Production Date</value>
+  </data>
+  <data name="ExpDate" xml:space="preserve">
+    <value>Expiry Date</value>
+  </data>
+  <data name="ReleaseOfOrders" xml:space="preserve">
+    <value>Release Orders</value>
+  </data>
+  <data name="PortionActive" xml:space="preserve">
+    <value>Portion Active</value>
+  </data>
+  <data name="PortionDone" xml:space="preserve">
+    <value>Portion Done</value>
+  </data>
+  <data name="Ramp" xml:space="preserve">
+    <value>Ramps</value>
+  </data>
+  <data name="ReleaseOrder" xml:space="preserve">
+    <value>Release Order</value>
+  </data>
+  <data name="ReleaseRamp" xml:space="preserve">
+    <value>Release Ramp</value>
+  </data>
+  <data name="Ramp1" xml:space="preserve">
+    <value>T1</value>
+  </data>
+  <data name="Ramp2" xml:space="preserve">
+    <value>T2</value>
+  </data>
+  <data name="Ramp3" xml:space="preserve">
+    <value>T3</value>
+  </data>
+  <data name="Ramp4" xml:space="preserve">
+    <value>T4</value>
+  </data>
+  <data name="Ramp5" xml:space="preserve">
+    <value>T5</value>
+  </data>
+  <data name="B2B" xml:space="preserve">
+    <value>B2B</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="Now1" xml:space="preserve">
+    <value>+1</value>
+  </data>
+  <data name="Now2" xml:space="preserve">
+    <value>+2</value>
+  </data>
+  <data name="Now3" xml:space="preserve">
+    <value>+3</value>
+  </data>
+  <data name="Now4" xml:space="preserve">
+    <value>+4</value>
+  </data>
+  <data name="Now5" xml:space="preserve">
+    <value>+5</value>
+  </data>
+  <data name="Now6" xml:space="preserve">
+    <value>+6</value>
+  </data>
+  <data name="Now7" xml:space="preserve">
+    <value>+7</value>
+  </data>
+  <data name="Now8" xml:space="preserve">
+    <value>+8</value>
+  </data>
+  <data name="Now9" xml:space="preserve">
+    <value>+9</value>
+  </data>
+  <data name="Now10" xml:space="preserve">
+    <value>+10</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Finished" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="DefaultQty" xml:space="preserve">
+    <value>Default quantity</value>
+  </data>
+  <data name="Weight" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="ERR_MATERIALEXSITS" xml:space="preserve">
+    <value>@ERR MATERIALEXSITS</value>
+  </data>
+  <data name="ERR_ORDERID" xml:space="preserve">
+    <value>@ERR ORDERID</value>
+  </data>
+  <data name="ERR_DESTINATION" xml:space="preserve">
+    <value>@ERR DESTINATION</value>
+  </data>
+  <data name="ERR_SUBORDERID" xml:space="preserve">
+    <value>@ERR SUBORDERID</value>
+  </data>
+  <data name="ERR_SKU" xml:space="preserve">
+    <value>@ERR SKU</value>
+  </data>
+  <data name="ERR_LOC_RANGE" xml:space="preserve">
+    <value>@ERR LOC RANGE</value>
+  </data>
+  <data name="ERR_TUID" xml:space="preserve">
+    <value>@ERR TUID</value>
+  </data>
+  <data name="ERR_PLACE" xml:space="preserve">
+    <value>@ERR PLACE</value>
+  </data>
+  <data name="ERR_INDEX_FORMAT" xml:space="preserve">
+    <value>@ERR INDEX FORMAT</value>
+  </data>
+  <data name="ERR_INDEX_EXISTS" xml:space="preserve">
+    <value>@ERR INDEX EXISTS</value>
+  </data>
+  <data name="ERR_SKUID" xml:space="preserve">
+    <value>@ERR SKUID</value>
+  </data>
+  <data name="ERR_BATCH" xml:space="preserve">
+    <value>@ERR BATCH</value>
+  </data>
+  <data name="ERR_DATE" xml:space="preserve">
+    <value>@ERR DATE</value>
   </data>
 </root>

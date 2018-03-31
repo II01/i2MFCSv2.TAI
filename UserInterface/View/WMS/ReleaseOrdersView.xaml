@@ -171,7 +171,9 @@
                         Content="{Binding DetailedOrder}"
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Top"/>
-            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="20,0,0,0"  IsEnabled="{Binding EditEnabled}">
+            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="20,0,0,0"  
+                  IsEnabled="{Binding EditEnabled}"
+                  Visibility="{Binding VisibleOrder, Converter={StaticResource BoolToVisibility}}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="80"/>
                     <ColumnDefinition Width="20"/>
@@ -211,7 +213,6 @@
                         <ColumnDefinition />
                         <ColumnDefinition />
                         <ColumnDefinition />
-                        <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -223,12 +224,10 @@
                     <Button MinWidth="30" Grid.Row="0" Grid.Column="2" Margin="5,0,5,0" Content="{Resx Now2}" Command="{Binding SetReleaseTime}" CommandParameter="2"/>
                     <Button MinWidth="30" Grid.Row="0" Grid.Column="3" Margin="5,0,5,0" Content="{Resx Now3}" Command="{Binding SetReleaseTime}" CommandParameter="3"/>
                     <Button MinWidth="30" Grid.Row="0" Grid.Column="4" Margin="5,0,5,0" Content="{Resx Now4}" Command="{Binding SetReleaseTime}" CommandParameter="4"/>
-                    <Button MinWidth="30" Grid.Row="0" Grid.Column="5" Margin="5,0,5,0" Content="{Resx Now5}" Command="{Binding SetReleaseTime}" CommandParameter="5"/>
-                    <Button MinWidth="30" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0" Content="{Resx Now6}" Command="{Binding SetReleaseTime}" CommandParameter="6"/>
-                    <Button MinWidth="30" Grid.Row="2" Grid.Column="2" Margin="5,0,5,0" Content="{Resx Now7}" Command="{Binding SetReleaseTime}" CommandParameter="7"/>
-                    <Button MinWidth="30" Grid.Row="2" Grid.Column="3" Margin="5,0,5,0" Content="{Resx Now8}" Command="{Binding SetReleaseTime}" CommandParameter="8"/>
-                    <Button MinWidth="30" Grid.Row="2" Grid.Column="4" Margin="5,0,5,0" Content="{Resx Now9}" Command="{Binding SetReleaseTime}" CommandParameter="9"/>
-                    <Button MinWidth="30" Grid.Row="2" Grid.Column="5" Margin="5,0,5,0" Content="{Resx Now10}" Command="{Binding SetReleaseTime}" CommandParameter="10"/>
+                    <Button MinWidth="30" Grid.Row="2" Grid.Column="1" Margin="5,0,5,0" Content="{Resx Now5}" Command="{Binding SetReleaseTime}" CommandParameter="5"/>
+                    <Button MinWidth="30" Grid.Row="2" Grid.Column="2" Margin="5,0,5,0" Content="{Resx Now6}" Command="{Binding SetReleaseTime}" CommandParameter="6"/>
+                    <Button MinWidth="30" Grid.Row="2" Grid.Column="3" Margin="5,0,5,0" Content="{Resx Now7}" Command="{Binding SetReleaseTime}" CommandParameter="7"/>
+                    <Button MinWidth="30" Grid.Row="2" Grid.Column="4" Margin="5,0,5,0" Content="{Resx Now8}" Command="{Binding SetReleaseTime}" CommandParameter="8"/>
                 </Grid>
             </Grid>
             <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Margin="20,20,0,0" VerticalAlignment="Top"

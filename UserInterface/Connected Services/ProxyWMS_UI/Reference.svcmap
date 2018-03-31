@@ -27,7 +27,6 @@
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="0595ecd0-7b7c-4e81-9105-d859e56e7855" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex" />
     <MetadataFile FileName="i2MFCS.WMS.Database.DTO.xsd" MetadataType="Schema" ID="98cf8ff7-e223-4a3d-b1d5-9b175441f422" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex" />
     <MetadataFile FileName="i2MFCS.WMS.Database.Tables.xsd" MetadataType="Schema" ID="b542be9b-8e52-406a-bf90-1ffc487e4bd2" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="c9454b99-e4b6-4eb6-8096-e6026c829abf" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -70,6 +70,42 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Order.
+        /// </summary>
+        public static string AddOrder {
+            get {
+                return ResourceManager.GetString("AddOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add SKU.
+        /// </summary>
+        public static string AddSKU {
+            get {
+                return ResourceManager.GetString("AddSKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Suborder.
+        /// </summary>
+        public static string AddSubOrder {
+            get {
+                return ResourceManager.GetString("AddSubOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alarm.
         /// </summary>
         public static string Alarm {
@@ -9205,7 +9241,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to   MFCS: unknown error.
+        ///   Looks up a localized string similar to MFCS: unknown error.
         /// </summary>
         public static string ALARM_50113 {
             get {
@@ -9214,7 +9250,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to   MFCS: synchronization failure.
+        ///   Looks up a localized string similar to MFCS: synchronization failure.
         /// </summary>
         public static string ALARM_50114 {
             get {
@@ -9385,6 +9421,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to B2B.
+        /// </summary>
+        public static string B2B {
+            get {
+                return ResourceManager.GetString("B2B", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to B.
         /// </summary>
         public static string BarcodeShort {
@@ -9394,11 +9439,38 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Batch.
+        /// </summary>
+        public static string Batch {
+            get {
+                return ResourceManager.GetString("Batch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Block.
+        /// </summary>
+        public static string Block {
+            get {
+                return ResourceManager.GetString("Block", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blocked.
         /// </summary>
         public static string Blocked {
             get {
                 return ResourceManager.GetString("Blocked", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Book.
+        /// </summary>
+        public static string Book {
+            get {
+                return ResourceManager.GetString("Book", resourceCulture);
             }
         }
         
@@ -9574,6 +9646,24 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Command.
+        /// </summary>
+        public static string Command {
+            get {
+                return ResourceManager.GetString("Command", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ERP Commands.
+        /// </summary>
+        public static string CommandERPs {
+            get {
+                return ResourceManager.GetString("CommandERPs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Command ID.
         /// </summary>
         public static string CommandID {
@@ -9588,6 +9678,24 @@ namespace UserInterface.Properties {
         public static string Commands {
             get {
                 return ResourceManager.GetString("Commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WMS Commands.
+        /// </summary>
+        public static string CommandWMSs {
+            get {
+                return ResourceManager.GetString("CommandWMSs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ComparePlaces.
+        /// </summary>
+        public static string ComparePlaces {
+            get {
+                return ResourceManager.GetString("ComparePlaces", resourceCulture);
             }
         }
         
@@ -9655,11 +9763,47 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default quantity.
+        /// </summary>
+        public static string DefaultQty {
+            get {
+                return ResourceManager.GetString("DefaultQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delete.
         /// </summary>
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Order.
+        /// </summary>
+        public static string DeleteOrder {
+            get {
+                return ResourceManager.GetString("DeleteOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete SKU.
+        /// </summary>
+        public static string DeleteSKU {
+            get {
+                return ResourceManager.GetString("DeleteSKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Suborder.
+        /// </summary>
+        public static string DeleteSubOrder {
+            get {
+                return ResourceManager.GetString("DeleteSubOrder", resourceCulture);
             }
         }
         
@@ -9673,11 +9817,38 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Destination.
+        /// </summary>
+        public static string Destination {
+            get {
+                return ResourceManager.GetString("Destination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Detailed simple commands.
         /// </summary>
         public static string Detailed_simple_commands {
             get {
                 return ResourceManager.GetString("Detailed_simple_commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dimension class.
+        /// </summary>
+        public static string DimensionClass {
+            get {
+                return ResourceManager.GetString("DimensionClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        public static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
             }
         }
         
@@ -9696,6 +9867,33 @@ namespace UserInterface.Properties {
         public static string Edit {
             get {
                 return ResourceManager.GetString("Edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Order.
+        /// </summary>
+        public static string EditOrder {
+            get {
+                return ResourceManager.GetString("EditOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit SKU.
+        /// </summary>
+        public static string EditSKU {
+            get {
+                return ResourceManager.GetString("EditSKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Suborder.
+        /// </summary>
+        public static string EditSubOrder {
+            get {
+                return ResourceManager.GetString("EditSubOrder", resourceCulture);
             }
         }
         
@@ -10411,11 +10609,47 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ERPID.
+        /// </summary>
+        public static string ERPID {
+            get {
+                return ResourceManager.GetString("ERPID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR BATCH.
+        /// </summary>
+        public static string ERR_BATCH {
+            get {
+                return ResourceManager.GetString("ERR_BATCH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location blocked.
         /// </summary>
         public static string ERR_BLOCKED {
             get {
                 return ResourceManager.GetString("ERR_BLOCKED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR DATE.
+        /// </summary>
+        public static string ERR_DATE {
+            get {
+                return ResourceManager.GetString("ERR_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR DESTINATION.
+        /// </summary>
+        public static string ERR_DESTINATION {
+            get {
+                return ResourceManager.GetString("ERR_DESTINATION", resourceCulture);
             }
         }
         
@@ -10434,6 +10668,33 @@ namespace UserInterface.Properties {
         public static string ERR_FIELD {
             get {
                 return ResourceManager.GetString("ERR_FIELD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR INDEX EXISTS.
+        /// </summary>
+        public static string ERR_INDEX_EXISTS {
+            get {
+                return ResourceManager.GetString("ERR_INDEX_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR INDEX FORMAT.
+        /// </summary>
+        public static string ERR_INDEX_FORMAT {
+            get {
+                return ResourceManager.GetString("ERR_INDEX_FORMAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR LOC RANGE.
+        /// </summary>
+        public static string ERR_LOC_RANGE {
+            get {
+                return ResourceManager.GetString("ERR_LOC_RANGE", resourceCulture);
             }
         }
         
@@ -10470,6 +10731,15 @@ namespace UserInterface.Properties {
         public static string ERR_MATERIALEXISTS {
             get {
                 return ResourceManager.GetString("ERR_MATERIALEXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR MATERIALEXSITS.
+        /// </summary>
+        public static string ERR_MATERIALEXSITS {
+            get {
+                return ResourceManager.GetString("ERR_MATERIALEXSITS", resourceCulture);
             }
         }
         
@@ -10515,6 +10785,24 @@ namespace UserInterface.Properties {
         public static string ERR_NULL {
             get {
                 return ResourceManager.GetString("ERR_NULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR ORDERID.
+        /// </summary>
+        public static string ERR_ORDERID {
+            get {
+                return ResourceManager.GetString("ERR_ORDERID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR PLACE.
+        /// </summary>
+        public static string ERR_PLACE {
+            get {
+                return ResourceManager.GetString("ERR_PLACE", resourceCulture);
             }
         }
         
@@ -10573,6 +10861,33 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to @ERR SKU.
+        /// </summary>
+        public static string ERR_SKU {
+            get {
+                return ResourceManager.GetString("ERR_SKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR SKUID.
+        /// </summary>
+        public static string ERR_SKUID {
+            get {
+                return ResourceManager.GetString("ERR_SKUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR SUBORDERID.
+        /// </summary>
+        public static string ERR_SUBORDERID {
+            get {
+                return ResourceManager.GetString("ERR_SUBORDERID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong task.
         /// </summary>
         public static string ERR_TASK {
@@ -10587,6 +10902,15 @@ namespace UserInterface.Properties {
         public static string ERR_TIME {
             get {
                 return ResourceManager.GetString("ERR_TIME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to @ERR TUID.
+        /// </summary>
+        public static string ERR_TUID {
+            get {
+                return ResourceManager.GetString("ERR_TUID", resourceCulture);
             }
         }
         
@@ -10654,6 +10978,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expiry Date.
+        /// </summary>
+        public static string ExpDate {
+            get {
+                return ResourceManager.GetString("ExpDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extras.
         /// </summary>
         public static string Extras {
@@ -10663,11 +10996,29 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finished.
+        /// </summary>
+        public static string Finished {
+            get {
+                return ResourceManager.GetString("Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Forklift.
         /// </summary>
         public static string Forklift {
             get {
                 return ResourceManager.GetString("Forklift", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Frequency Class.
+        /// </summary>
+        public static string FrequencyClass {
+            get {
+                return ResourceManager.GetString("FrequencyClass", resourceCulture);
             }
         }
         
@@ -10870,6 +11221,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MFCS.
         /// </summary>
         public static string MFCS {
@@ -10924,6 +11284,105 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Now.
+        /// </summary>
+        public static string Now {
+            get {
+                return ResourceManager.GetString("Now", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +1.
+        /// </summary>
+        public static string Now1 {
+            get {
+                return ResourceManager.GetString("Now1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +10.
+        /// </summary>
+        public static string Now10 {
+            get {
+                return ResourceManager.GetString("Now10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +2.
+        /// </summary>
+        public static string Now2 {
+            get {
+                return ResourceManager.GetString("Now2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +3.
+        /// </summary>
+        public static string Now3 {
+            get {
+                return ResourceManager.GetString("Now3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +4.
+        /// </summary>
+        public static string Now4 {
+            get {
+                return ResourceManager.GetString("Now4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +5.
+        /// </summary>
+        public static string Now5 {
+            get {
+                return ResourceManager.GetString("Now5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +6.
+        /// </summary>
+        public static string Now6 {
+            get {
+                return ResourceManager.GetString("Now6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +7.
+        /// </summary>
+        public static string Now7 {
+            get {
+                return ResourceManager.GetString("Now7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +8.
+        /// </summary>
+        public static string Now8 {
+            get {
+                return ResourceManager.GetString("Now8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +9.
+        /// </summary>
+        public static string Now9 {
+            get {
+                return ResourceManager.GetString("Now9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Occupied.
         /// </summary>
         public static string Occupied {
@@ -10938,6 +11397,24 @@ namespace UserInterface.Properties {
         public static string Offline {
             get {
                 return ResourceManager.GetString("Offline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order ID.
+        /// </summary>
+        public static string OrderID {
+            get {
+                return ResourceManager.GetString("OrderID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders.
+        /// </summary>
+        public static string Orders {
+            get {
+                return ResourceManager.GetString("Orders", resourceCulture);
             }
         }
         
@@ -10969,6 +11446,69 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Place ID.
+        /// </summary>
+        public static string PlaceID {
+            get {
+                return ResourceManager.GetString("PlaceID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Places.
+        /// </summary>
+        public static string PlaceIDs {
+            get {
+                return ResourceManager.GetString("PlaceIDs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place MFCS.
+        /// </summary>
+        public static string PlaceMFCS {
+            get {
+                return ResourceManager.GetString("PlaceMFCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Place WMS.
+        /// </summary>
+        public static string PlaceWMS {
+            get {
+                return ResourceManager.GetString("PlaceWMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portion Active.
+        /// </summary>
+        public static string PortionActive {
+            get {
+                return ResourceManager.GetString("PortionActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portion Done.
+        /// </summary>
+        public static string PortionDone {
+            get {
+                return ResourceManager.GetString("PortionDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position Hoist.
+        /// </summary>
+        public static string PositionHoist {
+            get {
+                return ResourceManager.GetString("PositionHoist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Positions.
         /// </summary>
         public static string Positions {
@@ -10978,11 +11518,101 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Position Travel.
+        /// </summary>
+        public static string PositionTravel {
+            get {
+                return ResourceManager.GetString("PositionTravel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prepare Orders.
+        /// </summary>
+        public static string PrepareOrders {
+            get {
+                return ResourceManager.GetString("PrepareOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Priority.
         /// </summary>
         public static string Priority {
             get {
                 return ResourceManager.GetString("Priority", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Production Date.
+        /// </summary>
+        public static string ProdDate {
+            get {
+                return ResourceManager.GetString("ProdDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string Qty {
+            get {
+                return ResourceManager.GetString("Qty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ramps.
+        /// </summary>
+        public static string Ramp {
+            get {
+                return ResourceManager.GetString("Ramp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T1.
+        /// </summary>
+        public static string Ramp1 {
+            get {
+                return ResourceManager.GetString("Ramp1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T2.
+        /// </summary>
+        public static string Ramp2 {
+            get {
+                return ResourceManager.GetString("Ramp2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T3.
+        /// </summary>
+        public static string Ramp3 {
+            get {
+                return ResourceManager.GetString("Ramp3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T4.
+        /// </summary>
+        public static string Ramp4 {
+            get {
+                return ResourceManager.GetString("Ramp4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to T5.
+        /// </summary>
+        public static string Ramp5 {
+            get {
+                return ResourceManager.GetString("Ramp5", resourceCulture);
             }
         }
         
@@ -11023,6 +11653,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reference.
+        /// </summary>
+        public static string Reference {
+            get {
+                return ResourceManager.GetString("Reference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Refresh.
         /// </summary>
         public static string Refresh {
@@ -11037,6 +11676,51 @@ namespace UserInterface.Properties {
         public static string RefreshImage {
             get {
                 return ResourceManager.GetString("RefreshImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release Orders.
+        /// </summary>
+        public static string ReleaseOfOrders {
+            get {
+                return ResourceManager.GetString("ReleaseOfOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release Order.
+        /// </summary>
+        public static string ReleaseOrder {
+            get {
+                return ResourceManager.GetString("ReleaseOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release Orders.
+        /// </summary>
+        public static string ReleaseOrders {
+            get {
+                return ResourceManager.GetString("ReleaseOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Release Ramp.
+        /// </summary>
+        public static string ReleaseRamp {
+            get {
+                return ResourceManager.GetString("ReleaseRamp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ReleaseTime.
+        /// </summary>
+        public static string ReleaseTime {
+            get {
+                return ResourceManager.GetString("ReleaseTime", resourceCulture);
             }
         }
         
@@ -11131,6 +11815,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Shuttle3.
+        /// </summary>
+        public static string Shuttle3 {
+            get {
+                return ResourceManager.GetString("Shuttle3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shuttle 4.
         /// </summary>
         public static string Shuttle4 {
@@ -11163,6 +11856,60 @@ namespace UserInterface.Properties {
         public static string Simple_commands {
             get {
                 return ResourceManager.GetString("Simple_commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKU.
+        /// </summary>
+        public static string SKU {
+            get {
+                return ResourceManager.GetString("SKU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Batch.
+        /// </summary>
+        public static string SKUBatch {
+            get {
+                return ResourceManager.GetString("SKUBatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKUID.
+        /// </summary>
+        public static string SKUID {
+            get {
+                return ResourceManager.GetString("SKUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stock Keeping Units.
+        /// </summary>
+        public static string SKUIDs {
+            get {
+                return ResourceManager.GetString("SKUIDs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        public static string SKUQty {
+            get {
+                return ResourceManager.GetString("SKUQty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transport Units.
+        /// </summary>
+        public static string SKUs {
+            get {
+                return ResourceManager.GetString("SKUs", resourceCulture);
             }
         }
         
@@ -11226,6 +11973,33 @@ namespace UserInterface.Properties {
         public static string Stop {
             get {
                 return ResourceManager.GetString("Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suborder ID.
+        /// </summary>
+        public static string SubOrderID {
+            get {
+                return ResourceManager.GetString("SubOrderID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suborder Name.
+        /// </summary>
+        public static string SubOrderName {
+            get {
+                return ResourceManager.GetString("SubOrderName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suborders.
+        /// </summary>
+        public static string SubOrders {
+            get {
+                return ResourceManager.GetString("SubOrders", resourceCulture);
             }
         }
         
@@ -11320,11 +12094,29 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time MFCS.
+        /// </summary>
+        public static string TimeMFCS {
+            get {
+                return ResourceManager.GetString("TimeMFCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Timestamp.
         /// </summary>
         public static string Timestamp {
             get {
                 return ResourceManager.GetString("Timestamp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time WMS.
+        /// </summary>
+        public static string TimeWMS {
+            get {
+                return ResourceManager.GetString("TimeWMS", resourceCulture);
             }
         }
         
@@ -11383,6 +12175,24 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TU ID.
+        /// </summary>
+        public static string TUID {
+            get {
+                return ResourceManager.GetString("TUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transport Units.
+        /// </summary>
+        public static string TUs {
+            get {
+                return ResourceManager.GetString("TUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Type.
         /// </summary>
         public static string Type {
@@ -11392,11 +12202,38 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unblock.
+        /// </summary>
+        public static string Unblock {
+            get {
+                return ResourceManager.GetString("Unblock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unit.
         /// </summary>
         public static string Unit {
             get {
                 return ResourceManager.GetString("Unit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update MFCS.
+        /// </summary>
+        public static string UpdateMFCS {
+            get {
+                return ResourceManager.GetString("UpdateMFCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Update WMS.
+        /// </summary>
+        public static string UpdateWMS {
+            get {
+                return ResourceManager.GetString("UpdateWMS", resourceCulture);
             }
         }
         
@@ -11428,6 +12265,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Weight.
+        /// </summary>
+        public static string Weight {
+            get {
+                return ResourceManager.GetString("Weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to With.
         /// </summary>
         public static string with {
@@ -11451,6 +12297,24 @@ namespace UserInterface.Properties {
         public static string WMS_ID {
             get {
                 return ResourceManager.GetString("WMS_ID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WMS ID.
+        /// </summary>
+        public static string WMSID {
+            get {
+                return ResourceManager.GetString("WMSID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WMS Log.
+        /// </summary>
+        public static string WMSLog {
+            get {
+                return ResourceManager.GetString("WMSLog", resourceCulture);
             }
         }
     }

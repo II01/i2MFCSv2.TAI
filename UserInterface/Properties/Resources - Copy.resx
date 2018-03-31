@@ -118,160 +118,160 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Visualization" xml:space="preserve">
-    <value>Sanallaştırma</value>
+    <value>Visualization</value>
   </data>
   <data name="Alarms" xml:space="preserve">
-    <value>Alarmlar</value>
+    <value>Alarms</value>
   </data>
   <data name="Commands" xml:space="preserve">
-    <value>Komutlar</value>
+    <value>Commands</value>
   </data>
   <data name="Transport_units" xml:space="preserve">
-    <value>Taşıma Birimi</value>
+    <value>Transport units</value>
   </data>
   <data name="Extras" xml:space="preserve">
-    <value>Ekstralar</value>
+    <value>Extras</value>
   </data>
   <data name="Locations" xml:space="preserve">
-    <value>Yer</value>
+    <value>Locations</value>
   </data>
   <data name="Simple_commands" xml:space="preserve">
-    <value>Basit Komutlar</value>
+    <value>Simple commands</value>
   </data>
   <data name="Events" xml:space="preserve">
-    <value>Etkinlik</value>
+    <value>Events</value>
   </data>
   <data name="History" xml:space="preserve">
-    <value>Geçmiş</value>
+    <value>History</value>
   </data>
   <data name="Movements" xml:space="preserve">
-    <value>Hareketler</value>
+    <value>Movements</value>
   </data>
   <data name="History_events" xml:space="preserve">
-    <value>Etkinlik Geçmişi</value>
+    <value>History of events</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Ayarlar /Settings</value>
+    <value>Settings / Ayarlar</value>
   </data>
   <data name="Execute_WMS_commands" xml:space="preserve">
-    <value>WMS komutu çalıştır</value>
+    <value>Execute WMS commands</value>
   </data>
   <data name="Execute_MFCS_commands" xml:space="preserve">
-    <value>MFCS komutu çalıştır</value>
+    <value>Execute MFCS commands</value>
   </data>
   <data name="Start" xml:space="preserve">
-    <value>Başla</value>
+    <value>Start</value>
   </data>
   <data name="Stop" xml:space="preserve">
-    <value>Dur</value>
+    <value>Stop</value>
   </data>
   <data name="Execute_commands" xml:space="preserve">
-    <value>Komutu işle</value>
+    <value>Execute commands</value>
   </data>
   <data name="Execute_simple_commands_only" xml:space="preserve">
-    <value>Basit komutu işle</value>
+    <value>Execute simple commands only</value>
   </data>
   <data name="RefreshImage" xml:space="preserve">
-    <value>Verileri Güncelle</value>
+    <value>Refresh place data</value>
   </data>
   <data name="Reset" xml:space="preserve">
-    <value>Sıfırla</value>
+    <value>Reset</value>
   </data>
   <data name="Auto_on" xml:space="preserve">
-    <value>Otomatik Aç</value>
+    <value>Auto on</value>
   </data>
   <data name="Auto_off" xml:space="preserve">
-    <value>Otomatik Kapa</value>
+    <value>Auto off</value>
   </data>
   <data name="Maintenance_on" xml:space="preserve">
-    <value>Bakım Aç</value>
+    <value>Maintenance on</value>
   </data>
   <data name="Maintenance_off" xml:space="preserve">
-    <value>Bakım Kapa</value>
+    <value>Maintenance off</value>
   </data>
   <data name="Set_time" xml:space="preserve">
-    <value>Saat Ayarı</value>
+    <value>Set time</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Ev</value>
+    <value>Home</value>
   </data>
   <data name="Time_arrived" xml:space="preserve">
-    <value>Zaman Doldu</value>
+    <value>Time arrived</value>
   </data>
   <data name="Unit" xml:space="preserve">
-    <value>Unite</value>
+    <value>Unit</value>
   </data>
   <data name="ID" xml:space="preserve">
     <value>ID</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Durum</value>
+    <value>Status</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Tanımlar</value>
+    <value>Description</value>
   </data>
   <data name="WMS_ID" xml:space="preserve">
     <value>WMS ID</value>
   </data>
   <data name="Task" xml:space="preserve">
-    <value>Görevler</value>
+    <value>Task</value>
   </data>
   <data name="CommandID" xml:space="preserve">
-    <value>Komut ID</value>
+    <value>Command ID</value>
   </data>
   <data name="Info" xml:space="preserve">
-    <value>Bilgi</value>
+    <value>Info</value>
   </data>
   <data name="Priority" xml:space="preserve">
-    <value>Öncelik</value>
+    <value>Priority</value>
   </data>
   <data name="Time" xml:space="preserve">
-    <value>Zaman</value>
+    <value>Time</value>
   </data>
   <data name="TU" xml:space="preserve">
     <value>TU</value>
   </data>
   <data name="Source" xml:space="preserve">
-    <value>Kaynak</value>
+    <value>Source</value>
   </data>
   <data name="Target" xml:space="preserve">
-    <value>Hedef</value>
+    <value>Target</value>
   </data>
   <data name="Segment" xml:space="preserve">
-    <value>Bölme</value>
+    <value>Segment</value>
   </data>
   <data name="MFCS_ID" xml:space="preserve">
     <value>MFCS ID</value>
   </data>
   <data name="CancelID" xml:space="preserve">
-    <value>İPTAL ID</value>
+    <value>Cancel ID</value>
   </data>
   <data name="Detailed_simple_commands" xml:space="preserve">
-    <value>Detaylı Basit Komut</value>
+    <value>Detailed simple commands</value>
   </data>
   <data name="Cmd_TU" xml:space="preserve">
     <value>Cmd TU</value>
   </data>
   <data name="Cmd_segment" xml:space="preserve">
-    <value>Cmd Bölme</value>
+    <value>Cmd segment</value>
   </data>
   <data name="Restart" xml:space="preserve">
-    <value>Y.Başlat</value>
+    <value>Restart</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Sil</value>
+    <value>Delete</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>İptal</value>
+    <value>Cancel</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Doğrula</value>
+    <value>Confirm</value>
   </data>
   <data name="Conveyors" xml:space="preserve">
-    <value>Konveyor</value>
+    <value>Conveyors</value>
   </data>
   <data name="Vehicles" xml:space="preserve">
-    <value>Araç</value>
+    <value>Vehicles</value>
   </data>
   <data name="Crane1" xml:space="preserve">
     <value>Crane 1</value>
@@ -283,124 +283,124 @@
     <value>Crane 3</value>
   </data>
   <data name="Shuttle4" xml:space="preserve">
-    <value>Yer Arabası 4</value>
+    <value>Shuttle 4</value>
   </data>
   <data name="Shuttle5" xml:space="preserve">
-    <value>Yer Arabası 5</value>
+    <value>Shuttle 5</value>
   </data>
   <data name="Timestamp" xml:space="preserve">
-    <value>Zaman işareti</value>
+    <value>Timestamp</value>
   </data>
   <data name="Severity" xml:space="preserve">
-    <value>Sıklık</value>
+    <value>Severity</value>
   </data>
   <data name="Type" xml:space="preserve">
-    <value>Tip</value>
+    <value>Type</value>
   </data>
   <data name="History_of_alarms" xml:space="preserve">
-    <value>Alarm Geçmişi</value>
+    <value>History of alarms</value>
   </data>
   <data name="Records" xml:space="preserve">
-    <value>Kayıtlar</value>
+    <value>Records</value>
   </data>
   <data name="Time_acknowledged" xml:space="preserve">
-    <value>Zaman Bilgisi</value>
+    <value>Time acknowledged</value>
   </data>
   <data name="Time_removed" xml:space="preserve">
-    <value>Silinmiş Zaman</value>
+    <value>Time removed</value>
   </data>
   <data name="History_commands" xml:space="preserve">
-    <value>Komut geçmişi</value>
+    <value>History of commands</value>
   </data>
   <data name="HHMM" xml:space="preserve">
     <value>HH:MM</value>
   </data>
   <data name="History_of_events" xml:space="preserve">
-    <value>Etkinlik Geçmişi</value>
+    <value>History of events</value>
   </data>
   <data name="History_of_movements" xml:space="preserve">
-    <value>HAreketler Geçmişi</value>
+    <value>History of movements</value>
   </data>
   <data name="Location" xml:space="preserve">
-    <value>Yer</value>
+    <value>Location</value>
   </data>
   <data name="Transport_unit" xml:space="preserve">
-    <value>Taşıma ünitesi</value>
+    <value>Transport unit</value>
   </data>
   <data name="History_simple_commands" xml:space="preserve">
-    <value>Basit Komut Geçmişi</value>
+    <value>History of simple commands</value>
   </data>
   <data name="Class" xml:space="preserve">
-    <value>Sınıf</value>
+    <value>Class</value>
   </data>
   <data name="Blocked" xml:space="preserve">
-    <value>Blokeli</value>
+    <value>Blocked</value>
   </data>
   <data name="Reserved" xml:space="preserve">
-    <value>Rezerve</value>
+    <value>Reserved</value>
   </data>
   <data name="Edit" xml:space="preserve">
-    <value>Düzenle</value>
+    <value>Edit</value>
   </data>
   <data name="Create" xml:space="preserve">
-    <value>Oluştur</value>
+    <value>Create</value>
   </data>
   <data name="Move" xml:space="preserve">
-    <value>Hareket Ettir</value>
+    <value>Move</value>
   </data>
   <data name="Password" xml:space="preserve">
-    <value>Şifre</value>
+    <value>Password</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Giriş</value>
+    <value>Login</value>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>Çıkış</value>
+    <value>Logout</value>
   </data>
   <data name="Change_language" xml:space="preserve">
-    <value>Dili değiştir</value>
+    <value>Change language</value>
   </data>
   <data name="Other_language" xml:space="preserve">
-    <value>English</value>
+    <value>Türkçe</value>
   </data>
   <data name="From" xml:space="preserve">
-    <value>Kimden</value>
+    <value>From</value>
   </data>
   <data name="To" xml:space="preserve">
-    <value>Kime</value>
+    <value>To</value>
   </data>
   <data name="Cmd_conveyor" xml:space="preserve">
-    <value>Konveyor Komutu</value>
+    <value>Cmd conveyor</value>
   </data>
   <data name="Cmd_vehicle" xml:space="preserve">
-    <value>Araç Komutu</value>
+    <value>Cmd vehicle</value>
   </data>
   <data name="ERR_NULL" xml:space="preserve">
-    <value>Database bağlantı Hatası</value>
+    <value>No connection to database</value>
   </data>
   <data name="ERR_EXCEPTION" xml:space="preserve">
-    <value>İstisnalar</value>
+    <value>Exception</value>
   </data>
   <data name="ERR_TASK" xml:space="preserve">
-    <value>Yanlış görev</value>
+    <value>Wrong task</value>
   </data>
   <data name="ERR_MATERIALNOTEXISTS" xml:space="preserve">
-    <value>Palet depoda mevcut değil</value>
+    <value>Transport unit does not exist in warehouse</value>
   </data>
   <data name="ERR_MATERIALEXISTS" xml:space="preserve">
-    <value>Palet depoda mevcut</value>
+    <value>Transport unit exists in warehouse</value>
   </data>
   <data name="ERR_LOCATION" xml:space="preserve">
-    <value>Yanlış Yer</value>
+    <value>Wrong location</value>
   </data>
   <data name="ERR_ROUTE" xml:space="preserve">
-    <value>Rota mevcut değil</value>
+    <value>Route does not exist</value>
   </data>
   <data name="ERR_PRIORITY" xml:space="preserve">
-    <value>Yanlış öncelik</value>
+    <value>Wrong priority value</value>
   </data>
   <data name="ERR_RACKNOTOK" xml:space="preserve">
-    <value>Raf Adresi hatalı</value>
+    <value>Rack designation not correct</value>
   </data>
   <data name="WMS" xml:space="preserve">
     <value>WMS</value>
@@ -409,181 +409,184 @@
     <value>MFCS</value>
   </data>
   <data name="Simple" xml:space="preserve">
-    <value>Sade</value>
+    <value>Simple</value>
   </data>
   <data name="ERR_TIME" xml:space="preserve">
-    <value>Yanlış Zaman formatı</value>
+    <value>Wrong time format</value>
   </data>
   <data name="ERR_NOLOCATION" xml:space="preserve">
-    <value>Adres mevcut değil</value>
+    <value>Location does not exist in warehouse</value>
   </data>
   <data name="ERR_LOCATIONFULL" xml:space="preserve">
-    <value>Dolu yer</value>
+    <value>Location full</value>
   </data>
   <data name="ERR_MATERIALNOTVALID" xml:space="preserve">
-    <value>Palet numarası geçersiz</value>
+    <value>Not valid transport unit code</value>
   </data>
   <data name="ERR_FIELD" xml:space="preserve">
-    <value>Alan</value>
+    <value>Field</value>
   </data>
   <data name="ERR_MATERIALUNKNOWN" xml:space="preserve">
-    <value>Bilinmeyen Palet</value>
+    <value>Unknown transport unit</value>
   </data>
   <data name="with" xml:space="preserve">
-    <value>İle</value>
+    <value>With</value>
   </data>
   <data name="ERR_UNIT" xml:space="preserve">
-    <value>Araç depoda bulunmamaktadır</value>
+    <value>Vehicle does not exist in warehouse</value>
   </data>
   <data name="ERR_LOCATIONEXISTS" xml:space="preserve">
-    <value>Adres mevcut değil</value>
+    <value>Location does not exist</value>
   </data>
   <data name="ERR_SEGMENT" xml:space="preserve">
-    <value>Depoda var olbayan bölme</value>
+    <value>No such segment in warehouse</value>
   </data>
   <data name="Offline" xml:space="preserve">
-    <value>Çevrimdışı</value>
+    <value>Offline</value>
   </data>
   <data name="Remote" xml:space="preserve">
-    <value>Uzaktan</value>
+    <value>Remote</value>
   </data>
   <data name="Local" xml:space="preserve">
-    <value>Yerel</value>
+    <value>Local</value>
   </data>
   <data name="Alarm" xml:space="preserve">
     <value>Alarm</value>
   </data>
   <data name="Active" xml:space="preserve">
-    <value>Aktif</value>
+    <value>Active</value>
   </data>
   <data name="Ready" xml:space="preserve">
-    <value>Hazır</value>
+    <value>Ready</value>
   </data>
   <data name="LongTermBlock" xml:space="preserve">
-    <value>Bloklu</value>
+    <value>Blocked</value>
   </data>
   <data name="BarcodeShort" xml:space="preserve">
     <value>B</value>
   </data>
   <data name="CMD" xml:space="preserve">
-    <value>Komut</value>
+    <value>Command</value>
   </data>
   <data name="CMDB" xml:space="preserve">
-    <value>Komut Sırası</value>
+    <value>Command buffer</value>
   </data>
   <data name="CMDE" xml:space="preserve">
-    <value>Komutu çalıştır</value>
+    <value>Command execute</value>
   </data>
   <data name="EnumAlarmSeverity_Error" xml:space="preserve">
-    <value>Hata</value>
+    <value>Error</value>
   </data>
   <data name="EnumAlarmSeverity_Info" xml:space="preserve">
-    <value>Bilgi</value>
+    <value>Info</value>
   </data>
   <data name="EnumAlarmSeverity_Warning" xml:space="preserve">
-    <value>Uyarı</value>
+    <value>Warning</value>
   </data>
   <data name="EnumAlarmStatus_Ack" xml:space="preserve">
-    <value>Kabul</value>
+    <value>Ack</value>
   </data>
   <data name="EnumAlarmStatus_Active" xml:space="preserve">
-    <value>Aktif</value>
+    <value>Active</value>
   </data>
   <data name="EnumAlarmStatus_None" xml:space="preserve">
-    <value>Yok</value>
+    <value>None</value>
   </data>
   <data name="EnumAlarmStatus_Removed" xml:space="preserve">
-    <value>Sil</value>
+    <value>Removed</value>
   </data>
   <data name="EnumCommandCommandTask_CancelCommand" xml:space="preserve">
-    <value>Komut İptal</value>
+    <value>Command cancel</value>
   </data>
   <data name="EnumCommandCommandTask_InfoCommand" xml:space="preserve">
-    <value>Komut Bilgi</value>
+    <value>Command info</value>
   </data>
   <data name="EnumCommandSegmentTask_SegmentHome" xml:space="preserve">
-    <value>Bölme Başlangıç Noktası</value>
+    <value>Segment Homing</value>
   </data>
   <data name="EnumCommandSegmentTask_SegmentInfo" xml:space="preserve">
-    <value>Bölme Bilgi</value>
+    <value>Segment info</value>
   </data>
   <data name="EnumCommandSegmentTask_SegmentOff" xml:space="preserve">
-    <value>Bölme Kapalı</value>
+    <value>Segment off</value>
   </data>
   <data name="EnumCommandSegmentTask_SegmentOn" xml:space="preserve">
-    <value>Bölme Açık</value>
+    <value>Segment on</value>
   </data>
   <data name="EnumCommandSegmentTask_SegmentReset" xml:space="preserve">
-    <value>Bölme Sıfırla</value>
+    <value>Segment reset</value>
   </data>
   <data name="EnumCommandStatus_Active" xml:space="preserve">
-    <value>Aktif (AC)</value>
+    <value>Active</value>
   </data>
   <data name="EnumCommandStatus_Canceled" xml:space="preserve">
-    <value>İptal (CA)</value>
+    <value>Canceled</value>
   </data>
   <data name="EnumCommandStatus_Finished" xml:space="preserve">
-    <value>Bitiş (FI)</value>
+    <value>Finished</value>
+  </data>
+  <data name="EnumCommandStatus_Waiting" xml:space="preserve">
+    <value>Waiting</value>
   </data>
   <data name="EnumCommandTask_CancelCommand" xml:space="preserve">
-    <value>Komut İptal</value>
+    <value>Command cancel</value>
   </data>
   <data name="EnumCommandTask_CreateMaterial" xml:space="preserve">
-    <value>Malzeme Oluştur</value>
+    <value>Material create</value>
   </data>
   <data name="EnumCommandTask_DeleteMaterial" xml:space="preserve">
-    <value>Malzeme sil</value>
+    <value>Material delete</value>
   </data>
   <data name="EnumCommandTask_InfoCommand" xml:space="preserve">
-    <value>Komut Bilgi</value>
+    <value>Command info</value>
   </data>
   <data name="EnumCommandTask_InfoMaterial" xml:space="preserve">
-    <value>Malzeme Bilgi</value>
+    <value>Material info</value>
   </data>
   <data name="EnumCommandTask_Move" xml:space="preserve">
-    <value>Malzeme Hareketi</value>
+    <value>Material move</value>
   </data>
   <data name="EnumCommandTask_SegmentHome" xml:space="preserve">
-    <value>Bölme Başlangıç</value>
+    <value>Segment homing</value>
   </data>
   <data name="EnumCommandTask_SegmentInfo" xml:space="preserve">
-    <value>Bölme Bilgi</value>
+    <value>Segment info</value>
   </data>
   <data name="EnumCommandTask_SegmentOff" xml:space="preserve">
-    <value>Bölme Kapa</value>
+    <value>Segment off</value>
   </data>
   <data name="EnumCommandTask_SegmentOn" xml:space="preserve">
-    <value>Bölme Aç</value>
+    <value>Segment on</value>
   </data>
   <data name="EnumCommandTask_SegmentReset" xml:space="preserve">
-    <value>Bölme Sıfırla</value>
+    <value>Segment reset</value>
   </data>
   <data name="EnumCommandTUTask_CreateMaterial" xml:space="preserve">
-    <value>Malzeme Oluştur</value>
+    <value>Material create</value>
   </data>
   <data name="EnumCommandTUTask_DeleteMaterial" xml:space="preserve">
-    <value>Malzeme Sil</value>
+    <value>Material delete</value>
   </data>
   <data name="EnumCommandTUTask_InfoMaterial" xml:space="preserve">
-    <value>Malzeme Bilgi</value>
+    <value>Material info</value>
   </data>
   <data name="EnumCommandTUTask_Move" xml:space="preserve">
-    <value>Malzeme Hareket</value>
+    <value>Material move</value>
   </data>
   <data name="EnumEventSeverity_Error" xml:space="preserve">
-    <value>Hata</value>
+    <value>Error</value>
   </data>
   <data name="EnumEventSeverity_Event" xml:space="preserve">
-    <value>Etkinlik</value>
+    <value>Event</value>
   </data>
   <data name="EnumEventType_Command" xml:space="preserve">
-    <value>Komut</value>
+    <value>Command</value>
   </data>
   <data name="EnumEventType_Exception" xml:space="preserve">
-    <value>İstisna</value>
+    <value>Exception</value>
   </data>
   <data name="EnumEventType_Material" xml:space="preserve">
-    <value>Malzeme</value>
+    <value>Material</value>
   </data>
   <data name="EnumEventType_Program" xml:space="preserve">
     <value>Program</value>
@@ -592,103 +595,103 @@
     <value>WMS</value>
   </data>
   <data name="EnumMovementTask_Create" xml:space="preserve">
-    <value>Oluştur</value>
+    <value>Create</value>
   </data>
   <data name="EnumMovementTask_Delete" xml:space="preserve">
-    <value>Sil</value>
+    <value>Delete</value>
   </data>
   <data name="EnumMovementTask_Move" xml:space="preserve">
-    <value>HAreket</value>
+    <value>Move</value>
   </data>
   <data name="EnumSimpleCommandConveyorTask_Cancel" xml:space="preserve">
-    <value>İptal</value>
+    <value>Cancel</value>
   </data>
   <data name="EnumSimpleCommandConveyorTask_Create" xml:space="preserve">
-    <value>Oluştur</value>
+    <value>Create</value>
   </data>
   <data name="EnumSimpleCommandConveyorTask_Delete" xml:space="preserve">
-    <value>Sil </value>
+    <value>Delete</value>
   </data>
   <data name="EnumSimpleCommandConveyorTask_Move" xml:space="preserve">
-    <value>Hareket</value>
+    <value>Move</value>
   </data>
   <data name="EnumSimpleCommandCraneTask_Cancel" xml:space="preserve">
-    <value>İptal</value>
+    <value>Cancel</value>
   </data>
   <data name="EnumSimpleCommandCraneTask_Create" xml:space="preserve">
-    <value>Oluştur</value>
+    <value>Create</value>
   </data>
   <data name="EnumSimpleCommandCraneTask_Delete" xml:space="preserve">
-    <value>Sil</value>
+    <value>Delete</value>
   </data>
   <data name="EnumSimpleCommandCraneTask_Drop" xml:space="preserve">
-    <value>Çıkarma</value>
+    <value>Drop</value>
   </data>
   <data name="EnumSimpleCommandCraneTask_Move" xml:space="preserve">
-    <value>Hareket</value>
+    <value>Move</value>
   </data>
   <data name="EnumSimpleCommandCraneTask_Pick" xml:space="preserve">
-    <value>Toplama</value>
+    <value>Pick</value>
   </data>
   <data name="EnumSimpleCommandSegmentTask_AutoOff" xml:space="preserve">
-    <value>Bölme kapalı</value>
+    <value>Segment off</value>
   </data>
   <data name="EnumSimpleCommandSegmentTask_AutoOn" xml:space="preserve">
-    <value>Bölme açık</value>
+    <value>Segment on</value>
   </data>
   <data name="EnumSimpleCommandSegmentTask_Info" xml:space="preserve">
-    <value>Bilgi</value>
+    <value>Info</value>
   </data>
   <data name="EnumSimpleCommandSegmentTask_Reset" xml:space="preserve">
-    <value>Sıfırla</value>
+    <value>Reset</value>
   </data>
   <data name="EnumSimpleCommandStatus_Canceled" xml:space="preserve">
-    <value>İptal (CA)</value>
+    <value>Canceled</value>
   </data>
   <data name="EnumSimpleCommandStatus_Finished" xml:space="preserve">
-    <value>Bitti (FI)</value>
+    <value>Finished</value>
   </data>
   <data name="EnumSimpleCommandStatus_InPlc" xml:space="preserve">
-    <value>PLC de (PL)</value>
+    <value>In PLC</value>
   </data>
   <data name="EnumSimpleCommandStatus_NotActive" xml:space="preserve">
-    <value>Aktif değil (NO)</value>
+    <value>Not active</value>
   </data>
   <data name="EnumSimpleCommandStatus_Written" xml:space="preserve">
-    <value>Yaz (WR)</value>
+    <value>Written</value>
   </data>
   <data name="EnumSimpleCommandTask_AutoOff" xml:space="preserve">
-    <value>Bölme kapalı</value>
+    <value>Segment off</value>
   </data>
   <data name="EnumSimpleCommandTask_AutoOn" xml:space="preserve">
-    <value>Bölme açık</value>
+    <value>Segment on</value>
   </data>
   <data name="EnumSimpleCommandTask_Cancel" xml:space="preserve">
-    <value>İptal</value>
+    <value>Cancel</value>
   </data>
   <data name="EnumSimpleCommandTask_Create" xml:space="preserve">
-    <value>Oluştur</value>
+    <value>Create</value>
   </data>
   <data name="EnumSimpleCommandTask_Delete" xml:space="preserve">
-    <value>Sil</value>
+    <value>Delete</value>
   </data>
   <data name="EnumSimpleCommandTask_Drop" xml:space="preserve">
-    <value>Çıkarma</value>
+    <value>Drop</value>
   </data>
   <data name="EnumSimpleCommandTask_Info" xml:space="preserve">
-    <value>Bilgi</value>
+    <value>Info</value>
   </data>
   <data name="EnumSimpleCommandTask_Move" xml:space="preserve">
-    <value>Hareket</value>
+    <value>Move</value>
   </data>
   <data name="EnumSimpleCommandTask_Pick" xml:space="preserve">
-    <value>Topla</value>
+    <value>Pick</value>
   </data>
   <data name="EnumSimpleCommandTask_Reset" xml:space="preserve">
-    <value>Sıfırla</value>
+    <value>Reset</value>
   </data>
   <data name="ERR_RANGE" xml:space="preserve">
-    <value>Değer sınırlandırması</value>
+    <value>Value must be in range</value>
   </data>
   <data name="LocationShort" xml:space="preserve">
     <value>L</value>
@@ -697,7 +700,7 @@
     <value>Mode</value>
   </data>
   <data name="SM" xml:space="preserve">
-    <value>Durum makinesi</value>
+    <value>State machine</value>
   </data>
   <data name="StateMachineShort" xml:space="preserve">
     <value>S</value>
@@ -715,13 +718,13 @@
     <value>i2MFCS</value>
   </data>
   <data name="Aligned" xml:space="preserve">
-    <value>Hizalı</value>
+    <value>Aligned</value>
   </data>
   <data name="Bottom" xml:space="preserve">
-    <value>Taban</value>
+    <value>Bottom</value>
   </data>
   <data name="Buffer" xml:space="preserve">
-    <value>Kuyruk</value>
+    <value>Buffer</value>
   </data>
   <data name="C101" xml:space="preserve">
     <value>C101</value>
@@ -742,61 +745,61 @@
     <value>C502</value>
   </data>
   <data name="Drive_ready" xml:space="preserve">
-    <value>Sürücü Hazır</value>
+    <value>Drive ready</value>
   </data>
   <data name="Execute" xml:space="preserve">
-    <value>İşle</value>
+    <value>Execute</value>
   </data>
   <data name="Forklift" xml:space="preserve">
     <value>Forklift</value>
   </data>
   <data name="Logical" xml:space="preserve">
-    <value>Mantıksal</value>
+    <value>Logical</value>
   </data>
   <data name="Middle" xml:space="preserve">
-    <value>Orta</value>
+    <value>Middle</value>
   </data>
   <data name="Occupied" xml:space="preserve">
-    <value>Dolu</value>
+    <value>Occupied</value>
   </data>
   <data name="Physical" xml:space="preserve">
-    <value>Fiziki</value>
+    <value>Physical</value>
   </data>
   <data name="Positions" xml:space="preserve">
-    <value>Pozisyon</value>
+    <value>Positions</value>
   </data>
   <data name="Sensors" xml:space="preserve">
     <value>Sensors</value>
   </data>
   <data name="State_machine" xml:space="preserve">
-    <value>Durum Makinesi</value>
+    <value>State machine</value>
   </data>
   <data name="Tasks" xml:space="preserve">
-    <value>Görev</value>
+    <value>Tasks</value>
   </data>
   <data name="Top" xml:space="preserve">
-    <value>Tepe</value>
+    <value>Top</value>
   </data>
   <data name="Database_management" xml:space="preserve">
-    <value>Database Yönetimi</value>
+    <value>Database management</value>
   </data>
   <data name="ReduceDB" xml:space="preserve">
-    <value>Databasi Düşür</value>
+    <value>Reduce database</value>
   </data>
   <data name="Refresh" xml:space="preserve">
-    <value>Tazele</value>
+    <value>Refresh</value>
   </data>
   <data name="User" xml:space="preserve">
-    <value>Kullanıcı</value>
+    <value>User</value>
   </data>
   <data name="Reason" xml:space="preserve">
-    <value>Sonuç</value>
+    <value>Reason</value>
   </data>
   <data name="EnumCommandReason_LocationEmpty" xml:space="preserve">
-    <value>Yer Boş</value>
+    <value>Location empty</value>
   </data>
   <data name="EnumCommandReason_LocationFull" xml:space="preserve">
-    <value>Yer Dolu</value>
+    <value>Location full</value>
   </data>
   <data name="EnumCommandReason_MFCS" xml:space="preserve">
     <value>MFCS</value>
@@ -811,10 +814,10 @@
     <value>PLC</value>
   </data>
   <data name="ERR_REASON" xml:space="preserve">
-    <value>Algılanamayan durum</value>
+    <value>No reason for deletion</value>
   </data>
   <data name="ALARM_00001" xml:space="preserve">
-    <value>MFC çakışma (segment T00)</value>
+    <value>MFC missmatch (segment T00)</value>
   </data>
   <data name="ALARM_00002" xml:space="preserve">
     <value>segment1_01</value>
@@ -841,19 +844,19 @@
     <value>segment1_08</value>
   </data>
   <data name="ALARM_00011" xml:space="preserve">
-    <value>T001 malzeme karışıklığı</value>
+    <value>T001 material missmatch</value>
   </data>
   <data name="ALARM_00012" xml:space="preserve">
-    <value>T001 konveyor çok uzun çalıştı</value>
+    <value>T001 running too long conveyor</value>
   </data>
   <data name="ALARM_00013" xml:space="preserve">
-    <value>T001 dikey eksen çok uzun çalıştı</value>
+    <value>T001 running too long hoist</value>
   </data>
   <data name="ALARM_00014" xml:space="preserve">
-    <value>T001 limit anahtarı</value>
+    <value>T001 limit switch</value>
   </data>
   <data name="ALARM_00015" xml:space="preserve">
-    <value>T001 hazır değil (25Q1)</value>
+    <value>T001 not ready (25Q1)</value>
   </data>
   <data name="ALARM_00016" xml:space="preserve">
     <value>Spare 15</value>
@@ -871,22 +874,22 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_00021" xml:space="preserve">
-    <value>T002 malzeme karışıklığı</value>
+    <value>T002 material missmatch</value>
   </data>
   <data name="ALARM_00022" xml:space="preserve">
-    <value>T002 konveyor çok uzun çalıştı</value>
+    <value>T002 running too long conveyor</value>
   </data>
   <data name="ALARM_00023" xml:space="preserve">
-    <value>T002 dikey eksen uzun çalıştı</value>
+    <value>T002 running too long hoist</value>
   </data>
   <data name="ALARM_00024" xml:space="preserve">
     <value>T002 limit switch</value>
   </data>
   <data name="ALARM_00025" xml:space="preserve">
-    <value>T002 hazır değil (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frekans invertörü)</value>
+    <value>T002 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter)</value>
   </data>
   <data name="ALARM_00101" xml:space="preserve">
-    <value>MFC çakışma (segment T10)</value>
+    <value>MFC missmatch (segment T10)</value>
   </data>
   <data name="ALARM_00102" xml:space="preserve">
     <value>segment3_01</value>
@@ -913,19 +916,19 @@
     <value>segment3_08</value>
   </data>
   <data name="ALARM_00111" xml:space="preserve">
-    <value>T010 malzeme çakışması</value>
+    <value>T010 material missmatch</value>
   </data>
   <data name="ALARM_00112" xml:space="preserve">
-    <value>T010 Konveyor çok uzun çalıştı</value>
+    <value>T010 running too long conveyor</value>
   </data>
   <data name="ALARM_00113" xml:space="preserve">
-    <value>T010 çok uzun çalıştı</value>
+    <value>T010 running too long hoist</value>
   </data>
   <data name="ALARM_00114" xml:space="preserve">
     <value>T010 limit switch</value>
   </data>
   <data name="ALARM_00115" xml:space="preserve">
-    <value>T010 hazır değil (46Q1)</value>
+    <value>T010 not ready (46Q1)</value>
   </data>
   <data name="ALARM_00116" xml:space="preserve">
     <value>Spare 15</value>
@@ -943,19 +946,19 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_00121" xml:space="preserve">
-    <value>T011 malzeme karışması</value>
+    <value>T011 material missmatch</value>
   </data>
   <data name="ALARM_00122" xml:space="preserve">
-    <value>T011 Konveyor çok uzun çalıştı</value>
+    <value>T011 running too long conveyor</value>
   </data>
   <data name="ALARM_00123" xml:space="preserve">
-    <value>T011 çok uzun çalıştı</value>
+    <value>T011 running too long hoist</value>
   </data>
   <data name="ALARM_00124" xml:space="preserve">
     <value>T011 limit switch</value>
   </data>
   <data name="ALARM_00125" xml:space="preserve">
-    <value>T011 hazır değil (48Q1, 49F1, frekans invertörü)</value>
+    <value>T011 not ready (48Q1, 49F1, frequency inverter)</value>
   </data>
   <data name="ALARM_00126" xml:space="preserve">
     <value>Spare 25</value>
@@ -973,22 +976,22 @@
     <value>Spare 29</value>
   </data>
   <data name="ALARM_00131" xml:space="preserve">
-    <value>T012 malzeme karışması</value>
+    <value>T012 material missmatch</value>
   </data>
   <data name="ALARM_00132" xml:space="preserve">
-    <value>T012 Konveyor çok uzun çalıştı</value>
+    <value>T012 running too long conveyor</value>
   </data>
   <data name="ALARM_00133" xml:space="preserve">
-    <value>T012 çok uzun çalıştı</value>
+    <value>T012 running too long hoist</value>
   </data>
   <data name="ALARM_00134" xml:space="preserve">
     <value>T012 limit switch</value>
   </data>
   <data name="ALARM_00135" xml:space="preserve">
-    <value>T012 hazır değil (51Q1, 52F1, 53Q1, 54Q1, frekans invertörü)</value>
+    <value>T012 not ready (51Q1, 52F1, 53Q1, 54Q1, frequency inverter)</value>
   </data>
   <data name="ALARM_00201" xml:space="preserve">
-    <value>MFC çakışma(segment T02)</value>
+    <value>MFC missmatch (segment T02)</value>
   </data>
   <data name="ALARM_00202" xml:space="preserve">
     <value>segment10_01</value>
@@ -1015,19 +1018,19 @@
     <value>segment10_08</value>
   </data>
   <data name="ALARM_00211" xml:space="preserve">
-    <value>T021 malzeme karışması</value>
+    <value>T021 material missmatch</value>
   </data>
   <data name="ALARM_00212" xml:space="preserve">
-    <value>T021 Konveyor çok uzun çalıştı</value>
+    <value>T021 running too long conveyor</value>
   </data>
   <data name="ALARM_00213" xml:space="preserve">
-    <value>T021 çok uzun çalıştı</value>
+    <value>T021 running too long hoist</value>
   </data>
   <data name="ALARM_00214" xml:space="preserve">
     <value>T021 limit switch</value>
   </data>
   <data name="ALARM_00215" xml:space="preserve">
-    <value>T021 hazır değil (73Q1, 74Q1, 75F1, 76Q1, frekans invertörü)</value>
+    <value>T021 not ready (73Q1, 74Q1, 75F1, 76Q1, frequency inverter)</value>
   </data>
   <data name="ALARM_00216" xml:space="preserve">
     <value>Spare 15</value>
@@ -1045,19 +1048,19 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_00221" xml:space="preserve">
-    <value>T022 malzeme karışması</value>
+    <value>T022 material missmatch</value>
   </data>
   <data name="ALARM_00222" xml:space="preserve">
-    <value>T022 Konveyor çok uzun çalıştı</value>
+    <value>T022 running too long conveyor</value>
   </data>
   <data name="ALARM_00223" xml:space="preserve">
-    <value>T022 çok uzun çalıştı</value>
+    <value>T022 running too long hoist</value>
   </data>
   <data name="ALARM_00224" xml:space="preserve">
     <value>T022 limit switch</value>
   </data>
   <data name="ALARM_00225" xml:space="preserve">
-    <value>T022 hazır değil (77Q1, 78Q1, 79F1, 80Q1, frekans invertörü)</value>
+    <value>T022 not ready (77Q1, 78Q1, 79F1, 80Q1, frequency inverter)</value>
   </data>
   <data name="ALARM_00226" xml:space="preserve">
     <value>Spare 25</value>
@@ -1075,19 +1078,19 @@
     <value>Spare 29</value>
   </data>
   <data name="ALARM_00231" xml:space="preserve">
-    <value>T023 malzeme karışması</value>
+    <value>T023 material missmatch</value>
   </data>
   <data name="ALARM_00232" xml:space="preserve">
-    <value>T023 Konveyor çok uzun çalıştı</value>
+    <value>T023 running too long conveyor</value>
   </data>
   <data name="ALARM_00233" xml:space="preserve">
-    <value>T023 çok uzun çalıştı</value>
+    <value>T023 running too long hoist</value>
   </data>
   <data name="ALARM_00234" xml:space="preserve">
     <value>T023 limit switch</value>
   </data>
   <data name="ALARM_00235" xml:space="preserve">
-    <value>T023 hazır değil (81Q1, 82F1)</value>
+    <value>T023 not ready (81Q1, 82F1)</value>
   </data>
   <data name="ALARM_00236" xml:space="preserve">
     <value>Spare 35</value>
@@ -1105,22 +1108,22 @@
     <value>Spare 39</value>
   </data>
   <data name="ALARM_00241" xml:space="preserve">
-    <value>T024 malzeme karışması</value>
+    <value>T024 material missmatch</value>
   </data>
   <data name="ALARM_00242" xml:space="preserve">
-    <value>T024 Konveyor çok uzun çalıştı</value>
+    <value>T024 running too long conveyor</value>
   </data>
   <data name="ALARM_00243" xml:space="preserve">
-    <value>T024 çok uzun çalıştı</value>
+    <value>T024 running too long hoist</value>
   </data>
   <data name="ALARM_00244" xml:space="preserve">
     <value>T024 limit switch</value>
   </data>
   <data name="ALARM_00245" xml:space="preserve">
-    <value>T024 hazır değil (83Q1, 84F1)</value>
+    <value>T024 not ready (83Q1, 84F1)</value>
   </data>
   <data name="ALARM_00301" xml:space="preserve">
-    <value>MFC çakışma(segment T03)</value>
+    <value>MFC missmatch (segment T03)</value>
   </data>
   <data name="ALARM_00302" xml:space="preserve">
     <value>segment2_01</value>
@@ -1147,19 +1150,19 @@
     <value>segment2_08</value>
   </data>
   <data name="ALARM_00311" xml:space="preserve">
-    <value>T004 malzeme karışması</value>
+    <value>T004 material missmatch</value>
   </data>
   <data name="ALARM_00312" xml:space="preserve">
-    <value>T004 Konveyor çok uzun çalıştı</value>
+    <value>T004 running too long conveyor</value>
   </data>
   <data name="ALARM_00313" xml:space="preserve">
-    <value>T004 çok uzun çalıştı</value>
+    <value>T004 running too long hoist</value>
   </data>
   <data name="ALARM_00314" xml:space="preserve">
     <value>T004 limit switch</value>
   </data>
   <data name="ALARM_00315" xml:space="preserve">
-    <value>T004 hazır değil (39Q1, 40Q1, 41F1, 42Q1, frekans invertörü)</value>
+    <value>T004 not ready (39Q1, 40Q1, 41F1, 42Q1, frequency inverter)</value>
   </data>
   <data name="ALARM_00316" xml:space="preserve">
     <value>Spare 15</value>
@@ -1177,22 +1180,22 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_00321" xml:space="preserve">
-    <value>T005 malzeme karışması</value>
+    <value>T005 material missmatch</value>
   </data>
   <data name="ALARM_00322" xml:space="preserve">
-    <value>T005 Konveyor çok uzun çalıştı</value>
+    <value>T005 running too long conveyor</value>
   </data>
   <data name="ALARM_00323" xml:space="preserve">
-    <value>T005 çok uzun çalıştı</value>
+    <value>T005 running too long hoist</value>
   </data>
   <data name="ALARM_00324" xml:space="preserve">
     <value>T005 limit switch</value>
   </data>
   <data name="ALARM_00325" xml:space="preserve">
-    <value>T002 hazır değil (43Q1, 44F1, frekans invertörü)</value>
+    <value>T002 not ready (43Q1, 44F1, frequency inverter)</value>
   </data>
   <data name="ALARM_01101" xml:space="preserve">
-    <value>MFC çakışma(segment T11)</value>
+    <value>MFC missmatch (segment T11)</value>
   </data>
   <data name="ALARM_01102" xml:space="preserve">
     <value>segment4_01</value>
@@ -1219,19 +1222,19 @@
     <value>segment4_08</value>
   </data>
   <data name="ALARM_01111" xml:space="preserve">
-    <value>T003 malzeme karışması</value>
+    <value>T003 material missmatch</value>
   </data>
   <data name="ALARM_01112" xml:space="preserve">
-    <value>T003 Konveyor çok uzun çalıştı</value>
+    <value>T003 running too long conveyor</value>
   </data>
   <data name="ALARM_01113" xml:space="preserve">
-    <value>T003 çok uzun çalıştı</value>
+    <value>T003 running too long hoist</value>
   </data>
   <data name="ALARM_01114" xml:space="preserve">
     <value>T003 limit switch</value>
   </data>
   <data name="ALARM_01115" xml:space="preserve">
-    <value>T003 hazır değil (35Q1, 36Q1, 37F1, 38Q1, frekans invertörü)</value>
+    <value>T003 not ready (35Q1, 36Q1, 37F1, 38Q1, frequency inverter)</value>
   </data>
   <data name="ALARM_01116" xml:space="preserve">
     <value>Spare 15</value>
@@ -1249,19 +1252,19 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_01121" xml:space="preserve">
-    <value>T110 malzeme karışması</value>
+    <value>T110 material missmatch</value>
   </data>
   <data name="ALARM_01122" xml:space="preserve">
-    <value>T110 Konveyor çok uzun çalıştı</value>
+    <value>T110 running too long conveyor</value>
   </data>
   <data name="ALARM_01123" xml:space="preserve">
-    <value>T110 çok uzun çalıştı</value>
+    <value>T110 running too long hoist</value>
   </data>
   <data name="ALARM_01124" xml:space="preserve">
     <value>T110 limit switch</value>
   </data>
   <data name="ALARM_01125" xml:space="preserve">
-    <value>T110 hazır değil (55Q1)</value>
+    <value>T110 not ready (55Q1)</value>
   </data>
   <data name="ALARM_01126" xml:space="preserve">
     <value>Spare 25</value>
@@ -1279,19 +1282,19 @@
     <value>Spare 29</value>
   </data>
   <data name="ALARM_01131" xml:space="preserve">
-    <value>T111 malzeme karışması</value>
+    <value>T111 material missmatch</value>
   </data>
   <data name="ALARM_01132" xml:space="preserve">
-    <value>T111 Konveyor çok uzun çalıştı</value>
+    <value>T111 running too long conveyor</value>
   </data>
   <data name="ALARM_01133" xml:space="preserve">
-    <value>T111 çok uzun çalıştı</value>
+    <value>T111 running too long hoist</value>
   </data>
   <data name="ALARM_01134" xml:space="preserve">
     <value>T111 limit switch</value>
   </data>
   <data name="ALARM_01135" xml:space="preserve">
-    <value>T111 hazır değil (57Q1)</value>
+    <value>T111 not ready (57Q1)</value>
   </data>
   <data name="ALARM_01136" xml:space="preserve">
     <value>Spare 35</value>
@@ -1309,22 +1312,22 @@
     <value>Spare 39</value>
   </data>
   <data name="ALARM_01141" xml:space="preserve">
-    <value>T112 malzeme karışması</value>
+    <value>T112 material missmatch</value>
   </data>
   <data name="ALARM_01142" xml:space="preserve">
-    <value>T112 Konveyor çok uzun çalıştı</value>
+    <value>T112 running too long conveyor</value>
   </data>
   <data name="ALARM_01143" xml:space="preserve">
-    <value>T112 çok uzun çalıştı</value>
+    <value>T112 running too long hoist</value>
   </data>
   <data name="ALARM_01144" xml:space="preserve">
     <value>T112 limit switch</value>
   </data>
   <data name="ALARM_01145" xml:space="preserve">
-    <value>T112 hazır değil (58Q1, 59F1, frekans invertörü)</value>
+    <value>T112 not ready (58Q1, 59F1, frequency inverter)</value>
   </data>
   <data name="ALARM_01201" xml:space="preserve">
-    <value>MFC çakışma(segment T12)</value>
+    <value>MFC missmatch (segment T12)</value>
   </data>
   <data name="ALARM_01202" xml:space="preserve">
     <value>segment5_01</value>
@@ -1351,19 +1354,19 @@
     <value>segment5_08</value>
   </data>
   <data name="ALARM_01211" xml:space="preserve">
-    <value>T121 malzeme karışması</value>
+    <value>T121 material missmatch</value>
   </data>
   <data name="ALARM_01212" xml:space="preserve">
-    <value>T121 Konveyor çok uzun çalıştı</value>
+    <value>T121 running too long conveyor</value>
   </data>
   <data name="ALARM_01213" xml:space="preserve">
-    <value>T121 çok uzun çalıştı</value>
+    <value>T121 running too long hoist</value>
   </data>
   <data name="ALARM_01214" xml:space="preserve">
     <value>T121 limit switch</value>
   </data>
   <data name="ALARM_01215" xml:space="preserve">
-    <value>T121 hazır değil (61Q1)</value>
+    <value>T121 not ready (61Q1)</value>
   </data>
   <data name="ALARM_01216" xml:space="preserve">
     <value>Spare 15</value>
@@ -1381,22 +1384,22 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_01221" xml:space="preserve">
-    <value>T122 malzeme karışması</value>
+    <value>T122 material missmatch</value>
   </data>
   <data name="ALARM_01222" xml:space="preserve">
-    <value>T122 Konveyor çok uzun çalıştı</value>
+    <value>T122 running too long conveyor</value>
   </data>
   <data name="ALARM_01223" xml:space="preserve">
-    <value>T122 çok uzun çalıştı</value>
+    <value>T122 running too long hoist</value>
   </data>
   <data name="ALARM_01224" xml:space="preserve">
     <value>T122 limit switch</value>
   </data>
   <data name="ALARM_01225" xml:space="preserve">
-    <value>T122 hazır değil (62Q1)</value>
+    <value>T122 not ready (62Q1)</value>
   </data>
   <data name="ALARM_02101" xml:space="preserve">
-    <value>MFC çakışma(segment T21)</value>
+    <value>MFC missmatch (segment T21)</value>
   </data>
   <data name="ALARM_02102" xml:space="preserve">
     <value>segment6_01</value>
@@ -1423,19 +1426,19 @@
     <value>segment6_08</value>
   </data>
   <data name="ALARM_02111" xml:space="preserve">
-    <value>T211 malzeme karışması</value>
+    <value>T211 material missmatch</value>
   </data>
   <data name="ALARM_02112" xml:space="preserve">
-    <value>T211 Konveyor çok uzun çalıştı</value>
+    <value>T211 running too long conveyor</value>
   </data>
   <data name="ALARM_02113" xml:space="preserve">
-    <value>T211 çok uzun çalıştı</value>
+    <value>T211 running too long hoist</value>
   </data>
   <data name="ALARM_02114" xml:space="preserve">
     <value>T211 limit switch</value>
   </data>
   <data name="ALARM_02115" xml:space="preserve">
-    <value>T211 hazır değil (63Q1)</value>
+    <value>T211 not ready (63Q1)</value>
   </data>
   <data name="ALARM_02116" xml:space="preserve">
     <value>Spare 15</value>
@@ -1453,22 +1456,22 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_02121" xml:space="preserve">
-    <value>T212 malzeme karışması</value>
+    <value>T212 material missmatch</value>
   </data>
   <data name="ALARM_02122" xml:space="preserve">
-    <value>T212 Konveyor çok uzun çalıştı</value>
+    <value>T212 running too long conveyor</value>
   </data>
   <data name="ALARM_02123" xml:space="preserve">
-    <value>T212 çok uzun çalıştı</value>
+    <value>T212 running too long hoist</value>
   </data>
   <data name="ALARM_02124" xml:space="preserve">
     <value>T212 limit switch</value>
   </data>
   <data name="ALARM_02125" xml:space="preserve">
-    <value>T212 hazır değil (64Q1, 65F1, frekans invertörü)</value>
+    <value>T212 not ready (64Q1, 65F1, frequency inverter)</value>
   </data>
   <data name="ALARM_02201" xml:space="preserve">
-    <value>MFC çakışma(segment T22)</value>
+    <value>MFC missmatch (segment T22)</value>
   </data>
   <data name="ALARM_02202" xml:space="preserve">
     <value>segment7_01</value>
@@ -1495,19 +1498,19 @@
     <value>segment7_08</value>
   </data>
   <data name="ALARM_02211" xml:space="preserve">
-    <value>T221 malzeme karışması</value>
+    <value>T221 material missmatch</value>
   </data>
   <data name="ALARM_02212" xml:space="preserve">
-    <value>T221konveyor çok uzun çalıştı</value>
+    <value>T221 running too long conveyor</value>
   </data>
   <data name="ALARM_02213" xml:space="preserve">
-    <value>T221 çok uzun çalıştı</value>
+    <value>T221 running too long hoist</value>
   </data>
   <data name="ALARM_02214" xml:space="preserve">
     <value>T221 limit switch</value>
   </data>
   <data name="ALARM_02215" xml:space="preserve">
-    <value>T221 hazır değil (67Q1)</value>
+    <value>T221 not ready (67Q1)</value>
   </data>
   <data name="ALARM_02216" xml:space="preserve">
     <value>Spare 15</value>
@@ -1525,22 +1528,22 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_02221" xml:space="preserve">
-    <value>T222 malzeme karışması</value>
+    <value>T222 material missmatch</value>
   </data>
   <data name="ALARM_02222" xml:space="preserve">
-    <value>T222 konveyor çok uzun çalıştı</value>
+    <value>T222 running too long conveyor</value>
   </data>
   <data name="ALARM_02223" xml:space="preserve">
-    <value>T222 çok uzun çalıştı</value>
+    <value>T222 running too long hoist</value>
   </data>
   <data name="ALARM_02224" xml:space="preserve">
     <value>T222 limit switch</value>
   </data>
   <data name="ALARM_02225" xml:space="preserve">
-    <value>T222 hazır değil (68Q1)</value>
+    <value>T222 not ready (68Q1)</value>
   </data>
   <data name="ALARM_03101" xml:space="preserve">
-    <value>MFC çakışma(segment T31)</value>
+    <value>MFC missmatch (segment T31)</value>
   </data>
   <data name="ALARM_03102" xml:space="preserve">
     <value>segment8_01</value>
@@ -1567,19 +1570,19 @@
     <value>segment8_08</value>
   </data>
   <data name="ALARM_03111" xml:space="preserve">
-    <value>T311 malzeme karışması</value>
+    <value>T311 material missmatch</value>
   </data>
   <data name="ALARM_03112" xml:space="preserve">
-    <value>T311 konveyor çok uzun çalıştı</value>
+    <value>T311 running too long conveyor</value>
   </data>
   <data name="ALARM_03113" xml:space="preserve">
-    <value>T311 çok uzun çalıştı</value>
+    <value>T311 running too long hoist</value>
   </data>
   <data name="ALARM_03114" xml:space="preserve">
     <value>T311 limit switch</value>
   </data>
   <data name="ALARM_03115" xml:space="preserve">
-    <value>T311 hazır değil (69Q1)</value>
+    <value>T311 not ready (69Q1)</value>
   </data>
   <data name="ALARM_03116" xml:space="preserve">
     <value>Spare 15</value>
@@ -1597,22 +1600,22 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_03121" xml:space="preserve">
-    <value>T312 malzeme karışması</value>
+    <value>T312 material missmatch</value>
   </data>
   <data name="ALARM_03122" xml:space="preserve">
-    <value>T312 konveyor çok uzun çalıştı</value>
+    <value>T312 running too long conveyor</value>
   </data>
   <data name="ALARM_03123" xml:space="preserve">
-    <value>T312 çok uzun çalıştı</value>
+    <value>T312 running too long hoist</value>
   </data>
   <data name="ALARM_03124" xml:space="preserve">
     <value>T312 limit switch</value>
   </data>
   <data name="ALARM_03125" xml:space="preserve">
-    <value>T312 hazır değil (70Q1, 71F1, frekans invertörü)</value>
+    <value>T312 not ready (70Q1, 71F1, frequency inverter)</value>
   </data>
   <data name="ALARM_03201" xml:space="preserve">
-    <value>MFC çakışma(segment T32)</value>
+    <value>MFC missmatch (segment T32)</value>
   </data>
   <data name="ALARM_03202" xml:space="preserve">
     <value>segment9_01</value>
@@ -1639,19 +1642,19 @@
     <value>segment9_08</value>
   </data>
   <data name="ALARM_03211" xml:space="preserve">
-    <value>T321 malzeme karışması</value>
+    <value>T321 material missmatch</value>
   </data>
   <data name="ALARM_03212" xml:space="preserve">
-    <value>T321 konveyor çok uzun çalıştı</value>
+    <value>T321 running too long conveyor</value>
   </data>
   <data name="ALARM_03213" xml:space="preserve">
-    <value>T321 çok uzun çalıştı</value>
+    <value>T321 running too long hoist</value>
   </data>
   <data name="ALARM_03214" xml:space="preserve">
     <value>T321 limit switch</value>
   </data>
   <data name="ALARM_03215" xml:space="preserve">
-    <value>T321 hazır değil (85Q1)</value>
+    <value>T321 not ready (85Q1)</value>
   </data>
   <data name="ALARM_03216" xml:space="preserve">
     <value>Spare 15</value>
@@ -1669,25 +1672,25 @@
     <value>Spare 19</value>
   </data>
   <data name="ALARM_03221" xml:space="preserve">
-    <value>T322 malzeme karışması</value>
+    <value>T322 material missmatch</value>
   </data>
   <data name="ALARM_03222" xml:space="preserve">
-    <value>T322 konveyor çok uzun çalıştı</value>
+    <value>T322 running too long conveyor</value>
   </data>
   <data name="ALARM_03223" xml:space="preserve">
-    <value>T322 çok uzun çalıştı</value>
+    <value>T322 running too long hoist</value>
   </data>
   <data name="ALARM_03224" xml:space="preserve">
     <value>T322 limit switch</value>
   </data>
   <data name="ALARM_03225" xml:space="preserve">
-    <value>T322 hazır değil (86Q1)</value>
+    <value>T322 not ready (86Q1)</value>
   </data>
   <data name="ALARM_09901" xml:space="preserve">
-    <value>MFC kuyruk dolu</value>
+    <value>MFC queue full</value>
   </data>
   <data name="ALARM_09902" xml:space="preserve">
-    <value>TCP IP kanal hatası</value>
+    <value>TCP IP chanel fault</value>
   </data>
   <data name="ALARM_09903" xml:space="preserve">
     <value>segment0_02</value>
@@ -1711,22 +1714,22 @@
     <value>segment0_08</value>
   </data>
   <data name="ALARM_09910" xml:space="preserve">
-    <value>faz doğrulama</value>
+    <value>phase alignment</value>
   </data>
   <data name="ALARM_09911" xml:space="preserve">
-    <value>c101 c (2Q1)</value>
+    <value>c101 main switch (2Q1)</value>
   </data>
   <data name="ALARM_09912" xml:space="preserve">
-    <value>c201 ana şalter (3Q1)</value>
+    <value>c201 main switch (3Q1)</value>
   </data>
   <data name="ALARM_09913" xml:space="preserve">
-    <value>c301 ana şalter (4Q1)</value>
+    <value>c301 main switch (4Q1)</value>
   </data>
   <data name="ALARM_09914" xml:space="preserve">
-    <value>c401 ana şalter (7Q1)</value>
+    <value>c401 main switch (7Q1)</value>
   </data>
   <data name="ALARM_09915" xml:space="preserve">
-    <value>c501 ana şalter (8Q1)</value>
+    <value>c501 main switch (8Q1)</value>
   </data>
   <data name="ALARM_09916" xml:space="preserve">
     <value>segment0_15</value>
@@ -1741,19 +1744,19 @@
     <value>segment0_18</value>
   </data>
   <data name="ALARM_09920" xml:space="preserve">
-    <value>konveyor ana şalter (5Q1)</value>
+    <value>conveyor main switch (5Q1)</value>
   </data>
   <data name="ALARM_09921" xml:space="preserve">
-    <value>konveyor 24V (6Q1)</value>
+    <value>conveyor 24V (6Q1)</value>
   </data>
   <data name="ALARM_09922" xml:space="preserve">
-    <value>ana kabin havalandırma(13F2)</value>
+    <value>main cabinet ventialtion (13F2)</value>
   </data>
   <data name="ALARM_09923" xml:space="preserve">
     <value>sensors 24V (14F4)</value>
   </data>
   <data name="ALARM_09924" xml:space="preserve">
-    <value>frekans çevirici 24V (14F5)</value>
+    <value>frequency regulator 24V (14F5)</value>
   </data>
   <data name="ALARM_09925" xml:space="preserve">
     <value>segment0_24</value>
@@ -1771,13 +1774,13 @@
     <value>segment0_28</value>
   </data>
   <data name="ALARM_09930" xml:space="preserve">
-    <value>cp502 sigorta, ana kabin (15F2)</value>
+    <value>cp502 fuse, main cabinet (15F2)</value>
   </data>
   <data name="ALARM_09931" xml:space="preserve">
-    <value>cp502 24V sigorta (124F4)</value>
+    <value>cp502 24V fuse (124F4)</value>
   </data>
   <data name="ALARM_09932" xml:space="preserve">
-    <value>cp502 havalandırma (125F1)</value>
+    <value>cp502 ventilation (125F1)</value>
   </data>
   <data name="ALARM_09933" xml:space="preserve">
     <value>segment0_32</value>
@@ -1801,52 +1804,52 @@
     <value>segment0_38</value>
   </data>
   <data name="ALARM_09940" xml:space="preserve">
-    <value>Dur butonu CP001 (bölüm T00, T03, T10, T11, T12)</value>
+    <value>Stop button CP001 (segment T00, T03, T10, T11, T12)</value>
   </data>
   <data name="ALARM_09941" xml:space="preserve">
-    <value>Güvenlik rölesi hatası (12k1) (bölüm T00, T03, T10) </value>
+    <value>Safety contactor out (12k1) (segment T00, T03, T10) </value>
   </data>
   <data name="ALARM_09942" xml:space="preserve">
-    <value>Dur butonu CP101 (bölüm T11, T12)</value>
+    <value>Stop button CP101 (segment T11, T12)</value>
   </data>
   <data name="ALARM_09943" xml:space="preserve">
-    <value>Güvenlik rölesi hatası (12k2) (bölüm T11, T12)</value>
+    <value>Safety contactor out (12k2) (segment T11, T12)</value>
   </data>
   <data name="ALARM_09944" xml:space="preserve">
-    <value>Dur butonu CP201 (bölüm T21, T22)</value>
+    <value>Stop button CP201 (segment T21, T22)</value>
   </data>
   <data name="ALARM_09945" xml:space="preserve">
-    <value>Dur butonu CP501 (bölüm T21, T22, T31, T02)</value>
+    <value>Stop button CP501 (segment T21, T22, T31, T02)</value>
   </data>
   <data name="ALARM_09946" xml:space="preserve">
-    <value>Güvenlik rölesi hatası (12k3) (bölüm T21, T22) </value>
+    <value>Safety contactor out (12k3) (segment T21, T22) </value>
   </data>
   <data name="ALARM_09947" xml:space="preserve">
-    <value>Dur butonu CP301 (bölüm T31)</value>
+    <value>Stop button CP301 (segment T31)</value>
   </data>
   <data name="ALARM_09948" xml:space="preserve">
-    <value>Güvenlik rölesi hatası (12k4) (bölüm T31)</value>
+    <value>Safety contactor out (12k4) (segment T31)</value>
   </data>
   <data name="ALARM_09949" xml:space="preserve">
-    <value>Dur butonu CP321 (bölüm T32)</value>
+    <value>Stop button CP321 (segment T32)</value>
   </data>
   <data name="ALARM_09950" xml:space="preserve">
-    <value>Güvenlik rölesi hatası (12k6) (bölüm T32)</value>
+    <value>Safety contactor out (12k6) (Segment T32)</value>
   </data>
   <data name="ALARM_09951" xml:space="preserve">
-    <value>Güvenlik rölesi hatası (12k5) (bölüm T02)</value>
+    <value>Safety contactor out (12k5) (Segment T02)</value>
   </data>
   <data name="ALARM_09952" xml:space="preserve">
-    <value>Güvenlik rölesi hatası (12k5) (bölüm T21, T22)</value>
+    <value>Stop button CP401 (segment T21, T22)</value>
   </data>
   <data name="ALARM_09953" xml:space="preserve">
-    <value>segment0_53</value>
+    <value>Stop button door 401</value>
   </data>
   <data name="ALARM_09954" xml:space="preserve">
-    <value>segment0_54</value>
+    <value>Stop button door 501</value>
   </data>
   <data name="ALARM_09955" xml:space="preserve">
-    <value>segment0_55</value>
+    <value>Stop button door 502</value>
   </data>
   <data name="ALARM_09956" xml:space="preserve">
     <value>segment0_56</value>
@@ -1861,13 +1864,13 @@
     <value>segment0_59</value>
   </data>
   <data name="ALARM_09960" xml:space="preserve">
-    <value>ET200 CP301 ulaşılamıyor</value>
+    <value>ET200 CP301 unreachable</value>
   </data>
   <data name="ALARM_09961" xml:space="preserve">
-    <value>ET200 CP502 ulaşılamıyor</value>
+    <value>ET200 CP502 unreachable</value>
   </data>
   <data name="ALARM_09962" xml:space="preserve">
-    <value>CLV620 ulaşılamıyor</value>
+    <value>CLV620 unreachable</value>
   </data>
   <data name="ALARM_09963" xml:space="preserve">
     <value>segment0_63</value>
@@ -1891,52 +1894,52 @@
     <value>segment0_69</value>
   </data>
   <data name="ALARM_09970" xml:space="preserve">
-    <value>frekans sürücü T002 ulaşılamaz</value>
+    <value>frequency regulator T002 unreachable</value>
   </data>
   <data name="ALARM_09971" xml:space="preserve">
-    <value>frekans sürücü T003 ulaşılamaz</value>
+    <value>frequency regulator T003 unreachable</value>
   </data>
   <data name="ALARM_09972" xml:space="preserve">
-    <value>frekans sürücü T004 ulaşılamıyor</value>
+    <value>frequency regulator T004 unreachable</value>
   </data>
   <data name="ALARM_09973" xml:space="preserve">
-    <value>frekans sürücü T005 ulaşılamıyor</value>
+    <value>frequency regulator T005 unreachable</value>
   </data>
   <data name="ALARM_09974" xml:space="preserve">
-    <value>frekans sürücü T011 ulaşılamıyor</value>
+    <value>frequency regulator T011 unreachable</value>
   </data>
   <data name="ALARM_09975" xml:space="preserve">
-    <value>frekans sürücü T012 ulaşılamamıyor</value>
+    <value>frequency regulator T012 unreachable</value>
   </data>
   <data name="ALARM_09976" xml:space="preserve">
-    <value>frekans sürücü T112 ulaşılamamıyor</value>
+    <value>frequency regulator T112 unreachable</value>
   </data>
   <data name="ALARM_09977" xml:space="preserve">
-    <value>frekans sürücü T212 ulaşılamamıyor</value>
+    <value>frequency regulator T212 unreachable</value>
   </data>
   <data name="ALARM_09978" xml:space="preserve">
-    <value>frekans sürücü  T312 ulaşılamamıyor</value>
+    <value>frequency regulator T312 unreachable</value>
   </data>
   <data name="ALARM_09979" xml:space="preserve">
-    <value>frekans sürücü  T021 ulaşılamamıyor</value>
+    <value>frequency regulator T021 unreachable</value>
   </data>
   <data name="ALARM_09980" xml:space="preserve">
-    <value>frekans sürücü  T022 ulaşılamamıyor</value>
+    <value>frequency regulator T022 unreachable</value>
   </data>
   <data name="ALARM_09981" xml:space="preserve">
-    <value>crane 1 ulaşılamıyor</value>
+    <value>crane 1 unreachable</value>
   </data>
   <data name="ALARM_09982" xml:space="preserve">
-    <value>crane 2 ulaşılamıyor</value>
+    <value>crane 2 unreachable</value>
   </data>
   <data name="ALARM_09983" xml:space="preserve">
-    <value>crane 3 ulaşılamıyor</value>
+    <value>crane 3 unreachable</value>
   </data>
   <data name="ALARM_09984" xml:space="preserve">
-    <value>shuttle 4 ulaşılamıyor</value>
+    <value>shuttle 4 unreachable</value>
   </data>
   <data name="ALARM_09985" xml:space="preserve">
-    <value>shuttle 5 ulaşılamıyor</value>
+    <value>shuttle 5 unreachable</value>
   </data>
   <data name="ALARM_09986" xml:space="preserve">
     <value>segment0_86</value>
@@ -1983,110 +1986,107 @@
   <data name="ALARM_10000" xml:space="preserve">
     <value>MFCS_02</value>
   </data>
-  <data name="ERR_BLOCKED" xml:space="preserve">
-    <value>Konum blokeli</value>
-  </data>
   <data name="ALARM_10001" xml:space="preserve">
-    <value>Otomat Kontrol  230 VAC, +L01-403F1..403F3</value>
+    <value>Fuse control 230 VAC, +L01-403F1..403F3</value>
   </data>
   <data name="ALARM_10002" xml:space="preserve">
-    <value>Otomat Kontrol  24 VDC, +L01-404F1..404F9</value>
+    <value>Fuse control 24 VDC, +L01-404F1..404F9</value>
   </data>
   <data name="ALARM_10003" xml:space="preserve">
-    <value>Limit switch yatay, +L01-408S1</value>
+    <value>Limit switch travel, +L01-408S1</value>
   </data>
   <data name="ALARM_10004" xml:space="preserve">
-    <value>Limit switch dikey hız kontrol - halat; +L01-408S2</value>
+    <value>Limit switch speed governor hoist - rope; +L01-408S2</value>
   </data>
   <data name="ALARM_10005" xml:space="preserve">
-    <value>E-STOP push button Ana Pano, +L01-409S1</value>
+    <value>E-STOP push button main cabinet, +L01-409S1</value>
   </data>
   <data name="ALARM_10006" xml:space="preserve">
-    <value>E-STOP ray üstü, +L01-409K1</value>
+    <value>E-STOP over rail, +L01-409K1</value>
   </data>
   <data name="ALARM_10007" xml:space="preserve">
-    <value>Limit switch dikey hız kontrol - hız aşımı; +L01-410S3</value>
+    <value>Limit switch speed governor hoist - overspeed; +L01-410S3</value>
   </data>
   <data name="ALARM_10008" xml:space="preserve">
-    <value>Yatay ve dikey fren koruması , +L01-420Q1</value>
+    <value>Protection travel and hoist brakes, +L01-420Q1</value>
   </data>
   <data name="ALARM_10009" xml:space="preserve">
-    <value>Yatay ve dikey fan motor koruması , +L01-420Q2</value>
+    <value>Protection travel and hoist fan motors, +L01-420Q2</value>
   </data>
   <data name="ALARM_10010" xml:space="preserve">
-    <value>Bıçak arka fren koruması, +L01-421Q1</value>
+    <value>Protection forks back brake, +L01-421Q1</value>
   </data>
   <data name="ALARM_10011" xml:space="preserve">
-    <value>Bıçak ön fren koruması, +L01-422Q1</value>
+    <value>Protection forks front brake, +L01-422Q1</value>
   </data>
   <data name="ALARM_10012" xml:space="preserve">
-    <value>Limit switch dikey, +L02-427S1</value>
+    <value>Limit switch hoist, +L02-427S1</value>
   </data>
   <data name="ALARM_10013" xml:space="preserve">
     <value>Limit switch catching device - jaws, +L02-427S2</value>
   </data>
   <data name="ALARM_10014" xml:space="preserve">
-    <value>Kabin kapısı açık - ana kabin, +L02-428S1</value>
+    <value>Cabin door open - to main cabinet, +L02-428S1</value>
   </data>
   <data name="ALARM_10015" xml:space="preserve">
-    <value>Kabin kapısı açık - Asansör (Bıçaklar), +L02-428S2</value>
+    <value>Cabin door open - to deck (forks), +L02-428S2</value>
   </data>
   <data name="ALARM_10016" xml:space="preserve">
     <value>E-STOP push button control panel, +L02-428S3</value>
   </data>
   <data name="ALARM_10017" xml:space="preserve">
-    <value>Vinç ve sol raf arasında uyuşmazlık, +l02-43515</value>
+    <value>No clearance between crane and left rack, +L02-43515</value>
   </data>
   <data name="ALARM_10018" xml:space="preserve">
-    <value>Vinç ve sol raf arasında uyuşmazlık, +L02-43515</value>
+    <value>No clearance between crane and left rack, +L02-43515</value>
   </data>
   <data name="ALARM_10019" xml:space="preserve">
-    <value>Eksen Hatası: Yatay</value>
+    <value>Axis error: travel</value>
   </data>
   <data name="ALARM_10020" xml:space="preserve">
-    <value>Eksen Hatası: Dikey </value>
+    <value>Axis error: hoist</value>
   </data>
   <data name="ALARM_10021" xml:space="preserve">
-    <value>Eksen Hatası: Bıçak SD</value>
+    <value>Axis error: forks SD</value>
   </data>
   <data name="ALARM_10022" xml:space="preserve">
-    <value>Eksen Hatası: Bıçak DD</value>
+    <value>Axis error: forks DD</value>
   </data>
   <data name="ALARM_10023" xml:space="preserve">
     <value>D425 startup fault</value>
   </data>
   <data name="ALARM_10024" xml:space="preserve">
-    <value>Yatay hareket motoru uzun bir süre çalıştı, +EXT-418M1</value>
+    <value>Travel motor running too long, +EXT-418M1</value>
   </data>
   <data name="ALARM_10025" xml:space="preserve">
-    <value>Dikey hareket motoru çok uzun çalıştı, +EXT-416M1</value>
+    <value>Hoist motor running too long, +EXT-416M1</value>
   </data>
   <data name="ALARM_10026" xml:space="preserve">
-    <value>SD bıçak motoru çok uzun süre çalıştı, +EXT-421M1</value>
+    <value>Forks SD motor running too long, +EXT-421M1</value>
   </data>
   <data name="ALARM_10027" xml:space="preserve">
-    <value>DD bıçak motoru çok uzun süre çalıştı, +EXT-422M1</value>
+    <value>Forks DD motor running too long, +EXT-422M1</value>
   </data>
   <data name="ALARM_10028" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with transport system PLC (receive direction)</value>
   </data>
   <data name="ALARM_10029" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with transport system PLC (send direction)</value>
   </data>
   <data name="ALARM_10030" xml:space="preserve">
-    <value>MFCS haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with MFCS (receive direction)</value>
   </data>
   <data name="ALARM_10031" xml:space="preserve">
-    <value>MFCS haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with MFCS (send direction)</value>
   </data>
   <data name="ALARM_10032" xml:space="preserve">
-    <value>Enkoder  veya magnetik sensor limit aşımı - yatay</value>
+    <value>Enormous value of absolute encoder or magnet switches - travel</value>
   </data>
   <data name="ALARM_10033" xml:space="preserve">
-    <value>Vinçte malzeme uyuşmazlığı</value>
+    <value>Material mismatch on crane</value>
   </data>
   <data name="ALARM_10034" xml:space="preserve">
-    <value>Barkod Pozisyonla sensoru hatalı değer (Dikey)</value>
+    <value>Erroneous value of barCode positioning sensor (hoist)</value>
   </data>
   <data name="ALARM_10035" xml:space="preserve">
     <value>Alarm 35</value>
@@ -2104,58 +2104,58 @@
     <value>Alarm 39</value>
   </data>
   <data name="ALARM_10040" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Yanlış Konum</value>
+    <value>Automatic start not possible: wrong location</value>
   </data>
   <data name="ALARM_10041" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Vinç dolu</value>
+    <value>Automatic start not possible: crane occupied</value>
   </data>
   <data name="ALARM_10042" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Vinç boş</value>
+    <value>Automatic start not possible: crane is empty</value>
   </data>
   <data name="ALARM_10043" xml:space="preserve">
-    <value>Barkode Hatası</value>
+    <value>Barcode mismatch</value>
   </data>
   <data name="ALARM_10044" xml:space="preserve">
-    <value>Ağırlık düşük</value>
+    <value>Underweight</value>
   </data>
   <data name="ALARM_10045" xml:space="preserve">
-    <value>Yük aşımı</value>
+    <value>Overweight</value>
   </data>
   <data name="ALARM_10046" xml:space="preserve">
-    <value>Vinç ve raf 1 arasında uyuşmazlık</value>
+    <value>No clearance between crane and rack 1</value>
   </data>
   <data name="ALARM_10047" xml:space="preserve">
-    <value>Vinç ve raf 2 arasında uyuşmazlık</value>
+    <value>No clearance between crane and rack 2</value>
   </data>
   <data name="ALARM_10048" xml:space="preserve">
-    <value>Mantıksal durum sensörler ile uyşmuyor</value>
+    <value>Material picture differs from sensor</value>
   </data>
   <data name="ALARM_10049" xml:space="preserve">
-    <value>Malzeme transferi başarısız</value>
+    <value>Material movement not successfull</value>
   </data>
   <data name="ALARM_10050" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil</value>
+    <value>Transport system conveyor not ready</value>
   </data>
   <data name="ALARM_10051" xml:space="preserve">
-    <value>MFCS hatası:</value>
+    <value>MFCS error</value>
   </data>
   <data name="ALARM_10052" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Bıçaklar ortada değil</value>
+    <value>Automatic start not possible: fork not in the middle</value>
   </data>
   <data name="ALARM_10053" xml:space="preserve">
-    <value>Dikey Eksende Sarkma</value>
+    <value>Sagging of Axis hoist</value>
   </data>
   <data name="ALARM_10054" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Yatay)</value>
+    <value>Crane out of working area (travel)</value>
   </data>
   <data name="ALARM_10055" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Dikey)</value>
+    <value>Crane out of working area (hoist)</value>
   </data>
   <data name="ALARM_10056" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Bıçak SD)</value>
+    <value>Crane out of working area (fork SD)</value>
   </data>
   <data name="ALARM_10057" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Bıçak DD)</value>
+    <value>Crane out of working area (fork DD)</value>
   </data>
   <data name="ALARM_10058" xml:space="preserve">
     <value>Alarm 58</value>
@@ -2164,52 +2164,52 @@
     <value>Alarm 59</value>
   </data>
   <data name="ALARM_10060" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=1, depth=1)</value>
+    <value>Deposit to rack not possible - location occupied (side=1, depth=1)</value>
   </data>
   <data name="ALARM_10061" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=1, depth=2)</value>
+    <value>Deposit to rack not possible - location occupied (side=1, depth=2)</value>
   </data>
   <data name="ALARM_10062" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=2, depth=1)</value>
+    <value>Deposit to rack not possible - location occupied (side=2, depth=1)</value>
   </data>
   <data name="ALARM_10063" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=2, depth=2)</value>
+    <value>Deposit to rack not possible - location occupied (side=2, depth=2)</value>
   </data>
   <data name="ALARM_10064" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 1)</value>
+    <value>Pick from rack not possible - location empty (side=1, depth=1)</value>
   </data>
   <data name="ALARM_10065" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 2)</value>
+    <value>Pick from rack not possible - location empty (side=1, depth=2)</value>
   </data>
   <data name="ALARM_10066" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 1)</value>
+    <value>Pick from rack not possible - location empty (side=2, depth=1)</value>
   </data>
   <data name="ALARM_10067" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 2, derinlik 2)</value>
+    <value>Pick from rack not possible - location empty (side=2, depth=2)</value>
   </data>
   <data name="ALARM_10068" xml:space="preserve">
-    <value>Raftan almak mümkün değil, ön göz dolu (yön 1, derinlik 2)</value>
+    <value>Pick from rack not possible - depth 1 occupied (side=1, depth=2)</value>
   </data>
   <data name="ALARM_10069" xml:space="preserve">
-    <value>Raftan almak mümkün değil, ön göz dolu (yön 2, derinlik 2)</value>
+    <value>Pick from rack not possible - depth 1 occupied (side=2, depth=2)</value>
   </data>
   <data name="ALARM_10070" xml:space="preserve">
-    <value>Salımın sönümleme aktif değil</value>
+    <value>Vibration extinction not active</value>
   </data>
   <data name="ALARM_10071" xml:space="preserve">
     <value>E-STOP push button, CP101</value>
   </data>
   <data name="ALARM_10072" xml:space="preserve">
-    <value>C101 kapısı açık</value>
+    <value>Door to C101 open</value>
   </data>
   <data name="ALARM_10073" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T10</value>
+    <value>Light grid - MLG, T10</value>
   </data>
   <data name="ALARM_10074" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T110</value>
+    <value>Light grid - MLG, T110</value>
   </data>
   <data name="ALARM_10075" xml:space="preserve">
-    <value>E-STOP push button, CP401</value>
+    <value>E-STOP push buttton, CP401</value>
   </data>
   <data name="ALARM_10076" xml:space="preserve">
     <value>Alarm 76</value>
@@ -2329,148 +2329,148 @@
     <value>Alarm 114</value>
   </data>
   <data name="ALARM_10115" xml:space="preserve">
-    <value>A. servis gerekiyor</value>
+    <value>Service M required</value>
   </data>
   <data name="ALARM_10116" xml:space="preserve">
-    <value>3A bakım zamanı</value>
+    <value>Service 3M required</value>
   </data>
   <data name="ALARM_10117" xml:space="preserve">
-    <value>6A bakım zamanı</value>
+    <value>Service 6M required</value>
   </data>
   <data name="ALARM_10118" xml:space="preserve">
-    <value>12A bakım gereksinimi</value>
+    <value>Service 12M required</value>
   </data>
   <data name="ALARM_10119" xml:space="preserve">
-    <value>Servis 5 gerekiyor</value>
+    <value>Service 5 required</value>
   </data>
   <data name="ALARM_10120" xml:space="preserve">
-    <value>D425 message: sürücü nesnesi alarmı</value>
+    <value>D425 message: drive object alarm</value>
   </data>
   <data name="ALARM_10121" xml:space="preserve">
-    <value>D425 message: sürücü nesnesi hatası</value>
+    <value>D425 message: drive object fault</value>
   </data>
   <data name="ALARM_10122" xml:space="preserve">
-    <value>D425 message: sürücü nesnesi güvenlik</value>
+    <value>D425 message: drive object safety</value>
   </data>
   <data name="ALARM_10123" xml:space="preserve">
-    <value>D425 message: yürütme hatası</value>
+    <value>D425 message: execution fault</value>
   </data>
   <data name="ALARM_10124" xml:space="preserve">
-    <value>D425 message: bağlı birim hatası</value>
+    <value>D425 message: peripheral fault</value>
   </data>
   <data name="ALARM_10125" xml:space="preserve">
-    <value>D425 message: teknik hata</value>
+    <value>D425 message: tech fault</value>
   </data>
   <data name="ALARM_10126" xml:space="preserve">
-    <value>D425 message: arkaplan zamanlama hatası</value>
+    <value>D425 message: time fault background</value>
   </data>
   <data name="ALARM_10127" xml:space="preserve">
-    <value>D425 message: zamanlama hatası</value>
+    <value>D425 message: time fault</value>
   </data>
   <data name="ALARM_10128" xml:space="preserve">
-    <value>D425 message: uygulama hatası</value>
+    <value>D425 message: application fault</value>
   </data>
   <data name="ALARM_20001" xml:space="preserve">
-    <value>Otomat Kontrol  230 VAC, +L01-403F1..403F3</value>
+    <value>Fuse control 230 VAC, +L01-403F1..403F3</value>
   </data>
   <data name="ALARM_20002" xml:space="preserve">
-    <value>Otomat Kontrol  24 VDC, +L01-404F1..404F9</value>
+    <value>Fuse control 24 VDC, +L01-404F1..404F9</value>
   </data>
   <data name="ALARM_20003" xml:space="preserve">
-    <value>Limit switch yatay, +L01-408S1</value>
+    <value>Limit switch travel, +L01-408S1</value>
   </data>
   <data name="ALARM_20004" xml:space="preserve">
-    <value>Limit switch dikey hız kontrol - halat; +L01-408S2</value>
+    <value>Limit switch speed governor hoist - rope; +L01-408S2</value>
   </data>
   <data name="ALARM_20005" xml:space="preserve">
-    <value>E-STOP push button Ana Pano, +L01-409S1</value>
+    <value>E-STOP push button main cabinet, +L01-409S1</value>
   </data>
   <data name="ALARM_20006" xml:space="preserve">
-    <value>E-STOP ray üstü, +L01-409K1</value>
+    <value>E-STOP over rail, +L01-409K1</value>
   </data>
   <data name="ALARM_20007" xml:space="preserve">
-    <value>Limit switch dikey hız kontrol- hız aşımı; +L01-410S3</value>
+    <value>Limit switch speed governor hoist - overspeed; +L01-410S3</value>
   </data>
   <data name="ALARM_20008" xml:space="preserve">
-    <value>Yatay ve dikey fren koruması , +L01-420Q1</value>
+    <value>Protection travel and hoist brakes, +L01-420Q1</value>
   </data>
   <data name="ALARM_20009" xml:space="preserve">
-    <value>Yatay ve dikey fan motor koruması, +L01-420Q2</value>
+    <value>Protection travel and hoist fan motors, +L01-420Q2</value>
   </data>
   <data name="ALARM_20010" xml:space="preserve">
-    <value>Bıçak arka fren koruması, +L01-421Q1</value>
+    <value>Protection forks back brake, +L01-421Q1</value>
   </data>
   <data name="ALARM_20011" xml:space="preserve">
-    <value>Bıçak ön fren koruması, +L01-422Q1</value>
+    <value>Protection forks front brake, +L01-422Q1</value>
   </data>
   <data name="ALARM_20012" xml:space="preserve">
-    <value>Limit switch dikey, +L02-427S1</value>
+    <value>Limit switch hoist, +L02-427S1</value>
   </data>
   <data name="ALARM_20013" xml:space="preserve">
     <value>Limit switch catching device - jaws, +L02-427S2</value>
   </data>
   <data name="ALARM_20014" xml:space="preserve">
-    <value>Kabin kapısı açık - ana kabin, +L02-428S1</value>
+    <value>Cabin door open - to main cabinet, +L02-428S1</value>
   </data>
   <data name="ALARM_20015" xml:space="preserve">
-    <value>Kabin kapısı açık - Asansör (Bıçaklar), +L02-428S2</value>
+    <value>Cabin door open - to deck (forks), +L02-428S2</value>
   </data>
   <data name="ALARM_20016" xml:space="preserve">
     <value>E-STOP push button control panel, +L02-428S3</value>
   </data>
   <data name="ALARM_20017" xml:space="preserve">
-    <value>Vinç ve sol raf arasında uyuşmazlık, +L02-43516</value>
+    <value>No clearance between crane and left rack, +L02-43515</value>
   </data>
   <data name="ALARM_20018" xml:space="preserve">
-    <value>Vinç ve sol raf arasında uyuşmazlık, +L02-43517</value>
+    <value>No clearance between crane and left rack, +L02-43515</value>
   </data>
   <data name="ALARM_20019" xml:space="preserve">
-    <value>Eksen Hatası: Yatay</value>
+    <value>Axis error: travel</value>
   </data>
   <data name="ALARM_20020" xml:space="preserve">
-    <value>Eksen Hatası: Dikey </value>
+    <value>Axis error: hoist</value>
   </data>
   <data name="ALARM_20021" xml:space="preserve">
-    <value>Eksen Hatası: Bıçak SD</value>
+    <value>Axis error: forks SD</value>
   </data>
   <data name="ALARM_20022" xml:space="preserve">
-    <value>Eksen Hatası: Bıçak DD</value>
+    <value>Axis error: forks DD</value>
   </data>
   <data name="ALARM_20023" xml:space="preserve">
     <value>D425 startup fault</value>
   </data>
   <data name="ALARM_20024" xml:space="preserve">
-    <value>Yatay hareket motoru uzun bir süre çalıştı, +EXT-418M1</value>
+    <value>Travel motor running too long, +EXT-418M1</value>
   </data>
   <data name="ALARM_20025" xml:space="preserve">
-    <value>Dikey hareket motoru çok uzun çalıştı, +EXT-416M1</value>
+    <value>Hoist motor running too long, +EXT-416M1</value>
   </data>
   <data name="ALARM_20026" xml:space="preserve">
-    <value>SD bıçak motoru çok uzun süre çalıştı, +EXT-421M1</value>
+    <value>Forks SD motor running too long, +EXT-421M1</value>
   </data>
   <data name="ALARM_20027" xml:space="preserve">
-    <value>DD bıçak motoru çok uzun süre çalıştı, +EXT-422M1</value>
+    <value>Forks DD motor running too long, +EXT-422M1</value>
   </data>
   <data name="ALARM_20028" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with transport system PLC (receive direction)</value>
   </data>
   <data name="ALARM_20029" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with transport system PLC (send direction)</value>
   </data>
   <data name="ALARM_20030" xml:space="preserve">
-    <value>MFCS haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with MFCS (receive direction)</value>
   </data>
   <data name="ALARM_20031" xml:space="preserve">
-    <value>MFCS haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with MFCS (send direction)</value>
   </data>
   <data name="ALARM_20032" xml:space="preserve">
-    <value>Enkoder  veya magnetik sensor limit aşımı - yatay</value>
+    <value>Enormous value of absolute encoder or magnet switches - travel</value>
   </data>
   <data name="ALARM_20033" xml:space="preserve">
-    <value>Vinçte malzeme uyuşmazlığı</value>
+    <value>Material mismatch on crane</value>
   </data>
   <data name="ALARM_20034" xml:space="preserve">
-    <value>Barkod Pozisyonla sensoru hatalı değer (Dikey)</value>
+    <value>Erroneous value of barCode positioning sensor (hoist)</value>
   </data>
   <data name="ALARM_20035" xml:space="preserve">
     <value>Alarm 35</value>
@@ -2488,58 +2488,58 @@
     <value>Alarm 39</value>
   </data>
   <data name="ALARM_20040" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Yanlış Konum</value>
+    <value>Automatic start not possible: wrong location</value>
   </data>
   <data name="ALARM_20041" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Vinç dolu</value>
+    <value>Automatic start not possible: crane occupied</value>
   </data>
   <data name="ALARM_20042" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Vinç boş</value>
+    <value>Automatic start not possible: crane is empty</value>
   </data>
   <data name="ALARM_20043" xml:space="preserve">
-    <value>Barkode Hatası</value>
+    <value>Barcode mismatch</value>
   </data>
   <data name="ALARM_20044" xml:space="preserve">
-    <value>Ağırlık düşük</value>
+    <value>Underweight</value>
   </data>
   <data name="ALARM_20045" xml:space="preserve">
-    <value>Yük aşımı</value>
+    <value>Overweight</value>
   </data>
   <data name="ALARM_20046" xml:space="preserve">
-    <value>Vinç ve raf 1 arasında uyuşmazlık</value>
+    <value>No clearance between crane and rack 1</value>
   </data>
   <data name="ALARM_20047" xml:space="preserve">
-    <value>Vinç ve raf 2 arasında uyuşmazlık</value>
+    <value>No clearance between crane and rack 2</value>
   </data>
   <data name="ALARM_20048" xml:space="preserve">
-    <value>Mantıksal durum sensörler ile uyşmuyor</value>
+    <value>Material picture differs from sensor</value>
   </data>
   <data name="ALARM_20049" xml:space="preserve">
-    <value>Malzeme transferi başarısız</value>
+    <value>Material movement not successfull</value>
   </data>
   <data name="ALARM_20050" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil</value>
+    <value>Transport system conveyor not ready</value>
   </data>
   <data name="ALARM_20051" xml:space="preserve">
-    <value>MFCS hatası:</value>
+    <value>MFCS error</value>
   </data>
   <data name="ALARM_20052" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Bıçaklar ortada değil</value>
+    <value>Automatic start not possible: fork not in the middle</value>
   </data>
   <data name="ALARM_20053" xml:space="preserve">
-    <value>Dikey Eksende Sarkma</value>
+    <value>Sagging of Axis hoist</value>
   </data>
   <data name="ALARM_20054" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Yatay)</value>
+    <value>Crane out of working area (travel)</value>
   </data>
   <data name="ALARM_20055" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Dikey)</value>
+    <value>Crane out of working area (hoist)</value>
   </data>
   <data name="ALARM_20056" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Bıçak SD)</value>
+    <value>Crane out of working area (fork SD)</value>
   </data>
   <data name="ALARM_20057" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Bıçak DD)</value>
+    <value>Crane out of working area (fork DD)</value>
   </data>
   <data name="ALARM_20058" xml:space="preserve">
     <value>Alarm 58</value>
@@ -2548,43 +2548,43 @@
     <value>Alarm 59</value>
   </data>
   <data name="ALARM_20060" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=1, depth=1)</value>
+    <value>Deposit to rack not possible - location occupied (side=1, depth=1)</value>
   </data>
   <data name="ALARM_20061" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=1, depth=2)</value>
+    <value>Deposit to rack not possible - location occupied (side=1, depth=2)</value>
   </data>
   <data name="ALARM_20062" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=2, depth=1)</value>
+    <value>Deposit to rack not possible - location occupied (side=2, depth=1)</value>
   </data>
   <data name="ALARM_20063" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=2, depth=2)</value>
+    <value>Deposit to rack not possible - location occupied (side=2, depth=2)</value>
   </data>
   <data name="ALARM_20064" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 1)</value>
+    <value>Pick from rack not possible - location empty (side=1, depth=1)</value>
   </data>
   <data name="ALARM_20065" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 2)</value>
+    <value>Pick from rack not possible - location empty (side=1, depth=2)</value>
   </data>
   <data name="ALARM_20066" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 1)</value>
+    <value>Pick from rack not possible - location empty (side=2, depth=1)</value>
   </data>
   <data name="ALARM_20067" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 2, derinlik 2)</value>
+    <value>Pick from rack not possible - location empty (side=2, depth=2)</value>
   </data>
   <data name="ALARM_20068" xml:space="preserve">
-    <value>Raftan almak mümkün değil, ön göz dolu (yön 1, derinlik 2)</value>
+    <value>Pick from rack not possible - depth 1 occupied (side=1, depth=2)</value>
   </data>
   <data name="ALARM_20069" xml:space="preserve">
-    <value>Raftan almak mümkün değil, ön göz dolu (yön 2, derinlik 2)</value>
+    <value>Pick from rack not possible - depth 1 occupied (side=2, depth=2)</value>
   </data>
   <data name="ALARM_20070" xml:space="preserve">
-    <value>Salımın sönümleme aktif değil</value>
+    <value>Vibration extinction not active</value>
   </data>
   <data name="ALARM_20071" xml:space="preserve">
     <value>E-STOP push button, CP201</value>
   </data>
   <data name="ALARM_20072" xml:space="preserve">
-    <value>C201 kapısı açık</value>
+    <value>Door to C201 open</value>
   </data>
   <data name="ALARM_20073" xml:space="preserve">
     <value>Alarm 73</value>
@@ -2593,7 +2593,7 @@
     <value>Alarm 74</value>
   </data>
   <data name="ALARM_20075" xml:space="preserve">
-    <value>E-STOP push button, CP401</value>
+    <value>E-STOP push buttton, CP401</value>
   </data>
   <data name="ALARM_20076" xml:space="preserve">
     <value>Alarm 76</value>
@@ -2713,34 +2713,34 @@
     <value>Alarm 114</value>
   </data>
   <data name="ALARM_20115" xml:space="preserve">
-    <value>A. servis gerekiyor</value>
+    <value>Service M required</value>
   </data>
   <data name="ALARM_20116" xml:space="preserve">
-    <value>3A bakım zamanı</value>
+    <value>Service 3M required</value>
   </data>
   <data name="ALARM_20117" xml:space="preserve">
-    <value>6A bakım zamanı</value>
+    <value>Service 6M required</value>
   </data>
   <data name="ALARM_20118" xml:space="preserve">
-    <value>12A bakım gereksinimi</value>
+    <value>Service 12M required</value>
   </data>
   <data name="ALARM_20119" xml:space="preserve">
-    <value>Servis 5 gerekiyor</value>
+    <value>Service 5 required</value>
   </data>
   <data name="ALARM_20120" xml:space="preserve">
-    <value>D425 message: sürücü alarmı</value>
+    <value>D425 message: drive object alarm</value>
   </data>
   <data name="ALARM_20121" xml:space="preserve">
-    <value>D425 message: sürücü hatası</value>
+    <value>D425 message: drive object fault</value>
   </data>
   <data name="ALARM_20122" xml:space="preserve">
-    <value>D425 message: sürücü güvenlik</value>
+    <value>D425 message: drive object safety</value>
   </data>
   <data name="ALARM_20123" xml:space="preserve">
-    <value>D425 message: beklenmedik hata</value>
+    <value>D425 message: execution fault</value>
   </data>
   <data name="ALARM_20124" xml:space="preserve">
-    <value>D425 message: çevre birimi hatası</value>
+    <value>D425 message: peripheral fault</value>
   </data>
   <data name="ALARM_20125" xml:space="preserve">
     <value>D425 message: tech fault</value>
@@ -2752,109 +2752,109 @@
     <value>D425 message: time fault</value>
   </data>
   <data name="ALARM_20128" xml:space="preserve">
-    <value>D425 message: uygulama hatası</value>
+    <value>D425 message: application fault</value>
   </data>
   <data name="ALARM_30001" xml:space="preserve">
-    <value>Otomat Kontrol  230 VAC, +L01-403F1..403F3</value>
+    <value>Fuse control 230 VAC, +L01-403F1..403F3</value>
   </data>
   <data name="ALARM_30002" xml:space="preserve">
-    <value>Otomat Kontrol  24 VDC, +L01-404F1..404F9</value>
+    <value>Fuse control 24 VDC, +L01-404F1..404F9</value>
   </data>
   <data name="ALARM_30003" xml:space="preserve">
-    <value>Limit switch yatay, +L01-408S1</value>
+    <value>Limit switch travel, +L01-408S1</value>
   </data>
   <data name="ALARM_30004" xml:space="preserve">
-    <value>Limit switch dikey hız kontrol - halat; +L01-408S2</value>
+    <value>Limit switch speed governor hoist - rope; +L01-408S2</value>
   </data>
   <data name="ALARM_30005" xml:space="preserve">
-    <value>E-STOP push button ana pano, +L01-409S1</value>
+    <value>E-STOP push button main cabinet, +L01-409S1</value>
   </data>
   <data name="ALARM_30006" xml:space="preserve">
-    <value>E-STOP ray üstü, +L01-409K1</value>
+    <value>E-STOP over rail, +L01-409K1</value>
   </data>
   <data name="ALARM_30007" xml:space="preserve">
-    <value>Limit switch dikey hız kontrol - hız aşımı; +L01-410S3</value>
+    <value>Limit switch speed governor hoist - overspeed; +L01-410S3</value>
   </data>
   <data name="ALARM_30008" xml:space="preserve">
-    <value>Yatay ve dikey fren koruması , +L01-420Q1</value>
+    <value>Protection travel and hoist brakes, +L01-420Q1</value>
   </data>
   <data name="ALARM_30009" xml:space="preserve">
-    <value>Yatay ve dikey fan motor koruması, +L01-420Q2</value>
+    <value>Protection travel and hoist fan motors, +L01-420Q2</value>
   </data>
   <data name="ALARM_30010" xml:space="preserve">
-    <value>Bıçak arka fren koruması, +L01-421Q1</value>
+    <value>Protection forks back brake, +L01-421Q1</value>
   </data>
   <data name="ALARM_30011" xml:space="preserve">
-    <value>Bıçak ön fren koruması, +L01-422Q1</value>
+    <value>Protection forks front brake, +L01-422Q1</value>
   </data>
   <data name="ALARM_30012" xml:space="preserve">
-    <value>Limit switch dikey, +L02-427S1</value>
+    <value>Limit switch hoist, +L02-427S1</value>
   </data>
   <data name="ALARM_30013" xml:space="preserve">
     <value>Limit switch catching device - jaws, +L02-427S2</value>
   </data>
   <data name="ALARM_30014" xml:space="preserve">
-    <value>Kabin kapısı açık - ana kabin, +L02-428S1</value>
+    <value>Cabin door open - to main cabinet, +L02-428S1</value>
   </data>
   <data name="ALARM_30015" xml:space="preserve">
-    <value>Kabin kapısı açık - Asansör (Bıçaklar), +L02-428S2</value>
+    <value>Cabin door open - to deck (forks), +L02-428S2</value>
   </data>
   <data name="ALARM_30016" xml:space="preserve">
     <value>E-STOP push button control panel, +L02-428S3</value>
   </data>
   <data name="ALARM_30017" xml:space="preserve">
-    <value>Vinç ve sol raf arasında uyuşmazlık, +L02-43518</value>
+    <value>No clearance between crane and left rack, +L02-43515</value>
   </data>
   <data name="ALARM_30018" xml:space="preserve">
-    <value>Vinç ve sol raf arasında uyuşmazlık, +L02-43519</value>
+    <value>No clearance between crane and left rack, +L02-43515</value>
   </data>
   <data name="ALARM_30019" xml:space="preserve">
-    <value>Eksen Hatası: Yatay</value>
+    <value>Axis error: travel</value>
   </data>
   <data name="ALARM_30020" xml:space="preserve">
-    <value>Eksen Hatası: Dikey </value>
+    <value>Axis error: hoist</value>
   </data>
   <data name="ALARM_30021" xml:space="preserve">
-    <value>Eksen Hatası: Bıçak SD</value>
+    <value>Axis error: forks SD</value>
   </data>
   <data name="ALARM_30022" xml:space="preserve">
-    <value>Eksen Hatası: Bıçak DD</value>
+    <value>Axis error: forks DD</value>
   </data>
   <data name="ALARM_30023" xml:space="preserve">
     <value>D425 startup fault</value>
   </data>
   <data name="ALARM_30024" xml:space="preserve">
-    <value>Yatay hareket motoru uzun bir süre çalıştı, +EXT-418M1</value>
+    <value>Travel motor running too long, +EXT-418M1</value>
   </data>
   <data name="ALARM_30025" xml:space="preserve">
-    <value>Dikey hareket motoru çok uzun çalıştı, +EXT-416M1</value>
+    <value>Hoist motor running too long, +EXT-416M1</value>
   </data>
   <data name="ALARM_30026" xml:space="preserve">
-    <value>SD bıçak motoru çok uzun süre çalıştı, +EXT-421M1</value>
+    <value>Forks SD motor running too long, +EXT-421M1</value>
   </data>
   <data name="ALARM_30027" xml:space="preserve">
-    <value>DD bıçak motoru çok uzun süre çalıştı, +EXT-422M1</value>
+    <value>Forks DD motor running too long, +EXT-422M1</value>
   </data>
   <data name="ALARM_30028" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with transport system PLC (receive direction)</value>
   </data>
   <data name="ALARM_30029" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with transport system PLC (send direction)</value>
   </data>
   <data name="ALARM_30030" xml:space="preserve">
-    <value>MFCS haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with MFCS (receive direction)</value>
   </data>
   <data name="ALARM_30031" xml:space="preserve">
-    <value>MFCS haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with MFCS (send direction)</value>
   </data>
   <data name="ALARM_30032" xml:space="preserve">
-    <value>Enkoder  veya magnetik sensor limit aşımı - yatay</value>
+    <value>Enormous value of absolute encoder or magnet switches - travel</value>
   </data>
   <data name="ALARM_30033" xml:space="preserve">
-    <value>Vinçte malzeme uyuşmazlığı</value>
+    <value>Material mismatch on crane</value>
   </data>
   <data name="ALARM_30034" xml:space="preserve">
-    <value>Barkod Pozisyonla sensoru hatalı değer (Dikey)</value>
+    <value>Erroneous value of barCode positioning sensor (hoist)</value>
   </data>
   <data name="ALARM_30035" xml:space="preserve">
     <value>Alarm 35</value>
@@ -2872,58 +2872,58 @@
     <value>Alarm 39</value>
   </data>
   <data name="ALARM_30040" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Yanlış Konum</value>
+    <value>Automatic start not possible: wrong location</value>
   </data>
   <data name="ALARM_30041" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Vinç dolu</value>
+    <value>Automatic start not possible: crane occupied</value>
   </data>
   <data name="ALARM_30042" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Vinç boş</value>
+    <value>Automatic start not possible: crane is empty</value>
   </data>
   <data name="ALARM_30043" xml:space="preserve">
-    <value>Barkode Hatası</value>
+    <value>Barcode mismatch</value>
   </data>
   <data name="ALARM_30044" xml:space="preserve">
-    <value>Ağırlık düşük</value>
+    <value>Underweight</value>
   </data>
   <data name="ALARM_30045" xml:space="preserve">
-    <value>Yük aşımı</value>
+    <value>Overweight</value>
   </data>
   <data name="ALARM_30046" xml:space="preserve">
-    <value>Vinç ve raf 1 arasında uyuşmazlık</value>
+    <value>No clearance between crane and rack 1</value>
   </data>
   <data name="ALARM_30047" xml:space="preserve">
-    <value>Vinç ve raf 2 arasında uyuşmazlık</value>
+    <value>No clearance between crane and rack 2</value>
   </data>
   <data name="ALARM_30048" xml:space="preserve">
-    <value>Mantıksal durum sensörler ile uyşmuyor</value>
+    <value>Material picture differs from sensor</value>
   </data>
   <data name="ALARM_30049" xml:space="preserve">
-    <value>Malzeme transferi başarısız</value>
+    <value>Material movement not successfull</value>
   </data>
   <data name="ALARM_30050" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil</value>
+    <value>Transport system conveyor not ready</value>
   </data>
   <data name="ALARM_30051" xml:space="preserve">
-    <value>MFCS hatası:</value>
+    <value>MFCS error</value>
   </data>
   <data name="ALARM_30052" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Bıçaklar ortada değil</value>
+    <value>Automatic start not possible: fork not in the middle</value>
   </data>
   <data name="ALARM_30053" xml:space="preserve">
-    <value>Dikey Eksende Sarkma</value>
+    <value>Sagging of Axis hoist</value>
   </data>
   <data name="ALARM_30054" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Yatay)</value>
+    <value>Crane out of working area (travel)</value>
   </data>
   <data name="ALARM_30055" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Dikey)</value>
+    <value>Crane out of working area (hoist)</value>
   </data>
   <data name="ALARM_30056" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Bıçak SD)</value>
+    <value>Crane out of working area (fork SD)</value>
   </data>
   <data name="ALARM_30057" xml:space="preserve">
-    <value>Vinç çalışma alanı dışında (Bıçak DD)</value>
+    <value>Crane out of working area (fork DD)</value>
   </data>
   <data name="ALARM_30058" xml:space="preserve">
     <value>Alarm 58</value>
@@ -2932,55 +2932,55 @@
     <value>Alarm 59</value>
   </data>
   <data name="ALARM_30060" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=1, depth=1)</value>
+    <value>Deposit to rack not possible - location occupied (side=1, depth=1)</value>
   </data>
   <data name="ALARM_30061" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=1, depth=2)</value>
+    <value>Deposit to rack not possible - location occupied (side=1, depth=2)</value>
   </data>
   <data name="ALARM_30062" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu (side=2, depth=1)</value>
+    <value>Deposit to rack not possible - location occupied (side=2, depth=1)</value>
   </data>
   <data name="ALARM_30063" xml:space="preserve">
-    <value>Yükleme yapılamıyor - hedef dolu(side=2, depth=2)</value>
+    <value>Deposit to rack not possible - location occupied (side=2, depth=2)</value>
   </data>
   <data name="ALARM_30064" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 1)</value>
+    <value>Pick from rack not possible - location empty (side=1, depth=1)</value>
   </data>
   <data name="ALARM_30065" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 2)</value>
+    <value>Pick from rack not possible - location empty (side=1, depth=2)</value>
   </data>
   <data name="ALARM_30066" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 1, derinlik 1)</value>
+    <value>Pick from rack not possible - location empty (side=2, depth=1)</value>
   </data>
   <data name="ALARM_30067" xml:space="preserve">
-    <value>Raftan almak mümkün değil, palet yok (yön 2, derinlik 2)</value>
+    <value>Pick from rack not possible - location empty (side=2, depth=2)</value>
   </data>
   <data name="ALARM_30068" xml:space="preserve">
-    <value>Raftan almak mümkün değil, ön göz dolu (yön 1, derinlik 2)</value>
+    <value>Pick from rack not possible - depth 1 occupied (side=1, depth=2)</value>
   </data>
   <data name="ALARM_30069" xml:space="preserve">
-    <value>Raftan almak mümkün değil, ön göz dolu (yön 2, derinlik 2)</value>
+    <value>Pick from rack not possible - depth 1 occupied (side=2, depth=2)</value>
   </data>
   <data name="ALARM_30070" xml:space="preserve">
-    <value>Salımın sönümleme aktif değil</value>
+    <value>Vibration extinction not active</value>
   </data>
   <data name="ALARM_30071" xml:space="preserve">
     <value>E-STOP push button, CP301</value>
   </data>
   <data name="ALARM_30072" xml:space="preserve">
-    <value>C301 kapısı açık</value>
+    <value>Door to C301 open</value>
   </data>
   <data name="ALARM_30073" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T321</value>
+    <value>Light grid - MLG, T321</value>
   </data>
   <data name="ALARM_30074" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T322</value>
+    <value>Light grid - MLG, T322</value>
   </data>
   <data name="ALARM_30075" xml:space="preserve">
-    <value>E-STOP push button, CP401</value>
+    <value>E-STOP push buttton, CP401</value>
   </data>
   <data name="ALARM_30076" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T21</value>
+    <value>Light grid - MLG, T21</value>
   </data>
   <data name="ALARM_30077" xml:space="preserve">
     <value>Alarm 77</value>
@@ -3097,19 +3097,19 @@
     <value>Alarm 114</value>
   </data>
   <data name="ALARM_30115" xml:space="preserve">
-    <value>A. servis gerekiyor</value>
+    <value>Service M required</value>
   </data>
   <data name="ALARM_30116" xml:space="preserve">
-    <value>3A bakım zamanı</value>
+    <value>Service 3M required</value>
   </data>
   <data name="ALARM_30117" xml:space="preserve">
-    <value>6A bakım zamanı</value>
+    <value>Service 6M required</value>
   </data>
   <data name="ALARM_30118" xml:space="preserve">
-    <value>12A bakım gereksinimi</value>
+    <value>Service 12M required</value>
   </data>
   <data name="ALARM_30119" xml:space="preserve">
-    <value>Servis 5 gerekiyor</value>
+    <value>Service 5 required</value>
   </data>
   <data name="ALARM_30120" xml:space="preserve">
     <value>D425 message: drive object alarm</value>
@@ -3118,13 +3118,13 @@
     <value>D425 message: drive object fault</value>
   </data>
   <data name="ALARM_30122" xml:space="preserve">
-    <value>D425 message: sürücü güvenlik</value>
+    <value>D425 message: drive object safety</value>
   </data>
   <data name="ALARM_30123" xml:space="preserve">
-    <value>D425 message: beklenmedik hata</value>
+    <value>D425 message: execution fault</value>
   </data>
   <data name="ALARM_30124" xml:space="preserve">
-    <value>D425 message: çevre birimi hatası</value>
+    <value>D425 message: peripheral fault</value>
   </data>
   <data name="ALARM_30125" xml:space="preserve">
     <value>D425 message: tech fault</value>
@@ -3136,82 +3136,82 @@
     <value>D425 message: time fault</value>
   </data>
   <data name="ALARM_30128" xml:space="preserve">
-    <value>D425 message: uygulama hatası</value>
+    <value>D425 message: application fault</value>
   </data>
   <data name="ALARM_40001" xml:space="preserve">
-    <value>Otomat Kontrol 230 VAC, +L01-203F1, 203F3</value>
+    <value>Fuse control 230 VAC, +L01-203F1, 203F3</value>
   </data>
   <data name="ALARM_40002" xml:space="preserve">
-    <value>Otomat Kontrol  24 VDC, +L01-204F1..204F8</value>
+    <value>Fuse control 24 VDC, +L01-204F1..204F8</value>
   </data>
   <data name="ALARM_40003" xml:space="preserve">
-    <value>Limit switch yatay, +L01-208S1</value>
+    <value>Limit switch travel, +L01-208S1</value>
   </data>
   <data name="ALARM_40004" xml:space="preserve">
-    <value>E-STOP ray üstü- kapı, +L01-209K1</value>
+    <value>E-STOP over rail - doors, +L01-209K1</value>
   </data>
   <data name="ALARM_40005" xml:space="preserve">
     <value>E-STOP push button, +L01-211A1</value>
   </data>
   <data name="ALARM_40006" xml:space="preserve">
-    <value>Yatay fan motor koruması, +L01-220Q2</value>
+    <value>Protection travel fan motor, +L01-220Q2</value>
   </data>
   <data name="ALARM_40007" xml:space="preserve">
-    <value>Konveyor fren koruması, +L01-221Q1</value>
+    <value>Protection conveyor brake, +L01-221Q1</value>
   </data>
   <data name="ALARM_40008" xml:space="preserve">
-    <value>Eksen Hatası: Yatay</value>
+    <value>Axis error: travel</value>
   </data>
   <data name="ALARM_40009" xml:space="preserve">
-    <value>Eksen Hatası: Konveyor C401</value>
+    <value>Axis error: conveyor C401</value>
   </data>
   <data name="ALARM_40010" xml:space="preserve">
     <value>D425 startup fault</value>
   </data>
   <data name="ALARM_40011" xml:space="preserve">
-    <value>Yatay hareket motoru uzun bir süre çalıştı, +EXT-218M1</value>
+    <value>Travel motor running too long, +EXT-218M1</value>
   </data>
   <data name="ALARM_40012" xml:space="preserve">
-    <value>Konveyor C401 motoru çok uzun çalıştı, +EXT-221M1</value>
+    <value>Conveyor C401 motor running too long, +EXT-221M1</value>
   </data>
   <data name="ALARM_40013" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with transport system PLC (receive direction)</value>
   </data>
   <data name="ALARM_40014" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with transport system PLC (send direction)</value>
   </data>
   <data name="ALARM_40015" xml:space="preserve">
-    <value>MFCS haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with MFCS (receive direction)</value>
   </data>
   <data name="ALARM_40016" xml:space="preserve">
-    <value>MFCS haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with MFCS (send direction)</value>
   </data>
   <data name="ALARM_40017" xml:space="preserve">
-    <value>Enkoder  veya magnetik sensor limit aşımı - yatay</value>
+    <value>Enormous value of absolute encoder or magnet switches - travel</value>
   </data>
   <data name="ALARM_40018" xml:space="preserve">
-    <value>Shuttle limit aşımı</value>
+    <value>Shuttle travel out of range</value>
   </data>
   <data name="ALARM_40019" xml:space="preserve">
-    <value>C401 de malzeme uyuşmazlığı</value>
+    <value>Material mismatch: place C401</value>
   </data>
   <data name="ALARM_40020" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Yanlış Hedef</value>
+    <value>Automatic start not possible: bad target</value>
   </data>
   <data name="ALARM_40021" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Taşıyıcı boş</value>
+    <value>Automatic start not possible: deck is empty</value>
   </data>
   <data name="ALARM_40022" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Taşıyıcı Dolu</value>
+    <value>Avtomatic start not possible: deck is occupied</value>
   </data>
   <data name="ALARM_40023" xml:space="preserve">
-    <value>Malzeme transferi başarısız</value>
+    <value>Material movement not successful</value>
   </data>
   <data name="ALARM_40024" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil - alma</value>
+    <value>Transport system conveyor not ready - pick</value>
   </data>
   <data name="ALARM_40025" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil - yükleme</value>
+    <value>Transport system conveyor not ready - deposit</value>
   </data>
   <data name="ALARM_40026" xml:space="preserve">
     <value>a026</value>
@@ -3331,25 +3331,25 @@
     <value>a064</value>
   </data>
   <data name="ALARM_40065" xml:space="preserve">
-    <value>Shuttle ve  taşıyıcı 12 arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and transporter 12</value>
   </data>
   <data name="ALARM_40066" xml:space="preserve">
-    <value>Shuttle ve  taşıyıcı 122 arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and transporter 122</value>
   </data>
   <data name="ALARM_40067" xml:space="preserve">
-    <value>Shuttle ve  taşıyıcı 211 arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and transporter 211</value>
   </data>
   <data name="ALARM_40068" xml:space="preserve">
-    <value>Shuttle ve  taşıyıcı 222 arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and transporter 222</value>
   </data>
   <data name="ALARM_40069" xml:space="preserve">
-    <value>Shuttle ve  taşıyıcı 311 arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and transporter 311</value>
   </data>
   <data name="ALARM_40070" xml:space="preserve">
-    <value>Shuttle ve  taşıyıcı 21 arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and transporter 21</value>
   </data>
   <data name="ALARM_40071" xml:space="preserve">
-    <value>shuttle ve conveyor arasında uyuşmazlık, saha boş değil</value>
+    <value>No clearence between shuttle and conveyors - path not clear</value>
   </data>
   <data name="ALARM_40072" xml:space="preserve">
     <value>E-STOP push button, CP101</value>
@@ -3373,25 +3373,25 @@
     <value>a078</value>
   </data>
   <data name="ALARM_40079" xml:space="preserve">
-    <value>Taşıyıcı kapısı açık</value>
+    <value>Door to shuttle open - CP401</value>
   </data>
   <data name="ALARM_40080" xml:space="preserve">
-    <value>C101 kapısı açık</value>
+    <value>Door to C101 open</value>
   </data>
   <data name="ALARM_40081" xml:space="preserve">
-    <value>C201 kapısı açık</value>
+    <value>Door to C201 open</value>
   </data>
   <data name="ALARM_40082" xml:space="preserve">
-    <value>C301 kapısı açık</value>
+    <value>Door to C301 open</value>
   </data>
   <data name="ALARM_40083" xml:space="preserve">
-    <value>Işık Bariyeri - MLG tetiklendi, T10</value>
+    <value>Light grid - MLG triggered, T10</value>
   </data>
   <data name="ALARM_40084" xml:space="preserve">
-    <value>Işık Bariyeri - MLG tetiklendi, T110</value>
+    <value>Light grid - MLG triggered, T110</value>
   </data>
   <data name="ALARM_40085" xml:space="preserve">
-    <value>Işık Bariyeri - MLG tetiklendi, T21</value>
+    <value>Light grid - MLG triggered, T21</value>
   </data>
   <data name="ALARM_40086" xml:space="preserve">
     <value>a086</value>
@@ -3406,13 +3406,13 @@
     <value>a089</value>
   </data>
   <data name="ALARM_40090" xml:space="preserve">
-    <value>Barkode Hatası: Taşıyıcı</value>
+    <value>Barcode mismatch: deck</value>
   </data>
   <data name="ALARM_40091" xml:space="preserve">
-    <value>MFCS: bilinmeyen hata </value>
+    <value>MFCS: unknown error</value>
   </data>
   <data name="ALARM_40092" xml:space="preserve">
-    <value>MFCS senkronizasyon hatası</value>
+    <value>MFCS: synchronization failure</value>
   </data>
   <data name="ALARM_40093" xml:space="preserve">
     <value>a093</value>
@@ -3481,148 +3481,148 @@
     <value>a0114</value>
   </data>
   <data name="ALARM_40115" xml:space="preserve">
-    <value>A. servis gerekiyor</value>
+    <value>Service M required</value>
   </data>
   <data name="ALARM_40116" xml:space="preserve">
-    <value>3A bakım zamanı</value>
+    <value>Service 3M required</value>
   </data>
   <data name="ALARM_40117" xml:space="preserve">
-    <value>6A bakım zamanı</value>
+    <value>Service 6M required</value>
   </data>
   <data name="ALARM_40118" xml:space="preserve">
-    <value>12A bakım gereksinimi</value>
+    <value>Service 12M required</value>
   </data>
   <data name="ALARM_40119" xml:space="preserve">
-    <value>Servis 5 gerekiyor</value>
+    <value>Service 5 required</value>
   </data>
   <data name="ALARM_40120" xml:space="preserve">
-    <value>D425 message: DO Alarmı</value>
+    <value>D425 message: DO Alarm</value>
   </data>
   <data name="ALARM_40121" xml:space="preserve">
-    <value>D425 message: DO Hatası</value>
+    <value>D425 message: DO fault</value>
   </data>
   <data name="ALARM_40122" xml:space="preserve">
-    <value>D425 message: DO Güvenlik</value>
+    <value>D425 message: DO safety</value>
   </data>
   <data name="ALARM_40123" xml:space="preserve">
-    <value>D425 message: beklenmedik hata</value>
+    <value>D425 message: execution fault</value>
   </data>
   <data name="ALARM_40124" xml:space="preserve">
-    <value>D425 message: çevre birimi hatası</value>
+    <value>D425 message: peripheral fault</value>
   </data>
   <data name="ALARM_40125" xml:space="preserve">
-    <value>D425 message: teknik hata</value>
+    <value>D425 message: tech fault    </value>
   </data>
   <data name="ALARM_40126" xml:space="preserve">
-    <value>D425 message: arka fon zaman hatası</value>
+    <value>D425 message: time fault background    </value>
   </data>
   <data name="ALARM_40127" xml:space="preserve">
     <value>D425 message: time fault    </value>
   </data>
   <data name="ALARM_40128" xml:space="preserve">
-    <value>D425 message: uygulama hatası</value>
+    <value>D425 message: application fault</value>
   </data>
   <data name="ALARM_50001" xml:space="preserve">
-    <value>Otomat Kontrol  230 VAC, +L01-303F1, 303F2</value>
+    <value>Fuse control 230 VAC, +L01-303F1, 303F2</value>
   </data>
   <data name="ALARM_50002" xml:space="preserve">
-    <value>Otomat Kontrol  24 VDC, +L01-304F2..304F8</value>
+    <value>Fuse control 24 VDC, +L01-304F2..304F8</value>
   </data>
   <data name="ALARM_50003" xml:space="preserve">
-    <value>Limit switch yatay, +L01-308S1</value>
+    <value>Limit switch travel, +L01-308S1</value>
   </data>
   <data name="ALARM_50004" xml:space="preserve">
-    <value>E-STOP ray üstü - kapı, +L01-309K1</value>
+    <value>E-STOP over rail - doors, +L01-309K1</value>
   </data>
   <data name="ALARM_50005" xml:space="preserve">
     <value>E-STOP push button, +L01-309S1</value>
   </data>
   <data name="ALARM_50006" xml:space="preserve">
-    <value>Dikey fan motor koruması, +L01-320Q2</value>
+    <value>Protection travel fan motor, +L01-320Q2</value>
   </data>
   <data name="ALARM_50007" xml:space="preserve">
-    <value>Konveyor fren koruması - C501, +L01-321Q1</value>
+    <value>Protection conveyor brake - C501, +L01-321Q1</value>
   </data>
   <data name="ALARM_50008" xml:space="preserve">
-    <value>Eğim fren koruması - C501, +L01-322Q1</value>
+    <value>Protection inclination brake - C501, +L01-322Q1</value>
   </data>
   <data name="ALARM_50009" xml:space="preserve">
-    <value>Konveyor fren koruması - C502, +L01-324Q1</value>
+    <value>Protection conveyor brake - C502, +L01-324Q1</value>
   </data>
   <data name="ALARM_50010" xml:space="preserve">
-    <value>Eğim fren koruması - C502, +L01-325Q1</value>
+    <value>Protection inclination brake - C502, +L01-325Q1</value>
   </data>
   <data name="ALARM_50011" xml:space="preserve">
-    <value>Trolley ve sol raf arasında uyuşmazlık, +L01-334B5</value>
+    <value>No clearance between trolley and left rack, +L01-334B5</value>
   </data>
   <data name="ALARM_50012" xml:space="preserve">
-    <value>Trolley ve sağ raf arasında uyuşmazlık, +L01-334B6</value>
+    <value>No clearance between trolley and right rack, +L01-334B6</value>
   </data>
   <data name="ALARM_50013" xml:space="preserve">
-    <value>Eksen Hatası: Yatay</value>
+    <value>Axis error: travel</value>
   </data>
   <data name="ALARM_50014" xml:space="preserve">
-    <value>Eksen Hatası: Eğim C501</value>
+    <value>Axis error: inclination C501</value>
   </data>
   <data name="ALARM_50015" xml:space="preserve">
-    <value>Eksen Hatası: Eğim C502</value>
+    <value>Axis error: inclination C502</value>
   </data>
   <data name="ALARM_50016" xml:space="preserve">
-    <value>Eksen Hatası: Konveyor C501</value>
+    <value>Axis error: conveyor C501</value>
   </data>
   <data name="ALARM_50017" xml:space="preserve">
-    <value>Eksen Hatası: Konveyor C502</value>
+    <value>Axis error: conveyor C502</value>
   </data>
   <data name="ALARM_50018" xml:space="preserve">
     <value>D425 startup fault</value>
   </data>
   <data name="ALARM_50019" xml:space="preserve">
-    <value>Yatay hareket motoru uzun bir süre çalıştı, +EXT-318M1</value>
+    <value>Travel motor running too long, +EXT-318M1</value>
   </data>
   <data name="ALARM_50020" xml:space="preserve">
-    <value>C501 Eğim  motoru  çok uzun çalıştı, +EXT-322M1</value>
+    <value>Inclination C501 motor running too long, +EXT-322M1</value>
   </data>
   <data name="ALARM_50021" xml:space="preserve">
-    <value>C502 Eğim  motoru  çok uzun çalıştı, +EXT-325M1</value>
+    <value>Inclination C502 motor running too long, +EXT-325M1</value>
   </data>
   <data name="ALARM_50022" xml:space="preserve">
-    <value>Konveyor C501 motoru çok uzun çalıştı, +EXT-321M1</value>
+    <value>Conveyor C501 motor running too long, +EXT-321M1</value>
   </data>
   <data name="ALARM_50023" xml:space="preserve">
-    <value>Konveyor C502 motoru çok uzun çalıştı, +EXT-324M1</value>
+    <value>Conveyor C502 motor running too long, +EXT-324M1</value>
   </data>
   <data name="ALARM_50024" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with transport system PLC (receive direction)</value>
   </data>
   <data name="ALARM_50025" xml:space="preserve">
-    <value>PLC ile haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with transport system PLC (send direction)</value>
   </data>
   <data name="ALARM_50026" xml:space="preserve">
-    <value>MFCS haberleşme hatası (alım yönünde)</value>
+    <value>Communication error with MFCS (receive direction)</value>
   </data>
   <data name="ALARM_50027" xml:space="preserve">
-    <value>MFCS haberleşme hatası (gönderim yönünde)</value>
+    <value>Communication error with MFCS (send direction)</value>
   </data>
   <data name="ALARM_50028" xml:space="preserve">
-    <value>Enkoder  veya magnetik sensor limit aşımı - yatay</value>
+    <value>Enormous value of absolute encoder or magnet switches - travel</value>
   </data>
   <data name="ALARM_50029" xml:space="preserve">
-    <value>Dikey yönde limit aşımı</value>
+    <value>Trolley travel out of range</value>
   </data>
   <data name="ALARM_50030" xml:space="preserve">
-    <value>C501 de malzeme uyuşmazlığı</value>
+    <value>Material mismatch: place C501</value>
   </data>
   <data name="ALARM_50031" xml:space="preserve">
-    <value>C502 de malzeme uyuşmazlığı</value>
+    <value>Material missmatch: place C502</value>
   </data>
   <data name="ALARM_50032" xml:space="preserve">
-    <value>Eğim konumunda çok uzun kaldı</value>
+    <value>Inclinaction referencing for too long - C501</value>
   </data>
   <data name="ALARM_50033" xml:space="preserve">
-    <value>C502 eğim verme işlemi uzun sürdü</value>
+    <value>Inclination referencing for too long - C502</value>
   </data>
   <data name="ALARM_50034" xml:space="preserve">
-    <value>Yatay fren motoru koruması, +L01-320Q1</value>
+    <value>Protection travel motor brake, +L01-320Q1</value>
   </data>
   <data name="ALARM_50035" xml:space="preserve">
     <value>a035</value>
@@ -3643,61 +3643,61 @@
     <value>a040</value>
   </data>
   <data name="ALARM_50041" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Yanlış Hedef</value>
+    <value>Automatic start not possible: bad target</value>
   </data>
   <data name="ALARM_50042" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Taşıyıcı boş - C501</value>
+    <value>Automatic start not possible: deck is empty - C501</value>
   </data>
   <data name="ALARM_50043" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Taşıyıcı boş - C502</value>
+    <value>Automatic start not possible: deck is empty - C502</value>
   </data>
   <data name="ALARM_50044" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Taşıyıcı dolu - C501</value>
+    <value>Automatic start NOT possible: deck is occupied - C501</value>
   </data>
   <data name="ALARM_50045" xml:space="preserve">
-    <value>Otomatik olarak başlatılamadı: Taşıyıcı dolu - C502</value>
+    <value>Automatic start NOT possible: deck is occupied - C502</value>
   </data>
   <data name="ALARM_50046" xml:space="preserve">
-    <value>Malzeme transferi başarısız - C501</value>
+    <value>Material movement not successful - C501</value>
   </data>
   <data name="ALARM_50047" xml:space="preserve">
-    <value>Malzeme transferi başarısız - C502</value>
+    <value>Material movement NOT successful - C502</value>
   </data>
   <data name="ALARM_50048" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil - alma C501</value>
+    <value>Transport system conveyor NOT ready - pick C501</value>
   </data>
   <data name="ALARM_50049" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil - alma C502</value>
+    <value>Transport system conveyor NOT ready - pick C502</value>
   </data>
   <data name="ALARM_50050" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil - drop C501</value>
+    <value>Transport system conveyor NOT ready - drop C501</value>
   </data>
   <data name="ALARM_50051" xml:space="preserve">
-    <value>Konveyor sistemi hazır değil - drop C502</value>
+    <value>Transport system conveyor NOT ready - drop C502</value>
   </data>
   <data name="ALARM_50052" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T21</value>
+    <value>Light grid - MLG, T21</value>
   </data>
   <data name="ALARM_50053" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T321</value>
+    <value>Light grid - MLG, T321</value>
   </data>
   <data name="ALARM_50054" xml:space="preserve">
-    <value>Işık Bariyeri - MLG, T322</value>
+    <value>Light grid - MLG, T322</value>
   </data>
   <data name="ALARM_50055" xml:space="preserve">
-    <value>C501 de eğim sıfır değil</value>
+    <value>Inclination not alligned: C501</value>
   </data>
   <data name="ALARM_50056" xml:space="preserve">
-    <value>C501 de eğim sıfır değil</value>
+    <value>Inclination not alligned: C502</value>
   </data>
   <data name="ALARM_50057" xml:space="preserve">
-    <value>Shuttle ve  taşıyıcı 12 arasında uyuşmazlık</value>
+    <value>No clearance between shuttle AND transporter 12</value>
   </data>
   <data name="ALARM_50058" xml:space="preserve">
-    <value>Yükleme yapılamıyor, raf dolu: C501</value>
+    <value>Deposit not allowed, rack occupied: C501</value>
   </data>
   <data name="ALARM_50059" xml:space="preserve">
-    <value>Yükleme yapılamıyor, raf dolu: C502</value>
+    <value>Deposit not allowed, rack occupied: C502</value>
   </data>
   <data name="ALARM_50060" xml:space="preserve">
     <value>E-STOP push button 3    </value>
@@ -3706,34 +3706,34 @@
     <value>E-STOP push button 4    </value>
   </data>
   <data name="ALARM_50062" xml:space="preserve">
-    <value>Kapı açık, CP501</value>
+    <value>Door opened, CP501</value>
   </data>
   <data name="ALARM_50063" xml:space="preserve">
-    <value>Kapı açık, CP502</value>
+    <value>Door opened, CP502</value>
   </data>
   <data name="ALARM_50064" xml:space="preserve">
-    <value>T023 Konveyoru ve shuttle arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and T023</value>
   </data>
   <data name="ALARM_50065" xml:space="preserve">
-    <value>T024 Konveyoru ve shuttle arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and T024</value>
   </data>
   <data name="ALARM_50066" xml:space="preserve">
-    <value>T321 Konveyoru ve shuttle arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and T321</value>
   </data>
   <data name="ALARM_50067" xml:space="preserve">
-    <value>T322 Konveyoru ve shuttle arasında uyuşmazlık</value>
+    <value>No clearance between shuttle and T322</value>
   </data>
   <data name="ALARM_50068" xml:space="preserve">
-    <value>Shuttle ve raf 52 arasında uyuşmazlık, X=1..5 bölgesi</value>
+    <value>No clearance between shuttle and rack 52, place X = 1..5</value>
   </data>
   <data name="ALARM_50069" xml:space="preserve">
-    <value>Shuttle ve raf 52 arasında uyuşmazlık, X=6..12 bölgesi</value>
+    <value>No clearance between shuttle and rack 52, place X = 6..12</value>
   </data>
   <data name="ALARM_50070" xml:space="preserve">
-    <value>Shuttle ve raf 52 arasında uyuşmazlık, X=13..19 bölgesi</value>
+    <value>No clearance between shuttle and rack 52, place X = 13..19</value>
   </data>
   <data name="ALARM_50071" xml:space="preserve">
-    <value>Shuttle ve raf 52 arasında uyuşmazlık, X=20..24 bölgesi</value>
+    <value>No clearance between shuttle and rack 52, place X = 20..24</value>
   </data>
   <data name="ALARM_50072" xml:space="preserve">
     <value>a072</value>
@@ -3853,354 +3853,66 @@
     <value>a0110</value>
   </data>
   <data name="ALARM_50111" xml:space="preserve">
-    <value>Barkode Hatası: Taşıyıcı C501</value>
+    <value>Barcode mismatch: deck C501</value>
   </data>
   <data name="ALARM_50112" xml:space="preserve">
-    <value>Barkode Hatası: Taşıyıcı C502</value>
+    <value>Barcode mismatch: deck C502</value>
   </data>
   <data name="ALARM_50113" xml:space="preserve">
-    <value>MFCS: bilinmeyen hata</value>
+    <value>  MFCS: unknown error</value>
   </data>
   <data name="ALARM_50114" xml:space="preserve">
-    <value>MFCS: senkronizasyon hatası</value>
+    <value>  MFCS: synchronization failure</value>
   </data>
   <data name="ALARM_50115" xml:space="preserve">
-    <value>A. servis gerekiyor</value>
+    <value>Service M required</value>
   </data>
   <data name="ALARM_50116" xml:space="preserve">
-    <value>3A bakım zamanı</value>
+    <value>Service 3M required</value>
   </data>
   <data name="ALARM_50117" xml:space="preserve">
-    <value>6A bakım zamanı</value>
+    <value>Service 6M required</value>
   </data>
   <data name="ALARM_50118" xml:space="preserve">
-    <value>12A bakım gereksinimi</value>
+    <value>Service 12M required</value>
   </data>
   <data name="ALARM_50119" xml:space="preserve">
-    <value>Servis 5 gerekiyor</value>
+    <value>Service 5 required</value>
   </data>
   <data name="ALARM_50120" xml:space="preserve">
-    <value>D425 message: DO Alarmı</value>
+    <value>D425 message: DO Alarm</value>
   </data>
   <data name="ALARM_50121" xml:space="preserve">
-    <value>D425 message: DO Hatası</value>
+    <value>D425 message: DO fault</value>
   </data>
   <data name="ALARM_50122" xml:space="preserve">
-    <value>D425 message: DO Güvenlik</value>
+    <value>D425 message: DO safety</value>
   </data>
   <data name="ALARM_50123" xml:space="preserve">
-    <value>D425 message: beklenmedik hata</value>
+    <value>D425 message: execution fault</value>
   </data>
   <data name="ALARM_50124" xml:space="preserve">
-    <value>D425 message: çevre birimi hatası</value>
+    <value>D425 message: peripheral fault</value>
   </data>
   <data name="ALARM_50125" xml:space="preserve">
-    <value>D425 message: teknik hata</value>
+    <value>D425 message: tech fault    </value>
   </data>
   <data name="ALARM_50126" xml:space="preserve">
-    <value>D425 message: arka fon zaman hatası</value>
+    <value>D425 message: time fault background    </value>
   </data>
   <data name="ALARM_50127" xml:space="preserve">
     <value>D425 message: time fault    </value>
   </data>
   <data name="ALARM_50128" xml:space="preserve">
-    <value>D425 message: uygulama hatası</value>
+    <value>D425 message: application fault </value>
   </data>
-  <data name="EnumCommandStatus_Waiting" xml:space="preserve">
-    <value>Aktif Değil (WA)</value>
+  <data name="ERR_BLOCKED" xml:space="preserve">
+    <value>Location blocked</value>
   </data>
   <data name="EnumCommandTask_InfoSlot" xml:space="preserve">
-    <value>Depo yeri bilgisi</value>
+    <value>WH slot info</value>
   </data>
   <data name="Selected" xml:space="preserve">
-    <value>Seçilmiş</value>
-  </data>
-  <data name="Shuttle3" xml:space="preserve">
-    <value>@Shuttle3</value>
-  </data>
-  <data name="ReleaseOrders" xml:space="preserve">
-    <value>@ReleaseOrders</value>
-  </data>
-  <data name="TUs" xml:space="preserve">
-    <value>@TUs</value>
-  </data>
-  <data name="CommandERPs" xml:space="preserve">
-    <value>@CommandERPs</value>
-  </data>
-  <data name="CommandWMSs" xml:space="preserve">
-    <value>@CommandWMSs</value>
-  </data>
-  <data name="PrepareOrders" xml:space="preserve">
-    <value>@PrepareOrders</value>
-  </data>
-  <data name="PlaceIDs" xml:space="preserve">
-    <value>@PlaceIDs</value>
-  </data>
-  <data name="SKUIDs" xml:space="preserve">
-    <value>@SKUIDs</value>
-  </data>
-  <data name="ComparePlaces" xml:space="preserve">
-    <value>@ComparePlaces</value>
-  </data>
-  <data name="WMSLog" xml:space="preserve">
-    <value>@WMSLog</value>
-  </data>
-  <data name="ERPID" xml:space="preserve">
-    <value>@ERPID</value>
-  </data>
-  <data name="Reference" xml:space="preserve">
-    <value>@Reference</value>
-  </data>
-  <data name="Command" xml:space="preserve">
-    <value>@Command</value>
-  </data>
-  <data name="WMSID" xml:space="preserve">
-    <value>@WMSID</value>
-  </data>
-  <data name="OrderID" xml:space="preserve">
-    <value>@OrderID</value>
-  </data>
-  <data name="SubOrderID" xml:space="preserve">
-    <value>@SubOrderID</value>
-  </data>
-  <data name="SubOrderName" xml:space="preserve">
-    <value>@SubOrderName</value>
-  </data>
-  <data name="SKUID" xml:space="preserve">
-    <value>@SKUID</value>
-  </data>
-  <data name="SKUBatch" xml:space="preserve">
-    <value>@SKUBatch</value>
-  </data>
-  <data name="TUID" xml:space="preserve">
-    <value>@TUID</value>
-  </data>
-  <data name="SKU" xml:space="preserve">
-    <value>@SKU</value>
-  </data>
-  <data name="Batch" xml:space="preserve">
-    <value>@Batch</value>
-  </data>
-  <data name="Message" xml:space="preserve">
-    <value>@Message</value>
-  </data>
-  <data name="Orders" xml:space="preserve">
-    <value>@Orders</value>
-  </data>
-  <data name="Destination" xml:space="preserve">
-    <value>@Destination</value>
-  </data>
-  <data name="ReleaseTime" xml:space="preserve">
-    <value>@ReleaseTime</value>
-  </data>
-  <data name="SubOrders" xml:space="preserve">
-    <value>@SubOrders</value>
-  </data>
-  <data name="SKUs" xml:space="preserve">
-    <value>@SKUs</value>
-  </data>
-  <data name="SKUQty" xml:space="preserve">
-    <value>@SKUQty</value>
-  </data>
-  <data name="AddOrder" xml:space="preserve">
-    <value>@AddOrder</value>
-  </data>
-  <data name="EditOrder" xml:space="preserve">
-    <value>@EditOrder</value>
-  </data>
-  <data name="DeleteOrder" xml:space="preserve">
-    <value>@DeleteOrder</value>
-  </data>
-  <data name="AddSubOrder" xml:space="preserve">
-    <value>@AddSubOrder</value>
-  </data>
-  <data name="EditSubOrder" xml:space="preserve">
-    <value>@EditSubOrder</value>
-  </data>
-  <data name="DeleteSubOrder" xml:space="preserve">
-    <value>@DeleteSubOrder</value>
-  </data>
-  <data name="AddSKU" xml:space="preserve">
-    <value>@AddSKU</value>
-  </data>
-  <data name="EditSKU" xml:space="preserve">
-    <value>@EditSKU</value>
-  </data>
-  <data name="DeleteSKU" xml:space="preserve">
-    <value>@DeleteSKU</value>
-  </data>
-  <data name="PlaceWMS" xml:space="preserve">
-    <value>@PlaceWMS</value>
-  </data>
-  <data name="TimeWMS" xml:space="preserve">
-    <value>@TimeWMS</value>
-  </data>
-  <data name="PlaceMFCS" xml:space="preserve">
-    <value>@PlaceMFCS</value>
-  </data>
-  <data name="TimeMFCS" xml:space="preserve">
-    <value>@TimeMFCS</value>
-  </data>
-  <data name="UpdateWMS" xml:space="preserve">
-    <value>@UpdateWMS</value>
-  </data>
-  <data name="UpdateMFCS" xml:space="preserve">
-    <value>@UpdateMFCS</value>
-  </data>
-  <data name="PositionTravel" xml:space="preserve">
-    <value>@PositionTravel</value>
-  </data>
-  <data name="PositionHoist" xml:space="preserve">
-    <value>@PositionHoist</value>
-  </data>
-  <data name="DimensionClass" xml:space="preserve">
-    <value>@DimensionClass</value>
-  </data>
-  <data name="FrequencyClass" xml:space="preserve">
-    <value>@FrequencyClass</value>
-  </data>
-  <data name="Block" xml:space="preserve">
-    <value>@Block</value>
-  </data>
-  <data name="Unblock" xml:space="preserve">
-    <value>@Unblock</value>
-  </data>
-  <data name="PlaceID" xml:space="preserve">
-    <value>@PlaceID</value>
-  </data>
-  <data name="Add" xml:space="preserve">
-    <value>@Add</value>
-  </data>
-  <data name="Book" xml:space="preserve">
-    <value>@Book</value>
-  </data>
-  <data name="Qty" xml:space="preserve">
-    <value>@Qty</value>
-  </data>
-  <data name="ProdDate" xml:space="preserve">
-    <value>@ProdDate</value>
-  </data>
-  <data name="ExpDate" xml:space="preserve">
-    <value>@ExpDate</value>
-  </data>
-  <data name="ReleaseOfOrders" xml:space="preserve">
-    <value>@ReleaseOfOrders</value>
-  </data>
-  <data name="PortionActive" xml:space="preserve">
-    <value>@PortionActive</value>
-  </data>
-  <data name="PortionDone" xml:space="preserve">
-    <value>@PortionDone</value>
-  </data>
-  <data name="Ramp" xml:space="preserve">
-    <value>@Ramp</value>
-  </data>
-  <data name="ReleaseOrder" xml:space="preserve">
-    <value>@ReleaseOrder</value>
-  </data>
-  <data name="ReleaseRamp" xml:space="preserve">
-    <value>@ReleaseRamp</value>
-  </data>
-  <data name="Ramp1" xml:space="preserve">
-    <value>@Ramp1</value>
-  </data>
-  <data name="Ramp2" xml:space="preserve">
-    <value>@Ramp2</value>
-  </data>
-  <data name="Ramp3" xml:space="preserve">
-    <value>@Ramp3</value>
-  </data>
-  <data name="Ramp4" xml:space="preserve">
-    <value>@Ramp4</value>
-  </data>
-  <data name="Ramp5" xml:space="preserve">
-    <value>@Ramp5</value>
-  </data>
-  <data name="B2B" xml:space="preserve">
-    <value>@B2B</value>
-  </data>
-  <data name="Now" xml:space="preserve">
-    <value>@Now</value>
-  </data>
-  <data name="Now1" xml:space="preserve">
-    <value>@Now1</value>
-  </data>
-  <data name="Now2" xml:space="preserve">
-    <value>@Now2</value>
-  </data>
-  <data name="Now3" xml:space="preserve">
-    <value>@Now3</value>
-  </data>
-  <data name="Now4" xml:space="preserve">
-    <value>@Now4</value>
-  </data>
-  <data name="Now5" xml:space="preserve">
-    <value>@Now5</value>
-  </data>
-  <data name="Now6" xml:space="preserve">
-    <value>@Now6</value>
-  </data>
-  <data name="Now7" xml:space="preserve">
-    <value>@Now7</value>
-  </data>
-  <data name="Now8" xml:space="preserve">
-    <value>@Now8</value>
-  </data>
-  <data name="Now9" xml:space="preserve">
-    <value>@Now9</value>
-  </data>
-  <data name="Now10" xml:space="preserve">
-    <value>@Now10</value>
-  </data>
-  <data name="Done" xml:space="preserve">
-    <value>@Done</value>
-  </data>
-  <data name="Finished" xml:space="preserve">
-    <value>@Finished</value>
-  </data>
-  <data name="DefaultQty" xml:space="preserve">
-    <value>@DefaultQty</value>
-  </data>
-  <data name="Weight" xml:space="preserve">
-    <value>@Weight</value>
-  </data>
-  <data name="ERR_MATERIALEXSITS" xml:space="preserve">
-    <value>@ERR MATERIALEXSITS</value>
-  </data>
-  <data name="ERR_ORDERID" xml:space="preserve">
-    <value>@ERR ORDERID</value>
-  </data>
-  <data name="ERR_DESTINATION" xml:space="preserve">
-    <value>@ERR DESTINATION</value>
-  </data>
-  <data name="ERR_SUBORDERID" xml:space="preserve">
-    <value>@ERR SUBORDERID</value>
-  </data>
-  <data name="ERR_SKU" xml:space="preserve">
-    <value>@ERR SKU</value>
-  </data>
-  <data name="ERR_LOC_RANGE" xml:space="preserve">
-    <value>@ERR LOC RANGE</value>
-  </data>
-  <data name="ERR_TUID" xml:space="preserve">
-    <value>@ERR TUID</value>
-  </data>
-  <data name="ERR_PLACE" xml:space="preserve">
-    <value>@ERR PLACE</value>
-  </data>
-  <data name="ERR_INDEX_FORMAT" xml:space="preserve">
-    <value>@ERR INDEX FORMAT</value>
-  </data>
-  <data name="ERR_INDEX_EXISTS" xml:space="preserve">
-    <value>@ERR INDEX EXISTS</value>
-  </data>
-  <data name="ERR_SKUID" xml:space="preserve">
-    <value>@ERR SKUID</value>
-  </data>
-  <data name="ERR_BATCH" xml:space="preserve">
-    <value>@ERR BATCH</value>
-  </data>
-  <data name="ERR_DATE" xml:space="preserve">
-    <value>@ERR DATE</value>
+    <value>Selected</value>
   </data>
 </root>

@@ -64,7 +64,19 @@ namespace UserInterface.Services
         Canceled = 2,
         Finished = 3,
     }
-    
+    [TypeConverter(typeof(LocalizedEnumConverter))]
+    public enum EnumBlockedWMS : int
+    {
+        Available = 0,
+        Rack = 1,
+        Vehicle = 2,
+        RackVehicle = 3,
+        Quality = 4,
+        QualityRack = 5,
+        QualityVehicle = 6,
+        QualityVehicleRack = 7
+    }
+
     [TypeConverter(typeof(LocalizedEnumConverter))]
     public enum EnumCommandTask : int
     {

@@ -13,12 +13,13 @@ using WCFClients;
 using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using DatabaseWMS;
+using UserInterface.ProxyWMS_UI;
 
 namespace UserInterface.ViewModel
 {
     public sealed class PlaceTUIDsViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, Edit, Book, Delete, Add};
+        public enum CommandType { None = 0, Edit, Book, Delete, Add, Block};
 
         #region members
         private CommandType _selectedCommand;
@@ -34,6 +35,7 @@ namespace UserInterface.ViewModel
 
         #region properites
         public RelayCommand Add { get; private set; }
+        public RelayCommand Block { get; private set; }
         public RelayCommand Delete { get; private set; }
         public RelayCommand Book { get; private set; }
         public RelayCommand Edit { get; private set; }
@@ -151,6 +153,7 @@ namespace UserInterface.ViewModel
             Book = new RelayCommand(() => ExecuteBook(), CanExecuteBook);
             Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
             Add = new RelayCommand(() => ExecuteAdd(), CanExecuteAdd);
+            Block = new RelayCommand(() => ExecuteBlock(), CanExecuteBlock);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Refresh = new RelayCommand(() => ExecuteRefresh());
@@ -198,6 +201,7 @@ namespace UserInterface.ViewModel
                 Detailed.AllowPlaceChange = false;
                 Detailed.AllowTUIDChange = false;
                 Detailed.AllowFieldChange = true;
+                Detailed.AllowBlockedChange = false;
                 Detailed.TUID = Selected.TUID;
                 Detailed.PlaceID = Selected.PlaceID;
                 Detailed.DimensionClass = Selected.DimensionClass;
@@ -239,6 +243,7 @@ namespace UserInterface.ViewModel
                 Detailed.AllowTUIDChange = false;
                 Detailed.AllowPlaceChange = true;
                 Detailed.AllowFieldChange = false;
+                Detailed.AllowBlockedChange = false;
                 Detailed.TUID = Selected.TUID;
                 Detailed.ValidationEnabled = true;
                 Detailed.PlaceID = Selected.PlaceID;
@@ -285,6 +290,7 @@ namespace UserInterface.ViewModel
                 Detailed.AllowTUIDChange = false;
                 Detailed.AllowPlaceChange = false;
                 Detailed.AllowFieldChange = false;
+                Detailed.AllowBlockedChange = false;
                 Detailed.TUID = Selected.TUID;
                 Detailed.PlaceID = Selected.PlaceID;
                 Detailed.DimensionClass = Selected.DimensionClass;
@@ -328,6 +334,7 @@ namespace UserInterface.ViewModel
                 Detailed.AllowTUIDChange = true;
                 Detailed.AllowPlaceChange = true;
                 Detailed.AllowFieldChange = true;
+                Detailed.AllowBlockedChange = false;
                 Detailed.ValidationEnabled = true;
                 Detailed.TUID = 0;
                 Detailed.PlaceID = "";
@@ -347,6 +354,48 @@ namespace UserInterface.ViewModel
             try
             {
                 return !EditEnabled && AccessLevel >= 1;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+        private void ExecuteBlock()
+        {
+            try
+            {
+                _selectedCommand = CommandType.Block;
+                EditEnabled = true;
+                EnabledCC = true;
+                Detailed = new PlaceTUIDViewModel();
+                Detailed.Initialize(_warehouse);
+                Detailed.AllowPlaceChange = false;
+                Detailed.AllowTUIDChange = false;
+                Detailed.AllowFieldChange = false;
+                Detailed.AllowBlockedChange = true;
+                Detailed.TUID = Selected.TUID;
+                Detailed.PlaceID = Selected.PlaceID;
+                Detailed.DimensionClass = Selected.DimensionClass;
+                Detailed.Blocked = Selected.Blocked;
+                Detailed.DetailList = new ObservableCollection<TUSKUIDViewModel>();
+                foreach (var l in Selected.DetailList)
+                    Detailed.DetailList.Add(l);
+                Detailed.ValidationEnabled = true;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteBlock()
+        {
+            try
+            {
+                return !EditEnabled && (Selected != null) && AccessLevel >= 1;
             }
             catch (Exception e)
             {
@@ -395,7 +444,7 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Edit:
-                            TU_ID tuid = new TU_ID { ID = Detailed.TUID, DimensionClass = Detailed.DimensionClass, Blocked = Detailed.Blocked };
+                            TU_ID tuid = new TU_ID { ID = Detailed.TUID, DimensionClass = Detailed.DimensionClass, Blocked = (int)Detailed.Blocked };
                             List<TUs> tulist = new List<TUs>();
                             foreach (var l in Detailed.DetailList)
                                 tulist.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate  });
@@ -416,6 +465,18 @@ namespace UserInterface.ViewModel
                             Selected.PlaceID = Detailed.PlaceID;
                             Selected.DimensionClass = Detailed.DimensionClass;
                             Selected.Blocked = Detailed.Blocked;
+                            break;
+                        case CommandType.Block:
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.BlockLocations(Detailed.PlaceID, Detailed.BlockedQC, (int)EnumBlockedWMS.Quality);
+                                _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
+                                                    String.Format("TUID blocked: tuid: {0}", Detailed.TUID));
+                                Selected.TUID = Detailed.TUID;
+                                Selected.PlaceID = Detailed.PlaceID;
+                                Selected.DimensionClass = Detailed.DimensionClass;
+                                Selected.Blocked = Detailed.Blocked;
+                            }
                             break;
                         case CommandType.Delete:
                             _dbservicewms.DeleteTUs(Detailed.TUID);
@@ -476,7 +537,7 @@ namespace UserInterface.ViewModel
                         TUID = p.TUID,
                         PlaceID = p.PlaceID,
                         DimensionClass = p.DimensionClass,
-                        Blocked = p.Blocked
+                        Blocked = (EnumBlockedWMS)p.Blocked
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);

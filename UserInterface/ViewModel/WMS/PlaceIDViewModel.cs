@@ -98,14 +98,14 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public int Status
+        public EnumBlockedWMS Status
         {
-            get { return _placeid.Status; }
+            get { return (EnumBlockedWMS)_placeid.Status; }
             set
             {
-                if (_placeid.Status!= value)
+                if (_placeid.Status!= (int)value)
                 {
-                    _placeid.Status = value;
+                    _placeid.Status = (int)value;
                     RaisePropertyChanged("Status");
                 }
             }
@@ -192,7 +192,7 @@ namespace UserInterface.ViewModel
                         switch (propertyName)
                         {
                             case "ID":
-                                if(_dbservicewms.CountPlaceIDs(ID) == 0)
+                                if(_dbservicewms.CountPlaceIDs(ID) == 0 || ID.Length == 0)
                                     validationResult = ResourceReader.GetString("ERR_LOC_RANGE");
                                 break;
                             case "FrequencyClass":
