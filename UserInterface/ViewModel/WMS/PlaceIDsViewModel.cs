@@ -13,6 +13,7 @@ using WCFClients;
 using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using UserInterface.ProxyWMS_UI;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -185,8 +186,8 @@ namespace UserInterface.ViewModel
             Block = new RelayCommand(() => ExecuteBlock(), CanExecuteBlock);
             Unblock = new RelayCommand(() => ExecuteUnblock(), CanExecuteUnblock);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
-            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Confirm = new RelayCommand(async () => await ExecuteConfirm(), CanExecuteConfirm);
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -198,7 +199,7 @@ namespace UserInterface.ViewModel
                 PlaceIDList = new ObservableCollection<PlaceIDViewModel>();
                 SelectedPlaceIDs = new List<PlaceIDViewModel>();
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async (vm) => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -347,7 +348,7 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteConfirm()
+        private async Task ExecuteConfirm()
         {
             try
             {
@@ -373,20 +374,8 @@ namespace UserInterface.ViewModel
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
                                 EnumBlockedWMS reason = (DetailedPlaceID.ID.Length <= 4 && DetailedPlaceID.ID.StartsWith("W")) ? EnumBlockedWMS.Vehicle : EnumBlockedWMS.Rack;
-                                client.BlockLocations(DetailedPlaceID.ID, _selectedCommand == CommandType.Block, (int)reason);
-                                PlaceIDList.Clear();
-                                foreach (var p in _dbservicewms.GetPlaceIDs(0, 999))
-                                PlaceIDList.Add(new PlaceIDViewModel
-                                {
-                                    ID = p.ID,
-                                    PositionTravel = p.PositionTravel,
-                                    PositionHoist = p.PositionHoist,
-                                    DimensionClass = p.DimensionClass,
-                                    FrequencyClass = p.FrequencyClass,
-                                    Status = (EnumBlockedWMS)p.Status
-                                });
-                                foreach (var l in PlaceIDList)
-                                    l.Initialize(_warehouse);
+                                await client.BlockLocationsAsync(DetailedPlaceID.ID, _selectedCommand == CommandType.Block, (int)reason);
+                                await ExecuteRefresh();
                             }
                             break;
                     }
@@ -417,13 +406,13 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 string id = SelectedPlaceID?.ID; 
                 PlaceIDList.Clear();
-                foreach (var p in _dbservicewms.GetPlaceIDs(0, int.MaxValue))
+                foreach (var p in await _dbservicewms.GetPlaceIDs(0, int.MaxValue))
                     PlaceIDList.Add(new PlaceIDViewModel
                     {
                         ID = p.ID,
@@ -445,13 +434,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is PlaceIDsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

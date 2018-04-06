@@ -70,11 +70,18 @@ namespace UserInterface.Services
         Available = 0,
         Rack = 1,
         Vehicle = 2,
-        RackVehicle = 3,
+        VehicleRack = 3,
         Quality = 4,
         QualityRack = 5,
         QualityVehicle = 6,
         QualityVehicleRack = 7
+    }
+
+    [TypeConverter(typeof(LocalizedEnumConverter))]
+    public enum EnumLogWMS: int
+    {
+        Exception = 0,
+        Event = 1
     }
 
     [TypeConverter(typeof(LocalizedEnumConverter))]

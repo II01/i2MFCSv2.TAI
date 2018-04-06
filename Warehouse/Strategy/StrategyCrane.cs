@@ -159,7 +159,7 @@ namespace Warehouse.Strategy
         {
             if (Command == null || Command.Status >= SimpleCommand.EnumStatus.Canceled)
             {
-                // Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, true);
+                Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, true);  // for move to work
                 if (!(Command != null && Command.Task == SimpleCommand.EnumTask.Move))
                 {
                     if (Crane.Place != null)

@@ -95,6 +95,20 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public DateTime TimeStamp
+        {
+            get { return _data.TimeStamp; }
+            set
+            {
+                if (_data.TimeStamp != value)
+                {
+                    _data.TimeStamp = value;
+                    RaisePropertyChanged("TimeStamp");
+                }
+            }
+        }
+
         public bool BlockedQC
         {
             get { return (_data.Blocked & (int)EnumBlockedWMS.Quality)>0; }

@@ -15,7 +15,7 @@ namespace UserInterface.ViewModel
     {
         #region members
         private Orders _data;
-        private string _portionDone;
+        private string _portion;
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
@@ -77,6 +77,30 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public int SubOrderID
+        {
+            get { return _data.SubOrderID; }
+            set
+            {
+                if (_data.SubOrderID != value)
+                {
+                    _data.SubOrderID = value;
+                    RaisePropertyChanged("SubOrderID");
+                }
+            }
+        }
+        public string SubOrderName
+        {
+            get { return _data.SubOrderName; }
+            set
+            {
+                if (_data.SubOrderName != value)
+                {
+                    _data.SubOrderName = value;
+                    RaisePropertyChanged("SubOrderName");
+                }
+            }
+        }
         public string Destination
         {
             get { return _data.Destination; }
@@ -101,28 +125,15 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public string PortionActive
+        public string Portion
         {
-            get { return _portionDone; }
+            get { return _portion; }
             set
             {
-                if (_portionDone != value)
+                if (_portion != value)
                 {
-                    _portionDone = value;
-                    RaisePropertyChanged("PortionActive");
-                }
-            }
-        }
-
-        public string PortionDone
-        {
-            get { return _portionDone; }
-            set
-            {
-                if(_portionDone != value)
-                {
-                    _portionDone = value;
-                    RaisePropertyChanged("PortionDone");
+                    _portion = value;
+                    RaisePropertyChanged("Portion");
                 }
             }
         }
@@ -226,7 +237,7 @@ namespace UserInterface.ViewModel
                                     validationResult = ResourceReader.GetString("ERR_DESTINATION");
                                 break;
                             case "ReleaseTime":
-                                if (ReleaseTime < SqlDateTime.MinValue.Value || ReleaseTime > SqlDateTime.MaxValue.Value)
+                                if (ReleaseTime < SqlDateTime.MinValue.Value || ReleaseTime >= SqlDateTime.MaxValue.Value)
                                     validationResult = ResourceReader.GetString("ERR_RANGE");
                                 break;
                         }

@@ -12,6 +12,7 @@ namespace UserInterface.DataServiceWMS
         public string PlaceID { get; set; }
         public int DimensionClass { get; set; }
         public int Blocked { get; set; }
+        public DateTime TimeStamp { get; set; }
 
         public PlaceTUID()
         {

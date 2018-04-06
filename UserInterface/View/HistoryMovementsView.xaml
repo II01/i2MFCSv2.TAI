@@ -79,7 +79,7 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Location}" 
                                     Width="100" Binding="{Binding Position}" />
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Transport_unit}" 
-                                    Width="100" Binding="{Binding Material}" />
+                                    Width="100" Binding="{Binding Material, Converter={StaticResource PalletIntAndString}}" />
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Task}" 
                                     Width="*" Binding="{Binding Task}" />
             </DataGrid.Columns>

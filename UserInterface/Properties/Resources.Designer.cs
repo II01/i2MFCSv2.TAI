@@ -9655,7 +9655,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ERP Commands.
+        ///   Looks up a localized string similar to Commands ERP.
         /// </summary>
         public static string CommandERPs {
             get {
@@ -9682,7 +9682,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WMS Commands.
+        ///   Looks up a localized string similar to Commands MFCS.
         /// </summary>
         public static string CommandWMSs {
             get {
@@ -9691,7 +9691,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ComparePlaces.
+        ///   Looks up a localized string similar to Compare databases.
         /// </summary>
         public static string ComparePlaces {
             get {
@@ -9781,7 +9781,16 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete Order.
+        ///   Looks up a localized string similar to Cancel Cmd.
+        /// </summary>
+        public static string DeleteCommand {
+            get {
+                return ResourceManager.GetString("DeleteCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete order.
         /// </summary>
         public static string DeleteOrder {
             get {
@@ -9799,7 +9808,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete Suborder.
+        ///   Looks up a localized string similar to Delete suborder.
         /// </summary>
         public static string DeleteSubOrder {
             get {
@@ -9961,6 +9970,78 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not blocked.
+        /// </summary>
+        public static string EnumBlockedWMS_Available {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_Available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality.
+        /// </summary>
+        public static string EnumBlockedWMS_Quality {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_Quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality + Rack.
+        /// </summary>
+        public static string EnumBlockedWMS_QualityRack {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_QualityRack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality + Vehicle.
+        /// </summary>
+        public static string EnumBlockedWMS_QualityVehicle {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_QualityVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality + Rack + Vehicle.
+        /// </summary>
+        public static string EnumBlockedWMS_QualityVehicleRack {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_QualityVehicleRack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rack.
+        /// </summary>
+        public static string EnumBlockedWMS_Rack {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_Rack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle.
+        /// </summary>
+        public static string EnumBlockedWMS_Vehicle {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_Vehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle + Rack.
+        /// </summary>
+        public static string EnumBlockedWMS_VehicleRack {
+            get {
+                return ResourceManager.GetString("EnumBlockedWMS_VehicleRack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Command cancel.
         /// </summary>
         public static string EnumCommandCommandTask_CancelCommand {
@@ -9975,6 +10056,42 @@ namespace UserInterface.Properties {
         public static string EnumCommandCommandTask_InfoCommand {
             get {
                 return ResourceManager.GetString("EnumCommandCommandTask_InfoCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string EnumCommandERPStatus_Active {
+            get {
+                return ResourceManager.GetString("EnumCommandERPStatus_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canceled.
+        /// </summary>
+        public static string EnumCommandERPStatus_Canceled {
+            get {
+                return ResourceManager.GetString("EnumCommandERPStatus_Canceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished.
+        /// </summary>
+        public static string EnumCommandERPStatus_Finished {
+            get {
+                return ResourceManager.GetString("EnumCommandERPStatus_Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting.
+        /// </summary>
+        public static string EnumCommandERPStatus_Waiting {
+            get {
+                return ResourceManager.GetString("EnumCommandERPStatus_Waiting", resourceCulture);
             }
         }
         
@@ -10258,6 +10375,42 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string EnumCommandWMSStatus_Active {
+            get {
+                return ResourceManager.GetString("EnumCommandWMSStatus_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canceled.
+        /// </summary>
+        public static string EnumCommandWMSStatus_Canceled {
+            get {
+                return ResourceManager.GetString("EnumCommandWMSStatus_Canceled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished.
+        /// </summary>
+        public static string EnumCommandWMSStatus_Finished {
+            get {
+                return ResourceManager.GetString("EnumCommandWMSStatus_Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting.
+        /// </summary>
+        public static string EnumCommandWMSStatus_Waiting {
+            get {
+                return ResourceManager.GetString("EnumCommandWMSStatus_Waiting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         public static string EnumEventSeverity_Error {
@@ -10317,6 +10470,24 @@ namespace UserInterface.Properties {
         public static string EnumEventType_WMS {
             get {
                 return ResourceManager.GetString("EnumEventType_WMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Event.
+        /// </summary>
+        public static string EnumLogWMS_Event {
+            get {
+                return ResourceManager.GetString("EnumLogWMS_Event", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Exception.
+        /// </summary>
+        public static string EnumLogWMS_Exception {
+            get {
+                return ResourceManager.GetString("EnumLogWMS_Exception", resourceCulture);
             }
         }
         
@@ -10605,6 +10776,60 @@ namespace UserInterface.Properties {
         public static string EnumSimpleCommandTask_Reset {
             get {
                 return ResourceManager.GetString("EnumSimpleCommandTask_Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string EnumWMSOrderStatus_Active {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Canceled.
+        /// </summary>
+        public static string EnumWMSOrderStatus_Cancel {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished.
+        /// </summary>
+        public static string EnumWMSOrderStatus_Finished {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On target.
+        /// </summary>
+        public static string EnumWMSOrderStatus_OnTarget {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_OnTarget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ready to take.
+        /// </summary>
+        public static string EnumWMSOrderStatus_ReadyToTake {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_ReadyToTake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Waiting.
+        /// </summary>
+        public static string EnumWMSOrderStatus_Waiting {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_Waiting", resourceCulture);
             }
         }
         
@@ -11482,7 +11707,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portion Active.
+        ///   Looks up a localized string similar to Portion active.
         /// </summary>
         public static string PortionActive {
             get {
@@ -11491,7 +11716,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portion Done.
+        ///   Looks up a localized string similar to Portion done.
         /// </summary>
         public static string PortionDone {
             get {
@@ -11500,7 +11725,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Position Hoist.
+        ///   Looks up a localized string similar to Position hoist.
         /// </summary>
         public static string PositionHoist {
             get {
@@ -11518,7 +11743,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Position Travel.
+        ///   Looks up a localized string similar to Position travel.
         /// </summary>
         public static string PositionTravel {
             get {
@@ -11527,7 +11752,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prepare Orders.
+        ///   Looks up a localized string similar to Prepare orders.
         /// </summary>
         public static string PrepareOrders {
             get {
@@ -11545,7 +11770,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Production Date.
+        ///   Looks up a localized string similar to Production date.
         /// </summary>
         public static string ProdDate {
             get {
@@ -11680,7 +11905,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Release Orders.
+        ///   Looks up a localized string similar to Release orders.
         /// </summary>
         public static string ReleaseOfOrders {
             get {
@@ -11689,7 +11914,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Release Order.
+        ///   Looks up a localized string similar to Release order.
         /// </summary>
         public static string ReleaseOrder {
             get {
@@ -11698,7 +11923,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Release Orders.
+        ///   Looks up a localized string similar to Release orders.
         /// </summary>
         public static string ReleaseOrders {
             get {
@@ -11707,7 +11932,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Release Ramp.
+        ///   Looks up a localized string similar to Release ramp.
         /// </summary>
         public static string ReleaseRamp {
             get {
@@ -11716,7 +11941,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ReleaseTime.
+        ///   Looks up a localized string similar to Release time.
         /// </summary>
         public static string ReleaseTime {
             get {
@@ -11887,7 +12112,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stock Keeping Units.
+        ///   Looks up a localized string similar to Stock keeping units.
         /// </summary>
         public static string SKUIDs {
             get {
@@ -11905,7 +12130,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transport Units.
+        ///   Looks up a localized string similar to Transport units.
         /// </summary>
         public static string SKUs {
             get {

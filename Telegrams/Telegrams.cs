@@ -20,6 +20,7 @@ namespace Telegrams
     [KnownType(typeof(TelegramTransportTO))]
     [KnownType(typeof(TelegramTransportStatus))]
     [KnownType(typeof(TelegramTransportSetTime))]
+    [KnownType(typeof(TelegramPalletRemoved))]
     [KnownType(typeof(TelegramLife))]
     [KnownType(typeof(TelegramACK))]
 

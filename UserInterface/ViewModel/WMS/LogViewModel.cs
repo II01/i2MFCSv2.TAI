@@ -46,14 +46,14 @@ namespace UserInterface.ViewModel
             }
         }
 
-        public int Severity
+        public EnumLogWMS Severity
         {
-            get { return _data.Severity; }
+            get { return (EnumLogWMS)_data.Severity; }
             set
             {
-                if( _data.Severity != value)
+                if( _data.Severity != (int)value)
                 {
-                    _data.Severity = value;
+                    _data.Severity = (int)value;
                     RaisePropertyChanged("Severity");
                 }
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Linq;
@@ -100,7 +101,7 @@ namespace UserInterface.DataServiceWMS
         }
 
 
-        public List<PlaceIDs> GetPlaceIDs(int dimensionClassMin,  int dimensionClassMax)
+        public async Task<List<PlaceIDs>> GetPlaceIDs(int dimensionClassMin,  int dimensionClassMax)
         {
             try
             {
@@ -109,7 +110,7 @@ namespace UserInterface.DataServiceWMS
                     var l = from p in dc.PlaceIDs
                             where p.DimensionClass >= dimensionClassMin && p.DimensionClass <= dimensionClassMax
                             select p;
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -152,7 +153,7 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<Places> GetPlaces(string beginsWithPlaceID)
+        public async Task<List<Places>> GetPlaces(string beginsWithPlaceID)
         {
             try
             {
@@ -161,7 +162,7 @@ namespace UserInterface.DataServiceWMS
                     bstr = beginsWithPlaceID;
                 using (var dc = new EntitiesWMS())
                 {
-                    return dc.Places.Where( p=> p.PlaceID.StartsWith(bstr)).ToList();
+                    return await dc.Places.Where( p=> p.PlaceID.StartsWith(bstr)).ToListAsync();
                 }
             }
             catch (Exception e)
@@ -204,7 +205,14 @@ namespace UserInterface.DataServiceWMS
                     var l = from p in dc.Places
                             join t in dc.TU_ID on p.TU_ID equals t.ID
                             orderby p.TU_ID
-                            select new PlaceTUID { TUID = p.TU_ID, PlaceID = p.PlaceID, DimensionClass = t.DimensionClass, Blocked = t.Blocked };
+                            select new PlaceTUID
+                            {
+                                TUID = p.TU_ID,
+                                PlaceID = p.PlaceID,
+                                DimensionClass = t.DimensionClass,
+                                Blocked = t.Blocked,
+                                TimeStamp = p.Time
+                            };
                     return l.ToList();
                 }
             }
@@ -224,7 +232,8 @@ namespace UserInterface.DataServiceWMS
                             join s in dc.SKU_ID on t.SKU_ID equals s.ID
                             where t.TU_ID == tuid
                             orderby t.SKU_ID
-                            select new TUSKUID { SKUID = t.SKU_ID, Qty = t.Qty, Batch = t.Batch, ProdDate = t.ProdDate, ExpDate = t.ExpDate, Description = s.Description };
+                            select new TUSKUID
+                            { SKUID = t.SKU_ID, Qty = t.Qty, Batch = t.Batch, ProdDate = t.ProdDate, ExpDate = t.ExpDate, Description = s.Description };
                     return l.ToList();
                 }
             }
@@ -774,35 +783,32 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<OrderCommandWMSCount> GetReleaseOrders(int statusLessOrEqual)
+        public async Task<List<OrderReduction>> GetOrdersWithCount(int statusLessOrEqual)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    var items = from o in dc.Orders
-                                where o.Status <= statusLessOrEqual
-                                join c in dc.Commands on o.ID equals c.Order_ID into orderCommands
-                                from oc in orderCommands.DefaultIfEmpty()
-                                select new { Orders = o, Commands = oc };
-                    var ords = (from i in items
-                                group i by new { i.Orders.ERP_ID, i.Orders.OrderID } into groupped
-                                select new OrderCommandWMSCount
-                                {
-                                    ERPID = groupped.Key.ERP_ID,
-                                    OrderID = groupped.Key.OrderID,
-                                    Destination = groupped.FirstOrDefault().Orders.Destination,
-                                    ReleaseTime = groupped.FirstOrDefault().Orders.ReleaseTime,
-                                    Status = groupped.FirstOrDefault().Orders.Status,
-                                    CountActive = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting && 
-                                                                      p.Commands.Status == (int)EnumCommandWMSStatus.Active),
-                                    CountCanceled = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting && 
-                                                                        p.Commands.Status == (int)EnumCommandWMSStatus.Canceled),
-                                    CountFinihsed = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting && 
-                                                                        p.Commands.Status == (int)EnumCommandWMSStatus.Finished),
-                                    CountAll = groupped.Count(p => p.Orders.Status > (int)EnumWMSOrderStatus.Waiting)
-                                }).Take(5000);
-                    return ords.ToList();                
+                    var suborders = from o in dc.Orders
+                                    where o.Status <= statusLessOrEqual
+                                    orderby o.ERP_ID, o.OrderID descending, o.SubOrderID ascending
+                                    group o by new { o.ERP_ID, o.OrderID, o.SubOrderID } into grpSO
+                                    select grpSO.FirstOrDefault();
+                    var orders = from so in (await suborders.ToListAsync())
+                                 group so by new { so.ERP_ID, so.OrderID } into grpO
+                                 select new OrderReduction
+                                 {
+                                     ERPID = grpO.Key.ERP_ID,
+                                     OrderID = grpO.Key.OrderID,
+                                     Destination = grpO.FirstOrDefault().Destination,
+                                     ReleaseTime = grpO.FirstOrDefault().ReleaseTime,
+                                     CountActive = grpO.Count(p => p.Status == (int)EnumWMSOrderStatus.Active),
+                                     CountMoreThanActive = grpO.Count(p => p.Status > (int)EnumWMSOrderStatus.Active),
+                                     CountAll = grpO.Count(),
+                                     StatusMin = grpO.Min(p => p.Status),
+                                     StatusMax = grpO.Max(p => p.Status)
+                                 };
+                    return orders.ToList();
                 }
             }
             catch (Exception e)
@@ -811,14 +817,49 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<CommandWMSOrder> GetCommandsWMSForOrder(int? erpid, int orderid, int statusLessOrEqual)
+        public async Task<List<OrderReduction>> GetSubOrdersWithCount(int? erpid, int orderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var suborders = from o in dc.Orders
+                                    where o.ERP_ID == erpid && o.OrderID == orderid
+                                    join c in dc.Commands on o.ID equals c.Order_ID into subordercmds
+                                    from oc in subordercmds.DefaultIfEmpty()
+                                    select new { SubOrder = o, Command = oc };                    
+                    var subs = from so in suborders
+                               group so by so.SubOrder.SubOrderID into grp
+                               select new OrderReduction
+                               {
+                                    ERPID = grp.FirstOrDefault().SubOrder.ERP_ID,
+                                    OrderID = grp.FirstOrDefault().SubOrder.OrderID,
+                                    SubOrderID = grp.FirstOrDefault().SubOrder.SubOrderID,
+                                    SubOrderName = grp.FirstOrDefault().SubOrder.SubOrderName,
+                                    CountAll = grp.Where(p => p.Command != null).Count(),
+                                    CountActive = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status == (int)EnumCommandWMSStatus.Active),
+                                    CountMoreThanActive = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
+                                    StatusMin = grp.Min(p => p.Command == null? 0: p.Command.Status),
+                                    StatusMax = grp.Max(p => p.Command == null ? 0 : p.Command.Status),
+                               };
+                    return await subs.ToListAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+
+        public async Task<List<CommandWMSOrder>> GetCommandsWMSForSubOrder(int? erpid, int orderid, int suborderid, int statusLessOrEqual)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var items = (from o in dc.Orders
-                                 where o.ERP_ID == erpid && o.OrderID == orderid && o.Status <= statusLessOrEqual
+                                 where o.ERP_ID == erpid && o.OrderID == orderid && o.SubOrderID == suborderid && o.Status <= statusLessOrEqual
                                  join c in dc.Commands on o.ID equals c.Order_ID
                                  select new CommandWMSOrder
                                  {
@@ -838,7 +879,7 @@ namespace UserInterface.DataServiceWMS
                                  }
 
                                  ).Take(5000);
-                    return items.ToList();
+                    return await items.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -953,7 +994,7 @@ namespace UserInterface.DataServiceWMS
                         var place = dcm.Places.FirstOrDefault(pp => pp.Material == l.TUID);
                         if (place != null)
                             dcm.Places.Remove(place);
-                        if(l.PlaceWMS.StartsWith("W"))
+                        if(l.PlaceWMS != null && l.PlaceWMS.StartsWith("W"))
                             dcm.Places.Add(new Place { Material = l.TUID, Place1 = l.PlaceWMS, Time = DateTime.Now });
                     }
                     dcm.SaveChanges();
@@ -977,7 +1018,8 @@ namespace UserInterface.DataServiceWMS
                         var place = dcw.Places.FirstOrDefault(pp => pp.TU_ID == l.TUID);
                         if (place != null)
                             dcw.Places.Remove(place);
-                        dcw.Places.Add(new Places { TU_ID = l.TUID, PlaceID = l.PlaceMFCS, Time = DateTime.Now  });
+                        if(l.PlaceMFCS != null)
+                            dcw.Places.Add(new Places { TU_ID = l.TUID, PlaceID = l.PlaceMFCS, Time = DateTime.Now  });
                     }
                     dcw.SaveChanges();
                 }

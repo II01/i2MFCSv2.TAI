@@ -166,17 +166,6 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<PlaceTUIDViewModel>();
-/*                foreach (var p in _dbservicewms.GetPlaceTUIDs())
-                    DataList.Add(new PlaceTUIDViewModel
-                    {
-                        TUID = p.TUID,
-                        PlaceID = p.PlaceID,
-                        DimensionClass = p.DimensionClass,
-                        Blocked = p.Blocked
-                    });
-                foreach (var l in DataList)
-                    l.Initialize(_warehouse);
-*/
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
@@ -469,7 +458,7 @@ namespace UserInterface.ViewModel
                         case CommandType.Block:
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
-                                client.BlockLocations(Detailed.PlaceID, Detailed.BlockedQC, (int)EnumBlockedWMS.Quality);
+                                client.BlockTU(Detailed.TUID, Detailed.BlockedQC, (int)EnumBlockedWMS.Quality);
                                 _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
                                                     String.Format("TUID blocked: tuid: {0}", Detailed.TUID));
                                 Selected.TUID = Detailed.TUID;
@@ -537,7 +526,8 @@ namespace UserInterface.ViewModel
                         TUID = p.TUID,
                         PlaceID = p.PlaceID,
                         DimensionClass = p.DimensionClass,
-                        Blocked = (EnumBlockedWMS)p.Blocked
+                        Blocked = (EnumBlockedWMS)p.Blocked,
+                        TimeStamp = p.TimeStamp
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);

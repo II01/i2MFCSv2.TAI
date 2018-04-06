@@ -116,7 +116,7 @@ namespace UserInterface.ViewModel
                     DataList.Add(new LogViewModel
                     {
                         ID = p.ID,
-                        Severity = p.Severity,
+                        Severity = (EnumLogWMS)p.Severity,
                         Source = p.Source,
                         Message = p.Message,
                         Time = p.Time

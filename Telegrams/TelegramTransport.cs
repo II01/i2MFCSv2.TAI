@@ -249,7 +249,7 @@ namespace Telegrams
         public const int CONFIRMATION_NONE = 0;
         public const int CONFIRMATION_OK = 101;
 
-        [Int32ValueFieldAttr(Offset = 16)]
+        [Int16ValueFieldAttr(Offset = 16)]
         public Int16 Location { get; set; }
         [Int16ValueFieldAttr(Offset = 18)]
         public Int16 Confirmation { get; set; }
@@ -260,6 +260,9 @@ namespace Telegrams
         {
         }
 
+        protected TelegramPalletRemoved(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);

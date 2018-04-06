@@ -1,0 +1,6 @@
+2018-04-02 15:00:01:728->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-02 15:00:02:569->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-02 15:00:04:448->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+

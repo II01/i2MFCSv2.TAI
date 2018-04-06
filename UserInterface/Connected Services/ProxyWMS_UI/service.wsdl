@@ -26,6 +26,12 @@
   <wsdl:message name="IWMSToUI_BlockLocations_OutputMessage">
     <wsdl:part name="parameters" element="tns:BlockLocationsResponse" />
   </wsdl:message>
+  <wsdl:message name="IWMSToUI_BlockTU_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlockTU" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_BlockTU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlockTUResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWMSToUI">
     <wsdl:operation name="GetCommands">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/GetCommands" message="tns:IWMSToUI_GetCommands_InputMessage" />
@@ -38,6 +44,10 @@
     <wsdl:operation name="BlockLocations">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/BlockLocations" message="tns:IWMSToUI_BlockLocations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/BlockLocationsResponse" message="tns:IWMSToUI_BlockLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlockTU">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/BlockTU" message="tns:IWMSToUI_BlockTU_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/BlockTUResponse" message="tns:IWMSToUI_BlockTU_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWMSToUI" type="tns:IWMSToUI">
@@ -62,6 +72,15 @@
     </wsdl:operation>
     <wsdl:operation name="BlockLocations">
       <soap:operation soapAction="http://tempuri.org/IWMSToUI/BlockLocations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockTU">
+      <soap:operation soapAction="http://tempuri.org/IWMSToUI/BlockTU" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

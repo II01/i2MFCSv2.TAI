@@ -53,18 +53,21 @@ namespace WcfService
                             }
                             else
                             {
-                                Command cc = dc.Commands.FirstOrDefault(p => p.WMS_ID == c.Order_ID);
-                                if(cc != null)
+                                if(c.Order_ID >= 0)
                                 {
-                                    dc.Commands.Add(new CommandCommand
+                                    Command cc = dc.Commands.FirstOrDefault(p => p.WMS_ID == c.Order_ID);
+                                    if (cc != null)
                                     {
-                                        WMS_ID = c.Order_ID,
-                                        Task = Command.EnumCommandTask.CancelCommand,
-                                        CommandID = cc.WMS_ID,
-                                        Priority = 0,
-                                        Status = Command.EnumCommandStatus.NotActive,
-                                        Time = DateTime.Now
-                                    });
+                                        dc.Commands.Add(new CommandCommand
+                                        {
+                                            WMS_ID = -1,
+                                            Task = Command.EnumCommandTask.CancelCommand,
+                                            CommandID = cc.ID,
+                                            Priority = 0,
+                                            Status = Command.EnumCommandStatus.NotActive,
+                                            Time = DateTime.Now
+                                        });
+                                    }
                                 }
                             }
                         }
@@ -99,10 +102,9 @@ namespace WcfService
                     {
                         foreach (var l in locs)
                         {
-                            dc.PlaceIDs.Where(p => p.ID.StartsWith(l)).ToList().ForEach(pl => pl.Blocked = true);
+                            dc.Database.ExecuteSqlCommand($"UPDATE PlaceID SET Blocked = 1 WHERE ID LIKE '{l}%'");
                             warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_PlaceBlock called ({l})");
                         }
-                        dc.SaveChanges();
                     }
                 }
                 catch (Exception e)
@@ -134,10 +136,9 @@ namespace WcfService
                     {
                         foreach (var l in locs)
                         {
-                            dc.PlaceIDs.Where(p => p.ID.StartsWith(l)).ToList().ForEach(pl => pl.Blocked = false);
+                            dc.Database.ExecuteSqlCommand($"UPDATE PlaceID SET Blocked = 0 WHERE ID LIKE '{l}%'");
                             warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_PlaceBlock called ({l})");
                         }
-                        dc.SaveChanges();
                     }
                 }
                 catch (Exception e)

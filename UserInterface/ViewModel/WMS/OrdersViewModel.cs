@@ -724,6 +724,8 @@ namespace UserInterface.ViewModel
                             ExecuteRefresh();
                             break;
                         case CommandType.AddSubOrder:
+                            if (Detailed.Order.SubOrderName == null)
+                                Detailed.Order.SubOrderName = Detailed.Order.SubOrderID.ToString();
                             _dbservicewms.AddOrder(Detailed.Order);
                             orderid = Detailed.OrderID;
                             suborderid = Detailed.SubOrderID;
@@ -731,6 +733,8 @@ namespace UserInterface.ViewModel
                             SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid);
                             break;
                         case CommandType.EditSubOrder:
+                            if (Detailed.Order.SubOrderName == null)
+                                Detailed.Order.SubOrderName = Detailed.Order.SubOrderID.ToString();
                             _dbservicewms.UpdateSubOrders(SelectedSubOrder.OrderID, SelectedSubOrder.SubOrderID, Detailed.Order);
                             var lse = from d in DataListSubOrder
                                       where d.OrderID == SelectedSubOrder.OrderID && d.SubOrderID == SelectedSubOrder.SubOrderID
@@ -748,6 +752,8 @@ namespace UserInterface.ViewModel
                             ExecuteRefresh();
                             break;
                         case CommandType.AddSKU:
+                            if (Detailed.Order.SubOrderName == null)
+                                Detailed.Order.SubOrderName = Detailed.Order.SubOrderID.ToString();
                             _dbservicewms.AddSKU(Detailed.Order);
                             orderid = Detailed.OrderID;
                             suborderid = Detailed.SubOrderID;

@@ -3919,28 +3919,28 @@
     <value>Shuttle3</value>
   </data>
   <data name="ReleaseOrders" xml:space="preserve">
-    <value>Release Orders</value>
+    <value>Release orders</value>
   </data>
   <data name="TUs" xml:space="preserve">
     <value>Transport Units</value>
   </data>
   <data name="CommandERPs" xml:space="preserve">
-    <value>ERP Commands</value>
+    <value>Commands ERP</value>
   </data>
   <data name="CommandWMSs" xml:space="preserve">
-    <value>WMS Commands</value>
+    <value>Commands MFCS</value>
   </data>
   <data name="PrepareOrders" xml:space="preserve">
-    <value>Prepare Orders</value>
+    <value>Prepare orders</value>
   </data>
   <data name="PlaceIDs" xml:space="preserve">
     <value>Places</value>
   </data>
   <data name="SKUIDs" xml:space="preserve">
-    <value>Stock Keeping Units</value>
+    <value>Stock keeping units</value>
   </data>
   <data name="ComparePlaces" xml:space="preserve">
-    <value>ComparePlaces</value>
+    <value>Compare databases</value>
   </data>
   <data name="WMSLog" xml:space="preserve">
     <value>WMS Log</value>
@@ -3991,13 +3991,13 @@
     <value>Destination</value>
   </data>
   <data name="ReleaseTime" xml:space="preserve">
-    <value>ReleaseTime</value>
+    <value>Release time</value>
   </data>
   <data name="SubOrders" xml:space="preserve">
     <value>Suborders</value>
   </data>
   <data name="SKUs" xml:space="preserve">
-    <value>Transport Units</value>
+    <value>Transport units</value>
   </data>
   <data name="SKUQty" xml:space="preserve">
     <value>Quantity</value>
@@ -4009,7 +4009,7 @@
     <value>Edit Order</value>
   </data>
   <data name="DeleteOrder" xml:space="preserve">
-    <value>Delete Order</value>
+    <value>Delete order</value>
   </data>
   <data name="AddSubOrder" xml:space="preserve">
     <value>Add Suborder</value>
@@ -4018,7 +4018,7 @@
     <value>Edit Suborder</value>
   </data>
   <data name="DeleteSubOrder" xml:space="preserve">
-    <value>Delete Suborder</value>
+    <value>Delete suborder</value>
   </data>
   <data name="AddSKU" xml:space="preserve">
     <value>Add SKU</value>
@@ -4048,10 +4048,10 @@
     <value>Update MFCS</value>
   </data>
   <data name="PositionTravel" xml:space="preserve">
-    <value>Position Travel</value>
+    <value>Position travel</value>
   </data>
   <data name="PositionHoist" xml:space="preserve">
-    <value>Position Hoist</value>
+    <value>Position hoist</value>
   </data>
   <data name="DimensionClass" xml:space="preserve">
     <value>Dimension class</value>
@@ -4078,28 +4078,28 @@
     <value>Quantity</value>
   </data>
   <data name="ProdDate" xml:space="preserve">
-    <value>Production Date</value>
+    <value>Production date</value>
   </data>
   <data name="ExpDate" xml:space="preserve">
     <value>Expiry Date</value>
   </data>
   <data name="ReleaseOfOrders" xml:space="preserve">
-    <value>Release Orders</value>
+    <value>Release orders</value>
   </data>
   <data name="PortionActive" xml:space="preserve">
-    <value>Portion Active</value>
+    <value>Portion active</value>
   </data>
   <data name="PortionDone" xml:space="preserve">
-    <value>Portion Done</value>
+    <value>Portion done</value>
   </data>
   <data name="Ramp" xml:space="preserve">
     <value>Ramps</value>
   </data>
   <data name="ReleaseOrder" xml:space="preserve">
-    <value>Release Order</value>
+    <value>Release order</value>
   </data>
   <data name="ReleaseRamp" xml:space="preserve">
-    <value>Release Ramp</value>
+    <value>Release ramp</value>
   </data>
   <data name="Ramp1" xml:space="preserve">
     <value>T1</value>
@@ -4202,5 +4202,80 @@
   </data>
   <data name="ERR_DATE" xml:space="preserve">
     <value>@ERR DATE</value>
+  </data>
+  <data name="EnumBlockedWMS_Available" xml:space="preserve">
+    <value>Not blocked</value>
+  </data>
+  <data name="EnumBlockedWMS_Quality" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="EnumBlockedWMS_QualityRack" xml:space="preserve">
+    <value>Quality + Rack</value>
+  </data>
+  <data name="EnumBlockedWMS_QualityVehicle" xml:space="preserve">
+    <value>Quality + Vehicle</value>
+  </data>
+  <data name="EnumBlockedWMS_QualityVehicleRack" xml:space="preserve">
+    <value>Quality + Rack + Vehicle</value>
+  </data>
+  <data name="EnumBlockedWMS_Rack" xml:space="preserve">
+    <value>Rack</value>
+  </data>
+  <data name="EnumBlockedWMS_Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="EnumBlockedWMS_VehicleRack" xml:space="preserve">
+    <value>Vehicle + Rack</value>
+  </data>
+  <data name="EnumCommandERPStatus_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="EnumCommandERPStatus_Canceled" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="EnumCommandERPStatus_Finished" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="EnumCommandERPStatus_Waiting" xml:space="preserve">
+    <value>Waiting</value>
+  </data>
+  <data name="EnumCommandWMSStatus_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="EnumCommandWMSStatus_Canceled" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="EnumCommandWMSStatus_Finished" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="EnumCommandWMSStatus_Waiting" xml:space="preserve">
+    <value>Waiting</value>
+  </data>
+  <data name="EnumWMSOrderStatus_Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="EnumWMSOrderStatus_Cancel" xml:space="preserve">
+    <value>Canceled</value>
+  </data>
+  <data name="EnumWMSOrderStatus_Finished" xml:space="preserve">
+    <value>Finished</value>
+  </data>
+  <data name="EnumWMSOrderStatus_OnTarget" xml:space="preserve">
+    <value>On target</value>
+  </data>
+  <data name="EnumWMSOrderStatus_ReadyToTake" xml:space="preserve">
+    <value>Ready to take</value>
+  </data>
+  <data name="EnumWMSOrderStatus_Waiting" xml:space="preserve">
+    <value>Waiting</value>
+  </data>
+  <data name="EnumLogWMS_Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="EnumLogWMS_Exception" xml:space="preserve">
+    <value>Exception</value>
+  </data>
+  <data name="DeleteCommand" xml:space="preserve">
+    <value>Cancel Cmd</value>
   </data>
 </root>

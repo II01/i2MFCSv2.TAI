@@ -130,7 +130,7 @@
     <Compile Include="DataServiceWMS\PlaceTUID.cs" />
     <Compile Include="DataServiceWMS\CommandWMSOrder.cs" />
     <Compile Include="DataServiceWMS\PlaceDiff.cs" />
-    <Compile Include="DataServiceWMS\OrderCommandWMSCount.cs" />
+    <Compile Include="DataServiceWMS\OrderReduction.cs" />
     <Compile Include="DataServiceWMS\TUSKUID.cs" />
     <Compile Include="Services\Enums.cs" />
     <Compile Include="UserControls\PasswordHelper.cs" />

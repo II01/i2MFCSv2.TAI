@@ -50,7 +50,7 @@
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" 
-                                    Width="*" Binding="{Binding TUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceWMS}" 
                                     Width="*" Binding="{Binding PlaceWMS}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TimeWMS}" 

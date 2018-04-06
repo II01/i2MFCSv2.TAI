@@ -83,7 +83,7 @@ namespace UserInterface.ViewModel
             Login = new RelayCommand(() => ExecuteLogin());
             Logout = new RelayCommand(() => ExecuteLogout());
             SwitchLanguage = new RelayCommand(() => ExecuteSwitchLanguage());
-            ReduceDB = new RelayCommand(() => ExecuteReduceDB());
+            ReduceDB = new RelayCommand(async () => await ExecuteReduceDB());
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -187,15 +187,12 @@ namespace UserInterface.ViewModel
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        private async void ExecuteReduceDB()
+        private async Task ExecuteReduceDB()
         {
             try
             {
                 DBServiceWMS ds = new DBServiceWMS(_warehouse);
-                ds.PlaceWMSandMFCSDiff();
 
-
-/*
                 double dbSizeGBMax = double.Parse(System.Configuration.ConfigurationManager.AppSettings["DataBaseSizeGBMax"]);
                 double dbSizeGBReduced = double.Parse(System.Configuration.ConfigurationManager.AppSettings["DataBaseSizeGBReduced"]);
 
@@ -208,11 +205,10 @@ namespace UserInterface.ViewModel
                     if (reducePerc < 0.01)
                         reducePerc = 0.0;
 
-                    await Task.Run(() => _warehouse.DBService.DBCleaning(reducePerc));
+                    await _warehouse.DBService.DBCleaning(reducePerc);
                 }
                 EnabledReduceDB = App.AccessLevel == 2;
 
-*/
             }
             catch (Exception e)
             {

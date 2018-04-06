@@ -5,6 +5,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d"
         xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
@@ -21,12 +22,17 @@
             <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                     Path=(FrameworkElement.ActualHeight), 
                                     RelativeSource={RelativeSource AncestorType=UserControl},
-                                    ConverterParameter=-160|0.50}"/>
+                                    ConverterParameter=-210|0.42}"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                     Path=(FrameworkElement.ActualHeight), 
                                     RelativeSource={RelativeSource AncestorType=UserControl},
-                                    ConverterParameter=-160|0.50}"/>
+                                    ConverterParameter=-210|0.15}"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
+                                    Path=(FrameworkElement.ActualHeight), 
+                                    RelativeSource={RelativeSource AncestorType=UserControl},
+                                    ConverterParameter=-210|0.42}"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -49,7 +55,13 @@
             CanUserAddRows="False"
             AutoGenerateColumns="False" 
             IsReadOnly="True"
+            VerticalScrollBarVisibility="Visible"
             FontSize="{StaticResource BaseFontSize}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged" >
+                    <i:InvokeCommandAction Command="{Binding RefreshSubOrder}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ERPID}" 
                                 Width="*" Binding="{Binding ERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
@@ -59,17 +71,45 @@
                                 Width="*" Binding="{Binding Destination}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ReleaseTime}" 
                                 Width="*" Binding="{Binding ReleaseTime}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionActive}" 
-                                Width="*" Binding="{Binding PortionActive}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionDone}" 
-                                Width="*" Binding="{Binding PortionDone}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Portion}" 
+                                Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                 Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx CommandWMSs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
-        <DataGrid Grid.Row="4" Margin="0,0,20,0"
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
+        <DataGrid Grid.Row="4" Margin="0,0,20,0" 
+            ItemsSource="{Binding DataListSubOrder}" 
+            dgx:DataGridFilter.IsAutoFilterEnabled="True"
+            dgx:Tools.ApplyInitialSorting="True"
+            SelectedItem="{Binding SelectedSubOrder}" 
+            IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False" 
+            IsReadOnly="True"
+            VerticalScrollBarVisibility="Visible"
+            FontSize="{StaticResource BaseFontSize}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged" >
+                    <i:InvokeCommandAction Command="{Binding RefreshCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderID}" 
+                                Width="*" Binding="{Binding SubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
+                                Width="3*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Portion}" 
+                                Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
+                                Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx CommandWMSs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
+        <DataGrid Grid.Row="6" Margin="0,0,20,0"
             ItemsSource="{Binding DataListCommand}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
@@ -80,28 +120,29 @@
             CanUserAddRows="False"
             AutoGenerateColumns="False" 
             IsReadOnly="True"
+            VerticalScrollBarVisibility="Visible"
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=WMSID}" 
-                                    Width="*" Binding="{Binding WMSID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderID}" 
-                                    Width="*" Binding="{Binding OrderSubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
-                                    Width="*" Binding="{Binding OrderSubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding WMSID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderID}" 
+                                    Width="3*" Binding="{Binding OrderSubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> 
+                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
+                                    Width="3*" Binding="{Binding OrderSubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
-                                    Width="*" Binding="{Binding OrderSKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding OrderSKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" 
-                                    Width="*" Binding="{Binding OrderSKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding OrderSKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" 
-                                    Width="*" Binding="{Binding TUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Source}" 
-                                    Width="*" Binding="{Binding Source}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding Source}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Target}" 
-                                    Width="*" Binding="{Binding Target}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding Target}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
-                                    Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
-                                    Width="*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="4*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
 
@@ -119,13 +160,18 @@
             AutoGenerateColumns="False" 
             IsReadOnly="True"
             FontSize="{StaticResource BaseFontSize}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged" >
+                    <i:InvokeCommandAction Command="{Binding RefreshTU}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
                                     Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SKUs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
-        <DataGrid Grid.Row="4" Grid.Column="1"
+        <DataGrid Grid.Row="4" Grid.Column="1" Grid.RowSpan="3"
             ItemsSource="{Binding DataListTU}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
@@ -138,16 +184,16 @@
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" 
-                                    Width="*" Binding="{Binding TUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceID}" 
-                                    Width="*" Binding="{Binding PlaceID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding PlaceID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
-                                    Width="*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="4*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
 
         
-        <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="6" Margin="20,0,0,0" HorizontalAlignment="Stretch">
+        <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="7" Margin="20,0,0,0" HorizontalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
@@ -161,8 +207,9 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Button Width="120" Grid.Row="0" Grid.Column="2" Margin="10,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
-            <Button Width="120" Grid.Row="1" Grid.Column="1" Margin="10,0,0,10" Content="{Resx ReleaseOrder}" Command="{Binding CmdReleaseOrder}" Visibility="Visible"/>
-            <Button Width="120" Grid.Row="1" Grid.Column="2" Margin="10,0,0,10" Content="{Resx DeleteOrder}" Command="{Binding CmdDeleteOrder}" Visibility="Visible"/>
+            <Button Width="120" Grid.Row="1" Grid.Column="0" Margin="10,0,0,10" Content="{Resx ReleaseOrder}" Command="{Binding CmdReleaseOrder}" Visibility="Visible"/>
+            <Button Width="120" Grid.Row="1" Grid.Column="1" Margin="10,0,0,10" Content="{Resx DeleteOrder}" Command="{Binding CmdDeleteOrder}" Visibility="Visible"/>
+            <Button Width="120" Grid.Row="1" Grid.Column="2" Margin="10,0,0,10" Content="{Resx DeleteCommand}" Command="{Binding CmdDeleteCommand}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="2" Grid.Column="2" Margin="10,0,0,10" Content="{Resx ReleaseRamp}" Command="{Binding CmdReleaseTruckRamp}" Visibility="Visible"/>
             <ContentControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
                         Visibility="{Binding VisibleOrder, Converter={StaticResource BoolToVisibility}}"

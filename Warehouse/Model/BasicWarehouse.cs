@@ -470,7 +470,7 @@ namespace Warehouse.Model
                 {
                     using (MFCSEntities dc = new MFCSEntities())
                     {
-                        int idx = t.Sender;
+                        int idx = (t as TelegramPalletRemoved).Location;
                         int idxp = ((int)((idx - 1) / 4) + 1) * 10 + (idx - 1) % 4 + 1;
                         string loc = $"W:32:{idxp:D3}:1:1";
                         Place place = dc.Places.Where(p => p.Place1 == loc).OrderBy(pp => pp.Time).FirstOrDefault();

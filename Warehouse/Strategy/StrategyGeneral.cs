@@ -171,7 +171,7 @@ namespace Warehouse.Strategy
                                 }
                             break;
                         case Command.EnumCommandTask.SegmentHome:
-                            var cl1 = Warehouse.CraneList.FindAll(p => p.Segment == (cmd as CommandSegment).Segment || (cmd as CommandSegment).Segment == "*");
+                            var cl1 = (Warehouse.CraneList.FindAll(p => p.Segment == (cmd as CommandSegment).Segment || (cmd as CommandSegment).Segment == "*")).GroupBy(p => p.Segment).Select(q => q.First()).ToList();
                             if (cl1 != null)
                                 cl1.ForEach(pp => Warehouse.DBService.AddSimpleCommand(new SimpleCraneCommand
                                                     {
@@ -209,7 +209,6 @@ namespace Warehouse.Strategy
                             Warehouse.OnCommandFinish?.Invoke(cmd);
                             break;
                         case Command.EnumCommandTask.CancelCommand:
-//                            Warehouse.DBService.ExecuteCancelCommand(cmd as CommandCommand);
                             Command c = Warehouse.DBService.ExecuteCancelCommand(cmd as CommandCommand);
                             if( c!= null)
                             {

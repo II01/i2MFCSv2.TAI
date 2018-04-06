@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Warehouse.DataService
 {
@@ -1121,6 +1122,8 @@ namespace Warehouse.DataService
             {
                 using (var dc = new MFCSEntities())
                 {
+                    if( tu != null)
+                        tu = tu.TrimStart('0');
                     var l = (from m in dc.Movements
                              where (m.Time >= timeFrom) && (m.Time <= timeTo) &&
                                    (loc == null || m.Position.Contains(loc)) &&
@@ -1256,9 +1259,9 @@ namespace Warehouse.DataService
             }
         }
 
-        public void DBCleaning(double removePortion)
+        public async Task DBCleaning(double removePortion)
         {
-            int records;
+            int [] records;
             int recordsToDelete;
             int chunk;
             int chunkSize = 100000;
@@ -1267,14 +1270,20 @@ namespace Warehouse.DataService
             {
                 using (var dc = new MFCSEntities())
                 {
-                    for(int i=0; i<tables.Count(); i++)
+                    records = new int[]
                     {
-                        records = dc.Database.SqlQuery<int>(string.Format("SELECT COUNT(*) FROM {0}", tables[i])).ToList()[0];
-                        recordsToDelete = (int)Math.Max(0, records*removePortion);
+                            dc.Movements.Count(),
+                            dc.Alarms.Count(),
+                            dc.Events.Count(),
+                            dc.Commands.Count()
+                    };
+                    for (int i=0; i<tables.Count(); i++)
+                    {
+                        recordsToDelete = (int)Math.Max(0, records[i]*removePortion);
                         while (recordsToDelete > 0)
                         {
                             chunk = Math.Min(recordsToDelete, chunkSize);
-                            dc.Database.ExecuteSqlCommand(string.Format("DELETE TOP({1}) FROM {0}", tables[i], chunk));
+                            await dc.Database.ExecuteSqlCommandAsync(string.Format("DELETE TOP({1}) FROM {0}", tables[i], chunk));
                             recordsToDelete -= chunk;
                         }
                     }

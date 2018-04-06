@@ -83,10 +83,10 @@
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="260"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TreeView x:Name="tvMainMenu" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,50,50,0" VerticalAlignment="Top" FontSize="{StaticResource MidFontSize}">
+        <TreeView x:Name="tvMainMenu" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0,50,20,0" VerticalAlignment="Top" FontSize="{StaticResource MidFontSize}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedItemChanged">
                     <i:InvokeCommandAction Command="{Binding TreeviewSelectedItemChanged}" CommandParameter="{Binding ElementName=tvMainMenu, Path=SelectedItem.Tag}"/>

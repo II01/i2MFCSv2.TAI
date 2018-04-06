@@ -381,6 +381,12 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockLocations", ReplyAction="http://tempuri.org/IWMSToUI/BlockLocationsResponse")]
         System.Threading.Tasks.Task BlockLocationsAsync(string locStartsWith, bool block, int reason);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockTU", ReplyAction="http://tempuri.org/IWMSToUI/BlockTUResponse")]
+        void BlockTU(int TUID, bool block, int reason);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockTU", ReplyAction="http://tempuri.org/IWMSToUI/BlockTUResponse")]
+        System.Threading.Tasks.Task BlockTUAsync(int TUID, bool block, int reason);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -432,6 +438,14 @@ namespace UserInterface.ProxyWMS_UI {
         
         public System.Threading.Tasks.Task BlockLocationsAsync(string locStartsWith, bool block, int reason) {
             return base.Channel.BlockLocationsAsync(locStartsWith, block, reason);
+        }
+        
+        public void BlockTU(int TUID, bool block, int reason) {
+            base.Channel.BlockTU(TUID, block, reason);
+        }
+        
+        public System.Threading.Tasks.Task BlockTUAsync(int TUID, bool block, int reason) {
+            return base.Channel.BlockTUAsync(TUID, block, reason);
         }
     }
 }

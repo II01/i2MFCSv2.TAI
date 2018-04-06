@@ -63,7 +63,7 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Visibility="Hidden">
                 <Button Name="bEdit" Margin="0,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/>
             </StackPanel>
             <ContentControl x:Name="ccPlace" 

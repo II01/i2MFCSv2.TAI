@@ -39,4 +39,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="BlockTU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TUID" type="xs:int" />
+        <xs:element minOccurs="0" name="block" type="xs:boolean" />
+        <xs:element minOccurs="0" name="reason" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlockTUResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
