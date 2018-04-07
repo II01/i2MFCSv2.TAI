@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="UserInterfaceGravityPanel.View.OrderView"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" d:DesignWidth="758.959" d:DesignHeight="330.13">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="60"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!-- column 0 -->
+        <Label  Grid.Row="0" Grid.Column="0"
+                Content="ERP ID" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="1" Grid.Column="0"
+                Content="Order ID" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="2" Grid.Column="0"
+                Content="Suborder ID" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="3" Grid.Column="0"
+                Content="Suborder name" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <!-- column 2 -->
+        <Label  Grid.Row="0" Grid.Column="2"
+                Content="{Binding ERPID}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="1" Grid.Column="2"
+                Content="{Binding OrderID}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="2" Grid.Column="2"
+                Content="{Binding SubOrderID}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="3" Grid.Column="2"
+                Content="{Binding SubOrderName}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <!-- column 4 -->
+        <Label  Grid.Row="0" Grid.Column="4"
+                Content="Completed" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="2" Grid.Column="4"
+                Content="Completed" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <!-- column 6 -->
+        <Label  Grid.Row="0" Grid.Column="6"
+                Content="{Binding PortionSubOrder}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="2" Grid.Column="6"
+                Content="{Binding PortionCommand}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+    </Grid>
+
+</UserControl>

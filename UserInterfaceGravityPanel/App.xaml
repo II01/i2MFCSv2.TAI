@@ -1,0 +1,33 @@
+﻿<Application x:Class="UserInterfaceGravityPanel.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:UserInterfaceGravityPanel.ViewModel"
+             xmlns:v="clr-namespace:UserInterfaceGravityPanel.View"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:ignore="http://www.galasoft.ch/ignore"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"      
+             StartupUri="MainWindow.xaml"
+             mc:Ignorable="d ignore">
+    
+    <Application.Resources>
+        <!-- Global View Model Locator-->
+        <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" />
+
+        <!-- Font sizes -->
+        <sys:Double x:Key="SmallFontSize">18</sys:Double>
+        <sys:Double x:Key="BaseFontSize">24</sys:Double>
+        <sys:Double x:Key="MidFontSize">36</sys:Double>
+        <sys:Double x:Key="LargeFontSize">48</sys:Double>
+        
+        <!-- colors -->
+        <Brush x:Key="Text1">SkyBlue</Brush>
+        <Brush x:Key="Text2">SkyBlue</Brush>
+
+        <DataTemplate DataType="{x:Type vm:OrderViewModel}">
+            <v:OrderView />
+        </DataTemplate>
+
+    </Application.Resources>
+    
+</Application>
