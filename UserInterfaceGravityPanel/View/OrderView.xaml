@@ -6,12 +6,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d ignore"
+        xmlns:props="clr-namespace:UserInterfaceGravityPanel.Properties"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" d:DesignWidth="758.959" d:DesignHeight="330.13">
 
-    <Grid>
+    <Grid HorizontalAlignment="Left">
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
@@ -26,56 +26,84 @@
         </Grid.ColumnDefinitions>
         <!-- column 0 -->
         <Label  Grid.Row="0" Grid.Column="0"
-                Content="ERP ID" 
+                Content="{x:Static props:Resources.CurrentOrder}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="1" Grid.Column="0"
-                Content="Order ID" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="2" Grid.Column="0"
-                Content="Suborder ID" 
+        <Label  Grid.Row="1" Grid.Column="0" Margin="50,0,0,0"
+                Content="{x:Static props:Resources.OrderID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="3" Grid.Column="0"
-                Content="Suborder name" 
+        <Label  Grid.Row="2" Grid.Column="0" Margin="50,0,0,0"
+                Content="{x:Static props:Resources.SubOrderID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
         <!-- column 2 -->
-        <Label  Grid.Row="0" Grid.Column="2"
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+            <Label  
                 Content="{Binding ERPID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="1" Grid.Column="2"
-                Content="{Binding OrderID}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource LargeFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="2" Grid.Column="2"
-                Content="{Binding SubOrderID}" 
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <Label  
+                Content=" # " 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="3" Grid.Column="2"
+            <Label  
+                Content="{Binding OrderID}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+            <Label  
+                Content="{Binding SubOrder}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <Label  
+                Content=" # " 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <Label  
                 Content="{Binding SubOrderName}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        </StackPanel>
         <!-- column 4 -->
-        <Label  Grid.Row="0" Grid.Column="4"
-                Content="Completed" 
+        <Label  Grid.Row="1" Grid.Column="4"
+                Content="{x:Static props:Resources.Status}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
         <Label  Grid.Row="2" Grid.Column="4"
-                Content="Completed" 
+                Content="{x:Static props:Resources.Status}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
         <!-- column 6 -->
-        <Label  Grid.Row="0" Grid.Column="6"
+        <StackPanel Grid.Row="1" Grid.Column="6" Orientation="Horizontal">
+            <Label  
+                Content="{Binding StatusOrder}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <Label  
+                Content=" # " 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <Label  
                 Content="{Binding PortionSubOrder}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="2" Grid.Column="6"
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="6" Orientation="Horizontal">
+            <Label
+                Content="{Binding StatusSubOrder}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <Label
+                Content=" # " 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <Label
                 Content="{Binding PortionCommand}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        </StackPanel>
     </Grid>
 
 </UserControl>

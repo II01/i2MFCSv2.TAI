@@ -17,8 +17,8 @@
         <!-- Font sizes -->
         <sys:Double x:Key="SmallFontSize">18</sys:Double>
         <sys:Double x:Key="BaseFontSize">24</sys:Double>
-        <sys:Double x:Key="MidFontSize">36</sys:Double>
-        <sys:Double x:Key="LargeFontSize">48</sys:Double>
+        <sys:Double x:Key="MidFontSize">32</sys:Double>
+        <sys:Double x:Key="LargeFontSize">40</sys:Double>
         
         <!-- colors -->
         <Brush x:Key="Text1">SkyBlue</Brush>
@@ -26,6 +26,12 @@
 
         <DataTemplate DataType="{x:Type vm:OrderViewModel}">
             <v:OrderView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:LaneViewModel}">
+            <v:LaneView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TUViewModel}">
+            <v:TUView />
         </DataTemplate>
 
     </Application.Resources>

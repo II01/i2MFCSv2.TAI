@@ -8,18 +8,18 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
-        xmlns:local="clr-namespace:UserInterfaceGravityPanel.View"
+        xmlns:props="clr-namespace:UserInterfaceGravityPanel.Properties"
         mc:Ignorable="d"
-        d:DesignWidth="1280"
-        d:DesignHeight="720"
+        d:DesignWidth="1600"
+        d:DesignHeight="735.609"
         WindowState="Maximized"
         WindowStyle="None"
         ResizeMode="NoResize"
         IgnoreTaskbarOnMaximize="True"
         ShowTitleBar="False"
         ShowCloseButton="False" 
-        Topmost="False"
-        TitlebarHeight="20"
+        Topmost="True"
+        TitlebarHeight="0"
         ShowMaxRestoreButton="False" 
         ShowMinButton="False"
         Title="i2MFCSUI Gravity Panel"
@@ -82,8 +82,8 @@
     <Grid Background="Black"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="4*"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -102,15 +102,15 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <Border Grid.Row="1" Grid.ColumnSpan="7" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" VerticalAlignment="Center"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="7" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" VerticalAlignment="Bottom" Margin="0,0,0,10"/>
         <Border Grid.Row="3" Grid.ColumnSpan="7" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" VerticalAlignment="Center"/>
-        <Border Grid.Row="2" Grid.Column="1" BorderBrush="SkyBlue" BorderThickness="5,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Border Grid.Row="2" Grid.Column="3" BorderBrush="SkyBlue" BorderThickness="5,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
-        <Border Grid.Row="2" Grid.Column="5" BorderBrush="SkyBlue" BorderThickness="5,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="SkyBlue" BorderThickness="5,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <Border Grid.Row="2" Grid.Column="3" BorderBrush="SkyBlue" BorderThickness="5,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <Border Grid.Row="2" Grid.Column="5" BorderBrush="SkyBlue" BorderThickness="5,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
         <StackPanel Grid.Row="4" Grid.Column="0" 
                     Orientation="Horizontal"
                     HorizontalAlignment="Left" VerticalAlignment="Center">
-            <Label  Content="RAMP "
+            <Label  Content="{x:Static props:Resources.Ramp}"
                     FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <Label  Content="{Binding RampStr}" 
                     FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
@@ -126,14 +126,14 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="White"/>
-            <Rectangle Grid.Column="1" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="Yellow"/>
-            <Rectangle Grid.Column="2" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="Red"/>
-            <Rectangle Grid.Column="3" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="Magenta"/>
-            <Rectangle Grid.Column="4" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="Blue"/>
-            <Rectangle Grid.Column="5" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="Green"/>
-            <Rectangle Grid.Column="6" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="Brown"/>
-            <Rectangle Grid.Column="7" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="Gray"/>
+            <Rectangle Grid.Column="0" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[0]}"/>
+            <Rectangle Grid.Column="1" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[1]}"/>
+            <Rectangle Grid.Column="2" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[2]}"/>
+            <Rectangle Grid.Column="3" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[3]}"/>
+            <Rectangle Grid.Column="4" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[4]}"/>
+            <Rectangle Grid.Column="5" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[5]}"/>
+            <Rectangle Grid.Column="6" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[6]}"/>
+            <Rectangle Grid.Column="7" Grid.Row="5" Width="50" Height="50" Margin="7" Fill="{Binding SubOrderColor[7]}"/>
         </Grid>
         <Label  Grid.Row="4" Grid.Column="6"
                 Content="{Binding CurrentTime}" 
@@ -141,6 +141,26 @@
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
         <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"
                         Content="{Binding OrderInfo}"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch"/>
+        <ContentControl Grid.Row="2" Grid.Column="0" 
+                        Margin="10,0,0,0"
+                        Content="{Binding Lane[0]}"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch"/>
+        <ContentControl Grid.Row="2" Grid.Column="2" 
+                        Margin="0,0,0,0"
+                        Content="{Binding Lane[1]}"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch"/>
+        <ContentControl Grid.Row="2" Grid.Column="4" 
+                        Margin="0,0,0,0"
+                        Content="{Binding Lane[2]}"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch"/>
+        <ContentControl Grid.Row="2" Grid.Column="6" 
+                        Margin="0,0,10,0"
+                        Content="{Binding Lane[3]}"
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Stretch"/>
     </Grid>

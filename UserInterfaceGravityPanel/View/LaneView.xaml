@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="UserInterfaceGravityPanel.View.LaneView"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        xmlns:src="clr-namespace:UserInterfaceGravityPanel.View"
+        xmlns:vm="clr-namespace:UserInterfaceGravityPanel.ViewModel"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase" 
+        xmlns:props="clr-namespace:UserInterfaceGravityPanel.Properties"
+        d:DesignWidth="758.959" d:DesignHeight="800">
+
+    <Grid Grid.Column="1" Grid.Row="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="SkyBlue" BorderThickness="0,0,0,3" VerticalAlignment="Center"/>
+        <!-- column 0-->
+        <Label  Grid.Row="0" Grid.Column="0"
+                Content="{x:Static props:Resources.Lane}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="2" Grid.Column="0"
+                Content="{x:Static props:Resources.NoTUs}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Label  Grid.Row="3" Grid.Column="0"
+                Content="{x:Static props:Resources.LastTU}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <!-- Column 2-->
+        <TextBlock  Grid.Row="0" Grid.Column="2"
+                Text="{Binding LaneID}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <TextBlock  Grid.Row="2" Grid.Column="2"
+                Text="{Binding NumTU}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <ContentControl Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" 
+                        Content="{Binding LastTU}"
+                        HorizontalAlignment="Stretch" 
+                        VerticalAlignment="Stretch"/>   
+    </Grid>
+</UserControl>

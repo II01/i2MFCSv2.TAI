@@ -11,6 +11,8 @@ namespace UserInterfaceGravityPanel.ViewModel
         private string _subOrderName;
         private string _portionSubOrder;
         private string _portionCommand;
+        private string _statusOrder;
+        private string _statusSubOrder;
         #endregion
 
         #region properties
@@ -88,6 +90,31 @@ namespace UserInterfaceGravityPanel.ViewModel
             }
         }
 
+        public string StatusOrder
+        {
+            get { return _statusOrder; }
+            set
+            {
+                if (_statusOrder != value)
+                {
+                    _statusOrder = value;
+                    RaisePropertyChanged("StatusOrder");
+                }
+            }
+        }
+
+        public string StatusSubOrder
+        {
+            get { return _statusSubOrder; }
+            set
+            {
+                if (_statusSubOrder != value)
+                {
+                    _statusSubOrder = value;
+                    RaisePropertyChanged("StatusSubOrder");
+                }
+            }
+        }
         #endregion
 
         #region initialization
