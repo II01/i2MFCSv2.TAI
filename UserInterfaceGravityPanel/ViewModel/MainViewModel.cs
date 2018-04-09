@@ -1,8 +1,6 @@
 ﻿using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using GalaSoft.MvvmLight.Ioc;
-using GalaSoft.MvvmLight.Messaging;
 using System.Windows.Threading;
 using System.Windows;
 using System.Diagnostics;
@@ -26,6 +24,11 @@ namespace UserInterfaceGravityPanel.ViewModel
         private ObservableCollection<LaneViewModel> _lane;
         private string[] _orderStatus = new string[6];
         private SolidColorBrush[] _subOrderColor = new SolidColorBrush[8];
+        private Visibility _errorVisibility;
+        private string _errorMessage;
+        private string _active;
+        private string _done;
+        private string _all;
         #endregion
 
         #region properties
@@ -122,11 +125,42 @@ namespace UserInterfaceGravityPanel.ViewModel
                 }
             }
         }
+        public Visibility ErrorVisibility
+        {
+            get
+            {
+                return _errorVisibility;
+            }
+            set
+            {
+                if (_errorVisibility != value)
+                {
+                    _errorVisibility = value;
+                    RaisePropertyChanged("ErrorVisibility");
+                }
+            }
+        }
+        public string ErrorMessage
+        {
+            get
+            {
+                return _errorMessage;
+            }
+            set
+            {
+                if (_errorMessage != value)
+                {
+                    _errorMessage = value;
+                    RaisePropertyChanged("ErrorMessage");
+                }
+            }
+        }
         #endregion
 
         #region initialization
         public void ExecuteOnLoaded()
         {
+            Initialize();
         }
 
         public void ExecuteOnClose()
@@ -159,14 +193,15 @@ namespace UserInterfaceGravityPanel.ViewModel
                 // Order statuses
                 for (int i = 0; i < 6; i++)
                     OrderStatus[i] = rs.GetString($"OrderStatus{i}");
+                // order status
+                _active = rs.GetString("ShortActive");
+                _done = rs.GetString("ShortDone");
+                _all = rs.GetString("ShortAll");
 
                 // timer
                 _timer = new DispatcherTimer(DispatcherPriority.Render) { Interval = TimeSpan.FromSeconds(1) };
                 _timer.Tick += new EventHandler(OnTimer);
                 _timer.Start();
-
-                OnLoaded = new RelayCommand(() => ExecuteOnLoaded());
-                OnClose = new RelayCommand(() => ExecuteOnClose());
 
                 // db
                 _dbservicewms = new DBServiceWMS();
@@ -176,96 +211,119 @@ namespace UserInterfaceGravityPanel.ViewModel
                 Lane = new ObservableCollection<LaneViewModel>();
                 for (int i = 0; i < 4; i++)
                     Lane.Add( new LaneViewModel {LaneID=_ramp*10+i+1, NumTU = 0});
+
+                ErrorVisibility = Visibility.Hidden;
+                ErrorMessage = "";
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Initialization not successful read! {ex.Message}");
-                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, ex.Message));
+                ErrorVisibility = Visibility.Visible;
+                ErrorMessage = $"Initialization failed. Details: {ex.Message}";
             }
         }
 
         public MainViewModel()
         {
-            Initialize();
+            OnLoaded = new RelayCommand(() => ExecuteOnLoaded());
+            OnClose = new RelayCommand(() => ExecuteOnClose());
         }
 
         private void OnTimer(object state, EventArgs e)
         {
-            CurrentTime = string.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString());
-            if(DateTime.Now.Second % 5 == _ramp-1) // each panel starts at different time (if clocks are in sync)
-                ExecuteRefresh();
+            try
+            {
+                CurrentTime = string.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString());
+                if (DateTime.Now.Second % 5 == _ramp - 1) // each panel starts at different time (if clocks are in sync)
+                {
+                    ExecuteRefresh();
+                    ErrorVisibility = Visibility.Hidden;
+                    ErrorMessage = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorVisibility = Visibility.Visible;
+                ErrorMessage = $"Initialization failed. Details: {ex.Message}";
+            }
         }
 
         private void ExecuteRefresh()
         {
-            var order = _dbservicewms.GetCurrentOrderForRamp(_ramp);
-            var suborder = _dbservicewms.GetCurrentSubOrderForRamp(_ramp);
-            var orderCount = _dbservicewms.GetCurrentOrderActivity(order);
-            var suborderCount = _dbservicewms.GetCurrentSubOrderActivity(suborder);
+            try
+            {
+                var order = _dbservicewms.GetCurrentOrderForRamp(_ramp);
+                var suborder = _dbservicewms.GetCurrentSubOrderForRamp(_ramp);
+                var orderCount = _dbservicewms.GetCurrentOrderActivity(order);
+                var suborderCount = _dbservicewms.GetCurrentSubOrderActivity(suborder);
 
-            // orderviewmodel
-            OrderInfo.ERPID = "";
-            OrderInfo.OrderID = "";
-            OrderInfo.StatusOrder = "";
-            OrderInfo.PortionSubOrder = "";
-            OrderInfo.SubOrderID = "";
-            OrderInfo.SubOrderName = "";
-            OrderInfo.StatusSubOrder = "";
-            OrderInfo.PortionCommand = "";
-            if (order != null)
-            {
-                OrderInfo.ERPID = order.ERP_ID == null ? "" : order.ERP_ID.ToString();
-                OrderInfo.OrderID = order.OrderID.ToString();
-            }
-            if(orderCount != null)
-            {
-                OrderInfo.StatusOrder = OrderStatus[(int)orderCount.Status];
-                OrderInfo.PortionSubOrder = $"{orderCount.Active} / {orderCount.Done} / {orderCount.All}";
-            }
-            if (suborder != null)
-            {
-                OrderInfo.SubOrderID = suborder.SubOrderID.ToString();
-                OrderInfo.SubOrderName = suborder.SubOrderName;
-            }
-            if (suborderCount != null)
-            {
-                OrderInfo.StatusSubOrder = OrderStatus[(int)suborderCount.Status];
-                OrderInfo.PortionCommand = $"{suborderCount.Active} / {suborderCount.Done} / {suborderCount.All}";
-            }
-
-            // laneviewmodel
-            var lanes = _dbservicewms.GetLastPallets(_ramp);
-
-            for(int i = 0; i<4; i++)
-            {
-                Lane[i].NumTU = 0;
-                Lane[i].LastTU = null;
-            }
-
-            foreach (var l in lanes)
-            {
-                if(l != null)
+                // orderviewmodel
+                OrderInfo.ERPID = "";
+                OrderInfo.OrderID = "";
+                OrderInfo.StatusOrder = "";
+                OrderInfo.PortionSubOrder = "";
+                OrderInfo.SubOrderID = "";
+                OrderInfo.SubOrderName = "";
+                OrderInfo.StatusSubOrder = "";
+                OrderInfo.PortionCommand = "";
+                if (order != null)
                 {
-                    TUViewModel last = new TUViewModel();
-                    if (l.LastTUID != null)
-                    {
-                        last.TUID = $"{l.LastTUID:d9}";
-                        if (l.SKU != null)
-                        {
-                            last.SKUID = l.SKU.SKU;
-                            last.SKUBatch = l.SKU.SKUBatch;
-                            last.SKUQty = l.SKU.SKUQty;
-                        }
-                        if (l.Suborder != null)
-                        {
-                            last.SubOrderID = l.Suborder.SubOrderID;
-                            last.SubOrderBrush = SubOrderColor[l.Suborder.SubOrderID % 8];
-                            last.SubOrderName = l.Suborder.SubOrderName;
-                        }
-                    }
-                    Lane[l.LaneID-1].NumTU = l.Count;
-                    Lane[l.LaneID-1].LastTU = last;
+                   OrderInfo.ERPID = order.ERP_ID == null ? "" : order.ERP_ID.ToString();
+                    OrderInfo.OrderID = $" ::  {order.OrderID}";
                 }
+                if (orderCount != null)
+                {
+                    OrderInfo.StatusOrder = OrderStatus[(int)orderCount.Status];
+                    OrderInfo.PortionSubOrder = $" ::  {_active} {orderCount.Active}/{orderCount.All}   {_done} {orderCount.Done}/{orderCount.All}";
+                }
+                if (suborder != null)
+                {
+                    OrderInfo.SubOrderID = suborder.SubOrderID.ToString();
+                    OrderInfo.SubOrderName = $" ::  {suborder.SubOrderName}";
+                }
+                if (suborderCount != null)
+                {
+                    OrderInfo.StatusSubOrder = OrderStatus[(int)suborderCount.Status];
+                    OrderInfo.PortionCommand = $" ::  {_active} {suborderCount.Active}/{suborderCount.All}   {_done} {suborderCount.Done}/{suborderCount.All}";
+                }
+
+                // laneviewmodel
+                var lanes = _dbservicewms.GetLastPallets(_ramp);
+
+                for (int i = 0; i < 4; i++)
+                {
+                    Lane[i].NumTU = 0;
+                    Lane[i].FirstTU = null;
+                }
+
+                foreach (var l in lanes)
+                {
+                    if (l != null)
+                    {
+                        TUViewModel last = new TUViewModel();
+                        if (l.FirstTUID != null)
+                        {
+                            last.TUID = $"{l.FirstTUID:d9}";
+                            if (l.SKU != null)
+                            {
+                                last.SKUID = l.SKU.SKU;
+                                last.SKUBatch = l.SKU.SKUBatch;
+                                last.SKUQty = l.SKU.SKUQty;
+                            }
+                            if (l.Suborder != null)
+                            {
+                                last.SubOrderID = l.Suborder.SubOrderID;
+                                last.SubOrderBrush = SubOrderColor[l.Suborder.SubOrderID % 8];
+                                last.SubOrderName = l.Suborder.SubOrderName;
+                            }
+                        }
+                        Lane[l.LaneID - 1].NumTU = l.Count;
+                        Lane[l.LaneID - 1].FirstTU = last;
+                    }
+                }
+            }
+            catch (Exception  ex)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, ex.Message));
             }
         }
         #endregion

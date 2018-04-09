@@ -142,20 +142,20 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pallet to take.
+        /// </summary>
+        public static string FirstTU {
+            get {
+                return ResourceManager.GetString("FirstTU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Lane.
         /// </summary>
         public static string Lane {
             get {
                 return ResourceManager.GetString("Lane", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Last pallet.
-        /// </summary>
-        public static string LastTU {
-            get {
-                return ResourceManager.GetString("LastTU", resourceCulture);
             }
         }
         
@@ -237,6 +237,33 @@ namespace UserInterfaceGravityPanel.Properties {
         public static string Ramp {
             get {
                 return ResourceManager.GetString("Ramp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to R.
+        /// </summary>
+        public static string ShortActive {
+            get {
+                return ResourceManager.GetString("ShortActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A.
+        /// </summary>
+        public static string ShortAll {
+            get {
+                return ResourceManager.GetString("ShortAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to D.
+        /// </summary>
+        public static string ShortDone {
+            get {
+                return ResourceManager.GetString("ShortDone", resourceCulture);
             }
         }
         

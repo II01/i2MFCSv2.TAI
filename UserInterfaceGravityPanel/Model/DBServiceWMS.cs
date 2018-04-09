@@ -168,7 +168,7 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                             {
                                 LaneID = Int32.Parse(split[2]) % 10,
                                 Count = p.Count,
-                                LastTUID = p.Place.TU_ID,
+                                FirstTUID = p.Place.TU_ID,
                                 SKU = sku,
                                 Suborder = so
                             };

@@ -44,10 +44,6 @@
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <Label  
-                Content=" # " 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  
                 Content="{Binding OrderID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
@@ -55,10 +51,6 @@
         <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
             <Label  
                 Content="{Binding SubOrder}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  
-                Content=" # " 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <Label  
@@ -82,10 +74,6 @@
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <Label  
-                Content=" # " 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  
                 Content="{Binding PortionSubOrder}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
@@ -93,10 +81,6 @@
         <StackPanel Grid.Row="2" Grid.Column="6" Orientation="Horizontal">
             <Label
                 Content="{Binding StatusSubOrder}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label
-                Content=" # " 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <Label

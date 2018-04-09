@@ -12,67 +12,80 @@
         xmlns:props="clr-namespace:UserInterfaceGravityPanel.Properties"
         d:DesignWidth="758.959" d:DesignHeight="800">
 
-    <Grid Grid.Column="1" Grid.Row="1" Background="{Binding SubOrderBrush}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="20"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
-        <!-- column 0-->
-        <Label  Grid.Row="0" Grid.Column="1"
+        <Label  Grid.Row="0"
+                Content="{x:Static props:Resources.FirstTU}" 
+                HorizontalAlignment="Left" VerticalAlignment="Center"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        <Grid Grid.Row="1" Background="{Binding SubOrderBrush}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+            <!-- column 0-->
+            <Label  Grid.Row="0" Grid.Column="1"
                 Content="{x:Static props:Resources.TUID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="1" Grid.Column="1"
+            <Label  Grid.Row="1" Grid.Column="1"
                 Content="{x:Static props:Resources.TUSubOrderID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="3" Grid.Column="1"
+            <Label  Grid.Row="3" Grid.Column="1"
                 Content="{x:Static props:Resources.SKUID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="4" Grid.Column="1"
+            <Label  Grid.Row="4" Grid.Column="1"
                 Content="{x:Static props:Resources.SKUBatch}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="5" Grid.Column="1"
+            <Label  Grid.Row="5" Grid.Column="1"
                 Content="{x:Static props:Resources.SKUQty}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <!-- Column 2-->
-        <TextBlock  Grid.Row="0" Grid.Column="3"
+            <!-- Column 2-->
+            <TextBlock  Grid.Row="0" Grid.Column="3"
                 Text="{Binding TUID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <TextBlock  Grid.Row="1" Grid.Column="3"
+            <TextBlock  Grid.Row="1" Grid.Column="3"
                 Text="{Binding SubOrderID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <TextBlock  Grid.Row="2" Grid.Column="3"
+            <TextBlock  Grid.Row="2" Grid.Column="3"
                 Text="{Binding SubOrderName}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <TextBlock  Grid.Row="3" Grid.Column="3"
+            <TextBlock  Grid.Row="3" Grid.Column="3"
                 Text="{Binding SKUID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <TextBlock  Grid.Row="4" Grid.Column="3"
+            <TextBlock  Grid.Row="4" Grid.Column="3"
                 Text="{Binding SKUBatch}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <TextBlock  Grid.Row="5" Grid.Column="3"
+            <TextBlock  Grid.Row="5" Grid.Column="3"
                 Text="{Binding SKUQty}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+        </Grid>
     </Grid>
+
+
 </UserControl>

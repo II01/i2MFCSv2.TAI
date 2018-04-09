@@ -8,7 +8,7 @@ namespace UserInterfaceGravityPanel.ViewModel
         #region members
         private int _laneID;
         private int _numTU;
-        private TUViewModel _lastTU;
+        private TUViewModel _firstTU;
         #endregion
 
         #region properties
@@ -36,15 +36,15 @@ namespace UserInterfaceGravityPanel.ViewModel
                 }
             }
         }
-        public TUViewModel LastTU
+        public TUViewModel FirstTU
         {
-            get { return _lastTU; }
+            get { return _firstTU; }
             set
             {
-                if (_lastTU != value)
+                if (_firstTU != value)
                 {
-                    _lastTU = value;
-                    RaisePropertyChanged("LastTU");
+                    _firstTU = value;
+                    RaisePropertyChanged("FirstTU");
                 }
             }
         }

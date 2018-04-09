@@ -155,8 +155,8 @@
   <data name="Lane" xml:space="preserve">
     <value>!Lane</value>
   </data>
-  <data name="LastTU" xml:space="preserve">
-    <value>!Last pallet</value>
+  <data name="FirstTU" xml:space="preserve">
+    <value>!Pallet to take</value>
   </data>
   <data name="NoTUs" xml:space="preserve">
     <value>!No. pallets</value>
@@ -205,5 +205,14 @@
   </data>
   <data name="TUSubOrderID" xml:space="preserve">
     <value>!Customer</value>
+  </data>
+  <data name="ShortActive" xml:space="preserve">
+    <value>!R</value>
+  </data>
+  <data name="ShortAll" xml:space="preserve">
+    <value>!A</value>
+  </data>
+  <data name="ShortDone" xml:space="preserve">
+    <value>!D</value>
   </data>
 </root>

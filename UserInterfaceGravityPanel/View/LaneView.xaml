@@ -35,10 +35,6 @@
                 Content="{x:Static props:Resources.NoTUs}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Label  Grid.Row="3" Grid.Column="0"
-                Content="{x:Static props:Resources.LastTU}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
         <!-- Column 2-->
         <TextBlock  Grid.Row="0" Grid.Column="2"
                 Text="{Binding LaneID}" 
@@ -49,7 +45,7 @@
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
         <ContentControl Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" 
-                        Content="{Binding LastTU}"
+                        Content="{Binding FirstTU}"
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Stretch"/>   
     </Grid>

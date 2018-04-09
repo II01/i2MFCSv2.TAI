@@ -18,7 +18,7 @@
         IgnoreTaskbarOnMaximize="True"
         ShowTitleBar="False"
         ShowCloseButton="False" 
-        Topmost="True"
+        Topmost="False"
         TitlebarHeight="0"
         ShowMaxRestoreButton="False" 
         ShowMinButton="False"
@@ -163,5 +163,10 @@
                         Content="{Binding Lane[3]}"
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Stretch"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Grid.RowSpan="3" Grid.ColumnSpan="7" 
+                   Visibility="{Binding ErrorVisibility}"
+                   Text="{Binding ErrorMessage}"
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Background="Black" Foreground="SkyBlue"/>
     </Grid>
 </Controls:MetroWindow>

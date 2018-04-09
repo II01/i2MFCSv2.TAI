@@ -18,7 +18,7 @@ namespace UserInterfaceGravityPanel.Model
     {
         public int LaneID { get; set; }
         public int Count { get; set; }
-        public int? LastTUID { get; set; }
+        public int? FirstTUID { get; set; }
         public SKUData SKU { get; set; }
         public SubOrderData Suborder { get; set; }
     }
