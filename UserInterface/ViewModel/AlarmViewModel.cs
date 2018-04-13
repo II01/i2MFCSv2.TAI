@@ -28,7 +28,7 @@ namespace UserInterface.ViewModel
         }
         public string AlarmID
         {
-            get { return _alarm.AlarmID.PadLeft(5, '0'); }
+            get { return _alarm.AlarmID.PadLeft(6, '0'); }
             set
             {
                 if (_alarm.AlarmID != value)

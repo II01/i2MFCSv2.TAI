@@ -172,7 +172,7 @@ namespace UserInterface.ViewModel
                     al.Add(new AlarmViewModel
                     {
                         Alarm = a,
-                        Text = ResourceReader.GetString(string.Format("ALARM_{0}", a.AlarmID.PadLeft(5, '0')))
+                        Text = ResourceReader.GetString(string.Format("ALARM_{0}", a.AlarmID.PadLeft(6, '0')))
                     });
                 }
                 AlarmList = al;

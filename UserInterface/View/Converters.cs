@@ -198,7 +198,7 @@ namespace UserInterface.View
         {
             try
             {
-                return (int)value == 1 || (int)value == 2;
+                return (int)value%10 == 1 || (int)value%10 == 2;
             }
             catch
             {
@@ -217,7 +217,47 @@ namespace UserInterface.View
         {
             try
             {
-                return (int)value == 2;
+                return (int)value%10 == 2;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return 0;
+        }
+    }
+    public class AccessLevelWMSL1 : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                int val = ((int)value) / 10;
+                return val == 1 || val == 2;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return 0;
+        }
+    }
+    public class AccessLevelWMSL2 : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                int val = ((int)value) / 10;
+                return val == 2;
             }
             catch
             {

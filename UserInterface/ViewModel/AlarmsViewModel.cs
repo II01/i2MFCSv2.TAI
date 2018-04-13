@@ -104,14 +104,14 @@ namespace UserInterface.ViewModel
                                          select a;
                         alarmToDel.ToList().ForEach(p => AlarmList.Remove(p));
                         var alarmToAdd = from a in info.ActiveAlarms
-                                         where  AlarmList.FirstOrDefault(p => p.Unit == name && p.AlarmID == a.ToString()) == null
+                                         where  AlarmList.FirstOrDefault(p => p.Unit == name && p.AlarmID == a.ToString("000000")) == null
                                          select new AlarmViewModel
                                          {
-                                             AlarmID = a.ToString("00000"),
+                                             AlarmID = a.ToString("000000"),
                                              Unit = name,
                                              Severity = EnumAlarmSeverity.Error,
                                              Status = EnumAlarmStatus.Active,
-                                             Text = ResourceReader.GetString(string.Format("ALARM_{0}", a.ToString("00000"))),
+                                             Text = ResourceReader.GetString(string.Format("ALARM_{0}", a.ToString("000000"))),
                                              ArrivedTime = DateTime.Now,
                                              AckTime = null                                             
                                          };
