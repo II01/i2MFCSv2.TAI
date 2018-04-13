@@ -20,6 +20,12 @@
   <wsdl:message name="IWMSToUI_CancelOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:CancelOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="IWMSToUI_CancelCommand_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCommand" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_CancelCommand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelCommandResponse" />
+  </wsdl:message>
   <wsdl:message name="IWMSToUI_BlockLocations_InputMessage">
     <wsdl:part name="parameters" element="tns:BlockLocations" />
   </wsdl:message>
@@ -32,6 +38,12 @@
   <wsdl:message name="IWMSToUI_BlockTU_OutputMessage">
     <wsdl:part name="parameters" element="tns:BlockTUResponse" />
   </wsdl:message>
+  <wsdl:message name="IWMSToUI_ReleaseRamp_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseRamp" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_ReleaseRamp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReleaseRampResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWMSToUI">
     <wsdl:operation name="GetCommands">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/GetCommands" message="tns:IWMSToUI_GetCommands_InputMessage" />
@@ -41,6 +53,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/CancelOrder" message="tns:IWMSToUI_CancelOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/CancelOrderResponse" message="tns:IWMSToUI_CancelOrder_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="CancelCommand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/CancelCommand" message="tns:IWMSToUI_CancelCommand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/CancelCommandResponse" message="tns:IWMSToUI_CancelCommand_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="BlockLocations">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/BlockLocations" message="tns:IWMSToUI_BlockLocations_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/BlockLocationsResponse" message="tns:IWMSToUI_BlockLocations_OutputMessage" />
@@ -48,6 +64,10 @@
     <wsdl:operation name="BlockTU">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/BlockTU" message="tns:IWMSToUI_BlockTU_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/BlockTUResponse" message="tns:IWMSToUI_BlockTU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseRamp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/ReleaseRamp" message="tns:IWMSToUI_ReleaseRamp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/ReleaseRampResponse" message="tns:IWMSToUI_ReleaseRamp_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWMSToUI" type="tns:IWMSToUI">
@@ -70,6 +90,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CancelCommand">
+      <soap:operation soapAction="http://tempuri.org/IWMSToUI/CancelCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="BlockLocations">
       <soap:operation soapAction="http://tempuri.org/IWMSToUI/BlockLocations" style="document" />
       <wsdl:input>
@@ -81,6 +110,15 @@
     </wsdl:operation>
     <wsdl:operation name="BlockTU">
       <soap:operation soapAction="http://tempuri.org/IWMSToUI/BlockTU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReleaseRamp">
+      <soap:operation soapAction="http://tempuri.org/IWMSToUI/ReleaseRamp" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

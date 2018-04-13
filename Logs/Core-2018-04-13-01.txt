@@ -1,0 +1,314 @@
+2018-04-13 01:01:36:742->EXCEPTION:PLC_Crane1:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:01:36:959->EXCEPTION:PLC_Conveyor:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:01:37:026->EXCEPTION:PLC_Crane3:The communication object, System.ServiceModel.Channels.ClientFramingDuplexSessionChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:01:38:025->EXCEPTION:PLC_Conveyor:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:01:39:881->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:39:995->EXCEPTION:PLC_Crane1:The communication object, System.ServiceModel.Channels.ClientFramingDuplexSessionChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:01:40:861->EXCEPTION:PLC_Crane2:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:01:43:231->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:44:461->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:46:299->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:47:044->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:48:259->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:49:537->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:51:453->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:52:313->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:53:273->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:54:563->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:56:593->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:57:413->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:58:283->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:01:58:763->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:01:59:163->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:01:59:223->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:01:59:273->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:01:59:273->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:01:59:583->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:00:233->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:01:674->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:02:354->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:02:504->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:04:294->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:05:254->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:06:294->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:08:464->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:10:268->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:10:375->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:11:315->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:13:565->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:15:275->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:15:476->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:16:356->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:18:656->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:20:286->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:20:566->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:20:836->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:21:186->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:21:296->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:21:306->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:21:386->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:21:386->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:22:396->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:23:766->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:24:476->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:25:626->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:26:516->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:27:336->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:28:436->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:30:607->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:32:347->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:32:627->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:33:447->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:35:667->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:37:357->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:37:718->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:38:468->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:40:768->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:42:358->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:42:928->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:43:058->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:43:218->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:43:328->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:43:338->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:43:408->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:02:43:528->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:44:688->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:45:908->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:46:688->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:48:198->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:48:738->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:02:49:378->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:50:729->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:52:799->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:54:389->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:54:829->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:55:749->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:57:900->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:59:400->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:02:59:920->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:00:780->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:02:980->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:04:410->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:04:980->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:05:010->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:05:351->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:05:371->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:05:481->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:05:491->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:05:801->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:06:771->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:08:071->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:08:791->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:10:091->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:10:921->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:11:521->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:12:791->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:14:881->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:16:531->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:17:011->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:17:841->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:19:972->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:21:552->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:22:112->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:22:862->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:25:032->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:26:563->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:27:133->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:27:283->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:27:413->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:27:423->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:27:523->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:27:533->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:27:893->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:29:063->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:30:133->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:30:933->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:32:363->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:33:085->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:33:565->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:35:135->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:37:015->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:38:575->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:39:195->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:40:155->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:42:086->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:43:576->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:44:276->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:45:166->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:47:366->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:48:586->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:49:356->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2003:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:49:436->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2005:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:49:436->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:49:556->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:SendThreading (Communicator.cs 201)
+
+2018-04-13 01:03:49:576->EXCEPTION:PLC_Crane3:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2006:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:49:626->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:50:197->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:51:337->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:52:527->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:53:027->EXCEPTION:PLC_Crane1:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2002:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:54:767->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:55:207->EXCEPTION:PLC_Crane2:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.204:2004:RcvThreading (Communicator.cs 152)
+
+2018-04-13 01:03:55:597->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:57:377->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:03:59:137->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:04:00:607->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:04:01:307->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 01:04:02:409->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+

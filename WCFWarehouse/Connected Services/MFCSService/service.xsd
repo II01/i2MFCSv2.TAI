@@ -114,6 +114,13 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ClearRamp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ramp" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="UIConveyorBasicUINotify">
     <xs:complexType>
       <xs:sequence>

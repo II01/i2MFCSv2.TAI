@@ -11707,20 +11707,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portion active.
+        ///   Looks up a localized string similar to Active - Done - Confirmed.
         /// </summary>
-        public static string PortionActive {
+        public static string PortionOrder {
             get {
-                return ResourceManager.GetString("PortionActive", resourceCulture);
+                return ResourceManager.GetString("PortionOrder", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Portion done.
+        ///   Looks up a localized string similar to Active - Finished.
         /// </summary>
-        public static string PortionDone {
+        public static string PortionSubOrder {
             get {
-                return ResourceManager.GetString("PortionDone", resourceCulture);
+                return ResourceManager.GetString("PortionSubOrder", resourceCulture);
             }
         }
         

@@ -92,6 +92,12 @@ namespace WCFWarehouse.MFCSService {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/INotifyUI/PlaceIDChanged")]
         System.Threading.Tasks.Task PlaceIDChangedAsync(Database.PlaceID place);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/INotifyUI/ClearRamp")]
+        void ClearRamp(string ramp);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/INotifyUI/ClearRamp")]
+        System.Threading.Tasks.Task ClearRampAsync(string ramp);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -240,6 +246,14 @@ namespace WCFWarehouse.MFCSService {
         
         public System.Threading.Tasks.Task PlaceIDChangedAsync(Database.PlaceID place) {
             return base.Channel.PlaceIDChangedAsync(place);
+        }
+        
+        public void ClearRamp(string ramp) {
+            base.Channel.ClearRamp(ramp);
+        }
+        
+        public System.Threading.Tasks.Task ClearRampAsync(string ramp) {
+            return base.Channel.ClearRampAsync(ramp);
         }
     }
 }

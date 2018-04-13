@@ -549,19 +549,61 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void UpdateOrders(string destinationtStartsWith, EnumWMSOrderStatus status)
+
+        public bool ClearRamp(string destinationtStartsWith)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    var l = from o in dc.Orders
-                            where o.Destination.StartsWith(destinationtStartsWith) && 
-                                  o.Status >= (int)EnumWMSOrderStatus.OnTarget && o.Status <= (int)EnumWMSOrderStatus.ReadyToTake
-                            select o;
-                    foreach (var o in l)
-                        o.Status = (int)EnumWMSOrderStatus.Finished;
-                    dc.SaveChanges();
+
+                    bool canClear = !dc.Orders.Any(p => p.Destination.StartsWith(destinationtStartsWith) && p.Status == (int)EnumWMSOrderStatus.Active);
+
+                    if ( canClear )
+                    {
+                        var list = from p in dc.Places
+                                   where p.PlaceID.StartsWith(destinationtStartsWith)
+                                   select p;
+                        foreach (var l in list)
+                        {
+                            dc.Places.Remove(l);
+                            dc.Places.Add(new Places
+                            {
+                                TU_ID = l.TU_ID,
+                                PlaceID = "W:out",
+                                Time = DateTime.Now
+                            });
+                        }
+                        dc.SaveChanges();
+                    }
+
+                    return canClear;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void ReleaseRamp(string destinationtStartsWith)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+
+                    bool canRelease = !dc.Places.Any(p => p.PlaceID.StartsWith(destinationtStartsWith));
+
+                    if ( canRelease )
+                    {
+                        var l = from o in dc.Orders
+                                where o.Destination.StartsWith(destinationtStartsWith) &&
+                                      o.Status == (int)EnumWMSOrderStatus.OnTarget || o.Status == (int)EnumWMSOrderStatus.ReadyToTake
+                                select o;
+                        foreach (var o in l)
+                            o.Status = (o.Status == (int)EnumWMSOrderStatus.OnTarget) ? (int)EnumWMSOrderStatus.Finished : (int)EnumWMSOrderStatus.Cancel;
+                        dc.SaveChanges();
+                    }
                 }
             }
             catch (Exception e)
@@ -791,10 +833,10 @@ namespace UserInterface.DataServiceWMS
                 {
                     var suborders = from o in dc.Orders
                                     where o.Status <= statusLessOrEqual
-                                    orderby o.ERP_ID, o.OrderID descending, o.SubOrderID ascending
                                     group o by new { o.ERP_ID, o.OrderID, o.SubOrderID } into grpSO
                                     select grpSO.FirstOrDefault();
                     var orders = from so in (await suborders.ToListAsync())
+                                 orderby so.ERP_ID, so.OrderID descending
                                  group so by new { so.ERP_ID, so.OrderID } into grpO
                                  select new OrderReduction
                                  {
@@ -802,11 +844,11 @@ namespace UserInterface.DataServiceWMS
                                      OrderID = grpO.Key.OrderID,
                                      Destination = grpO.FirstOrDefault().Destination,
                                      ReleaseTime = grpO.FirstOrDefault().ReleaseTime,
-                                     CountActive = grpO.Count(p => p.Status == (int)EnumWMSOrderStatus.Active),
-                                     CountMoreThanActive = grpO.Count(p => p.Status > (int)EnumWMSOrderStatus.Active),
                                      CountAll = grpO.Count(),
-                                     StatusMin = grpO.Min(p => p.Status),
-                                     StatusMax = grpO.Max(p => p.Status)
+                                     CountActive = grpO.Count(p => p.Status == (int)EnumWMSOrderStatus.Active),
+                                     CountMoveDone = grpO.Count(p => p.Status >= (int)EnumWMSOrderStatus.OnTarget && p.Status <= (int)EnumWMSOrderStatus.ReadyToTake),
+                                     CountFinished = grpO.Count(p => p.Status > (int)EnumWMSOrderStatus.Cancel),
+                                     Status = grpO.Any(p => p.Status > (int)EnumWMSOrderStatus.Waiting) ? grpO.Where(p => p.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Status) : 0
                                  };
                     return orders.ToList();
                 }
@@ -838,9 +880,9 @@ namespace UserInterface.DataServiceWMS
                                     SubOrderName = grp.FirstOrDefault().SubOrder.SubOrderName,
                                     CountAll = grp.Where(p => p.Command != null).Count(),
                                     CountActive = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status == (int)EnumCommandWMSStatus.Active),
-                                    CountMoreThanActive = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
-                                    StatusMin = grp.Min(p => p.Command == null? 0: p.Command.Status),
-                                    StatusMax = grp.Max(p => p.Command == null ? 0 : p.Command.Status),
+                                    CountMoveDone = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
+                                    CountFinished = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
+                                    Status = grp.Any(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting) ? grp.Where(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Command.Status) : 0
                                };
                     return await subs.ToListAsync();
                 }

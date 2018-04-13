@@ -291,5 +291,8 @@ namespace WcfService
             }
         }
 
+        public void ClearRamp(string ramp)
+        {
+        }    
     }
 }

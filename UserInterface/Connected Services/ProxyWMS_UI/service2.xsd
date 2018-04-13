@@ -25,6 +25,18 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="CancelCommand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.DTO" minOccurs="0" name="cmd" nillable="true" type="q3:DTOCommand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CancelCommandResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="BlockLocations">
     <xs:complexType>
       <xs:sequence>
@@ -49,6 +61,18 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="BlockTUResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseRamp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="destinationStartsWith" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReleaseRampResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

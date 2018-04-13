@@ -10,6 +10,7 @@
   <xs:complexType name="DTOCommand">
     <xs:sequence>
       <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastChange" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Order_ID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="Status" type="q1:Command.CommandStatus" />

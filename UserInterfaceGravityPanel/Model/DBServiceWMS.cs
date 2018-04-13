@@ -99,7 +99,7 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
 
                     var oc = new OrderCount
                     {
-                        Status = order.Where(p => p.Command.Status > (int)EnumWMSCommandStatus.Waiting).Min(p => p == null ? 0 : p.Command.Status),
+                        Status = order.Where(p => p.Command.Status > (int)EnumWMSCommandStatus.Waiting).Min(p => (p == null || p.Command == null) ? 0 : p.Command.Status),
                         All = order.Count(),
                         Active = order.Count(p => p.Command.Status == (int)EnumWMSCommandStatus.Active),
                         Done = order.Count(p => p.Command.Status >= (int)EnumWMSCommandStatus.Canceled),

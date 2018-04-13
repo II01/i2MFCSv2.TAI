@@ -14,6 +14,7 @@ using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using UserInterface.ProxyWMS_UI;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight.Ioc;
 
 namespace UserInterface.ViewModel
 {
@@ -236,7 +237,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && AccessLevel >= 1;
+                return  !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS && 
+                        !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun && 
+                        !EditEnabled && AccessLevel >= 1;
             }
             catch (Exception e)
             {
@@ -271,7 +274,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && AccessLevel >= 1;
+                return  !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS &&
+                        !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun &&
+                        !EditEnabled && AccessLevel >= 1;
             }
             catch (Exception e)
             {

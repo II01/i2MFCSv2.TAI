@@ -1295,5 +1295,22 @@ namespace Warehouse.DataService
             }
         }
 
+        public void ClearRamp(string ramp)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var pl = dc.Places.Where(p => p.Place1.StartsWith(ramp)).ToList();
+                    foreach (var p in pl)
+                        MaterialMove(p.Material, p.Place1, "W:out");
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
     }
 }

@@ -40,7 +40,7 @@
             ItemsSource="{Binding PlaceIDList}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding SelectedPlaceID}" 
+            SelectedItem="{Binding SelectedPlaceID, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
             SelectionMode="Extended"
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"

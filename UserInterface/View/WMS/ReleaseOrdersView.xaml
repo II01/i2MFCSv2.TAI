@@ -45,10 +45,10 @@
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="2" Margin="0,0,20,0" 
             x:Name="dgPlaceIDs" 
-            ItemsSource="{Binding DataListOrder}" 
+            ItemsSource="{Binding DataListOrder, Mode=TwoWay}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding SelectedOrder}" 
+            SelectedItem="{Binding SelectedOrder, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -71,7 +71,7 @@
                                 Width="*" Binding="{Binding Destination}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ReleaseTime}" 
                                 Width="*" Binding="{Binding ReleaseTime}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Portion}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionOrder}" 
                                 Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                 Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
@@ -79,10 +79,10 @@
         </DataGrid>
         <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="4" Margin="0,0,20,0" 
-            ItemsSource="{Binding DataListSubOrder}" 
+            ItemsSource="{Binding DataListSubOrder, Mode=TwoWay}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding SelectedSubOrder}" 
+            SelectedItem="{Binding SelectedSubOrder, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -101,7 +101,7 @@
                                 Width="*" Binding="{Binding SubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
                                 Width="3*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Portion}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionSubOrder}" 
                                 Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                 Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
@@ -110,7 +110,7 @@
 
         <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx CommandWMSs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="6" Margin="0,0,20,0"
-            ItemsSource="{Binding DataListCommand}" 
+            ItemsSource="{Binding DataListCommand, Mode=TwoWay}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
             SelectedItem="{Binding SelectedCommand}" 
@@ -149,10 +149,10 @@
 
         <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,0,0,0" Text="{Resx Ramp}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="2" Grid.Column="1"
-            ItemsSource="{Binding DataListPlace}" 
+            ItemsSource="{Binding DataListPlace, Mode=TwoWay}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
-            dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding SelectedPlace}" 
+            dgx:Tools.ApplyInitialSorting="False"
+            SelectedItem="{Binding SelectedPlace, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -210,6 +210,7 @@
             <Button Width="120" Grid.Row="1" Grid.Column="0" Margin="10,0,0,10" Content="{Resx ReleaseOrder}" Command="{Binding CmdReleaseOrder}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="1" Grid.Column="1" Margin="10,0,0,10" Content="{Resx DeleteOrder}" Command="{Binding CmdDeleteOrder}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="1" Grid.Column="2" Margin="10,0,0,10" Content="{Resx DeleteCommand}" Command="{Binding CmdDeleteCommand}" Visibility="Visible"/>
+            <Button Width="120" Grid.Row="2" Grid.Column="1" Margin="10,0,0,10" Content="{Resx ClearRamp}" Command="{Binding CmdClearTruckRamp}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="2" Grid.Column="2" Margin="10,0,0,10" Content="{Resx ReleaseRamp}" Command="{Binding CmdReleaseTruckRamp}" Visibility="Visible"/>
             <ContentControl Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
                         Visibility="{Binding VisibleOrder, Converter={StaticResource BoolToVisibility}}"

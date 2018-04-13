@@ -16,11 +16,10 @@ namespace UserInterface.DataServiceWMS
         public DateTime ReleaseTime { get; set; }
         public DateTime LastChange { get; set; }
         public int Status { get; set; }
-        public int StatusMin { get; set; }
-        public int StatusMax { get; set; }
         public int CountAll { get; set; }
         public int CountActive { get; set; }
-        public int CountMoreThanActive { get; set; }
+        public int CountMoveDone { get; set; }
+        public int CountFinished { get; set; }
 
         public OrderReduction()
         {

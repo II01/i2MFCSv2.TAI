@@ -13,12 +13,13 @@ using UserInterface.Messages;
 using UserInterface.ProxyWMS_UI;
 using UserInterface.Services;
 using Warehouse.Model;
+using WCFClients;
 
 namespace UserInterface.ViewModel
 {
     public sealed class ReleaseOrdersViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, ReleaseOrder, DeleteOrder, DeleteCommand, ReleaseRamp };
+        public enum CommandType { None = 0, ReleaseOrder, DeleteOrder, DeleteCommand, ClearRamp, ReleaseRamp };
 
         #region members
         private CommandType _selectedCmd;
@@ -50,6 +51,7 @@ namespace UserInterface.ViewModel
         public RelayCommand CmdReleaseOrder { get; private set; }
         public RelayCommand CmdDeleteOrder { get; private set; }
         public RelayCommand CmdDeleteCommand { get; private set; }
+        public RelayCommand CmdClearTruckRamp { get; private set; }
         public RelayCommand CmdReleaseTruckRamp { get; private set; }
         public RelayCommand Cancel { get; private set; }
         public RelayCommand Confirm { get; private set; }
@@ -310,6 +312,7 @@ namespace UserInterface.ViewModel
             CmdReleaseOrder = new RelayCommand(() => ExecuteReleaseOrder(), CanExecuteReleaseOrder);
             CmdDeleteOrder = new RelayCommand(() => ExecuteDeleteOrder(), CanExecuteDeleteOrder);
             CmdDeleteCommand = new RelayCommand(() => ExecuteDeleteCommand(), CanExecuteDeleteCommand);
+            CmdClearTruckRamp = new RelayCommand(() => ExecuteClearTruckRamp(), CanExecuteClearTruckRamp);
             CmdReleaseTruckRamp = new RelayCommand(() => ExecuteReleaseTruckRamp(), CanExecuteReleaseTruckRamp);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
@@ -447,6 +450,28 @@ namespace UserInterface.ViewModel
             }
         }
 
+        private void ExecuteClearTruckRamp()
+        {
+            EditEnabled = true;
+            EnabledCC = true;
+            VisibleOrder = false;
+            VisibleRamp = true;
+            _selectedCmd = CommandType.ClearRamp;
+        }
+
+        private bool CanExecuteClearTruckRamp()
+        {
+            try
+            {
+                return SelectedPlace != null && !EditEnabled && AccessLevel >= 1;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
         private void ExecuteReleaseTruckRamp()
         {
             EditEnabled = true;
@@ -545,11 +570,18 @@ namespace UserInterface.ViewModel
                         case CommandType.DeleteCommand:
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
-                                // TODO
+                                client.CancelCommand(new DTOCommand
+                                {                                    
+                                    ID = SelectedCommand.WMSID
+                                });
                             }
                             break;
+                        case CommandType.ClearRamp:
+                            if(_dbservicewms.ClearRamp(SelectedPlaceID))
+                                _warehouse.DBService.ClearRamp(SelectedPlaceID);
+                            break;
                         case CommandType.ReleaseRamp:
-                            _dbservicewms.UpdateOrders(SelectedPlace.ID, EnumWMSOrderStatus.Finished);
+                            _dbservicewms.ReleaseRamp(SelectedPlace.ID);
                             break;
                     }
                     VisibleOrder = true;
@@ -572,6 +604,7 @@ namespace UserInterface.ViewModel
             try
             {
                 return (_selectedCmd == CommandType.DeleteOrder || _selectedCmd == CommandType.DeleteCommand || 
+                        _selectedCmd == CommandType.ClearRamp || _selectedCmd == CommandType.ReleaseRamp ||
                         (EditEnabled && DetailedOrder.AllPropertiesValid)) && AccessLevel >= 1;
             }
             catch (Exception e)
@@ -602,21 +635,20 @@ namespace UserInterface.ViewModel
                 int? orderid = SelectedOrder?.OrderID;
                 _suborderid = SelectedSubOrder?.SubOrderID;
 
-
+                var orders = await _dbservicewms.GetOrdersWithCount((int)EnumWMSOrderStatus.Finished);
                 DataListOrder.Clear();
-                foreach (var p in await _dbservicewms.GetOrdersWithCount((int)EnumWMSOrderStatus.Finished))
+                foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
                     {
                         ERPID = p.ERPID,
                         OrderID = p.OrderID,
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
-                        Portion = $"{p.CountActive}/{p.CountMoreThanActive}/{p.CountAll}",
-                        Status = p.StatusMin > 0 ? (EnumWMSOrderStatus)p.StatusMin : (EnumWMSOrderStatus)p.StatusMax
+                        Portion = $"{p.CountActive}/{p.CountAll} - {p.CountMoveDone}/{p.CountAll} - {p.CountFinished}/{p.CountAll}",
+                        Status = (EnumWMSOrderStatus)p.Status
                     });
                 foreach (var l in DataListOrder)
                     l.Initialize(_warehouse);
-
                 if (orderid != null)
                     SelectedOrder = DataListOrder.FirstOrDefault(p => p.ERPID == erpid && p.OrderID == orderid);
             }
@@ -626,6 +658,7 @@ namespace UserInterface.ViewModel
                                     string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
         private async Task ExecuteRefreshSubOrder()
         {
             try
@@ -640,8 +673,8 @@ namespace UserInterface.ViewModel
                             OrderID = p.OrderID,
                             SubOrderID = p.SubOrderID,
                             SubOrderName = p.SubOrderName,
-                            Portion = $"{p.CountActive}/{p.CountMoreThanActive}/{p.CountAll}",
-                            Status = p.StatusMin > 0 ? (EnumWMSOrderStatus)p.StatusMin : (EnumWMSOrderStatus)p.StatusMax
+                            Portion = $"{p.CountActive}/{p.CountAll} - {p.CountFinished}/{p.CountAll}",
+                            Status = (EnumWMSOrderStatus)p.Status
                         });
                     foreach (var l in DataListOrder)
                         l.Initialize(_warehouse);

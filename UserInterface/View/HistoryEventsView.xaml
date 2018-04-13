@@ -70,7 +70,7 @@
             VerticalContentAlignment="Stretch"            
             Grid.Row="3"
             ItemsSource="{Binding EventList}" 
-            SelectedItem="{Binding SelectedItem}"
+            SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
             CanUserAddRows="False"
             AutoGenerateColumns="False" 
             IsReadOnly="true"

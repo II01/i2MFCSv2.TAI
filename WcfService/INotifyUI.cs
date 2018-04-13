@@ -37,6 +37,10 @@ namespace WcfService
 
         [OperationContract(IsOneWay = true)]
         void PlaceIDChanged(PlaceID place);
+
+        [OperationContract(IsOneWay = true)]
+        void ClearRamp(string ramp);
+
     }
 
 

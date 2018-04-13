@@ -53,7 +53,7 @@ namespace WcfService
                             }
                             else
                             {
-                                if(c.Order_ID >= 0)
+                                if (c.Order_ID >= 0)
                                 {
                                     Command cc = dc.Commands.FirstOrDefault(p => p.WMS_ID == c.Order_ID);
                                     if (cc != null)
@@ -155,7 +155,4 @@ namespace WcfService
             }
         }
     }
-
-
-
 }

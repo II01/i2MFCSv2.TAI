@@ -65,7 +65,7 @@
         <DataGrid 
             x:Name="dgSimpleCommands" Grid.Row="3" 
             ItemsSource="{Binding CommandList}"
-            SelectedItem="{Binding SelectedContent}"
+            SelectedItem="{Binding SelectedContent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
             IsEnabled="{Binding IsEnabledCC, Converter={StaticResource InvertBool}}"
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             HorizontalAlignment="Stretch"

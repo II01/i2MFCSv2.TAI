@@ -4086,11 +4086,11 @@
   <data name="ReleaseOfOrders" xml:space="preserve">
     <value>Release orders</value>
   </data>
-  <data name="PortionActive" xml:space="preserve">
-    <value>Portion active</value>
+  <data name="PortionOrder" xml:space="preserve">
+    <value>Active - Done - Confirmed</value>
   </data>
-  <data name="PortionDone" xml:space="preserve">
-    <value>Portion done</value>
+  <data name="PortionSubOrder" xml:space="preserve">
+    <value>Active - Finished</value>
   </data>
   <data name="Ramp" xml:space="preserve">
     <value>Ramps</value>

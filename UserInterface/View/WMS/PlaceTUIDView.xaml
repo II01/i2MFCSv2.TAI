@@ -59,7 +59,7 @@
                         VerticalAlignment="Stretch"
                         CanUserAddRows="True"
                         IsReadOnly="{Binding AllowFieldChange, Converter={StaticResource InvertBool}}"
-                        SelectedItem="{Binding Selected}" 
+                        SelectedItem="{Binding Selected, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                         >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 

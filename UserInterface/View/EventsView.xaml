@@ -42,7 +42,7 @@
             VerticalContentAlignment="Stretch"            
             Grid.Row="1"
             ItemsSource="{Binding Source={StaticResource EventItems}}" 
-            SelectedItem="{Binding SelectedEvent}"
+            SelectedItem="{Binding SelectedEvent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
             CanUserAddRows="False"
             AutoGenerateColumns="False" 
             IsReadOnly="true"

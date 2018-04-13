@@ -20,6 +20,7 @@ using SimpleLog;
 using System.Threading;
 using Telegrams;
 using System.Windows.Documents;
+using Warehouse.ServiceReferenceWMSToMFCS;
 
 namespace Warehouse.Model
 {
@@ -470,14 +471,43 @@ namespace Warehouse.Model
                 {
                     using (MFCSEntities dc = new MFCSEntities())
                     {
+                        string loc;
                         int idx = (t as TelegramPalletRemoved).Location;
-                        int idxp = ((int)((idx - 1) / 4) + 1) * 10 + (idx - 1) % 4 + 1;
-                        string loc = $"W:32:{idxp:D3}:1:1";
-                        Place place = dc.Places.Where(p => p.Place1 == loc).OrderBy(pp => pp.Time).FirstOrDefault();
+                        //                        int idxp = ((int)((idx - 1) / 4) + 1) * 10 + (idx - 1) % 4 + 1;
+                        int idxp = idx;
+                        if (idx % 10 == 0) // button pressed at the end of ramp
                         {
-                            DBService.MaterialMove(place.Material, loc, "W:out");
-                            Place pl = new Place { Place1 = "W:out", Material = place.Material, Time = DateTime.Now };
-                            OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                            idx = idx / 10;
+                            loc = $"W:32:{idx:D2}";
+                            if (dc.Places.Any(p => p.Place1.StartsWith(loc))) // ramp is full, remove pallets
+                            {
+                                var pallets = (from p in dc.Places
+                                               where p.Place1.StartsWith(loc)
+                                               select p).ToList();
+                                foreach (var pal in pallets)
+                                {
+                                    DBService.MaterialMove(pal.Material, pal.Place1, "W:out");
+                                    Place pl = new Place { Material = pal.Material, Place1 = "W:out", Time = DateTime.Now };
+                                    OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                                }
+                            }
+                            else // release ramp
+                            {
+                                using (WMSToMFCSClient client = new WMSToMFCSClient())
+                                {
+                                    client.DestinationEmptied(loc);
+                                }
+                            }
+                        }
+                        else // sensor detected removal
+                        {
+                            loc = $"W:32:{idxp:D3}:1:1";
+                            Place place = dc.Places.Where(p => p.Place1 == loc).OrderBy(pp => pp.Time).FirstOrDefault();
+                            {
+                                DBService.MaterialMove(place.Material, loc, "W:out");
+                                Place pl = new Place { Material = place.Material, Place1 = "W:out", Time = DateTime.Now };
+                                OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                            }
                         }
                     }
                 }

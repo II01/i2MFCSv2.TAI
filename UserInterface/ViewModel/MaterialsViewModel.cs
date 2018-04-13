@@ -213,7 +213,7 @@ namespace UserInterface.ViewModel
                     PlaceList.Add(new MaterialViewModel { Location = p.Place1, ID = p.Material });
                 foreach (var mvm in PlaceList)
                     mvm.Initialize(_warehouse);
-                RaisePropertyChanged("PlaceList");
+//                RaisePropertyChanged("PlaceList");
                 if( c != null)
                     SelectedPlace = PlaceList.FirstOrDefault(p => p.ID == c.ID);
             }

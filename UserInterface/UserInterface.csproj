@@ -586,17 +586,17 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.Tables.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.Tables1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\service.wsdl" />
-    <None Include="Connected Services\ProxyWMS_UI\service.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\service1.wsdl" />
+    <None Include="Connected Services\ProxyWMS_UI\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\service1.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\service21.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProxyWMS_UI\UserInterface.ProxyWMS_UI.DTOCommand.datasource">

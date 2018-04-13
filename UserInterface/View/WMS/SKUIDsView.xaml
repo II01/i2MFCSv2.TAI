@@ -47,7 +47,7 @@
             ItemsSource="{Binding SKUIDList}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding SelectedSKUID}" 
+            SelectedItem="{Binding SelectedSKUID, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"

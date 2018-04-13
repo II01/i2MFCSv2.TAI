@@ -80,8 +80,8 @@ namespace UserInterface.Services
     [TypeConverter(typeof(LocalizedEnumConverter))]
     public enum EnumLogWMS: int
     {
-        Exception = 0,
-        Event = 1
+        Event = 0,
+        Exception = 1
     }
 
     [TypeConverter(typeof(LocalizedEnumConverter))]

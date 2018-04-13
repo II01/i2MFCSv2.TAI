@@ -19,18 +19,18 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="net.tcp://localhost:9050/MFCS/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="net.tcp://localhost:9050/MFCS/mex/mex/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="9dac635d-64aa-49bf-8c4c-ce42413a36aa" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f367e1c0-6d4b-405a-a792-43e111cf8bc5" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ff595fb3-ad8e-412c-8187-ab180a95e213" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="Database.xsd" MetadataType="Schema" ID="797873e6-7d22-4949-a288-0fef188c0c61" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="Warehouse.ConveyorUnits.xsd" MetadataType="Schema" ID="5001509f-297d-4027-b3e4-b7f99beaecb3" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="57a61da8-cdc5-4697-b01e-f4a4eded15bc" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="System.Collections.xsd" MetadataType="Schema" ID="d0339655-a2e7-4f19-8399-5d935783dbb0" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="Telegrams.xsd" MetadataType="Schema" ID="eb0c9c9b-baea-44b1-ac2a-139d43221ffa" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
-    <MetadataFile FileName="Warehouse.Common.xsd" MetadataType="Schema" ID="5e7cb025-903c-4dc6-905d-de2053c422b4" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="02dbf6ca-9e00-4c53-bff7-1f68799ce06b" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ea1c6ede-43af-4e92-a874-3548a59deed5" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c2aa8a0a-b730-448e-a273-ac22eb9e46eb" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="Database.xsd" MetadataType="Schema" ID="99b8d5cf-d9d7-4055-ae36-8b0d6aa655db" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="Warehouse.ConveyorUnits.xsd" MetadataType="Schema" ID="3db91215-82e5-4d72-9cb0-d0bd22cdaf6f" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="ac32a100-d953-4533-b6a7-547985058f9f" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="System.Collections.xsd" MetadataType="Schema" ID="f8ac1585-ef6c-4c2c-8b41-ff6233ba6252" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="Telegrams.xsd" MetadataType="Schema" ID="7d31e21a-92a6-47a8-8153-7bb5c27a8550" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
+    <MetadataFile FileName="Warehouse.Common.xsd" MetadataType="Schema" ID="994429a3-4508-4239-8e40-b0481b1a8362" SourceId="1" SourceUrl="net.tcp://localhost:9050/MFCS/mex/mex/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

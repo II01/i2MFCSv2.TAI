@@ -26,6 +26,9 @@ namespace UserInterface.ProxyWMS_UI {
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastChangeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> Order_IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -59,6 +62,19 @@ namespace UserInterface.ProxyWMS_UI {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastChange {
+            get {
+                return this.LastChangeField;
+            }
+            set {
+                if ((this.LastChangeField.Equals(value) != true)) {
+                    this.LastChangeField = value;
+                    this.RaisePropertyChanged("LastChange");
                 }
             }
         }
@@ -376,6 +392,12 @@ namespace UserInterface.ProxyWMS_UI {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/CancelOrder", ReplyAction="http://tempuri.org/IWMSToUI/CancelOrderResponse")]
         System.Threading.Tasks.Task CancelOrderAsync(UserInterface.ProxyWMS_UI.DTOOrder order);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/CancelCommand", ReplyAction="http://tempuri.org/IWMSToUI/CancelCommandResponse")]
+        void CancelCommand(UserInterface.ProxyWMS_UI.DTOCommand cmd);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/CancelCommand", ReplyAction="http://tempuri.org/IWMSToUI/CancelCommandResponse")]
+        System.Threading.Tasks.Task CancelCommandAsync(UserInterface.ProxyWMS_UI.DTOCommand cmd);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockLocations", ReplyAction="http://tempuri.org/IWMSToUI/BlockLocationsResponse")]
         void BlockLocations(string locStartsWith, bool block, int reason);
         
@@ -387,6 +409,12 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockTU", ReplyAction="http://tempuri.org/IWMSToUI/BlockTUResponse")]
         System.Threading.Tasks.Task BlockTUAsync(int TUID, bool block, int reason);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/ReleaseRamp", ReplyAction="http://tempuri.org/IWMSToUI/ReleaseRampResponse")]
+        void ReleaseRamp(string destinationStartsWith);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/ReleaseRamp", ReplyAction="http://tempuri.org/IWMSToUI/ReleaseRampResponse")]
+        System.Threading.Tasks.Task ReleaseRampAsync(string destinationStartsWith);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -432,6 +460,14 @@ namespace UserInterface.ProxyWMS_UI {
             return base.Channel.CancelOrderAsync(order);
         }
         
+        public void CancelCommand(UserInterface.ProxyWMS_UI.DTOCommand cmd) {
+            base.Channel.CancelCommand(cmd);
+        }
+        
+        public System.Threading.Tasks.Task CancelCommandAsync(UserInterface.ProxyWMS_UI.DTOCommand cmd) {
+            return base.Channel.CancelCommandAsync(cmd);
+        }
+        
         public void BlockLocations(string locStartsWith, bool block, int reason) {
             base.Channel.BlockLocations(locStartsWith, block, reason);
         }
@@ -446,6 +482,14 @@ namespace UserInterface.ProxyWMS_UI {
         
         public System.Threading.Tasks.Task BlockTUAsync(int TUID, bool block, int reason) {
             return base.Channel.BlockTUAsync(TUID, block, reason);
+        }
+        
+        public void ReleaseRamp(string destinationStartsWith) {
+            base.Channel.ReleaseRamp(destinationStartsWith);
+        }
+        
+        public System.Threading.Tasks.Task ReleaseRampAsync(string destinationStartsWith) {
+            return base.Channel.ReleaseRampAsync(destinationStartsWith);
         }
     }
 }

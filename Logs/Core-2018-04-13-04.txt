@@ -1,0 +1,34 @@
+2018-04-13 04:04:05:220->EXCEPTION:PLC_Crane3:Error while reading message framing format at position 143 of stream (state: ReadingEnvelopeRecord):RcvThreading (Communicator.cs 152)
+
+2018-04-13 04:04:05:472->EXCEPTION:PLC_Crane2:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:SendThreading (Communicator.cs 201)
+
+2018-04-13 04:04:05:577->EXCEPTION:PLC_Crane3:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:SendThreading (Communicator.cs 201)
+
+2018-04-13 04:04:05:647->EXCEPTION:PLC_Conveyor:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:SendThreading (Communicator.cs 201)
+
+2018-04-13 04:04:05:715->EXCEPTION:PLC_Crane1:This request operation sent to net.tcp://localhost:9000/i2MFCS.Telegrams/Send/ did not receive a reply within the configured timeout (00:01:00).  The time allotted to this operation may have been a portion of a longer timeout.  This may be because the service is still processing the operation or because the service was unable to send a reply message.  Please consider increasing the operation timeout (by casting the channel/proxy to IContextChannel and setting the OperationTimeout property) and ensure that the service is able to connect to the client.:SendThreading (Communicator.cs 201)
+
+2018-04-13 04:04:06:224->EXCEPTION:PLC_Crane2:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:RcvThreading (Communicator.cs 152)
+
+2018-04-13 04:04:07:231->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:07:381->EXCEPTION:PLC_Conveyor:The socket connection was aborted. This could be caused by an error processing your message or a receive timeout being exceeded by the remote host, or an underlying network resource issue. Local socket timeout was '00:01:00'.:RcvThreading (Communicator.cs 152)
+
+2018-04-13 04:04:07:392->EXCEPTION:PLC_Crane1:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-13 04:04:11:572->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:12:374->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:13:490->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:13:543->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:16:584->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:17:382->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:18:506->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-13 04:04:18:618->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
