@@ -197,6 +197,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\xmlconfigDogusCay_site.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\xmlconfigDogusCay_sim.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Config\xmlconfigDogusCay.xml">
       <SubType>Designer</SubType>
     </Content>
