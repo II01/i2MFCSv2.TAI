@@ -115,9272 +115,5717 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T00).
-        /// </summary>
-        public static string ALARM_00001 {
-            get {
-                return ResourceManager.GetString("ALARM_00001", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_01.
-        /// </summary>
-        public static string ALARM_00002 {
-            get {
-                return ResourceManager.GetString("ALARM_00002", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_02.
-        /// </summary>
-        public static string ALARM_00003 {
-            get {
-                return ResourceManager.GetString("ALARM_00003", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_03.
-        /// </summary>
-        public static string ALARM_00004 {
-            get {
-                return ResourceManager.GetString("ALARM_00004", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_04.
-        /// </summary>
-        public static string ALARM_00005 {
-            get {
-                return ResourceManager.GetString("ALARM_00005", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_05.
-        /// </summary>
-        public static string ALARM_00006 {
-            get {
-                return ResourceManager.GetString("ALARM_00006", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_06.
-        /// </summary>
-        public static string ALARM_00007 {
-            get {
-                return ResourceManager.GetString("ALARM_00007", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_07.
-        /// </summary>
-        public static string ALARM_00008 {
-            get {
-                return ResourceManager.GetString("ALARM_00008", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_08.
-        /// </summary>
-        public static string ALARM_00009 {
-            get {
-                return ResourceManager.GetString("ALARM_00009", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T001 material missmatch.
-        /// </summary>
-        public static string ALARM_00011 {
-            get {
-                return ResourceManager.GetString("ALARM_00011", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T001 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00012 {
-            get {
-                return ResourceManager.GetString("ALARM_00012", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T001 running too long hoist.
-        /// </summary>
-        public static string ALARM_00013 {
-            get {
-                return ResourceManager.GetString("ALARM_00013", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T001 limit switch.
-        /// </summary>
-        public static string ALARM_00014 {
-            get {
-                return ResourceManager.GetString("ALARM_00014", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T001 not ready (25Q1).
-        /// </summary>
-        public static string ALARM_00015 {
-            get {
-                return ResourceManager.GetString("ALARM_00015", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_00016 {
-            get {
-                return ResourceManager.GetString("ALARM_00016", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_00017 {
-            get {
-                return ResourceManager.GetString("ALARM_00017", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_00018 {
-            get {
-                return ResourceManager.GetString("ALARM_00018", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_00019 {
-            get {
-                return ResourceManager.GetString("ALARM_00019", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_00020 {
-            get {
-                return ResourceManager.GetString("ALARM_00020", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T002 material missmatch.
-        /// </summary>
-        public static string ALARM_00021 {
-            get {
-                return ResourceManager.GetString("ALARM_00021", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T002 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00022 {
-            get {
-                return ResourceManager.GetString("ALARM_00022", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T002 running too long hoist.
-        /// </summary>
-        public static string ALARM_00023 {
-            get {
-                return ResourceManager.GetString("ALARM_00023", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T002 limit switch.
-        /// </summary>
-        public static string ALARM_00024 {
-            get {
-                return ResourceManager.GetString("ALARM_00024", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T002 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter).
-        /// </summary>
-        public static string ALARM_00025 {
-            get {
-                return ResourceManager.GetString("ALARM_00025", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T10).
-        /// </summary>
-        public static string ALARM_00101 {
-            get {
-                return ResourceManager.GetString("ALARM_00101", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_01.
-        /// </summary>
-        public static string ALARM_00102 {
-            get {
-                return ResourceManager.GetString("ALARM_00102", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_02.
-        /// </summary>
-        public static string ALARM_00103 {
-            get {
-                return ResourceManager.GetString("ALARM_00103", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_03.
-        /// </summary>
-        public static string ALARM_00104 {
-            get {
-                return ResourceManager.GetString("ALARM_00104", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_04.
-        /// </summary>
-        public static string ALARM_00105 {
-            get {
-                return ResourceManager.GetString("ALARM_00105", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_05.
-        /// </summary>
-        public static string ALARM_00106 {
-            get {
-                return ResourceManager.GetString("ALARM_00106", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_06.
-        /// </summary>
-        public static string ALARM_00107 {
-            get {
-                return ResourceManager.GetString("ALARM_00107", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_07.
-        /// </summary>
-        public static string ALARM_00108 {
-            get {
-                return ResourceManager.GetString("ALARM_00108", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_08.
-        /// </summary>
-        public static string ALARM_00109 {
-            get {
-                return ResourceManager.GetString("ALARM_00109", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T010 material missmatch.
-        /// </summary>
-        public static string ALARM_00111 {
-            get {
-                return ResourceManager.GetString("ALARM_00111", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T010 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00112 {
-            get {
-                return ResourceManager.GetString("ALARM_00112", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T010 running too long hoist.
-        /// </summary>
-        public static string ALARM_00113 {
-            get {
-                return ResourceManager.GetString("ALARM_00113", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T010 limit switch.
-        /// </summary>
-        public static string ALARM_00114 {
-            get {
-                return ResourceManager.GetString("ALARM_00114", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T010 not ready (46Q1).
-        /// </summary>
-        public static string ALARM_00115 {
-            get {
-                return ResourceManager.GetString("ALARM_00115", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_00116 {
-            get {
-                return ResourceManager.GetString("ALARM_00116", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_00117 {
-            get {
-                return ResourceManager.GetString("ALARM_00117", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_00118 {
-            get {
-                return ResourceManager.GetString("ALARM_00118", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_00119 {
-            get {
-                return ResourceManager.GetString("ALARM_00119", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_00120 {
-            get {
-                return ResourceManager.GetString("ALARM_00120", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T011 material missmatch.
-        /// </summary>
-        public static string ALARM_00121 {
-            get {
-                return ResourceManager.GetString("ALARM_00121", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T011 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00122 {
-            get {
-                return ResourceManager.GetString("ALARM_00122", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T011 running too long hoist.
-        /// </summary>
-        public static string ALARM_00123 {
-            get {
-                return ResourceManager.GetString("ALARM_00123", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T011 limit switch.
-        /// </summary>
-        public static string ALARM_00124 {
-            get {
-                return ResourceManager.GetString("ALARM_00124", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T011 not ready (48Q1, 49F1, frequency inverter).
-        /// </summary>
-        public static string ALARM_00125 {
-            get {
-                return ResourceManager.GetString("ALARM_00125", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 25.
-        /// </summary>
-        public static string ALARM_00126 {
-            get {
-                return ResourceManager.GetString("ALARM_00126", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 26.
-        /// </summary>
-        public static string ALARM_00127 {
-            get {
-                return ResourceManager.GetString("ALARM_00127", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 27.
-        /// </summary>
-        public static string ALARM_00128 {
-            get {
-                return ResourceManager.GetString("ALARM_00128", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 28.
-        /// </summary>
-        public static string ALARM_00129 {
-            get {
-                return ResourceManager.GetString("ALARM_00129", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 29.
-        /// </summary>
-        public static string ALARM_00130 {
-            get {
-                return ResourceManager.GetString("ALARM_00130", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T012 material missmatch.
-        /// </summary>
-        public static string ALARM_00131 {
-            get {
-                return ResourceManager.GetString("ALARM_00131", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T012 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00132 {
-            get {
-                return ResourceManager.GetString("ALARM_00132", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T012 running too long hoist.
-        /// </summary>
-        public static string ALARM_00133 {
-            get {
-                return ResourceManager.GetString("ALARM_00133", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T012 limit switch.
-        /// </summary>
-        public static string ALARM_00134 {
-            get {
-                return ResourceManager.GetString("ALARM_00134", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T012 not ready (51Q1, 52F1, 53Q1, 54Q1, frequency inverter).
-        /// </summary>
-        public static string ALARM_00135 {
-            get {
-                return ResourceManager.GetString("ALARM_00135", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T02).
-        /// </summary>
-        public static string ALARM_00201 {
-            get {
-                return ResourceManager.GetString("ALARM_00201", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_01.
-        /// </summary>
-        public static string ALARM_00202 {
-            get {
-                return ResourceManager.GetString("ALARM_00202", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_02.
-        /// </summary>
-        public static string ALARM_00203 {
-            get {
-                return ResourceManager.GetString("ALARM_00203", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_03.
-        /// </summary>
-        public static string ALARM_00204 {
-            get {
-                return ResourceManager.GetString("ALARM_00204", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_04.
-        /// </summary>
-        public static string ALARM_00205 {
-            get {
-                return ResourceManager.GetString("ALARM_00205", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_05.
-        /// </summary>
-        public static string ALARM_00206 {
-            get {
-                return ResourceManager.GetString("ALARM_00206", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_06.
-        /// </summary>
-        public static string ALARM_00207 {
-            get {
-                return ResourceManager.GetString("ALARM_00207", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_07.
-        /// </summary>
-        public static string ALARM_00208 {
-            get {
-                return ResourceManager.GetString("ALARM_00208", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_08.
-        /// </summary>
-        public static string ALARM_00209 {
-            get {
-                return ResourceManager.GetString("ALARM_00209", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T021 material missmatch.
-        /// </summary>
-        public static string ALARM_00211 {
-            get {
-                return ResourceManager.GetString("ALARM_00211", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T021 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00212 {
-            get {
-                return ResourceManager.GetString("ALARM_00212", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T021 running too long hoist.
-        /// </summary>
-        public static string ALARM_00213 {
-            get {
-                return ResourceManager.GetString("ALARM_00213", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T021 limit switch.
-        /// </summary>
-        public static string ALARM_00214 {
-            get {
-                return ResourceManager.GetString("ALARM_00214", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T021 not ready (73Q1, 74Q1, 75F1, 76Q1, frequency inverter).
-        /// </summary>
-        public static string ALARM_00215 {
-            get {
-                return ResourceManager.GetString("ALARM_00215", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_00216 {
-            get {
-                return ResourceManager.GetString("ALARM_00216", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_00217 {
-            get {
-                return ResourceManager.GetString("ALARM_00217", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_00218 {
-            get {
-                return ResourceManager.GetString("ALARM_00218", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_00219 {
-            get {
-                return ResourceManager.GetString("ALARM_00219", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_00220 {
-            get {
-                return ResourceManager.GetString("ALARM_00220", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T022 material missmatch.
-        /// </summary>
-        public static string ALARM_00221 {
-            get {
-                return ResourceManager.GetString("ALARM_00221", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T022 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00222 {
-            get {
-                return ResourceManager.GetString("ALARM_00222", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T022 running too long hoist.
-        /// </summary>
-        public static string ALARM_00223 {
-            get {
-                return ResourceManager.GetString("ALARM_00223", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T022 limit switch.
-        /// </summary>
-        public static string ALARM_00224 {
-            get {
-                return ResourceManager.GetString("ALARM_00224", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T022 not ready (77Q1, 78Q1, 79F1, 80Q1, frequency inverter).
-        /// </summary>
-        public static string ALARM_00225 {
-            get {
-                return ResourceManager.GetString("ALARM_00225", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 25.
-        /// </summary>
-        public static string ALARM_00226 {
-            get {
-                return ResourceManager.GetString("ALARM_00226", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 26.
-        /// </summary>
-        public static string ALARM_00227 {
-            get {
-                return ResourceManager.GetString("ALARM_00227", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 27.
-        /// </summary>
-        public static string ALARM_00228 {
-            get {
-                return ResourceManager.GetString("ALARM_00228", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 28.
-        /// </summary>
-        public static string ALARM_00229 {
-            get {
-                return ResourceManager.GetString("ALARM_00229", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 29.
-        /// </summary>
-        public static string ALARM_00230 {
-            get {
-                return ResourceManager.GetString("ALARM_00230", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T023 material missmatch.
-        /// </summary>
-        public static string ALARM_00231 {
-            get {
-                return ResourceManager.GetString("ALARM_00231", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T023 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00232 {
-            get {
-                return ResourceManager.GetString("ALARM_00232", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T023 running too long hoist.
-        /// </summary>
-        public static string ALARM_00233 {
-            get {
-                return ResourceManager.GetString("ALARM_00233", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T023 limit switch.
-        /// </summary>
-        public static string ALARM_00234 {
-            get {
-                return ResourceManager.GetString("ALARM_00234", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T023 not ready (81Q1, 82F1).
-        /// </summary>
-        public static string ALARM_00235 {
-            get {
-                return ResourceManager.GetString("ALARM_00235", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 35.
-        /// </summary>
-        public static string ALARM_00236 {
-            get {
-                return ResourceManager.GetString("ALARM_00236", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 36.
-        /// </summary>
-        public static string ALARM_00237 {
-            get {
-                return ResourceManager.GetString("ALARM_00237", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 37.
-        /// </summary>
-        public static string ALARM_00238 {
-            get {
-                return ResourceManager.GetString("ALARM_00238", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 38.
-        /// </summary>
-        public static string ALARM_00239 {
-            get {
-                return ResourceManager.GetString("ALARM_00239", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 39.
-        /// </summary>
-        public static string ALARM_00240 {
-            get {
-                return ResourceManager.GetString("ALARM_00240", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T024 material missmatch.
-        /// </summary>
-        public static string ALARM_00241 {
-            get {
-                return ResourceManager.GetString("ALARM_00241", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T024 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00242 {
-            get {
-                return ResourceManager.GetString("ALARM_00242", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T024 running too long hoist.
-        /// </summary>
-        public static string ALARM_00243 {
-            get {
-                return ResourceManager.GetString("ALARM_00243", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T024 limit switch.
-        /// </summary>
-        public static string ALARM_00244 {
-            get {
-                return ResourceManager.GetString("ALARM_00244", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T024 not ready (83Q1, 84F1).
-        /// </summary>
-        public static string ALARM_00245 {
-            get {
-                return ResourceManager.GetString("ALARM_00245", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T03).
-        /// </summary>
-        public static string ALARM_00301 {
-            get {
-                return ResourceManager.GetString("ALARM_00301", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_01.
-        /// </summary>
-        public static string ALARM_00302 {
-            get {
-                return ResourceManager.GetString("ALARM_00302", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_02.
-        /// </summary>
-        public static string ALARM_00303 {
-            get {
-                return ResourceManager.GetString("ALARM_00303", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_03.
-        /// </summary>
-        public static string ALARM_00304 {
-            get {
-                return ResourceManager.GetString("ALARM_00304", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_04.
-        /// </summary>
-        public static string ALARM_00305 {
-            get {
-                return ResourceManager.GetString("ALARM_00305", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_05.
-        /// </summary>
-        public static string ALARM_00306 {
-            get {
-                return ResourceManager.GetString("ALARM_00306", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_06.
-        /// </summary>
-        public static string ALARM_00307 {
-            get {
-                return ResourceManager.GetString("ALARM_00307", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_07.
-        /// </summary>
-        public static string ALARM_00308 {
-            get {
-                return ResourceManager.GetString("ALARM_00308", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_08.
-        /// </summary>
-        public static string ALARM_00309 {
-            get {
-                return ResourceManager.GetString("ALARM_00309", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T004 material missmatch.
-        /// </summary>
-        public static string ALARM_00311 {
-            get {
-                return ResourceManager.GetString("ALARM_00311", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T004 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00312 {
-            get {
-                return ResourceManager.GetString("ALARM_00312", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T004 running too long hoist.
-        /// </summary>
-        public static string ALARM_00313 {
-            get {
-                return ResourceManager.GetString("ALARM_00313", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T004 limit switch.
-        /// </summary>
-        public static string ALARM_00314 {
-            get {
-                return ResourceManager.GetString("ALARM_00314", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T004 not ready (39Q1, 40Q1, 41F1, 42Q1, frequency inverter).
-        /// </summary>
-        public static string ALARM_00315 {
-            get {
-                return ResourceManager.GetString("ALARM_00315", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_00316 {
-            get {
-                return ResourceManager.GetString("ALARM_00316", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_00317 {
-            get {
-                return ResourceManager.GetString("ALARM_00317", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_00318 {
-            get {
-                return ResourceManager.GetString("ALARM_00318", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_00319 {
-            get {
-                return ResourceManager.GetString("ALARM_00319", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_00320 {
-            get {
-                return ResourceManager.GetString("ALARM_00320", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T005 material missmatch.
-        /// </summary>
-        public static string ALARM_00321 {
-            get {
-                return ResourceManager.GetString("ALARM_00321", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T005 running too long conveyor.
-        /// </summary>
-        public static string ALARM_00322 {
-            get {
-                return ResourceManager.GetString("ALARM_00322", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T005 running too long hoist.
-        /// </summary>
-        public static string ALARM_00323 {
-            get {
-                return ResourceManager.GetString("ALARM_00323", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T005 limit switch.
-        /// </summary>
-        public static string ALARM_00324 {
-            get {
-                return ResourceManager.GetString("ALARM_00324", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T002 not ready (43Q1, 44F1, frequency inverter).
-        /// </summary>
-        public static string ALARM_00325 {
-            get {
-                return ResourceManager.GetString("ALARM_00325", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T11).
-        /// </summary>
-        public static string ALARM_01101 {
-            get {
-                return ResourceManager.GetString("ALARM_01101", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_01.
-        /// </summary>
-        public static string ALARM_01102 {
-            get {
-                return ResourceManager.GetString("ALARM_01102", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_02.
-        /// </summary>
-        public static string ALARM_01103 {
-            get {
-                return ResourceManager.GetString("ALARM_01103", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_03.
-        /// </summary>
-        public static string ALARM_01104 {
-            get {
-                return ResourceManager.GetString("ALARM_01104", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_04.
-        /// </summary>
-        public static string ALARM_01105 {
-            get {
-                return ResourceManager.GetString("ALARM_01105", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_05.
-        /// </summary>
-        public static string ALARM_01106 {
-            get {
-                return ResourceManager.GetString("ALARM_01106", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_06.
-        /// </summary>
-        public static string ALARM_01107 {
-            get {
-                return ResourceManager.GetString("ALARM_01107", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_07.
-        /// </summary>
-        public static string ALARM_01108 {
-            get {
-                return ResourceManager.GetString("ALARM_01108", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_08.
-        /// </summary>
-        public static string ALARM_01109 {
-            get {
-                return ResourceManager.GetString("ALARM_01109", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T003 material missmatch.
-        /// </summary>
-        public static string ALARM_01111 {
-            get {
-                return ResourceManager.GetString("ALARM_01111", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T003 running too long conveyor.
-        /// </summary>
-        public static string ALARM_01112 {
-            get {
-                return ResourceManager.GetString("ALARM_01112", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T003 running too long hoist.
-        /// </summary>
-        public static string ALARM_01113 {
-            get {
-                return ResourceManager.GetString("ALARM_01113", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T003 limit switch.
-        /// </summary>
-        public static string ALARM_01114 {
-            get {
-                return ResourceManager.GetString("ALARM_01114", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T003 not ready (35Q1, 36Q1, 37F1, 38Q1, frequency inverter).
-        /// </summary>
-        public static string ALARM_01115 {
-            get {
-                return ResourceManager.GetString("ALARM_01115", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_01116 {
-            get {
-                return ResourceManager.GetString("ALARM_01116", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_01117 {
-            get {
-                return ResourceManager.GetString("ALARM_01117", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_01118 {
-            get {
-                return ResourceManager.GetString("ALARM_01118", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_01119 {
-            get {
-                return ResourceManager.GetString("ALARM_01119", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_01120 {
-            get {
-                return ResourceManager.GetString("ALARM_01120", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T110 material missmatch.
-        /// </summary>
-        public static string ALARM_01121 {
-            get {
-                return ResourceManager.GetString("ALARM_01121", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T110 running too long conveyor.
-        /// </summary>
-        public static string ALARM_01122 {
-            get {
-                return ResourceManager.GetString("ALARM_01122", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T110 running too long hoist.
-        /// </summary>
-        public static string ALARM_01123 {
-            get {
-                return ResourceManager.GetString("ALARM_01123", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T110 limit switch.
-        /// </summary>
-        public static string ALARM_01124 {
-            get {
-                return ResourceManager.GetString("ALARM_01124", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T110 not ready (55Q1).
-        /// </summary>
-        public static string ALARM_01125 {
-            get {
-                return ResourceManager.GetString("ALARM_01125", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 25.
-        /// </summary>
-        public static string ALARM_01126 {
-            get {
-                return ResourceManager.GetString("ALARM_01126", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 26.
-        /// </summary>
-        public static string ALARM_01127 {
-            get {
-                return ResourceManager.GetString("ALARM_01127", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 27.
-        /// </summary>
-        public static string ALARM_01128 {
-            get {
-                return ResourceManager.GetString("ALARM_01128", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 28.
-        /// </summary>
-        public static string ALARM_01129 {
-            get {
-                return ResourceManager.GetString("ALARM_01129", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 29.
-        /// </summary>
-        public static string ALARM_01130 {
-            get {
-                return ResourceManager.GetString("ALARM_01130", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T111 material missmatch.
-        /// </summary>
-        public static string ALARM_01131 {
-            get {
-                return ResourceManager.GetString("ALARM_01131", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T111 running too long conveyor.
-        /// </summary>
-        public static string ALARM_01132 {
-            get {
-                return ResourceManager.GetString("ALARM_01132", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T111 running too long hoist.
-        /// </summary>
-        public static string ALARM_01133 {
-            get {
-                return ResourceManager.GetString("ALARM_01133", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T111 limit switch.
-        /// </summary>
-        public static string ALARM_01134 {
-            get {
-                return ResourceManager.GetString("ALARM_01134", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T111 not ready (57Q1).
-        /// </summary>
-        public static string ALARM_01135 {
-            get {
-                return ResourceManager.GetString("ALARM_01135", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 35.
-        /// </summary>
-        public static string ALARM_01136 {
-            get {
-                return ResourceManager.GetString("ALARM_01136", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 36.
-        /// </summary>
-        public static string ALARM_01137 {
-            get {
-                return ResourceManager.GetString("ALARM_01137", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 37.
-        /// </summary>
-        public static string ALARM_01138 {
-            get {
-                return ResourceManager.GetString("ALARM_01138", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 38.
-        /// </summary>
-        public static string ALARM_01139 {
-            get {
-                return ResourceManager.GetString("ALARM_01139", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 39.
-        /// </summary>
-        public static string ALARM_01140 {
-            get {
-                return ResourceManager.GetString("ALARM_01140", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T112 material missmatch.
-        /// </summary>
-        public static string ALARM_01141 {
-            get {
-                return ResourceManager.GetString("ALARM_01141", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T112 running too long conveyor.
-        /// </summary>
-        public static string ALARM_01142 {
-            get {
-                return ResourceManager.GetString("ALARM_01142", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T112 running too long hoist.
-        /// </summary>
-        public static string ALARM_01143 {
-            get {
-                return ResourceManager.GetString("ALARM_01143", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T112 limit switch.
-        /// </summary>
-        public static string ALARM_01144 {
-            get {
-                return ResourceManager.GetString("ALARM_01144", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T112 not ready (58Q1, 59F1, frequency inverter).
-        /// </summary>
-        public static string ALARM_01145 {
-            get {
-                return ResourceManager.GetString("ALARM_01145", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T12).
-        /// </summary>
-        public static string ALARM_01201 {
-            get {
-                return ResourceManager.GetString("ALARM_01201", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_01.
-        /// </summary>
-        public static string ALARM_01202 {
-            get {
-                return ResourceManager.GetString("ALARM_01202", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_02.
-        /// </summary>
-        public static string ALARM_01203 {
-            get {
-                return ResourceManager.GetString("ALARM_01203", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_03.
-        /// </summary>
-        public static string ALARM_01204 {
-            get {
-                return ResourceManager.GetString("ALARM_01204", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_04.
-        /// </summary>
-        public static string ALARM_01205 {
-            get {
-                return ResourceManager.GetString("ALARM_01205", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_05.
-        /// </summary>
-        public static string ALARM_01206 {
-            get {
-                return ResourceManager.GetString("ALARM_01206", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_06.
-        /// </summary>
-        public static string ALARM_01207 {
-            get {
-                return ResourceManager.GetString("ALARM_01207", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_07.
-        /// </summary>
-        public static string ALARM_01208 {
-            get {
-                return ResourceManager.GetString("ALARM_01208", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_08.
-        /// </summary>
-        public static string ALARM_01209 {
-            get {
-                return ResourceManager.GetString("ALARM_01209", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T121 material missmatch.
-        /// </summary>
-        public static string ALARM_01211 {
-            get {
-                return ResourceManager.GetString("ALARM_01211", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T121 running too long conveyor.
-        /// </summary>
-        public static string ALARM_01212 {
-            get {
-                return ResourceManager.GetString("ALARM_01212", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T121 running too long hoist.
-        /// </summary>
-        public static string ALARM_01213 {
-            get {
-                return ResourceManager.GetString("ALARM_01213", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T121 limit switch.
-        /// </summary>
-        public static string ALARM_01214 {
-            get {
-                return ResourceManager.GetString("ALARM_01214", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T121 not ready (61Q1).
-        /// </summary>
-        public static string ALARM_01215 {
-            get {
-                return ResourceManager.GetString("ALARM_01215", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_01216 {
-            get {
-                return ResourceManager.GetString("ALARM_01216", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_01217 {
-            get {
-                return ResourceManager.GetString("ALARM_01217", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_01218 {
-            get {
-                return ResourceManager.GetString("ALARM_01218", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_01219 {
-            get {
-                return ResourceManager.GetString("ALARM_01219", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_01220 {
-            get {
-                return ResourceManager.GetString("ALARM_01220", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T122 material missmatch.
-        /// </summary>
-        public static string ALARM_01221 {
-            get {
-                return ResourceManager.GetString("ALARM_01221", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T122 running too long conveyor.
-        /// </summary>
-        public static string ALARM_01222 {
-            get {
-                return ResourceManager.GetString("ALARM_01222", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T122 running too long hoist.
-        /// </summary>
-        public static string ALARM_01223 {
-            get {
-                return ResourceManager.GetString("ALARM_01223", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T122 limit switch.
-        /// </summary>
-        public static string ALARM_01224 {
-            get {
-                return ResourceManager.GetString("ALARM_01224", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T122 not ready (62Q1).
-        /// </summary>
-        public static string ALARM_01225 {
-            get {
-                return ResourceManager.GetString("ALARM_01225", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T21).
-        /// </summary>
-        public static string ALARM_02101 {
-            get {
-                return ResourceManager.GetString("ALARM_02101", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_01.
-        /// </summary>
-        public static string ALARM_02102 {
-            get {
-                return ResourceManager.GetString("ALARM_02102", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_02.
-        /// </summary>
-        public static string ALARM_02103 {
-            get {
-                return ResourceManager.GetString("ALARM_02103", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_03.
-        /// </summary>
-        public static string ALARM_02104 {
-            get {
-                return ResourceManager.GetString("ALARM_02104", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_04.
-        /// </summary>
-        public static string ALARM_02105 {
-            get {
-                return ResourceManager.GetString("ALARM_02105", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_05.
-        /// </summary>
-        public static string ALARM_02106 {
-            get {
-                return ResourceManager.GetString("ALARM_02106", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_06.
-        /// </summary>
-        public static string ALARM_02107 {
-            get {
-                return ResourceManager.GetString("ALARM_02107", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_07.
-        /// </summary>
-        public static string ALARM_02108 {
-            get {
-                return ResourceManager.GetString("ALARM_02108", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_08.
-        /// </summary>
-        public static string ALARM_02109 {
-            get {
-                return ResourceManager.GetString("ALARM_02109", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T211 material missmatch.
-        /// </summary>
-        public static string ALARM_02111 {
-            get {
-                return ResourceManager.GetString("ALARM_02111", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T211 running too long conveyor.
-        /// </summary>
-        public static string ALARM_02112 {
-            get {
-                return ResourceManager.GetString("ALARM_02112", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T211 running too long hoist.
-        /// </summary>
-        public static string ALARM_02113 {
-            get {
-                return ResourceManager.GetString("ALARM_02113", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T211 limit switch.
-        /// </summary>
-        public static string ALARM_02114 {
-            get {
-                return ResourceManager.GetString("ALARM_02114", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T211 not ready (63Q1).
-        /// </summary>
-        public static string ALARM_02115 {
-            get {
-                return ResourceManager.GetString("ALARM_02115", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_02116 {
-            get {
-                return ResourceManager.GetString("ALARM_02116", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_02117 {
-            get {
-                return ResourceManager.GetString("ALARM_02117", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_02118 {
-            get {
-                return ResourceManager.GetString("ALARM_02118", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_02119 {
-            get {
-                return ResourceManager.GetString("ALARM_02119", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_02120 {
-            get {
-                return ResourceManager.GetString("ALARM_02120", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T212 material missmatch.
-        /// </summary>
-        public static string ALARM_02121 {
-            get {
-                return ResourceManager.GetString("ALARM_02121", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T212 running too long conveyor.
-        /// </summary>
-        public static string ALARM_02122 {
-            get {
-                return ResourceManager.GetString("ALARM_02122", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T212 running too long hoist.
-        /// </summary>
-        public static string ALARM_02123 {
-            get {
-                return ResourceManager.GetString("ALARM_02123", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T212 limit switch.
-        /// </summary>
-        public static string ALARM_02124 {
-            get {
-                return ResourceManager.GetString("ALARM_02124", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T212 not ready (64Q1, 65F1, frequency inverter).
-        /// </summary>
-        public static string ALARM_02125 {
-            get {
-                return ResourceManager.GetString("ALARM_02125", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T22).
-        /// </summary>
-        public static string ALARM_02201 {
-            get {
-                return ResourceManager.GetString("ALARM_02201", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_01.
-        /// </summary>
-        public static string ALARM_02202 {
-            get {
-                return ResourceManager.GetString("ALARM_02202", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_02.
-        /// </summary>
-        public static string ALARM_02203 {
-            get {
-                return ResourceManager.GetString("ALARM_02203", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_03.
-        /// </summary>
-        public static string ALARM_02204 {
-            get {
-                return ResourceManager.GetString("ALARM_02204", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_04.
-        /// </summary>
-        public static string ALARM_02205 {
-            get {
-                return ResourceManager.GetString("ALARM_02205", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_05.
-        /// </summary>
-        public static string ALARM_02206 {
-            get {
-                return ResourceManager.GetString("ALARM_02206", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_06.
-        /// </summary>
-        public static string ALARM_02207 {
-            get {
-                return ResourceManager.GetString("ALARM_02207", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_07.
-        /// </summary>
-        public static string ALARM_02208 {
-            get {
-                return ResourceManager.GetString("ALARM_02208", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_08.
-        /// </summary>
-        public static string ALARM_02209 {
-            get {
-                return ResourceManager.GetString("ALARM_02209", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T221 material missmatch.
-        /// </summary>
-        public static string ALARM_02211 {
-            get {
-                return ResourceManager.GetString("ALARM_02211", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T221 running too long conveyor.
-        /// </summary>
-        public static string ALARM_02212 {
-            get {
-                return ResourceManager.GetString("ALARM_02212", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T221 running too long hoist.
-        /// </summary>
-        public static string ALARM_02213 {
-            get {
-                return ResourceManager.GetString("ALARM_02213", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T221 limit switch.
-        /// </summary>
-        public static string ALARM_02214 {
-            get {
-                return ResourceManager.GetString("ALARM_02214", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T221 not ready (67Q1).
-        /// </summary>
-        public static string ALARM_02215 {
-            get {
-                return ResourceManager.GetString("ALARM_02215", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_02216 {
-            get {
-                return ResourceManager.GetString("ALARM_02216", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_02217 {
-            get {
-                return ResourceManager.GetString("ALARM_02217", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_02218 {
-            get {
-                return ResourceManager.GetString("ALARM_02218", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_02219 {
-            get {
-                return ResourceManager.GetString("ALARM_02219", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_02220 {
-            get {
-                return ResourceManager.GetString("ALARM_02220", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T222 material missmatch.
-        /// </summary>
-        public static string ALARM_02221 {
-            get {
-                return ResourceManager.GetString("ALARM_02221", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T222 running too long conveyor.
-        /// </summary>
-        public static string ALARM_02222 {
-            get {
-                return ResourceManager.GetString("ALARM_02222", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T222 running too long hoist.
-        /// </summary>
-        public static string ALARM_02223 {
-            get {
-                return ResourceManager.GetString("ALARM_02223", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T222 limit switch.
-        /// </summary>
-        public static string ALARM_02224 {
-            get {
-                return ResourceManager.GetString("ALARM_02224", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T222 not ready (68Q1).
-        /// </summary>
-        public static string ALARM_02225 {
-            get {
-                return ResourceManager.GetString("ALARM_02225", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T31).
-        /// </summary>
-        public static string ALARM_03101 {
-            get {
-                return ResourceManager.GetString("ALARM_03101", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_01.
-        /// </summary>
-        public static string ALARM_03102 {
-            get {
-                return ResourceManager.GetString("ALARM_03102", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_02.
-        /// </summary>
-        public static string ALARM_03103 {
-            get {
-                return ResourceManager.GetString("ALARM_03103", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_03.
-        /// </summary>
-        public static string ALARM_03104 {
-            get {
-                return ResourceManager.GetString("ALARM_03104", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_04.
-        /// </summary>
-        public static string ALARM_03105 {
-            get {
-                return ResourceManager.GetString("ALARM_03105", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_05.
-        /// </summary>
-        public static string ALARM_03106 {
-            get {
-                return ResourceManager.GetString("ALARM_03106", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_06.
-        /// </summary>
-        public static string ALARM_03107 {
-            get {
-                return ResourceManager.GetString("ALARM_03107", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_07.
-        /// </summary>
-        public static string ALARM_03108 {
-            get {
-                return ResourceManager.GetString("ALARM_03108", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_08.
-        /// </summary>
-        public static string ALARM_03109 {
-            get {
-                return ResourceManager.GetString("ALARM_03109", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T311 material missmatch.
-        /// </summary>
-        public static string ALARM_03111 {
-            get {
-                return ResourceManager.GetString("ALARM_03111", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T311 running too long conveyor.
-        /// </summary>
-        public static string ALARM_03112 {
-            get {
-                return ResourceManager.GetString("ALARM_03112", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T311 running too long hoist.
-        /// </summary>
-        public static string ALARM_03113 {
-            get {
-                return ResourceManager.GetString("ALARM_03113", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T311 limit switch.
-        /// </summary>
-        public static string ALARM_03114 {
-            get {
-                return ResourceManager.GetString("ALARM_03114", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T311 not ready (69Q1).
-        /// </summary>
-        public static string ALARM_03115 {
-            get {
-                return ResourceManager.GetString("ALARM_03115", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_03116 {
-            get {
-                return ResourceManager.GetString("ALARM_03116", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_03117 {
-            get {
-                return ResourceManager.GetString("ALARM_03117", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_03118 {
-            get {
-                return ResourceManager.GetString("ALARM_03118", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_03119 {
-            get {
-                return ResourceManager.GetString("ALARM_03119", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_03120 {
-            get {
-                return ResourceManager.GetString("ALARM_03120", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T312 material missmatch.
-        /// </summary>
-        public static string ALARM_03121 {
-            get {
-                return ResourceManager.GetString("ALARM_03121", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T312 running too long conveyor.
-        /// </summary>
-        public static string ALARM_03122 {
-            get {
-                return ResourceManager.GetString("ALARM_03122", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T312 running too long hoist.
-        /// </summary>
-        public static string ALARM_03123 {
-            get {
-                return ResourceManager.GetString("ALARM_03123", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T312 limit switch.
-        /// </summary>
-        public static string ALARM_03124 {
-            get {
-                return ResourceManager.GetString("ALARM_03124", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T312 not ready (70Q1, 71F1, frequency inverter).
-        /// </summary>
-        public static string ALARM_03125 {
-            get {
-                return ResourceManager.GetString("ALARM_03125", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFC missmatch (segment T32).
-        /// </summary>
-        public static string ALARM_03201 {
-            get {
-                return ResourceManager.GetString("ALARM_03201", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_01.
-        /// </summary>
-        public static string ALARM_03202 {
-            get {
-                return ResourceManager.GetString("ALARM_03202", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_02.
-        /// </summary>
-        public static string ALARM_03203 {
-            get {
-                return ResourceManager.GetString("ALARM_03203", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_03.
-        /// </summary>
-        public static string ALARM_03204 {
-            get {
-                return ResourceManager.GetString("ALARM_03204", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_04.
-        /// </summary>
-        public static string ALARM_03205 {
-            get {
-                return ResourceManager.GetString("ALARM_03205", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_05.
-        /// </summary>
-        public static string ALARM_03206 {
-            get {
-                return ResourceManager.GetString("ALARM_03206", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_06.
-        /// </summary>
-        public static string ALARM_03207 {
-            get {
-                return ResourceManager.GetString("ALARM_03207", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_07.
-        /// </summary>
-        public static string ALARM_03208 {
-            get {
-                return ResourceManager.GetString("ALARM_03208", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_08.
-        /// </summary>
-        public static string ALARM_03209 {
-            get {
-                return ResourceManager.GetString("ALARM_03209", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T321 material missmatch.
-        /// </summary>
-        public static string ALARM_03211 {
-            get {
-                return ResourceManager.GetString("ALARM_03211", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T321 running too long conveyor.
-        /// </summary>
-        public static string ALARM_03212 {
-            get {
-                return ResourceManager.GetString("ALARM_03212", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T321 running too long hoist.
-        /// </summary>
-        public static string ALARM_03213 {
-            get {
-                return ResourceManager.GetString("ALARM_03213", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T321 limit switch.
-        /// </summary>
-        public static string ALARM_03214 {
-            get {
-                return ResourceManager.GetString("ALARM_03214", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T321 not ready (85Q1).
-        /// </summary>
-        public static string ALARM_03215 {
-            get {
-                return ResourceManager.GetString("ALARM_03215", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 15.
-        /// </summary>
-        public static string ALARM_03216 {
-            get {
-                return ResourceManager.GetString("ALARM_03216", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 16.
-        /// </summary>
-        public static string ALARM_03217 {
-            get {
-                return ResourceManager.GetString("ALARM_03217", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 17.
-        /// </summary>
-        public static string ALARM_03218 {
-            get {
-                return ResourceManager.GetString("ALARM_03218", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 18.
-        /// </summary>
-        public static string ALARM_03219 {
-            get {
-                return ResourceManager.GetString("ALARM_03219", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Spare 19.
-        /// </summary>
-        public static string ALARM_03220 {
-            get {
-                return ResourceManager.GetString("ALARM_03220", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T322 material missmatch.
-        /// </summary>
-        public static string ALARM_03221 {
-            get {
-                return ResourceManager.GetString("ALARM_03221", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T322 running too long conveyor.
-        /// </summary>
-        public static string ALARM_03222 {
-            get {
-                return ResourceManager.GetString("ALARM_03222", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T322 running too long hoist.
-        /// </summary>
-        public static string ALARM_03223 {
-            get {
-                return ResourceManager.GetString("ALARM_03223", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T322 limit switch.
-        /// </summary>
-        public static string ALARM_03224 {
-            get {
-                return ResourceManager.GetString("ALARM_03224", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to T322 not ready (86Q1).
-        /// </summary>
-        public static string ALARM_03225 {
-            get {
-                return ResourceManager.GetString("ALARM_03225", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to MFC queue full.
         /// </summary>
-        public static string ALARM_09901 {
+        public static string ALARM_000001 {
             get {
-                return ResourceManager.GetString("ALARM_09901", resourceCulture);
+                return ResourceManager.GetString("ALARM_000001", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to TCP IP chanel fault.
         /// </summary>
-        public static string ALARM_09902 {
+        public static string ALARM_000002 {
             get {
-                return ResourceManager.GetString("ALARM_09902", resourceCulture);
+                return ResourceManager.GetString("ALARM_000002", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_02.
         /// </summary>
-        public static string ALARM_09903 {
+        public static string ALARM_000003 {
             get {
-                return ResourceManager.GetString("ALARM_09903", resourceCulture);
+                return ResourceManager.GetString("ALARM_000003", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_03.
         /// </summary>
-        public static string ALARM_09904 {
+        public static string ALARM_000004 {
             get {
-                return ResourceManager.GetString("ALARM_09904", resourceCulture);
+                return ResourceManager.GetString("ALARM_000004", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_04.
         /// </summary>
-        public static string ALARM_09905 {
+        public static string ALARM_000005 {
             get {
-                return ResourceManager.GetString("ALARM_09905", resourceCulture);
+                return ResourceManager.GetString("ALARM_000005", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_05.
         /// </summary>
-        public static string ALARM_09906 {
+        public static string ALARM_000006 {
             get {
-                return ResourceManager.GetString("ALARM_09906", resourceCulture);
+                return ResourceManager.GetString("ALARM_000006", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_06.
         /// </summary>
-        public static string ALARM_09907 {
+        public static string ALARM_000007 {
             get {
-                return ResourceManager.GetString("ALARM_09907", resourceCulture);
+                return ResourceManager.GetString("ALARM_000007", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_07.
         /// </summary>
-        public static string ALARM_09908 {
+        public static string ALARM_000008 {
             get {
-                return ResourceManager.GetString("ALARM_09908", resourceCulture);
+                return ResourceManager.GetString("ALARM_000008", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_08.
         /// </summary>
-        public static string ALARM_09909 {
+        public static string ALARM_000009 {
             get {
-                return ResourceManager.GetString("ALARM_09909", resourceCulture);
+                return ResourceManager.GetString("ALARM_000009", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to phase alignment.
         /// </summary>
-        public static string ALARM_09910 {
+        public static string ALARM_000010 {
             get {
-                return ResourceManager.GetString("ALARM_09910", resourceCulture);
+                return ResourceManager.GetString("ALARM_000010", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to c101 main switch (2Q1).
         /// </summary>
-        public static string ALARM_09911 {
+        public static string ALARM_000011 {
             get {
-                return ResourceManager.GetString("ALARM_09911", resourceCulture);
+                return ResourceManager.GetString("ALARM_000011", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to c201 main switch (3Q1).
         /// </summary>
-        public static string ALARM_09912 {
+        public static string ALARM_000012 {
             get {
-                return ResourceManager.GetString("ALARM_09912", resourceCulture);
+                return ResourceManager.GetString("ALARM_000012", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to c301 main switch (4Q1).
+        ///   Looks up a localized string similar to s301 main switch (4Q1).
         /// </summary>
-        public static string ALARM_09913 {
+        public static string ALARM_000013 {
             get {
-                return ResourceManager.GetString("ALARM_09913", resourceCulture);
+                return ResourceManager.GetString("ALARM_000013", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to c401 main switch (7Q1).
         /// </summary>
-        public static string ALARM_09914 {
+        public static string ALARM_000014 {
             get {
-                return ResourceManager.GetString("ALARM_09914", resourceCulture);
+                return ResourceManager.GetString("ALARM_000014", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to c501 main switch (8Q1).
         /// </summary>
-        public static string ALARM_09915 {
+        public static string ALARM_000015 {
             get {
-                return ResourceManager.GetString("ALARM_09915", resourceCulture);
+                return ResourceManager.GetString("ALARM_000015", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_15.
         /// </summary>
-        public static string ALARM_09916 {
+        public static string ALARM_000016 {
             get {
-                return ResourceManager.GetString("ALARM_09916", resourceCulture);
+                return ResourceManager.GetString("ALARM_000016", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_16.
         /// </summary>
-        public static string ALARM_09917 {
+        public static string ALARM_000017 {
             get {
-                return ResourceManager.GetString("ALARM_09917", resourceCulture);
+                return ResourceManager.GetString("ALARM_000017", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_17.
         /// </summary>
-        public static string ALARM_09918 {
+        public static string ALARM_000018 {
             get {
-                return ResourceManager.GetString("ALARM_09918", resourceCulture);
+                return ResourceManager.GetString("ALARM_000018", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_18.
         /// </summary>
-        public static string ALARM_09919 {
+        public static string ALARM_000019 {
             get {
-                return ResourceManager.GetString("ALARM_09919", resourceCulture);
+                return ResourceManager.GetString("ALARM_000019", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to conveyor main switch (5Q1).
         /// </summary>
-        public static string ALARM_09920 {
+        public static string ALARM_000020 {
             get {
-                return ResourceManager.GetString("ALARM_09920", resourceCulture);
+                return ResourceManager.GetString("ALARM_000020", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to conveyor 24V (6Q1).
+        ///   Looks up a localized string similar to conveyor 24V (6F1).
         /// </summary>
-        public static string ALARM_09921 {
+        public static string ALARM_000021 {
             get {
-                return ResourceManager.GetString("ALARM_09921", resourceCulture);
+                return ResourceManager.GetString("ALARM_000021", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to main cabinet ventialtion (13F2).
+        ///   Looks up a localized string similar to main cabinet ventialtion (12F2).
         /// </summary>
-        public static string ALARM_09922 {
+        public static string ALARM_000022 {
             get {
-                return ResourceManager.GetString("ALARM_09922", resourceCulture);
+                return ResourceManager.GetString("ALARM_000022", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to sensors 24V (14F4).
         /// </summary>
-        public static string ALARM_09923 {
+        public static string ALARM_000023 {
             get {
-                return ResourceManager.GetString("ALARM_09923", resourceCulture);
+                return ResourceManager.GetString("ALARM_000023", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to frequency regulator 24V (14F5).
         /// </summary>
-        public static string ALARM_09924 {
+        public static string ALARM_000024 {
             get {
-                return ResourceManager.GetString("ALARM_09924", resourceCulture);
+                return ResourceManager.GetString("ALARM_000024", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_24.
         /// </summary>
-        public static string ALARM_09925 {
+        public static string ALARM_000025 {
             get {
-                return ResourceManager.GetString("ALARM_09925", resourceCulture);
+                return ResourceManager.GetString("ALARM_000025", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_25.
         /// </summary>
-        public static string ALARM_09926 {
+        public static string ALARM_000026 {
             get {
-                return ResourceManager.GetString("ALARM_09926", resourceCulture);
+                return ResourceManager.GetString("ALARM_000026", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_26.
         /// </summary>
-        public static string ALARM_09927 {
+        public static string ALARM_000027 {
             get {
-                return ResourceManager.GetString("ALARM_09927", resourceCulture);
+                return ResourceManager.GetString("ALARM_000027", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_27.
         /// </summary>
-        public static string ALARM_09928 {
+        public static string ALARM_000028 {
             get {
-                return ResourceManager.GetString("ALARM_09928", resourceCulture);
+                return ResourceManager.GetString("ALARM_000028", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_28.
         /// </summary>
-        public static string ALARM_09929 {
+        public static string ALARM_000029 {
             get {
-                return ResourceManager.GetString("ALARM_09929", resourceCulture);
+                return ResourceManager.GetString("ALARM_000029", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cp502 fuse, main cabinet (15F2).
+        ///   Looks up a localized string similar to segment0_29.
         /// </summary>
-        public static string ALARM_09930 {
+        public static string ALARM_000030 {
             get {
-                return ResourceManager.GetString("ALARM_09930", resourceCulture);
+                return ResourceManager.GetString("ALARM_000030", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cp502 24V fuse (124F4).
+        ///   Looks up a localized string similar to segment0_30.
         /// </summary>
-        public static string ALARM_09931 {
+        public static string ALARM_000031 {
             get {
-                return ResourceManager.GetString("ALARM_09931", resourceCulture);
+                return ResourceManager.GetString("ALARM_000031", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to cp502 ventilation (125F1).
+        ///   Looks up a localized string similar to segment0_31.
         /// </summary>
-        public static string ALARM_09932 {
+        public static string ALARM_000032 {
             get {
-                return ResourceManager.GetString("ALARM_09932", resourceCulture);
+                return ResourceManager.GetString("ALARM_000032", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_32.
         /// </summary>
-        public static string ALARM_09933 {
+        public static string ALARM_000033 {
             get {
-                return ResourceManager.GetString("ALARM_09933", resourceCulture);
+                return ResourceManager.GetString("ALARM_000033", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_33.
         /// </summary>
-        public static string ALARM_09934 {
+        public static string ALARM_000034 {
             get {
-                return ResourceManager.GetString("ALARM_09934", resourceCulture);
+                return ResourceManager.GetString("ALARM_000034", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_34.
         /// </summary>
-        public static string ALARM_09935 {
+        public static string ALARM_000035 {
             get {
-                return ResourceManager.GetString("ALARM_09935", resourceCulture);
+                return ResourceManager.GetString("ALARM_000035", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_35.
         /// </summary>
-        public static string ALARM_09936 {
+        public static string ALARM_000036 {
             get {
-                return ResourceManager.GetString("ALARM_09936", resourceCulture);
+                return ResourceManager.GetString("ALARM_000036", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_36.
         /// </summary>
-        public static string ALARM_09937 {
+        public static string ALARM_000037 {
             get {
-                return ResourceManager.GetString("ALARM_09937", resourceCulture);
+                return ResourceManager.GetString("ALARM_000037", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_37.
         /// </summary>
-        public static string ALARM_09938 {
+        public static string ALARM_000038 {
             get {
-                return ResourceManager.GetString("ALARM_09938", resourceCulture);
+                return ResourceManager.GetString("ALARM_000038", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_38.
         /// </summary>
-        public static string ALARM_09939 {
+        public static string ALARM_000039 {
             get {
-                return ResourceManager.GetString("ALARM_09939", resourceCulture);
+                return ResourceManager.GetString("ALARM_000039", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button CP001 (segment T00, T03, T10, T11, T12).
+        ///   Looks up a localized string similar to Stop button CP012.
         /// </summary>
-        public static string ALARM_09940 {
+        public static string ALARM_000040 {
             get {
-                return ResourceManager.GetString("ALARM_09940", resourceCulture);
+                return ResourceManager.GetString("ALARM_000040", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Safety contactor out (12k1) (segment T00, T03, T10) .
+        ///   Looks up a localized string similar to Stop button CP015.
         /// </summary>
-        public static string ALARM_09941 {
+        public static string ALARM_000041 {
             get {
-                return ResourceManager.GetString("ALARM_09941", resourceCulture);
+                return ResourceManager.GetString("ALARM_000041", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button CP101 (segment T11, T12).
+        ///   Looks up a localized string similar to Stop button CP030.
         /// </summary>
-        public static string ALARM_09942 {
+        public static string ALARM_000042 {
             get {
-                return ResourceManager.GetString("ALARM_09942", resourceCulture);
+                return ResourceManager.GetString("ALARM_000042", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Safety contactor out (12k2) (segment T11, T12).
+        ///   Looks up a localized string similar to Stop button CP110.
         /// </summary>
-        public static string ALARM_09943 {
+        public static string ALARM_000043 {
             get {
-                return ResourceManager.GetString("ALARM_09943", resourceCulture);
+                return ResourceManager.GetString("ALARM_000043", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button CP201 (segment T21, T22).
+        ///   Looks up a localized string similar to Stop button CP120.
         /// </summary>
-        public static string ALARM_09944 {
+        public static string ALARM_000044 {
             get {
-                return ResourceManager.GetString("ALARM_09944", resourceCulture);
+                return ResourceManager.GetString("ALARM_000044", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button CP501 (segment T21, T22, T31, T02).
+        ///   Looks up a localized string similar to Stop button CP101.
         /// </summary>
-        public static string ALARM_09945 {
+        public static string ALARM_000045 {
             get {
-                return ResourceManager.GetString("ALARM_09945", resourceCulture);
+                return ResourceManager.GetString("ALARM_000045", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Safety contactor out (12k3) (segment T21, T22) .
+        ///   Looks up a localized string similar to Stop button CP210.
         /// </summary>
-        public static string ALARM_09946 {
+        public static string ALARM_000046 {
             get {
-                return ResourceManager.GetString("ALARM_09946", resourceCulture);
+                return ResourceManager.GetString("ALARM_000046", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button CP301 (segment T31).
+        ///   Looks up a localized string similar to Stop button CP220.
         /// </summary>
-        public static string ALARM_09947 {
+        public static string ALARM_000047 {
             get {
-                return ResourceManager.GetString("ALARM_09947", resourceCulture);
+                return ResourceManager.GetString("ALARM_000047", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Safety contactor out (12k4) (segment T31).
+        ///   Looks up a localized string similar to Stop button CP201.
         /// </summary>
-        public static string ALARM_09948 {
+        public static string ALARM_000048 {
             get {
-                return ResourceManager.GetString("ALARM_09948", resourceCulture);
+                return ResourceManager.GetString("ALARM_000048", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button CP321 (segment T32).
+        ///   Looks up a localized string similar to Stop button CP301.
         /// </summary>
-        public static string ALARM_09949 {
+        public static string ALARM_000049 {
             get {
-                return ResourceManager.GetString("ALARM_09949", resourceCulture);
+                return ResourceManager.GetString("ALARM_000049", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Safety contactor out (12k6) (Segment T32).
+        ///   Looks up a localized string similar to Stop button CP040.
         /// </summary>
-        public static string ALARM_09950 {
+        public static string ALARM_000050 {
             get {
-                return ResourceManager.GetString("ALARM_09950", resourceCulture);
+                return ResourceManager.GetString("ALARM_000050", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Safety contactor out (12k5) (Segment T02).
+        ///   Looks up a localized string similar to Stop button SB2.
         /// </summary>
-        public static string ALARM_09951 {
+        public static string ALARM_000051 {
             get {
-                return ResourceManager.GetString("ALARM_09951", resourceCulture);
+                return ResourceManager.GetString("ALARM_000051", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button CP401 (segment T21, T22).
+        ///   Looks up a localized string similar to segment0_52.
         /// </summary>
-        public static string ALARM_09952 {
+        public static string ALARM_000052 {
             get {
-                return ResourceManager.GetString("ALARM_09952", resourceCulture);
+                return ResourceManager.GetString("ALARM_000052", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button door 401.
+        ///   Looks up a localized string similar to segment0_53.
         /// </summary>
-        public static string ALARM_09953 {
+        public static string ALARM_000053 {
             get {
-                return ResourceManager.GetString("ALARM_09953", resourceCulture);
+                return ResourceManager.GetString("ALARM_000053", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button door 501.
+        ///   Looks up a localized string similar to Safety contactor deactivated 11K1.
         /// </summary>
-        public static string ALARM_09954 {
+        public static string ALARM_000054 {
             get {
-                return ResourceManager.GetString("ALARM_09954", resourceCulture);
+                return ResourceManager.GetString("ALARM_000054", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop button door 502.
+        ///   Looks up a localized string similar to Safety contactor deactivated 12K1.
         /// </summary>
-        public static string ALARM_09955 {
+        public static string ALARM_000055 {
             get {
-                return ResourceManager.GetString("ALARM_09955", resourceCulture);
+                return ResourceManager.GetString("ALARM_000055", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_56.
+        ///   Looks up a localized string similar to Safety contactor deactivated 13K1.
         /// </summary>
-        public static string ALARM_09956 {
+        public static string ALARM_000056 {
             get {
-                return ResourceManager.GetString("ALARM_09956", resourceCulture);
+                return ResourceManager.GetString("ALARM_000056", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_57.
+        ///   Looks up a localized string similar to Safety contactor deactivated 14K1.
         /// </summary>
-        public static string ALARM_09957 {
+        public static string ALARM_000057 {
             get {
-                return ResourceManager.GetString("ALARM_09957", resourceCulture);
+                return ResourceManager.GetString("ALARM_000057", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_58.
+        ///   Looks up a localized string similar to Safety contactor deactivated 15K1.
         /// </summary>
-        public static string ALARM_09958 {
+        public static string ALARM_000058 {
             get {
-                return ResourceManager.GetString("ALARM_09958", resourceCulture);
+                return ResourceManager.GetString("ALARM_000058", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_59.
+        ///   Looks up a localized string similar to Safety contactor deactivated 16K1.
         /// </summary>
-        public static string ALARM_09959 {
+        public static string ALARM_000059 {
             get {
-                return ResourceManager.GetString("ALARM_09959", resourceCulture);
+                return ResourceManager.GetString("ALARM_000059", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ET200 CP301 unreachable.
+        ///   Looks up a localized string similar to Safety contactor deactivated 17K1.
         /// </summary>
-        public static string ALARM_09960 {
+        public static string ALARM_000060 {
             get {
-                return ResourceManager.GetString("ALARM_09960", resourceCulture);
+                return ResourceManager.GetString("ALARM_000060", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ET200 CP502 unreachable.
+        ///   Looks up a localized string similar to segment0_61.
         /// </summary>
-        public static string ALARM_09961 {
+        public static string ALARM_000061 {
             get {
-                return ResourceManager.GetString("ALARM_09961", resourceCulture);
+                return ResourceManager.GetString("ALARM_000061", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CLV620 unreachable.
+        ///   Looks up a localized string similar to segment0_62.
         /// </summary>
-        public static string ALARM_09962 {
+        public static string ALARM_000062 {
             get {
-                return ResourceManager.GetString("ALARM_09962", resourceCulture);
+                return ResourceManager.GetString("ALARM_000062", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_63.
         /// </summary>
-        public static string ALARM_09963 {
+        public static string ALARM_000063 {
             get {
-                return ResourceManager.GetString("ALARM_09963", resourceCulture);
+                return ResourceManager.GetString("ALARM_000063", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_64.
         /// </summary>
-        public static string ALARM_09964 {
+        public static string ALARM_000064 {
             get {
-                return ResourceManager.GetString("ALARM_09964", resourceCulture);
+                return ResourceManager.GetString("ALARM_000064", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_65.
         /// </summary>
-        public static string ALARM_09965 {
+        public static string ALARM_000065 {
             get {
-                return ResourceManager.GetString("ALARM_09965", resourceCulture);
+                return ResourceManager.GetString("ALARM_000065", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_66.
         /// </summary>
-        public static string ALARM_09966 {
+        public static string ALARM_000066 {
             get {
-                return ResourceManager.GetString("ALARM_09966", resourceCulture);
+                return ResourceManager.GetString("ALARM_000066", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_67.
         /// </summary>
-        public static string ALARM_09967 {
+        public static string ALARM_000067 {
             get {
-                return ResourceManager.GetString("ALARM_09967", resourceCulture);
+                return ResourceManager.GetString("ALARM_000067", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_68.
         /// </summary>
-        public static string ALARM_09968 {
+        public static string ALARM_000068 {
             get {
-                return ResourceManager.GetString("ALARM_09968", resourceCulture);
+                return ResourceManager.GetString("ALARM_000068", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_69.
+        ///   Looks up a localized string similar to CLV620 unreachable.
         /// </summary>
-        public static string ALARM_09969 {
+        public static string ALARM_000069 {
             get {
-                return ResourceManager.GetString("ALARM_09969", resourceCulture);
+                return ResourceManager.GetString("ALARM_000069", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T002 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T014 unreachable.
         /// </summary>
-        public static string ALARM_09970 {
+        public static string ALARM_000070 {
             get {
-                return ResourceManager.GetString("ALARM_09970", resourceCulture);
+                return ResourceManager.GetString("ALARM_000070", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T003 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T015 unreachable.
         /// </summary>
-        public static string ALARM_09971 {
+        public static string ALARM_000071 {
             get {
-                return ResourceManager.GetString("ALARM_09971", resourceCulture);
+                return ResourceManager.GetString("ALARM_000071", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T004 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T031_r unreachable.
         /// </summary>
-        public static string ALARM_09972 {
+        public static string ALARM_000072 {
             get {
-                return ResourceManager.GetString("ALARM_09972", resourceCulture);
+                return ResourceManager.GetString("ALARM_000072", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T005 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T031_c unreachable.
         /// </summary>
-        public static string ALARM_09973 {
+        public static string ALARM_000073 {
             get {
-                return ResourceManager.GetString("ALARM_09973", resourceCulture);
+                return ResourceManager.GetString("ALARM_000073", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T011 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T033 unreachable.
         /// </summary>
-        public static string ALARM_09974 {
+        public static string ALARM_000074 {
             get {
-                return ResourceManager.GetString("ALARM_09974", resourceCulture);
+                return ResourceManager.GetString("ALARM_000074", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T012 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T035 unreachable.
         /// </summary>
-        public static string ALARM_09975 {
+        public static string ALARM_000075 {
             get {
-                return ResourceManager.GetString("ALARM_09975", resourceCulture);
+                return ResourceManager.GetString("ALARM_000075", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T112 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T037 unreachable.
         /// </summary>
-        public static string ALARM_09976 {
+        public static string ALARM_000076 {
             get {
-                return ResourceManager.GetString("ALARM_09976", resourceCulture);
+                return ResourceManager.GetString("ALARM_000076", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T212 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T038 unreachable.
         /// </summary>
-        public static string ALARM_09977 {
+        public static string ALARM_000077 {
             get {
-                return ResourceManager.GetString("ALARM_09977", resourceCulture);
+                return ResourceManager.GetString("ALARM_000077", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T312 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T114 unreachable.
         /// </summary>
-        public static string ALARM_09978 {
+        public static string ALARM_000078 {
             get {
-                return ResourceManager.GetString("ALARM_09978", resourceCulture);
+                return ResourceManager.GetString("ALARM_000078", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T021 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T115 unreachable.
         /// </summary>
-        public static string ALARM_09979 {
+        public static string ALARM_000079 {
             get {
-                return ResourceManager.GetString("ALARM_09979", resourceCulture);
+                return ResourceManager.GetString("ALARM_000079", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to frequency regulator T022 unreachable.
+        ///   Looks up a localized string similar to frequency regulator T125 unreachable.
         /// </summary>
-        public static string ALARM_09980 {
+        public static string ALARM_000080 {
             get {
-                return ResourceManager.GetString("ALARM_09980", resourceCulture);
+                return ResourceManager.GetString("ALARM_000080", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to frequency regulator T214 unreachable.
+        /// </summary>
+        public static string ALARM_000081 {
+            get {
+                return ResourceManager.GetString("ALARM_000081", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to frequency regulator T215 unreachable.
+        /// </summary>
+        public static string ALARM_000082 {
+            get {
+                return ResourceManager.GetString("ALARM_000082", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to frequency regulator T225 unreachable.
+        /// </summary>
+        public static string ALARM_000083 {
+            get {
+                return ResourceManager.GetString("ALARM_000083", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to crane 1 unreachable.
         /// </summary>
-        public static string ALARM_09981 {
+        public static string ALARM_000084 {
             get {
-                return ResourceManager.GetString("ALARM_09981", resourceCulture);
+                return ResourceManager.GetString("ALARM_000084", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to crane 2 unreachable.
         /// </summary>
-        public static string ALARM_09982 {
+        public static string ALARM_000085 {
             get {
-                return ResourceManager.GetString("ALARM_09982", resourceCulture);
+                return ResourceManager.GetString("ALARM_000085", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to crane 3 unreachable.
+        ///   Looks up a localized string similar to shuttle 3 unreachable.
         /// </summary>
-        public static string ALARM_09983 {
+        public static string ALARM_000086 {
             get {
-                return ResourceManager.GetString("ALARM_09983", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to shuttle 4 unreachable.
-        /// </summary>
-        public static string ALARM_09984 {
-            get {
-                return ResourceManager.GetString("ALARM_09984", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to shuttle 5 unreachable.
-        /// </summary>
-        public static string ALARM_09985 {
-            get {
-                return ResourceManager.GetString("ALARM_09985", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment0_86.
-        /// </summary>
-        public static string ALARM_09986 {
-            get {
-                return ResourceManager.GetString("ALARM_09986", resourceCulture);
+                return ResourceManager.GetString("ALARM_000086", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_87.
         /// </summary>
-        public static string ALARM_09987 {
+        public static string ALARM_000087 {
             get {
-                return ResourceManager.GetString("ALARM_09987", resourceCulture);
+                return ResourceManager.GetString("ALARM_000087", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_88.
         /// </summary>
-        public static string ALARM_09988 {
+        public static string ALARM_000088 {
             get {
-                return ResourceManager.GetString("ALARM_09988", resourceCulture);
+                return ResourceManager.GetString("ALARM_000088", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_89.
         /// </summary>
-        public static string ALARM_09989 {
+        public static string ALARM_000089 {
             get {
-                return ResourceManager.GetString("ALARM_09989", resourceCulture);
+                return ResourceManager.GetString("ALARM_000089", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_90.
         /// </summary>
-        public static string ALARM_09990 {
+        public static string ALARM_000090 {
             get {
-                return ResourceManager.GetString("ALARM_09990", resourceCulture);
+                return ResourceManager.GetString("ALARM_000090", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_91.
         /// </summary>
-        public static string ALARM_09991 {
+        public static string ALARM_000091 {
             get {
-                return ResourceManager.GetString("ALARM_09991", resourceCulture);
+                return ResourceManager.GetString("ALARM_000091", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_92.
         /// </summary>
-        public static string ALARM_09992 {
+        public static string ALARM_000092 {
             get {
-                return ResourceManager.GetString("ALARM_09992", resourceCulture);
+                return ResourceManager.GetString("ALARM_000092", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_93.
         /// </summary>
-        public static string ALARM_09993 {
+        public static string ALARM_000093 {
             get {
-                return ResourceManager.GetString("ALARM_09993", resourceCulture);
+                return ResourceManager.GetString("ALARM_000093", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_94.
         /// </summary>
-        public static string ALARM_09994 {
+        public static string ALARM_000094 {
             get {
-                return ResourceManager.GetString("ALARM_09994", resourceCulture);
+                return ResourceManager.GetString("ALARM_000094", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_95.
         /// </summary>
-        public static string ALARM_09995 {
+        public static string ALARM_000095 {
             get {
-                return ResourceManager.GetString("ALARM_09995", resourceCulture);
+                return ResourceManager.GetString("ALARM_000095", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to segment0_96.
         /// </summary>
-        public static string ALARM_09996 {
+        public static string ALARM_000096 {
             get {
-                return ResourceManager.GetString("ALARM_09996", resourceCulture);
+                return ResourceManager.GetString("ALARM_000096", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_97.
+        ///   Looks up a localized string similar to MFC missmatch (segment T01).
         /// </summary>
-        public static string ALARM_09997 {
+        public static string ALARM_001001 {
             get {
-                return ResourceManager.GetString("ALARM_09997", resourceCulture);
+                return ResourceManager.GetString("ALARM_001001", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_98.
+        ///   Looks up a localized string similar to segment1_01.
         /// </summary>
-        public static string ALARM_09998 {
+        public static string ALARM_001002 {
             get {
-                return ResourceManager.GetString("ALARM_09998", resourceCulture);
+                return ResourceManager.GetString("ALARM_001002", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Database too large.
+        ///   Looks up a localized string similar to segment1_02.
         /// </summary>
-        public static string ALARM_09999 {
+        public static string ALARM_001003 {
             get {
-                return ResourceManager.GetString("ALARM_09999", resourceCulture);
+                return ResourceManager.GetString("ALARM_001003", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFCS_02.
+        ///   Looks up a localized string similar to segment1_03.
         /// </summary>
-        public static string ALARM_10000 {
+        public static string ALARM_001004 {
             get {
-                return ResourceManager.GetString("ALARM_10000", resourceCulture);
+                return ResourceManager.GetString("ALARM_001004", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 230 VAC, +L01-403F1..403F3.
+        ///   Looks up a localized string similar to segment1_04.
         /// </summary>
-        public static string ALARM_10001 {
+        public static string ALARM_001005 {
             get {
-                return ResourceManager.GetString("ALARM_10001", resourceCulture);
+                return ResourceManager.GetString("ALARM_001005", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 24 VDC, +L01-404F1..404F9.
+        ///   Looks up a localized string similar to segment1_05.
         /// </summary>
-        public static string ALARM_10002 {
+        public static string ALARM_001006 {
             get {
-                return ResourceManager.GetString("ALARM_10002", resourceCulture);
+                return ResourceManager.GetString("ALARM_001006", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch travel, +L01-408S1.
+        ///   Looks up a localized string similar to segment1_06.
         /// </summary>
-        public static string ALARM_10003 {
+        public static string ALARM_001007 {
             get {
-                return ResourceManager.GetString("ALARM_10003", resourceCulture);
+                return ResourceManager.GetString("ALARM_001007", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch speed governor hoist - rope; +L01-408S2.
+        ///   Looks up a localized string similar to segment1_07.
         /// </summary>
-        public static string ALARM_10004 {
+        public static string ALARM_001008 {
             get {
-                return ResourceManager.GetString("ALARM_10004", resourceCulture);
+                return ResourceManager.GetString("ALARM_001008", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button main cabinet, +L01-409S1.
+        ///   Looks up a localized string similar to segment1_08.
         /// </summary>
-        public static string ALARM_10005 {
+        public static string ALARM_001009 {
             get {
-                return ResourceManager.GetString("ALARM_10005", resourceCulture);
+                return ResourceManager.GetString("ALARM_001009", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP over rail, +L01-409K1.
+        ///   Looks up a localized string similar to T013 material missmatch.
         /// </summary>
-        public static string ALARM_10006 {
+        public static string ALARM_001010 {
             get {
-                return ResourceManager.GetString("ALARM_10006", resourceCulture);
+                return ResourceManager.GetString("ALARM_001010", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch speed governor hoist - overspeed; +L01-410S3.
+        ///   Looks up a localized string similar to T013 running too long conveyor.
         /// </summary>
-        public static string ALARM_10007 {
+        public static string ALARM_001011 {
             get {
-                return ResourceManager.GetString("ALARM_10007", resourceCulture);
+                return ResourceManager.GetString("ALARM_001011", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel and hoist brakes, +L01-420Q1.
+        ///   Looks up a localized string similar to T013 running too long hoist.
         /// </summary>
-        public static string ALARM_10008 {
+        public static string ALARM_001012 {
             get {
-                return ResourceManager.GetString("ALARM_10008", resourceCulture);
+                return ResourceManager.GetString("ALARM_001012", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel and hoist fan motors, +L01-420Q2.
+        ///   Looks up a localized string similar to T013 limit switch.
         /// </summary>
-        public static string ALARM_10009 {
+        public static string ALARM_001013 {
             get {
-                return ResourceManager.GetString("ALARM_10009", resourceCulture);
+                return ResourceManager.GetString("ALARM_001013", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection forks back brake, +L01-421Q1.
+        ///   Looks up a localized string similar to T013 not ready (25Q1).
         /// </summary>
-        public static string ALARM_10010 {
+        public static string ALARM_001014 {
             get {
-                return ResourceManager.GetString("ALARM_10010", resourceCulture);
+                return ResourceManager.GetString("ALARM_001014", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection forks front brake, +L01-422Q1.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_10011 {
+        public static string ALARM_001015 {
             get {
-                return ResourceManager.GetString("ALARM_10011", resourceCulture);
+                return ResourceManager.GetString("ALARM_001015", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch hoist, +L02-427S1.
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_10012 {
+        public static string ALARM_001016 {
             get {
-                return ResourceManager.GetString("ALARM_10012", resourceCulture);
+                return ResourceManager.GetString("ALARM_001016", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch catching device - jaws, +L02-427S2.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_10013 {
+        public static string ALARM_001017 {
             get {
-                return ResourceManager.GetString("ALARM_10013", resourceCulture);
+                return ResourceManager.GetString("ALARM_001017", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cabin door open - to main cabinet, +L02-428S1.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_10014 {
+        public static string ALARM_001018 {
             get {
-                return ResourceManager.GetString("ALARM_10014", resourceCulture);
+                return ResourceManager.GetString("ALARM_001018", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cabin door open - to deck (forks), +L02-428S2.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_10015 {
+        public static string ALARM_001019 {
             get {
-                return ResourceManager.GetString("ALARM_10015", resourceCulture);
+                return ResourceManager.GetString("ALARM_001019", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button control panel, +L02-428S3.
+        ///   Looks up a localized string similar to T014 material missmatch.
         /// </summary>
-        public static string ALARM_10016 {
+        public static string ALARM_001020 {
             get {
-                return ResourceManager.GetString("ALARM_10016", resourceCulture);
+                return ResourceManager.GetString("ALARM_001020", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and left rack, +L02-43515.
+        ///   Looks up a localized string similar to T014 running too long conveyor.
         /// </summary>
-        public static string ALARM_10017 {
+        public static string ALARM_001021 {
             get {
-                return ResourceManager.GetString("ALARM_10017", resourceCulture);
+                return ResourceManager.GetString("ALARM_001021", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and left rack, +L02-43515.
+        ///   Looks up a localized string similar to T014 running too long hoist.
         /// </summary>
-        public static string ALARM_10018 {
+        public static string ALARM_001022 {
             get {
-                return ResourceManager.GetString("ALARM_10018", resourceCulture);
+                return ResourceManager.GetString("ALARM_001022", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: travel.
+        ///   Looks up a localized string similar to T014 limit switch.
         /// </summary>
-        public static string ALARM_10019 {
+        public static string ALARM_001023 {
             get {
-                return ResourceManager.GetString("ALARM_10019", resourceCulture);
+                return ResourceManager.GetString("ALARM_001023", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: hoist.
+        ///   Looks up a localized string similar to T014 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_10020 {
+        public static string ALARM_001024 {
             get {
-                return ResourceManager.GetString("ALARM_10020", resourceCulture);
+                return ResourceManager.GetString("ALARM_001024", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: forks SD.
+        ///   Looks up a localized string similar to Spare 25.
         /// </summary>
-        public static string ALARM_10021 {
+        public static string ALARM_001025 {
             get {
-                return ResourceManager.GetString("ALARM_10021", resourceCulture);
+                return ResourceManager.GetString("ALARM_001025", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: forks DD.
+        ///   Looks up a localized string similar to Spare 26.
         /// </summary>
-        public static string ALARM_10022 {
+        public static string ALARM_001026 {
             get {
-                return ResourceManager.GetString("ALARM_10022", resourceCulture);
+                return ResourceManager.GetString("ALARM_001026", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 startup fault.
+        ///   Looks up a localized string similar to Spare 27.
         /// </summary>
-        public static string ALARM_10023 {
+        public static string ALARM_001027 {
             get {
-                return ResourceManager.GetString("ALARM_10023", resourceCulture);
+                return ResourceManager.GetString("ALARM_001027", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travel motor running too long, +EXT-418M1.
+        ///   Looks up a localized string similar to Spare 28.
         /// </summary>
-        public static string ALARM_10024 {
+        public static string ALARM_001028 {
             get {
-                return ResourceManager.GetString("ALARM_10024", resourceCulture);
+                return ResourceManager.GetString("ALARM_001028", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hoist motor running too long, +EXT-416M1.
+        ///   Looks up a localized string similar to Spare 29.
         /// </summary>
-        public static string ALARM_10025 {
+        public static string ALARM_001029 {
             get {
-                return ResourceManager.GetString("ALARM_10025", resourceCulture);
+                return ResourceManager.GetString("ALARM_001029", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forks SD motor running too long, +EXT-421M1.
+        ///   Looks up a localized string similar to T015 material missmatch.
         /// </summary>
-        public static string ALARM_10026 {
+        public static string ALARM_001030 {
             get {
-                return ResourceManager.GetString("ALARM_10026", resourceCulture);
+                return ResourceManager.GetString("ALARM_001030", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forks DD motor running too long, +EXT-422M1.
+        ///   Looks up a localized string similar to T015 running too long conveyor.
         /// </summary>
-        public static string ALARM_10027 {
+        public static string ALARM_001031 {
             get {
-                return ResourceManager.GetString("ALARM_10027", resourceCulture);
+                return ResourceManager.GetString("ALARM_001031", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (receive direction).
+        ///   Looks up a localized string similar to T015 running too long hoist.
         /// </summary>
-        public static string ALARM_10028 {
+        public static string ALARM_001032 {
             get {
-                return ResourceManager.GetString("ALARM_10028", resourceCulture);
+                return ResourceManager.GetString("ALARM_001032", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (send direction).
+        ///   Looks up a localized string similar to T015 limit switch.
         /// </summary>
-        public static string ALARM_10029 {
+        public static string ALARM_001033 {
             get {
-                return ResourceManager.GetString("ALARM_10029", resourceCulture);
+                return ResourceManager.GetString("ALARM_001033", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (receive direction).
+        ///   Looks up a localized string similar to T015 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_10030 {
+        public static string ALARM_001034 {
             get {
-                return ResourceManager.GetString("ALARM_10030", resourceCulture);
+                return ResourceManager.GetString("ALARM_001034", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (send direction).
+        ///   Looks up a localized string similar to Spare 35.
         /// </summary>
-        public static string ALARM_10031 {
+        public static string ALARM_001035 {
             get {
-                return ResourceManager.GetString("ALARM_10031", resourceCulture);
+                return ResourceManager.GetString("ALARM_001035", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enormous value of absolute encoder or magnet switches - travel.
+        ///   Looks up a localized string similar to Spare 36.
         /// </summary>
-        public static string ALARM_10032 {
+        public static string ALARM_001036 {
             get {
-                return ResourceManager.GetString("ALARM_10032", resourceCulture);
+                return ResourceManager.GetString("ALARM_001036", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material mismatch on crane.
+        ///   Looks up a localized string similar to Spare 37.
         /// </summary>
-        public static string ALARM_10033 {
+        public static string ALARM_001037 {
             get {
-                return ResourceManager.GetString("ALARM_10033", resourceCulture);
+                return ResourceManager.GetString("ALARM_001037", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erroneous value of barCode positioning sensor (hoist).
+        ///   Looks up a localized string similar to Spare 38.
         /// </summary>
-        public static string ALARM_10034 {
+        public static string ALARM_001038 {
             get {
-                return ResourceManager.GetString("ALARM_10034", resourceCulture);
+                return ResourceManager.GetString("ALARM_001038", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 35.
+        ///   Looks up a localized string similar to Spare 39.
         /// </summary>
-        public static string ALARM_10035 {
+        public static string ALARM_001039 {
             get {
-                return ResourceManager.GetString("ALARM_10035", resourceCulture);
+                return ResourceManager.GetString("ALARM_001039", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 36.
+        ///   Looks up a localized string similar to A015 material missmatch.
         /// </summary>
-        public static string ALARM_10036 {
+        public static string ALARM_001040 {
             get {
-                return ResourceManager.GetString("ALARM_10036", resourceCulture);
+                return ResourceManager.GetString("ALARM_001040", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 37.
+        ///   Looks up a localized string similar to A015 running too long conveyor.
         /// </summary>
-        public static string ALARM_10037 {
+        public static string ALARM_001041 {
             get {
-                return ResourceManager.GetString("ALARM_10037", resourceCulture);
+                return ResourceManager.GetString("ALARM_001041", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 38.
+        ///   Looks up a localized string similar to A015 running too long hoist.
         /// </summary>
-        public static string ALARM_10038 {
+        public static string ALARM_001042 {
             get {
-                return ResourceManager.GetString("ALARM_10038", resourceCulture);
+                return ResourceManager.GetString("ALARM_001042", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 39.
+        ///   Looks up a localized string similar to A015 limit switch.
         /// </summary>
-        public static string ALARM_10039 {
+        public static string ALARM_001043 {
             get {
-                return ResourceManager.GetString("ALARM_10039", resourceCulture);
+                return ResourceManager.GetString("ALARM_001043", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: wrong location.
+        ///   Looks up a localized string similar to A015 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_10040 {
+        public static string ALARM_001044 {
             get {
-                return ResourceManager.GetString("ALARM_10040", resourceCulture);
+                return ResourceManager.GetString("ALARM_001044", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: crane occupied.
+        ///   Looks up a localized string similar to MFC missmatch (segment T02A).
         /// </summary>
-        public static string ALARM_10041 {
+        public static string ALARM_002101 {
             get {
-                return ResourceManager.GetString("ALARM_10041", resourceCulture);
+                return ResourceManager.GetString("ALARM_002101", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: crane is empty.
+        ///   Looks up a localized string similar to segment2_01.
         /// </summary>
-        public static string ALARM_10042 {
+        public static string ALARM_002102 {
             get {
-                return ResourceManager.GetString("ALARM_10042", resourceCulture);
+                return ResourceManager.GetString("ALARM_002102", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode mismatch.
+        ///   Looks up a localized string similar to segment2_02.
         /// </summary>
-        public static string ALARM_10043 {
+        public static string ALARM_002103 {
             get {
-                return ResourceManager.GetString("ALARM_10043", resourceCulture);
+                return ResourceManager.GetString("ALARM_002103", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Underweight.
+        ///   Looks up a localized string similar to segment2_03.
         /// </summary>
-        public static string ALARM_10044 {
+        public static string ALARM_002104 {
             get {
-                return ResourceManager.GetString("ALARM_10044", resourceCulture);
+                return ResourceManager.GetString("ALARM_002104", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overweight.
+        ///   Looks up a localized string similar to segment2_04.
         /// </summary>
-        public static string ALARM_10045 {
+        public static string ALARM_002105 {
             get {
-                return ResourceManager.GetString("ALARM_10045", resourceCulture);
+                return ResourceManager.GetString("ALARM_002105", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and rack 1.
+        ///   Looks up a localized string similar to segment2_05.
         /// </summary>
-        public static string ALARM_10046 {
+        public static string ALARM_002106 {
             get {
-                return ResourceManager.GetString("ALARM_10046", resourceCulture);
+                return ResourceManager.GetString("ALARM_002106", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and rack 2.
+        ///   Looks up a localized string similar to segment2_06.
         /// </summary>
-        public static string ALARM_10047 {
+        public static string ALARM_002107 {
             get {
-                return ResourceManager.GetString("ALARM_10047", resourceCulture);
+                return ResourceManager.GetString("ALARM_002107", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material picture differs from sensor.
+        ///   Looks up a localized string similar to segment2_07.
         /// </summary>
-        public static string ALARM_10048 {
+        public static string ALARM_002108 {
             get {
-                return ResourceManager.GetString("ALARM_10048", resourceCulture);
+                return ResourceManager.GetString("ALARM_002108", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material movement not successfull.
+        ///   Looks up a localized string similar to segment2_08.
         /// </summary>
-        public static string ALARM_10049 {
+        public static string ALARM_002109 {
             get {
-                return ResourceManager.GetString("ALARM_10049", resourceCulture);
+                return ResourceManager.GetString("ALARM_002109", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor not ready.
+        ///   Looks up a localized string similar to T021 material missmatch.
         /// </summary>
-        public static string ALARM_10050 {
+        public static string ALARM_002110 {
             get {
-                return ResourceManager.GetString("ALARM_10050", resourceCulture);
+                return ResourceManager.GetString("ALARM_002110", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFCS error.
+        ///   Looks up a localized string similar to T021 running too long conveyor.
         /// </summary>
-        public static string ALARM_10051 {
+        public static string ALARM_002111 {
             get {
-                return ResourceManager.GetString("ALARM_10051", resourceCulture);
+                return ResourceManager.GetString("ALARM_002111", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: fork not in the middle.
+        ///   Looks up a localized string similar to T021 running too long hoist.
         /// </summary>
-        public static string ALARM_10052 {
+        public static string ALARM_002112 {
             get {
-                return ResourceManager.GetString("ALARM_10052", resourceCulture);
+                return ResourceManager.GetString("ALARM_002112", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sagging of Axis hoist.
+        ///   Looks up a localized string similar to T021 limit switch.
         /// </summary>
-        public static string ALARM_10053 {
+        public static string ALARM_002113 {
             get {
-                return ResourceManager.GetString("ALARM_10053", resourceCulture);
+                return ResourceManager.GetString("ALARM_002113", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (travel).
+        ///   Looks up a localized string similar to T021 not ready (39Q1, 40Q1, 41F1, 42Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_10054 {
+        public static string ALARM_002114 {
             get {
-                return ResourceManager.GetString("ALARM_10054", resourceCulture);
+                return ResourceManager.GetString("ALARM_002114", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (hoist).
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_10055 {
+        public static string ALARM_002115 {
             get {
-                return ResourceManager.GetString("ALARM_10055", resourceCulture);
+                return ResourceManager.GetString("ALARM_002115", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (fork SD).
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_10056 {
+        public static string ALARM_002116 {
             get {
-                return ResourceManager.GetString("ALARM_10056", resourceCulture);
+                return ResourceManager.GetString("ALARM_002116", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (fork DD).
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_10057 {
+        public static string ALARM_002117 {
             get {
-                return ResourceManager.GetString("ALARM_10057", resourceCulture);
+                return ResourceManager.GetString("ALARM_002117", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 58.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_10058 {
+        public static string ALARM_002118 {
             get {
-                return ResourceManager.GetString("ALARM_10058", resourceCulture);
+                return ResourceManager.GetString("ALARM_002118", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 59.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_10059 {
+        public static string ALARM_002119 {
             get {
-                return ResourceManager.GetString("ALARM_10059", resourceCulture);
+                return ResourceManager.GetString("ALARM_002119", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=1, depth=1).
+        ///   Looks up a localized string similar to T022 material missmatch.
         /// </summary>
-        public static string ALARM_10060 {
+        public static string ALARM_002120 {
             get {
-                return ResourceManager.GetString("ALARM_10060", resourceCulture);
+                return ResourceManager.GetString("ALARM_002120", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=1, depth=2).
+        ///   Looks up a localized string similar to T022 running too long conveyor.
         /// </summary>
-        public static string ALARM_10061 {
+        public static string ALARM_002121 {
             get {
-                return ResourceManager.GetString("ALARM_10061", resourceCulture);
+                return ResourceManager.GetString("ALARM_002121", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=2, depth=1).
+        ///   Looks up a localized string similar to T022 running too long hoist.
         /// </summary>
-        public static string ALARM_10062 {
+        public static string ALARM_002122 {
             get {
-                return ResourceManager.GetString("ALARM_10062", resourceCulture);
+                return ResourceManager.GetString("ALARM_002122", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=2, depth=2).
+        ///   Looks up a localized string similar to T022 limit switch.
         /// </summary>
-        public static string ALARM_10063 {
+        public static string ALARM_002123 {
             get {
-                return ResourceManager.GetString("ALARM_10063", resourceCulture);
+                return ResourceManager.GetString("ALARM_002123", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=1, depth=1).
+        ///   Looks up a localized string similar to T022 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_10064 {
+        public static string ALARM_002124 {
             get {
-                return ResourceManager.GetString("ALARM_10064", resourceCulture);
+                return ResourceManager.GetString("ALARM_002124", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=1, depth=2).
+        ///   Looks up a localized string similar to Spare 25.
         /// </summary>
-        public static string ALARM_10065 {
+        public static string ALARM_002125 {
             get {
-                return ResourceManager.GetString("ALARM_10065", resourceCulture);
+                return ResourceManager.GetString("ALARM_002125", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=2, depth=1).
+        ///   Looks up a localized string similar to Spare 26.
         /// </summary>
-        public static string ALARM_10066 {
+        public static string ALARM_002126 {
             get {
-                return ResourceManager.GetString("ALARM_10066", resourceCulture);
+                return ResourceManager.GetString("ALARM_002126", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=2, depth=2).
+        ///   Looks up a localized string similar to Spare 27.
         /// </summary>
-        public static string ALARM_10067 {
+        public static string ALARM_002127 {
             get {
-                return ResourceManager.GetString("ALARM_10067", resourceCulture);
+                return ResourceManager.GetString("ALARM_002127", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - depth 1 occupied (side=1, depth=2).
+        ///   Looks up a localized string similar to Spare 28.
         /// </summary>
-        public static string ALARM_10068 {
+        public static string ALARM_002128 {
             get {
-                return ResourceManager.GetString("ALARM_10068", resourceCulture);
+                return ResourceManager.GetString("ALARM_002128", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - depth 1 occupied (side=2, depth=2).
+        ///   Looks up a localized string similar to Spare 29.
         /// </summary>
-        public static string ALARM_10069 {
+        public static string ALARM_002129 {
             get {
-                return ResourceManager.GetString("ALARM_10069", resourceCulture);
+                return ResourceManager.GetString("ALARM_002129", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibration extinction not active.
+        ///   Looks up a localized string similar to T023 material missmatch.
         /// </summary>
-        public static string ALARM_10070 {
+        public static string ALARM_002130 {
             get {
-                return ResourceManager.GetString("ALARM_10070", resourceCulture);
+                return ResourceManager.GetString("ALARM_002130", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, CP101.
+        ///   Looks up a localized string similar to T023 running too long conveyor.
         /// </summary>
-        public static string ALARM_10071 {
+        public static string ALARM_002131 {
             get {
-                return ResourceManager.GetString("ALARM_10071", resourceCulture);
+                return ResourceManager.GetString("ALARM_002131", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Door to C101 open.
+        ///   Looks up a localized string similar to T023 running too long hoist.
         /// </summary>
-        public static string ALARM_10072 {
+        public static string ALARM_002132 {
             get {
-                return ResourceManager.GetString("ALARM_10072", resourceCulture);
+                return ResourceManager.GetString("ALARM_002132", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T10.
+        ///   Looks up a localized string similar to T023 limit switch.
         /// </summary>
-        public static string ALARM_10073 {
+        public static string ALARM_002133 {
             get {
-                return ResourceManager.GetString("ALARM_10073", resourceCulture);
+                return ResourceManager.GetString("ALARM_002133", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T110.
+        ///   Looks up a localized string similar to T023 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_10074 {
+        public static string ALARM_002134 {
             get {
-                return ResourceManager.GetString("ALARM_10074", resourceCulture);
+                return ResourceManager.GetString("ALARM_002134", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push buttton, CP401.
+        ///   Looks up a localized string similar to Spare 35.
         /// </summary>
-        public static string ALARM_10075 {
+        public static string ALARM_002135 {
             get {
-                return ResourceManager.GetString("ALARM_10075", resourceCulture);
+                return ResourceManager.GetString("ALARM_002135", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 76.
+        ///   Looks up a localized string similar to Spare 36.
         /// </summary>
-        public static string ALARM_10076 {
+        public static string ALARM_002136 {
             get {
-                return ResourceManager.GetString("ALARM_10076", resourceCulture);
+                return ResourceManager.GetString("ALARM_002136", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 77.
+        ///   Looks up a localized string similar to Spare 37.
         /// </summary>
-        public static string ALARM_10077 {
+        public static string ALARM_002137 {
             get {
-                return ResourceManager.GetString("ALARM_10077", resourceCulture);
+                return ResourceManager.GetString("ALARM_002137", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 78.
+        ///   Looks up a localized string similar to Spare 38.
         /// </summary>
-        public static string ALARM_10078 {
+        public static string ALARM_002138 {
             get {
-                return ResourceManager.GetString("ALARM_10078", resourceCulture);
+                return ResourceManager.GetString("ALARM_002138", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 79.
+        ///   Looks up a localized string similar to Spare 39.
         /// </summary>
-        public static string ALARM_10079 {
+        public static string ALARM_002139 {
             get {
-                return ResourceManager.GetString("ALARM_10079", resourceCulture);
+                return ResourceManager.GetString("ALARM_002139", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 80.
+        ///   Looks up a localized string similar to T024 material missmatch.
         /// </summary>
-        public static string ALARM_10080 {
+        public static string ALARM_002140 {
             get {
-                return ResourceManager.GetString("ALARM_10080", resourceCulture);
+                return ResourceManager.GetString("ALARM_002140", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 81.
+        ///   Looks up a localized string similar to T024 running too long conveyor.
         /// </summary>
-        public static string ALARM_10081 {
+        public static string ALARM_002141 {
             get {
-                return ResourceManager.GetString("ALARM_10081", resourceCulture);
+                return ResourceManager.GetString("ALARM_002141", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 82.
+        ///   Looks up a localized string similar to T024 running too long hoist.
         /// </summary>
-        public static string ALARM_10082 {
+        public static string ALARM_002142 {
             get {
-                return ResourceManager.GetString("ALARM_10082", resourceCulture);
+                return ResourceManager.GetString("ALARM_002142", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 83.
+        ///   Looks up a localized string similar to T024 limit switch.
         /// </summary>
-        public static string ALARM_10083 {
+        public static string ALARM_002143 {
             get {
-                return ResourceManager.GetString("ALARM_10083", resourceCulture);
+                return ResourceManager.GetString("ALARM_002143", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 84.
+        ///   Looks up a localized string similar to T024 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_10084 {
+        public static string ALARM_002144 {
             get {
-                return ResourceManager.GetString("ALARM_10084", resourceCulture);
+                return ResourceManager.GetString("ALARM_002144", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 85.
+        ///   Looks up a localized string similar to MFC missmatch (segment T02B).
         /// </summary>
-        public static string ALARM_10085 {
+        public static string ALARM_002201 {
             get {
-                return ResourceManager.GetString("ALARM_10085", resourceCulture);
+                return ResourceManager.GetString("ALARM_002201", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 86.
+        ///   Looks up a localized string similar to segment3_01.
         /// </summary>
-        public static string ALARM_10086 {
+        public static string ALARM_002202 {
             get {
-                return ResourceManager.GetString("ALARM_10086", resourceCulture);
+                return ResourceManager.GetString("ALARM_002202", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 87.
+        ///   Looks up a localized string similar to segment3_02.
         /// </summary>
-        public static string ALARM_10087 {
+        public static string ALARM_002203 {
             get {
-                return ResourceManager.GetString("ALARM_10087", resourceCulture);
+                return ResourceManager.GetString("ALARM_002203", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 88.
+        ///   Looks up a localized string similar to segment3_03.
         /// </summary>
-        public static string ALARM_10088 {
+        public static string ALARM_002204 {
             get {
-                return ResourceManager.GetString("ALARM_10088", resourceCulture);
+                return ResourceManager.GetString("ALARM_002204", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 89.
+        ///   Looks up a localized string similar to segment3_04.
         /// </summary>
-        public static string ALARM_10089 {
+        public static string ALARM_002205 {
             get {
-                return ResourceManager.GetString("ALARM_10089", resourceCulture);
+                return ResourceManager.GetString("ALARM_002205", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 90.
+        ///   Looks up a localized string similar to segment3_05.
         /// </summary>
-        public static string ALARM_10090 {
+        public static string ALARM_002206 {
             get {
-                return ResourceManager.GetString("ALARM_10090", resourceCulture);
+                return ResourceManager.GetString("ALARM_002206", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 91.
+        ///   Looks up a localized string similar to segment3_06.
         /// </summary>
-        public static string ALARM_10091 {
+        public static string ALARM_002207 {
             get {
-                return ResourceManager.GetString("ALARM_10091", resourceCulture);
+                return ResourceManager.GetString("ALARM_002207", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 92.
+        ///   Looks up a localized string similar to segment3_07.
         /// </summary>
-        public static string ALARM_10092 {
+        public static string ALARM_002208 {
             get {
-                return ResourceManager.GetString("ALARM_10092", resourceCulture);
+                return ResourceManager.GetString("ALARM_002208", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 93.
+        ///   Looks up a localized string similar to segment3_08.
         /// </summary>
-        public static string ALARM_10093 {
+        public static string ALARM_002209 {
             get {
-                return ResourceManager.GetString("ALARM_10093", resourceCulture);
+                return ResourceManager.GetString("ALARM_002209", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 94.
+        ///   Looks up a localized string similar to T025 material missmatch.
         /// </summary>
-        public static string ALARM_10094 {
+        public static string ALARM_002210 {
             get {
-                return ResourceManager.GetString("ALARM_10094", resourceCulture);
+                return ResourceManager.GetString("ALARM_002210", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 95.
+        ///   Looks up a localized string similar to T025 running too long conveyor.
         /// </summary>
-        public static string ALARM_10095 {
+        public static string ALARM_002211 {
             get {
-                return ResourceManager.GetString("ALARM_10095", resourceCulture);
+                return ResourceManager.GetString("ALARM_002211", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 96.
+        ///   Looks up a localized string similar to T025 running too long hoist.
         /// </summary>
-        public static string ALARM_10096 {
+        public static string ALARM_002212 {
             get {
-                return ResourceManager.GetString("ALARM_10096", resourceCulture);
+                return ResourceManager.GetString("ALARM_002212", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 97.
+        ///   Looks up a localized string similar to T025 limit switch.
         /// </summary>
-        public static string ALARM_10097 {
+        public static string ALARM_002213 {
             get {
-                return ResourceManager.GetString("ALARM_10097", resourceCulture);
+                return ResourceManager.GetString("ALARM_002213", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 98.
+        ///   Looks up a localized string similar to T025 not ready (46Q1).
         /// </summary>
-        public static string ALARM_10098 {
+        public static string ALARM_002214 {
             get {
-                return ResourceManager.GetString("ALARM_10098", resourceCulture);
+                return ResourceManager.GetString("ALARM_002214", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 99.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03A).
         /// </summary>
-        public static string ALARM_10099 {
+        public static string ALARM_003101 {
             get {
-                return ResourceManager.GetString("ALARM_10099", resourceCulture);
+                return ResourceManager.GetString("ALARM_003101", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 100.
+        ///   Looks up a localized string similar to segment4_01.
         /// </summary>
-        public static string ALARM_10100 {
+        public static string ALARM_003102 {
             get {
-                return ResourceManager.GetString("ALARM_10100", resourceCulture);
+                return ResourceManager.GetString("ALARM_003102", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 101.
+        ///   Looks up a localized string similar to segment4_02.
         /// </summary>
-        public static string ALARM_10101 {
+        public static string ALARM_003103 {
             get {
-                return ResourceManager.GetString("ALARM_10101", resourceCulture);
+                return ResourceManager.GetString("ALARM_003103", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 102.
+        ///   Looks up a localized string similar to segment4_03.
         /// </summary>
-        public static string ALARM_10102 {
+        public static string ALARM_003104 {
             get {
-                return ResourceManager.GetString("ALARM_10102", resourceCulture);
+                return ResourceManager.GetString("ALARM_003104", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 103.
+        ///   Looks up a localized string similar to segment4_04.
         /// </summary>
-        public static string ALARM_10103 {
+        public static string ALARM_003105 {
             get {
-                return ResourceManager.GetString("ALARM_10103", resourceCulture);
+                return ResourceManager.GetString("ALARM_003105", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 104.
+        ///   Looks up a localized string similar to segment4_05.
         /// </summary>
-        public static string ALARM_10104 {
+        public static string ALARM_003106 {
             get {
-                return ResourceManager.GetString("ALARM_10104", resourceCulture);
+                return ResourceManager.GetString("ALARM_003106", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 105.
+        ///   Looks up a localized string similar to segment4_06.
         /// </summary>
-        public static string ALARM_10105 {
+        public static string ALARM_003107 {
             get {
-                return ResourceManager.GetString("ALARM_10105", resourceCulture);
+                return ResourceManager.GetString("ALARM_003107", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 106.
+        ///   Looks up a localized string similar to segment4_07.
         /// </summary>
-        public static string ALARM_10106 {
+        public static string ALARM_003108 {
             get {
-                return ResourceManager.GetString("ALARM_10106", resourceCulture);
+                return ResourceManager.GetString("ALARM_003108", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 107.
+        ///   Looks up a localized string similar to segment4_08.
         /// </summary>
-        public static string ALARM_10107 {
+        public static string ALARM_003109 {
             get {
-                return ResourceManager.GetString("ALARM_10107", resourceCulture);
+                return ResourceManager.GetString("ALARM_003109", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 108.
+        ///   Looks up a localized string similar to T031 material missmatch.
         /// </summary>
-        public static string ALARM_10108 {
+        public static string ALARM_003110 {
             get {
-                return ResourceManager.GetString("ALARM_10108", resourceCulture);
+                return ResourceManager.GetString("ALARM_003110", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 109.
+        ///   Looks up a localized string similar to T031 running too long conveyor.
         /// </summary>
-        public static string ALARM_10109 {
+        public static string ALARM_003111 {
             get {
-                return ResourceManager.GetString("ALARM_10109", resourceCulture);
+                return ResourceManager.GetString("ALARM_003111", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 110.
+        ///   Looks up a localized string similar to T031 running too long hoist.
         /// </summary>
-        public static string ALARM_10110 {
+        public static string ALARM_003112 {
             get {
-                return ResourceManager.GetString("ALARM_10110", resourceCulture);
+                return ResourceManager.GetString("ALARM_003112", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 111.
+        ///   Looks up a localized string similar to T031 limit switch.
         /// </summary>
-        public static string ALARM_10111 {
+        public static string ALARM_003113 {
             get {
-                return ResourceManager.GetString("ALARM_10111", resourceCulture);
+                return ResourceManager.GetString("ALARM_003113", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 112.
+        ///   Looks up a localized string similar to T031 not ready (35Q1, 36Q1, 37F1, 38Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_10112 {
+        public static string ALARM_003114 {
             get {
-                return ResourceManager.GetString("ALARM_10112", resourceCulture);
+                return ResourceManager.GetString("ALARM_003114", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 113.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_10113 {
+        public static string ALARM_003115 {
             get {
-                return ResourceManager.GetString("ALARM_10113", resourceCulture);
+                return ResourceManager.GetString("ALARM_003115", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 114.
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_10114 {
+        public static string ALARM_003116 {
             get {
-                return ResourceManager.GetString("ALARM_10114", resourceCulture);
+                return ResourceManager.GetString("ALARM_003116", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service M required.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_10115 {
+        public static string ALARM_003117 {
             get {
-                return ResourceManager.GetString("ALARM_10115", resourceCulture);
+                return ResourceManager.GetString("ALARM_003117", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 3M required.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_10116 {
+        public static string ALARM_003118 {
             get {
-                return ResourceManager.GetString("ALARM_10116", resourceCulture);
+                return ResourceManager.GetString("ALARM_003118", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 6M required.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_10117 {
+        public static string ALARM_003119 {
             get {
-                return ResourceManager.GetString("ALARM_10117", resourceCulture);
+                return ResourceManager.GetString("ALARM_003119", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 12M required.
+        ///   Looks up a localized string similar to A031B material missmatch.
         /// </summary>
-        public static string ALARM_10118 {
+        public static string ALARM_003120 {
             get {
-                return ResourceManager.GetString("ALARM_10118", resourceCulture);
+                return ResourceManager.GetString("ALARM_003120", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 5 required.
+        ///   Looks up a localized string similar to A031B running too long conveyor.
         /// </summary>
-        public static string ALARM_10119 {
+        public static string ALARM_003121 {
             get {
-                return ResourceManager.GetString("ALARM_10119", resourceCulture);
+                return ResourceManager.GetString("ALARM_003121", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object alarm.
+        ///   Looks up a localized string similar to A031B running too long hoist.
         /// </summary>
-        public static string ALARM_10120 {
+        public static string ALARM_003122 {
             get {
-                return ResourceManager.GetString("ALARM_10120", resourceCulture);
+                return ResourceManager.GetString("ALARM_003122", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object fault.
+        ///   Looks up a localized string similar to A031B limit switch.
         /// </summary>
-        public static string ALARM_10121 {
+        public static string ALARM_003123 {
             get {
-                return ResourceManager.GetString("ALARM_10121", resourceCulture);
+                return ResourceManager.GetString("ALARM_003123", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object safety.
+        ///   Looks up a localized string similar to A031B not ready (55Q1).
         /// </summary>
-        public static string ALARM_10122 {
+        public static string ALARM_003124 {
             get {
-                return ResourceManager.GetString("ALARM_10122", resourceCulture);
+                return ResourceManager.GetString("ALARM_003124", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: execution fault.
+        ///   Looks up a localized string similar to Spare 25.
         /// </summary>
-        public static string ALARM_10123 {
+        public static string ALARM_003125 {
             get {
-                return ResourceManager.GetString("ALARM_10123", resourceCulture);
+                return ResourceManager.GetString("ALARM_003125", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: peripheral fault.
+        ///   Looks up a localized string similar to Spare 26.
         /// </summary>
-        public static string ALARM_10124 {
+        public static string ALARM_003126 {
             get {
-                return ResourceManager.GetString("ALARM_10124", resourceCulture);
+                return ResourceManager.GetString("ALARM_003126", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: tech fault.
+        ///   Looks up a localized string similar to Spare 27.
         /// </summary>
-        public static string ALARM_10125 {
+        public static string ALARM_003127 {
             get {
-                return ResourceManager.GetString("ALARM_10125", resourceCulture);
+                return ResourceManager.GetString("ALARM_003127", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault background.
+        ///   Looks up a localized string similar to Spare 28.
         /// </summary>
-        public static string ALARM_10126 {
+        public static string ALARM_003128 {
             get {
-                return ResourceManager.GetString("ALARM_10126", resourceCulture);
+                return ResourceManager.GetString("ALARM_003128", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault.
+        ///   Looks up a localized string similar to Spare 29.
         /// </summary>
-        public static string ALARM_10127 {
+        public static string ALARM_003129 {
             get {
-                return ResourceManager.GetString("ALARM_10127", resourceCulture);
+                return ResourceManager.GetString("ALARM_003129", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: application fault.
+        ///   Looks up a localized string similar to A031F material missmatch.
         /// </summary>
-        public static string ALARM_10128 {
+        public static string ALARM_003130 {
             get {
-                return ResourceManager.GetString("ALARM_10128", resourceCulture);
+                return ResourceManager.GetString("ALARM_003130", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 230 VAC, +L01-403F1..403F3.
+        ///   Looks up a localized string similar to A031F running too long conveyor.
         /// </summary>
-        public static string ALARM_20001 {
+        public static string ALARM_003131 {
             get {
-                return ResourceManager.GetString("ALARM_20001", resourceCulture);
+                return ResourceManager.GetString("ALARM_003131", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 24 VDC, +L01-404F1..404F9.
+        ///   Looks up a localized string similar to A031F running too long hoist.
         /// </summary>
-        public static string ALARM_20002 {
+        public static string ALARM_003132 {
             get {
-                return ResourceManager.GetString("ALARM_20002", resourceCulture);
+                return ResourceManager.GetString("ALARM_003132", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch travel, +L01-408S1.
+        ///   Looks up a localized string similar to A031F limit switch.
         /// </summary>
-        public static string ALARM_20003 {
+        public static string ALARM_003133 {
             get {
-                return ResourceManager.GetString("ALARM_20003", resourceCulture);
+                return ResourceManager.GetString("ALARM_003133", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch speed governor hoist - rope; +L01-408S2.
+        ///   Looks up a localized string similar to A031F not ready (57Q1).
         /// </summary>
-        public static string ALARM_20004 {
+        public static string ALARM_003134 {
             get {
-                return ResourceManager.GetString("ALARM_20004", resourceCulture);
+                return ResourceManager.GetString("ALARM_003134", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button main cabinet, +L01-409S1.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03B).
         /// </summary>
-        public static string ALARM_20005 {
+        public static string ALARM_003201 {
             get {
-                return ResourceManager.GetString("ALARM_20005", resourceCulture);
+                return ResourceManager.GetString("ALARM_003201", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP over rail, +L01-409K1.
+        ///   Looks up a localized string similar to segment5_01.
         /// </summary>
-        public static string ALARM_20006 {
+        public static string ALARM_003202 {
             get {
-                return ResourceManager.GetString("ALARM_20006", resourceCulture);
+                return ResourceManager.GetString("ALARM_003202", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch speed governor hoist - overspeed; +L01-410S3.
+        ///   Looks up a localized string similar to segment5_02.
         /// </summary>
-        public static string ALARM_20007 {
+        public static string ALARM_003203 {
             get {
-                return ResourceManager.GetString("ALARM_20007", resourceCulture);
+                return ResourceManager.GetString("ALARM_003203", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel and hoist brakes, +L01-420Q1.
+        ///   Looks up a localized string similar to segment5_03.
         /// </summary>
-        public static string ALARM_20008 {
+        public static string ALARM_003204 {
             get {
-                return ResourceManager.GetString("ALARM_20008", resourceCulture);
+                return ResourceManager.GetString("ALARM_003204", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel and hoist fan motors, +L01-420Q2.
+        ///   Looks up a localized string similar to segment5_04.
         /// </summary>
-        public static string ALARM_20009 {
+        public static string ALARM_003205 {
             get {
-                return ResourceManager.GetString("ALARM_20009", resourceCulture);
+                return ResourceManager.GetString("ALARM_003205", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection forks back brake, +L01-421Q1.
+        ///   Looks up a localized string similar to segment5_05.
         /// </summary>
-        public static string ALARM_20010 {
+        public static string ALARM_003206 {
             get {
-                return ResourceManager.GetString("ALARM_20010", resourceCulture);
+                return ResourceManager.GetString("ALARM_003206", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection forks front brake, +L01-422Q1.
+        ///   Looks up a localized string similar to segment5_06.
         /// </summary>
-        public static string ALARM_20011 {
+        public static string ALARM_003207 {
             get {
-                return ResourceManager.GetString("ALARM_20011", resourceCulture);
+                return ResourceManager.GetString("ALARM_003207", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch hoist, +L02-427S1.
+        ///   Looks up a localized string similar to segment5_07.
         /// </summary>
-        public static string ALARM_20012 {
+        public static string ALARM_003208 {
             get {
-                return ResourceManager.GetString("ALARM_20012", resourceCulture);
+                return ResourceManager.GetString("ALARM_003208", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch catching device - jaws, +L02-427S2.
+        ///   Looks up a localized string similar to segment5_08.
         /// </summary>
-        public static string ALARM_20013 {
+        public static string ALARM_003209 {
             get {
-                return ResourceManager.GetString("ALARM_20013", resourceCulture);
+                return ResourceManager.GetString("ALARM_003209", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cabin door open - to main cabinet, +L02-428S1.
+        ///   Looks up a localized string similar to T032 material missmatch.
         /// </summary>
-        public static string ALARM_20014 {
+        public static string ALARM_003210 {
             get {
-                return ResourceManager.GetString("ALARM_20014", resourceCulture);
+                return ResourceManager.GetString("ALARM_003210", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cabin door open - to deck (forks), +L02-428S2.
+        ///   Looks up a localized string similar to T032 running too long conveyor.
         /// </summary>
-        public static string ALARM_20015 {
+        public static string ALARM_003211 {
             get {
-                return ResourceManager.GetString("ALARM_20015", resourceCulture);
+                return ResourceManager.GetString("ALARM_003211", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button control panel, +L02-428S3.
+        ///   Looks up a localized string similar to T032 running too long hoist.
         /// </summary>
-        public static string ALARM_20016 {
+        public static string ALARM_003212 {
             get {
-                return ResourceManager.GetString("ALARM_20016", resourceCulture);
+                return ResourceManager.GetString("ALARM_003212", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and left rack, +L02-43515.
+        ///   Looks up a localized string similar to T032 limit switch.
         /// </summary>
-        public static string ALARM_20017 {
+        public static string ALARM_003213 {
             get {
-                return ResourceManager.GetString("ALARM_20017", resourceCulture);
+                return ResourceManager.GetString("ALARM_003213", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and left rack, +L02-43515.
+        ///   Looks up a localized string similar to T032 not ready (61Q1).
         /// </summary>
-        public static string ALARM_20018 {
+        public static string ALARM_003214 {
             get {
-                return ResourceManager.GetString("ALARM_20018", resourceCulture);
+                return ResourceManager.GetString("ALARM_003214", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: travel.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03C).
         /// </summary>
-        public static string ALARM_20019 {
+        public static string ALARM_003301 {
             get {
-                return ResourceManager.GetString("ALARM_20019", resourceCulture);
+                return ResourceManager.GetString("ALARM_003301", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: hoist.
+        ///   Looks up a localized string similar to segment6_01.
         /// </summary>
-        public static string ALARM_20020 {
+        public static string ALARM_003302 {
             get {
-                return ResourceManager.GetString("ALARM_20020", resourceCulture);
+                return ResourceManager.GetString("ALARM_003302", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: forks SD.
+        ///   Looks up a localized string similar to segment6_02.
         /// </summary>
-        public static string ALARM_20021 {
+        public static string ALARM_003303 {
             get {
-                return ResourceManager.GetString("ALARM_20021", resourceCulture);
+                return ResourceManager.GetString("ALARM_003303", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: forks DD.
+        ///   Looks up a localized string similar to segment6_03.
         /// </summary>
-        public static string ALARM_20022 {
+        public static string ALARM_003304 {
             get {
-                return ResourceManager.GetString("ALARM_20022", resourceCulture);
+                return ResourceManager.GetString("ALARM_003304", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 startup fault.
+        ///   Looks up a localized string similar to segment6_04.
         /// </summary>
-        public static string ALARM_20023 {
+        public static string ALARM_003305 {
             get {
-                return ResourceManager.GetString("ALARM_20023", resourceCulture);
+                return ResourceManager.GetString("ALARM_003305", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travel motor running too long, +EXT-418M1.
+        ///   Looks up a localized string similar to segment6_05.
         /// </summary>
-        public static string ALARM_20024 {
+        public static string ALARM_003306 {
             get {
-                return ResourceManager.GetString("ALARM_20024", resourceCulture);
+                return ResourceManager.GetString("ALARM_003306", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hoist motor running too long, +EXT-416M1.
+        ///   Looks up a localized string similar to segment6_06.
         /// </summary>
-        public static string ALARM_20025 {
+        public static string ALARM_003307 {
             get {
-                return ResourceManager.GetString("ALARM_20025", resourceCulture);
+                return ResourceManager.GetString("ALARM_003307", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forks SD motor running too long, +EXT-421M1.
+        ///   Looks up a localized string similar to segment6_07.
         /// </summary>
-        public static string ALARM_20026 {
+        public static string ALARM_003308 {
             get {
-                return ResourceManager.GetString("ALARM_20026", resourceCulture);
+                return ResourceManager.GetString("ALARM_003308", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forks DD motor running too long, +EXT-422M1.
+        ///   Looks up a localized string similar to segment6_08.
         /// </summary>
-        public static string ALARM_20027 {
+        public static string ALARM_003309 {
             get {
-                return ResourceManager.GetString("ALARM_20027", resourceCulture);
+                return ResourceManager.GetString("ALARM_003309", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (receive direction).
+        ///   Looks up a localized string similar to T033 material missmatch.
         /// </summary>
-        public static string ALARM_20028 {
+        public static string ALARM_003310 {
             get {
-                return ResourceManager.GetString("ALARM_20028", resourceCulture);
+                return ResourceManager.GetString("ALARM_003310", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (send direction).
+        ///   Looks up a localized string similar to T033 running too long conveyor.
         /// </summary>
-        public static string ALARM_20029 {
+        public static string ALARM_003311 {
             get {
-                return ResourceManager.GetString("ALARM_20029", resourceCulture);
+                return ResourceManager.GetString("ALARM_003311", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (receive direction).
+        ///   Looks up a localized string similar to T033 running too long hoist.
         /// </summary>
-        public static string ALARM_20030 {
+        public static string ALARM_003312 {
             get {
-                return ResourceManager.GetString("ALARM_20030", resourceCulture);
+                return ResourceManager.GetString("ALARM_003312", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (send direction).
+        ///   Looks up a localized string similar to T033 limit switch.
         /// </summary>
-        public static string ALARM_20031 {
+        public static string ALARM_003313 {
             get {
-                return ResourceManager.GetString("ALARM_20031", resourceCulture);
+                return ResourceManager.GetString("ALARM_003313", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enormous value of absolute encoder or magnet switches - travel.
+        ///   Looks up a localized string similar to T033 not ready (63Q1).
         /// </summary>
-        public static string ALARM_20032 {
+        public static string ALARM_003314 {
             get {
-                return ResourceManager.GetString("ALARM_20032", resourceCulture);
+                return ResourceManager.GetString("ALARM_003314", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material mismatch on crane.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_20033 {
+        public static string ALARM_003315 {
             get {
-                return ResourceManager.GetString("ALARM_20033", resourceCulture);
+                return ResourceManager.GetString("ALARM_003315", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erroneous value of barCode positioning sensor (hoist).
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_20034 {
+        public static string ALARM_003316 {
             get {
-                return ResourceManager.GetString("ALARM_20034", resourceCulture);
+                return ResourceManager.GetString("ALARM_003316", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 35.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_20035 {
+        public static string ALARM_003317 {
             get {
-                return ResourceManager.GetString("ALARM_20035", resourceCulture);
+                return ResourceManager.GetString("ALARM_003317", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 36.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_20036 {
+        public static string ALARM_003318 {
             get {
-                return ResourceManager.GetString("ALARM_20036", resourceCulture);
+                return ResourceManager.GetString("ALARM_003318", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 37.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_20037 {
+        public static string ALARM_003319 {
             get {
-                return ResourceManager.GetString("ALARM_20037", resourceCulture);
+                return ResourceManager.GetString("ALARM_003319", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 38.
+        ///   Looks up a localized string similar to A033 material missmatch.
         /// </summary>
-        public static string ALARM_20038 {
+        public static string ALARM_003320 {
             get {
-                return ResourceManager.GetString("ALARM_20038", resourceCulture);
+                return ResourceManager.GetString("ALARM_003320", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 39.
+        ///   Looks up a localized string similar to A033 running too long conveyor.
         /// </summary>
-        public static string ALARM_20039 {
+        public static string ALARM_003321 {
             get {
-                return ResourceManager.GetString("ALARM_20039", resourceCulture);
+                return ResourceManager.GetString("ALARM_003321", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: wrong location.
+        ///   Looks up a localized string similar to A033 running too long hoist.
         /// </summary>
-        public static string ALARM_20040 {
+        public static string ALARM_003322 {
             get {
-                return ResourceManager.GetString("ALARM_20040", resourceCulture);
+                return ResourceManager.GetString("ALARM_003322", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: crane occupied.
+        ///   Looks up a localized string similar to A033 limit switch.
         /// </summary>
-        public static string ALARM_20041 {
+        public static string ALARM_003323 {
             get {
-                return ResourceManager.GetString("ALARM_20041", resourceCulture);
+                return ResourceManager.GetString("ALARM_003323", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: crane is empty.
+        ///   Looks up a localized string similar to A033 not ready (64Q1, 65F1, frequency inverter).
         /// </summary>
-        public static string ALARM_20042 {
+        public static string ALARM_003324 {
             get {
-                return ResourceManager.GetString("ALARM_20042", resourceCulture);
+                return ResourceManager.GetString("ALARM_003324", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode mismatch.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03D).
         /// </summary>
-        public static string ALARM_20043 {
+        public static string ALARM_003401 {
             get {
-                return ResourceManager.GetString("ALARM_20043", resourceCulture);
+                return ResourceManager.GetString("ALARM_003401", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Underweight.
+        ///   Looks up a localized string similar to segment7_01.
         /// </summary>
-        public static string ALARM_20044 {
+        public static string ALARM_003402 {
             get {
-                return ResourceManager.GetString("ALARM_20044", resourceCulture);
+                return ResourceManager.GetString("ALARM_003402", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overweight.
+        ///   Looks up a localized string similar to segment7_02.
         /// </summary>
-        public static string ALARM_20045 {
+        public static string ALARM_003403 {
             get {
-                return ResourceManager.GetString("ALARM_20045", resourceCulture);
+                return ResourceManager.GetString("ALARM_003403", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and rack 1.
+        ///   Looks up a localized string similar to segment7_03.
         /// </summary>
-        public static string ALARM_20046 {
+        public static string ALARM_003404 {
             get {
-                return ResourceManager.GetString("ALARM_20046", resourceCulture);
+                return ResourceManager.GetString("ALARM_003404", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and rack 2.
+        ///   Looks up a localized string similar to segment7_04.
         /// </summary>
-        public static string ALARM_20047 {
+        public static string ALARM_003405 {
             get {
-                return ResourceManager.GetString("ALARM_20047", resourceCulture);
+                return ResourceManager.GetString("ALARM_003405", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material picture differs from sensor.
+        ///   Looks up a localized string similar to segment7_05.
         /// </summary>
-        public static string ALARM_20048 {
+        public static string ALARM_003406 {
             get {
-                return ResourceManager.GetString("ALARM_20048", resourceCulture);
+                return ResourceManager.GetString("ALARM_003406", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material movement not successfull.
+        ///   Looks up a localized string similar to segment7_06.
         /// </summary>
-        public static string ALARM_20049 {
+        public static string ALARM_003407 {
             get {
-                return ResourceManager.GetString("ALARM_20049", resourceCulture);
+                return ResourceManager.GetString("ALARM_003407", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor not ready.
+        ///   Looks up a localized string similar to segment7_07.
         /// </summary>
-        public static string ALARM_20050 {
+        public static string ALARM_003408 {
             get {
-                return ResourceManager.GetString("ALARM_20050", resourceCulture);
+                return ResourceManager.GetString("ALARM_003408", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFCS error.
+        ///   Looks up a localized string similar to segment7_08.
         /// </summary>
-        public static string ALARM_20051 {
+        public static string ALARM_003409 {
             get {
-                return ResourceManager.GetString("ALARM_20051", resourceCulture);
+                return ResourceManager.GetString("ALARM_003409", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: fork not in the middle.
+        ///   Looks up a localized string similar to T034 material missmatch.
         /// </summary>
-        public static string ALARM_20052 {
+        public static string ALARM_003410 {
             get {
-                return ResourceManager.GetString("ALARM_20052", resourceCulture);
+                return ResourceManager.GetString("ALARM_003410", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sagging of Axis hoist.
+        ///   Looks up a localized string similar to T034 running too long conveyor.
         /// </summary>
-        public static string ALARM_20053 {
+        public static string ALARM_003411 {
             get {
-                return ResourceManager.GetString("ALARM_20053", resourceCulture);
+                return ResourceManager.GetString("ALARM_003411", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (travel).
+        ///   Looks up a localized string similar to T034 running too long hoist.
         /// </summary>
-        public static string ALARM_20054 {
+        public static string ALARM_003412 {
             get {
-                return ResourceManager.GetString("ALARM_20054", resourceCulture);
+                return ResourceManager.GetString("ALARM_003412", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (hoist).
+        ///   Looks up a localized string similar to T034 limit switch.
         /// </summary>
-        public static string ALARM_20055 {
+        public static string ALARM_003413 {
             get {
-                return ResourceManager.GetString("ALARM_20055", resourceCulture);
+                return ResourceManager.GetString("ALARM_003413", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (fork SD).
+        ///   Looks up a localized string similar to T034 not ready (67Q1).
         /// </summary>
-        public static string ALARM_20056 {
+        public static string ALARM_003414 {
             get {
-                return ResourceManager.GetString("ALARM_20056", resourceCulture);
+                return ResourceManager.GetString("ALARM_003414", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (fork DD).
+        ///   Looks up a localized string similar to MFC missmatch (segment T03E).
         /// </summary>
-        public static string ALARM_20057 {
+        public static string ALARM_003501 {
             get {
-                return ResourceManager.GetString("ALARM_20057", resourceCulture);
+                return ResourceManager.GetString("ALARM_003501", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 58.
+        ///   Looks up a localized string similar to segment8_01.
         /// </summary>
-        public static string ALARM_20058 {
+        public static string ALARM_003502 {
             get {
-                return ResourceManager.GetString("ALARM_20058", resourceCulture);
+                return ResourceManager.GetString("ALARM_003502", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 59.
+        ///   Looks up a localized string similar to segment8_02.
         /// </summary>
-        public static string ALARM_20059 {
+        public static string ALARM_003503 {
             get {
-                return ResourceManager.GetString("ALARM_20059", resourceCulture);
+                return ResourceManager.GetString("ALARM_003503", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=1, depth=1).
+        ///   Looks up a localized string similar to segment8_03.
         /// </summary>
-        public static string ALARM_20060 {
+        public static string ALARM_003504 {
             get {
-                return ResourceManager.GetString("ALARM_20060", resourceCulture);
+                return ResourceManager.GetString("ALARM_003504", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=1, depth=2).
+        ///   Looks up a localized string similar to segment8_04.
         /// </summary>
-        public static string ALARM_20061 {
+        public static string ALARM_003505 {
             get {
-                return ResourceManager.GetString("ALARM_20061", resourceCulture);
+                return ResourceManager.GetString("ALARM_003505", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=2, depth=1).
+        ///   Looks up a localized string similar to segment8_05.
         /// </summary>
-        public static string ALARM_20062 {
+        public static string ALARM_003506 {
             get {
-                return ResourceManager.GetString("ALARM_20062", resourceCulture);
+                return ResourceManager.GetString("ALARM_003506", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=2, depth=2).
+        ///   Looks up a localized string similar to segment8_06.
         /// </summary>
-        public static string ALARM_20063 {
+        public static string ALARM_003507 {
             get {
-                return ResourceManager.GetString("ALARM_20063", resourceCulture);
+                return ResourceManager.GetString("ALARM_003507", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=1, depth=1).
+        ///   Looks up a localized string similar to segment8_07.
         /// </summary>
-        public static string ALARM_20064 {
+        public static string ALARM_003508 {
             get {
-                return ResourceManager.GetString("ALARM_20064", resourceCulture);
+                return ResourceManager.GetString("ALARM_003508", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=1, depth=2).
+        ///   Looks up a localized string similar to segment8_08.
         /// </summary>
-        public static string ALARM_20065 {
+        public static string ALARM_003509 {
             get {
-                return ResourceManager.GetString("ALARM_20065", resourceCulture);
+                return ResourceManager.GetString("ALARM_003509", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=2, depth=1).
+        ///   Looks up a localized string similar to T035 material missmatch.
         /// </summary>
-        public static string ALARM_20066 {
+        public static string ALARM_003510 {
             get {
-                return ResourceManager.GetString("ALARM_20066", resourceCulture);
+                return ResourceManager.GetString("ALARM_003510", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=2, depth=2).
+        ///   Looks up a localized string similar to T035 running too long conveyor.
         /// </summary>
-        public static string ALARM_20067 {
+        public static string ALARM_003511 {
             get {
-                return ResourceManager.GetString("ALARM_20067", resourceCulture);
+                return ResourceManager.GetString("ALARM_003511", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - depth 1 occupied (side=1, depth=2).
+        ///   Looks up a localized string similar to T035 running too long hoist.
         /// </summary>
-        public static string ALARM_20068 {
+        public static string ALARM_003512 {
             get {
-                return ResourceManager.GetString("ALARM_20068", resourceCulture);
+                return ResourceManager.GetString("ALARM_003512", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - depth 1 occupied (side=2, depth=2).
+        ///   Looks up a localized string similar to T035 limit switch.
         /// </summary>
-        public static string ALARM_20069 {
+        public static string ALARM_003513 {
             get {
-                return ResourceManager.GetString("ALARM_20069", resourceCulture);
+                return ResourceManager.GetString("ALARM_003513", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibration extinction not active.
+        ///   Looks up a localized string similar to T035 not ready (69Q1).
         /// </summary>
-        public static string ALARM_20070 {
+        public static string ALARM_003514 {
             get {
-                return ResourceManager.GetString("ALARM_20070", resourceCulture);
+                return ResourceManager.GetString("ALARM_003514", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, CP201.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_20071 {
+        public static string ALARM_003515 {
             get {
-                return ResourceManager.GetString("ALARM_20071", resourceCulture);
+                return ResourceManager.GetString("ALARM_003515", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Door to C201 open.
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_20072 {
+        public static string ALARM_003516 {
             get {
-                return ResourceManager.GetString("ALARM_20072", resourceCulture);
+                return ResourceManager.GetString("ALARM_003516", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 73.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_20073 {
+        public static string ALARM_003517 {
             get {
-                return ResourceManager.GetString("ALARM_20073", resourceCulture);
+                return ResourceManager.GetString("ALARM_003517", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 74.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_20074 {
+        public static string ALARM_003518 {
             get {
-                return ResourceManager.GetString("ALARM_20074", resourceCulture);
+                return ResourceManager.GetString("ALARM_003518", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push buttton, CP401.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_20075 {
+        public static string ALARM_003519 {
             get {
-                return ResourceManager.GetString("ALARM_20075", resourceCulture);
+                return ResourceManager.GetString("ALARM_003519", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 76.
+        ///   Looks up a localized string similar to A035 material missmatch.
         /// </summary>
-        public static string ALARM_20076 {
+        public static string ALARM_003520 {
             get {
-                return ResourceManager.GetString("ALARM_20076", resourceCulture);
+                return ResourceManager.GetString("ALARM_003520", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 77.
+        ///   Looks up a localized string similar to A035 running too long conveyor.
         /// </summary>
-        public static string ALARM_20077 {
+        public static string ALARM_003521 {
             get {
-                return ResourceManager.GetString("ALARM_20077", resourceCulture);
+                return ResourceManager.GetString("ALARM_003521", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 78.
+        ///   Looks up a localized string similar to A035 running too long hoist.
         /// </summary>
-        public static string ALARM_20078 {
+        public static string ALARM_003522 {
             get {
-                return ResourceManager.GetString("ALARM_20078", resourceCulture);
+                return ResourceManager.GetString("ALARM_003522", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 79.
+        ///   Looks up a localized string similar to A035 limit switch.
         /// </summary>
-        public static string ALARM_20079 {
+        public static string ALARM_003523 {
             get {
-                return ResourceManager.GetString("ALARM_20079", resourceCulture);
+                return ResourceManager.GetString("ALARM_003523", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 80.
+        ///   Looks up a localized string similar to A035 not ready (70Q1, 71F1, frequency inverter).
         /// </summary>
-        public static string ALARM_20080 {
+        public static string ALARM_003524 {
             get {
-                return ResourceManager.GetString("ALARM_20080", resourceCulture);
+                return ResourceManager.GetString("ALARM_003524", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 81.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03F).
         /// </summary>
-        public static string ALARM_20081 {
+        public static string ALARM_003601 {
             get {
-                return ResourceManager.GetString("ALARM_20081", resourceCulture);
+                return ResourceManager.GetString("ALARM_003601", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 82.
+        ///   Looks up a localized string similar to segment9_01.
         /// </summary>
-        public static string ALARM_20082 {
+        public static string ALARM_003602 {
             get {
-                return ResourceManager.GetString("ALARM_20082", resourceCulture);
+                return ResourceManager.GetString("ALARM_003602", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 83.
+        ///   Looks up a localized string similar to segment9_02.
         /// </summary>
-        public static string ALARM_20083 {
+        public static string ALARM_003603 {
             get {
-                return ResourceManager.GetString("ALARM_20083", resourceCulture);
+                return ResourceManager.GetString("ALARM_003603", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 84.
+        ///   Looks up a localized string similar to segment9_03.
         /// </summary>
-        public static string ALARM_20084 {
+        public static string ALARM_003604 {
             get {
-                return ResourceManager.GetString("ALARM_20084", resourceCulture);
+                return ResourceManager.GetString("ALARM_003604", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 85.
+        ///   Looks up a localized string similar to segment9_04.
         /// </summary>
-        public static string ALARM_20085 {
+        public static string ALARM_003605 {
             get {
-                return ResourceManager.GetString("ALARM_20085", resourceCulture);
+                return ResourceManager.GetString("ALARM_003605", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 86.
+        ///   Looks up a localized string similar to segment9_05.
         /// </summary>
-        public static string ALARM_20086 {
+        public static string ALARM_003606 {
             get {
-                return ResourceManager.GetString("ALARM_20086", resourceCulture);
+                return ResourceManager.GetString("ALARM_003606", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 87.
+        ///   Looks up a localized string similar to segment9_06.
         /// </summary>
-        public static string ALARM_20087 {
+        public static string ALARM_003607 {
             get {
-                return ResourceManager.GetString("ALARM_20087", resourceCulture);
+                return ResourceManager.GetString("ALARM_003607", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 88.
+        ///   Looks up a localized string similar to segment9_07.
         /// </summary>
-        public static string ALARM_20088 {
+        public static string ALARM_003608 {
             get {
-                return ResourceManager.GetString("ALARM_20088", resourceCulture);
+                return ResourceManager.GetString("ALARM_003608", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 89.
+        ///   Looks up a localized string similar to segment9_08.
         /// </summary>
-        public static string ALARM_20089 {
+        public static string ALARM_003609 {
             get {
-                return ResourceManager.GetString("ALARM_20089", resourceCulture);
+                return ResourceManager.GetString("ALARM_003609", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 90.
+        ///   Looks up a localized string similar to T036 material missmatch.
         /// </summary>
-        public static string ALARM_20090 {
+        public static string ALARM_003610 {
             get {
-                return ResourceManager.GetString("ALARM_20090", resourceCulture);
+                return ResourceManager.GetString("ALARM_003610", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 91.
+        ///   Looks up a localized string similar to T036 running too long conveyor.
         /// </summary>
-        public static string ALARM_20091 {
+        public static string ALARM_003611 {
             get {
-                return ResourceManager.GetString("ALARM_20091", resourceCulture);
+                return ResourceManager.GetString("ALARM_003611", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 92.
+        ///   Looks up a localized string similar to T036 running too long hoist.
         /// </summary>
-        public static string ALARM_20092 {
+        public static string ALARM_003612 {
             get {
-                return ResourceManager.GetString("ALARM_20092", resourceCulture);
+                return ResourceManager.GetString("ALARM_003612", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 93.
+        ///   Looks up a localized string similar to T036 limit switch.
         /// </summary>
-        public static string ALARM_20093 {
+        public static string ALARM_003613 {
             get {
-                return ResourceManager.GetString("ALARM_20093", resourceCulture);
+                return ResourceManager.GetString("ALARM_003613", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 94.
+        ///   Looks up a localized string similar to T036 not ready (85Q1).
         /// </summary>
-        public static string ALARM_20094 {
+        public static string ALARM_003614 {
             get {
-                return ResourceManager.GetString("ALARM_20094", resourceCulture);
+                return ResourceManager.GetString("ALARM_003614", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 95.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03G).
         /// </summary>
-        public static string ALARM_20095 {
+        public static string ALARM_003701 {
             get {
-                return ResourceManager.GetString("ALARM_20095", resourceCulture);
+                return ResourceManager.GetString("ALARM_003701", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 96.
+        ///   Looks up a localized string similar to segment10_01.
         /// </summary>
-        public static string ALARM_20096 {
+        public static string ALARM_003702 {
             get {
-                return ResourceManager.GetString("ALARM_20096", resourceCulture);
+                return ResourceManager.GetString("ALARM_003702", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 97.
+        ///   Looks up a localized string similar to segment10_02.
         /// </summary>
-        public static string ALARM_20097 {
+        public static string ALARM_003703 {
             get {
-                return ResourceManager.GetString("ALARM_20097", resourceCulture);
+                return ResourceManager.GetString("ALARM_003703", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 98.
+        ///   Looks up a localized string similar to segment10_03.
         /// </summary>
-        public static string ALARM_20098 {
+        public static string ALARM_003704 {
             get {
-                return ResourceManager.GetString("ALARM_20098", resourceCulture);
+                return ResourceManager.GetString("ALARM_003704", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 99.
+        ///   Looks up a localized string similar to segment10_04.
         /// </summary>
-        public static string ALARM_20099 {
+        public static string ALARM_003705 {
             get {
-                return ResourceManager.GetString("ALARM_20099", resourceCulture);
+                return ResourceManager.GetString("ALARM_003705", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 100.
+        ///   Looks up a localized string similar to segment10_05.
         /// </summary>
-        public static string ALARM_20100 {
+        public static string ALARM_003706 {
             get {
-                return ResourceManager.GetString("ALARM_20100", resourceCulture);
+                return ResourceManager.GetString("ALARM_003706", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 101.
+        ///   Looks up a localized string similar to segment10_06.
         /// </summary>
-        public static string ALARM_20101 {
+        public static string ALARM_003707 {
             get {
-                return ResourceManager.GetString("ALARM_20101", resourceCulture);
+                return ResourceManager.GetString("ALARM_003707", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 102.
+        ///   Looks up a localized string similar to segment10_07.
         /// </summary>
-        public static string ALARM_20102 {
+        public static string ALARM_003708 {
             get {
-                return ResourceManager.GetString("ALARM_20102", resourceCulture);
+                return ResourceManager.GetString("ALARM_003708", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 103.
+        ///   Looks up a localized string similar to segment10_08.
         /// </summary>
-        public static string ALARM_20103 {
+        public static string ALARM_003709 {
             get {
-                return ResourceManager.GetString("ALARM_20103", resourceCulture);
+                return ResourceManager.GetString("ALARM_003709", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 104.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03G).
         /// </summary>
-        public static string ALARM_20104 {
+        public static string ALARM_003710 {
             get {
-                return ResourceManager.GetString("ALARM_20104", resourceCulture);
+                return ResourceManager.GetString("ALARM_003710", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 105.
+        ///   Looks up a localized string similar to T037 material missmatch.
         /// </summary>
-        public static string ALARM_20105 {
+        public static string ALARM_003711 {
             get {
-                return ResourceManager.GetString("ALARM_20105", resourceCulture);
+                return ResourceManager.GetString("ALARM_003711", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 106.
+        ///   Looks up a localized string similar to T037 running too long conveyor.
         /// </summary>
-        public static string ALARM_20106 {
+        public static string ALARM_003712 {
             get {
-                return ResourceManager.GetString("ALARM_20106", resourceCulture);
+                return ResourceManager.GetString("ALARM_003712", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 107.
+        ///   Looks up a localized string similar to T037 running too long hoist.
         /// </summary>
-        public static string ALARM_20107 {
+        public static string ALARM_003713 {
             get {
-                return ResourceManager.GetString("ALARM_20107", resourceCulture);
+                return ResourceManager.GetString("ALARM_003713", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 108.
+        ///   Looks up a localized string similar to T037 limit switch.
         /// </summary>
-        public static string ALARM_20108 {
+        public static string ALARM_003714 {
             get {
-                return ResourceManager.GetString("ALARM_20108", resourceCulture);
+                return ResourceManager.GetString("ALARM_003714", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 109.
+        ///   Looks up a localized string similar to T037 not ready (73Q1, 74Q1, 75F1, 76Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_20109 {
+        public static string ALARM_003715 {
             get {
-                return ResourceManager.GetString("ALARM_20109", resourceCulture);
+                return ResourceManager.GetString("ALARM_003715", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 110.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_20110 {
+        public static string ALARM_003716 {
             get {
-                return ResourceManager.GetString("ALARM_20110", resourceCulture);
+                return ResourceManager.GetString("ALARM_003716", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 111.
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_20111 {
+        public static string ALARM_003717 {
             get {
-                return ResourceManager.GetString("ALARM_20111", resourceCulture);
+                return ResourceManager.GetString("ALARM_003717", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 112.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_20112 {
+        public static string ALARM_003718 {
             get {
-                return ResourceManager.GetString("ALARM_20112", resourceCulture);
+                return ResourceManager.GetString("ALARM_003718", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 113.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_20113 {
+        public static string ALARM_003719 {
             get {
-                return ResourceManager.GetString("ALARM_20113", resourceCulture);
+                return ResourceManager.GetString("ALARM_003719", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 114.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_20114 {
+        public static string ALARM_003720 {
             get {
-                return ResourceManager.GetString("ALARM_20114", resourceCulture);
+                return ResourceManager.GetString("ALARM_003720", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service M required.
+        ///   Looks up a localized string similar to A037 material missmatch.
         /// </summary>
-        public static string ALARM_20115 {
+        public static string ALARM_003721 {
             get {
-                return ResourceManager.GetString("ALARM_20115", resourceCulture);
+                return ResourceManager.GetString("ALARM_003721", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 3M required.
+        ///   Looks up a localized string similar to A037 running too long conveyor.
         /// </summary>
-        public static string ALARM_20116 {
+        public static string ALARM_003722 {
             get {
-                return ResourceManager.GetString("ALARM_20116", resourceCulture);
+                return ResourceManager.GetString("ALARM_003722", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 6M required.
+        ///   Looks up a localized string similar to A037 running too long hoist.
         /// </summary>
-        public static string ALARM_20117 {
+        public static string ALARM_003723 {
             get {
-                return ResourceManager.GetString("ALARM_20117", resourceCulture);
+                return ResourceManager.GetString("ALARM_003723", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 12M required.
+        ///   Looks up a localized string similar to A037 limit switch.
         /// </summary>
-        public static string ALARM_20118 {
+        public static string ALARM_003724 {
             get {
-                return ResourceManager.GetString("ALARM_20118", resourceCulture);
+                return ResourceManager.GetString("ALARM_003724", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 5 required.
+        ///   Looks up a localized string similar to A037 not ready (77Q1, 78Q1, 79F1, 80Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_20119 {
+        public static string ALARM_003725 {
             get {
-                return ResourceManager.GetString("ALARM_20119", resourceCulture);
+                return ResourceManager.GetString("ALARM_003725", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object alarm.
+        ///   Looks up a localized string similar to segment10_01.
         /// </summary>
-        public static string ALARM_20120 {
+        public static string ALARM_003726 {
             get {
-                return ResourceManager.GetString("ALARM_20120", resourceCulture);
+                return ResourceManager.GetString("ALARM_003726", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object fault.
+        ///   Looks up a localized string similar to segment10_02.
         /// </summary>
-        public static string ALARM_20121 {
+        public static string ALARM_003727 {
             get {
-                return ResourceManager.GetString("ALARM_20121", resourceCulture);
+                return ResourceManager.GetString("ALARM_003727", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object safety.
+        ///   Looks up a localized string similar to segment10_03.
         /// </summary>
-        public static string ALARM_20122 {
+        public static string ALARM_003728 {
             get {
-                return ResourceManager.GetString("ALARM_20122", resourceCulture);
+                return ResourceManager.GetString("ALARM_003728", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: execution fault.
+        ///   Looks up a localized string similar to segment10_04.
         /// </summary>
-        public static string ALARM_20123 {
+        public static string ALARM_003729 {
             get {
-                return ResourceManager.GetString("ALARM_20123", resourceCulture);
+                return ResourceManager.GetString("ALARM_003729", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: peripheral fault.
+        ///   Looks up a localized string similar to segment10_05.
         /// </summary>
-        public static string ALARM_20124 {
+        public static string ALARM_003730 {
             get {
-                return ResourceManager.GetString("ALARM_20124", resourceCulture);
+                return ResourceManager.GetString("ALARM_003730", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: tech fault.
+        ///   Looks up a localized string similar to segment10_06.
         /// </summary>
-        public static string ALARM_20125 {
+        public static string ALARM_003731 {
             get {
-                return ResourceManager.GetString("ALARM_20125", resourceCulture);
+                return ResourceManager.GetString("ALARM_003731", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault background.
+        ///   Looks up a localized string similar to segment10_07.
         /// </summary>
-        public static string ALARM_20126 {
+        public static string ALARM_003732 {
             get {
-                return ResourceManager.GetString("ALARM_20126", resourceCulture);
+                return ResourceManager.GetString("ALARM_003732", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault.
+        ///   Looks up a localized string similar to segment10_08.
         /// </summary>
-        public static string ALARM_20127 {
+        public static string ALARM_003733 {
             get {
-                return ResourceManager.GetString("ALARM_20127", resourceCulture);
+                return ResourceManager.GetString("ALARM_003733", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: application fault.
+        ///   Looks up a localized string similar to T037 material missmatch.
         /// </summary>
-        public static string ALARM_20128 {
+        public static string ALARM_003734 {
             get {
-                return ResourceManager.GetString("ALARM_20128", resourceCulture);
+                return ResourceManager.GetString("ALARM_003734", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 230 VAC, +L01-403F1..403F3.
+        ///   Looks up a localized string similar to T037 running too long conveyor.
         /// </summary>
-        public static string ALARM_30001 {
+        public static string ALARM_003735 {
             get {
-                return ResourceManager.GetString("ALARM_30001", resourceCulture);
+                return ResourceManager.GetString("ALARM_003735", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 24 VDC, +L01-404F1..404F9.
+        ///   Looks up a localized string similar to T037 running too long hoist.
         /// </summary>
-        public static string ALARM_30002 {
+        public static string ALARM_003736 {
             get {
-                return ResourceManager.GetString("ALARM_30002", resourceCulture);
+                return ResourceManager.GetString("ALARM_003736", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch travel, +L01-408S1.
+        ///   Looks up a localized string similar to T037 limit switch.
         /// </summary>
-        public static string ALARM_30003 {
+        public static string ALARM_003737 {
             get {
-                return ResourceManager.GetString("ALARM_30003", resourceCulture);
+                return ResourceManager.GetString("ALARM_003737", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch speed governor hoist - rope; +L01-408S2.
+        ///   Looks up a localized string similar to T037 not ready (73Q1, 74Q1, 75F1, 76Q1, frequency inverter).
         /// </summary>
-        public static string ALARM_30004 {
+        public static string ALARM_003738 {
             get {
-                return ResourceManager.GetString("ALARM_30004", resourceCulture);
+                return ResourceManager.GetString("ALARM_003738", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button main cabinet, +L01-409S1.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_30005 {
+        public static string ALARM_003739 {
             get {
-                return ResourceManager.GetString("ALARM_30005", resourceCulture);
+                return ResourceManager.GetString("ALARM_003739", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP over rail, +L01-409K1.
+        ///   Looks up a localized string similar to MFC missmatch (segment T03H).
         /// </summary>
-        public static string ALARM_30006 {
+        public static string ALARM_003801 {
             get {
-                return ResourceManager.GetString("ALARM_30006", resourceCulture);
+                return ResourceManager.GetString("ALARM_003801", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch speed governor hoist - overspeed; +L01-410S3.
+        ///   Looks up a localized string similar to segment11_01.
         /// </summary>
-        public static string ALARM_30007 {
+        public static string ALARM_003802 {
             get {
-                return ResourceManager.GetString("ALARM_30007", resourceCulture);
+                return ResourceManager.GetString("ALARM_003802", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel and hoist brakes, +L01-420Q1.
+        ///   Looks up a localized string similar to segment11_02.
         /// </summary>
-        public static string ALARM_30008 {
+        public static string ALARM_003803 {
             get {
-                return ResourceManager.GetString("ALARM_30008", resourceCulture);
+                return ResourceManager.GetString("ALARM_003803", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel and hoist fan motors, +L01-420Q2.
+        ///   Looks up a localized string similar to segment11_03.
         /// </summary>
-        public static string ALARM_30009 {
+        public static string ALARM_003804 {
             get {
-                return ResourceManager.GetString("ALARM_30009", resourceCulture);
+                return ResourceManager.GetString("ALARM_003804", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection forks back brake, +L01-421Q1.
+        ///   Looks up a localized string similar to segment11_04.
         /// </summary>
-        public static string ALARM_30010 {
+        public static string ALARM_003805 {
             get {
-                return ResourceManager.GetString("ALARM_30010", resourceCulture);
+                return ResourceManager.GetString("ALARM_003805", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection forks front brake, +L01-422Q1.
+        ///   Looks up a localized string similar to segment11_05.
         /// </summary>
-        public static string ALARM_30011 {
+        public static string ALARM_003806 {
             get {
-                return ResourceManager.GetString("ALARM_30011", resourceCulture);
+                return ResourceManager.GetString("ALARM_003806", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch hoist, +L02-427S1.
+        ///   Looks up a localized string similar to segment11_06.
         /// </summary>
-        public static string ALARM_30012 {
+        public static string ALARM_003807 {
             get {
-                return ResourceManager.GetString("ALARM_30012", resourceCulture);
+                return ResourceManager.GetString("ALARM_003807", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch catching device - jaws, +L02-427S2.
+        ///   Looks up a localized string similar to segment11_07.
         /// </summary>
-        public static string ALARM_30013 {
+        public static string ALARM_003808 {
             get {
-                return ResourceManager.GetString("ALARM_30013", resourceCulture);
+                return ResourceManager.GetString("ALARM_003808", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cabin door open - to main cabinet, +L02-428S1.
+        ///   Looks up a localized string similar to segment11_08.
         /// </summary>
-        public static string ALARM_30014 {
+        public static string ALARM_003809 {
             get {
-                return ResourceManager.GetString("ALARM_30014", resourceCulture);
+                return ResourceManager.GetString("ALARM_003809", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cabin door open - to deck (forks), +L02-428S2.
+        ///   Looks up a localized string similar to T038 material missmatch.
         /// </summary>
-        public static string ALARM_30015 {
+        public static string ALARM_003810 {
             get {
-                return ResourceManager.GetString("ALARM_30015", resourceCulture);
+                return ResourceManager.GetString("ALARM_003810", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button control panel, +L02-428S3.
+        ///   Looks up a localized string similar to T038 running too long conveyor.
         /// </summary>
-        public static string ALARM_30016 {
+        public static string ALARM_003811 {
             get {
-                return ResourceManager.GetString("ALARM_30016", resourceCulture);
+                return ResourceManager.GetString("ALARM_003811", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and left rack, +L02-43515.
+        ///   Looks up a localized string similar to T038 running too long hoist.
         /// </summary>
-        public static string ALARM_30017 {
+        public static string ALARM_003812 {
             get {
-                return ResourceManager.GetString("ALARM_30017", resourceCulture);
+                return ResourceManager.GetString("ALARM_003812", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and left rack, +L02-43515.
+        ///   Looks up a localized string similar to T038 limit switch.
         /// </summary>
-        public static string ALARM_30018 {
+        public static string ALARM_003813 {
             get {
-                return ResourceManager.GetString("ALARM_30018", resourceCulture);
+                return ResourceManager.GetString("ALARM_003813", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: travel.
+        ///   Looks up a localized string similar to T038 not ready (85Q1).
         /// </summary>
-        public static string ALARM_30019 {
+        public static string ALARM_003814 {
             get {
-                return ResourceManager.GetString("ALARM_30019", resourceCulture);
+                return ResourceManager.GetString("ALARM_003814", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: hoist.
+        ///   Looks up a localized string similar to MFC missmatch (segment T04A).
         /// </summary>
-        public static string ALARM_30020 {
+        public static string ALARM_004101 {
             get {
-                return ResourceManager.GetString("ALARM_30020", resourceCulture);
+                return ResourceManager.GetString("ALARM_004101", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: forks SD.
+        ///   Looks up a localized string similar to segment20_01.
         /// </summary>
-        public static string ALARM_30021 {
+        public static string ALARM_004102 {
             get {
-                return ResourceManager.GetString("ALARM_30021", resourceCulture);
+                return ResourceManager.GetString("ALARM_004102", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: forks DD.
+        ///   Looks up a localized string similar to segment20_02.
         /// </summary>
-        public static string ALARM_30022 {
+        public static string ALARM_004103 {
             get {
-                return ResourceManager.GetString("ALARM_30022", resourceCulture);
+                return ResourceManager.GetString("ALARM_004103", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 startup fault.
+        ///   Looks up a localized string similar to segment20_03.
         /// </summary>
-        public static string ALARM_30023 {
+        public static string ALARM_004104 {
             get {
-                return ResourceManager.GetString("ALARM_30023", resourceCulture);
+                return ResourceManager.GetString("ALARM_004104", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travel motor running too long, +EXT-418M1.
+        ///   Looks up a localized string similar to segment20_04.
         /// </summary>
-        public static string ALARM_30024 {
+        public static string ALARM_004105 {
             get {
-                return ResourceManager.GetString("ALARM_30024", resourceCulture);
+                return ResourceManager.GetString("ALARM_004105", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hoist motor running too long, +EXT-416M1.
+        ///   Looks up a localized string similar to segment20_05.
         /// </summary>
-        public static string ALARM_30025 {
+        public static string ALARM_004106 {
             get {
-                return ResourceManager.GetString("ALARM_30025", resourceCulture);
+                return ResourceManager.GetString("ALARM_004106", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forks SD motor running too long, +EXT-421M1.
+        ///   Looks up a localized string similar to segment20_06.
         /// </summary>
-        public static string ALARM_30026 {
+        public static string ALARM_004107 {
             get {
-                return ResourceManager.GetString("ALARM_30026", resourceCulture);
+                return ResourceManager.GetString("ALARM_004107", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Forks DD motor running too long, +EXT-422M1.
+        ///   Looks up a localized string similar to segment20_07.
         /// </summary>
-        public static string ALARM_30027 {
+        public static string ALARM_004108 {
             get {
-                return ResourceManager.GetString("ALARM_30027", resourceCulture);
+                return ResourceManager.GetString("ALARM_004108", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (receive direction).
+        ///   Looks up a localized string similar to segment20_08.
         /// </summary>
-        public static string ALARM_30028 {
+        public static string ALARM_004109 {
             get {
-                return ResourceManager.GetString("ALARM_30028", resourceCulture);
+                return ResourceManager.GetString("ALARM_004109", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (send direction).
+        ///   Looks up a localized string similar to T041 material missmatch.
         /// </summary>
-        public static string ALARM_30029 {
+        public static string ALARM_004110 {
             get {
-                return ResourceManager.GetString("ALARM_30029", resourceCulture);
+                return ResourceManager.GetString("ALARM_004110", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (receive direction).
+        ///   Looks up a localized string similar to T041 running too long conveyor.
         /// </summary>
-        public static string ALARM_30030 {
+        public static string ALARM_004111 {
             get {
-                return ResourceManager.GetString("ALARM_30030", resourceCulture);
+                return ResourceManager.GetString("ALARM_004111", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (send direction).
+        ///   Looks up a localized string similar to T041 running too long hoist.
         /// </summary>
-        public static string ALARM_30031 {
+        public static string ALARM_004112 {
             get {
-                return ResourceManager.GetString("ALARM_30031", resourceCulture);
+                return ResourceManager.GetString("ALARM_004112", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enormous value of absolute encoder or magnet switches - travel.
+        ///   Looks up a localized string similar to T041 limit switch.
         /// </summary>
-        public static string ALARM_30032 {
+        public static string ALARM_004113 {
             get {
-                return ResourceManager.GetString("ALARM_30032", resourceCulture);
+                return ResourceManager.GetString("ALARM_004113", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material mismatch on crane.
+        ///   Looks up a localized string similar to T041 not ready (85Q1).
         /// </summary>
-        public static string ALARM_30033 {
+        public static string ALARM_004114 {
             get {
-                return ResourceManager.GetString("ALARM_30033", resourceCulture);
+                return ResourceManager.GetString("ALARM_004114", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erroneous value of barCode positioning sensor (hoist).
+        ///   Looks up a localized string similar to MFC missmatch (segment T04B).
         /// </summary>
-        public static string ALARM_30034 {
+        public static string ALARM_004201 {
             get {
-                return ResourceManager.GetString("ALARM_30034", resourceCulture);
+                return ResourceManager.GetString("ALARM_004201", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 35.
+        ///   Looks up a localized string similar to segment21_01.
         /// </summary>
-        public static string ALARM_30035 {
+        public static string ALARM_004202 {
             get {
-                return ResourceManager.GetString("ALARM_30035", resourceCulture);
+                return ResourceManager.GetString("ALARM_004202", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 36.
+        ///   Looks up a localized string similar to segment21_02.
         /// </summary>
-        public static string ALARM_30036 {
+        public static string ALARM_004203 {
             get {
-                return ResourceManager.GetString("ALARM_30036", resourceCulture);
+                return ResourceManager.GetString("ALARM_004203", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 37.
+        ///   Looks up a localized string similar to segment21_03.
         /// </summary>
-        public static string ALARM_30037 {
+        public static string ALARM_004204 {
             get {
-                return ResourceManager.GetString("ALARM_30037", resourceCulture);
+                return ResourceManager.GetString("ALARM_004204", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 38.
+        ///   Looks up a localized string similar to segment21_04.
         /// </summary>
-        public static string ALARM_30038 {
+        public static string ALARM_004205 {
             get {
-                return ResourceManager.GetString("ALARM_30038", resourceCulture);
+                return ResourceManager.GetString("ALARM_004205", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 39.
+        ///   Looks up a localized string similar to segment21_05.
         /// </summary>
-        public static string ALARM_30039 {
+        public static string ALARM_004206 {
             get {
-                return ResourceManager.GetString("ALARM_30039", resourceCulture);
+                return ResourceManager.GetString("ALARM_004206", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: wrong location.
+        ///   Looks up a localized string similar to segment21_06.
         /// </summary>
-        public static string ALARM_30040 {
+        public static string ALARM_004207 {
             get {
-                return ResourceManager.GetString("ALARM_30040", resourceCulture);
+                return ResourceManager.GetString("ALARM_004207", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: crane occupied.
+        ///   Looks up a localized string similar to segment21_07.
         /// </summary>
-        public static string ALARM_30041 {
+        public static string ALARM_004208 {
             get {
-                return ResourceManager.GetString("ALARM_30041", resourceCulture);
+                return ResourceManager.GetString("ALARM_004208", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: crane is empty.
+        ///   Looks up a localized string similar to segment21_08.
         /// </summary>
-        public static string ALARM_30042 {
+        public static string ALARM_004209 {
             get {
-                return ResourceManager.GetString("ALARM_30042", resourceCulture);
+                return ResourceManager.GetString("ALARM_004209", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode mismatch.
+        ///   Looks up a localized string similar to T042 material missmatch.
         /// </summary>
-        public static string ALARM_30043 {
+        public static string ALARM_004210 {
             get {
-                return ResourceManager.GetString("ALARM_30043", resourceCulture);
+                return ResourceManager.GetString("ALARM_004210", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Underweight.
+        ///   Looks up a localized string similar to T042 running too long conveyor.
         /// </summary>
-        public static string ALARM_30044 {
+        public static string ALARM_004211 {
             get {
-                return ResourceManager.GetString("ALARM_30044", resourceCulture);
+                return ResourceManager.GetString("ALARM_004211", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Overweight.
+        ///   Looks up a localized string similar to T042 running too long hoist.
         /// </summary>
-        public static string ALARM_30045 {
+        public static string ALARM_004212 {
             get {
-                return ResourceManager.GetString("ALARM_30045", resourceCulture);
+                return ResourceManager.GetString("ALARM_004212", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and rack 1.
+        ///   Looks up a localized string similar to T042 limit switch.
         /// </summary>
-        public static string ALARM_30046 {
+        public static string ALARM_004213 {
             get {
-                return ResourceManager.GetString("ALARM_30046", resourceCulture);
+                return ResourceManager.GetString("ALARM_004213", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between crane and rack 2.
+        ///   Looks up a localized string similar to T042 not ready (85Q1).
         /// </summary>
-        public static string ALARM_30047 {
+        public static string ALARM_004214 {
             get {
-                return ResourceManager.GetString("ALARM_30047", resourceCulture);
+                return ResourceManager.GetString("ALARM_004214", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material picture differs from sensor.
+        ///   Looks up a localized string similar to MFC missmatch (segment T11A).
         /// </summary>
-        public static string ALARM_30048 {
+        public static string ALARM_011101 {
             get {
-                return ResourceManager.GetString("ALARM_30048", resourceCulture);
+                return ResourceManager.GetString("ALARM_011101", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material movement not successfull.
+        ///   Looks up a localized string similar to segment12_01.
         /// </summary>
-        public static string ALARM_30049 {
+        public static string ALARM_011102 {
             get {
-                return ResourceManager.GetString("ALARM_30049", resourceCulture);
+                return ResourceManager.GetString("ALARM_011102", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor not ready.
+        ///   Looks up a localized string similar to segment12_02.
         /// </summary>
-        public static string ALARM_30050 {
+        public static string ALARM_011103 {
             get {
-                return ResourceManager.GetString("ALARM_30050", resourceCulture);
+                return ResourceManager.GetString("ALARM_011103", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFCS error.
+        ///   Looks up a localized string similar to segment12_03.
         /// </summary>
-        public static string ALARM_30051 {
+        public static string ALARM_011104 {
             get {
-                return ResourceManager.GetString("ALARM_30051", resourceCulture);
+                return ResourceManager.GetString("ALARM_011104", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: fork not in the middle.
+        ///   Looks up a localized string similar to segment12_04.
         /// </summary>
-        public static string ALARM_30052 {
+        public static string ALARM_011105 {
             get {
-                return ResourceManager.GetString("ALARM_30052", resourceCulture);
+                return ResourceManager.GetString("ALARM_011105", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sagging of Axis hoist.
+        ///   Looks up a localized string similar to segment12_05.
         /// </summary>
-        public static string ALARM_30053 {
+        public static string ALARM_011106 {
             get {
-                return ResourceManager.GetString("ALARM_30053", resourceCulture);
+                return ResourceManager.GetString("ALARM_011106", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (travel).
+        ///   Looks up a localized string similar to segment12_06.
         /// </summary>
-        public static string ALARM_30054 {
+        public static string ALARM_011107 {
             get {
-                return ResourceManager.GetString("ALARM_30054", resourceCulture);
+                return ResourceManager.GetString("ALARM_011107", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (hoist).
+        ///   Looks up a localized string similar to segment12_07.
         /// </summary>
-        public static string ALARM_30055 {
+        public static string ALARM_011108 {
             get {
-                return ResourceManager.GetString("ALARM_30055", resourceCulture);
+                return ResourceManager.GetString("ALARM_011108", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (fork SD).
+        ///   Looks up a localized string similar to segment12_08.
         /// </summary>
-        public static string ALARM_30056 {
+        public static string ALARM_011109 {
             get {
-                return ResourceManager.GetString("ALARM_30056", resourceCulture);
+                return ResourceManager.GetString("ALARM_011109", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Crane out of working area (fork DD).
+        ///   Looks up a localized string similar to T111 material missmatch.
         /// </summary>
-        public static string ALARM_30057 {
+        public static string ALARM_011110 {
             get {
-                return ResourceManager.GetString("ALARM_30057", resourceCulture);
+                return ResourceManager.GetString("ALARM_011110", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 58.
+        ///   Looks up a localized string similar to T111 running too long conveyor.
         /// </summary>
-        public static string ALARM_30058 {
+        public static string ALARM_011111 {
             get {
-                return ResourceManager.GetString("ALARM_30058", resourceCulture);
+                return ResourceManager.GetString("ALARM_011111", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 59.
+        ///   Looks up a localized string similar to T111 running too long hoist.
         /// </summary>
-        public static string ALARM_30059 {
+        public static string ALARM_011112 {
             get {
-                return ResourceManager.GetString("ALARM_30059", resourceCulture);
+                return ResourceManager.GetString("ALARM_011112", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=1, depth=1).
+        ///   Looks up a localized string similar to T111 limit switch.
         /// </summary>
-        public static string ALARM_30060 {
+        public static string ALARM_011113 {
             get {
-                return ResourceManager.GetString("ALARM_30060", resourceCulture);
+                return ResourceManager.GetString("ALARM_011113", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=1, depth=2).
+        ///   Looks up a localized string similar to T111 not ready (85Q1).
         /// </summary>
-        public static string ALARM_30061 {
+        public static string ALARM_011114 {
             get {
-                return ResourceManager.GetString("ALARM_30061", resourceCulture);
+                return ResourceManager.GetString("ALARM_011114", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=2, depth=1).
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_30062 {
+        public static string ALARM_011115 {
             get {
-                return ResourceManager.GetString("ALARM_30062", resourceCulture);
+                return ResourceManager.GetString("ALARM_011115", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deposit to rack not possible - location occupied (side=2, depth=2).
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_30063 {
+        public static string ALARM_011116 {
             get {
-                return ResourceManager.GetString("ALARM_30063", resourceCulture);
+                return ResourceManager.GetString("ALARM_011116", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=1, depth=1).
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_30064 {
+        public static string ALARM_011117 {
             get {
-                return ResourceManager.GetString("ALARM_30064", resourceCulture);
+                return ResourceManager.GetString("ALARM_011117", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=1, depth=2).
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_30065 {
+        public static string ALARM_011118 {
             get {
-                return ResourceManager.GetString("ALARM_30065", resourceCulture);
+                return ResourceManager.GetString("ALARM_011118", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=2, depth=1).
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_30066 {
+        public static string ALARM_011119 {
             get {
-                return ResourceManager.GetString("ALARM_30066", resourceCulture);
+                return ResourceManager.GetString("ALARM_011119", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - location empty (side=2, depth=2).
+        ///   Looks up a localized string similar to T112 material missmatch.
         /// </summary>
-        public static string ALARM_30067 {
+        public static string ALARM_011120 {
             get {
-                return ResourceManager.GetString("ALARM_30067", resourceCulture);
+                return ResourceManager.GetString("ALARM_011120", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - depth 1 occupied (side=1, depth=2).
+        ///   Looks up a localized string similar to T112 running too long conveyor.
         /// </summary>
-        public static string ALARM_30068 {
+        public static string ALARM_011121 {
             get {
-                return ResourceManager.GetString("ALARM_30068", resourceCulture);
+                return ResourceManager.GetString("ALARM_011121", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pick from rack not possible - depth 1 occupied (side=2, depth=2).
+        ///   Looks up a localized string similar to T112 running too long hoist.
         /// </summary>
-        public static string ALARM_30069 {
+        public static string ALARM_011122 {
             get {
-                return ResourceManager.GetString("ALARM_30069", resourceCulture);
+                return ResourceManager.GetString("ALARM_011122", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vibration extinction not active.
+        ///   Looks up a localized string similar to T112 limit switch.
         /// </summary>
-        public static string ALARM_30070 {
+        public static string ALARM_011123 {
             get {
-                return ResourceManager.GetString("ALARM_30070", resourceCulture);
+                return ResourceManager.GetString("ALARM_011123", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, CP301.
+        ///   Looks up a localized string similar to T112 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_30071 {
+        public static string ALARM_011124 {
             get {
-                return ResourceManager.GetString("ALARM_30071", resourceCulture);
+                return ResourceManager.GetString("ALARM_011124", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Door to C301 open.
+        ///   Looks up a localized string similar to Spare 25.
         /// </summary>
-        public static string ALARM_30072 {
+        public static string ALARM_011125 {
             get {
-                return ResourceManager.GetString("ALARM_30072", resourceCulture);
+                return ResourceManager.GetString("ALARM_011125", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T321.
+        ///   Looks up a localized string similar to Spare 26.
         /// </summary>
-        public static string ALARM_30073 {
+        public static string ALARM_011126 {
             get {
-                return ResourceManager.GetString("ALARM_30073", resourceCulture);
+                return ResourceManager.GetString("ALARM_011126", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T322.
+        ///   Looks up a localized string similar to Spare 27.
         /// </summary>
-        public static string ALARM_30074 {
+        public static string ALARM_011127 {
             get {
-                return ResourceManager.GetString("ALARM_30074", resourceCulture);
+                return ResourceManager.GetString("ALARM_011127", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push buttton, CP401.
+        ///   Looks up a localized string similar to Spare 28.
         /// </summary>
-        public static string ALARM_30075 {
+        public static string ALARM_011128 {
             get {
-                return ResourceManager.GetString("ALARM_30075", resourceCulture);
+                return ResourceManager.GetString("ALARM_011128", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T21.
+        ///   Looks up a localized string similar to Spare 29.
         /// </summary>
-        public static string ALARM_30076 {
+        public static string ALARM_011129 {
             get {
-                return ResourceManager.GetString("ALARM_30076", resourceCulture);
+                return ResourceManager.GetString("ALARM_011129", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 77.
+        ///   Looks up a localized string similar to T113 material missmatch.
         /// </summary>
-        public static string ALARM_30077 {
+        public static string ALARM_011130 {
             get {
-                return ResourceManager.GetString("ALARM_30077", resourceCulture);
+                return ResourceManager.GetString("ALARM_011130", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 78.
+        ///   Looks up a localized string similar to T113 running too long conveyor.
         /// </summary>
-        public static string ALARM_30078 {
+        public static string ALARM_011131 {
             get {
-                return ResourceManager.GetString("ALARM_30078", resourceCulture);
+                return ResourceManager.GetString("ALARM_011131", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 79.
+        ///   Looks up a localized string similar to T113 running too long hoist.
         /// </summary>
-        public static string ALARM_30079 {
+        public static string ALARM_011132 {
             get {
-                return ResourceManager.GetString("ALARM_30079", resourceCulture);
+                return ResourceManager.GetString("ALARM_011132", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 80.
+        ///   Looks up a localized string similar to T113 limit switch.
         /// </summary>
-        public static string ALARM_30080 {
+        public static string ALARM_011133 {
             get {
-                return ResourceManager.GetString("ALARM_30080", resourceCulture);
+                return ResourceManager.GetString("ALARM_011133", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 81.
+        ///   Looks up a localized string similar to T113 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_30081 {
+        public static string ALARM_011134 {
             get {
-                return ResourceManager.GetString("ALARM_30081", resourceCulture);
+                return ResourceManager.GetString("ALARM_011134", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 82.
+        ///   Looks up a localized string similar to Spare 35.
         /// </summary>
-        public static string ALARM_30082 {
+        public static string ALARM_011135 {
             get {
-                return ResourceManager.GetString("ALARM_30082", resourceCulture);
+                return ResourceManager.GetString("ALARM_011135", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 83.
+        ///   Looks up a localized string similar to Spare 36.
         /// </summary>
-        public static string ALARM_30083 {
+        public static string ALARM_011136 {
             get {
-                return ResourceManager.GetString("ALARM_30083", resourceCulture);
+                return ResourceManager.GetString("ALARM_011136", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 84.
+        ///   Looks up a localized string similar to Spare 37.
         /// </summary>
-        public static string ALARM_30084 {
+        public static string ALARM_011137 {
             get {
-                return ResourceManager.GetString("ALARM_30084", resourceCulture);
+                return ResourceManager.GetString("ALARM_011137", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 85.
+        ///   Looks up a localized string similar to Spare 38.
         /// </summary>
-        public static string ALARM_30085 {
+        public static string ALARM_011138 {
             get {
-                return ResourceManager.GetString("ALARM_30085", resourceCulture);
+                return ResourceManager.GetString("ALARM_011138", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 86.
+        ///   Looks up a localized string similar to Spare 39.
         /// </summary>
-        public static string ALARM_30086 {
+        public static string ALARM_011139 {
             get {
-                return ResourceManager.GetString("ALARM_30086", resourceCulture);
+                return ResourceManager.GetString("ALARM_011139", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 87.
+        ///   Looks up a localized string similar to T114 material missmatch.
         /// </summary>
-        public static string ALARM_30087 {
+        public static string ALARM_011140 {
             get {
-                return ResourceManager.GetString("ALARM_30087", resourceCulture);
+                return ResourceManager.GetString("ALARM_011140", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 88.
+        ///   Looks up a localized string similar to T114 running too long conveyor.
         /// </summary>
-        public static string ALARM_30088 {
+        public static string ALARM_011141 {
             get {
-                return ResourceManager.GetString("ALARM_30088", resourceCulture);
+                return ResourceManager.GetString("ALARM_011141", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 89.
+        ///   Looks up a localized string similar to T114 running too long hoist.
         /// </summary>
-        public static string ALARM_30089 {
+        public static string ALARM_011142 {
             get {
-                return ResourceManager.GetString("ALARM_30089", resourceCulture);
+                return ResourceManager.GetString("ALARM_011142", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 90.
+        ///   Looks up a localized string similar to T114 limit switch.
         /// </summary>
-        public static string ALARM_30090 {
+        public static string ALARM_011143 {
             get {
-                return ResourceManager.GetString("ALARM_30090", resourceCulture);
+                return ResourceManager.GetString("ALARM_011143", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 91.
+        ///   Looks up a localized string similar to T114 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_30091 {
+        public static string ALARM_011144 {
             get {
-                return ResourceManager.GetString("ALARM_30091", resourceCulture);
+                return ResourceManager.GetString("ALARM_011144", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 92.
+        ///   Looks up a localized string similar to MFC missmatch (segment T11B).
         /// </summary>
-        public static string ALARM_30092 {
+        public static string ALARM_011201 {
             get {
-                return ResourceManager.GetString("ALARM_30092", resourceCulture);
+                return ResourceManager.GetString("ALARM_011201", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 93.
+        ///   Looks up a localized string similar to segment13_01.
         /// </summary>
-        public static string ALARM_30093 {
+        public static string ALARM_011202 {
             get {
-                return ResourceManager.GetString("ALARM_30093", resourceCulture);
+                return ResourceManager.GetString("ALARM_011202", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 94.
+        ///   Looks up a localized string similar to segment13_02.
         /// </summary>
-        public static string ALARM_30094 {
+        public static string ALARM_011203 {
             get {
-                return ResourceManager.GetString("ALARM_30094", resourceCulture);
+                return ResourceManager.GetString("ALARM_011203", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 95.
+        ///   Looks up a localized string similar to segment13_03.
         /// </summary>
-        public static string ALARM_30095 {
+        public static string ALARM_011204 {
             get {
-                return ResourceManager.GetString("ALARM_30095", resourceCulture);
+                return ResourceManager.GetString("ALARM_011204", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 96.
+        ///   Looks up a localized string similar to segment13_04.
         /// </summary>
-        public static string ALARM_30096 {
+        public static string ALARM_011205 {
             get {
-                return ResourceManager.GetString("ALARM_30096", resourceCulture);
+                return ResourceManager.GetString("ALARM_011205", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 97.
+        ///   Looks up a localized string similar to segment13_05.
         /// </summary>
-        public static string ALARM_30097 {
+        public static string ALARM_011206 {
             get {
-                return ResourceManager.GetString("ALARM_30097", resourceCulture);
+                return ResourceManager.GetString("ALARM_011206", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 98.
+        ///   Looks up a localized string similar to segment13_06.
         /// </summary>
-        public static string ALARM_30098 {
+        public static string ALARM_011207 {
             get {
-                return ResourceManager.GetString("ALARM_30098", resourceCulture);
+                return ResourceManager.GetString("ALARM_011207", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 99.
+        ///   Looks up a localized string similar to segment13_07.
         /// </summary>
-        public static string ALARM_30099 {
+        public static string ALARM_011208 {
             get {
-                return ResourceManager.GetString("ALARM_30099", resourceCulture);
+                return ResourceManager.GetString("ALARM_011208", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 100.
+        ///   Looks up a localized string similar to segment13_08.
         /// </summary>
-        public static string ALARM_30100 {
+        public static string ALARM_011209 {
             get {
-                return ResourceManager.GetString("ALARM_30100", resourceCulture);
+                return ResourceManager.GetString("ALARM_011209", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 101.
+        ///   Looks up a localized string similar to T115 material missmatch.
         /// </summary>
-        public static string ALARM_30101 {
+        public static string ALARM_011210 {
             get {
-                return ResourceManager.GetString("ALARM_30101", resourceCulture);
+                return ResourceManager.GetString("ALARM_011210", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 102.
+        ///   Looks up a localized string similar to T115 running too long conveyor.
         /// </summary>
-        public static string ALARM_30102 {
+        public static string ALARM_011211 {
             get {
-                return ResourceManager.GetString("ALARM_30102", resourceCulture);
+                return ResourceManager.GetString("ALARM_011211", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 103.
+        ///   Looks up a localized string similar to T115 running too long hoist.
         /// </summary>
-        public static string ALARM_30103 {
+        public static string ALARM_011212 {
             get {
-                return ResourceManager.GetString("ALARM_30103", resourceCulture);
+                return ResourceManager.GetString("ALARM_011212", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 104.
+        ///   Looks up a localized string similar to T115 limit switch.
         /// </summary>
-        public static string ALARM_30104 {
+        public static string ALARM_011213 {
             get {
-                return ResourceManager.GetString("ALARM_30104", resourceCulture);
+                return ResourceManager.GetString("ALARM_011213", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 105.
+        ///   Looks up a localized string similar to T115 not ready (85Q1).
         /// </summary>
-        public static string ALARM_30105 {
+        public static string ALARM_011214 {
             get {
-                return ResourceManager.GetString("ALARM_30105", resourceCulture);
+                return ResourceManager.GetString("ALARM_011214", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 106.
+        ///   Looks up a localized string similar to MFC missmatch (segment T12A).
         /// </summary>
-        public static string ALARM_30106 {
+        public static string ALARM_012101 {
             get {
-                return ResourceManager.GetString("ALARM_30106", resourceCulture);
+                return ResourceManager.GetString("ALARM_012101", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 107.
+        ///   Looks up a localized string similar to segment14_01.
         /// </summary>
-        public static string ALARM_30107 {
+        public static string ALARM_012102 {
             get {
-                return ResourceManager.GetString("ALARM_30107", resourceCulture);
+                return ResourceManager.GetString("ALARM_012102", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 108.
+        ///   Looks up a localized string similar to segment14_02.
         /// </summary>
-        public static string ALARM_30108 {
+        public static string ALARM_012103 {
             get {
-                return ResourceManager.GetString("ALARM_30108", resourceCulture);
+                return ResourceManager.GetString("ALARM_012103", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 109.
+        ///   Looks up a localized string similar to segment14_03.
         /// </summary>
-        public static string ALARM_30109 {
+        public static string ALARM_012104 {
             get {
-                return ResourceManager.GetString("ALARM_30109", resourceCulture);
+                return ResourceManager.GetString("ALARM_012104", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 110.
+        ///   Looks up a localized string similar to segment14_04.
         /// </summary>
-        public static string ALARM_30110 {
+        public static string ALARM_012105 {
             get {
-                return ResourceManager.GetString("ALARM_30110", resourceCulture);
+                return ResourceManager.GetString("ALARM_012105", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 111.
+        ///   Looks up a localized string similar to segment14_05.
         /// </summary>
-        public static string ALARM_30111 {
+        public static string ALARM_012106 {
             get {
-                return ResourceManager.GetString("ALARM_30111", resourceCulture);
+                return ResourceManager.GetString("ALARM_012106", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 112.
+        ///   Looks up a localized string similar to segment14_06.
         /// </summary>
-        public static string ALARM_30112 {
+        public static string ALARM_012107 {
             get {
-                return ResourceManager.GetString("ALARM_30112", resourceCulture);
+                return ResourceManager.GetString("ALARM_012107", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 113.
+        ///   Looks up a localized string similar to segment14_07.
         /// </summary>
-        public static string ALARM_30113 {
+        public static string ALARM_012108 {
             get {
-                return ResourceManager.GetString("ALARM_30113", resourceCulture);
+                return ResourceManager.GetString("ALARM_012108", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alarm 114.
+        ///   Looks up a localized string similar to segment14_08.
         /// </summary>
-        public static string ALARM_30114 {
+        public static string ALARM_012109 {
             get {
-                return ResourceManager.GetString("ALARM_30114", resourceCulture);
+                return ResourceManager.GetString("ALARM_012109", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service M required.
+        ///   Looks up a localized string similar to T121 material missmatch.
         /// </summary>
-        public static string ALARM_30115 {
+        public static string ALARM_012110 {
             get {
-                return ResourceManager.GetString("ALARM_30115", resourceCulture);
+                return ResourceManager.GetString("ALARM_012110", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 3M required.
+        ///   Looks up a localized string similar to T121 running too long conveyor.
         /// </summary>
-        public static string ALARM_30116 {
+        public static string ALARM_012111 {
             get {
-                return ResourceManager.GetString("ALARM_30116", resourceCulture);
+                return ResourceManager.GetString("ALARM_012111", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 6M required.
+        ///   Looks up a localized string similar to T121 running too long hoist.
         /// </summary>
-        public static string ALARM_30117 {
+        public static string ALARM_012112 {
             get {
-                return ResourceManager.GetString("ALARM_30117", resourceCulture);
+                return ResourceManager.GetString("ALARM_012112", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 12M required.
+        ///   Looks up a localized string similar to T121 limit switch.
         /// </summary>
-        public static string ALARM_30118 {
+        public static string ALARM_012113 {
             get {
-                return ResourceManager.GetString("ALARM_30118", resourceCulture);
+                return ResourceManager.GetString("ALARM_012113", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 5 required.
+        ///   Looks up a localized string similar to T121 not ready (85Q1).
         /// </summary>
-        public static string ALARM_30119 {
+        public static string ALARM_012114 {
             get {
-                return ResourceManager.GetString("ALARM_30119", resourceCulture);
+                return ResourceManager.GetString("ALARM_012114", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object alarm.
+        ///   Looks up a localized string similar to MFC missmatch (segment T12B).
         /// </summary>
-        public static string ALARM_30120 {
+        public static string ALARM_012201 {
             get {
-                return ResourceManager.GetString("ALARM_30120", resourceCulture);
+                return ResourceManager.GetString("ALARM_012201", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object fault.
+        ///   Looks up a localized string similar to segment15_01.
         /// </summary>
-        public static string ALARM_30121 {
+        public static string ALARM_012202 {
             get {
-                return ResourceManager.GetString("ALARM_30121", resourceCulture);
+                return ResourceManager.GetString("ALARM_012202", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: drive object safety.
+        ///   Looks up a localized string similar to segment15_02.
         /// </summary>
-        public static string ALARM_30122 {
+        public static string ALARM_012203 {
             get {
-                return ResourceManager.GetString("ALARM_30122", resourceCulture);
+                return ResourceManager.GetString("ALARM_012203", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: execution fault.
+        ///   Looks up a localized string similar to segment15_03.
         /// </summary>
-        public static string ALARM_30123 {
+        public static string ALARM_012204 {
             get {
-                return ResourceManager.GetString("ALARM_30123", resourceCulture);
+                return ResourceManager.GetString("ALARM_012204", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: peripheral fault.
+        ///   Looks up a localized string similar to segment15_04.
         /// </summary>
-        public static string ALARM_30124 {
+        public static string ALARM_012205 {
             get {
-                return ResourceManager.GetString("ALARM_30124", resourceCulture);
+                return ResourceManager.GetString("ALARM_012205", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: tech fault.
+        ///   Looks up a localized string similar to segment15_05.
         /// </summary>
-        public static string ALARM_30125 {
+        public static string ALARM_012206 {
             get {
-                return ResourceManager.GetString("ALARM_30125", resourceCulture);
+                return ResourceManager.GetString("ALARM_012206", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault background.
+        ///   Looks up a localized string similar to segment15_06.
         /// </summary>
-        public static string ALARM_30126 {
+        public static string ALARM_012207 {
             get {
-                return ResourceManager.GetString("ALARM_30126", resourceCulture);
+                return ResourceManager.GetString("ALARM_012207", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault.
+        ///   Looks up a localized string similar to segment15_07.
         /// </summary>
-        public static string ALARM_30127 {
+        public static string ALARM_012208 {
             get {
-                return ResourceManager.GetString("ALARM_30127", resourceCulture);
+                return ResourceManager.GetString("ALARM_012208", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: application fault.
+        ///   Looks up a localized string similar to segment15_08.
         /// </summary>
-        public static string ALARM_30128 {
+        public static string ALARM_012209 {
             get {
-                return ResourceManager.GetString("ALARM_30128", resourceCulture);
+                return ResourceManager.GetString("ALARM_012209", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 230 VAC, +L01-203F1, 203F3.
+        ///   Looks up a localized string similar to T122 material missmatch.
         /// </summary>
-        public static string ALARM_40001 {
+        public static string ALARM_012210 {
             get {
-                return ResourceManager.GetString("ALARM_40001", resourceCulture);
+                return ResourceManager.GetString("ALARM_012210", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 24 VDC, +L01-204F1..204F8.
+        ///   Looks up a localized string similar to T122 running too long conveyor.
         /// </summary>
-        public static string ALARM_40002 {
+        public static string ALARM_012211 {
             get {
-                return ResourceManager.GetString("ALARM_40002", resourceCulture);
+                return ResourceManager.GetString("ALARM_012211", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch travel, +L01-208S1.
+        ///   Looks up a localized string similar to T122 running too long hoist.
         /// </summary>
-        public static string ALARM_40003 {
+        public static string ALARM_012212 {
             get {
-                return ResourceManager.GetString("ALARM_40003", resourceCulture);
+                return ResourceManager.GetString("ALARM_012212", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP over rail - doors, +L01-209K1.
+        ///   Looks up a localized string similar to T122 limit switch.
         /// </summary>
-        public static string ALARM_40004 {
+        public static string ALARM_012213 {
             get {
-                return ResourceManager.GetString("ALARM_40004", resourceCulture);
+                return ResourceManager.GetString("ALARM_012213", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, +L01-211A1.
+        ///   Looks up a localized string similar to T122 not ready (85Q1).
         /// </summary>
-        public static string ALARM_40005 {
+        public static string ALARM_012214 {
             get {
-                return ResourceManager.GetString("ALARM_40005", resourceCulture);
+                return ResourceManager.GetString("ALARM_012214", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel fan motor, +L01-220Q2.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_40006 {
+        public static string ALARM_012215 {
             get {
-                return ResourceManager.GetString("ALARM_40006", resourceCulture);
+                return ResourceManager.GetString("ALARM_012215", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection conveyor brake, +L01-221Q1.
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_40007 {
+        public static string ALARM_012216 {
             get {
-                return ResourceManager.GetString("ALARM_40007", resourceCulture);
+                return ResourceManager.GetString("ALARM_012216", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: travel.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_40008 {
+        public static string ALARM_012217 {
             get {
-                return ResourceManager.GetString("ALARM_40008", resourceCulture);
+                return ResourceManager.GetString("ALARM_012217", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: conveyor C401.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_40009 {
+        public static string ALARM_012218 {
             get {
-                return ResourceManager.GetString("ALARM_40009", resourceCulture);
+                return ResourceManager.GetString("ALARM_012218", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 startup fault.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_40010 {
+        public static string ALARM_012219 {
             get {
-                return ResourceManager.GetString("ALARM_40010", resourceCulture);
+                return ResourceManager.GetString("ALARM_012219", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travel motor running too long, +EXT-218M1.
+        ///   Looks up a localized string similar to T123 material missmatch.
         /// </summary>
-        public static string ALARM_40011 {
+        public static string ALARM_012220 {
             get {
-                return ResourceManager.GetString("ALARM_40011", resourceCulture);
+                return ResourceManager.GetString("ALARM_012220", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conveyor C401 motor running too long, +EXT-221M1.
+        ///   Looks up a localized string similar to T123 running too long conveyor.
         /// </summary>
-        public static string ALARM_40012 {
+        public static string ALARM_012221 {
             get {
-                return ResourceManager.GetString("ALARM_40012", resourceCulture);
+                return ResourceManager.GetString("ALARM_012221", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (receive direction).
+        ///   Looks up a localized string similar to T123 running too long hoist.
         /// </summary>
-        public static string ALARM_40013 {
+        public static string ALARM_012222 {
             get {
-                return ResourceManager.GetString("ALARM_40013", resourceCulture);
+                return ResourceManager.GetString("ALARM_012222", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (send direction).
+        ///   Looks up a localized string similar to T123 limit switch.
         /// </summary>
-        public static string ALARM_40014 {
+        public static string ALARM_012223 {
             get {
-                return ResourceManager.GetString("ALARM_40014", resourceCulture);
+                return ResourceManager.GetString("ALARM_012223", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (receive direction).
+        ///   Looks up a localized string similar to T123 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_40015 {
+        public static string ALARM_012224 {
             get {
-                return ResourceManager.GetString("ALARM_40015", resourceCulture);
+                return ResourceManager.GetString("ALARM_012224", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (send direction).
+        ///   Looks up a localized string similar to Spare 25.
         /// </summary>
-        public static string ALARM_40016 {
+        public static string ALARM_012225 {
             get {
-                return ResourceManager.GetString("ALARM_40016", resourceCulture);
+                return ResourceManager.GetString("ALARM_012225", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enormous value of absolute encoder or magnet switches - travel.
+        ///   Looks up a localized string similar to Spare 26.
         /// </summary>
-        public static string ALARM_40017 {
+        public static string ALARM_012226 {
             get {
-                return ResourceManager.GetString("ALARM_40017", resourceCulture);
+                return ResourceManager.GetString("ALARM_012226", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shuttle travel out of range.
+        ///   Looks up a localized string similar to Spare 27.
         /// </summary>
-        public static string ALARM_40018 {
+        public static string ALARM_012227 {
             get {
-                return ResourceManager.GetString("ALARM_40018", resourceCulture);
+                return ResourceManager.GetString("ALARM_012227", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material mismatch: place C401.
+        ///   Looks up a localized string similar to Spare 28.
         /// </summary>
-        public static string ALARM_40019 {
+        public static string ALARM_012228 {
             get {
-                return ResourceManager.GetString("ALARM_40019", resourceCulture);
+                return ResourceManager.GetString("ALARM_012228", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: bad target.
+        ///   Looks up a localized string similar to Spare 29.
         /// </summary>
-        public static string ALARM_40020 {
+        public static string ALARM_012229 {
             get {
-                return ResourceManager.GetString("ALARM_40020", resourceCulture);
+                return ResourceManager.GetString("ALARM_012229", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: deck is empty.
+        ///   Looks up a localized string similar to T124 material missmatch.
         /// </summary>
-        public static string ALARM_40021 {
+        public static string ALARM_012230 {
             get {
-                return ResourceManager.GetString("ALARM_40021", resourceCulture);
+                return ResourceManager.GetString("ALARM_012230", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Avtomatic start not possible: deck is occupied.
+        ///   Looks up a localized string similar to T124 running too long conveyor.
         /// </summary>
-        public static string ALARM_40022 {
+        public static string ALARM_012231 {
             get {
-                return ResourceManager.GetString("ALARM_40022", resourceCulture);
+                return ResourceManager.GetString("ALARM_012231", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Material movement not successful.
+        ///   Looks up a localized string similar to T124 running too long hoist.
         /// </summary>
-        public static string ALARM_40023 {
+        public static string ALARM_012232 {
             get {
-                return ResourceManager.GetString("ALARM_40023", resourceCulture);
+                return ResourceManager.GetString("ALARM_012232", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor not ready - pick.
+        ///   Looks up a localized string similar to T124 limit switch.
         /// </summary>
-        public static string ALARM_40024 {
+        public static string ALARM_012233 {
             get {
-                return ResourceManager.GetString("ALARM_40024", resourceCulture);
+                return ResourceManager.GetString("ALARM_012233", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor not ready - deposit.
+        ///   Looks up a localized string similar to T124 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_40025 {
+        public static string ALARM_012234 {
             get {
-                return ResourceManager.GetString("ALARM_40025", resourceCulture);
+                return ResourceManager.GetString("ALARM_012234", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a026.
+        ///   Looks up a localized string similar to Spare 35.
         /// </summary>
-        public static string ALARM_40026 {
+        public static string ALARM_012235 {
             get {
-                return ResourceManager.GetString("ALARM_40026", resourceCulture);
+                return ResourceManager.GetString("ALARM_012235", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a027.
+        ///   Looks up a localized string similar to Spare 36.
         /// </summary>
-        public static string ALARM_40027 {
+        public static string ALARM_012236 {
             get {
-                return ResourceManager.GetString("ALARM_40027", resourceCulture);
+                return ResourceManager.GetString("ALARM_012236", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a028.
+        ///   Looks up a localized string similar to Spare 37.
         /// </summary>
-        public static string ALARM_40028 {
+        public static string ALARM_012237 {
             get {
-                return ResourceManager.GetString("ALARM_40028", resourceCulture);
+                return ResourceManager.GetString("ALARM_012237", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a029.
+        ///   Looks up a localized string similar to Spare 38.
         /// </summary>
-        public static string ALARM_40029 {
+        public static string ALARM_012238 {
             get {
-                return ResourceManager.GetString("ALARM_40029", resourceCulture);
+                return ResourceManager.GetString("ALARM_012238", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a030.
+        ///   Looks up a localized string similar to Spare 39.
         /// </summary>
-        public static string ALARM_40030 {
+        public static string ALARM_012239 {
             get {
-                return ResourceManager.GetString("ALARM_40030", resourceCulture);
+                return ResourceManager.GetString("ALARM_012239", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a031.
+        ///   Looks up a localized string similar to T125 material missmatch.
         /// </summary>
-        public static string ALARM_40031 {
+        public static string ALARM_012240 {
             get {
-                return ResourceManager.GetString("ALARM_40031", resourceCulture);
+                return ResourceManager.GetString("ALARM_012240", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a032.
+        ///   Looks up a localized string similar to T125 running too long conveyor.
         /// </summary>
-        public static string ALARM_40032 {
+        public static string ALARM_012241 {
             get {
-                return ResourceManager.GetString("ALARM_40032", resourceCulture);
+                return ResourceManager.GetString("ALARM_012241", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a033.
+        ///   Looks up a localized string similar to T125 running too long hoist.
         /// </summary>
-        public static string ALARM_40033 {
+        public static string ALARM_012242 {
             get {
-                return ResourceManager.GetString("ALARM_40033", resourceCulture);
+                return ResourceManager.GetString("ALARM_012242", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a034.
+        ///   Looks up a localized string similar to T125 limit switch.
         /// </summary>
-        public static string ALARM_40034 {
+        public static string ALARM_012243 {
             get {
-                return ResourceManager.GetString("ALARM_40034", resourceCulture);
+                return ResourceManager.GetString("ALARM_012243", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a035.
+        ///   Looks up a localized string similar to T125 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_40035 {
+        public static string ALARM_012244 {
             get {
-                return ResourceManager.GetString("ALARM_40035", resourceCulture);
+                return ResourceManager.GetString("ALARM_012244", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a036.
+        ///   Looks up a localized string similar to MFC missmatch (segment T32).
         /// </summary>
-        public static string ALARM_40036 {
+        public static string ALARM_021101 {
             get {
-                return ResourceManager.GetString("ALARM_40036", resourceCulture);
+                return ResourceManager.GetString("ALARM_021101", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a037.
+        ///   Looks up a localized string similar to segment16_01.
         /// </summary>
-        public static string ALARM_40037 {
+        public static string ALARM_021102 {
             get {
-                return ResourceManager.GetString("ALARM_40037", resourceCulture);
+                return ResourceManager.GetString("ALARM_021102", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a038.
+        ///   Looks up a localized string similar to segment16_02.
         /// </summary>
-        public static string ALARM_40038 {
+        public static string ALARM_021103 {
             get {
-                return ResourceManager.GetString("ALARM_40038", resourceCulture);
+                return ResourceManager.GetString("ALARM_021103", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a039.
+        ///   Looks up a localized string similar to segment16_03.
         /// </summary>
-        public static string ALARM_40039 {
+        public static string ALARM_021104 {
             get {
-                return ResourceManager.GetString("ALARM_40039", resourceCulture);
+                return ResourceManager.GetString("ALARM_021104", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a040.
+        ///   Looks up a localized string similar to segment16_04.
         /// </summary>
-        public static string ALARM_40040 {
+        public static string ALARM_021105 {
             get {
-                return ResourceManager.GetString("ALARM_40040", resourceCulture);
+                return ResourceManager.GetString("ALARM_021105", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a041.
+        ///   Looks up a localized string similar to segment16_05.
         /// </summary>
-        public static string ALARM_40041 {
+        public static string ALARM_021106 {
             get {
-                return ResourceManager.GetString("ALARM_40041", resourceCulture);
+                return ResourceManager.GetString("ALARM_021106", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a042.
+        ///   Looks up a localized string similar to segment16_06.
         /// </summary>
-        public static string ALARM_40042 {
+        public static string ALARM_021107 {
             get {
-                return ResourceManager.GetString("ALARM_40042", resourceCulture);
+                return ResourceManager.GetString("ALARM_021107", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a043.
+        ///   Looks up a localized string similar to segment16_07.
         /// </summary>
-        public static string ALARM_40043 {
+        public static string ALARM_021108 {
             get {
-                return ResourceManager.GetString("ALARM_40043", resourceCulture);
+                return ResourceManager.GetString("ALARM_021108", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a044.
+        ///   Looks up a localized string similar to segment16_08.
         /// </summary>
-        public static string ALARM_40044 {
+        public static string ALARM_021109 {
             get {
-                return ResourceManager.GetString("ALARM_40044", resourceCulture);
+                return ResourceManager.GetString("ALARM_021109", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a045.
+        ///   Looks up a localized string similar to T211 material missmatch.
         /// </summary>
-        public static string ALARM_40045 {
+        public static string ALARM_021110 {
             get {
-                return ResourceManager.GetString("ALARM_40045", resourceCulture);
+                return ResourceManager.GetString("ALARM_021110", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a046.
+        ///   Looks up a localized string similar to T211 running too long conveyor.
         /// </summary>
-        public static string ALARM_40046 {
+        public static string ALARM_021111 {
             get {
-                return ResourceManager.GetString("ALARM_40046", resourceCulture);
+                return ResourceManager.GetString("ALARM_021111", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a047.
+        ///   Looks up a localized string similar to T211 running too long hoist.
         /// </summary>
-        public static string ALARM_40047 {
+        public static string ALARM_021112 {
             get {
-                return ResourceManager.GetString("ALARM_40047", resourceCulture);
+                return ResourceManager.GetString("ALARM_021112", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a048.
+        ///   Looks up a localized string similar to T211 limit switch.
         /// </summary>
-        public static string ALARM_40048 {
+        public static string ALARM_021113 {
             get {
-                return ResourceManager.GetString("ALARM_40048", resourceCulture);
+                return ResourceManager.GetString("ALARM_021113", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a049.
+        ///   Looks up a localized string similar to T211 not ready (85Q1).
         /// </summary>
-        public static string ALARM_40049 {
+        public static string ALARM_021114 {
             get {
-                return ResourceManager.GetString("ALARM_40049", resourceCulture);
+                return ResourceManager.GetString("ALARM_021114", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a050.
+        ///   Looks up a localized string similar to Spare 15.
         /// </summary>
-        public static string ALARM_40050 {
+        public static string ALARM_021115 {
             get {
-                return ResourceManager.GetString("ALARM_40050", resourceCulture);
+                return ResourceManager.GetString("ALARM_021115", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a051.
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_40051 {
+        public static string ALARM_021116 {
             get {
-                return ResourceManager.GetString("ALARM_40051", resourceCulture);
+                return ResourceManager.GetString("ALARM_021116", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a052.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_40052 {
+        public static string ALARM_021117 {
             get {
-                return ResourceManager.GetString("ALARM_40052", resourceCulture);
+                return ResourceManager.GetString("ALARM_021117", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a053.
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_40053 {
+        public static string ALARM_021118 {
             get {
-                return ResourceManager.GetString("ALARM_40053", resourceCulture);
+                return ResourceManager.GetString("ALARM_021118", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a054.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_40054 {
+        public static string ALARM_021119 {
             get {
-                return ResourceManager.GetString("ALARM_40054", resourceCulture);
+                return ResourceManager.GetString("ALARM_021119", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a055.
+        ///   Looks up a localized string similar to T212 material missmatch.
         /// </summary>
-        public static string ALARM_40055 {
+        public static string ALARM_021120 {
             get {
-                return ResourceManager.GetString("ALARM_40055", resourceCulture);
+                return ResourceManager.GetString("ALARM_021120", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a056.
+        ///   Looks up a localized string similar to T212 running too long conveyor.
         /// </summary>
-        public static string ALARM_40056 {
+        public static string ALARM_021121 {
             get {
-                return ResourceManager.GetString("ALARM_40056", resourceCulture);
+                return ResourceManager.GetString("ALARM_021121", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a057.
+        ///   Looks up a localized string similar to T212 running too long hoist.
         /// </summary>
-        public static string ALARM_40057 {
+        public static string ALARM_021122 {
             get {
-                return ResourceManager.GetString("ALARM_40057", resourceCulture);
+                return ResourceManager.GetString("ALARM_021122", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a058.
+        ///   Looks up a localized string similar to T212 limit switch.
         /// </summary>
-        public static string ALARM_40058 {
+        public static string ALARM_021123 {
             get {
-                return ResourceManager.GetString("ALARM_40058", resourceCulture);
+                return ResourceManager.GetString("ALARM_021123", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a059.
+        ///   Looks up a localized string similar to T212 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_40059 {
+        public static string ALARM_021124 {
             get {
-                return ResourceManager.GetString("ALARM_40059", resourceCulture);
+                return ResourceManager.GetString("ALARM_021124", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a060.
+        ///   Looks up a localized string similar to Spare 25.
         /// </summary>
-        public static string ALARM_40060 {
+        public static string ALARM_021125 {
             get {
-                return ResourceManager.GetString("ALARM_40060", resourceCulture);
+                return ResourceManager.GetString("ALARM_021125", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a061.
+        ///   Looks up a localized string similar to Spare 26.
         /// </summary>
-        public static string ALARM_40061 {
+        public static string ALARM_021126 {
             get {
-                return ResourceManager.GetString("ALARM_40061", resourceCulture);
+                return ResourceManager.GetString("ALARM_021126", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a062.
+        ///   Looks up a localized string similar to Spare 27.
         /// </summary>
-        public static string ALARM_40062 {
+        public static string ALARM_021127 {
             get {
-                return ResourceManager.GetString("ALARM_40062", resourceCulture);
+                return ResourceManager.GetString("ALARM_021127", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a063.
+        ///   Looks up a localized string similar to Spare 28.
         /// </summary>
-        public static string ALARM_40063 {
+        public static string ALARM_021128 {
             get {
-                return ResourceManager.GetString("ALARM_40063", resourceCulture);
+                return ResourceManager.GetString("ALARM_021128", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a064.
+        ///   Looks up a localized string similar to Spare 29.
         /// </summary>
-        public static string ALARM_40064 {
+        public static string ALARM_021129 {
             get {
-                return ResourceManager.GetString("ALARM_40064", resourceCulture);
+                return ResourceManager.GetString("ALARM_021129", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and transporter 12.
+        ///   Looks up a localized string similar to T213 material missmatch.
         /// </summary>
-        public static string ALARM_40065 {
+        public static string ALARM_021130 {
             get {
-                return ResourceManager.GetString("ALARM_40065", resourceCulture);
+                return ResourceManager.GetString("ALARM_021130", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and transporter 122.
+        ///   Looks up a localized string similar to T213 running too long conveyor.
         /// </summary>
-        public static string ALARM_40066 {
+        public static string ALARM_021131 {
             get {
-                return ResourceManager.GetString("ALARM_40066", resourceCulture);
+                return ResourceManager.GetString("ALARM_021131", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and transporter 211.
+        ///   Looks up a localized string similar to T213 running too long hoist.
         /// </summary>
-        public static string ALARM_40067 {
+        public static string ALARM_021132 {
             get {
-                return ResourceManager.GetString("ALARM_40067", resourceCulture);
+                return ResourceManager.GetString("ALARM_021132", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and transporter 222.
+        ///   Looks up a localized string similar to T213 limit switch.
         /// </summary>
-        public static string ALARM_40068 {
+        public static string ALARM_021133 {
             get {
-                return ResourceManager.GetString("ALARM_40068", resourceCulture);
+                return ResourceManager.GetString("ALARM_021133", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and transporter 311.
+        ///   Looks up a localized string similar to T213 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_40069 {
+        public static string ALARM_021134 {
             get {
-                return ResourceManager.GetString("ALARM_40069", resourceCulture);
+                return ResourceManager.GetString("ALARM_021134", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and transporter 21.
+        ///   Looks up a localized string similar to Spare 35.
         /// </summary>
-        public static string ALARM_40070 {
+        public static string ALARM_021135 {
             get {
-                return ResourceManager.GetString("ALARM_40070", resourceCulture);
+                return ResourceManager.GetString("ALARM_021135", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearence between shuttle and conveyors - path not clear.
+        ///   Looks up a localized string similar to Spare 36.
         /// </summary>
-        public static string ALARM_40071 {
+        public static string ALARM_021136 {
             get {
-                return ResourceManager.GetString("ALARM_40071", resourceCulture);
+                return ResourceManager.GetString("ALARM_021136", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, CP101.
+        ///   Looks up a localized string similar to Spare 37.
         /// </summary>
-        public static string ALARM_40072 {
+        public static string ALARM_021137 {
             get {
-                return ResourceManager.GetString("ALARM_40072", resourceCulture);
+                return ResourceManager.GetString("ALARM_021137", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, CP201.
+        ///   Looks up a localized string similar to Spare 38.
         /// </summary>
-        public static string ALARM_40073 {
+        public static string ALARM_021138 {
             get {
-                return ResourceManager.GetString("ALARM_40073", resourceCulture);
+                return ResourceManager.GetString("ALARM_021138", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, CP301.
+        ///   Looks up a localized string similar to Spare 39.
         /// </summary>
-        public static string ALARM_40074 {
+        public static string ALARM_021139 {
             get {
-                return ResourceManager.GetString("ALARM_40074", resourceCulture);
+                return ResourceManager.GetString("ALARM_021139", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, CP401.
+        ///   Looks up a localized string similar to T214 material missmatch.
         /// </summary>
-        public static string ALARM_40075 {
+        public static string ALARM_021140 {
             get {
-                return ResourceManager.GetString("ALARM_40075", resourceCulture);
+                return ResourceManager.GetString("ALARM_021140", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a076.
+        ///   Looks up a localized string similar to T214 running too long conveyor.
         /// </summary>
-        public static string ALARM_40076 {
+        public static string ALARM_021141 {
             get {
-                return ResourceManager.GetString("ALARM_40076", resourceCulture);
+                return ResourceManager.GetString("ALARM_021141", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a077.
+        ///   Looks up a localized string similar to T214 running too long hoist.
         /// </summary>
-        public static string ALARM_40077 {
+        public static string ALARM_021142 {
             get {
-                return ResourceManager.GetString("ALARM_40077", resourceCulture);
+                return ResourceManager.GetString("ALARM_021142", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a078.
+        ///   Looks up a localized string similar to T214 limit switch.
         /// </summary>
-        public static string ALARM_40078 {
+        public static string ALARM_021143 {
             get {
-                return ResourceManager.GetString("ALARM_40078", resourceCulture);
+                return ResourceManager.GetString("ALARM_021143", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Door to shuttle open - CP401.
+        ///   Looks up a localized string similar to T214 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_40079 {
+        public static string ALARM_021144 {
             get {
-                return ResourceManager.GetString("ALARM_40079", resourceCulture);
+                return ResourceManager.GetString("ALARM_021144", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Door to C101 open.
+        ///   Looks up a localized string similar to MFC missmatch (segment T21B).
         /// </summary>
-        public static string ALARM_40080 {
+        public static string ALARM_021201 {
             get {
-                return ResourceManager.GetString("ALARM_40080", resourceCulture);
+                return ResourceManager.GetString("ALARM_021201", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Door to C201 open.
+        ///   Looks up a localized string similar to segment17_01.
         /// </summary>
-        public static string ALARM_40081 {
+        public static string ALARM_021202 {
             get {
-                return ResourceManager.GetString("ALARM_40081", resourceCulture);
+                return ResourceManager.GetString("ALARM_021202", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Door to C301 open.
+        ///   Looks up a localized string similar to segment17_02.
         /// </summary>
-        public static string ALARM_40082 {
+        public static string ALARM_021203 {
             get {
-                return ResourceManager.GetString("ALARM_40082", resourceCulture);
+                return ResourceManager.GetString("ALARM_021203", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG triggered, T10.
+        ///   Looks up a localized string similar to segment17_03.
         /// </summary>
-        public static string ALARM_40083 {
+        public static string ALARM_021204 {
             get {
-                return ResourceManager.GetString("ALARM_40083", resourceCulture);
+                return ResourceManager.GetString("ALARM_021204", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG triggered, T110.
+        ///   Looks up a localized string similar to segment17_04.
         /// </summary>
-        public static string ALARM_40084 {
+        public static string ALARM_021205 {
             get {
-                return ResourceManager.GetString("ALARM_40084", resourceCulture);
+                return ResourceManager.GetString("ALARM_021205", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG triggered, T21.
+        ///   Looks up a localized string similar to segment17_05.
         /// </summary>
-        public static string ALARM_40085 {
+        public static string ALARM_021206 {
             get {
-                return ResourceManager.GetString("ALARM_40085", resourceCulture);
+                return ResourceManager.GetString("ALARM_021206", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a086.
+        ///   Looks up a localized string similar to segment17_06.
         /// </summary>
-        public static string ALARM_40086 {
+        public static string ALARM_021207 {
             get {
-                return ResourceManager.GetString("ALARM_40086", resourceCulture);
+                return ResourceManager.GetString("ALARM_021207", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a087.
+        ///   Looks up a localized string similar to segment17_07.
         /// </summary>
-        public static string ALARM_40087 {
+        public static string ALARM_021208 {
             get {
-                return ResourceManager.GetString("ALARM_40087", resourceCulture);
+                return ResourceManager.GetString("ALARM_021208", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a088.
+        ///   Looks up a localized string similar to segment17_08.
         /// </summary>
-        public static string ALARM_40088 {
+        public static string ALARM_021209 {
             get {
-                return ResourceManager.GetString("ALARM_40088", resourceCulture);
+                return ResourceManager.GetString("ALARM_021209", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a089.
+        ///   Looks up a localized string similar to T215 material missmatch.
         /// </summary>
-        public static string ALARM_40089 {
+        public static string ALARM_021210 {
             get {
-                return ResourceManager.GetString("ALARM_40089", resourceCulture);
+                return ResourceManager.GetString("ALARM_021210", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Barcode mismatch: deck.
+        ///   Looks up a localized string similar to T215 running too long conveyor.
         /// </summary>
-        public static string ALARM_40090 {
+        public static string ALARM_021211 {
             get {
-                return ResourceManager.GetString("ALARM_40090", resourceCulture);
+                return ResourceManager.GetString("ALARM_021211", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFCS: unknown error.
+        ///   Looks up a localized string similar to T215 running too long hoist.
         /// </summary>
-        public static string ALARM_40091 {
+        public static string ALARM_021212 {
             get {
-                return ResourceManager.GetString("ALARM_40091", resourceCulture);
+                return ResourceManager.GetString("ALARM_021212", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFCS: synchronization failure.
+        ///   Looks up a localized string similar to T215 limit switch.
         /// </summary>
-        public static string ALARM_40092 {
+        public static string ALARM_021213 {
             get {
-                return ResourceManager.GetString("ALARM_40092", resourceCulture);
+                return ResourceManager.GetString("ALARM_021213", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a093.
+        ///   Looks up a localized string similar to T215 not ready (85Q1).
         /// </summary>
-        public static string ALARM_40093 {
+        public static string ALARM_021214 {
             get {
-                return ResourceManager.GetString("ALARM_40093", resourceCulture);
+                return ResourceManager.GetString("ALARM_021214", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a094.
+        ///   Looks up a localized string similar to MFC missmatch (segment T22A).
         /// </summary>
-        public static string ALARM_40094 {
+        public static string ALARM_022101 {
             get {
-                return ResourceManager.GetString("ALARM_40094", resourceCulture);
+                return ResourceManager.GetString("ALARM_022101", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a095.
+        ///   Looks up a localized string similar to segment18_01.
         /// </summary>
-        public static string ALARM_40095 {
+        public static string ALARM_022102 {
             get {
-                return ResourceManager.GetString("ALARM_40095", resourceCulture);
+                return ResourceManager.GetString("ALARM_022102", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a096.
+        ///   Looks up a localized string similar to segment18_02.
         /// </summary>
-        public static string ALARM_40096 {
+        public static string ALARM_022103 {
             get {
-                return ResourceManager.GetString("ALARM_40096", resourceCulture);
+                return ResourceManager.GetString("ALARM_022103", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a097.
+        ///   Looks up a localized string similar to segment18_03.
         /// </summary>
-        public static string ALARM_40097 {
+        public static string ALARM_022104 {
             get {
-                return ResourceManager.GetString("ALARM_40097", resourceCulture);
+                return ResourceManager.GetString("ALARM_022104", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a098.
+        ///   Looks up a localized string similar to segment18_04.
         /// </summary>
-        public static string ALARM_40098 {
+        public static string ALARM_022105 {
             get {
-                return ResourceManager.GetString("ALARM_40098", resourceCulture);
+                return ResourceManager.GetString("ALARM_022105", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a099.
+        ///   Looks up a localized string similar to segment18_05.
         /// </summary>
-        public static string ALARM_40099 {
+        public static string ALARM_022106 {
             get {
-                return ResourceManager.GetString("ALARM_40099", resourceCulture);
+                return ResourceManager.GetString("ALARM_022106", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0100.
+        ///   Looks up a localized string similar to segment18_06.
         /// </summary>
-        public static string ALARM_40100 {
+        public static string ALARM_022107 {
             get {
-                return ResourceManager.GetString("ALARM_40100", resourceCulture);
+                return ResourceManager.GetString("ALARM_022107", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0101.
+        ///   Looks up a localized string similar to segment18_07.
         /// </summary>
-        public static string ALARM_40101 {
+        public static string ALARM_022108 {
             get {
-                return ResourceManager.GetString("ALARM_40101", resourceCulture);
+                return ResourceManager.GetString("ALARM_022108", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0102.
+        ///   Looks up a localized string similar to segment18_08.
         /// </summary>
-        public static string ALARM_40102 {
+        public static string ALARM_022109 {
             get {
-                return ResourceManager.GetString("ALARM_40102", resourceCulture);
+                return ResourceManager.GetString("ALARM_022109", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0103.
+        ///   Looks up a localized string similar to T221 material missmatch.
         /// </summary>
-        public static string ALARM_40103 {
+        public static string ALARM_022110 {
             get {
-                return ResourceManager.GetString("ALARM_40103", resourceCulture);
+                return ResourceManager.GetString("ALARM_022110", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0104.
+        ///   Looks up a localized string similar to T221 running too long conveyor.
         /// </summary>
-        public static string ALARM_40104 {
+        public static string ALARM_022111 {
             get {
-                return ResourceManager.GetString("ALARM_40104", resourceCulture);
+                return ResourceManager.GetString("ALARM_022111", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0105.
+        ///   Looks up a localized string similar to T221 running too long hoist.
         /// </summary>
-        public static string ALARM_40105 {
+        public static string ALARM_022112 {
             get {
-                return ResourceManager.GetString("ALARM_40105", resourceCulture);
+                return ResourceManager.GetString("ALARM_022112", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0106.
+        ///   Looks up a localized string similar to T221 limit switch.
         /// </summary>
-        public static string ALARM_40106 {
+        public static string ALARM_022113 {
             get {
-                return ResourceManager.GetString("ALARM_40106", resourceCulture);
+                return ResourceManager.GetString("ALARM_022113", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0107.
+        ///   Looks up a localized string similar to T221 not ready (85Q1).
         /// </summary>
-        public static string ALARM_40107 {
+        public static string ALARM_022114 {
             get {
-                return ResourceManager.GetString("ALARM_40107", resourceCulture);
+                return ResourceManager.GetString("ALARM_022114", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0108.
+        ///   Looks up a localized string similar to MFC missmatch (segment T22B).
         /// </summary>
-        public static string ALARM_40108 {
+        public static string ALARM_022201 {
             get {
-                return ResourceManager.GetString("ALARM_40108", resourceCulture);
+                return ResourceManager.GetString("ALARM_022201", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0109.
+        ///   Looks up a localized string similar to segment19_01.
         /// </summary>
-        public static string ALARM_40109 {
+        public static string ALARM_022202 {
             get {
-                return ResourceManager.GetString("ALARM_40109", resourceCulture);
+                return ResourceManager.GetString("ALARM_022202", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0110.
+        ///   Looks up a localized string similar to segment19_02.
         /// </summary>
-        public static string ALARM_40110 {
+        public static string ALARM_022203 {
             get {
-                return ResourceManager.GetString("ALARM_40110", resourceCulture);
+                return ResourceManager.GetString("ALARM_022203", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0111.
+        ///   Looks up a localized string similar to segment19_03.
         /// </summary>
-        public static string ALARM_40111 {
+        public static string ALARM_022204 {
             get {
-                return ResourceManager.GetString("ALARM_40111", resourceCulture);
+                return ResourceManager.GetString("ALARM_022204", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0112.
+        ///   Looks up a localized string similar to segment19_04.
         /// </summary>
-        public static string ALARM_40112 {
+        public static string ALARM_022205 {
             get {
-                return ResourceManager.GetString("ALARM_40112", resourceCulture);
+                return ResourceManager.GetString("ALARM_022205", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0113.
+        ///   Looks up a localized string similar to segment19_05.
         /// </summary>
-        public static string ALARM_40113 {
+        public static string ALARM_022206 {
             get {
-                return ResourceManager.GetString("ALARM_40113", resourceCulture);
+                return ResourceManager.GetString("ALARM_022206", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to a0114.
+        ///   Looks up a localized string similar to segment19_06.
         /// </summary>
-        public static string ALARM_40114 {
+        public static string ALARM_022207 {
             get {
-                return ResourceManager.GetString("ALARM_40114", resourceCulture);
+                return ResourceManager.GetString("ALARM_022207", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service M required.
+        ///   Looks up a localized string similar to segment19_07.
         /// </summary>
-        public static string ALARM_40115 {
+        public static string ALARM_022208 {
             get {
-                return ResourceManager.GetString("ALARM_40115", resourceCulture);
+                return ResourceManager.GetString("ALARM_022208", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 3M required.
+        ///   Looks up a localized string similar to segment19_08.
         /// </summary>
-        public static string ALARM_40116 {
+        public static string ALARM_022209 {
             get {
-                return ResourceManager.GetString("ALARM_40116", resourceCulture);
+                return ResourceManager.GetString("ALARM_022209", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 6M required.
+        ///   Looks up a localized string similar to T222 material missmatch.
         /// </summary>
-        public static string ALARM_40117 {
+        public static string ALARM_022210 {
             get {
-                return ResourceManager.GetString("ALARM_40117", resourceCulture);
+                return ResourceManager.GetString("ALARM_022210", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 12M required.
+        ///   Looks up a localized string similar to T222 running too long conveyor.
         /// </summary>
-        public static string ALARM_40118 {
+        public static string ALARM_022211 {
             get {
-                return ResourceManager.GetString("ALARM_40118", resourceCulture);
+                return ResourceManager.GetString("ALARM_022211", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Service 5 required.
+        ///   Looks up a localized string similar to T222 running too long hoist.
         /// </summary>
-        public static string ALARM_40119 {
+        public static string ALARM_022212 {
             get {
-                return ResourceManager.GetString("ALARM_40119", resourceCulture);
+                return ResourceManager.GetString("ALARM_022212", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: DO Alarm.
+        ///   Looks up a localized string similar to T222 limit switch.
         /// </summary>
-        public static string ALARM_40120 {
+        public static string ALARM_022213 {
             get {
-                return ResourceManager.GetString("ALARM_40120", resourceCulture);
+                return ResourceManager.GetString("ALARM_022213", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: DO fault.
+        ///   Looks up a localized string similar to T222 not ready (85Q1).
         /// </summary>
-        public static string ALARM_40121 {
+        public static string ALARM_022214 {
             get {
-                return ResourceManager.GetString("ALARM_40121", resourceCulture);
+                return ResourceManager.GetString("ALARM_022214", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: DO safety.
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_40122 {
+        public static string ALARM_022215 {
             get {
-                return ResourceManager.GetString("ALARM_40122", resourceCulture);
+                return ResourceManager.GetString("ALARM_022215", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: execution fault.
+        ///   Looks up a localized string similar to Spare 16.
         /// </summary>
-        public static string ALARM_40123 {
+        public static string ALARM_022216 {
             get {
-                return ResourceManager.GetString("ALARM_40123", resourceCulture);
+                return ResourceManager.GetString("ALARM_022216", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: peripheral fault.
+        ///   Looks up a localized string similar to Spare 17.
         /// </summary>
-        public static string ALARM_40124 {
+        public static string ALARM_022217 {
             get {
-                return ResourceManager.GetString("ALARM_40124", resourceCulture);
+                return ResourceManager.GetString("ALARM_022217", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: tech fault    .
+        ///   Looks up a localized string similar to Spare 18.
         /// </summary>
-        public static string ALARM_40125 {
+        public static string ALARM_022218 {
             get {
-                return ResourceManager.GetString("ALARM_40125", resourceCulture);
+                return ResourceManager.GetString("ALARM_022218", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault background    .
+        ///   Looks up a localized string similar to Spare 19.
         /// </summary>
-        public static string ALARM_40126 {
+        public static string ALARM_022219 {
             get {
-                return ResourceManager.GetString("ALARM_40126", resourceCulture);
+                return ResourceManager.GetString("ALARM_022219", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault    .
+        ///   Looks up a localized string similar to T223 material missmatch.
         /// </summary>
-        public static string ALARM_40127 {
+        public static string ALARM_022220 {
             get {
-                return ResourceManager.GetString("ALARM_40127", resourceCulture);
+                return ResourceManager.GetString("ALARM_022220", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 message: application fault.
+        ///   Looks up a localized string similar to T223 running too long conveyor.
         /// </summary>
-        public static string ALARM_40128 {
+        public static string ALARM_022221 {
             get {
-                return ResourceManager.GetString("ALARM_40128", resourceCulture);
+                return ResourceManager.GetString("ALARM_022221", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 230 VAC, +L01-303F1, 303F2.
+        ///   Looks up a localized string similar to T223 running too long hoist.
         /// </summary>
-        public static string ALARM_50001 {
+        public static string ALARM_022222 {
             get {
-                return ResourceManager.GetString("ALARM_50001", resourceCulture);
+                return ResourceManager.GetString("ALARM_022222", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fuse control 24 VDC, +L01-304F2..304F8.
+        ///   Looks up a localized string similar to T223 limit switch.
         /// </summary>
-        public static string ALARM_50002 {
+        public static string ALARM_022223 {
             get {
-                return ResourceManager.GetString("ALARM_50002", resourceCulture);
+                return ResourceManager.GetString("ALARM_022223", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Limit switch travel, +L01-308S1.
+        ///   Looks up a localized string similar to T223 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_50003 {
+        public static string ALARM_022224 {
             get {
-                return ResourceManager.GetString("ALARM_50003", resourceCulture);
+                return ResourceManager.GetString("ALARM_022224", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP over rail - doors, +L01-309K1.
+        ///   Looks up a localized string similar to Spare 25.
         /// </summary>
-        public static string ALARM_50004 {
+        public static string ALARM_022225 {
             get {
-                return ResourceManager.GetString("ALARM_50004", resourceCulture);
+                return ResourceManager.GetString("ALARM_022225", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button, +L01-309S1.
+        ///   Looks up a localized string similar to Spare 26.
         /// </summary>
-        public static string ALARM_50005 {
+        public static string ALARM_022226 {
             get {
-                return ResourceManager.GetString("ALARM_50005", resourceCulture);
+                return ResourceManager.GetString("ALARM_022226", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection travel fan motor, +L01-320Q2.
+        ///   Looks up a localized string similar to Spare 27.
         /// </summary>
-        public static string ALARM_50006 {
+        public static string ALARM_022227 {
             get {
-                return ResourceManager.GetString("ALARM_50006", resourceCulture);
+                return ResourceManager.GetString("ALARM_022227", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection conveyor brake - C501, +L01-321Q1.
+        ///   Looks up a localized string similar to Spare 28.
         /// </summary>
-        public static string ALARM_50007 {
+        public static string ALARM_022228 {
             get {
-                return ResourceManager.GetString("ALARM_50007", resourceCulture);
+                return ResourceManager.GetString("ALARM_022228", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection inclination brake - C501, +L01-322Q1.
+        ///   Looks up a localized string similar to Spare 29.
         /// </summary>
-        public static string ALARM_50008 {
+        public static string ALARM_022229 {
             get {
-                return ResourceManager.GetString("ALARM_50008", resourceCulture);
+                return ResourceManager.GetString("ALARM_022229", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection conveyor brake - C502, +L01-324Q1.
+        ///   Looks up a localized string similar to T224 material missmatch.
         /// </summary>
-        public static string ALARM_50009 {
+        public static string ALARM_022230 {
             get {
-                return ResourceManager.GetString("ALARM_50009", resourceCulture);
+                return ResourceManager.GetString("ALARM_022230", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Protection inclination brake - C502, +L01-325Q1.
+        ///   Looks up a localized string similar to T224 running too long conveyor.
         /// </summary>
-        public static string ALARM_50010 {
+        public static string ALARM_022231 {
             get {
-                return ResourceManager.GetString("ALARM_50010", resourceCulture);
+                return ResourceManager.GetString("ALARM_022231", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between trolley and left rack, +L01-334B5.
+        ///   Looks up a localized string similar to T224 running too long hoist.
         /// </summary>
-        public static string ALARM_50011 {
+        public static string ALARM_022232 {
             get {
-                return ResourceManager.GetString("ALARM_50011", resourceCulture);
+                return ResourceManager.GetString("ALARM_022232", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to No clearance between trolley and right rack, +L01-334B6.
+        ///   Looks up a localized string similar to T224 limit switch.
         /// </summary>
-        public static string ALARM_50012 {
+        public static string ALARM_022233 {
             get {
-                return ResourceManager.GetString("ALARM_50012", resourceCulture);
+                return ResourceManager.GetString("ALARM_022233", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: travel.
+        ///   Looks up a localized string similar to T224 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_50013 {
+        public static string ALARM_022234 {
             get {
-                return ResourceManager.GetString("ALARM_50013", resourceCulture);
+                return ResourceManager.GetString("ALARM_022234", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: inclination C501.
+        ///   Looks up a localized string similar to Spare 35.
         /// </summary>
-        public static string ALARM_50014 {
+        public static string ALARM_022235 {
             get {
-                return ResourceManager.GetString("ALARM_50014", resourceCulture);
+                return ResourceManager.GetString("ALARM_022235", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: inclination C502.
+        ///   Looks up a localized string similar to Spare 36.
         /// </summary>
-        public static string ALARM_50015 {
+        public static string ALARM_022236 {
             get {
-                return ResourceManager.GetString("ALARM_50015", resourceCulture);
+                return ResourceManager.GetString("ALARM_022236", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: conveyor C501.
+        ///   Looks up a localized string similar to Spare 37.
         /// </summary>
-        public static string ALARM_50016 {
+        public static string ALARM_022237 {
             get {
-                return ResourceManager.GetString("ALARM_50016", resourceCulture);
+                return ResourceManager.GetString("ALARM_022237", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Axis error: conveyor C502.
+        ///   Looks up a localized string similar to Spare 38.
         /// </summary>
-        public static string ALARM_50017 {
+        public static string ALARM_022238 {
             get {
-                return ResourceManager.GetString("ALARM_50017", resourceCulture);
+                return ResourceManager.GetString("ALARM_022238", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to D425 startup fault.
+        ///   Looks up a localized string similar to Spare 39.
         /// </summary>
-        public static string ALARM_50018 {
+        public static string ALARM_022239 {
             get {
-                return ResourceManager.GetString("ALARM_50018", resourceCulture);
+                return ResourceManager.GetString("ALARM_022239", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Travel motor running too long, +EXT-318M1.
+        ///   Looks up a localized string similar to T225 material missmatch.
         /// </summary>
-        public static string ALARM_50019 {
+        public static string ALARM_022240 {
             get {
-                return ResourceManager.GetString("ALARM_50019", resourceCulture);
+                return ResourceManager.GetString("ALARM_022240", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inclination C501 motor running too long, +EXT-322M1.
+        ///   Looks up a localized string similar to T225 running too long conveyor.
         /// </summary>
-        public static string ALARM_50020 {
+        public static string ALARM_022241 {
             get {
-                return ResourceManager.GetString("ALARM_50020", resourceCulture);
+                return ResourceManager.GetString("ALARM_022241", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inclination C502 motor running too long, +EXT-325M1.
+        ///   Looks up a localized string similar to T225 running too long hoist.
         /// </summary>
-        public static string ALARM_50021 {
+        public static string ALARM_022242 {
             get {
-                return ResourceManager.GetString("ALARM_50021", resourceCulture);
+                return ResourceManager.GetString("ALARM_022242", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conveyor C501 motor running too long, +EXT-321M1.
+        ///   Looks up a localized string similar to T225 limit switch.
         /// </summary>
-        public static string ALARM_50022 {
+        public static string ALARM_022243 {
             get {
-                return ResourceManager.GetString("ALARM_50022", resourceCulture);
+                return ResourceManager.GetString("ALARM_022243", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Conveyor C502 motor running too long, +EXT-324M1.
+        ///   Looks up a localized string similar to T225 not ready (43Q1, 44F1, frequency inverter).
         /// </summary>
-        public static string ALARM_50023 {
+        public static string ALARM_022244 {
             get {
-                return ResourceManager.GetString("ALARM_50023", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (receive direction).
-        /// </summary>
-        public static string ALARM_50024 {
-            get {
-                return ResourceManager.GetString("ALARM_50024", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Communication error with transport system PLC (send direction).
-        /// </summary>
-        public static string ALARM_50025 {
-            get {
-                return ResourceManager.GetString("ALARM_50025", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (receive direction).
-        /// </summary>
-        public static string ALARM_50026 {
-            get {
-                return ResourceManager.GetString("ALARM_50026", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Communication error with MFCS (send direction).
-        /// </summary>
-        public static string ALARM_50027 {
-            get {
-                return ResourceManager.GetString("ALARM_50027", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enormous value of absolute encoder or magnet switches - travel.
-        /// </summary>
-        public static string ALARM_50028 {
-            get {
-                return ResourceManager.GetString("ALARM_50028", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Trolley travel out of range.
-        /// </summary>
-        public static string ALARM_50029 {
-            get {
-                return ResourceManager.GetString("ALARM_50029", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material mismatch: place C501.
-        /// </summary>
-        public static string ALARM_50030 {
-            get {
-                return ResourceManager.GetString("ALARM_50030", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material missmatch: place C502.
-        /// </summary>
-        public static string ALARM_50031 {
-            get {
-                return ResourceManager.GetString("ALARM_50031", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inclinaction referencing for too long - C501.
-        /// </summary>
-        public static string ALARM_50032 {
-            get {
-                return ResourceManager.GetString("ALARM_50032", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inclination referencing for too long - C502.
-        /// </summary>
-        public static string ALARM_50033 {
-            get {
-                return ResourceManager.GetString("ALARM_50033", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Protection travel motor brake, +L01-320Q1.
-        /// </summary>
-        public static string ALARM_50034 {
-            get {
-                return ResourceManager.GetString("ALARM_50034", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a035.
-        /// </summary>
-        public static string ALARM_50035 {
-            get {
-                return ResourceManager.GetString("ALARM_50035", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a036.
-        /// </summary>
-        public static string ALARM_50036 {
-            get {
-                return ResourceManager.GetString("ALARM_50036", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a037.
-        /// </summary>
-        public static string ALARM_50037 {
-            get {
-                return ResourceManager.GetString("ALARM_50037", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a038.
-        /// </summary>
-        public static string ALARM_50038 {
-            get {
-                return ResourceManager.GetString("ALARM_50038", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a039.
-        /// </summary>
-        public static string ALARM_50039 {
-            get {
-                return ResourceManager.GetString("ALARM_50039", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a040.
-        /// </summary>
-        public static string ALARM_50040 {
-            get {
-                return ResourceManager.GetString("ALARM_50040", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: bad target.
-        /// </summary>
-        public static string ALARM_50041 {
-            get {
-                return ResourceManager.GetString("ALARM_50041", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: deck is empty - C501.
-        /// </summary>
-        public static string ALARM_50042 {
-            get {
-                return ResourceManager.GetString("ALARM_50042", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Automatic start not possible: deck is empty - C502.
-        /// </summary>
-        public static string ALARM_50043 {
-            get {
-                return ResourceManager.GetString("ALARM_50043", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Automatic start NOT possible: deck is occupied - C501.
-        /// </summary>
-        public static string ALARM_50044 {
-            get {
-                return ResourceManager.GetString("ALARM_50044", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Automatic start NOT possible: deck is occupied - C502.
-        /// </summary>
-        public static string ALARM_50045 {
-            get {
-                return ResourceManager.GetString("ALARM_50045", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material movement not successful - C501.
-        /// </summary>
-        public static string ALARM_50046 {
-            get {
-                return ResourceManager.GetString("ALARM_50046", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Material movement NOT successful - C502.
-        /// </summary>
-        public static string ALARM_50047 {
-            get {
-                return ResourceManager.GetString("ALARM_50047", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor NOT ready - pick C501.
-        /// </summary>
-        public static string ALARM_50048 {
-            get {
-                return ResourceManager.GetString("ALARM_50048", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor NOT ready - pick C502.
-        /// </summary>
-        public static string ALARM_50049 {
-            get {
-                return ResourceManager.GetString("ALARM_50049", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor NOT ready - drop C501.
-        /// </summary>
-        public static string ALARM_50050 {
-            get {
-                return ResourceManager.GetString("ALARM_50050", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Transport system conveyor NOT ready - drop C502.
-        /// </summary>
-        public static string ALARM_50051 {
-            get {
-                return ResourceManager.GetString("ALARM_50051", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T21.
-        /// </summary>
-        public static string ALARM_50052 {
-            get {
-                return ResourceManager.GetString("ALARM_50052", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T321.
-        /// </summary>
-        public static string ALARM_50053 {
-            get {
-                return ResourceManager.GetString("ALARM_50053", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Light grid - MLG, T322.
-        /// </summary>
-        public static string ALARM_50054 {
-            get {
-                return ResourceManager.GetString("ALARM_50054", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inclination not alligned: C501.
-        /// </summary>
-        public static string ALARM_50055 {
-            get {
-                return ResourceManager.GetString("ALARM_50055", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Inclination not alligned: C502.
-        /// </summary>
-        public static string ALARM_50056 {
-            get {
-                return ResourceManager.GetString("ALARM_50056", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle AND transporter 12.
-        /// </summary>
-        public static string ALARM_50057 {
-            get {
-                return ResourceManager.GetString("ALARM_50057", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Deposit not allowed, rack occupied: C501.
-        /// </summary>
-        public static string ALARM_50058 {
-            get {
-                return ResourceManager.GetString("ALARM_50058", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Deposit not allowed, rack occupied: C502.
-        /// </summary>
-        public static string ALARM_50059 {
-            get {
-                return ResourceManager.GetString("ALARM_50059", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button 3    .
-        /// </summary>
-        public static string ALARM_50060 {
-            get {
-                return ResourceManager.GetString("ALARM_50060", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to E-STOP push button 4    .
-        /// </summary>
-        public static string ALARM_50061 {
-            get {
-                return ResourceManager.GetString("ALARM_50061", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Door opened, CP501.
-        /// </summary>
-        public static string ALARM_50062 {
-            get {
-                return ResourceManager.GetString("ALARM_50062", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Door opened, CP502.
-        /// </summary>
-        public static string ALARM_50063 {
-            get {
-                return ResourceManager.GetString("ALARM_50063", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and T023.
-        /// </summary>
-        public static string ALARM_50064 {
-            get {
-                return ResourceManager.GetString("ALARM_50064", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and T024.
-        /// </summary>
-        public static string ALARM_50065 {
-            get {
-                return ResourceManager.GetString("ALARM_50065", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and T321.
-        /// </summary>
-        public static string ALARM_50066 {
-            get {
-                return ResourceManager.GetString("ALARM_50066", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and T322.
-        /// </summary>
-        public static string ALARM_50067 {
-            get {
-                return ResourceManager.GetString("ALARM_50067", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and rack 52, place X = 1..5.
-        /// </summary>
-        public static string ALARM_50068 {
-            get {
-                return ResourceManager.GetString("ALARM_50068", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and rack 52, place X = 6..12.
-        /// </summary>
-        public static string ALARM_50069 {
-            get {
-                return ResourceManager.GetString("ALARM_50069", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and rack 52, place X = 13..19.
-        /// </summary>
-        public static string ALARM_50070 {
-            get {
-                return ResourceManager.GetString("ALARM_50070", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No clearance between shuttle and rack 52, place X = 20..24.
-        /// </summary>
-        public static string ALARM_50071 {
-            get {
-                return ResourceManager.GetString("ALARM_50071", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a072.
-        /// </summary>
-        public static string ALARM_50072 {
-            get {
-                return ResourceManager.GetString("ALARM_50072", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a073.
-        /// </summary>
-        public static string ALARM_50073 {
-            get {
-                return ResourceManager.GetString("ALARM_50073", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a074.
-        /// </summary>
-        public static string ALARM_50074 {
-            get {
-                return ResourceManager.GetString("ALARM_50074", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a075.
-        /// </summary>
-        public static string ALARM_50075 {
-            get {
-                return ResourceManager.GetString("ALARM_50075", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a076.
-        /// </summary>
-        public static string ALARM_50076 {
-            get {
-                return ResourceManager.GetString("ALARM_50076", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a077.
-        /// </summary>
-        public static string ALARM_50077 {
-            get {
-                return ResourceManager.GetString("ALARM_50077", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a078.
-        /// </summary>
-        public static string ALARM_50078 {
-            get {
-                return ResourceManager.GetString("ALARM_50078", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a079.
-        /// </summary>
-        public static string ALARM_50079 {
-            get {
-                return ResourceManager.GetString("ALARM_50079", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a080.
-        /// </summary>
-        public static string ALARM_50080 {
-            get {
-                return ResourceManager.GetString("ALARM_50080", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a081.
-        /// </summary>
-        public static string ALARM_50081 {
-            get {
-                return ResourceManager.GetString("ALARM_50081", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a082.
-        /// </summary>
-        public static string ALARM_50082 {
-            get {
-                return ResourceManager.GetString("ALARM_50082", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a083.
-        /// </summary>
-        public static string ALARM_50083 {
-            get {
-                return ResourceManager.GetString("ALARM_50083", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a084.
-        /// </summary>
-        public static string ALARM_50084 {
-            get {
-                return ResourceManager.GetString("ALARM_50084", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a085.
-        /// </summary>
-        public static string ALARM_50085 {
-            get {
-                return ResourceManager.GetString("ALARM_50085", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a086.
-        /// </summary>
-        public static string ALARM_50086 {
-            get {
-                return ResourceManager.GetString("ALARM_50086", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a087.
-        /// </summary>
-        public static string ALARM_50087 {
-            get {
-                return ResourceManager.GetString("ALARM_50087", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a088.
-        /// </summary>
-        public static string ALARM_50088 {
-            get {
-                return ResourceManager.GetString("ALARM_50088", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a089.
-        /// </summary>
-        public static string ALARM_50089 {
-            get {
-                return ResourceManager.GetString("ALARM_50089", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a090.
-        /// </summary>
-        public static string ALARM_50090 {
-            get {
-                return ResourceManager.GetString("ALARM_50090", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a091.
-        /// </summary>
-        public static string ALARM_50091 {
-            get {
-                return ResourceManager.GetString("ALARM_50091", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a092.
-        /// </summary>
-        public static string ALARM_50092 {
-            get {
-                return ResourceManager.GetString("ALARM_50092", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a093.
-        /// </summary>
-        public static string ALARM_50093 {
-            get {
-                return ResourceManager.GetString("ALARM_50093", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a094.
-        /// </summary>
-        public static string ALARM_50094 {
-            get {
-                return ResourceManager.GetString("ALARM_50094", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a095.
-        /// </summary>
-        public static string ALARM_50095 {
-            get {
-                return ResourceManager.GetString("ALARM_50095", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a096.
-        /// </summary>
-        public static string ALARM_50096 {
-            get {
-                return ResourceManager.GetString("ALARM_50096", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a097.
-        /// </summary>
-        public static string ALARM_50097 {
-            get {
-                return ResourceManager.GetString("ALARM_50097", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a098.
-        /// </summary>
-        public static string ALARM_50098 {
-            get {
-                return ResourceManager.GetString("ALARM_50098", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a099.
-        /// </summary>
-        public static string ALARM_50099 {
-            get {
-                return ResourceManager.GetString("ALARM_50099", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0100.
-        /// </summary>
-        public static string ALARM_50100 {
-            get {
-                return ResourceManager.GetString("ALARM_50100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0101.
-        /// </summary>
-        public static string ALARM_50101 {
-            get {
-                return ResourceManager.GetString("ALARM_50101", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0102.
-        /// </summary>
-        public static string ALARM_50102 {
-            get {
-                return ResourceManager.GetString("ALARM_50102", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0103.
-        /// </summary>
-        public static string ALARM_50103 {
-            get {
-                return ResourceManager.GetString("ALARM_50103", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0104.
-        /// </summary>
-        public static string ALARM_50104 {
-            get {
-                return ResourceManager.GetString("ALARM_50104", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0105.
-        /// </summary>
-        public static string ALARM_50105 {
-            get {
-                return ResourceManager.GetString("ALARM_50105", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0106.
-        /// </summary>
-        public static string ALARM_50106 {
-            get {
-                return ResourceManager.GetString("ALARM_50106", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0107.
-        /// </summary>
-        public static string ALARM_50107 {
-            get {
-                return ResourceManager.GetString("ALARM_50107", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0108.
-        /// </summary>
-        public static string ALARM_50108 {
-            get {
-                return ResourceManager.GetString("ALARM_50108", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0109.
-        /// </summary>
-        public static string ALARM_50109 {
-            get {
-                return ResourceManager.GetString("ALARM_50109", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to a0110.
-        /// </summary>
-        public static string ALARM_50110 {
-            get {
-                return ResourceManager.GetString("ALARM_50110", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Barcode mismatch: deck C501.
-        /// </summary>
-        public static string ALARM_50111 {
-            get {
-                return ResourceManager.GetString("ALARM_50111", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Barcode mismatch: deck C502.
-        /// </summary>
-        public static string ALARM_50112 {
-            get {
-                return ResourceManager.GetString("ALARM_50112", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFCS: unknown error.
-        /// </summary>
-        public static string ALARM_50113 {
-            get {
-                return ResourceManager.GetString("ALARM_50113", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MFCS: synchronization failure.
-        /// </summary>
-        public static string ALARM_50114 {
-            get {
-                return ResourceManager.GetString("ALARM_50114", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service M required.
-        /// </summary>
-        public static string ALARM_50115 {
-            get {
-                return ResourceManager.GetString("ALARM_50115", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service 3M required.
-        /// </summary>
-        public static string ALARM_50116 {
-            get {
-                return ResourceManager.GetString("ALARM_50116", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service 6M required.
-        /// </summary>
-        public static string ALARM_50117 {
-            get {
-                return ResourceManager.GetString("ALARM_50117", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service 12M required.
-        /// </summary>
-        public static string ALARM_50118 {
-            get {
-                return ResourceManager.GetString("ALARM_50118", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service 5 required.
-        /// </summary>
-        public static string ALARM_50119 {
-            get {
-                return ResourceManager.GetString("ALARM_50119", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: DO Alarm.
-        /// </summary>
-        public static string ALARM_50120 {
-            get {
-                return ResourceManager.GetString("ALARM_50120", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: DO fault.
-        /// </summary>
-        public static string ALARM_50121 {
-            get {
-                return ResourceManager.GetString("ALARM_50121", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: DO safety.
-        /// </summary>
-        public static string ALARM_50122 {
-            get {
-                return ResourceManager.GetString("ALARM_50122", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: execution fault.
-        /// </summary>
-        public static string ALARM_50123 {
-            get {
-                return ResourceManager.GetString("ALARM_50123", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: peripheral fault.
-        /// </summary>
-        public static string ALARM_50124 {
-            get {
-                return ResourceManager.GetString("ALARM_50124", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: tech fault    .
-        /// </summary>
-        public static string ALARM_50125 {
-            get {
-                return ResourceManager.GetString("ALARM_50125", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault background    .
-        /// </summary>
-        public static string ALARM_50126 {
-            get {
-                return ResourceManager.GetString("ALARM_50126", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: time fault    .
-        /// </summary>
-        public static string ALARM_50127 {
-            get {
-                return ResourceManager.GetString("ALARM_50127", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to D425 message: application fault .
-        /// </summary>
-        public static string ALARM_50128 {
-            get {
-                return ResourceManager.GetString("ALARM_50128", resourceCulture);
+                return ResourceManager.GetString("ALARM_022244", resourceCulture);
             }
         }
         

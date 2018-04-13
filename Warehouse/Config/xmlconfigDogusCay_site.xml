@@ -91,7 +91,7 @@
     <Segment Name="T01" CommunicatorName="PLC_Conveyor" PLC_ID="1" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="001101" Offset="0" Range="20"/>
+          <ALARM ID="001001" Offset="0" Range="10"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -383,7 +383,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="001021" Offset="20" Range="10"/>
+          <ALARM ID="001010" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="32B1"/>
@@ -399,7 +399,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="001031" Offset="30" Range="10"/>
+          <ALARM ID="001020" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="16" Description="Occupied" Reference="32B1"/>
@@ -421,7 +421,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="001041" Offset="40" Range="10"/>
+          <ALARM ID="001030" Offset="30" Range="15"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="24" Description="Occupied" Reference="32B1"/>
@@ -438,7 +438,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="002111" Offset="10" Range="10"/>
+          <ALARM ID="002110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -452,7 +452,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="002121" Offset="20" Range="10"/>
+          <ALARM ID="002120" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
@@ -466,7 +466,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="002131" Offset="30" Range="10"/>
+          <ALARM ID="002130" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
@@ -480,7 +480,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="002141" Offset="40" Range="10"/>
+          <ALARM ID="002140" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
@@ -493,7 +493,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="002201" Offset="10" Range="10"/>
+          <ALARM ID="002210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -511,7 +511,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003111" Offset="10" Range="10"/>
+          <ALARM ID="003110" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -531,7 +531,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003211" Offset="10" Range="10"/>
+          <ALARM ID="003210" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -545,7 +545,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003311" Offset="10" Range="10"/>
+          <ALARM ID="003310" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -559,7 +559,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003411" Offset="10" Range="10"/>
+          <ALARM ID="003410" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -572,7 +572,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003511" Offset="10" Range="10"/>
+          <ALARM ID="003510" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -592,7 +592,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003611" Offset="10" Range="10"/>
+          <ALARM ID="003610" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -606,7 +606,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003711" Offset="10" Range="10"/>
+          <ALARM ID="003710" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -620,7 +620,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="003811" Offset="10" Range="10"/>
+          <ALARM ID="003810" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
@@ -634,7 +634,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="004111" Offset="10" Range="10"/>
+          <ALARM ID="004110" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
@@ -648,7 +648,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="004211" Offset="10" Range="10"/>
+          <ALARM ID="004210" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
@@ -663,7 +663,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="011111" Offset="10" Range="10"/>
+          <ALARM ID="011110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -677,7 +677,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="011121" Offset="20" Range="10"/>
+          <ALARM ID="011120" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
@@ -691,7 +691,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="011131" Offset="30" Range="10"/>
+          <ALARM ID="011130" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
@@ -705,7 +705,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="011141" Offset="40" Range="10"/>
+          <ALARM ID="011140" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
@@ -726,7 +726,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="011211" Offset="10" Range="10"/>
+          <ALARM ID="011210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -741,7 +741,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022111" Offset="10" Range="10"/>
+          <ALARM ID="012110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
@@ -756,7 +756,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022121" Offset="20" Range="10"/>
+          <ALARM ID="012210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
@@ -771,7 +771,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022131" Offset="30" Range="10"/>
+          <ALARM ID="012220" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
@@ -785,7 +785,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022141" Offset="40" Range="10"/>
+          <ALARM ID="012230" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
@@ -798,7 +798,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022211" Offset="10" Range="10"/>
+          <ALARM ID="012240" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
@@ -817,7 +817,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="021111" Offset="10" Range="10"/>
+          <ALARM ID="021110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -831,7 +831,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="021121" Offset="20" Range="10"/>
+          <ALARM ID="021120" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
@@ -845,7 +845,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="021131" Offset="30" Range="10"/>
+          <ALARM ID="021130" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
@@ -859,7 +859,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="021141" Offset="40" Range="10"/>
+          <ALARM ID="021140" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
@@ -880,7 +880,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="021211" Offset="10" Range="10"/>
+          <ALARM ID="021210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
@@ -895,7 +895,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022111" Offset="10" Range="10"/>
+          <ALARM ID="022110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
@@ -910,7 +910,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022121" Offset="20" Range="10"/>
+          <ALARM ID="022210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
@@ -925,7 +925,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022131" Offset="30" Range="10"/>
+          <ALARM ID="022220" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
@@ -939,7 +939,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022141" Offset="40" Range="10"/>
+          <ALARM ID="022230" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
@@ -952,7 +952,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="022211" Offset="10" Range="10"/>
+          <ALARM ID="022240" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="24" Description="Occupied" Reference="46B1"/>

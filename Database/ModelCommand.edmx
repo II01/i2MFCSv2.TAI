@@ -114,7 +114,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
           <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="AccessLevel" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Command__Materia__4EA972BC">
+        <Association Name="FK__Command__Materia__60A75C0F">
           <End Role="MaterialID" Type="Self.MaterialID" Multiplicity="0..1" />
           <End Role="Command" Type="Self.Command" Multiplicity="*" />
           <ReferentialConstraint>
@@ -126,7 +126,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Command__Source__4F9D96F5">
+        <Association Name="FK__Command__Source__619B8048">
           <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
           <End Role="Command" Type="Self.Command" Multiplicity="*" />
           <ReferentialConstraint>
@@ -138,7 +138,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Command__Target__5091BB2E">
+        <Association Name="FK__Command__Target__628FA481">
           <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
           <End Role="Command" Type="Self.Command" Multiplicity="*" />
           <ReferentialConstraint>
@@ -150,7 +150,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SimpleCom__Comma__5556704B">
+        <Association Name="FK__SimpleCom__Comma__6754599E">
           <End Role="Command" Type="Self.Command" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
@@ -164,7 +164,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SimpleCom__Mater__564A9484">
+        <Association Name="FK__SimpleCom__Mater__68487DD7">
           <End Role="MaterialID" Type="Self.MaterialID" Multiplicity="0..1" />
           <End Role="SimpleCommand" Type="Self.SimpleCommand" Multiplicity="*" />
           <ReferentialConstraint>
@@ -176,7 +176,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SimpleCom__Sourc__573EB8BD">
+        <Association Name="FK__SimpleCom__Sourc__693CA210">
           <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
           <End Role="SimpleCommand" Type="Self.SimpleCommand" Multiplicity="*" />
           <ReferentialConstraint>
@@ -188,7 +188,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SimpleCom__Targe__5832DCF6">
+        <Association Name="FK__SimpleCom__Targe__6A30C649">
           <End Role="PlaceID" Type="Self.PlaceID" Multiplicity="0..1" />
           <End Role="SimpleCommand" Type="Self.SimpleCommand" Multiplicity="*" />
           <ReferentialConstraint>
@@ -253,31 +253,31 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
     [User].[AccessLevel] AS [AccessLevel]
     FROM [dbo].[User] AS [User]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Command__Materia__4EA972BC" Association="Self.FK__Command__Materia__4EA972BC">
+          <AssociationSet Name="FK__Command__Materia__60A75C0F" Association="Self.FK__Command__Materia__60A75C0F">
             <End Role="MaterialID" EntitySet="MaterialID" />
             <End Role="Command" EntitySet="Command" />
           </AssociationSet>
-          <AssociationSet Name="FK__Command__Source__4F9D96F5" Association="Self.FK__Command__Source__4F9D96F5">
+          <AssociationSet Name="FK__Command__Source__619B8048" Association="Self.FK__Command__Source__619B8048">
             <End Role="PlaceID" EntitySet="PlaceID" />
             <End Role="Command" EntitySet="Command" />
           </AssociationSet>
-          <AssociationSet Name="FK__Command__Target__5091BB2E" Association="Self.FK__Command__Target__5091BB2E">
+          <AssociationSet Name="FK__Command__Target__628FA481" Association="Self.FK__Command__Target__628FA481">
             <End Role="PlaceID" EntitySet="PlaceID" />
             <End Role="Command" EntitySet="Command" />
           </AssociationSet>
-          <AssociationSet Name="FK__SimpleCom__Comma__5556704B" Association="Self.FK__SimpleCom__Comma__5556704B">
+          <AssociationSet Name="FK__SimpleCom__Comma__6754599E" Association="Self.FK__SimpleCom__Comma__6754599E">
             <End Role="Command" EntitySet="Command" />
             <End Role="SimpleCommand" EntitySet="SimpleCommand" />
           </AssociationSet>
-          <AssociationSet Name="FK__SimpleCom__Mater__564A9484" Association="Self.FK__SimpleCom__Mater__564A9484">
+          <AssociationSet Name="FK__SimpleCom__Mater__68487DD7" Association="Self.FK__SimpleCom__Mater__68487DD7">
             <End Role="MaterialID" EntitySet="MaterialID" />
             <End Role="SimpleCommand" EntitySet="SimpleCommand" />
           </AssociationSet>
-          <AssociationSet Name="FK__SimpleCom__Sourc__573EB8BD" Association="Self.FK__SimpleCom__Sourc__573EB8BD">
+          <AssociationSet Name="FK__SimpleCom__Sourc__693CA210" Association="Self.FK__SimpleCom__Sourc__693CA210">
             <End Role="PlaceID" EntitySet="PlaceID" />
             <End Role="SimpleCommand" EntitySet="SimpleCommand" />
           </AssociationSet>
-          <AssociationSet Name="FK__SimpleCom__Targe__5832DCF6" Association="Self.FK__SimpleCom__Targe__5832DCF6">
+          <AssociationSet Name="FK__SimpleCom__Targe__6A30C649" Association="Self.FK__SimpleCom__Targe__6A30C649">
             <End Role="PlaceID" EntitySet="PlaceID" />
             <End Role="SimpleCommand" EntitySet="SimpleCommand" />
           </AssociationSet>
