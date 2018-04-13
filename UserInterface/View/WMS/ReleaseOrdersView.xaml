@@ -71,6 +71,8 @@
                                 Width="*" Binding="{Binding Destination}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ReleaseTime}" 
                                 Width="*" Binding="{Binding ReleaseTime}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=LastChange}" 
+                                Width="*" Binding="{Binding LastChange}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionOrder}" 
                                 Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 

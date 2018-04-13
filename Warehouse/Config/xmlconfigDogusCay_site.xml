@@ -38,7 +38,7 @@
       <Version>CRANE</Version>
       <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
       <StringSendIPEndPoint>192.168.60.90:2001</StringSendIPEndPoint>
-      <StringRcvIPEndPoint>192.168.60.09:2002</StringRcvIPEndPoint>
+      <StringRcvIPEndPoint>192.168.60.90:2002</StringRcvIPEndPoint>
     </BasicCommunicator>
 
     <BasicCommunicator Name="PLC_Conveyor" PLC_ID="101" MFCS_ID="1" xsi:type="Communicator" >

@@ -15,6 +15,7 @@ namespace UserInterface.ViewModel
     {
         #region members
         private Orders _data;
+        private DateTime _dataLastChange;
         private string _portion;
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
@@ -125,6 +126,18 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public DateTime LastChange
+        {
+            get { return _dataLastChange; }
+            set
+            {
+                if (_dataLastChange != value)
+                {
+                    _dataLastChange = value;
+                    RaisePropertyChanged("LastChange");
+                }
+            }
+        }
         public string Portion
         {
             get { return _portion; }
@@ -181,6 +194,7 @@ namespace UserInterface.ViewModel
         public ReleaseOrderViewModel()
         {
             _data = new Orders();
+            _dataLastChange = DateTime.Now;
             Validator = new PropertyValidator();
             ValidationEnabled = false;
         }

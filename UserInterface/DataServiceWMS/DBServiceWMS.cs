@@ -833,22 +833,27 @@ namespace UserInterface.DataServiceWMS
                 {
                     var suborders = from o in dc.Orders
                                     where o.Status <= statusLessOrEqual
-                                    group o by new { o.ERP_ID, o.OrderID, o.SubOrderID } into grpSO
-                                    select grpSO.FirstOrDefault();
-                    var orders = from so in (await suborders.ToListAsync())
-                                 orderby so.ERP_ID, so.OrderID descending
-                                 group so by new { so.ERP_ID, so.OrderID } into grpO
+                                    join c in dc.Commands on o.ID equals c.Order_ID into ordersComands
+                                    from oc in ordersComands.DefaultIfEmpty()
+                                    select new { orders = o, lastChange = oc == null? o.ReleaseTime : oc.LastChange };
+                    var single = from oc in suborders
+                                 group oc by new { oc.orders.ERP_ID, oc.orders.OrderID, oc.orders.SubOrderID} into grpSO
+                                 select new{ suborder = grpSO.FirstOrDefault(), lastchange = grpSO.Max(p => p.lastChange == null? grpSO.FirstOrDefault().orders.ReleaseTime : p.lastChange)};
+                    var orders = from so in (await single.ToListAsync())
+                                 orderby so.suborder.orders.ERP_ID, so.suborder.orders.OrderID descending
+                                 group so by new { so.suborder.orders.ERP_ID, so.suborder.orders.OrderID } into grpO
                                  select new OrderReduction
                                  {
                                      ERPID = grpO.Key.ERP_ID,
                                      OrderID = grpO.Key.OrderID,
-                                     Destination = grpO.FirstOrDefault().Destination,
-                                     ReleaseTime = grpO.FirstOrDefault().ReleaseTime,
+                                     Destination = grpO.FirstOrDefault().suborder.orders.Destination,
+                                     ReleaseTime = grpO.FirstOrDefault().suborder.orders.ReleaseTime,
+                                     LastChange = grpO.FirstOrDefault().lastchange,
                                      CountAll = grpO.Count(),
-                                     CountActive = grpO.Count(p => p.Status == (int)EnumWMSOrderStatus.Active),
-                                     CountMoveDone = grpO.Count(p => p.Status >= (int)EnumWMSOrderStatus.OnTarget && p.Status <= (int)EnumWMSOrderStatus.ReadyToTake),
-                                     CountFinished = grpO.Count(p => p.Status > (int)EnumWMSOrderStatus.Cancel),
-                                     Status = grpO.Any(p => p.Status > (int)EnumWMSOrderStatus.Waiting) ? grpO.Where(p => p.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Status) : 0
+                                     CountActive = grpO.Count(p => p.suborder.orders.Status == (int)EnumWMSOrderStatus.Active),
+                                     CountMoveDone = grpO.Count(p => p.suborder.orders.Status >= (int)EnumWMSOrderStatus.OnTarget && p.suborder.orders.Status <= (int)EnumWMSOrderStatus.ReadyToTake),
+                                     CountFinished = grpO.Count(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Cancel),
+                                     Status = grpO.Any(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting) ? grpO.Where(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.suborder.orders.Status) : 0
                                  };
                     return orders.ToList();
                 }

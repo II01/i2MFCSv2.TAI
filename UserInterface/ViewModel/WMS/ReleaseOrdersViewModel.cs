@@ -644,6 +644,7 @@ namespace UserInterface.ViewModel
                         OrderID = p.OrderID,
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
+                        LastChange = p.LastChange,
                         Portion = $"{p.CountActive}/{p.CountAll} - {p.CountMoveDone}/{p.CountAll} - {p.CountFinished}/{p.CountAll}",
                         Status = (EnumWMSOrderStatus)p.Status
                     });
