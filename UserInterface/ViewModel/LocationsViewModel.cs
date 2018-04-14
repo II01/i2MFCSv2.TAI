@@ -186,7 +186,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (SelectedLocation != null) && AccessLevel >= 1;
+                return !EditEnabled && (SelectedLocation != null) && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {
@@ -285,7 +285,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return EditEnabled && DetailedLocation.AllPropertiesValid && AccessLevel >= 1;
+                return EditEnabled && DetailedLocation.AllPropertiesValid && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {

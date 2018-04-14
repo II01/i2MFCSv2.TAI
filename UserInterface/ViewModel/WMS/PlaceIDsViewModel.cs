@@ -35,6 +35,7 @@ namespace UserInterface.ViewModel
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
+        private string _accessUser;
         #endregion
 
         #region properites
@@ -199,7 +200,8 @@ namespace UserInterface.ViewModel
             {
                 PlaceIDList = new ObservableCollection<PlaceIDViewModel>();
                 SelectedPlaceIDs = new List<PlaceIDViewModel>();
-                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
+                _accessUser = "";
+                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, async (vm) => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
@@ -239,7 +241,7 @@ namespace UserInterface.ViewModel
             {
                 return  !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS && 
                         !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun && 
-                        !EditEnabled && AccessLevel >= 1;
+                        !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -276,7 +278,7 @@ namespace UserInterface.ViewModel
             {
                 return  !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS &&
                         !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun &&
-                        !EditEnabled && AccessLevel >= 1;
+                        !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -312,7 +314,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (SelectedPlaceID != null) && AccessLevel >= 1;
+                return !EditEnabled && (SelectedPlaceID != null) && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -373,6 +375,7 @@ namespace UserInterface.ViewModel
                             SelectedPlaceID.DimensionClass = DetailedPlaceID.DimensionClass;
                             SelectedPlaceID.FrequencyClass = DetailedPlaceID.FrequencyClass;
                             SelectedPlaceID.Status = DetailedPlaceID.Status;
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit PlaceID: {DetailedPlaceID.PlaceID.ToString()}");
                             break;
                         case CommandType.Block:
                         case CommandType.Unblock:
@@ -381,6 +384,8 @@ namespace UserInterface.ViewModel
                                 EnumBlockedWMS reason = (DetailedPlaceID.ID.Length <= 4 && DetailedPlaceID.ID.StartsWith("W")) ? EnumBlockedWMS.Vehicle : EnumBlockedWMS.Rack;
                                 await client.BlockLocationsAsync(DetailedPlaceID.ID, _selectedCommand == CommandType.Block, (int)reason);
                                 await ExecuteRefresh();
+                                string bl = _selectedCommand == CommandType.Block ? "BLOCK" : "UNBLOCK";
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Block locations: {DetailedPlaceID.ID}|{bl}|{(int)reason}|");
                             }
                             break;
                     }
@@ -402,7 +407,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return EditEnabled && DetailedPlaceID.AllPropertiesValid && AccessLevel >= 1;
+                return EditEnabled && DetailedPlaceID.AllPropertiesValid && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {

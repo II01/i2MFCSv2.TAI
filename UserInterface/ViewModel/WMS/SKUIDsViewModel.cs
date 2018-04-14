@@ -29,6 +29,7 @@ namespace UserInterface.ViewModel
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
+        private string _accessUser;
         private ObservableCollection<TUViewModel> _TUList;
         #endregion
 
@@ -177,13 +178,9 @@ namespace UserInterface.ViewModel
             try
             {
                 SKUIDList = new ObservableCollection<SKUIDViewModel>();
-/*                foreach (var p in _dbservicewms.GetSKUIDs())
-                    SKUIDList.Add(new SKUIDViewModel { ID = p.ID, Description = p.Description, DefaultQty = p.DefaultQty, Unit = p.Unit, Weight = p.Weight, FrequencyClass = p.FrequencyClass });
-                foreach (var l in SKUIDList)
-                    l.Initialize(_warehouse);
-*/
                 DetailedSKUID.Initialize(_warehouse);
-                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
+                _accessUser = "";
+                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
@@ -218,7 +215,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && AccessLevel >= 1;
+                return !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -257,7 +254,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (SelectedSKUID != null) && AccessLevel >= 1;
+                return !EditEnabled && (SelectedSKUID != null) && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -311,13 +308,11 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddSKUID(DetailedSKUID.SKUID);
                             SKUIDList.Add(DetailedSKUID);
                             SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == DetailedSKUID.ID);
-                            _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                String.Format("SKUID added: id: {0}", DetailedSKUID.ID));
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add SKUID: {DetailedSKUID.SKUID.ToString()}");
                             break;
                         case CommandType.Edit:
                             _dbservicewms.UpdateSKUID(DetailedSKUID.SKUID);
-                            _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                String.Format("SKUID changed: id: {0}", DetailedSKUID.ID));
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit SKUID: {DetailedSKUID.SKUID.ToString()}");
                             SelectedSKUID.ID = DetailedSKUID.ID;
                             SelectedSKUID.Description = DetailedSKUID.Description;
                             SelectedSKUID.DefaultQty = DetailedSKUID.DefaultQty;

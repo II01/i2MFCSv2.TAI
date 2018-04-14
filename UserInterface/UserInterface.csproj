@@ -95,6 +95,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
@@ -213,6 +214,9 @@
     <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
     <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="ViewModel\WMS\HistoryCommandERPsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\HistoryCommandWMSsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\HistoryLogsViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceDiffsViewModel.cs" />
@@ -261,6 +265,15 @@
     </Compile>
     <Compile Include="View\HistoryMovementsView.xaml.cs">
       <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\HistoryCommandERPsView.xaml.cs">
+      <DependentUpon>HistoryCommandERPsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\HistoryCommandWMSsView.xaml.cs">
+      <DependentUpon>HistoryCommandWMSsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\HistoryLogsView.xaml.cs">
+      <DependentUpon>HistoryLogsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\ReleaseOrdersView.xaml.cs">
       <DependentUpon>ReleaseOrdersView.xaml</DependentUpon>
@@ -428,6 +441,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\HistoryMovementsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\HistoryCommandERPsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\HistoryCommandWMSsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\HistoryLogsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

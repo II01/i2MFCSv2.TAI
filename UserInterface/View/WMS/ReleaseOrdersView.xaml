@@ -22,17 +22,17 @@
             <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                     Path=(FrameworkElement.ActualHeight), 
                                     RelativeSource={RelativeSource AncestorType=UserControl},
-                                    ConverterParameter=-210|0.42}"/>
+                                    ConverterParameter=-210|0.40}"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                     Path=(FrameworkElement.ActualHeight), 
                                     RelativeSource={RelativeSource AncestorType=UserControl},
-                                    ConverterParameter=-210|0.15}"/>
+                                    ConverterParameter=-210|0.25}"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                     Path=(FrameworkElement.ActualHeight), 
                                     RelativeSource={RelativeSource AncestorType=UserControl},
-                                    ConverterParameter=-210|0.42}"/>
+                                    ConverterParameter=-210|0.35}"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -79,7 +79,7 @@
                                 Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
+        <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx SubOrderDetails}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="4" Margin="0,0,20,0" 
             ItemsSource="{Binding DataListSubOrder, Mode=TwoWay}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
@@ -102,7 +102,13 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderID}" 
                                 Width="*" Binding="{Binding SubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
-                                Width="3*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
+                                Width="*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" 
+                                Width="*" Binding="{Binding SKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUQty}" 
+                                Width="*" Binding="{Binding SKUQty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionSubOrder}" 
                                 Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
@@ -130,11 +136,11 @@
 <!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderID}" 
                                     Width="3*" Binding="{Binding OrderSubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> 
                     <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
-                                    Width="3*" Binding="{Binding OrderSubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
+                                    Width="3*" Binding="{Binding OrderSubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> 
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
                                     Width="3*" Binding="{Binding OrderSKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" 
-                                    Width="3*" Binding="{Binding OrderSKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding OrderSKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" 
                                     Width="3*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Source}" 

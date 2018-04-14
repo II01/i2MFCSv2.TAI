@@ -16,12 +16,9 @@ using DatabaseWMS;
 
 namespace UserInterface.ViewModel
 {
-    public sealed class CommandERPsViewModel : ViewModelBase
+    public sealed class HistoryCommandERPsViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, Edit, Book, Delete, Add};
-
         #region members
-        private CommandType _selectedCommand;
         private ObservableCollection<CommandERPViewModel> _dataList;
         private CommandERPViewModel _selected;
         private CommandERPViewModel _detailed;
@@ -29,14 +26,14 @@ namespace UserInterface.ViewModel
         private bool _enabledCC;
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
+        private HistoryDateTimePickerViewModel _dateFrom;
+        private HistoryDateTimePickerViewModel _dateTo;
+        private int _records;
         private int _accessLevel;
         string _accessUser;
         #endregion
 
         #region properites
-        public RelayCommand Delete { get; private set; }
-        public RelayCommand Confirm { get; private set; }
-        public RelayCommand Cancel { get; private set; }
         public RelayCommand Refresh { get; private set; }
 
         public ObservableCollection<CommandERPViewModel> DataList
@@ -130,10 +127,48 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public HistoryDateTimePickerViewModel DateFrom
+        {
+            get { return _dateFrom; }
+            set
+            {
+                if (_dateFrom != value)
+                {
+                    _dateFrom = value;
+                    RaisePropertyChanged("DateFrom");
+                }
+            }
+        }
+        public HistoryDateTimePickerViewModel DateTo
+        {
+            get { return _dateTo; }
+            set
+            {
+                if (_dateTo != value)
+                {
+                    _dateTo = value;
+                    RaisePropertyChanged("DateTo");
+                }
+            }
+        }
+        public int Records
+        {
+            get { return _records; }
+            set
+            {
+                if (_records != value)
+                {
+                    _records = value;
+                    RaisePropertyChanged("Records");
+                }
+            }
+        }
+
         #endregion
 
         #region initialization
-        public CommandERPsViewModel()
+        public HistoryCommandERPsViewModel()
         {
             Detailed = null;
             Selected = null;
@@ -141,11 +176,6 @@ namespace UserInterface.ViewModel
             EditEnabled = false;
             EnabledCC = false;
 
-            _selectedCommand = CommandType.None;
-
-            Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
-            Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
-            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Refresh = new RelayCommand(() => ExecuteRefresh());
         }
 
@@ -156,6 +186,11 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<CommandERPViewModel>();
+                DateFrom = new HistoryDateTimePickerViewModel { TimeStamp = DateTime.Now.AddDays(-1) };
+                DateFrom.Initialize(_warehouse);
+                DateTo = new HistoryDateTimePickerViewModel { TimeStamp = DateTime.Now.AddHours(+1) };
+                DateTo.Initialize(_warehouse);
+                Records = 0;
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
@@ -170,127 +205,13 @@ namespace UserInterface.ViewModel
 
         #region commands
 
-        private void ExecuteDelete()
-        {
-            try
-            {
-                _selectedCommand = CommandType.Delete;
-                EditEnabled = false;
-                EnabledCC = true;
-                Detailed = new CommandERPViewModel();
-                Detailed.Initialize(_warehouse);
-                Detailed.ValidationEnabled = true;
-                Detailed.ERPID = Selected.ERPID;
-                Detailed.Command = Selected.Command;
-                Detailed.Status = Selected.Status;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-            }
-        }
-
-        private bool CanExecuteDelete()
-        {
-            try
-            {
-                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 2;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                return false;
-            }
-
-        }
-        private void ExecuteCancel()
-        {
-            try
-            {
-                EditEnabled = false;
-                EnabledCC = false;
-                if (Detailed != null)
-                    Detailed.ValidationEnabled = false;
-                Detailed = Selected;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
-            }
-        }
-        private bool CanExecuteCancel()
-        {
-            try
-            {
-                return EnabledCC;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                return false;
-            }
-        }
-
-        private void ExecuteConfirm()
-        {
-            try
-            {
-                EditEnabled = false;
-                EnabledCC = false;
-                try
-                {
-                    switch (_selectedCommand)
-                    {
-                        case CommandType.Delete:
-                            _dbservicewms.UpdateCommandERP(new CommandERPs { ID = Detailed.ERPID, Command = Detailed.Command, Status = (int)EnumCommandERPStatus.Canceled});
-                            Detailed.Status = EnumCommandERPStatus.Canceled;
-                            Selected.ERPID = Detailed.ERPID;
-                            Selected.Reference = Detailed.Reference;
-                            Selected.Command = Detailed.Command;
-                            Selected.Status = Detailed.Status;
-                            Selected.Time = Detailed.Time;
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Command ERP cancel: {Detailed.Data.ToString()}");
-                            break;
-                        default:
-                            break;
-                    }
-                    if (Detailed != null)
-                        Detailed.ValidationEnabled = false;
-                }
-                catch (Exception e)
-                {
-                    _warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, e.Message);
-                }
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-            }
-        }
-        private bool CanExecuteConfirm()
-        {
-            try
-            {
-                return (EditEnabled && Detailed.AllPropertiesValid && AccessLevel/10 >= 2) || _selectedCommand == CommandType.Delete;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                return false;
-            }
-        }
         private void ExecuteRefresh()
         {
             try
             {
                 int? erpid = Selected?.ERPID;
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetCommandERPs(DateTime.Now.AddHours(-1), DateTime.Now, (int)EnumCommandERPStatus.Active))
+                foreach (var p in _dbservicewms.GetCommandERPs(DateFrom.TimeStamp, DateTo.TimeStamp, -1))
                     DataList.Add(new CommandERPViewModel
                     {
                         ERPID = p.ID,
@@ -301,6 +222,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);
+                Records = DataList.Count();
                 if ( erpid != null)
                     Selected = DataList.FirstOrDefault(p => p.ERPID == erpid);
             }

@@ -90,6 +90,46 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public string SKUID
+        {
+            get { return _data.SKU_ID; }
+            set
+            {
+                if (_data.SKU_ID != value)
+                {
+                    _data.SKU_ID = value;
+                    RaisePropertyChanged("SKUID");
+                }
+            }
+        }
+
+        public string SKUBatch
+        {
+            get { return _data.SKU_Batch; }
+            set
+            {
+                if (_data.SKU_Batch != value)
+                {
+                    _data.SKU_Batch = value;
+                    RaisePropertyChanged("SKUBatch");
+                }
+            }
+        }
+        public double SKUQty
+        {
+            get { return _data.SKU_Qty; }
+            set
+            {
+                if (_data.SKU_Qty != value)
+                {
+                    _data.SKU_Qty = value;
+                    RaisePropertyChanged("SKUQty");
+                }
+            }
+        }
+
+
         public string SubOrderName
         {
             get { return _data.SubOrderName; }

@@ -16,12 +16,9 @@ using DatabaseWMS;
 
 namespace UserInterface.ViewModel
 {
-    public sealed class CommandWMSsViewModel : ViewModelBase
+    public sealed class HistoryCommandWMSsViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, Edit, Book, Delete, Add};
-
         #region members
-        private CommandType _selectedCommand;
         private ObservableCollection<CommandWMSViewModel> _dataList;
         private CommandWMSViewModel _selected;
         private CommandWMSViewModel _detailed;
@@ -31,12 +28,12 @@ namespace UserInterface.ViewModel
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
         private string _accessUser;
+        private HistoryDateTimePickerViewModel _dateFrom;
+        private HistoryDateTimePickerViewModel _dateTo;
+        private int _records;
         #endregion
 
         #region properites
-        public RelayCommand Delete { get; private set; }
-        public RelayCommand Confirm { get; private set; }
-        public RelayCommand Cancel { get; private set; }
         public RelayCommand Refresh { get; private set; }
 
         public ObservableCollection<CommandWMSViewModel> DataList
@@ -130,10 +127,47 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public HistoryDateTimePickerViewModel DateFrom
+        {
+            get { return _dateFrom; }
+            set
+            {
+                if (_dateFrom != value)
+                {
+                    _dateFrom = value;
+                    RaisePropertyChanged("DateFrom");
+                }
+            }
+        }
+        public HistoryDateTimePickerViewModel DateTo
+        {
+            get { return _dateTo; }
+            set
+            {
+                if (_dateTo != value)
+                {
+                    _dateTo = value;
+                    RaisePropertyChanged("DateTo");
+                }
+            }
+        }
+        public int Records
+        {
+            get { return _records; }
+            set
+            {
+                if (_records != value)
+                {
+                    _records = value;
+                    RaisePropertyChanged("Records");
+                }
+            }
+        }
+
         #endregion
 
         #region initialization
-        public CommandWMSsViewModel()
+        public HistoryCommandWMSsViewModel()
         {
             Detailed = null;
             Selected = null;
@@ -141,11 +175,6 @@ namespace UserInterface.ViewModel
             EditEnabled = false;
             EnabledCC = false;
 
-            _selectedCommand = CommandType.None;
-
-            Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
-            Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
-            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Refresh = new RelayCommand(() => ExecuteRefresh());
         }
 
@@ -156,6 +185,11 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<CommandWMSViewModel>();
+                DateFrom = new HistoryDateTimePickerViewModel { TimeStamp = DateTime.Now.AddDays(-1) };
+                DateFrom.Initialize(_warehouse);
+                DateTo = new HistoryDateTimePickerViewModel { TimeStamp = DateTime.Now.AddHours(+1) };
+                DateTo.Initialize(_warehouse);
+                Records = 0;
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
@@ -170,142 +204,13 @@ namespace UserInterface.ViewModel
 
         #region commands
 
-        private void ExecuteDelete()
-        {
-            try
-            {
-                _selectedCommand = CommandType.Delete;
-                EditEnabled = false;
-                EnabledCC = true;
-                Detailed = new CommandWMSViewModel();
-                Detailed.Initialize(_warehouse);
-                Detailed.ValidationEnabled = true;
-                Detailed.WMSID = Selected.WMSID;
-                Detailed.OrderID = Selected.OrderID;
-                Detailed.TUID = Selected.TUID;
-                Detailed.Source = Selected.Source;
-                Detailed.Target = Selected.Target;
-                Detailed.Status = Selected.Status;
-                Detailed.Time = Selected.Time;
-                Detailed.OrderERPID = Selected.OrderERPID;
-                Detailed.OrderOrderID = Selected.OrderOrderID;
-                Detailed.OrderSubOrderID = Selected.OrderSubOrderID;
-                Detailed.OrderSubOrderName = Selected.OrderSubOrderName;
-                Detailed.OrderSKUID = Selected.OrderSKUID;
-                Detailed.OrderSKUBatch = Selected.OrderSKUBatch;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-            }
-        }
-
-        private bool CanExecuteDelete()
-        {
-            try
-            {
-                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 2;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                return false;
-            }
-
-        }
-        private void ExecuteCancel()
-        {
-            try
-            {
-                EditEnabled = false;
-                EnabledCC = false;
-                if (Detailed != null)
-                    Detailed.ValidationEnabled = false;
-                Detailed = Selected;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
-            }
-        }
-        private bool CanExecuteCancel()
-        {
-            try
-            {
-                return EnabledCC;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                return false;
-            }
-        }
-
-        private void ExecuteConfirm()
-        {
-            try
-            {
-                EditEnabled = false;
-                EnabledCC = false;
-                try
-                {
-                    switch (_selectedCommand)
-                    {
-                        case CommandType.Delete:
-                            _dbservicewms.UpdateCommand(new Commands
-                                {
-                                    ID = Detailed.WMSID,
-                                    Order_ID = Detailed.OrderID,
-                                    TU_ID = Detailed.TUID,
-                                    Source = Detailed.Source,
-                                    Target = Detailed.Target,
-                                    Status = (int)EnumCommandWMSStatus.Canceled,
-                                    Time = DateTime.Now
-                                });
-                            Detailed.Status = EnumCommandWMSStatus.Canceled;
-                            Selected.Status = Detailed.Status;
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Command WMS cancel: {Detailed.Data.ToString()}");
-                            break;
-                        default:
-                            break;
-                    }
-                    if (Detailed != null)
-                        Detailed.ValidationEnabled = false;
-                }
-                catch (Exception e)
-                {
-                    _warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, e.Message);
-                }
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-            }
-        }
-        private bool CanExecuteConfirm()
-        {
-            try
-            {
-                return (EditEnabled && Detailed.AllPropertiesValid && AccessLevel/10 >= 2) || _selectedCommand == CommandType.Delete;
-            }
-            catch (Exception e)
-            {
-                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
-                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                return false;
-            }
-        }
         private void ExecuteRefresh()
         {
             try
             {
                 int? wmsid = Selected?.WMSID;
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetCommandOrders(DateTime.Now.AddHours(-1), DateTime.MaxValue, (int)EnumCommandWMSStatus.Active))
+                foreach (var p in _dbservicewms.GetCommandOrders(DateFrom.TimeStamp, DateTo.TimeStamp, -1))
                     DataList.Add(new CommandWMSViewModel
                     {
                         WMSID = p.ID,
@@ -324,6 +229,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);
+                Records = DataList.Count();
                 if ( wmsid != null)
                     Selected = DataList.FirstOrDefault(p => p.WMSID == wmsid);
             }

@@ -31,6 +31,7 @@ namespace UserInterface.ViewModel
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
+        private string _accessUser;
         #endregion
 
         #region properites
@@ -166,7 +167,8 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<PlaceTUIDViewModel>();
-                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
+                _accessUser = "";
+                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
@@ -211,7 +213,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (Selected != null) && AccessLevel >= 1;
+                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -256,7 +258,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (Selected != null) && AccessLevel >= 1;
+                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -302,7 +304,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (Selected != null) && AccessLevel >= 1;
+                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -342,7 +344,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && AccessLevel >= 1;
+                return !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -384,7 +386,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (Selected != null) && AccessLevel >= 1;
+                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {
@@ -439,17 +441,16 @@ namespace UserInterface.ViewModel
                                 tulist.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate  });
                             _dbservicewms.UpdateTUID(tuid);
                             _dbservicewms.UpdateTUs(tuid, tulist);
-                            _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                String.Format("TUID changed: tuid: {0}", Detailed.TUID));
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit TUID: {tuid.ToString()}");
                             Selected.TUID = Detailed.TUID;
                             Selected.PlaceID = Detailed.PlaceID;
                             Selected.DimensionClass = Detailed.DimensionClass;
                             Selected.Blocked = Detailed.Blocked;
                             break;
                         case CommandType.Book:
-                            _dbservicewms.UpdatePlace(new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID });
-                            _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                String.Format("Place changed: tuid: {0}", Detailed.TUID));
+                            var pl = new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID };
+                            _dbservicewms.UpdatePlace(pl);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Rebook TUID: {pl.ToString()}");
                             Selected.TUID = Detailed.TUID;
                             Selected.PlaceID = Detailed.PlaceID;
                             Selected.DimensionClass = Detailed.DimensionClass;
@@ -459,8 +460,7 @@ namespace UserInterface.ViewModel
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
                                 client.BlockTU(Detailed.TUID, Detailed.BlockedQC, (int)EnumBlockedWMS.Quality);
-                                _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                    String.Format("TUID blocked: tuid: {0}", Detailed.TUID));
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Request block TUID: |{Detailed.TUID:d9}|{Detailed.BlockedQC}|{(int)EnumBlockedWMS.Quality}|");
                                 Selected.TUID = Detailed.TUID;
                                 Selected.PlaceID = Detailed.PlaceID;
                                 Selected.DimensionClass = Detailed.DimensionClass;
@@ -469,9 +469,9 @@ namespace UserInterface.ViewModel
                             break;
                         case CommandType.Delete:
                             _dbservicewms.DeleteTUs(Detailed.TUID);
-                            _dbservicewms.DeletePlace(new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID });
-                            _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                String.Format("Place deleted: tuid: {0}", Detailed.TUID));
+                            var p1 = new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID };
+                            _dbservicewms.DeletePlace(p1);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete Place: {p1.ToString()}");
                             Selected.TUID = Detailed.TUID;
                             Selected.PlaceID = Detailed.PlaceID;
                             Selected.DimensionClass = Detailed.DimensionClass;
@@ -482,7 +482,9 @@ namespace UserInterface.ViewModel
                             foreach (var l in Detailed.DetailList)
                                 tul.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate });
                             _dbservicewms.AddTUs(tul);
-                            _dbservicewms.AddPlace(new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID });
+                            var p2 = new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID };
+                            _dbservicewms.AddPlace(p2);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add Place: {p2.ToString()}");
                             break;
                         default:
                             break;

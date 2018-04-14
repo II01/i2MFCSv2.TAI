@@ -11,6 +11,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using Database;
 using UserInterface.DataServiceWMS;
+using System.DirectoryServices.AccountManagement;
 
 namespace UserInterface.ViewModel
 {
@@ -106,19 +107,51 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                User usr = _warehouse.DBService.GetUserPassword(User);
-
-                if (usr != null && usr.Password == Password)
+                bool valid = false;
+                // domain
+                try
                 {
-                    App.AccessLevel = usr.AccessLevel;
-                    SendAccessLevelAndUser(App.AccessLevel, usr.User1);
+                    using (PrincipalContext context = new PrincipalContext(ContextType.Domain))
+                    {
+                        valid = context.ValidateCredentials(User, Password);
+                    }
+                }
+                catch { }
+                try
+                {
+                    if(!valid)
+                        using (PrincipalContext context = new PrincipalContext(ContextType.Machine))
+                        {
+                            valid = context.ValidateCredentials(User, Password);
+                        }
+                }
+                catch { }
+                if(!valid )
+                {
+                    User usr = _warehouse.DBService.GetUserPassword(User);
+                    if (usr != null && usr.Password == Password)
+                        valid = true;    
+                }
+                if(valid)
+                {
+                    User usr = _warehouse.DBService.GetUserPassword(User);
+                    if (usr != null)
+                    {
+                        App.AccessLevel = usr.AccessLevel;
+                        SendAccessLevelAndUser(App.AccessLevel, usr.User1);
+                    }
+                    else
+                    {
+                        App.AccessLevel = 0;
+                        SendAccessLevelAndUser(App.AccessLevel, "");
+                    }
+                    Password = "";
                 }
                 else
                 {
                     App.AccessLevel = 0;
                     SendAccessLevelAndUser(App.AccessLevel, "");
                 }
-                Password = "";
 
                 EnabledReduceDB = App.AccessLevel == 2;
             }

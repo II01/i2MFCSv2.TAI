@@ -334,7 +334,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return AllPropertiesValid && AccessLevel == 2;
+                return AllPropertiesValid && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -360,7 +360,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return AllPropertiesValid && AccessLevel == 2;
+                return AllPropertiesValid && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -386,7 +386,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return AllPropertiesValid && AccessLevel == 2;
+                return AllPropertiesValid && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -460,7 +460,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledCC && AccessLevel >= 1;
+                return !IsEnabledCC && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {
@@ -494,7 +494,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledCC && AccessLevel >= 1;
+                return !IsEnabledCC && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {
@@ -528,7 +528,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledCC && (SelectedContent != null) && (SelectedContent.Command.Status != Command.EnumCommandStatus.Active) && AccessLevel >= 1;
+                return !IsEnabledCC && (SelectedContent != null) && (SelectedContent.Command.Status != Command.EnumCommandStatus.Active) && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {
@@ -564,7 +564,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledCC && (SelectedContent != null) && AccessLevel >= 1;
+                return !IsEnabledCC && (SelectedContent != null) && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {
@@ -663,7 +663,7 @@ namespace UserInterface.ViewModel
             {
                 return IsEnabledCC && (DetailedContent != null) && AllPropertiesValid &&
                        (DetailedContent.AllPropertiesValid || _selectedCommand == CommandType.Delete ) &&
-                        AccessLevel >= 1;
+                        AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {

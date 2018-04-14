@@ -93,6 +93,7 @@
     <Compile Include="SKU_ID.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="TablesToString.cs" />
     <Compile Include="TUs.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>

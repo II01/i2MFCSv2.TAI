@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="UserInterface.View.HistoryLogsView"
+        ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d"
+        xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
+        xmlns:src="clr-namespace:UserInterface.View"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        DataContext="{Binding HistoryLogs, Source={StaticResource Locator}}"
+        d:DesignWidth="1280"
+        d:DesignHeight="720">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="MultipleChoiceFilter">
+            <src:MultipleChoiceFilter Filter="{Binding Path=Filter, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=dgx:DataGridFilterColumnControl}}"/>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
+                                    Path=(FrameworkElement.ActualHeight), 
+                                    RelativeSource={RelativeSource AncestorType=UserControl},
+                                    ConverterParameter=-135|1.0}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+            <TextBlock Text="{Resx HistoryWMSLog}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
+        </Border>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="175"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <src:HistoryDateTimePickerView Grid.Row="0" Grid.Column="0"  Margin="3,0,3,0" 
+                                           DataContext="{Binding DateFrom, Mode=TwoWay}"/>
+            <src:HistoryDateTimePickerView Grid.Row="1" Grid.Column="0"  Margin="3,0,3,0" 
+                                           DataContext="{Binding DateTo, Mode=TwoWay}"/>
+            <Button Grid.RowSpan="2" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="0,0,0,0" Width="100" HorizontalAlignment="Right" 
+                    Content="{Resx Refresh}" 
+                    Command="{Binding Refresh}">
+                <Button.IsEnabled>
+                    <MultiBinding Converter="{StaticResource BoolAndMultiConverter}">
+                        <Binding Path="DateFrom.AllPropertiesValid" />
+                        <Binding Path="DateTo.AllPropertiesValid"/>
+                    </MultiBinding>
+                </Button.IsEnabled>
+            </Button>
+            <TextBlock Grid.RowSpan="2" Grid.Column="4" VerticalAlignment="Bottom" Text="{Resx Records}" Margin="0,0,0,-12"/>
+            <TextBlock Grid.RowSpan="2" Grid.Column="5" VerticalAlignment="Bottom" Text="{Binding Records}" Margin="5,0,0,-12"/>
+        </Grid>
+        <DataGrid Grid.Row="3"
+            x:Name="dgPlaceIDs" 
+            ItemsSource="{Binding DataList}" 
+            dgx:DataGridFilter.IsAutoFilterEnabled="True"
+            dgx:Tools.ApplyInitialSorting="True"
+            IsEnabled="True"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False" 
+            IsReadOnly="True"
+            CellStyle="{StaticResource Body_Content_DataGrid_Top}"
+            FontSize="{StaticResource BaseFontSize}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
+                                    Width="175" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}"
+                                    Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Severity}" 
+                                    Width="*" Binding="{Binding Severity}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Source}" 
+                                    Width="2*" Binding="{Binding Source}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Message}" 
+                                    Width="6*" Binding="{Binding Message}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

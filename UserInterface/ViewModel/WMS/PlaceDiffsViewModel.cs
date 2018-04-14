@@ -29,6 +29,7 @@ namespace UserInterface.ViewModel
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
+        private string _accessUser;
         #endregion
 
         #region properites
@@ -132,17 +133,8 @@ namespace UserInterface.ViewModel
             try
             {
                 DataList = new ObservableCollection<PlaceDiffViewModel>();
-/*                foreach (var p in _dbservicewms.PlaceWMSandMFCSDiff())
-                    DataList.Add(new PlaceDiffViewModel
-                    {
-                        TUID = p.TUID,
-                        PlaceMFCS = p.PlaceMFCS,
-                        PlaceWMS = p.PlaceWMS,
-                        TimeMFCS = p.TimeMFCS,
-                        TimeWMS = p.TimeWMS
-                    });
-*/
-                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
+                _accessUser = "";
+                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
@@ -174,7 +166,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && AccessLevel >= 2;
+                return !EditEnabled && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -203,7 +195,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && AccessLevel >= 2;
+                return !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -253,12 +245,12 @@ namespace UserInterface.ViewModel
                         case CommandType.UpdateMFCS:
                             foreach (var d in DataList)
                                 pd.Add(new PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
-                            _dbservicewms.UpdatePlacesMFCS(pd);
+                            _dbservicewms.UpdatePlacesMFCS(pd, _accessUser);
                             break;
                         case CommandType.UpdateWMS:
                             foreach (var d in DataList)
                                 pd.Add(new PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
-                            _dbservicewms.UpdatePlacesWMS(pd);
+                            _dbservicewms.UpdatePlacesWMS(pd, _accessUser);
                             break;
                         default:
                             break;
@@ -279,7 +271,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return (EditEnabled && AccessLevel >= 2);
+                return (EditEnabled && AccessLevel%10 >= 2 && AccessLevel/10 >= 2);
             }
             catch (Exception e)
             {

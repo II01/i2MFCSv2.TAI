@@ -11,8 +11,14 @@ namespace UserInterface.DataServiceWMS
         public int? ERPID { get; set; }
         public int OrderID { get; set; }
         public int SubOrderID { get; set; }
+        public int WMSID { get; set; }
         public string SubOrderName { get; set; }
         public string Destination { get; set; }
+        public string SKUID { get; set; }
+        public string SKUBatch { get; set; }
+        public double SKUQty { get; set; }
+
+
         public DateTime ReleaseTime { get; set; }
         public DateTime LastChange { get; set; }
         public int Status { get; set; }

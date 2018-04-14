@@ -32,6 +32,7 @@ namespace UserInterface.ViewModel
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
+        private string _accessUser;
         #endregion
 
         #region properites
@@ -261,25 +262,8 @@ namespace UserInterface.ViewModel
                 DataListOrder = new ObservableCollection<OrderViewModel>();
                 DataListSubOrder = new ObservableCollection<OrderViewModel>();
                 DataListSKU = new ObservableCollection<OrderViewModel>();
-/*                foreach (var p in _dbservicewms.GetOrdersDistinct(10))
-                    DataListOrder.Add(new OrderViewModel
-                    {
-                        ID = p.ID,
-                        ERPID = p.ERP_ID,
-                        OrderID = p.OrderID,
-                        Destination = p.Destination,
-                        ReleaseTime = p.ReleaseTime,
-                        SubOrderID = p.SubOrderID,
-                        SubOrderName = p.SubOrderName,
-                        SKUID = p.SKU_ID,
-                        SKUBatch = p.SKU_Batch,
-                        SKUQty = p.SKU_Qty,
-                        Status = (EnumWMSOrderStatus)p.Status
-                    });
-                foreach (var l in DataListOrder)
-                    l.Initialize(_warehouse);
-*/
-                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
+                _accessUser = "";
+                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
@@ -329,7 +313,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && AccessLevel >= 1;
+                return !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -375,7 +359,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedOrder != null && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -403,7 +387,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedOrder != null && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -450,7 +434,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedOrder != null && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -496,7 +480,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSubOrder != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedSubOrder != null && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -524,7 +508,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSubOrder != null && DataListSubOrder.Count > 1 && !EditEnabled && AccessLevel >= 1;
+                return SelectedSubOrder != null && DataListSubOrder.Count > 1 && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -571,7 +555,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSubOrder != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedSubOrder != null && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -617,7 +601,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSKU != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedSKU != null && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -645,7 +629,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSKU != null && !EditEnabled && DataListSKU.Count > 1 && AccessLevel >= 1;
+                return SelectedSKU != null && !EditEnabled && DataListSKU.Count > 1 && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -705,6 +689,7 @@ namespace UserInterface.ViewModel
                             orderid = Detailed.OrderID;
                             ExecuteRefresh();
                             SelectedOrder = DataListOrder.FirstOrDefault(p => p.OrderID == orderid);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add order: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.EditOrder:
                             _dbservicewms.UpdateOrders(SelectedOrder.ERPID, SelectedOrder.OrderID, Detailed.Order);
@@ -717,10 +702,12 @@ namespace UserInterface.ViewModel
                                 l.Destination = Detailed.Destination;
                                 l.ReleaseTime = Detailed.ReleaseTime;
                             }
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit order: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.DeleteOrder:
                             Detailed.Status = EnumWMSOrderStatus.Cancel;
                             _dbservicewms.UpdateOrders(SelectedOrder.ERPID, SelectedOrder.OrderID, Detailed.Order);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete order: {Detailed.Order.ToString()}");
                             ExecuteRefresh();
                             break;
                         case CommandType.AddSubOrder:
@@ -731,6 +718,7 @@ namespace UserInterface.ViewModel
                             suborderid = Detailed.SubOrderID;
                             ExecuteRefresh();
                             SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add suborder: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.EditSubOrder:
                             if (Detailed.Order.SubOrderName == null)
@@ -746,9 +734,11 @@ namespace UserInterface.ViewModel
                             }
                             SelectedSubOrder.SubOrderID = Detailed.SubOrderID;
                             SelectedSubOrder.SubOrderName = Detailed.SubOrderName;
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit suborder: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.DeleteSubOrder:
                             _dbservicewms.DeleteSubOrders(Detailed.OrderID, Detailed.SubOrderID);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete suborder: {Detailed.Order.ToString()}");
                             ExecuteRefresh();
                             break;
                         case CommandType.AddSKU:
@@ -758,6 +748,7 @@ namespace UserInterface.ViewModel
                             orderid = Detailed.OrderID;
                             suborderid = Detailed.SubOrderID;
                             skuid = Detailed.SKUID;
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add SKU: {Detailed.Order.ToString()}");
                             ExecuteRefresh();
                             SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid);
                             SelectedSKU = DataListSKU.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid && p.SKUID == skuid);
@@ -767,9 +758,11 @@ namespace UserInterface.ViewModel
                             SelectedSKU.SKUID = Detailed.SKUID;
                             SelectedSKU.SKUBatch = Detailed.SKUBatch;
                             SelectedSKU.SKUQty = Detailed.SKUQty;
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit SKU: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.DeleteSKU:
                             _dbservicewms.DeleteSKU(Detailed.Order);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete SKU: {Detailed.Order.ToString()}");
                             ExecuteRefresh();
                             break;
                         default:
@@ -798,7 +791,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return EditEnabled && Detailed.AllPropertiesValid && AccessLevel >= 1;
+                return EditEnabled && Detailed.AllPropertiesValid && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {

@@ -907,7 +907,7 @@
     <value>Suborders</value>
   </data>
   <data name="SKUs" xml:space="preserve">
-    <value>Transport units</value>
+    <value>Stock keeping units</value>
   </data>
   <data name="SKUQty" xml:space="preserve">
     <value>Quantity</value>

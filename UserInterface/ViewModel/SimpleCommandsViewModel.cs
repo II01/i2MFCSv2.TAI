@@ -249,7 +249,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledField && AccessLevel == 2;
+                return !IsEnabledField && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -282,7 +282,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledField && AccessLevel == 2;
+                return !IsEnabledField && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -315,7 +315,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledField && AccessLevel == 2;
+                return !IsEnabledField && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -347,7 +347,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedContent != null && AccessLevel == 2 &&
+                return SelectedContent != null && AccessLevel%10 >= 2 &&
                        (SelectedContent.Status == EnumSimpleCommandStatus.Canceled ||
                         SelectedContent.Status == EnumSimpleCommandStatus.NotActive);
             }
@@ -381,7 +381,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedContent != null && AccessLevel == 2;
+                return SelectedContent != null && AccessLevel%10 >= 2;
             }
             catch (Exception e)
             {
@@ -498,7 +498,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return IsEnabledCC && AccessLevel == 2 && 
+                return IsEnabledCC && AccessLevel%10 >= 2 && 
                        (DetailedContent.AllPropertiesValid || _selectedCommand == CommandType.Delete);
             }
             catch (Exception e)

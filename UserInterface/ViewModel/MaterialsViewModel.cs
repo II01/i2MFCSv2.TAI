@@ -260,7 +260,7 @@ namespace UserInterface.ViewModel
             try
             {
                 if (SelectedPlace != null)
-                    return !EnabledCC && (SelectedPlace.ID > 0 || _devices.Any(p => p == SelectedPlace.Location)) && AccessLevel >= 1;
+                    return !EnabledCC && (SelectedPlace.ID > 0 || _devices.Any(p => p == SelectedPlace.Location)) && AccessLevel%10 >= 1;
                 return false;
             }
             catch (Exception e)
@@ -292,7 +292,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EnabledCC && AccessLevel >= 1;
+                return !EnabledCC && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {
@@ -321,7 +321,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EnabledCC && (SelectedPlace != null) && AccessLevel >= 1;
+                return !EnabledCC && (SelectedPlace != null) && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {
@@ -438,7 +438,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return EnabledCC && DetailedPlace.AllPropertiesValid && AccessLevel >= 1;
+                return EnabledCC && DetailedPlace.AllPropertiesValid && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {

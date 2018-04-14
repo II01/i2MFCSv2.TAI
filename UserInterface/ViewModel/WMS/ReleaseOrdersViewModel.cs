@@ -40,6 +40,7 @@ namespace UserInterface.ViewModel
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
+        private string _accessUser;
         private int? _suborderid;
         #endregion
 
@@ -331,7 +332,8 @@ namespace UserInterface.ViewModel
                 DataListCommand = new ObservableCollection<CommandWMSViewModel>();
                 DataListPlace = new ObservableCollection<PlaceIDViewModel>();
                 DataListTU = new ObservableCollection<PlaceViewModel>();
-                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
+                _accessUser = "";
+                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, async (vm) => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
@@ -372,7 +374,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && SelectedOrder.Status == EnumWMSOrderStatus.Waiting && !EditEnabled && AccessLevel >= 1;
+                return SelectedOrder != null && SelectedOrder.Status == EnumWMSOrderStatus.Waiting && !EditEnabled && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {
@@ -409,7 +411,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && SelectedOrder.Status < EnumWMSOrderStatus.Cancel && !EditEnabled && AccessLevel >= 1;
+                return SelectedOrder != null && SelectedOrder.Status < EnumWMSOrderStatus.Cancel && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -440,7 +442,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedCommand != null && SelectedCommand.Status < EnumCommandWMSStatus.Canceled && !EditEnabled && AccessLevel >= 1;
+                return SelectedCommand != null && SelectedCommand.Status < EnumCommandWMSStatus.Canceled && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -463,7 +465,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedPlace != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedPlace != null && !EditEnabled && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {
@@ -485,7 +487,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedPlace != null && !EditEnabled && AccessLevel >= 1;
+                return SelectedPlace != null && !EditEnabled && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {
@@ -553,6 +555,7 @@ namespace UserInterface.ViewModel
                             _dbservicewms.UpdateOrders(DetailedOrder.ERPID, DetailedOrder.OrderID, DetailedOrder.Order);
                             SelectedOrder.Destination = DetailedOrder.Destination;
                             SelectedOrder.ReleaseTime = DetailedOrder.ReleaseTime;
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Release order: {DetailedOrder.Order.ToString()}");
                             break;
                         case CommandType.DeleteOrder:
                             SelectedOrder.Status = DetailedOrder.Status;
@@ -565,6 +568,7 @@ namespace UserInterface.ViewModel
                                     ReleaseTime = DetailedOrder.ReleaseTime,
                                     Destination = DetailedOrder.Destination
                                 });
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Cancel order: {DetailedOrder.Order.ToString()}");
                             }
                             break;
                         case CommandType.DeleteCommand:
@@ -574,14 +578,19 @@ namespace UserInterface.ViewModel
                                 {                                    
                                     ID = SelectedCommand.WMSID
                                 });
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete command: |{SelectedCommand.WMSID}|");
                             }
                             break;
                         case CommandType.ClearRamp:
-                            if(_dbservicewms.ClearRamp(SelectedPlaceID))
+                            if (_dbservicewms.ClearRamp(SelectedPlaceID))
+                            {
                                 _warehouse.DBService.ClearRamp(SelectedPlaceID);
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Clear ramp: |{SelectedPlaceID}|");
+                            }
                             break;
                         case CommandType.ReleaseRamp:
-                            _dbservicewms.ReleaseRamp(SelectedPlace.ID);
+                            _dbservicewms.ReleaseRamp(SelectedPlaceID);
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Release ramp: |{SelectedPlaceID}|");
                             break;
                     }
                     VisibleOrder = true;
@@ -605,7 +614,7 @@ namespace UserInterface.ViewModel
             {
                 return (_selectedCmd == CommandType.DeleteOrder || _selectedCmd == CommandType.DeleteCommand || 
                         _selectedCmd == CommandType.ClearRamp || _selectedCmd == CommandType.ReleaseRamp ||
-                        (EditEnabled && DetailedOrder.AllPropertiesValid)) && AccessLevel >= 1;
+                        (EditEnabled && DetailedOrder.AllPropertiesValid)) && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {
@@ -667,13 +676,17 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if(SelectedOrder != null)
                 {
-                    foreach (var p in await _dbservicewms.GetSubOrdersWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID))
+                    foreach (var p in await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID))
                         DataListSubOrder.Add(new ReleaseOrderViewModel
                         {
+                            ID = p.WMSID,
                             ERPID = p.ERPID,
                             OrderID = p.OrderID,
                             SubOrderID = p.SubOrderID,
                             SubOrderName = p.SubOrderName,
+                            SKUID = p.SKUID,
+                            SKUBatch = p.SKUBatch,
+                            SKUQty = p.SKUQty,
                             Portion = $"{p.CountActive}/{p.CountAll} - {p.CountFinished}/{p.CountAll}",
                             Status = (EnumWMSOrderStatus)p.Status
                         });
@@ -700,7 +713,7 @@ namespace UserInterface.ViewModel
                 DataListCommand.Clear();
                 if( SelectedSubOrder != null )
                 {
-                    foreach (var cmd in await _dbservicewms.GetCommandsWMSForSubOrder(SelectedSubOrder.ERPID, SelectedSubOrder.OrderID, SelectedSubOrder.SubOrderID, (int)EnumWMSOrderStatus.Finished))
+                    foreach (var cmd in await _dbservicewms.GetCommandsWMSForSubOrder(SelectedSubOrder.ID))
                     {
                         DataListCommand.Add(new CommandWMSViewModel
                         {

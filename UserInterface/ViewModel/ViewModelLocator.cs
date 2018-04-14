@@ -128,6 +128,18 @@ namespace UserInterface.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<LogsViewModel>(); }
         }
+        public HistoryLogsViewModel HistoryLogs
+        {
+            get { return ServiceLocator.Current.GetInstance<HistoryLogsViewModel>(); }
+        }
+        public HistoryCommandWMSsViewModel HistoryCommandWMSs
+        {
+            get { return ServiceLocator.Current.GetInstance<HistoryCommandWMSsViewModel>(); }
+        }
+        public HistoryCommandERPsViewModel HistoryCommandERPs
+        {
+            get { return ServiceLocator.Current.GetInstance<HistoryCommandERPsViewModel>(); }
+        }
         #endregion
 
         #region initialization
@@ -160,6 +172,9 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<CommandWMSsViewModel>();
             SimpleIoc.Default.Register<PlaceDiffsViewModel>();
             SimpleIoc.Default.Register<LogsViewModel>();
+            SimpleIoc.Default.Register<HistoryLogsViewModel>();
+            SimpleIoc.Default.Register<HistoryCommandWMSsViewModel>();
+            SimpleIoc.Default.Register<HistoryCommandERPsViewModel>();
         }
         public static void Cleanup()
         {

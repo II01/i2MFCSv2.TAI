@@ -768,14 +768,14 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<CommandERPs> GetCommandERPs(int statusLessOrEqual)
+        public List<CommandERPs> GetCommandERPs(DateTime timeFrom, DateTime timeTo,  int statusLessOrEqual)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var items = (from c in dc.CommandERPs
-                                 where c.Status <= statusLessOrEqual
+                                 where c.Status <= statusLessOrEqual || (c.Time >= timeFrom && c.Time <= timeTo)
                                  orderby c.ID descending
                                  select c).Take(5000);
                     return items.ToList();
@@ -898,6 +898,44 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public async Task<List<OrderReduction>> GetSubOrdersBySKUWithCount(int? erpid, int orderid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var suborders = from o in dc.Orders
+                                    where o.ERP_ID == erpid && o.OrderID == orderid
+                                    join c in dc.Commands on o.ID equals c.Order_ID into subordercmds
+                                    from oc in subordercmds.DefaultIfEmpty()
+                                    select new { SubOrder = o, Command = oc };
+                    var subs = from so in suborders
+                               group so by so.SubOrder.ID into grp
+                               select new OrderReduction
+                               {
+                                   ERPID = grp.FirstOrDefault().SubOrder.ERP_ID,
+                                   OrderID = grp.FirstOrDefault().SubOrder.OrderID,
+                                   SubOrderID = grp.FirstOrDefault().SubOrder.SubOrderID,
+                                   SubOrderName = grp.FirstOrDefault().SubOrder.SubOrderName,
+                                   WMSID = grp.FirstOrDefault().SubOrder.ID,
+                                   SKUID = grp.FirstOrDefault().SubOrder.SKU_ID,
+                                   SKUBatch = grp.FirstOrDefault().SubOrder.SKU_Batch,
+                                   SKUQty = grp.FirstOrDefault().SubOrder.SKU_Qty,
+                                   CountAll = grp.Where(p => p.Command != null).Count(),
+                                   CountActive = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status == (int)EnumCommandWMSStatus.Active),
+                                   CountMoveDone = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
+                                   CountFinished = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
+                                   Status = grp.Any(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting) ? grp.Where(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Command.Status) : 0
+                               };
+                    return await subs.ToListAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
 
         public async Task<List<CommandWMSOrder>> GetCommandsWMSForSubOrder(int? erpid, int orderid, int suborderid, int statusLessOrEqual)
         {
@@ -934,6 +972,33 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+        public async Task<List<CommandWMSOrder>> GetCommandsWMSForSubOrder(int id)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var items = (from c in dc.Commands
+                                 where c.Order_ID == id
+                                 select new CommandWMSOrder
+                                 {
+                                     ID = c.ID,
+                                     Order_ID = c.Order_ID ?? 0,
+                                     TU_ID = c.TU_ID,
+                                     Source = c.Source,
+                                     Target = c.Target,
+                                     Status = c.Status,
+                                     Time = c.Time,
+                                 }
+                                 ).Take(5000);
+                    return await items.ToListAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
 
         public void UpdateCommand(Commands commandwms)
         {
@@ -958,14 +1023,14 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<CommandWMSOrder> GetCommandOrders(int statusLessOrEqual)
+        public List<CommandWMSOrder> GetCommandOrders(DateTime dateFrom, DateTime dateTo, int statusLessOrEqual)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var items = (from c in dc.Commands
-                                 where c.Status <= statusLessOrEqual
+                                 where c.Status <= statusLessOrEqual || (c.Time >= dateFrom && c.Time <= dateTo)
                                  orderby c.ID descending
                                  select new CommandWMSOrder
                                  {
@@ -1028,7 +1093,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void UpdatePlacesMFCS(List<PlaceDiff> list)
+        public void UpdatePlacesMFCS(List<PlaceDiff> list, string user)
         {
             try
             {
@@ -1037,12 +1102,21 @@ namespace UserInterface.DataServiceWMS
                     foreach (var l in list)
                     {
                         if (dcm.MaterialIDs.FirstOrDefault(p => p.ID == l.TUID) == null)
+                        {
                             dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 1, Weight = 1 });
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add MaterialID: |{l.TUID:d9}|");
+                        }
                         var place = dcm.Places.FirstOrDefault(pp => pp.Material == l.TUID);
                         if (place != null)
+                        {
                             dcm.Places.Remove(place);
-                        if(l.PlaceWMS != null && l.PlaceWMS.StartsWith("W"))
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, delete TU: |{place.Place1}|{place.Material:d9}|");
+                        }
+                        if (l.PlaceWMS != null && l.PlaceWMS.StartsWith("W"))
+                        {
                             dcm.Places.Add(new Place { Material = l.TUID, Place1 = l.PlaceWMS, Time = DateTime.Now });
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add TU: |{l.PlaceWMS}|{l.TUID:d9}|");
+                        }
                     }
                     dcm.SaveChanges();
                 }
@@ -1052,7 +1126,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void UpdatePlacesWMS(List<PlaceDiff> list)
+        public void UpdatePlacesWMS(List<PlaceDiff> list, string user)
         {
             try
             {
@@ -1061,12 +1135,23 @@ namespace UserInterface.DataServiceWMS
                     foreach (var l in list)
                     {
                         if (dcw.TU_ID.FirstOrDefault(p => p.ID == l.TUID) == null)
-                            dcw.TU_ID.Add(new TU_ID { ID = l.TUID, DimensionClass = 0, Blocked = 0});
+                        {
+                            var tuid = new TU_ID { ID = l.TUID, DimensionClass = 0, Blocked = 0 };
+                            dcw.TU_ID.Add(tuid);
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update places WMS, add TUID: {tuid.ToString()}|");
+                        }
                         var place = dcw.Places.FirstOrDefault(pp => pp.TU_ID == l.TUID);
                         if (place != null)
+                        {
                             dcw.Places.Remove(place);
-                        if(l.PlaceMFCS != null)
-                            dcw.Places.Add(new Places { TU_ID = l.TUID, PlaceID = l.PlaceMFCS, Time = DateTime.Now  });
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update places WMS, remove place: {place.ToString()}");
+                        }
+                        if (l.PlaceMFCS != null)
+                        {
+                            var pl = new Places { TU_ID = l.TUID, PlaceID = l.PlaceMFCS, Time = DateTime.Now };
+                            dcw.Places.Add(pl);
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update places WMS, add place: {pl.ToString()}");
+                        }
                     }
                     dcw.SaveChanges();
                 }
@@ -1084,6 +1169,24 @@ namespace UserInterface.DataServiceWMS
                 {
                     var items = (from l in dcw.Logs
                                  orderby l.ID descending
+                                 select l).Take(1000);
+                    return items.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public List<Logs> GetLogs(DateTime dateFrom, DateTime dateTo)
+        {
+            try
+            {
+                using (var dcw = new EntitiesWMS())
+                {
+                    var items = (from l in dcw.Logs
+                                 where l.Time >= dateFrom && l.Time <= dateTo
+                                 orderby l.ID descending
                                  select l).Take(5000);
                     return items.ToList();
                 }
@@ -1093,6 +1196,27 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public void AddLog(string user, EnumLogWMS type, string source, string message)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    dc.Logs.Add(new Logs
+                    {
+                        Severity = (int)type,
+                        Source = $"{source} # {user}",
+                        Message = message.Substring(0, Math.Min(250, message.Length)),
+                        Time = DateTime.Now
+                    });
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            { }
+        }
+
     }
 }
 

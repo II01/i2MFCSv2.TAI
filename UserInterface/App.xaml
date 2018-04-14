@@ -194,6 +194,15 @@
         <DataTemplate DataType="{x:Type vm:LogsViewModel}">
             <views:LogsView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HistoryLogsViewModel}">
+            <views:HistoryLogsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HistoryCommandWMSsViewModel}">
+            <views:HistoryCommandWMSsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HistoryCommandERPsViewModel}">
+            <views:HistoryCommandERPsView />
+        </DataTemplate>
 
         <!-- converters -->
         <views:AddMultConverter x:Key="AddMultConverter" />
@@ -205,6 +214,8 @@
         <views:BoolAndMultiConverter x:Key="BoolAndMultiConverter" />
         <views:AccessLevelL1 x:Key="AccessLevelL1" />
         <views:AccessLevelL2 x:Key="AccessLevelL2" />
+        <views:AccessLevelWMSL1 x:Key="AccessLevelWMSL1" />
+        <views:AccessLevelWMSL2 x:Key="AccessLevelWMSL2" />
 
         <!-- constants -->
         <sys:Int32 x:Key="accessLevel">0</sys:Int32>

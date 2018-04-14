@@ -8575,7 +8575,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Transport units.
+        ///   Looks up a localized string similar to Stock keeping units.
         /// </summary>
         public static string SKUs {
             get {
