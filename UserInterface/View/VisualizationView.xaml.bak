@@ -27,28 +27,19 @@
         <ResourceDictionary>
             <scada:PhysicalToPixel x:Key="PhysicalToPixel" />
             <x:Array Type="scada:ScalingPoint"  x:Key="Crane1Scaling">
-                <scada:ScalingPoint Pixel="732" Physical="241"/>
-                <scada:ScalingPoint Pixel="722" Physical="341"/>
-                <scada:ScalingPoint Pixel="645" Physical="502"/>
-                <scada:ScalingPoint Pixel="562" Physical="602"/>
-                <scada:ScalingPoint Pixel="31" Physical="13679"/>
-                <scada:ScalingPoint Pixel="21" Physical="13779"/>
+                <scada:ScalingPoint Pixel="722"  Physical="0"/>
+                <scada:ScalingPoint Pixel="-50" Physical="13000"/>
             </x:Array>
             <x:Array Type="scada:ScalingPoint"  x:Key="Crane2Scaling">
-                <scada:ScalingPoint Pixel="732" Physical="241"/>
-                <scada:ScalingPoint Pixel="722" Physical="341"/>
-                <scada:ScalingPoint Pixel="645" Physical="502"/>
-                <scada:ScalingPoint Pixel="562" Physical="602"/>
-                <scada:ScalingPoint Pixel="31" Physical="13679"/>
-                <scada:ScalingPoint Pixel="21" Physical="13779"/>
+                <scada:ScalingPoint Pixel="722"  Physical="0"/>
+                <scada:ScalingPoint Pixel="-50"  Physical="13000"/>
             </x:Array>
             <x:Array Type="scada:ScalingPoint"  x:Key="Shuttle3Scaling">
-                <scada:ScalingPoint Pixel="1722" Physical="145"/>
-                <scada:ScalingPoint Pixel="1712" Physical="195"/>
-                <scada:ScalingPoint Pixel="1531"  Physical="1028"/>
-                <scada:ScalingPoint Pixel="1450"  Physical="1341"/> 
-                <scada:ScalingPoint Pixel="1120"  Physical="2841"/>
-                <scada:ScalingPoint Pixel="1110"  Physical="2890"/>
+                <scada:ScalingPoint Pixel="1100"  Physical="0"/>
+                <scada:ScalingPoint Pixel="1120"  Physical="100"/>
+                <scada:ScalingPoint Pixel="1500"  Physical="1620"/>
+                <scada:ScalingPoint Pixel="1600"  Physical="1940"/>
+                <scada:ScalingPoint Pixel="1712" Physical="2723"/>
             </x:Array>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -75,7 +66,8 @@
                 <scada:UCConveyor Canvas.Left="1745" Canvas.Top="5" Sensor1Visibility="Visible"/>
                 <scada:UCConveyor Canvas.Left="1670" Canvas.Top="5" Sensor1Visibility="Visible"/>
                 <scada:UCConveyor Canvas.Left="1595" Canvas.Top="5" Sensor1Visibility="Visible"/>
-                <scada:UCConveyor Canvas.Left="1595" Canvas.Top="75" Sensor1Visibility="Visible"/>
+                <scada:UCConveyor Canvas.Left="1595" Canvas.Top="75" Sensor1Visibility="Visible"
+                                  DataContext="{Binding Device[T013]}"/>
                 <scada:UCConveyor Canvas.Left="1595" Canvas.Top="145" Sensor1Visibility="Visible"
                                   DataContext="{Binding Device[T014]}"/>
                 <scada:UCConveyor Canvas.Left="1670" Canvas.Top="145" Sensor1Visibility="Visible"
@@ -137,14 +129,14 @@
                 <scada:UCConveyor Canvas.Left="1124" Canvas.Top="684" Sensor1Visibility="Visible"
                                   DataContext="{Binding Device[T038]}"/>
                 <!-- Segment T04A -->
-                <scada:UCSegment Canvas.Left="1454" Canvas.Top="679" Width="80" Height="74"
+                <scada:UCSegment Canvas.Left="1505" Canvas.Top="679" Width="80" Height="74"
                                  DataContext="{Binding Device[T04A]}"/>
-                <scada:UCConveyor Canvas.Left="1454" Canvas.Top="684" Sensor1Visibility="Visible"
+                <scada:UCConveyor Canvas.Left="1505" Canvas.Top="684" Sensor1Visibility="Visible"
                                   DataContext="{Binding Device[T041]}"/>
                 <!-- Segment T04B -->
-                <scada:UCSegment Canvas.Left="1535" Canvas.Top="679" Width="80" Height="74"
+                <scada:UCSegment Canvas.Left="1605" Canvas.Top="679" Width="80" Height="74"
                                  DataContext="{Binding Device[T04B]}"/>
-                <scada:UCConveyor Canvas.Left="1535" Canvas.Top="684" Sensor1Visibility="Visible"
+                <scada:UCConveyor Canvas.Left="1605" Canvas.Top="684" Sensor1Visibility="Visible"
                                   DataContext="{Binding Device[T042]}"/>
                 <!-- Segment T11A -->
                 <scada:UCSegment Canvas.Left="817" Canvas.Top="140" Width="305" Height="74"
@@ -246,7 +238,7 @@
                 <scada:UCVehicleSingleDeck Canvas.Top="756" FlowDirection="LeftToRight"
                                            Canvas.Left="{Binding Position, Converter={StaticResource PhysicalToPixel}, ConverterParameter={StaticResource Shuttle3Scaling}}"
                                            DataContext="{Binding Device[S3]}"/>
-                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="1148" Canvas.Top="834" Width="645" Height="113">
+                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="1288" Canvas.Top="834" Width="505" Height="113">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <TextBlock Text="{Resx Rack}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Foreground="SkyBlue"/>
                         <TextBlock Text="32" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="16" Foreground="SkyBlue"/>

@@ -217,6 +217,7 @@
     <Compile Include="ViewModel\WMS\HistoryCommandERPsViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryCommandWMSsViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryLogsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\HistoryReleaseOrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceDiffsViewModel.cs" />
@@ -274,6 +275,9 @@
     </Compile>
     <Compile Include="View\WMS\HistoryLogsView.xaml.cs">
       <DependentUpon>HistoryLogsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\HistoryReleaseOrdersView.xaml.cs">
+      <DependentUpon>HistoryReleaseOrdersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\ReleaseOrdersView.xaml.cs">
       <DependentUpon>ReleaseOrdersView.xaml</DependentUpon>
@@ -453,6 +457,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WMS\HistoryLogsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\HistoryReleaseOrdersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

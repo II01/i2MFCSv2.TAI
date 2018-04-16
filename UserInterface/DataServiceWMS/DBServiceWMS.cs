@@ -825,14 +825,14 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public async Task<List<OrderReduction>> GetOrdersWithCount(int statusLessOrEqual)
+        public async Task<List<OrderReduction>> GetOrdersWithCount(DateTime timeFrom, DateTime timeTo, int statusLessOrEqual)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var suborders = from o in dc.Orders
-                                    where o.Status <= statusLessOrEqual
+                                    where o.Status <= statusLessOrEqual || (o.ReleaseTime >= timeFrom && o.ReleaseTime <= timeTo)
                                     join c in dc.Commands on o.ID equals c.Order_ID into ordersComands
                                     from oc in ordersComands.DefaultIfEmpty()
                                     select new { orders = o, lastChange = oc == null? o.ReleaseTime : oc.LastChange };

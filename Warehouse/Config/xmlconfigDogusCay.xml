@@ -91,7 +91,7 @@
     <Segment Name="T01" CommunicatorName="PLC_Conveyor" PLC_ID="1" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="001001" Offset="0" Range="10"/>
+          <ALARM ID="001001" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -99,7 +99,7 @@
     <Segment Name="T02A" CommunicatorName="PLC_Conveyor" PLC_ID="2" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="002101" Offset="0" Range="10"/>
+          <ALARM ID="002101" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -107,7 +107,7 @@
     <Segment Name="T02B" CommunicatorName="PLC_Conveyor" PLC_ID="3" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="002201" Offset="0" Range="10"/>
+          <ALARM ID="002201" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -115,7 +115,7 @@
     <Segment Name="T03A" CommunicatorName="PLC_Conveyor" PLC_ID="4" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003101" Offset="0" Range="10"/>
+          <ALARM ID="003101" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -123,7 +123,7 @@
     <Segment Name="T03B" CommunicatorName="PLC_Conveyor" PLC_ID="5" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003201" Offset="0" Range="10"/>
+          <ALARM ID="003201" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -131,7 +131,7 @@
     <Segment Name="T03C" CommunicatorName="PLC_Conveyor" PLC_ID="6" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003301" Offset="0" Range="10"/>
+          <ALARM ID="003301" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -139,7 +139,7 @@
     <Segment Name="T03D" CommunicatorName="PLC_Conveyor" PLC_ID="7" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003401" Offset="0" Range="10"/>
+          <ALARM ID="003401" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -147,7 +147,7 @@
     <Segment Name="T03E" CommunicatorName="PLC_Conveyor" PLC_ID="8" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003501" Offset="0" Range="10"/>
+          <ALARM ID="003501" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -155,7 +155,7 @@
     <Segment Name="T03F" CommunicatorName="PLC_Conveyor" PLC_ID="9" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003601" Offset="0" Range="10"/>
+          <ALARM ID="003601" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -163,7 +163,7 @@
     <Segment Name="T03G" CommunicatorName="PLC_Conveyor" PLC_ID="10" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003701" Offset="0" Range="10"/>
+          <ALARM ID="003701" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -171,7 +171,7 @@
     <Segment Name="T03H" CommunicatorName="PLC_Conveyor" PLC_ID="11" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="003801" Offset="0" Range="10"/>
+          <ALARM ID="003801" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -179,7 +179,7 @@
     <Segment Name="T04A" CommunicatorName="PLC_Conveyor" PLC_ID="20" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="004101" Offset="0" Range="10"/>
+          <ALARM ID="004101" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -187,7 +187,7 @@
     <Segment Name="T04B" CommunicatorName="PLC_Conveyor" PLC_ID="21" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="004201" Offset="0" Range="10"/>
+          <ALARM ID="004201" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -195,7 +195,7 @@
     <Segment Name="T11A" CommunicatorName="PLC_Conveyor" PLC_ID="12" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="011101" Offset="0" Range="10"/>
+          <ALARM ID="011101" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -203,7 +203,7 @@
     <Segment Name="T11B" CommunicatorName="PLC_Conveyor" PLC_ID="13" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="011201" Offset="0" Range="10"/>
+          <ALARM ID="011201" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -211,7 +211,7 @@
     <Segment Name="T12A" CommunicatorName="PLC_Conveyor" PLC_ID="14" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="012101" Offset="0" Range="10"/>
+          <ALARM ID="012101" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -219,7 +219,7 @@
     <Segment Name="T12B" CommunicatorName="PLC_Conveyor" PLC_ID="15" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="012201" Offset="0" Range="10"/>
+          <ALARM ID="012201" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -227,7 +227,7 @@
     <Segment Name="T21A" CommunicatorName="PLC_Conveyor" PLC_ID="16" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="021101" Offset="0" Range="10"/>
+          <ALARM ID="021101" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -235,7 +235,7 @@
     <Segment Name="T21B" CommunicatorName="PLC_Conveyor" PLC_ID="17" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="021201" Offset="0" Range="10"/>
+          <ALARM ID="021201" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -243,7 +243,7 @@
     <Segment Name="T22A" CommunicatorName="PLC_Conveyor" PLC_ID="18" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="022101" Offset="0" Range="10"/>
+          <ALARM ID="022101" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -251,7 +251,7 @@
     <Segment Name="T22B" CommunicatorName="PLC_Conveyor" PLC_ID="19" xsi:type="SegmentConveyor">
       <SegmentInfo>
         <AlarmList>
-          <ALARM ID="022201" Offset="0" Range="10"/>
+          <ALARM ID="022201" Offset="0" Range="9"/>
         </AlarmList>
       </SegmentInfo>
     </Segment>
@@ -280,7 +280,7 @@
           <Sensor Offset="10" Description="Middle" Reference="MID"/>
         </SensorList>
       </CraneInfo>
-      <HomePosition>T114</HomePosition>
+      <HomePosition>W:11:001:2:1</HomePosition>
       <FinalDevice>true</FinalDevice>
     </Crane>
     <Crane Name="C102" Segment="C1" PLC_ID="102" CommunicatorName="PLC_Crane1" WriteToDB="Always">
@@ -301,7 +301,7 @@
           <Sensor Offset="12" Description="Middle" Reference="MID"/>
         </SensorList>
       </CraneInfo>
-      <HomePosition>T115</HomePosition>
+      <HomePosition>W:11:002:2:1</HomePosition>
       <FinalDevice>true</FinalDevice>
     </Crane>
 
@@ -324,7 +324,7 @@
           <Sensor Offset="10" Description="Middle" Reference="MID"/>
         </SensorList>
       </CraneInfo>
-      <HomePosition>T214</HomePosition>
+      <HomePosition>W:22:001:2:1</HomePosition>
       <FinalDevice>true</FinalDevice>
     </Crane>
     <Crane Name="C202" Segment="C2" PLC_ID="202" CommunicatorName="PLC_Crane2" WriteToDB="Always">
@@ -345,7 +345,7 @@
           <Sensor Offset="12" Description="Middle" Reference="MID"/>
         </SensorList>
       </CraneInfo>
-      <HomePosition>T215</HomePosition>
+      <HomePosition>W:22:002:2:1</HomePosition>
       <FinalDevice>true</FinalDevice>
     </Crane>
 
@@ -368,7 +368,7 @@
           <Sensor Offset="6" Description="Middle" Reference="MID"/>
         </SensorList>
       </CraneInfo>
-      <HomePosition>T038</HomePosition>
+      <HomePosition>W:32:054:1:1</HomePosition>
       <FinalDevice>false</FinalDevice>
     </Crane>
 
@@ -376,23 +376,6 @@
 
   <!-- Conveyors -->
   <ConveyorList>
-
-    <Conveyor Name="T013" Segment="T01" PLC_ID="013" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="Conveyor">
-      <XmlRouteNode Next="T014" Cost="1"/>
-      <ConveyorAddress>013</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
-      <ConveyorInfo>
-        <AlarmList>
-          <ALARM ID="001010" Offset="10" Range="10"/>
-        </AlarmList>
-        <SensorList>
-          <Sensor Offset="8" Description="Occupied" Reference="32B1"/>
-          <Sensor Offset="9" Description="Aligned" Reference="32B2"/>
-          <Sensor Offset="10" Description="Bottom" Reference="33B2"/>
-          <Sensor Offset="11" Description="Top" Reference="33B1"/>
-        </SensorList>
-      </ConveyorInfo>
-    </Conveyor>
 
     <Conveyor Name="T014" Segment="T01" PLC_ID="014" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="ConveyorJunction">
       <ConveyorAddress>014</ConveyorAddress>
@@ -402,10 +385,10 @@
           <ALARM ID="001020" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="16" Description="Occupied" Reference="32B1"/>
-          <Sensor Offset="17" Description="Aligned" Reference="32B2"/>
-          <Sensor Offset="18" Description="Bottom" Reference="33B2"/>
-          <Sensor Offset="19" Description="Top" Reference="33B1"/>
+          <Sensor Offset="8" Description="Occupied" Reference="32B1"/>
+          <Sensor Offset="9" Description="Aligned" Reference="32B2"/>
+          <Sensor Offset="10" Description="Bottom" Reference="33B2"/>
+          <Sensor Offset="11" Description="Top" Reference="33B1"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -424,10 +407,10 @@
           <ALARM ID="001030" Offset="30" Range="15"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="24" Description="Occupied" Reference="32B1"/>
-          <Sensor Offset="25" Description="Aligned" Reference="32B2"/>
-          <Sensor Offset="26" Description="Bottom" Reference="33B2"/>
-          <Sensor Offset="27" Description="Top" Reference="33B1"/>
+          <Sensor Offset="16" Description="Occupied" Reference="32B1"/>
+          <Sensor Offset="17" Description="Aligned" Reference="32B2"/>
+          <Sensor Offset="18" Description="Bottom" Reference="33B2"/>
+          <Sensor Offset="19" Description="Top" Reference="33B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -717,7 +700,7 @@
           <XmlRouteNode Next="C101" Cost="1"/>
         </XmlRoute>
       </RouteDef>
-      <CraneAddress Shelve="0" Travel="114" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="114" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T115" Segment="T11B" PLC_ID="115" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
@@ -732,7 +715,7 @@
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
         </SensorList>
       </ConveyorInfo>
-      <CraneAddress Shelve="0" Travel="115" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="115" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T121" Segment="T12A" PLC_ID="121" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
@@ -747,7 +730,7 @@
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
         </SensorList>
       </ConveyorInfo>
-      <CraneAddress Shelve="0" Travel="121" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="121" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T122" Segment="T12B" PLC_ID="122" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
@@ -762,7 +745,7 @@
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
         </SensorList>
       </ConveyorInfo>
-      <CraneAddress Shelve="0" Travel="122" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="122" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T123" Segment="T12B" PLC_ID="123" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">
@@ -871,7 +854,7 @@
           <XmlRouteNode Next="C201" Cost="1"/>
         </XmlRoute>
       </RouteDef>
-      <CraneAddress Shelve="0" Travel="214" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="214" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T215" Segment="T21B" PLC_ID="215" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
@@ -886,7 +869,7 @@
           <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
         </SensorList>
       </ConveyorInfo>
-      <CraneAddress Shelve="0" Travel="215" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="215" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T221" Segment="T22A" PLC_ID="221" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
@@ -901,7 +884,7 @@
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
         </SensorList>
       </ConveyorInfo>
-      <CraneAddress Shelve="0" Travel="221" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="221" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T222" Segment="T22B" PLC_ID="222" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
@@ -916,7 +899,7 @@
           <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
         </SensorList>
       </ConveyorInfo>
-      <CraneAddress Shelve="0" Travel="222" Height="0" Depth="1"/>
+      <CraneAddress Shelve="0" Travel="222" Height="1" Depth="1"/>
     </Conveyor>
 
     <Conveyor Name="T223" Segment="T22B" PLC_ID="223" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="Conveyor">

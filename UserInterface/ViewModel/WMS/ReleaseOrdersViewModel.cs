@@ -644,7 +644,7 @@ namespace UserInterface.ViewModel
                 int? orderid = SelectedOrder?.OrderID;
                 _suborderid = SelectedSubOrder?.SubOrderID;
 
-                var orders = await _dbservicewms.GetOrdersWithCount((int)EnumWMSOrderStatus.Finished);
+                var orders = await _dbservicewms.GetOrdersWithCount(DateTime.MinValue, DateTime.MaxValue, (int)EnumWMSOrderStatus.ReadyToTake);
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel

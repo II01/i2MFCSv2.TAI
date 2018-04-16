@@ -7,189 +7,40 @@ using Database;
 using Warehouse.Model;
 using Warehouse.Common;
 using System.Collections;
-using Communication;
+using MFCS.Communication;
 using System.Runtime.Serialization;
 using System.Windows.Data;
+using Warehouse.ConveyorUnits;
 
 namespace Warehouse.ConveyorUnits
 {
-    public enum WriteToDB {Never = 0, Try, Always};
+    public enum WriteToDB { Never = 0, Try, Always };
 
     public class FLocation
     {
+        [XmlAttribute]
         public int X { get; set; }
+        [XmlAttribute]
         public int Y { get; set; }
+        [XmlAttribute]
         public int Z { get; set; }
-    }
 
-
-    [DataContract]    // big cased because Alarm already exists
-    public class ALARM
-    {
-        [DataMember]
-        [XmlAttribute]
-        public int ID { get; set; }
-        [DataMember]
-        [XmlAttribute]
-        public int Offset { get; set; }
-        [DataMember]
-        [XmlAttribute]
-        public int Range { get; set; }
-
-
-    }
-
-
-    [DataContract]
-    public class Sensor
-    {
-        [DataMember]
-        [XmlAttribute]
-        public int Offset { get; set; }
-        [DataMember]
-        [XmlAttribute]
-        public string Description { get; set; }
-        [DataMember]
-        [XmlAttribute]
-        public string Reference { get; set; }
-        [DataMember]
-        [XmlIgnore]
-        public bool Active { get; set; }
-    }
-
-    [DataContract]
-    public class State
-    {
-        [DataMember]
-        [XmlAttribute]
-        public int Offset { get; set; }
-        [DataMember]
-        [XmlAttribute]
-        public string Description { get; set; }
-        [DataMember]
-        [XmlIgnore]
-        public bool Active { get; set; }
-    }
-
-    [DataContract]
-    [KnownType(typeof(CraneInfo))]
-    [KnownType(typeof(ConveyorInfo))]
-    [KnownType(typeof(SegmentInfo))]
-    [KnownType(typeof(SimpleCommand))]
-    [KnownType(typeof(SimpleCraneCommand))]
-    [KnownType(typeof(SimpleConveyorCommand))]
-    [KnownType(typeof(LPosition))]
-    public class ConveyorBasicInfo
-    {
-        [XmlIgnore]
-        [DataMember]
-        public Int16 AlarmID { get; set; }
-        [XmlIgnore]
-        [DataMember]
-        public Int16 Fault { get; set; }
-        [DataMember]
-        public List<ALARM> AlarmList {get;set;}
-        [DataMember]
-        public List<Sensor> SensorList { get; set; }
-        [XmlIgnore]
-        [DataMember]
-        public Dictionary<string,Sensor> Sensor { get; set; }
-        [DataMember]
-        [XmlIgnore]
-        public List<int> ActiveAlarms { get; set; }
-        [DataMember]
-        [XmlIgnore]
-        public BitArray Status { get; set; }
-        [DataMember]
-        [XmlIgnore]
-        public BitArray State { get; set; }
-        [DataMember]
-        [XmlIgnore]
-        public bool Online { get; set; }
-        [XmlIgnore]
-        [DataMember]
-        public string Name { get; set; }
-
-        public ConveyorBasicInfo()
+        public static FLocation operator +(FLocation a, FLocation b )
         {
-            ActiveAlarms = new List<int>();
+            return new FLocation { X = a.X + b.X, Y = a.Y + b.Y, Z = a.Z + b.Z };
         }
 
-/*        public ConveyorBasicInfo(SerializationInfo info, StreamingContext context) : base()
+        public static FLocation operator -(FLocation a, FLocation b)
         {
-            AlarmID = info.GetInt16("AlarmID");
-            Fault = info.GetInt16("Fault");
-            AlarmList = (List<ALARM>) info.GetValue("AlarmList", AlarmList.GetType());
-            SensorList = (List<Sensor>)info.GetValue("SensorList", SensorList.GetType());
-            ActiveAlarms = (List<int>) info.GetValue("ActiveAlarms", ActiveAlarms.GetType());
-        }*/
-
-
-        public void SetAlarms(BitArray alarms, BasicWarehouse wh)
-        {
-            try
-            {
-                if (AlarmList != null)
-                {
-//                    ActiveAlarms.Clear();
-                    foreach (ALARM a in AlarmList)
-                    {
-                        for (int i = 0; i < a.Range; i++)
-                        {
-                            if (alarms[a.Offset + i] && !ActiveAlarms.Any(aa => aa == a.ID+i))
-                            {
-                                ActiveAlarms.Add(a.ID + i);
-                                wh.DBService.AddAlarm(Name, (a.ID + i).ToString(), Alarm.EnumAlarmStatus.Active, Alarm.EnumAlarmSeverity.Error);
-                            }
-                            else if (!alarms[a.Offset + i] && ActiveAlarms.Any(aa => aa == a.ID+i))
-                            {
-                                ActiveAlarms.Remove(a.ID + i);
-                                wh.DBService.UpdateAlarm(Name, (a.ID + i).ToString(), Alarm.EnumAlarmStatus.Removed);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new ConveyorBasicException(String.Format("ConveyorBasicInfo.SetAlarms failed. Reason:{0}", ex.Message));
-            }
+            return new FLocation { X = a.X - b.X, Y = a.Y - b.Y, Z = a.Z - b.Z };
         }
 
-        public void SetSensors(BitArray sensors)
+        public double Abs()
         {
-            try
-            {
-                SensorList?.ForEach(prop => prop.Active = sensors[prop.Offset]);
-            }
-            catch (Exception ex)
-            {
-                throw new ConveyorBasicException(String.Format("ConveyorBasicInfo.SetSensors failed. Reason:{0}", ex.Message));
-            }
+            return Math.Sqrt(X * X + Y * Y + Z * Z);
         }
-
-
-        public virtual void Initialize()
-        {
-            try
-            {
-                Sensor = SensorList?.ToDictionary(prop => prop.Reference);
-            }
-            catch (Exception ex)
-            {
-                throw new ConveyorBasicException(String.Format("ConveyorBasicInfo.Initialize failed. Reason:{0}", ex.Message));
-            }
-        }
-
-/*        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            info.AddValue("AlarmID", AlarmID);
-            info.AddValue("Fault", Fault);
-            info.AddValue("AlarmList", AlarmList, AlarmList.GetType());
-            info.AddValue("SensorList", SensorList, SensorList.GetType());
-            info.AddValue("ActiveAlarms", ActiveAlarms, ActiveAlarms.GetType());
-        } */
     }
+
 
 
     [Serializable]
@@ -238,9 +89,6 @@ namespace Warehouse.ConveyorUnits
         public string CommunicatorName { get; set; }
 
         [XmlIgnore]
-        public Action<SimpleCommand> OnSimpleCommandDone { get; set; }
-
-        [XmlIgnore]
         public List<Action<ConveyorBasicInfo>> NotifyVM { get; set; }
         private object _lock;
 
@@ -251,12 +99,30 @@ namespace Warehouse.ConveyorUnits
             BindingOperations.EnableCollectionSynchronization(NotifyVM, _lock);
         }
 
+
+        public abstract bool Automatic();
+        public abstract bool Remote();
+        public abstract bool LongTermBlock();
+
+        public abstract bool CheckIfAllNotified();
+
+        public abstract void OnReceiveTelegram(Telegram t);
+
+        public virtual void Startup()
+        {
+        }
+
+        public virtual bool Online()
+        {
+            return Communicator.Online();
+        }
+
         public virtual void Initialize(BasicWarehouse w)
         {
             try
             {
                 Warehouse = w;
-                Communicator = Warehouse.Communicator[CommunicatorName]; 
+                Communicator = Warehouse.Communicator[CommunicatorName];
                 PlaceID = Warehouse.DBService.FindPlaceID(Name);
                 Place = Warehouse.DBService.FindPlace(Name);
                 if (PlaceID == null)
@@ -269,22 +135,6 @@ namespace Warehouse.ConveyorUnits
             }
         }
 
-        public abstract bool Automatic();
-        public abstract bool Remote();
-        public abstract bool LongTermBlock();
-
-        public abstract bool CheckIfAllNotified();
-
-        public virtual void Startup()
-        {
-        }
-
-        public virtual bool Online()
-        {
-            return Communicator.Online();
-        }
-
-        public abstract void Simulate(DateTime time);
 
         public void OnSimpleCommandFinish(SimpleCommand cmd)
         {
@@ -296,7 +146,7 @@ namespace Warehouse.ConveyorUnits
                     Command Command = Warehouse.DBService.FindCommandByID(cmd.Command_ID.Value);
                     if (Command == null)
                         throw new ConveyorBasicException(String.Format("{0} has no corresponding Command", cmd != null ? cmd.ToString() : "null"));
-                    if(Command.Task == Database.Command.EnumCommandTask.Move)
+                    if (Command.Task == Database.Command.EnumCommandTask.Move)
                     {
                         Place p = Warehouse.DBService.FindMaterial((Command as CommandMaterial).Material.Value);
                         if (p != null && p.Place1 == (Command as CommandMaterial).Target)
@@ -314,26 +164,26 @@ namespace Warehouse.ConveyorUnits
                                 Warehouse.DBService.UpdateCommand(Command);
                                 Warehouse.OnCommandFinish?.Invoke(Command);
                             }
-                        } 
+                        }
                     }
-                    else if (cmd.Status == SimpleCommand.EnumStatus.Finished && Warehouse.DBService.CommandSimpleCommandsFinished(Command))
+                    else if (cmd.Status == SimpleCommand.EnumStatus.Finished && Warehouse.DBService.AllSimpleCommandWithCommandIDFinished(cmd.Command_ID.Value))
                     {
                         Command.Status = Database.Command.EnumCommandStatus.Finished;
                         Warehouse.DBService.UpdateCommand(Command);
                         Warehouse.OnCommandFinish?.Invoke(Command);
                     }
-                    else if (cmd.Status == SimpleCommand.EnumStatus.Canceled && 
+                    else if (cmd.Status == SimpleCommand.EnumStatus.Canceled &&
                              (cmd.Task == SimpleCommand.EnumTask.Create || cmd.Task == SimpleCommand.EnumTask.Delete))
                     {
                         if ((int)cmd.Reason > 100)
-                            Command.Reason = Database.Command.EnumCommandReason.PLC;
+                            Command.Reason = Command.EnumCommandReason.PLC;
                         else
-                            Command.Reason = Database.Command.EnumCommandReason.MFCS;
+                            Command.Reason = Command.EnumCommandReason.MFCS;
                         Command.Status = Database.Command.EnumCommandStatus.Canceled;
                         Warehouse.DBService.UpdateCommand(Command);
                         Warehouse.OnCommandFinish?.Invoke(Command);
                     }
-                             
+
                 }
             }
             catch (Exception ex)
@@ -347,9 +197,9 @@ namespace Warehouse.ConveyorUnits
         {
             try
             {
-//                InitialNotified = true;
-//                Warehouse.DBService.InitialNotify(Name, (int) material);
-//                Place = Warehouse.DBService.FindPlace(Name);
+                //                InitialNotified = true;
+                //                Warehouse.DBService.InitialNotify(Name, (int) material);
+                //                Place = Warehouse.DBService.FindPlace(Name);
                 InitialNotified = true;
                 Place p = Warehouse.DBService.FindMaterial((int)material);
                 if (WriteToDB == WriteToDB.Always ||
@@ -357,9 +207,14 @@ namespace Warehouse.ConveyorUnits
                 {
                     Warehouse.DBService.InitialNotify(Name, (int)material);
                     Place = Warehouse.DBService.FindPlace(Name);
+                    if (Place != null)
+                        Warehouse.OnMaterialMove?.Invoke(Place, EnumMovementTask.Move);
                 }
                 else if (material != 0)
-                    Place = new Place { Material = (int)material, Place1 = Name, Time = DateTime.Now };
+                {
+                    Place = new Place { Material = (int)material, Place1 = Name };
+                    Warehouse.OnMaterialMove?.Invoke(Place, EnumMovementTask.Move);
+                }
             }
             catch (Exception ex)
             {
@@ -372,7 +227,7 @@ namespace Warehouse.ConveyorUnits
         {
             // for input points
             try
-            { 
+            {
 
                 if (source == target)
                     return;
@@ -401,6 +256,18 @@ namespace Warehouse.ConveyorUnits
                 target.Place.Place1 = Name;
                 source.Place = null;
 
+                if (source is ConveyorJunction)
+                {
+                    (source as ConveyorJunction).ActiveRoute = null;
+                    (source as ConveyorJunction).ActiveMaterial = null;
+                }
+                if (target is ConveyorJunction)
+                {
+                    (target as ConveyorJunction).ActiveRoute = null;
+                    (target as ConveyorJunction).ActiveMaterial = null;
+                }
+
+                //                Warehouse.DBService.MaterialMove((int) material, source.Name, target.Name);
                 Place ps = Warehouse.DBService.FindPlace(source.Name);
                 Place pt = Warehouse.DBService.FindPlace(target.Name);
                 if (target.WriteToDB == WriteToDB.Never)
@@ -415,13 +282,12 @@ namespace Warehouse.ConveyorUnits
                     else
                         Warehouse.DBService.MaterialCreate(target.Name, (int)material, true);
                 }
-                Warehouse.OnMaterialMove?.Invoke(new Place { Place1 = target.Name, Material = (int)material}, EnumMovementTask.Move);
 
-                // add force UI notify - must be thread safe
-                if (!(source is Crane) && source.Communicator is MFCSCommunicator)
-                    (source.Communicator as MFCSCommunicator).AddForceVM(source.Name);
-                if (!(target is Crane) && target.Communicator is MFCSCommunicator)
-                    (target.Communicator as MFCSCommunicator).AddForceVM(target.Name);
+                Warehouse.OnMaterialMove?.Invoke(new Place { Place1 = target.Name, Material = (int)material }, EnumMovementTask.Move);
+
+                // add force UI notify
+                source.DirectVMNotify();
+                target.DirectVMNotify();
             }
             catch (Exception ex)
             {
@@ -442,9 +308,9 @@ namespace Warehouse.ConveyorUnits
                 if (Place.Material != material && material != 0)
                     throw new ConveyorBasicException(String.Format("{0} material mismatch ({1}!={2})", Name, Place.Material, material));
 
-                Place p = Warehouse.DBService.FindMaterial((int)material);
+                //                Warehouse.DBService.MaterialDelete(Name, (int) material);
                 if (WriteToDB != WriteToDB.Never)
-                    Warehouse.DBService.MaterialDelete(Name, (int) material);
+                    Warehouse.DBService.MaterialDelete(Name, (int)material);
                 Warehouse.OnMaterialMove?.Invoke(new Place { Place1 = Name, Material = (int)material }, EnumMovementTask.Delete);
                 Place = null;
             }
@@ -463,6 +329,9 @@ namespace Warehouse.ConveyorUnits
                 if (Place != null)
                     throw new ConveyorBasicException(String.Format("{0} is not empty.", Name));
 
+                //                Warehouse.DBService.MaterialCreate( Name,  (int) material, true);
+                //                Warehouse.OnMaterialMove?.Invoke(new Place { Place1 = Name, Material = (int)material }, EnumMovementTask.Create);
+                //                Place = Warehouse.DBService.FindPlace(Name);
                 Place p = Warehouse.DBService.FindMaterial((int)material);
                 if (p != null && WriteToDB != WriteToDB.Never)
                 {
@@ -479,7 +348,8 @@ namespace Warehouse.ConveyorUnits
                 }
                 else
                 {
-                    Place = new Place { Place1 = Name, Material = (int)material, Time = DateTime.Now };
+                    Warehouse.OnMaterialMove?.Invoke(new Place { Place1 = Name, Material = (int)material }, EnumMovementTask.Create);
+                    Place = new Place { Place1 = Name, Material = (int)material };
                 }
             }
             catch (Exception ex)
@@ -522,7 +392,7 @@ namespace Warehouse.ConveyorUnits
         {
             List<Action<ConveyorBasicInfo>> notActive = new List<Action<ConveyorBasicInfo>>();
 
-            for (int i=0;i<NotifyVM.Count;i++)
+            for (int i = 0; i < NotifyVM.Count; i++)
                 try
                 {
                     NotifyVM[i].Invoke(cbi); // , null, null);

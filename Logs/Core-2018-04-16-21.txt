@@ -1,0 +1,36 @@
+2018-04-16 21:11:53:850->EXCEPTION:PLC_Conveyor:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:54:100->EXCEPTION:PLC_Crane2:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:54:607->EXCEPTION:PLC_Crane3:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:54:667->EXCEPTION:PLC_Crane3:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:55:357->EXCEPTION:PLC_Crane1:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:55:477->EXCEPTION:PLC_Crane1:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:55:887->EXCEPTION:PLC_Conveyor:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:56:157->EXCEPTION:PLC_Crane2:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:56:897->EXCEPTION:PLC_Conveyor:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:57:107->EXCEPTION:PLC_Crane2:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:57:637->EXCEPTION:PLC_Crane3:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:57:697->EXCEPTION:PLC_Crane3:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:58:373->EXCEPTION:PLC_Crane1:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:58:499->EXCEPTION:PLC_Crane1:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:11:58:912->EXCEPTION:PLC_Conveyor:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:59:170->EXCEPTION:PLC_Crane2:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:SendThreading (Communicator.cs 201)
+
+2018-04-16 21:11:59:933->EXCEPTION:PLC_Conveyor:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+
+2018-04-16 21:12:00:134->EXCEPTION:PLC_Crane2:The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.:RcvThreading (Communicator.cs 152)
+

@@ -172,9 +172,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is LogsViewModel)
+                if (vm is HistoryLogsViewModel)
                 {
-                    ExecuteRefresh();
+                    ; // ExecuteRefresh();
                 }
             }
             catch (Exception e)

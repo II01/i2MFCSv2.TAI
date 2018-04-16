@@ -92,11 +92,11 @@ namespace MFCS.Communication
 
         public override void OnRecTelegram(Telegram t)
         {
-            if (SegmentByID.ContainsKey(t.ConveyorID()) && (t is TelegramTransportStatus || t is TelegramCraneStatus))
+            if (SegmentByID.ContainsKey(t.ConveyorID()))
                 (SegmentByID[t.ConveyorID()]).OnRecTelegram(t);
-            else if (ConveyorByID.ContainsKey(t.ConveyorID()))
+            if (ConveyorByID.ContainsKey(t.ConveyorID()))
                 (ConveyorByID[t.ConveyorID()]).OnReceiveTelegram(t);
-            else if (CraneByID.ContainsKey(t.ConveyorID()))
+            if (CraneByID.ContainsKey(t.ConveyorID()))
                 (CraneByID[t.ConveyorID()]).OnReceiveTelegram(t);
             else
                 Warehouse.OnOtherTelegrams(t);

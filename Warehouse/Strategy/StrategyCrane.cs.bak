@@ -20,10 +20,18 @@ namespace Warehouse.Strategy
     public class StrategyCrane : BasicStrategy
     {
         [XmlIgnore]
+        public SimpleCraneCommand Command { get; set; }
+        [XmlIgnore]
+        public SimpleCraneCommand BufferCommand { get; set; }
+        [XmlIgnore]
+        public List<string> BannedPlaces { get; private set; }
+
+        [XmlIgnore]
         public Crane Crane { get; set; }
         public string CraneName { get; set; }
 
-        private bool PrefferedInput {get;set;}
+        [XmlIgnore]
+        public bool PrefferedInput { get; set; }
 
         [XmlIgnore]
         public SimpleCraneCommand PickAction { get; set; }
@@ -36,6 +44,7 @@ namespace Warehouse.Strategy
 
         public StrategyCrane() : base()
         {
+            BannedPlaces = new List<string>();
         }
 
 
@@ -54,13 +63,13 @@ namespace Warehouse.Strategy
             }
         }
 
-        private int Distance( Telegrams.Position p1, LPosition p2)
+        private int Distance(Telegrams.Position p1, LPosition p2)
         {
             return Math.Abs(p1.X - p2.Travel) + Math.Abs(p1.Y - p2.Height);
         }
 
 
-        private ConveyorIO BestOutput( List<ConveyorIO> list )
+        private ConveyorIO BestOutput(List<ConveyorIO> list)
         {
             try
             {
@@ -77,24 +86,25 @@ namespace Warehouse.Strategy
             }
         }
 
-        private SimpleCraneCommand GetCommandFromFreeState(bool inputPreference, bool automatic)
+        private SimpleCraneCommand GetCommandFromFreeState(bool inputPreference, bool automatic, List<string> bannedPlaces)
         {
             try
             {
                 // pick pallet from input line
 
-                var cmdInput = Crane.FindBestInput(automatic, ForcedInput);                
-                var CmdWarehouse = Crane.FindBestWarehouse(automatic);
+                var cmdInput = Crane.FindBestInput(automatic, ForcedInput);
+                var CmdWarehouse = Crane.FindBestWarehouse(automatic, bannedPlaces);
 
                 if ((inputPreference && cmdInput != null) || (cmdInput != null && CmdWarehouse == null))
                 {
-                    Warehouse.DBService.AddSimpleCommand(cmdInput);
+                    // Warehouse.DBService.AddSimpleCommand(cmdInput);
                     ForcedInput = null;
                     return cmdInput;
                 }
                 else if (CmdWarehouse != null)
                 {
-                    Warehouse.DBService.AddSimpleCommand(CmdWarehouse);
+                    bannedPlaces.Add(CmdWarehouse.Source);
+                    // Warehouse.DBService.AddSimpleCommand(CmdWarehouse);
                     return CmdWarehouse;
                 }
 
@@ -120,21 +130,21 @@ namespace Warehouse.Strategy
                     if (!position.IsWarehouse() || (!Crane.Shelve.Contains((short)position.Shelve)))
                     {
                         res = Crane.FindBestOutput(target);
-                        if (res != null)
-                            Warehouse.DBService.AddSimpleCommand(res);
+                        // if (res != null)
+                        //    Warehouse.DBService.AddSimpleCommand(res);
                     }
                     else
-                        Warehouse.DBService.AddSimpleCommand(
-                            res = new SimpleCraneCommand
-                            {
-                                Unit = Crane.Name,
-                                Command_ID = target.ID,
-                                Material = material,
-                                Task = SimpleCommand.EnumTask.Drop,
-                                Source = target.Target,
-                                Status = SimpleCommand.EnumStatus.NotActive,
-                                Time = DateTime.Now
-                            });
+                        // Warehouse.DBService.AddSimpleCommand(
+                        res = new SimpleCraneCommand
+                        {
+                            Unit = Crane.Name,
+                            Command_ID = target.ID,
+                            Material = material,
+                            Task = SimpleCommand.EnumTask.Drop,
+                            Source = target.Target,
+                            Status = SimpleCommand.EnumStatus.NotInDB,
+                            Time = DateTime.Now
+                        };
                 }
                 return res;
             }
@@ -143,6 +153,41 @@ namespace Warehouse.Strategy
                 Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
                 throw new StrategyCraneException(String.Format("{0} GetCommandFromOccupiedState failed ({1})", Name, material));
             }
+        }
+
+        public SimpleCraneCommand GetNewCommand(bool remote)
+        {
+            if (Command == null || Command.Status >= SimpleCommand.EnumStatus.Canceled)
+            {
+                Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, true);  // for move to work
+                if (!(Command != null && Command.Task == SimpleCommand.EnumTask.Move))
+                {
+                    if (Crane.Place != null)
+                        Command = GetCommandFromOccupiedState(Crane.Place.Material, remote);
+                    else
+                        Command = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces);
+                }
+                return Command;
+            }
+
+            if (BufferCommand == null || BufferCommand.Status >= SimpleCommand.EnumStatus.Canceled)
+            {
+                if (Command.Task == SimpleCommand.EnumTask.Move)
+                {
+                    // check for outbound
+                    if (Crane.Place != null)
+                        BufferCommand = GetCommandFromOccupiedState(Crane.Place.Material, remote);
+                    else
+                        BufferCommand = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces);
+                }
+                else if (Command.Task == SimpleCommand.EnumTask.Pick)
+                    BufferCommand = GetCommandFromOccupiedState(Command.Material.Value, remote);
+                else if (Command.Task == SimpleCommand.EnumTask.Drop)
+                    BufferCommand = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces);
+                return BufferCommand;
+            }
+
+            return null;
         }
 
         private SimpleCraneCommand GetFastCommand(bool remote)
@@ -158,16 +203,26 @@ namespace Warehouse.Strategy
             }
         }
 
+        public void WriteCommandToPLC(SimpleCraneCommand cmd, bool fastCommand = false)
+        {
+            if (cmd != null && cmd.Status <= SimpleCommand.EnumStatus.NotActive)
+            {
+                Crane.WriteCommandToPLC(cmd, fastCommand);
+                if (cmd.Task == SimpleCommand.EnumTask.Pick)
+                    PickAction = cmd;
+                if (cmd.Task == SimpleCommand.EnumTask.Drop)
+                    DropAction = cmd;
+            }
+        }
 
         public override void Strategy()
         {
-//            if (Crane.PLC_Status != null && !Crane.PLC_Status.Status[7])
             if (Crane.PLC_Status != null )
                 Crane.FastCommand = null;
             if (!Warehouse.StrategyActive)
                 return;
-//            if ((!Crane.Automatic() || !Crane.Communicator.Online()))
-            if ((!Crane.Remote() || !Crane.Communicator.Online()))      // ZUros
+
+            if ((!Crane.Remote() || !Crane.Communicator.Online() || !Crane.Automatic() || Crane.LongTermBlock()))      // Uros
                 return;
             if (!Warehouse.SteeringCommands.Run)
                 return;
@@ -177,69 +232,26 @@ namespace Warehouse.Strategy
             try
             {
                 PickAction = null;
+                Command = Crane.Command;
+
+                BufferCommand = Crane.BufferCommand;
                 bool remote = Warehouse.SteeringCommands.RemoteMode;
-                if (!Warehouse.SteeringCommands.AutomaticMode) // simple commands
-                {
 
-                    if (Crane.FastCommand == null)
-                        Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, false);
-//                    if (Crane.Command == null && Crane.BufferCommand == null)
-                    if (Crane.Command == null && Crane.BufferCommand == null && Crane.Automatic() && !Crane.LongTermBlock())
-                        Crane.Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, false );
+                if (Crane.FastCommand == null)
+                    Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
 
-                    Crane.WriteAllCommandsTOPlc();
-                }
-                else // complex commands
-                {
-                    if (Crane.FastCommand == null)
-                    {
-                        Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, true);
-                        Crane.WriteAllCommandsTOPlc();
-                    }
-
-//                    if (Crane.Command == null && Crane.BufferCommand == null)
-                    if (Crane.Command == null && Crane.BufferCommand == null && Crane.Automatic() && !Crane.LongTermBlock())
-                    {
-                        Crane.Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, true);
-                        if (!(Crane.Command != null && Crane.Command.Task == SimpleCommand.EnumTask.Move))
-                        {
-                            if (Crane.Place != null)
-                                Crane.Command = GetCommandFromOccupiedState(Crane.Place.Material, remote);
-                            else
-                                Crane.Command = GetCommandFromFreeState(PrefferedInput, remote);
-                            if (Crane.Command != null && Crane.Command.Task == SimpleCommand.EnumTask.Pick)
-                                PickAction = Crane.Command;
-                            if (Crane.Command != null && Crane.Command.Task == SimpleCommand.EnumTask.Drop)
-                                DropAction = Crane.Command;
-                        }
-                        Crane.WriteAllCommandsTOPlc(); // write all commands to PLC
-                    }
-
-                    if (Crane.BufferCommand == null && Crane.Command != null && Crane.Automatic() && !Crane.LongTermBlock())
-                    {
-                        if (Crane.Command.Task == SimpleCommand.EnumTask.Move)
-                        {
-                            // check for outbound
-                            if (Crane.Place != null)
-                                Crane.BufferCommand = GetCommandFromOccupiedState(Crane.Place.Material,remote);
-                            else
-                                Crane.BufferCommand = GetCommandFromFreeState(PrefferedInput, remote);
-                        }
-                        else if (Crane.Command.Task == SimpleCommand.EnumTask.Pick)
-                            Crane.BufferCommand = GetCommandFromOccupiedState( Crane.Command.Material.Value, remote);
-                        else if (Crane.Command.Task == SimpleCommand.EnumTask.Drop)
-                            Crane.BufferCommand = GetCommandFromFreeState(PrefferedInput, remote);
-                        if (Crane.BufferCommand != null && Crane.BufferCommand.Task == SimpleCommand.EnumTask.Pick)
-                            PickAction = Crane.BufferCommand;
-                        if (Crane.BufferCommand != null && Crane.BufferCommand.Task == SimpleCommand.EnumTask.Drop)
-                            DropAction = Crane.BufferCommand;
-                        Crane.WriteAllCommandsTOPlc(); // write all commands to PLC
-                    }
+                GetNewCommand(remote);
+                GetNewCommand(remote);
 
                     // make double cycles
-                    if (PickAction != null)
-                        PrefferedInput = !LPosition.FromString(PickAction.Source).IsWarehouse();
-                }
+                if (PickAction != null)
+                    PrefferedInput = LPosition.FromString(PickAction.Source).IsWarehouse();
+
+                WriteCommandToPLC(Command);
+                WriteCommandToPLC(BufferCommand);
+                WriteCommandToPLC(Crane.FastCommand, true);
+
+                BannedPlaces.Clear();
             }
             catch (Exception e)
             {
@@ -259,7 +271,7 @@ namespace Warehouse.Strategy
                     throw new StrategyCraneException(String.Format("{0} CranName={1} does is unknown.", Name, CraneName));
                 Crane = w.Crane[CraneName];
                 Crane.OnStrategy = Strategy;
-                Crane.Communicator.OnRefresh.Add(Refresh);
+                Crane.Communicator.OnRefresh += Refresh;
             }
             catch (Exception ex)
             {

@@ -140,6 +140,10 @@ namespace UserInterface.ViewModel
         {
             get { return ServiceLocator.Current.GetInstance<HistoryCommandERPsViewModel>(); }
         }
+        public HistoryReleaseOrdersViewModel HistoryReleaseOrders
+        {
+            get { return ServiceLocator.Current.GetInstance<HistoryReleaseOrdersViewModel>(); }
+        }
         #endregion
 
         #region initialization
@@ -175,6 +179,7 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<HistoryLogsViewModel>();
             SimpleIoc.Default.Register<HistoryCommandWMSsViewModel>();
             SimpleIoc.Default.Register<HistoryCommandERPsViewModel>();
+            SimpleIoc.Default.Register<HistoryReleaseOrdersViewModel>();
         }
         public static void Cleanup()
         {

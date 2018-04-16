@@ -203,6 +203,9 @@
         <DataTemplate DataType="{x:Type vm:HistoryCommandERPsViewModel}">
             <views:HistoryCommandERPsView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HistoryReleaseOrdersViewModel}">
+            <views:HistoryReleaseOrdersView />
+        </DataTemplate>
 
         <!-- converters -->
         <views:AddMultConverter x:Key="AddMultConverter" />

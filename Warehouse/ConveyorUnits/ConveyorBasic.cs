@@ -215,6 +215,17 @@ namespace Warehouse.ConveyorUnits
                     Place = new Place { Material = (int)material, Place1 = Name };
                     Warehouse.OnMaterialMove?.Invoke(Place, EnumMovementTask.Move);
                 }
+                if (this is ConveyorJunction)
+                {
+                    ConveyorJunction jc = this as ConveyorJunction;
+                    TelegramTransportTO to = t as TelegramTransportTO;
+
+                    if (to != null && jc.ActiveRoute != null && (to.Target != jc.ActiveRoute.Items[0].Final.PLC_ID))
+                    {
+                        jc.ActiveRoute = null;
+                        jc.ActiveMaterial = null;
+                    }
+                }
             }
             catch (Exception ex)
             {

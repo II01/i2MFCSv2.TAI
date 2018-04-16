@@ -162,6 +162,9 @@
                 <TreeViewItem Header="{Resx HistoryCommandERPs}"
                               Tag="{Binding HistoryCommandERPs, Source={StaticResource Locator}}" 
                               IsEnabled="True"/>
+                <TreeViewItem Header="{Resx HistoryReleaseOrders}"
+                              Tag="{Binding HistoryReleaseOrders, Source={StaticResource Locator}}" 
+                              IsEnabled="True"/>
                 <TreeViewItem Header="{Resx Movements}"
                               Tag="{Binding HistoryMovements, Source={StaticResource Locator}}" 
                               IsEnabled="True"/>

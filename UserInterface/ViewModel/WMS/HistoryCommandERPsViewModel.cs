@@ -237,9 +237,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is CommandERPsViewModel)
+                if (vm is HistoryCommandERPsViewModel)
                 {
-                    ExecuteRefresh();
+                    ; // ExecuteRefresh();
                 }
             }
             catch (Exception e)

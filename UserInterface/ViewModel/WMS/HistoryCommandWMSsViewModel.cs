@@ -244,9 +244,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is CommandWMSsViewModel)
+                if (vm is HistoryCommandWMSsViewModel)
                 {
-                    ExecuteRefresh();
+                    ; // ExecuteRefresh();
                 }
             }
             catch (Exception e)
