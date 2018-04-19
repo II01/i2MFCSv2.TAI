@@ -8,7 +8,6 @@ using Telegrams;
 using Warehouse.ConveyorUnits;
 using Warehouse.Model;
 using Warehouse.ServiceReferenceWMSToMFCS;
-using Warehouse.WMSConsumerServiceReference;
 
 namespace Warehouse.WMS
 {
@@ -252,11 +251,38 @@ namespace Warehouse.WMS
         {
             try
             {
+                string act = "";
+
+                if (task == null)
+                    act = "INFO";
+                else if (task == EnumMovementTask.Create)
+                    act = "CREATE";
+                else if (task == EnumMovementTask.Delete)
+                    act = "DELETE";
+                else if (task == EnumMovementTask.Move)
+                    act = "MOVE";
+
+                string err = "";
+                if (Warehouse.Conveyor.ContainsKey(place.Place1) && Warehouse.Conveyor[place.Place1].Command_Status != null)
+                {
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[0] ? "l" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[1] ? "r" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[2] ? "f" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[3] ? "b" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[4] ? "h" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[5] ? "w" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[6] ? "p" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[7] ? "n" : "";
+                    err += Warehouse.Conveyor[place.Place1].Command_Status.Palette.FaultCode[9] ? "m" : "";
+                    if (err != "")
+                        err = $"_ERR:{err}";
+                }
+
                 using (WMSToMFCSClient client = new WMSToMFCSClient())
                 {
                     if (place.Material < 1000000000)
                     {
-                        await client.PlaceChangedAsync(place.Place1, place.Material);
+                        await client.PlaceChangedAsync(place.Place1, place.Material, $"{act}{err}");
                         Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"WMS_PlaceChanged called ({place.Place1}|{place.Material})");
                     }
                     else

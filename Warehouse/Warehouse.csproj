@@ -87,11 +87,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\WMSConsumerServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="ConveyorUnits\ConveyorBasicInfo.cs" />
     <Compile Include="ConveyorUnits\ConveyorIOAndOutput.cs" />
     <Compile Include="ConveyorUnits\MainPanel.cs" />
@@ -142,11 +137,11 @@
     <None Include="Config\BasicWarehouse.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service1.wsdl" />
-    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service2.xsd">
+    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service.wsdl" />
+    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service21.xsd">
+    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_RcvTelProxy\service.wsdl" />
@@ -167,13 +162,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_SendTelProxy\Telegrams.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WMSConsumerServiceReference\service.wsdl" />
-    <None Include="Connected Services\WMSConsumerServiceReference\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\WMSConsumerServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -227,12 +215,6 @@
     </None>
     <None Include="Connected Services\WCF_RcvTelProxy\configuration.svcinfo" />
     <None Include="Connected Services\WCF_RcvTelProxy\configuration91.svcinfo" />
-    <None Include="Connected Services\WMSConsumerServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\WMSConsumerServiceReference\configuration.svcinfo" />
-    <None Include="Connected Services\WMSConsumerServiceReference\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -241,7 +223,6 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReferenceWMSToMFCS\" />
     <WCFMetadataStorage Include="Connected Services\WCF_RcvTelProxy\" />
     <WCFMetadataStorage Include="Connected Services\WCF_SendTelProxy\" />
-    <WCFMetadataStorage Include="Connected Services\WMSConsumerServiceReference\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

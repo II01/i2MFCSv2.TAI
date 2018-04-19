@@ -1009,11 +1009,12 @@ namespace UserInterface.DataServiceWMS
                     var item = dc.Commands.FirstOrDefault(p => p.ID == commandwms.ID);
                     if (item != null)
                     {
-                        item.Order_ID = commandwms.Order_ID;
-                        item.TU_ID = commandwms.TU_ID;
-                        item.Source = commandwms.Source;
-                        item.Target = commandwms.Target;
+//                        item.Order_ID = commandwms.Order_ID;
+//                        item.TU_ID = commandwms.TU_ID;
+//                        item.Source = commandwms.Source;
+//                        item.Target = commandwms.Target;
                         item.Status = commandwms.Status;
+                        item.LastChange = DateTime.Now;
                     }
                     dc.SaveChanges();
                 }

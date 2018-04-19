@@ -22,10 +22,10 @@ namespace Warehouse.ServiceReferenceWMSToMFCS {
         System.Threading.Tasks.Task CommandStatusChangedAsync(int cmdId, int status);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/PlaceChanged", ReplyAction="http://tempuri.org/IWMSToMFCS/PlaceChangedResponse")]
-        void PlaceChanged(string placeID, int TU_ID);
+        void PlaceChanged(string placeID, int TU_ID, string changeType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/PlaceChanged", ReplyAction="http://tempuri.org/IWMSToMFCS/PlaceChangedResponse")]
-        System.Threading.Tasks.Task PlaceChangedAsync(string placeID, int TU_ID);
+        System.Threading.Tasks.Task PlaceChangedAsync(string placeID, int TU_ID, string changeType);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/DestinationEmptied", ReplyAction="http://tempuri.org/IWMSToMFCS/DestinationEmptiedResponse")]
         void DestinationEmptied(string place);
@@ -69,12 +69,12 @@ namespace Warehouse.ServiceReferenceWMSToMFCS {
             return base.Channel.CommandStatusChangedAsync(cmdId, status);
         }
         
-        public void PlaceChanged(string placeID, int TU_ID) {
-            base.Channel.PlaceChanged(placeID, TU_ID);
+        public void PlaceChanged(string placeID, int TU_ID, string changeType) {
+            base.Channel.PlaceChanged(placeID, TU_ID, changeType);
         }
         
-        public System.Threading.Tasks.Task PlaceChangedAsync(string placeID, int TU_ID) {
-            return base.Channel.PlaceChangedAsync(placeID, TU_ID);
+        public System.Threading.Tasks.Task PlaceChangedAsync(string placeID, int TU_ID, string changeType) {
+            return base.Channel.PlaceChangedAsync(placeID, TU_ID, changeType);
         }
         
         public void DestinationEmptied(string place) {
