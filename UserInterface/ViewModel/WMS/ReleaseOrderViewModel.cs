@@ -21,6 +21,7 @@ namespace UserInterface.ViewModel
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
         private bool _validationEnabled;
+        private int? _erpidref;
         #endregion
 
         #region properties
@@ -62,6 +63,18 @@ namespace UserInterface.ViewModel
                 {
                     _data.ERP_ID = value;
                     RaisePropertyChanged("ERPID");
+                }
+            }
+        }
+        public int? ERPIDref
+        {
+            get { return _erpidref; }
+            set
+            {
+                if (_erpidref != value)
+                {
+                    _erpidref = value;
+                    RaisePropertyChanged("ERPIDref");
                 }
             }
         }

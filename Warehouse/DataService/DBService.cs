@@ -1177,13 +1177,14 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<Place> GetPlaces()
+        public List<Place> GetPlaces(bool excludeWout)
         {
             try
             {
                 using (var dc = new MFCSEntities())
                 {
                     var l = from m in dc.Places
+                            //where !excludeWout || (excludeWout && m.Place1 != "W:out")
                             select m;
                     return l.ToList();
                 }
@@ -1303,7 +1304,10 @@ namespace Warehouse.DataService
                 {
                     var pl = dc.Places.Where(p => p.Place1.StartsWith(ramp)).ToList();
                     foreach (var p in pl)
-                        MaterialMove(p.Material, p.Place1, "W:out");
+                    {
+                        MaterialDelete(p.Place1, p.Material);
+                        //                        MaterialMove(p.Material, p.Place1, "W:out");
+                    }
                 }
             }
             catch (Exception e)

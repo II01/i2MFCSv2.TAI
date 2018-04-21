@@ -167,6 +167,7 @@
                         <Button Name="bConfirm" Margin="0,10,0,10" Content="{Resx Confirm}" Command="{Binding Confirm}" Visibility="{Binding IsEnabledCC, Converter={StaticResource BoolToVisibility}}"/>
                     </StackPanel>
                 </StackPanel>
+<!--                
                 <Border Grid.Row="1"  BorderThickness="2,2,2,2" BorderBrush ="SkyBlue" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Visibility="Visible">
                     <Grid Margin="10">
                         <Grid.ColumnDefinitions>
@@ -192,6 +193,7 @@
                         </StackPanel>
                     </Grid>
                 </Border>
+-->                
             </Grid>
         </ScrollViewer>
     </Grid>

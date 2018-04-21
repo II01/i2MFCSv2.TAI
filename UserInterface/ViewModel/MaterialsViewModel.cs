@@ -27,6 +27,7 @@ namespace UserInterface.ViewModel
         private MaterialViewModel _detailedPlace;
         private bool _editEnabled;
         private bool _enabledCC;
+        private bool _excludeWout = true;
         CommandType _cmdtype;
         private int _accessLevel;
         private int _numberOfSelectedItems;
@@ -131,6 +132,21 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public bool ExcludeWout
+        {
+            get
+            {
+                return _excludeWout;
+            }
+            set
+            {
+                if (_excludeWout != value)
+                {
+                    _excludeWout = value;
+                    RaisePropertyChanged("ExcludeWout");
+                }
+            }
+        }
         public int NumberOfSelectedItems
         {
             get
@@ -209,7 +225,7 @@ namespace UserInterface.ViewModel
             {
                 MaterialViewModel c = SelectedPlace;
                 PlaceList.Clear();
-                foreach (var p in _warehouse.DBService.GetPlaces())
+                foreach (var p in _warehouse.DBService.GetPlaces(_excludeWout))
                     PlaceList.Add(new MaterialViewModel { Location = p.Place1, ID = p.Material });
                 foreach (var mvm in PlaceList)
                     mvm.Initialize(_warehouse);

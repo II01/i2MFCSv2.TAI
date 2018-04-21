@@ -258,7 +258,11 @@ namespace Warehouse.WMS
                 else if (task == EnumMovementTask.Create)
                     act = "CREATE";
                 else if (task == EnumMovementTask.Delete)
-                    act = "DELETE";
+                {
+                    //                    act = "DELETE";
+                    act = "MOVE";
+                    place.Place1 = "W:out";
+                }
                 else if (task == EnumMovementTask.Move)
                     act = "MOVE";
 
@@ -314,7 +318,7 @@ namespace Warehouse.WMS
             try
             {
                 Place p = Warehouse.DBService.FindMaterial(place.Material);
-                if(p == null || (p != null && p.Place1 == place.Place1))
+                if(p == null || (p != null && (p.Place1 == place.Place1)))
                     Task.WaitAll(SendLocationInfo(place, task));
             }
             catch (Exception e)

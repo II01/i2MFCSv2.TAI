@@ -32,6 +32,7 @@ namespace UserInterface.ViewModel
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
         private string _accessUser;
+        private bool _excludeWout = true;
         #endregion
 
         #region properites
@@ -134,6 +135,21 @@ namespace UserInterface.ViewModel
                 {
                     _accessLevel = value;
                     RaisePropertyChanged("AccessLevel");
+                }
+            }
+        }
+        public bool ExcludeWout
+        {
+            get
+            {
+                return _excludeWout;
+            }
+            set
+            {
+                if (_excludeWout != value)
+                {
+                    _excludeWout = value;
+                    RaisePropertyChanged("ExcludeWout");
                 }
             }
         }
@@ -273,7 +289,7 @@ namespace UserInterface.ViewModel
             try
             {
                 _selectedCommand = CommandType.Delete;
-                EditEnabled = false;
+                EditEnabled = true;
                 EnabledCC = true;
                 Detailed = new PlaceTUIDViewModel();
                 Detailed.Initialize(_warehouse);
@@ -448,9 +464,13 @@ namespace UserInterface.ViewModel
                             Selected.Blocked = Detailed.Blocked;
                             break;
                         case CommandType.Book:
-                            var pl = new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID };
-                            _dbservicewms.UpdatePlace(pl);
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Rebook TUID: {pl.ToString()}");
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                var pd = new ProxyWMS_UI.PlaceDiff[] { new ProxyWMS_UI.PlaceDiff { TUID = Detailed.TUID, PlaceWMS = Selected.PlaceID, PlaceMFCS = Detailed.PlaceID } };
+                                client.UpdatePlace(pd, _accessUser);
+                                _dbservicewms.UpdatePlaceMFCS(new Place {Material = Detailed.TUID, Place1 = Detailed.PlaceID });
+                            }
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Rebook TUID: {Detailed.TUID} {Detailed.PlaceID}");
                             Selected.TUID = Detailed.TUID;
                             Selected.PlaceID = Detailed.PlaceID;
                             Selected.DimensionClass = Detailed.DimensionClass;
@@ -469,9 +489,14 @@ namespace UserInterface.ViewModel
                             break;
                         case CommandType.Delete:
                             _dbservicewms.DeleteTUs(Detailed.TUID);
-                            var p1 = new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID };
-                            _dbservicewms.DeletePlace(p1);
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete Place: {p1.ToString()}");
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                var pd = new ProxyWMS_UI.PlaceDiff[] { new ProxyWMS_UI.PlaceDiff { TUID = Detailed.TUID, PlaceWMS = Detailed.PlaceID, PlaceMFCS = null } };
+                                client.UpdatePlace(pd, _accessUser);
+                                _dbservicewms.UpdatePlaceMFCS(new Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID});
+                            }
+                            _dbservicewms.DeletePlaceMFCS(new Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID } );
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete Place: {Detailed.TUID}, {Detailed.PlaceID}");
                             Selected.TUID = Detailed.TUID;
                             Selected.PlaceID = Detailed.PlaceID;
                             Selected.DimensionClass = Detailed.DimensionClass;
@@ -481,10 +506,14 @@ namespace UserInterface.ViewModel
                             List<TUs> tul = new List<TUs>();
                             foreach (var l in Detailed.DetailList)
                                 tul.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate });
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                var pd = new ProxyWMS_UI.PlaceDiff[] { new ProxyWMS_UI.PlaceDiff { TUID = Detailed.TUID, PlaceWMS = null, PlaceMFCS = Detailed.PlaceID } };
+                                client.UpdatePlace(pd, _accessUser);
+                                _dbservicewms.UpdatePlaceMFCS(new Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID });
+                            }
                             _dbservicewms.AddTUs(tul);
-                            var p2 = new Places { TU_ID = Detailed.TUID, PlaceID = Detailed.PlaceID };
-                            _dbservicewms.AddPlace(p2);
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add Place: {p2.ToString()}");
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add Place: {Detailed.TUID}, {Detailed.PlaceID}");
                             break;
                         default:
                             break;
@@ -522,7 +551,7 @@ namespace UserInterface.ViewModel
             {
                 int? tuid = Selected?.TUID; 
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetPlaceTUIDs())
+                foreach (var p in _dbservicewms.GetPlaceTUIDs(ExcludeWout))
                     DataList.Add(new PlaceTUIDViewModel
                     {
                         TUID = p.TUID,

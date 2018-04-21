@@ -19,14 +19,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex/mex/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="b8b09160-4843-4aaf-86c1-b8d76f884348" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="ebea61f6-31e3-4b8d-9ef5-e6c1e7cee6ac" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex" />
-    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="4774dab1-8704-4722-902e-af699394738c" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex" />
-    <MetadataFile FileName="i2MFCS.WMS.Database.DTO1.xsd" MetadataType="Schema" ID="8f016568-222c-4dce-a7d7-daa56d627525" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex" />
-    <MetadataFile FileName="i2MFCS.WMS.Database.Tables1.xsd" MetadataType="Schema" ID="4f600d47-5e9e-4cf8-955d-da078d4fb004" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="2526bb92-bb66-4cbb-a958-5bd618ee29c2" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex/mex/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="b96ffe73-f01d-4c2e-9102-f33eb708c586" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex/mex/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="df00c7dd-f77f-4d8e-875f-8f7b202ce678" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex/mex/mex" />
+    <MetadataFile FileName="i2MFCS.WMS.Database.DTO1.xsd" MetadataType="Schema" ID="8410e4dc-bf1e-4b02-a50b-2dd5c907b8f9" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex/mex/mex" />
+    <MetadataFile FileName="i2MFCS.WMS.Database.Tables1.xsd" MetadataType="Schema" ID="8e72eda9-47a1-4995-8df9-dfabb9f72f82" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex/mex/mex" />
+    <MetadataFile FileName="i2MFCS.WMS.Core.DataExchange.xsd" MetadataType="Schema" ID="41ee051b-0c62-4ebb-b6a5-2d0f86a1b824" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToUI/mex/mex/mex/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

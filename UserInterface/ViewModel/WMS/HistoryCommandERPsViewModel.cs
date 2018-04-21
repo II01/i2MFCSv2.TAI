@@ -214,7 +214,8 @@ namespace UserInterface.ViewModel
                 foreach (var p in _dbservicewms.GetCommandERPs(DateFrom.TimeStamp, DateTo.TimeStamp, -1))
                     DataList.Add(new CommandERPViewModel
                     {
-                        ERPID = p.ID,
+                        ID = p.ID,
+                        ERPID = p.ERP_ID,
                         Reference = p.Reference,
                         Command = p.Command,
                         Status = (EnumCommandERPStatus)p.Status,

@@ -9,6 +9,7 @@ namespace UserInterface.DataServiceWMS
     public class OrderReduction
     {
         public int? ERPID { get; set; }
+        public int? ERPIDStokbar { get; set; }
         public int OrderID { get; set; }
         public int SubOrderID { get; set; }
         public int WMSID { get; set; }

@@ -303,8 +303,11 @@ namespace UserInterface.ViewModel
                                     validationResult = ResourceReader.GetString("ERR_TUID");
                                 break;
                             case "PlaceID":
-                                if (_dbservicewms.FindPlaceID(PlaceID) == null)
+                                var pid = _dbservicewms.FindPlaceID(PlaceID);
+                                if (pid == null || pid.DimensionClass < 0)
                                     validationResult = ResourceReader.GetString("ERR_PLACE");
+                                else if (pid.DimensionClass < 999 && _dbservicewms.FindPlaceByPlace(PlaceID) != null)
+                                    validationResult = ResourceReader.GetString("ERR_OCCUPIED");
                                 break;
                         }
                     }

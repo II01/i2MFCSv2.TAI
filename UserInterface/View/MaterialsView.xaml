@@ -15,26 +15,31 @@
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"/>
-                <RowDefinition Height="15"/>
+                <RowDefinition Height="20"/>
                 <RowDefinition Height="{Binding Converter={StaticResource AddMultConverter}, 
                                             Path=(FrameworkElement.ActualHeight), 
                                             RelativeSource={RelativeSource AncestorType=UserControl},
-                                            ConverterParameter=-75|1.0}"/>
+                                            ConverterParameter=-80|1.0}"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
-            <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+        <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
                 <TextBlock Text="{Resx Transport_units}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
             </Border>
             <Grid Grid.Row="1" Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="{Resx Selected}" Grid.Column="0" FontSize="{StaticResource BaseFontSize}" HorizontalAlignment="Right"/>
-                <TextBlock Text="{Binding NumberOfSelectedItems}" Grid.Column="1" FontSize="{StaticResource BaseFontSize}" HorizontalAlignment="Right" Margin="5,0,0,0"/>
+                <TextBlock Grid.Column="1" Text="{Resx ExcludeWout}" HorizontalAlignment="Right"/>
+                <CheckBox Grid.Column="2" Margin="10,0,50,0" IsChecked = "{Binding Path=ExcludeWout}"/>
+                <TextBlock Grid.Column="3" Text="{Resx Selected}" FontSize="{StaticResource BaseFontSize}" HorizontalAlignment="Right"/>
+                <TextBlock Grid.Column="4" Text="{Binding NumberOfSelectedItems}" FontSize="{StaticResource BaseFontSize}" HorizontalAlignment="Right" Margin="5,0,0,0"/>
             </Grid>
             <DataGrid 
                 x:Name="dgWarehouse" Grid.Row="2" 

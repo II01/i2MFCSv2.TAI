@@ -22,6 +22,7 @@ namespace UserInterface.ViewModel
         private bool _enableOrderEdit;
         private bool _enableSubOrderEdit;
         private bool _enableSKUEdit;
+        private int? _erpidref;
         #endregion
 
         #region properties
@@ -65,6 +66,18 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public int? ERPIDRef
+        {
+            get { return _erpidref; }
+            set
+            {
+                if (_erpidref != value)
+                {
+                    _erpidref = value;
+                    RaisePropertyChanged("ERPIDRef");
+                }
+            }
+        }
         public int OrderID
         {
             get { return _data.OrderID; }
@@ -320,6 +333,8 @@ namespace UserInterface.ViewModel
                                     validationResult = ResourceReader.GetString("ERR_SUBORDERID");
                                 break;
                             case "SubOrderName":
+                                if (SubOrderName == null || SubOrderName.Length == 0)
+                                    validationResult = ResourceReader.GetString("ERR_SUBORDERNAME");
                                 break;
                             case "SKUID":
                                 if (_dbservicewms.FindSKUID(SKUID) == null)

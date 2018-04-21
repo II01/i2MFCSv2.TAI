@@ -6,6 +6,7 @@
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.DTO" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Core.DataExchange" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IWMSToUI_GetCommands_InputMessage">
@@ -44,6 +45,12 @@
   <wsdl:message name="IWMSToUI_ReleaseRamp_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReleaseRampResponse" />
   </wsdl:message>
+  <wsdl:message name="IWMSToUI_UpdatePlace_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlace" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_UpdatePlace_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePlaceResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWMSToUI">
     <wsdl:operation name="GetCommands">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/GetCommands" message="tns:IWMSToUI_GetCommands_InputMessage" />
@@ -68,6 +75,10 @@
     <wsdl:operation name="ReleaseRamp">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/ReleaseRamp" message="tns:IWMSToUI_ReleaseRamp_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/ReleaseRampResponse" message="tns:IWMSToUI_ReleaseRamp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlace">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/UpdatePlace" message="tns:IWMSToUI_UpdatePlace_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/UpdatePlaceResponse" message="tns:IWMSToUI_UpdatePlace_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWMSToUI" type="tns:IWMSToUI">
@@ -119,6 +130,15 @@
     </wsdl:operation>
     <wsdl:operation name="ReleaseRamp">
       <soap:operation soapAction="http://tempuri.org/IWMSToUI/ReleaseRamp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePlace">
+      <soap:operation soapAction="http://tempuri.org/IWMSToUI/UpdatePlace" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

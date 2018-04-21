@@ -172,6 +172,8 @@ namespace Warehouse.Model
                     {
                         DBService.MaterialDelete(pm.Place1, pm.Material);
                         OnMaterialMove?.Invoke(new Place { Place1 = place, Material = (int)material }, EnumMovementTask.Delete);
+                        //DBService.MaterialMove(pm.Material, pm.Place1, "W:out");
+                        //OnMaterialMove?.Invoke(new Place { Place1 = "W:out", Material = (int)material }, EnumMovementTask.Move);
                         if (mfcs_id.HasValue)
                         {
                             Command cmd = DBService.FindCommandByID(mfcs_id.Value);
@@ -216,6 +218,12 @@ namespace Warehouse.Model
                 Place pm = DBService.FindMaterial((int)material);
                 Place pp = DBService.FindPlace(place);
                 PlaceID pid = DBService.FindPlaceID(place);
+
+                //if(pm != null && pm.Place1 == "W:out")
+                //{
+                //    DBService.MaterialDelete(pm.Place1, (int)material);
+                //    pm = null;
+                //}
 
                 if (pm != null) // material exists
                 {
@@ -486,9 +494,11 @@ namespace Warehouse.Model
                                                select p).ToList();
                                 foreach (var pal in pallets)
                                 {
-                                    DBService.MaterialMove(pal.Material, pal.Place1, "W:out");
-                                    Place pl = new Place { Material = pal.Material, Place1 = "W:out", Time = DateTime.Now };
-                                    OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                                    DBService.MaterialDelete(pal.Place1, pal.Material);
+                                    OnMaterialMove?.Invoke(pal, EnumMovementTask.Delete);
+                                    //DBService.MaterialMove(pal.Material, pal.Place1, "W:out");
+                                    //Place pl = new Place { Material = pal.Material, Place1 = "W:out", Time = DateTime.Now };
+                                    //OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
                                 }
                             }
                             else // release ramp
@@ -504,9 +514,11 @@ namespace Warehouse.Model
                             loc = $"W:32:{idxp:D3}:1:1";
                             Place place = dc.Places.Where(p => p.Place1 == loc).OrderBy(pp => pp.Time).FirstOrDefault();
                             {
-                                DBService.MaterialMove(place.Material, loc, "W:out");
-                                Place pl = new Place { Material = place.Material, Place1 = "W:out", Time = DateTime.Now };
-                                OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                                DBService.MaterialDelete(place.Place1, place.Material);
+                                OnMaterialMove?.Invoke(place, EnumMovementTask.Delete);
+                                //DBService.MaterialMove(place.Material, loc, "W:out");
+                                //Place pl = new Place { Material = place.Material, Place1 = "W:out", Time = DateTime.Now };
+                                //OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
                             }
                         }
                     }

@@ -38,14 +38,26 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public int ERPID
+        public int ID
         {
-            get { return _data.ID;  }
+            get { return _data.ID; }
             set
             {
-                if( _data.ID != value )
+                if (_data.ID != value)
                 {
                     _data.ID = value;
+                    RaisePropertyChanged("ID");
+                }
+            }
+        }
+        public int ERPID
+        {
+            get { return _data.ERP_ID;  }
+            set
+            {
+                if( _data.ERP_ID != value )
+                {
+                    _data.ERP_ID = value;
                     RaisePropertyChanged("ERPID");
                 }
             }

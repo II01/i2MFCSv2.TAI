@@ -644,12 +644,13 @@ namespace UserInterface.ViewModel
                 int? orderid = SelectedOrder?.OrderID;
                 _suborderid = SelectedSubOrder?.SubOrderID;
 
-                var orders = await _dbservicewms.GetOrdersWithCount(DateTime.MinValue, DateTime.MaxValue, (int)EnumWMSOrderStatus.ReadyToTake);
+                var orders = await _dbservicewms.GetOrdersWithCount(DateTime.Now.AddDays(-1), DateTime.Now, (int)EnumWMSOrderStatus.ReadyToTake);
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
                     {
-                        ERPID = p.ERPID,
+                        ERPID = p.ERPIDStokbar,
+                        ERPIDref = p.ERPID,
                         OrderID = p.OrderID,
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
@@ -676,7 +677,7 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if(SelectedOrder != null)
                 {
-                    foreach (var p in await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID))
+                    foreach (var p in await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPIDref, SelectedOrder.OrderID))
                         DataListSubOrder.Add(new ReleaseOrderViewModel
                         {
                             ID = p.WMSID,

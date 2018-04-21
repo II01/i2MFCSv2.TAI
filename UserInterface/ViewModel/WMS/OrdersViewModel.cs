@@ -711,8 +711,6 @@ namespace UserInterface.ViewModel
                             ExecuteRefresh();
                             break;
                         case CommandType.AddSubOrder:
-                            if (Detailed.Order.SubOrderName == null)
-                                Detailed.Order.SubOrderName = Detailed.Order.SubOrderID.ToString();
                             _dbservicewms.AddOrder(Detailed.Order);
                             orderid = Detailed.OrderID;
                             suborderid = Detailed.SubOrderID;
@@ -721,8 +719,6 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add suborder: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.EditSubOrder:
-                            if (Detailed.Order.SubOrderName == null)
-                                Detailed.Order.SubOrderName = Detailed.Order.SubOrderID.ToString();
                             _dbservicewms.UpdateSubOrders(SelectedSubOrder.OrderID, SelectedSubOrder.SubOrderID, Detailed.Order);
                             var lse = from d in DataListSubOrder
                                       where d.OrderID == SelectedSubOrder.OrderID && d.SubOrderID == SelectedSubOrder.SubOrderID
@@ -836,19 +832,20 @@ namespace UserInterface.ViewModel
             try
             {
                 DataListOrder.Clear();
-                foreach (var p in _dbservicewms.GetOrdersDistinct(10))
+                foreach (var p in _dbservicewms.GetOrdersDistinct(DateTime.Now.AddDays(-1), DateTime.MaxValue, (int)EnumWMSOrderStatus.ReadyToTake))
                     DataListOrder.Add(new OrderViewModel
                     {
-                        ID = p.ID,
-                        ERPID = p.ERP_ID,
+                        ID = 0,
+                        ERPID = p.ERPIDStokbar,
+                        ERPIDRef = p.ERPID,
                         OrderID = p.OrderID,
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
                         SubOrderID = p.SubOrderID,
                         SubOrderName = p.SubOrderName,
-                        SKUID = p.SKU_ID,
-                        SKUBatch = p.SKU_Batch,
-                        SKUQty = p.SKU_Qty,
+                        SKUID = null,
+                        SKUBatch = null,
+                        SKUQty = 0,
                         Status = (EnumWMSOrderStatus)p.Status
                     });
                 foreach (var l in DataListOrder)
@@ -867,7 +864,7 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if( SelectedOrder != null )
                 {
-                    foreach (var p in _dbservicewms.GetSubOrdersDistinct(SelectedOrder.ERPID, SelectedOrder.OrderID))
+                    foreach (var p in _dbservicewms.GetSubOrdersDistinct(SelectedOrder.ERPIDRef, SelectedOrder.OrderID))
                         DataListSubOrder.Add(new OrderViewModel
                         {
                             ID = p.ID,

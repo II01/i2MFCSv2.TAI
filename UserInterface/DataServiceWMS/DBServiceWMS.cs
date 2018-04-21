@@ -196,13 +196,14 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<PlaceTUID> GetPlaceTUIDs()
+        public List<PlaceTUID> GetPlaceTUIDs(bool excludeWout)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from p in dc.Places
+                            where !excludeWout || (excludeWout && p.PlaceID != "W:out")
                             join t in dc.TU_ID on p.TU_ID equals t.ID
                             orderby p.TU_ID
                             select new PlaceTUID
@@ -251,7 +252,9 @@ namespace UserInterface.DataServiceWMS
                 {
                     var l = from t in dc.TUs
                             where t.SKU_ID == skuid
-                            orderby t.SKU_ID
+                            join p in dc.Places on t.TU_ID equals p.TU_ID
+                            where p.PlaceID != "W:out"
+                            orderby new { t.Batch, t.SKU_ID }
                             select t;
                     return l.ToList();
                 }
@@ -277,13 +280,28 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void UpdatePlace(Places place)
+        public Places FindPlaceByPlace(string placeName)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    var item = dc.Places.SingleOrDefault(p => p.TU_ID == place.TU_ID);
+                    var place = dc.Places.FirstOrDefault(p => p.PlaceID == placeName);
+                    return place;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void UpdatePlaceMFCS(Place place)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities ())
+                {
+                    var item = dc.Places.SingleOrDefault(p => p.Material == place.Material);
                     if (item != null)
                     {
                         dc.Places.Remove(item);
@@ -297,13 +315,13 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void DeletePlace(Places place)
+        public void DeletePlaceMFCS(Place place)
         {
             try
             {
-                using (var dc = new EntitiesWMS())
+                using (var dc = new MFCSEntities())
                 {
-                    var item = dc.Places.SingleOrDefault(p => p.TU_ID == place.TU_ID && p.PlaceID == place.PlaceID);
+                    var item = dc.Places.SingleOrDefault(p => p.Material == place.Material && p.PlaceID == place.PlaceID);
                     if (item != null)
                     {
                         dc.Places.Remove(item);
@@ -316,11 +334,11 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void AddPlace(Places place)
+        public void AddPlaceMFCS(Place place)
         {
             try
             {
-                using (var dc = new EntitiesWMS())
+                using (var dc = new MFCSEntities())
                 {
                     dc.Places.Add(place);
                     dc.SaveChanges();
@@ -436,17 +454,27 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<Orders> GetOrdersDistinct(int statusLessOrEqual)
+        public List<OrderReduction> GetOrdersDistinct(DateTime timeFrom, DateTime timeTo, int statusLessOrEqual)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    var l = (from c in dc.Orders
-                             where c.Status <= statusLessOrEqual
-                             orderby c.ERP_ID, c.OrderID descending, c.SubOrderID ascending
-                             group c by new {c.ERP_ID, c.OrderID} into lunique
-                             select lunique.FirstOrDefault()).Take(5000);
+                    var l = from c in dc.Orders
+                            where c.Status <= statusLessOrEqual || (c.ReleaseTime >= timeFrom && c.ReleaseTime <= timeTo)
+                            orderby c.ERP_ID, c.OrderID descending, c.SubOrderID ascending
+                            join ce in dc.CommandERPs on c.ERP_ID equals ce.ID into jj
+                            from ce in jj.DefaultIfEmpty()
+                            group c by new {ERPID = c.ERP_ID, OrderID = c.OrderID} into grpO
+                            select new OrderReduction
+                            {
+                                ERPID = grpO.Key.ERPID,
+                                ERPIDStokbar = grpO.FirstOrDefault().CommandERPs.ERP_ID,
+                                OrderID = grpO.Key.OrderID,
+                                Destination = grpO.FirstOrDefault().Destination,
+                                ReleaseTime = grpO.FirstOrDefault().ReleaseTime,
+                                Status = grpO.Any(p => p.Status > (int)EnumWMSOrderStatus.Waiting) ? grpO.Where(p => p.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Status) : 0
+                            };
                     return l.ToList();
                 }
             }
@@ -567,12 +595,12 @@ namespace UserInterface.DataServiceWMS
                         foreach (var l in list)
                         {
                             dc.Places.Remove(l);
-                            dc.Places.Add(new Places
-                            {
-                                TU_ID = l.TU_ID,
-                                PlaceID = "W:out",
-                                Time = DateTime.Now
-                            });
+                            //dc.Places.Add(new Places
+                            //{
+                            //    TU_ID = l.TU_ID,
+                            //    PlaceID = "W:out",
+                            //    Time = DateTime.Now
+                            //});
                         }
                         dc.SaveChanges();
                     }
@@ -840,11 +868,14 @@ namespace UserInterface.DataServiceWMS
                                  group oc by new { oc.orders.ERP_ID, oc.orders.OrderID, oc.orders.SubOrderID} into grpSO
                                  select new{ suborder = grpSO.FirstOrDefault(), lastchange = grpSO.Max(p => p.lastChange == null? grpSO.FirstOrDefault().orders.ReleaseTime : p.lastChange)};
                     var orders = from so in (await single.ToListAsync())
-                                 orderby so.suborder.orders.ERP_ID, so.suborder.orders.OrderID descending
-                                 group so by new { so.suborder.orders.ERP_ID, so.suborder.orders.OrderID } into grpO
+                                 join ce in dc.CommandERPs on so.suborder.orders.ERP_ID equals ce.ID into cenull
+                                 from ce in cenull.DefaultIfEmpty()
+                                 orderby so.suborder.orders.ERP_ID, so.suborder.orders.OrderID descending, so.suborder.orders.SubOrderID ascending
+                                 group so by new { ERPID = so.suborder.orders.ERP_ID, ERPIDSB = ce?.ERP_ID, OrderID = so.suborder.orders.OrderID } into grpO
                                  select new OrderReduction
                                  {
-                                     ERPID = grpO.Key.ERP_ID,
+                                     ERPID = grpO.Key.ERPID,
+                                     ERPIDStokbar = grpO.Key.ERPIDSB,
                                      OrderID = grpO.Key.OrderID,
                                      Destination = grpO.FirstOrDefault().suborder.orders.Destination,
                                      ReleaseTime = grpO.FirstOrDefault().suborder.orders.ReleaseTime,
@@ -880,6 +911,7 @@ namespace UserInterface.DataServiceWMS
                                select new OrderReduction
                                {
                                     ERPID = grp.FirstOrDefault().SubOrder.ERP_ID,
+                                    ERPIDStokbar = null,
                                     OrderID = grp.FirstOrDefault().SubOrder.OrderID,
                                     SubOrderID = grp.FirstOrDefault().SubOrder.SubOrderID,
                                     SubOrderName = grp.FirstOrDefault().SubOrder.SubOrderName,
@@ -914,6 +946,7 @@ namespace UserInterface.DataServiceWMS
                                select new OrderReduction
                                {
                                    ERPID = grp.FirstOrDefault().SubOrder.ERP_ID,
+                                   ERPIDStokbar = null,
                                    OrderID = grp.FirstOrDefault().SubOrder.OrderID,
                                    SubOrderID = grp.FirstOrDefault().SubOrder.SubOrderID,
                                    SubOrderName = grp.FirstOrDefault().SubOrder.SubOrderName,
@@ -1077,7 +1110,7 @@ namespace UserInterface.DataServiceWMS
                                  from jw in joinw.DefaultIfEmpty()
                                  join im in itemsm on i equals im.TUID into joinm
                                  from jm in joinm.DefaultIfEmpty()
-                                 where jw?.PlaceWMS != jm?.PlaceMFCS
+                                 where (jw?.PlaceWMS != jm?.PlaceMFCS) && !(jw != null && jw.PlaceWMS == "W:out" && jm == null)
                                  select new PlaceDiff
                                  {
                                      TUID = i,

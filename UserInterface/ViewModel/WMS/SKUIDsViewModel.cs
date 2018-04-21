@@ -199,7 +199,7 @@ namespace UserInterface.ViewModel
                 EditEnabled = true;
                 EnabledCC = true;
                 _selectedCommand = CommandType.Add;
-                _manageSKUID = new SKUIDViewModel{ID = "", Description = "", DefaultQty = 0,  Unit = "", Weight = 0, FrequencyClass = 1};
+                _manageSKUID = new SKUIDViewModel{ID = "", Description = "", DefaultQty = 0,  Unit = "", Weight = 0, FrequencyClass = 0};
                 _manageSKUID.Initialize(_warehouse);
                 _manageSKUID.AllowChangeIndex = true;
                 _manageSKUID.ValidationEnabled = true;

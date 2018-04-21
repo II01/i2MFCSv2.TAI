@@ -376,6 +376,115 @@ namespace UserInterface.ProxyWMS_UI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PlaceDiff", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Core.DataExchange")]
+    [System.SerializableAttribute()]
+    public partial class PlaceDiff : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlaceMFCSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlaceWMSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TUIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> TimeMFCSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> TimeWMSField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlaceMFCS {
+            get {
+                return this.PlaceMFCSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlaceMFCSField, value) != true)) {
+                    this.PlaceMFCSField = value;
+                    this.RaisePropertyChanged("PlaceMFCS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlaceWMS {
+            get {
+                return this.PlaceWMSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlaceWMSField, value) != true)) {
+                    this.PlaceWMSField = value;
+                    this.RaisePropertyChanged("PlaceWMS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TUID {
+            get {
+                return this.TUIDField;
+            }
+            set {
+                if ((this.TUIDField.Equals(value) != true)) {
+                    this.TUIDField = value;
+                    this.RaisePropertyChanged("TUID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> TimeMFCS {
+            get {
+                return this.TimeMFCSField;
+            }
+            set {
+                if ((this.TimeMFCSField.Equals(value) != true)) {
+                    this.TimeMFCSField = value;
+                    this.RaisePropertyChanged("TimeMFCS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> TimeWMS {
+            get {
+                return this.TimeWMSField;
+            }
+            set {
+                if ((this.TimeWMSField.Equals(value) != true)) {
+                    this.TimeWMSField = value;
+                    this.RaisePropertyChanged("TimeWMS");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyWMS_UI.IWMSToUI")]
     public interface IWMSToUI {
@@ -415,6 +524,12 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/ReleaseRamp", ReplyAction="http://tempuri.org/IWMSToUI/ReleaseRampResponse")]
         System.Threading.Tasks.Task ReleaseRampAsync(string destinationStartsWith);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/UpdatePlace", ReplyAction="http://tempuri.org/IWMSToUI/UpdatePlaceResponse")]
+        void UpdatePlace(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/UpdatePlace", ReplyAction="http://tempuri.org/IWMSToUI/UpdatePlaceResponse")]
+        System.Threading.Tasks.Task UpdatePlaceAsync(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -490,6 +605,14 @@ namespace UserInterface.ProxyWMS_UI {
         
         public System.Threading.Tasks.Task ReleaseRampAsync(string destinationStartsWith) {
             return base.Channel.ReleaseRampAsync(destinationStartsWith);
+        }
+        
+        public void UpdatePlace(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user) {
+            base.Channel.UpdatePlace(diffs, user);
+        }
+        
+        public System.Threading.Tasks.Task UpdatePlaceAsync(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user) {
+            return base.Channel.UpdatePlaceAsync(diffs, user);
         }
     }
 }

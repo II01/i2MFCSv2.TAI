@@ -239,7 +239,7 @@ namespace UserInterface.ViewModel
             get { return (_detailedContent == null || !_detailedContent.Command.Reason.HasValue)? 0: (EnumCommandReason)_detailedContent.Command.Reason; }
             set
             {
-                if (_detailedContent != null && _detailedContent.Command.Reason != (Command.EnumCommandReason)value)
+                if (_detailedContent != null ) //&& _detailedContent.Command.Reason != (Command.EnumCommandReason)value)
                 {
                     _detailedContent.Command.Reason = (Command.EnumCommandReason)value;
                     RaisePropertyChanged("Reason");
@@ -696,7 +696,7 @@ namespace UserInterface.ViewModel
                                     validationResult = ResourceReader.GetString("ERR_REASON");
                                 break;
                             case "GenerateLoc":
-                                if (GenerateLoc != null && (GenerateLoc.StartsWith("W:5") || !GenerateLoc.StartsWith("W")))
+                                if (GenerateLoc != null && (GenerateLoc.StartsWith("W:3") || !GenerateLoc.StartsWith("W")))
                                     validationResult = ResourceReader.GetString("ERR_RACKNOTOK");
                                 break;
                         }

@@ -267,7 +267,7 @@ namespace UserInterface.ViewModel
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
                     {
-                        ERPID = p.ERPID,
+                        ERPID = p.ERPIDStokbar,
                         OrderID = p.OrderID,
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,

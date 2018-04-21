@@ -13,6 +13,7 @@ using WCFClients;
 using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using DatabaseWMS;
+using UserInterface.ProxyWMS_UI;
 
 namespace UserInterface.ViewModel
 {
@@ -237,20 +238,24 @@ namespace UserInterface.ViewModel
             {
                 EditEnabled = false;
                 EnabledCC = false;
-                List<PlaceDiff> pd = new List<PlaceDiff>();
+                List<DataServiceWMS.PlaceDiff> pd = new List<DataServiceWMS.PlaceDiff>();
+                List<ProxyWMS_UI.PlaceDiff> pdproxy = new List<ProxyWMS_UI.PlaceDiff>();
                 try
                 {
                     switch (_selectedCommand)
                     {
                         case CommandType.UpdateMFCS:
                             foreach (var d in DataList)
-                                pd.Add(new PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
+                                pd.Add(new DataServiceWMS.PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
                             _dbservicewms.UpdatePlacesMFCS(pd, _accessUser);
                             break;
                         case CommandType.UpdateWMS:
-                            foreach (var d in DataList)
-                                pd.Add(new PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
-                            _dbservicewms.UpdatePlacesWMS(pd, _accessUser);
+                            foreach (var d in DataList) 
+                                pdproxy.Add(new ProxyWMS_UI.PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.UpdatePlace(pdproxy.ToArray(), _accessUser);
+                            }
                             break;
                         default:
                             break;

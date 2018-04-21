@@ -9583,7 +9583,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Commands MFCS.
+        ///   Looks up a localized string similar to Commands WMS.
         /// </summary>
         public static string CommandWMSs {
             get {

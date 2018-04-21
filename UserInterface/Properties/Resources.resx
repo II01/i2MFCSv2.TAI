@@ -838,7 +838,7 @@
     <value>Commands ERP</value>
   </data>
   <data name="CommandWMSs" xml:space="preserve">
-    <value>Commands MFCS</value>
+    <value>Commands WMS</value>
   </data>
   <data name="PrepareOrders" xml:space="preserve">
     <value>Prepare orders</value>

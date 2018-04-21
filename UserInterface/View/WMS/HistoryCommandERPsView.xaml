@@ -80,10 +80,12 @@
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
                                     Width="175" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ERPID}" 
-                                    Width="*" Binding="{Binding ERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
+                                    Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Reference}" 
                                     Width="4*" Binding="{Binding Reference}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ERPID}" 
+                                    Width="*" Binding="{Binding ERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                     Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>

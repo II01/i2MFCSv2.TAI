@@ -192,7 +192,7 @@ namespace UserInterface.ViewModel
                             case "ID":
                                 if(ID == null || ID.Trim().Length == 0)
                                     validationResult = ResourceReader.GetString("ERR_INDEX_FORMAT");
-                                else if (_dbservicewms.FindSKUID(ID) != null)
+                                else if (AllowChangeIndex && _dbservicewms.FindSKUID(ID) != null)
                                     validationResult = ResourceReader.GetString("ERR_INDEX_EXISTS");
                                 break;
                             case "DefaultQty":
@@ -200,8 +200,8 @@ namespace UserInterface.ViewModel
                                     validationResult = ResourceReader.GetString("ERR_RANGE") + " > 0";
                                 break;
                             case "FrequencyClass":
-                                if (FrequencyClass <= 0)
-                                    validationResult = ResourceReader.GetString("ERR_RANGE") + " > 0";
+                                if (FrequencyClass < 0)
+                                    validationResult = ResourceReader.GetString("ERR_RANGE") + " >= 0";
                                 break;
                         }
                     }
