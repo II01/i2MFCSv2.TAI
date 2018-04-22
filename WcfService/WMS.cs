@@ -98,13 +98,17 @@ namespace WcfService
                 var warehouse = (sh as WarehouseServiceHost).Warehouse;
                 try
                 {
+                    bool rebuildRoute = false;
                     using (MFCSEntities dc = new MFCSEntities())
                     {
                         foreach (var l in locs)
                         {
+                            rebuildRoute |= l.StartsWith("T") || l.StartsWith("C");
                             dc.Database.ExecuteSqlCommand($"UPDATE PlaceID SET Blocked = 1 WHERE ID LIKE '{l}%'");
                             warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_PlaceBlock called ({l})");
                         }
+                        if(rebuildRoute)
+                            warehouse.BuildRoutes(false);
                     }
                 }
                 catch (Exception e)
@@ -132,13 +136,17 @@ namespace WcfService
                 var warehouse = (sh as WarehouseServiceHost).Warehouse;
                 try
                 {
+                    bool rebuildRoute = false;
                     using (MFCSEntities dc = new MFCSEntities())
                     {
                         foreach (var l in locs)
                         {
+                            rebuildRoute |= l.StartsWith("T") || l.StartsWith("C");
                             dc.Database.ExecuteSqlCommand($"UPDATE PlaceID SET Blocked = 0 WHERE ID LIKE '{l}%'");
                             warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"MFCS_PlaceBlock called ({l})");
                         }
+                        if (rebuildRoute)
+                            warehouse.BuildRoutes(false);
                     }
                 }
                 catch (Exception e)

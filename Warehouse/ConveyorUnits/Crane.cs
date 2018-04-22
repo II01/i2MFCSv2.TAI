@@ -558,20 +558,22 @@ namespace Warehouse.ConveyorUnits
                 //                if (Automatic())
                 if (Remote() && cmd != null)
                 {
-                    if (cmd.Status == SimpleCommand.EnumStatus.NotInDB)
+                    if ((Automatic() || fastCommand) && cmd != null && cmd.Status <= SimpleCommand.EnumStatus.NotActive)  // dodano: automatic
                     {
-                        cmd.Status = SimpleCommand.EnumStatus.NotActive;
-                        Warehouse.DBService.AddSimpleCommand(cmd);
-                    }
-                    if (Automatic() && cmd != null && cmd.Status == SimpleCommand.EnumStatus.NotActive)  // dodano: automatic
+                        if (cmd.Status == SimpleCommand.EnumStatus.NotInDB)
+                        {
+                            cmd.Status = SimpleCommand.EnumStatus.NotActive;
+                            Warehouse.DBService.AddSimpleCommand(cmd);
+                        }
                         CreateAndSendTOTelegram(cmd);
 
-                    if (fastCommand)
-                        FastCommand = cmd;
-                    else if (Command == null)
-                        Command = cmd;
-                    else if (BufferCommand == null)
-                        BufferCommand = cmd;
+                        if (fastCommand)
+                            FastCommand = cmd;
+                        else if (Command == null)
+                            Command = cmd;
+                        else if (BufferCommand == null)
+                            BufferCommand = cmd;
+                    }
                 }
             }
             catch (Exception ex)

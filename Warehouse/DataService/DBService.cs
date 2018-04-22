@@ -32,6 +32,20 @@ namespace Warehouse.DataService
             Random = new Random();
         }
 
+        public bool CheckIfPlaceBlocked(string place)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                    return dc.PlaceIDs.Find(place).Blocked;
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.CheckIfPlaceBlocked failed ({0})", place));
+            }
+        }
+
 
         public SimpleSegmentCommand FindSimpleSegmentCommand(string segment)
         {

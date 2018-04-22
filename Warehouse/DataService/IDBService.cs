@@ -54,5 +54,7 @@ namespace Warehouse.DataService
         Place FindMaterial(int material);
 
         MaterialID FindMaterialID(int material, bool create);
+
+        bool CheckIfPlaceBlocked(string place);
     }
 }

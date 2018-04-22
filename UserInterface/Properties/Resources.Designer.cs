@@ -9979,6 +9979,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        public static string EnumCommandERPStatus_Error {
+            get {
+                return ResourceManager.GetString("EnumCommandERPStatus_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finished.
         /// </summary>
         public static string EnumCommandERPStatus_Finished {

@@ -79,7 +79,7 @@ namespace Warehouse.Strategy
         public FLocation GetLocation(string device)
         {
             LPosition pos = LPosition.FromString(device);
-            return pos.IsWarehouse() ? new FLocation { X = 0, Y = pos.Travel * 2000, Z = pos.Height * 1000 } : Warehouse.FindConveyorBasic(device).FLocation;
+            return pos.IsWarehouse() ? new FLocation { X = 0, Y = pos.Travel * 2000, Z = pos.Height * 0 } : Warehouse.FindConveyorBasic(device).FLocation;
         }
 
         public bool NearestCmd1(SimpleCraneCommand cmd1, SimpleCraneCommand cmd2, FLocation location)
@@ -99,6 +99,8 @@ namespace Warehouse.Strategy
                     return;
                 if (!Warehouse.SteeringCommands.Run)
                     return;
+//                if (!Strategy1.Crane.Automatic() || !Strategy2.Crane.Automatic())
+//                    return;
 
                 bool remote = Warehouse.SteeringCommands.RemoteMode;
                 LinkedConveyor lc = null;
@@ -112,14 +114,15 @@ namespace Warehouse.Strategy
 
                 if (Strategy1.Crane.FastCommand == null)
                     Strategy1.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy1.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
-                SimpleCraneCommand c1c = Strategy1.GetNewCommand(remote);
+
+                SimpleCraneCommand c1c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy1.Crane.Name) ? null : Strategy1.GetNewCommand(remote);
 //                SimpleCraneCommand c1b = Strategy1.GetNewCommand(remote);
 
                 Strategy2.BannedPlaces.AddRange(Strategy1.BannedPlaces);
 
                 if (Strategy2.Crane.FastCommand == null)
                     Strategy2.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy2.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
-                SimpleCraneCommand c2c = Strategy2.GetNewCommand(remote);
+                SimpleCraneCommand c2c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy2.Crane.Name) ? null :  Strategy2.GetNewCommand(remote);
 //                SimpleCraneCommand c2b = Strategy2.GetNewCommand(remote);
 
                 Strategy1.WriteCommandToPLC(Strategy1.Crane.FastCommand, true);

@@ -4245,4 +4245,7 @@
   <data name="ALARM_300128" xml:space="preserve">
     <value>D425 message: application fault</value>
   </data>
+  <data name="EnumCommandERPStatus_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
 </root>

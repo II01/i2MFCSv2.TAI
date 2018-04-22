@@ -63,6 +63,7 @@ namespace UserInterface.Services
         Active = 1,
         Canceled = 2,
         Finished = 3,
+        Error = 4
     }
     [TypeConverter(typeof(LocalizedEnumConverter))]
     public enum EnumBlockedWMS : int
