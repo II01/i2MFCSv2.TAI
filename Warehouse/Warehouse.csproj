@@ -197,6 +197,8 @@
     <Content Include="Config\xmlconfigUIDogusCay.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Config\xmlconfigUIDogusCay_sim.xml" />
+    <Content Include="Config\xmlconfigUIDogusCay_site.xml" />
     <None Include="Connected Services\ServiceReferenceWMSToMFCS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

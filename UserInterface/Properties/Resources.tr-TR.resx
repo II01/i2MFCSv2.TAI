@@ -4203,4 +4203,64 @@
   <data name="ERR_DATE" xml:space="preserve">
     <value>@ERR DATE</value>
   </data>
+  <data name="HistoryReleaseOrders" xml:space="preserve">
+    <value>@HistoryReleaseOrders</value>
+  </data>
+  <data name="HistoryCommandERPs" xml:space="preserve">
+    <value>@HistoryCommandERPs</value>
+  </data>
+  <data name="HistoryCommandWMSs" xml:space="preserve">
+    <value>@HistoryCommandWMSs</value>
+  </data>
+  <data name="HistoryLogsWMS" xml:space="preserve">
+    <value>@HistoryLogsWMS</value>
+  </data>
+  <data name="ExcludeWout" xml:space="preserve">
+    <value>@ExcludeWout</value>
+  </data>
+  <data name="Rebook" xml:space="preserve">
+    <value>@Rebook</value>
+  </data>
+  <data name="Rack" xml:space="preserve">
+    <value>@Rack</value>
+  </data>
+  <data name="HistoryWMSLog" xml:space="preserve">
+    <value>@HistoryWMSLog</value>
+  </data>
+  <data name="HistoryReleaseOfOrders" xml:space="preserve">
+    <value>@HistoryReleaseOfOrders</value>
+  </data>
+  <data name="LastChange" xml:space="preserve">
+    <value>@LastChange</value>
+  </data>
+  <data name="PortionOrder" xml:space="preserve">
+    <value>@PortionOrder</value>
+  </data>
+  <data name="SubOrderDetails" xml:space="preserve">
+    <value>@SubOrderDetails</value>
+  </data>
+  <data name="PortionSubOrder" xml:space="preserve">
+    <value>@PortionSubOrder</value>
+  </data>
+  <data name="Quality" xml:space="preserve">
+    <value>@Quality</value>
+  </data>
+  <data name="Quality_Control" xml:space="preserve">
+    <value>@Quality Control</value>
+  </data>
+  <data name="CancelOrder" xml:space="preserve">
+    <value>@CancelOrder</value>
+  </data>
+  <data name="DeleteCommand" xml:space="preserve">
+    <value>@DeleteCommand</value>
+  </data>
+  <data name="ClearRamp" xml:space="preserve">
+    <value>@ClearRamp</value>
+  </data>
+  <data name="ERR_SUBORDERNAME" xml:space="preserve">
+    <value>@ERR SUBORDERNAME</value>
+  </data>
+  <data name="ERR_OCCUPIED" xml:space="preserve">
+    <value>@ERR OCCUPIED</value>
+  </data>
 </root>

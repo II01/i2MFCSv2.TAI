@@ -132,6 +132,7 @@ namespace UserInterface.ViewModel
                         if (_selectedSubOrder != null)
                         {
                             Detailed = SelectedSubOrder;
+                            Detailed.ERPIDRef = SelectedOrder.ERPIDRef;
                         }
                         ExecuteRefreshSKU();
                         if (_selectedSubOrder != null)
@@ -160,7 +161,10 @@ namespace UserInterface.ViewModel
                     try
                     {
                         if (_selectedSKU != null)
+                        {
                             Detailed = SelectedSKU;
+                            Detailed.ERPIDRef = SelectedOrder.ERPIDRef;
+                        }
                     }
                     catch (Exception e)
                     {
@@ -291,6 +295,7 @@ namespace UserInterface.ViewModel
                 Detailed.ReferenceOrderID = 0;
                 Detailed.ReferenceSubOrderID = 0;
                 Detailed.ERPID = null;
+                Detailed.ERPIDRef = null;
                 Detailed.OrderID = 0;
                 Detailed.Destination = "";
                 Detailed.ReleaseTime = SqlDateTime.MaxValue.Value;
@@ -335,19 +340,20 @@ namespace UserInterface.ViewModel
                 Detailed.EnableOrderEdit = true;
                 Detailed.EnableSubOrderEdit = false;
                 Detailed.EnableSKUEdit = false;
-                Detailed.ReferenceOrderID = SelectedOrder.OrderID;
-                Detailed.ReferenceSubOrderID = SelectedOrder.SubOrderID;
-                Detailed.ID = SelectedOrder.ID;
-                Detailed.ERPID = SelectedOrder.ERPID;
-                Detailed.OrderID = SelectedOrder.OrderID;
-                Detailed.Destination = SelectedOrder.Destination;
-                Detailed.ReleaseTime = SelectedOrder.ReleaseTime;
-                Detailed.SubOrderID = SelectedOrder.SubOrderID;
-                Detailed.SubOrderName = SelectedOrder.SubOrderName;
-                Detailed.SKUID = SelectedOrder.SKUID;
-                Detailed.SKUBatch = SelectedOrder.SKUBatch;
-                Detailed.SKUQty = SelectedOrder.SKUQty;
-                Detailed.Status = SelectedOrder.Status;
+                Detailed.ReferenceOrderID = SelectedSubOrder.OrderID;
+                Detailed.ReferenceSubOrderID = SelectedSubOrder.SubOrderID;
+                Detailed.ID = SelectedSubOrder.ID;
+                Detailed.ERPID = SelectedSubOrder.ERPID;
+                Detailed.ERPIDRef = SelectedOrder.ERPIDRef;
+                Detailed.OrderID = SelectedSubOrder.OrderID;
+                Detailed.Destination = SelectedSubOrder.Destination;
+                Detailed.ReleaseTime = SelectedSubOrder.ReleaseTime;
+                Detailed.SubOrderID = SelectedSubOrder.SubOrderID;
+                Detailed.SubOrderName = SelectedSubOrder.SubOrderName;
+                Detailed.SKUID = SelectedSubOrder.SKUID;
+                Detailed.SKUBatch = SelectedSubOrder.SKUBatch;
+                Detailed.SKUQty = SelectedSubOrder.SKUQty;
+                Detailed.Status = SelectedSubOrder.Status;
             }
             catch (Exception e)
             {
@@ -359,7 +365,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedOrder != null && SelectedOrder.ERPID == null && 
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -387,7 +395,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedOrder != null && SelectedOrder.ERPID == null &&
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -413,6 +423,7 @@ namespace UserInterface.ViewModel
                 Detailed.ReferenceOrderID = SelectedOrder.OrderID;
                 Detailed.ReferenceSubOrderID = 0;
                 Detailed.ERPID = SelectedOrder.ERPID;
+                Detailed.ERPIDRef = SelectedOrder.ERPIDRef;
                 Detailed.OrderID = SelectedOrder.OrderID;
                 Detailed.Destination = SelectedOrder.Destination;
                 Detailed.ReleaseTime = SelectedOrder.ReleaseTime;
@@ -434,7 +445,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedOrder != null && SelectedOrder.ERPID == null &&
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -460,6 +473,7 @@ namespace UserInterface.ViewModel
                 Detailed.ReferenceSubOrderID = SelectedSubOrder.SubOrderID;
                 Detailed.ID = SelectedSubOrder.ID;
                 Detailed.ERPID = SelectedSubOrder.ERPID;
+                Detailed.ERPIDRef = SelectedOrder.ERPIDRef;                
                 Detailed.OrderID = SelectedSubOrder.OrderID;
                 Detailed.Destination = SelectedSubOrder.Destination;
                 Detailed.ReleaseTime = SelectedSubOrder.ReleaseTime;
@@ -480,7 +494,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSubOrder != null && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedSubOrder != null && SelectedOrder.ERPID == null && 
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -508,7 +524,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSubOrder != null && DataListSubOrder.Count > 1 && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedSubOrder != null && SelectedOrder.ERPID == null &&
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       DataListSubOrder.Count > 1 && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -534,6 +552,7 @@ namespace UserInterface.ViewModel
                 Detailed.ReferenceOrderID = SelectedSubOrder.OrderID;
                 Detailed.ReferenceSubOrderID = SelectedSubOrder.SubOrderID;
                 Detailed.ERPID = SelectedSubOrder.ERPID;
+                Detailed.ERPIDRef = SelectedOrder.ERPIDRef;
                 Detailed.OrderID = SelectedSubOrder.OrderID;
                 Detailed.Destination = SelectedSubOrder.Destination;
                 Detailed.ReleaseTime = SelectedSubOrder.ReleaseTime;
@@ -555,7 +574,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSubOrder != null && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedSubOrder != null && SelectedOrder.ERPID == null &&
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -581,6 +602,7 @@ namespace UserInterface.ViewModel
                 Detailed.ReferenceSubOrderID = SelectedSKU.SubOrderID;
                 Detailed.ID = SelectedSKU.ID;
                 Detailed.ERPID = SelectedSKU.ERPID;
+                Detailed.ERPIDRef = SelectedOrder.ERPIDRef;
                 Detailed.OrderID = SelectedSKU.OrderID;
                 Detailed.Destination = SelectedSKU.Destination;
                 Detailed.ReleaseTime = SelectedSKU.ReleaseTime;
@@ -601,7 +623,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSKU != null && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedSKU != null && SelectedOrder.ERPID == null &&
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -629,7 +653,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedSKU != null && !EditEnabled && DataListSKU.Count > 1 && AccessLevel/10 >= 2;
+                return SelectedSKU != null && SelectedOrder.ERPID == null &&
+                       SelectedOrder.Status == EnumWMSOrderStatus.Waiting && SelectedOrder.ReleaseTime == SqlDateTime.MaxValue.Value && 
+                       !EditEnabled && DataListSKU.Count > 1 && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -705,8 +731,7 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit order: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.DeleteOrder:
-                            Detailed.Status = EnumWMSOrderStatus.Cancel;
-                            _dbservicewms.UpdateOrders(SelectedOrder.ERPID, SelectedOrder.OrderID, Detailed.Order);
+                            _dbservicewms.DeleteOrders(SelectedOrder.ERPID, SelectedOrder.OrderID);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete order: {Detailed.Order.ToString()}");
                             ExecuteRefresh();
                             break;
@@ -719,7 +744,7 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add suborder: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.EditSubOrder:
-                            _dbservicewms.UpdateSubOrders(SelectedSubOrder.OrderID, SelectedSubOrder.SubOrderID, Detailed.Order);
+                            _dbservicewms.UpdateSubOrders(Detailed.ERPID, SelectedSubOrder.OrderID, SelectedSubOrder.SubOrderID, Detailed.Order);
                             var lse = from d in DataListSubOrder
                                       where d.OrderID == SelectedSubOrder.OrderID && d.SubOrderID == SelectedSubOrder.SubOrderID
                                       select d;
@@ -733,7 +758,7 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit suborder: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.DeleteSubOrder:
-                            _dbservicewms.DeleteSubOrders(Detailed.OrderID, Detailed.SubOrderID);
+                            _dbservicewms.DeleteSubOrders(Detailed.ERPID, Detailed.OrderID, Detailed.SubOrderID);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete suborder: {Detailed.Order.ToString()}");
                             ExecuteRefresh();
                             break;
@@ -836,8 +861,8 @@ namespace UserInterface.ViewModel
                     DataListOrder.Add(new OrderViewModel
                     {
                         ID = 0,
-                        ERPID = p.ERPIDStokbar,
-                        ERPIDRef = p.ERPID,
+                        ERPID = p.ERPID,
+                        ERPIDRef = p.ERPIDStokbar,
                         OrderID = p.OrderID,
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
@@ -864,11 +889,12 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if( SelectedOrder != null )
                 {
-                    foreach (var p in _dbservicewms.GetSubOrdersDistinct(SelectedOrder.ERPIDRef, SelectedOrder.OrderID))
+                    foreach (var p in _dbservicewms.GetSubOrdersDistinct(SelectedOrder.ERPID, SelectedOrder.OrderID))
                         DataListSubOrder.Add(new OrderViewModel
                         {
                             ID = p.ID,
                             ERPID = p.ERP_ID,
+                            ERPIDRef = null,
                             OrderID = p.OrderID,
                             Destination = p.Destination,
                             ReleaseTime = p.ReleaseTime,
@@ -901,6 +927,7 @@ namespace UserInterface.ViewModel
                         {
                             ID = p.ID,
                             ERPID = p.ERP_ID,
+                            ERPIDRef = null,
                             OrderID = p.OrderID,
                             Destination = p.Destination,
                             ReleaseTime = p.ReleaseTime,

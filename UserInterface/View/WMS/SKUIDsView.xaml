@@ -85,7 +85,7 @@
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" 
-                                    Width="*" Binding="{Binding TUID}"   dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}"   dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}" 
                                     Width="*" Binding="{Binding Batch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Qty}" 

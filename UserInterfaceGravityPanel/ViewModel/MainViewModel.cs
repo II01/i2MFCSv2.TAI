@@ -23,7 +23,7 @@ namespace UserInterfaceGravityPanel.ViewModel
         private OrderViewModel _orderInfo;
         private ObservableCollection<LaneViewModel> _lane;
         private string[] _orderStatus = new string[6];
-        private SolidColorBrush[] _subOrderColor = new SolidColorBrush[8];
+        private ObservableCollection<SolidColorBrush> _subOrderColor;
         private Visibility _errorVisibility;
         private string _errorMessage;
         private string _active;
@@ -110,7 +110,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                 }
             }
         }
-        public SolidColorBrush[] SubOrderColor
+        public ObservableCollection<SolidColorBrush> SubOrderColor
         {
             get
             {
@@ -185,10 +185,11 @@ namespace UserInterfaceGravityPanel.ViewModel
                 ResourceManager rm = Properties.Resources.ResourceManager;
                 ResourceSet rs = rm.GetResourceSet(Thread.CurrentThread.CurrentUICulture, true, true);
                 // Customer colors
+                SubOrderColor = new ObservableCollection<SolidColorBrush>();
                 for (int i = 0; i < 8; i++)
                 {
                     string colorstr = rs.GetString($"Color{i + 1}");
-                    SubOrderColor[i] = conv.ConvertFromString(colorstr) as SolidColorBrush;
+                    SubOrderColor.Add(conv.ConvertFromString(colorstr) as SolidColorBrush);
                 }
                 // Order statuses
                 for (int i = 0; i < 6; i++)
@@ -267,7 +268,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                 OrderInfo.PortionCommand = "";
                 if (order != null)
                 {
-                   OrderInfo.ERPID = order.ERP_ID == null ? "" : order.ERP_ID.ToString();
+                    OrderInfo.ERPID = order.ERP_ID == null ? "" : _dbservicewms.GetOrderERPID(order.ERP_ID).ToString();
                     OrderInfo.OrderID = $" ::  {order.OrderID}";
                 }
                 if (orderCount != null)
@@ -312,7 +313,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                             if (l.Suborder != null)
                             {
                                 last.SubOrderID = l.Suborder.SubOrderID;
-                                last.SubOrderBrush = SubOrderColor[l.Suborder.SubOrderID % 8];
+                                last.SubOrderBrush = SubOrderColor[(l.Suborder.SubOrderID+8-1) % 8];
                                 last.SubOrderName = l.Suborder.SubOrderName;
                             }
                         }

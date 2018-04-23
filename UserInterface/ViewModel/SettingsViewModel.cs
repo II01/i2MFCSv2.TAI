@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using Database;
 using UserInterface.DataServiceWMS;
 using System.DirectoryServices.AccountManagement;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace UserInterface.ViewModel
 {
@@ -22,6 +24,9 @@ namespace UserInterface.ViewModel
         private string _password = "";
         private string _user = "";
         private bool _enabledReduceDB;
+        private ObservableCollection<UserViewModel> _dataList;
+        private UserViewModel _selected;
+        private UserViewModel _detailed;
         #endregion
 
         #region properties
@@ -76,6 +81,54 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public ObservableCollection<UserViewModel> DataList
+        {
+            get
+            {
+                return _dataList;
+            }
+            set
+            {
+                if (_dataList != value)
+                {
+                    _dataList = value;
+                    RaisePropertyChanged("DataList");
+                }
+            }
+        }
+
+        public UserViewModel Selected
+        {
+            get
+            {
+                return _selected;
+            }
+            set
+            {
+                if (_selected != value)
+                {
+                    _selected = value;
+                    RaisePropertyChanged("Selected");
+                    Detailed = Selected;
+                }
+            }
+        }
+        public UserViewModel Detailed
+        {
+            get
+            {
+                return _detailed;
+            }
+            set
+            {
+                if (_detailed != value)
+                {
+                    _detailed = value;
+                    RaisePropertyChanged("Detailed");
+                }
+            }
+        }
         #endregion
 
         #region initialization
@@ -85,6 +138,7 @@ namespace UserInterface.ViewModel
             Logout = new RelayCommand(() => ExecuteLogout());
             SwitchLanguage = new RelayCommand(() => ExecuteSwitchLanguage());
             ReduceDB = new RelayCommand(async () => await ExecuteReduceDB());
+            Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -92,6 +146,7 @@ namespace UserInterface.ViewModel
             try
             {
                 SendAccessLevelAndUser(App.AccessLevel, "");
+                DataList = new ObservableCollection<UserViewModel>();
             }
             catch (Exception e)
             {
@@ -246,6 +301,47 @@ namespace UserInterface.ViewModel
             catch (Exception e)
             {
                 _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        private void ExecuteRefresh()
+        {
+            try
+            {
+                UserViewModel u = Selected;
+                DataList.Clear();
+                foreach (var p in _warehouse.DBService.GetUsers())
+                    DataList.Add(
+                        new UserViewModel
+                        {
+                            UserName = p.User1.ToUpper(),
+                            AccessLevelWMS = (EnumUserAccessLevel)(p.AccessLevel/10),
+                            AccessLevelMFCS = (EnumUserAccessLevel)(p.AccessLevel%10)
+                        });
+                foreach (var l in DataList)
+                    l.Initialize(_warehouse);
+                if (u != null)
+                    Selected = DataList.FirstOrDefault(p => p.User == u.User);
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void ExecuteViewActivated(ViewModelBase vm)
+        {
+            try
+            {
+                if (vm is SettingsViewModel)
+                {
+                    ExecuteRefresh();
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception,
                                     string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }

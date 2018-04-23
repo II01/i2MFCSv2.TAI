@@ -844,7 +844,7 @@
     <value>Prepare orders</value>
   </data>
   <data name="PlaceIDs" xml:space="preserve">
-    <value>Places</value>
+    <value>Locations</value>
   </data>
   <data name="SKUIDs" xml:space="preserve">
     <value>Stock keeping units</value>
@@ -856,7 +856,7 @@
     <value>WMS Log</value>
   </data>
   <data name="ERPID" xml:space="preserve">
-    <value>ERPID</value>
+    <value>ERP ID</value>
   </data>
   <data name="Reference" xml:space="preserve">
     <value>Reference</value>
@@ -877,7 +877,7 @@
     <value>Suborder Name</value>
   </data>
   <data name="SKUID" xml:space="preserve">
-    <value>SKUID</value>
+    <value>SKU ID</value>
   </data>
   <data name="SKUBatch" xml:space="preserve">
     <value>Batch</value>
@@ -1075,43 +1075,43 @@
     <value>Weight</value>
   </data>
   <data name="ERR_MATERIALEXSITS" xml:space="preserve">
-    <value>@ERR MATERIALEXSITS</value>
+    <value>Transport unit exists in warehouse</value>
   </data>
   <data name="ERR_ORDERID" xml:space="preserve">
-    <value>@ERR ORDERID</value>
+    <value>Wrong OrderID</value>
   </data>
   <data name="ERR_DESTINATION" xml:space="preserve">
-    <value>@ERR DESTINATION</value>
+    <value>Incorrect destination</value>
   </data>
   <data name="ERR_SUBORDERID" xml:space="preserve">
-    <value>@ERR SUBORDERID</value>
+    <value>Suborder does not exist</value>
   </data>
   <data name="ERR_SKU" xml:space="preserve">
-    <value>@ERR SKU</value>
+    <value>SKU does not exist</value>
   </data>
   <data name="ERR_LOC_RANGE" xml:space="preserve">
-    <value>@ERR LOC RANGE</value>
+    <value>Location range</value>
   </data>
   <data name="ERR_TUID" xml:space="preserve">
-    <value>@ERR TUID</value>
+    <value>TU ID does not exist</value>
   </data>
   <data name="ERR_PLACE" xml:space="preserve">
-    <value>@ERR PLACE</value>
+    <value>Wrong location</value>
   </data>
   <data name="ERR_INDEX_FORMAT" xml:space="preserve">
-    <value>@ERR INDEX FORMAT</value>
+    <value>Index incorrectly formatted</value>
   </data>
   <data name="ERR_INDEX_EXISTS" xml:space="preserve">
-    <value>@ERR INDEX EXISTS</value>
+    <value>Index alredy exists</value>
   </data>
   <data name="ERR_SKUID" xml:space="preserve">
-    <value>@ERR SKUID</value>
+    <value>SKU ID does not exist</value>
   </data>
   <data name="ERR_BATCH" xml:space="preserve">
-    <value>@ERR BATCH</value>
+    <value>Batch does not exist</value>
   </data>
   <data name="ERR_DATE" xml:space="preserve">
-    <value>@ERR DATE</value>
+    <value>Incorrect date</value>
   </data>
   <data name="EnumBlockedWMS_Available" xml:space="preserve">
     <value>Not blocked</value>
@@ -4247,5 +4247,38 @@
   </data>
   <data name="EnumCommandERPStatus_Error" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="CancelOrder" xml:space="preserve">
+    <value>Cancel Order</value>
+  </data>
+  <data name="ClearRamp" xml:space="preserve">
+    <value>Clear Ramp</value>
+  </data>
+  <data name="Quality" xml:space="preserve">
+    <value>Quality</value>
+  </data>
+  <data name="Rebook" xml:space="preserve">
+    <value>Rebook</value>
+  </data>
+  <data name="HistoryCommandERPs" xml:space="preserve">
+    <value>Commands ERP</value>
+  </data>
+  <data name="HistoryCommandWMSs" xml:space="preserve">
+    <value>Commands WMS</value>
+  </data>
+  <data name="HistoryLogsWMS" xml:space="preserve">
+    <value>Logs WMS</value>
+  </data>
+  <data name="HistoryReleaseOrders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="LastChange" xml:space="preserve">
+    <value>Last Change</value>
+  </data>
+  <data name="SubOrderDetails" xml:space="preserve">
+    <value>Suborder Details</value>
+  </data>
+  <data name="ExcludeWout" xml:space="preserve">
+    <value>Hide TUs outside warehouse</value>
   </data>
 </root>

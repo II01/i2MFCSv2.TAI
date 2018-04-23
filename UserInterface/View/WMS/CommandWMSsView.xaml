@@ -74,7 +74,7 @@
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Margin="10,0,0,20" Content="{Resx Delete}" Command="{Binding Delete}"/>
+                <Button Margin="10,0,0,20" Content="{Resx Cancel}" Command="{Binding Delete}"/>
             </StackPanel>
             <ContentControl                        
                         IsEnabled="{Binding EditEnabled}"                       

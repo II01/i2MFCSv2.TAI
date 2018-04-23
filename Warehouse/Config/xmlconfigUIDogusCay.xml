@@ -268,8 +268,8 @@
       </OutRouteDef>
       <CraneInfo>
         <SensorList>
-          <Sensor Offset="5" Description="Occupied" Reference="OCC"/>
-          <Sensor Offset="10" Description="Middle" Reference="MID"/>
+          <Sensor Offset="5" Description="Occupied" Reference="241B5"/>
+          <Sensor Offset="10" Description="Middle" Reference="240B1"/>
         </SensorList>
       </CraneInfo>
       <HomePosition>W:11:001:2:1</HomePosition>
@@ -289,8 +289,8 @@
       </OutRouteDef>
       <CraneInfo>
         <SensorList>
-          <Sensor Offset="6" Description="Occupied" Reference="OCC"/>
-          <Sensor Offset="12" Description="Middle" Reference="MID"/>
+          <Sensor Offset="6" Description="Occupied" Reference="243B5"/>
+          <Sensor Offset="12" Description="Middle" Reference="242B1"/>
         </SensorList>
       </CraneInfo>
       <HomePosition>W:11:002:2:1</HomePosition>
@@ -312,8 +312,8 @@
       </OutRouteDef>
       <CraneInfo>
         <SensorList>
-          <Sensor Offset="5" Description="Occupied" Reference="OCC"/>
-          <Sensor Offset="10" Description="Middle" Reference="MID"/>
+          <Sensor Offset="5" Description="Occupied" Reference="241B5"/>
+          <Sensor Offset="10" Description="Middle" Reference="240B1"/>
         </SensorList>
       </CraneInfo>
       <HomePosition>W:22:001:2:1</HomePosition>
@@ -333,8 +333,8 @@
       </OutRouteDef>
       <CraneInfo>
         <SensorList>
-          <Sensor Offset="6" Description="Occupied" Reference="OCC"/>
-          <Sensor Offset="12" Description="Middle" Reference="MID"/>
+          <Sensor Offset="6" Description="Occupied" Reference="243B5"/>
+          <Sensor Offset="12" Description="Middle" Reference="242B1"/>
         </SensorList>
       </CraneInfo>
       <HomePosition>W:22:002:2:1</HomePosition>
@@ -356,8 +356,7 @@
       </OutRouteDef>
       <CraneInfo>
         <SensorList>
-          <Sensor Offset="5" Description="Occupied" Reference="OCC"/>
-          <Sensor Offset="6" Description="Middle" Reference="MID"/>
+          <Sensor Offset="5" Description="Occupied" Reference="321B2"/>
         </SensorList>
       </CraneInfo>
       <HomePosition>W:32:054:1:1</HomePosition>
@@ -391,10 +390,9 @@
           <ALARM ID="001020" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="8" Description="Occupied" Reference="32B1"/>
-          <Sensor Offset="9" Description="Aligned" Reference="32B2"/>
-          <Sensor Offset="10" Description="Bottom" Reference="33B2"/>
-          <Sensor Offset="11" Description="Top" Reference="33B1"/>
+          <Sensor Offset="8" Description="Occupied" Reference="38B2"/>
+          <Sensor Offset="10" Description="Bottom" Reference="39B2"/>
+          <Sensor Offset="11" Description="Top" Reference="39B1"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -413,10 +411,8 @@
           <ALARM ID="001030" Offset="30" Range="15"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="16" Description="Occupied" Reference="32B1"/>
-          <Sensor Offset="17" Description="Aligned" Reference="32B2"/>
-          <Sensor Offset="18" Description="Bottom" Reference="33B2"/>
-          <Sensor Offset="19" Description="Top" Reference="33B1"/>
+          <Sensor Offset="16" Description="Occupied" Reference="43B1"/>
+		  <Sensor Offset="20" Description="Forklift" Reference="43B2"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -430,7 +426,7 @@
           <ALARM ID="002110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="44B2"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -444,7 +440,7 @@
           <ALARM ID="002120" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="8" Description="Occupied" Reference="45B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -472,7 +468,7 @@
           <ALARM ID="002140" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="24" Description="Occupied" Reference="47B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -485,7 +481,7 @@
           <ALARM ID="002210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="48B1"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -503,7 +499,9 @@
           <ALARM ID="003110" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="53B2"/>
+		  <Sensor Offset="2" Description="Bottom" Reference="54B2"/>
+		  <Sensor Offset="3" Description="Top" Reference="54B1"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -523,7 +521,7 @@
           <ALARM ID="003210" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="57B1, 57B2"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -537,7 +535,9 @@
           <ALARM ID="003310" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="59B1, 59B2"/>
+		  <Sensor Offset="2" Description="Bottom" Reference="62B2"/>
+		  <Sensor Offset="3" Description="Top" Reference="62B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -551,7 +551,7 @@
           <ALARM ID="003410" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="64B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -564,7 +564,9 @@
           <ALARM ID="003510" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="67B2, 67B3"/>
+		  <Sensor Offset="2" Description="Bottom" Reference="69B2"/>
+		  <Sensor Offset="3" Description="Top" Reference="69B1"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -584,7 +586,7 @@
           <ALARM ID="003610" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="71B1, 71B2"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -598,7 +600,9 @@
           <ALARM ID="003710" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="73B1, 73B2"/>
+		  <Sensor Offset="2" Description="Bottom" Reference="76B2"/>
+		  <Sensor Offset="3" Description="Top" Reference="76B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -612,7 +616,8 @@
           <ALARM ID="003810" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="80B1"/>
+		  <Sensor Offset="1" Description="Aligned" Reference="80B2"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="038" Height="0" Depth="1"/>
@@ -626,7 +631,8 @@
           <ALARM ID="004110" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="128B1"/>
+		  <Sensor Offset="4" Description="Forklift" Reference="128B2"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="041" Height="0" Depth="1"/>
@@ -640,7 +646,8 @@
           <ALARM ID="004210" Offset="10" Range="30"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="53B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="130B1"/>
+		  <Sensor Offset="4" Description="Forklift" Reference="130B2"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="042" Height="0" Depth="1"/>
@@ -655,7 +662,7 @@
           <ALARM ID="011110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="82B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -669,7 +676,7 @@
           <ALARM ID="011120" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="8" Description="Occupied" Reference="84B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -683,7 +690,7 @@
           <ALARM ID="011130" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="16" Description="Occupied" Reference="85B2"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -697,7 +704,7 @@
           <ALARM ID="011140" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="24" Description="Occupied" Reference="88B2"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -718,7 +725,7 @@
           <ALARM ID="011210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="93B2"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="115" Height="1" Depth="1"/>
@@ -733,7 +740,7 @@
           <ALARM ID="012110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="95B1"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="121" Height="1" Depth="1"/>
@@ -748,7 +755,7 @@
           <ALARM ID="012210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="97B1"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="122" Height="1" Depth="1"/>
@@ -763,7 +770,7 @@
           <ALARM ID="012220" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="8" Description="Occupied" Reference="99B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -777,7 +784,7 @@
           <ALARM ID="012230" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="16" Description="Occupied" Reference="100B2"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -790,7 +797,7 @@
           <ALARM ID="012240" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="24" Description="Occupied" Reference="103B2"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -809,7 +816,7 @@
           <ALARM ID="021110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="105B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -823,7 +830,7 @@
           <ALARM ID="021120" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="8" Description="Occupied" Reference="107B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -837,7 +844,7 @@
           <ALARM ID="021130" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="16" Description="Occupied" Reference="108B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -851,7 +858,7 @@
           <ALARM ID="021140" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="24" Description="Occupied" Reference="111B2"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>
@@ -872,7 +879,7 @@
           <ALARM ID="021210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="116B2"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="215" Height="1" Depth="1"/>
@@ -887,7 +894,7 @@
           <ALARM ID="022110" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="118B1"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="221" Height="1" Depth="1"/>
@@ -902,7 +909,7 @@
           <ALARM ID="022210" Offset="10" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="67B1"/>
+          <Sensor Offset="0" Description="Occupied" Reference="120B1"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="222" Height="1" Depth="1"/>
@@ -917,7 +924,7 @@
           <ALARM ID="022220" Offset="20" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="8" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="8" Description="Occupied" Reference="122B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -931,7 +938,7 @@
           <ALARM ID="022230" Offset="30" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="16" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="16" Description="Occupied" Reference="123B1"/>
         </SensorList>
       </ConveyorInfo>
     </Conveyor>
@@ -944,7 +951,7 @@
           <ALARM ID="022240" Offset="40" Range="10"/>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="24" Description="Occupied" Reference="46B1"/>
+          <Sensor Offset="24" Description="Occupied" Reference="126B2"/>
         </SensorList>
       </ConveyorInfo>
       <RouteDef>

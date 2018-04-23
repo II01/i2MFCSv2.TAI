@@ -7,6 +7,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         xmlns:local="clr-namespace:UserInterface.UserControls"
+        xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
         mc:Ignorable="d ignore"
         DataContext="{Binding Settings, Source={StaticResource Locator}}"
         MinWidth="1000"
@@ -17,10 +18,15 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
             <TextBlock Text="{Resx Settings}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
         </Border>
-        <Grid Grid.Row="1" MinHeight="600" MinWidth="1000" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,25,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50" />
                 <RowDefinition Height="50" />
@@ -31,7 +37,7 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0"  Text="{Resx User}" HorizontalAlignment="Left" Margin="10,10,10,10" />
@@ -47,11 +53,75 @@
             </StackPanel>
             <TextBlock Text="{Resx Change_language}" Grid.Row="3" HorizontalAlignment="Left" Margin="10,10,10,10"></TextBlock>
             <Button Content="{Resx Other_language}" Grid.Row="3" Grid.Column="1" Width="100" Height="30" HorizontalAlignment="Left" Command="{Binding SwitchLanguage}" />
-            <TextBlock Text="{Resx Database_management}" Grid.Row="6" HorizontalAlignment="Left" Margin="10,10,10,10"></TextBlock>
-            <StackPanel Grid.Row="6" Grid.Column="1" Margin="0,0,0,0" Orientation="Horizontal">
+            <TextBlock Text="{Resx Database_management}" Grid.Row="6" HorizontalAlignment="Left" Margin="10,10,10,10" Visibility="Hidden"/>
+            <StackPanel Grid.Row="6" Grid.Column="1" Margin="0,0,0,0" Orientation="Horizontal" Visibility="Hidden">
                 <Button Grid.Row="0" Grid.Column="2" Margin="0,10,10,10" Width="100" Height="30" Content="{Resx ReduceDB}" 
                         Command="{Binding ReduceDB}" IsEnabled="{Binding EnabledReduceDB}"/>
             </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="2" Visibility="{Binding EnableUserManagement, Converter={StaticResource BoolToVisibility}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Text="{Resx UserManagement}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource MidFontSize}" FontWeight="Medium"/>
+            <DataGrid Grid.Row="1"
+                ItemsSource="{Binding DataList}" 
+                dgx:DataGridFilter.IsAutoFilterEnabled="True"
+                dgx:Tools.ApplyInitialSorting="True"
+                SelectedItem="{Binding Selected, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                CanUserAddRows="False"
+                AutoGenerateColumns="False" 
+                IsReadOnly="True"
+                FontSize="{StaticResource BaseFontSize}">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=User}" 
+                                    Width="*" Binding="{Binding UserName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PermissionWMS}" 
+                                    Width="*" Binding="{Binding AccessLevelWMS}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PermissionMFCS}" 
+                                    Width="*" Binding="{Binding AccessLevelMFCS}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
+            <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Margin="10,0,0,20" Content="{Resx Add}" Command="{Binding Add}" />
+                    <Button Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}" />
+                    <Button Margin="10,0,0,20" Content="{Resx Delete}" Command="{Binding Delete}"/>
+                </StackPanel>
+                <ContentControl
+                IsEnabled="{Binding EditEnabled}"                       
+                Content="{Binding Detailed}"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Name="bCancel" Margin="0,10,10,10" 
+                        Content="{Resx Cancel}" 
+                        Command="{Binding Cancel}"
+                        Visibility="{Binding EnabledCC, Converter={StaticResource BoolToVisibility}}"/>
+                    <Button Name="bSave" Margin="0,10,0,10" 
+                        Content="{Resx Confirm}" 
+                        Command="{Binding Confirm}"
+                        Visibility="{Binding EnabledCC, Converter={StaticResource BoolToVisibility}}"/>
+                </StackPanel>
+            </StackPanel>
+
+
         </Grid>
     </Grid>
 </UserControl>

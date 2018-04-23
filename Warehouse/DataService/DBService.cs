@@ -1330,5 +1330,67 @@ namespace Warehouse.DataService
             }
         }
 
+        public List<User> GetUsers()
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return dc.Users.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public User GetUser(string name)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == name.ToUpper());
+                    return u;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void DeleteUser(string name)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == name.ToUpper());
+                    dc.Users.Remove(u);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void UpdateUser(string name, int accessLevel)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == name.ToUpper());
+                    u.AccessLevel = accessLevel;
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
     }
 }

@@ -50,7 +50,7 @@
             IsReadOnly="True"
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceID}" 
                                     Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
 <!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PositionTravel}" 
                                     Width="*" Binding="{Binding PositionTravel}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>

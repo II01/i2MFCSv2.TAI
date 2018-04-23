@@ -60,7 +60,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                 if (_subOrderName != value)
                 {
                     _subOrderName = value;
-                    RaisePropertyChanged("SubOrderIName");
+                    RaisePropertyChanged("SubOrderName");
                 }
             }
         }

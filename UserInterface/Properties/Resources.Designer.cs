@@ -9466,6 +9466,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel Order.
+        /// </summary>
+        public static string CancelOrder {
+            get {
+                return ResourceManager.GetString("CancelOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change language.
         /// </summary>
         public static string Change_language {
@@ -9480,6 +9489,15 @@ namespace UserInterface.Properties {
         public static string Class {
             get {
                 return ResourceManager.GetString("Class", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear Ramp.
+        /// </summary>
+        public static string ClearRamp {
+            get {
+                return ResourceManager.GetString("ClearRamp", resourceCulture);
             }
         }
         
@@ -10744,7 +10762,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ERPID.
+        ///   Looks up a localized string similar to ERP ID.
         /// </summary>
         public static string ERPID {
             get {
@@ -10753,7 +10771,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR BATCH.
+        ///   Looks up a localized string similar to Batch does not exist.
         /// </summary>
         public static string ERR_BATCH {
             get {
@@ -10771,7 +10789,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR DATE.
+        ///   Looks up a localized string similar to Incorrect date.
         /// </summary>
         public static string ERR_DATE {
             get {
@@ -10780,7 +10798,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR DESTINATION.
+        ///   Looks up a localized string similar to Incorrect destination.
         /// </summary>
         public static string ERR_DESTINATION {
             get {
@@ -10807,7 +10825,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR INDEX EXISTS.
+        ///   Looks up a localized string similar to Index alredy exists.
         /// </summary>
         public static string ERR_INDEX_EXISTS {
             get {
@@ -10816,7 +10834,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR INDEX FORMAT.
+        ///   Looks up a localized string similar to Index incorrectly formatted.
         /// </summary>
         public static string ERR_INDEX_FORMAT {
             get {
@@ -10825,7 +10843,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR LOC RANGE.
+        ///   Looks up a localized string similar to Location range.
         /// </summary>
         public static string ERR_LOC_RANGE {
             get {
@@ -10870,7 +10888,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR MATERIALEXSITS.
+        ///   Looks up a localized string similar to Transport unit exists in warehouse.
         /// </summary>
         public static string ERR_MATERIALEXSITS {
             get {
@@ -10924,7 +10942,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR ORDERID.
+        ///   Looks up a localized string similar to Wrong OrderID.
         /// </summary>
         public static string ERR_ORDERID {
             get {
@@ -10933,7 +10951,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR PLACE.
+        ///   Looks up a localized string similar to Wrong location.
         /// </summary>
         public static string ERR_PLACE {
             get {
@@ -10996,7 +11014,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR SKU.
+        ///   Looks up a localized string similar to SKU does not exist.
         /// </summary>
         public static string ERR_SKU {
             get {
@@ -11005,7 +11023,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR SKUID.
+        ///   Looks up a localized string similar to SKU ID does not exist.
         /// </summary>
         public static string ERR_SKUID {
             get {
@@ -11014,7 +11032,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR SUBORDERID.
+        ///   Looks up a localized string similar to Suborder does not exist.
         /// </summary>
         public static string ERR_SUBORDERID {
             get {
@@ -11041,7 +11059,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @ERR TUID.
+        ///   Looks up a localized string similar to TU ID does not exist.
         /// </summary>
         public static string ERR_TUID {
             get {
@@ -11064,6 +11082,15 @@ namespace UserInterface.Properties {
         public static string Events {
             get {
                 return ResourceManager.GetString("Events", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide TUs outside warehouse.
+        /// </summary>
+        public static string ExcludeWout {
+            get {
+                return ResourceManager.GetString("ExcludeWout", resourceCulture);
             }
         }
         
@@ -11239,6 +11266,42 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Commands ERP.
+        /// </summary>
+        public static string HistoryCommandERPs {
+            get {
+                return ResourceManager.GetString("HistoryCommandERPs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commands WMS.
+        /// </summary>
+        public static string HistoryCommandWMSs {
+            get {
+                return ResourceManager.GetString("HistoryCommandWMSs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Logs WMS.
+        /// </summary>
+        public static string HistoryLogsWMS {
+            get {
+                return ResourceManager.GetString("HistoryLogsWMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders.
+        /// </summary>
+        public static string HistoryReleaseOrders {
+            get {
+                return ResourceManager.GetString("HistoryReleaseOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
@@ -11262,6 +11325,15 @@ namespace UserInterface.Properties {
         public static string Info {
             get {
                 return ResourceManager.GetString("Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Last Change.
+        /// </summary>
+        public static string LastChange {
+            get {
+                return ResourceManager.GetString("LastChange", resourceCulture);
             }
         }
         
@@ -11590,7 +11662,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Places.
+        ///   Looks up a localized string similar to Locations.
         /// </summary>
         public static string PlaceIDs {
             get {
@@ -11698,6 +11770,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quality.
+        /// </summary>
+        public static string Quality {
+            get {
+                return ResourceManager.GetString("Quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ramps.
         /// </summary>
         public static string Ramp {
@@ -11766,6 +11847,15 @@ namespace UserInterface.Properties {
         public static string Reason {
             get {
                 return ResourceManager.GetString("Reason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rebook.
+        /// </summary>
+        public static string Rebook {
+            get {
+                return ResourceManager.GetString("Rebook", resourceCulture);
             }
         }
         
@@ -12013,7 +12103,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SKUID.
+        ///   Looks up a localized string similar to SKU ID.
         /// </summary>
         public static string SKUID {
             get {
@@ -12108,6 +12198,15 @@ namespace UserInterface.Properties {
         public static string Stop {
             get {
                 return ResourceManager.GetString("Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suborder Details.
+        /// </summary>
+        public static string SubOrderDetails {
+            get {
+                return ResourceManager.GetString("SubOrderDetails", resourceCulture);
             }
         }
         

@@ -357,6 +357,7 @@ namespace UserInterface.ViewModel
                 DetailedOrder.ValidationEnabled = true;
                 DetailedOrder.ID = SelectedOrder.ID;
                 DetailedOrder.ERPID = SelectedOrder.ERPID;
+                DetailedOrder.ERPIDref = SelectedOrder.ERPIDref;
                 DetailedOrder.OrderID = SelectedOrder.OrderID;
                 DetailedOrder.Destination = SelectedOrder.Destination;
                 DetailedOrder.ReleaseTime = SelectedOrder.ReleaseTime;
@@ -395,6 +396,7 @@ namespace UserInterface.ViewModel
                 DetailedOrder.ValidationEnabled = true;
                 DetailedOrder.ID = SelectedOrder.ID;
                 DetailedOrder.ERPID = SelectedOrder.ERPID;
+                DetailedOrder.ERPIDref = SelectedOrder.ERPIDref;
                 DetailedOrder.OrderID = SelectedOrder.OrderID;
                 DetailedOrder.Destination = SelectedOrder.Destination;
                 DetailedOrder.ReleaseTime = SelectedOrder.ReleaseTime;
@@ -552,7 +554,7 @@ namespace UserInterface.ViewModel
                     switch (_selectedCmd)
                     {
                         case CommandType.ReleaseOrder:
-                            _dbservicewms.UpdateOrders(DetailedOrder.ERPID, DetailedOrder.OrderID, DetailedOrder.Order);
+                            _dbservicewms.UpdateOrders(DetailedOrder.ERPIDref, DetailedOrder.OrderID, DetailedOrder.Order);
                             SelectedOrder.Destination = DetailedOrder.Destination;
                             SelectedOrder.ReleaseTime = DetailedOrder.ReleaseTime;
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Release order: {DetailedOrder.Order.ToString()}");
@@ -563,7 +565,7 @@ namespace UserInterface.ViewModel
                             {
                                 client.CancelOrder(new DTOOrder
                                 {
-                                    ERP_ID = DetailedOrder.ERPID,
+                                    ERP_ID = DetailedOrder.ERPIDref,
                                     OrderID = DetailedOrder.OrderID,
                                     ReleaseTime = DetailedOrder.ReleaseTime,
                                     Destination = DetailedOrder.Destination

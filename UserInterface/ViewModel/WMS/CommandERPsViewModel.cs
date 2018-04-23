@@ -180,8 +180,10 @@ namespace UserInterface.ViewModel
                 Detailed = new CommandERPViewModel();
                 Detailed.Initialize(_warehouse);
                 Detailed.ValidationEnabled = true;
+                Detailed.ID = Selected.ID;
                 Detailed.ERPID = Selected.ERPID;
                 Detailed.Command = Selected.Command;
+                Detailed.Reference = Selected.Reference;
                 Detailed.Status = Selected.Status;
             }
             catch (Exception e)
@@ -245,7 +247,15 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Delete:
-                            _dbservicewms.UpdateCommandERP(new CommandERPs { ID = Detailed.ERPID, Command = Detailed.Command, Status = (int)EnumCommandERPStatus.Canceled});
+                            _dbservicewms.UpdateCommandERP(new CommandERPs
+                                                           {
+                                                                ID = Detailed.ID,
+                                                                ERP_ID = Detailed.ERPID,
+                                                                Reference = Detailed.Reference,
+                                                                Command = Detailed.Command,
+                                                                LastChange = DateTime.Now,
+                                                                Status = (int)EnumCommandERPStatus.Canceled
+                                                            });
                             Detailed.Status = EnumCommandERPStatus.Canceled;
                             Selected.ERPID = Detailed.ERPID;
                             Selected.Reference = Detailed.Reference;

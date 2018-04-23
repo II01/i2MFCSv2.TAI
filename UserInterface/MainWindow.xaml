@@ -113,9 +113,6 @@
                     <TreeViewItem  Header="{Resx SKUIDs}" 
                                Tag="{Binding SKUIDs, Source={StaticResource Locator}}" 
                                IsEnabled="True"/>
-                    <TreeViewItem Header="{Resx ComparePlaces}"
-                              Tag="{Binding PlaceDiffs, Source={StaticResource Locator}}" 
-                              IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
                     <TreeViewItem  Header="{Resx CommandERPs}" 
                            Tag="{Binding CommandERPs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
@@ -125,6 +122,9 @@
                     <TreeViewItem  Header="{Resx PrepareOrders}" 
                            Tag="{Binding Orders, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
+                    <TreeViewItem Header="{Resx ComparePlaces}"
+                              Tag="{Binding PlaceDiffs, Source={StaticResource Locator}}" 
+                              IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
                     <TreeViewItem  Header="{Resx WMSLog}" 
                                Tag="{Binding Logs, Source={StaticResource Locator}}" 
                                IsEnabled="True"/>
@@ -141,29 +141,29 @@
                     <TreeViewItem  Header="{Resx Locations}" 
                            Tag="{Binding Locations, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
-                    <TreeViewItem Header="{Resx Events}"
-                              Tag="{Binding Events, Source={StaticResource Locator}}" 
-                              IsEnabled="True"/>
                     <TreeViewItem Header="{Resx Simple_commands}"
                               Tag="{Binding SimpleCommands, Source={StaticResource Locator}}" 
                               IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL2}}"/>
+                    <TreeViewItem Header="{Resx Events}"
+                              Tag="{Binding Events, Source={StaticResource Locator}}" 
+                              IsEnabled="True"/>
                 </TreeViewItem>
             </TreeViewItem>
-            <TreeViewItem Header ="{Resx History}" IsExpanded="True" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}">
+            <TreeViewItem Header ="{Resx History}" IsExpanded="False" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelL1}}">
                 <TreeViewItem Header="{Resx Alarms}"
                               Tag="{Binding HistoryAlarms, Source={StaticResource Locator}}" 
                               IsEnabled="True"/>
-                <TreeViewItem Header="{Resx HistoryLogsWMS}"
-                              Tag="{Binding HistoryLogs, Source={StaticResource Locator}}" 
-                              IsEnabled="True"/>
-                <TreeViewItem Header="{Resx HistoryCommandWMSs}"
-                              Tag="{Binding HistoryCommandWMSs, Source={StaticResource Locator}}" 
+                <TreeViewItem Header="{Resx HistoryReleaseOrders}"
+                              Tag="{Binding HistoryReleaseOrders, Source={StaticResource Locator}}" 
                               IsEnabled="True"/>
                 <TreeViewItem Header="{Resx HistoryCommandERPs}"
                               Tag="{Binding HistoryCommandERPs, Source={StaticResource Locator}}" 
                               IsEnabled="True"/>
-                <TreeViewItem Header="{Resx HistoryReleaseOrders}"
-                              Tag="{Binding HistoryReleaseOrders, Source={StaticResource Locator}}" 
+                <TreeViewItem Header="{Resx HistoryCommandWMSs}"
+                              Tag="{Binding HistoryCommandWMSs, Source={StaticResource Locator}}" 
+                              IsEnabled="True"/>
+                <TreeViewItem Header="{Resx HistoryLogsWMS}"
+                              Tag="{Binding HistoryLogs, Source={StaticResource Locator}}" 
                               IsEnabled="True"/>
                 <TreeViewItem Header="{Resx Movements}"
                               Tag="{Binding HistoryMovements, Source={StaticResource Locator}}" 

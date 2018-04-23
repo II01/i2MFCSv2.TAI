@@ -50,7 +50,7 @@
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
             <Label  
-                Content="{Binding SubOrder}" 
+                Content="{Binding SubOrderID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <Label  

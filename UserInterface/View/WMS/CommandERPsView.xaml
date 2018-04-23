@@ -50,15 +50,15 @@
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
-                                    Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Reference}" 
-                                    Width="4*" Binding="{Binding Reference}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
+                                    Width="10*" Binding="{Binding Reference}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ERPID}" 
-                                    Width="*" Binding="{Binding ERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding ERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
-                                    Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
-                                    Width="*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
@@ -66,7 +66,7 @@
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Margin="10,0,0,20" Content="{Resx Delete}" Command="{Binding Delete}"/>
+                <Button Margin="10,0,0,20" Content="{Resx Cancel}" Command="{Binding Delete}"/>
             </StackPanel>
             <ContentControl                        
                         IsEnabled="True"                       

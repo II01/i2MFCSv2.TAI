@@ -39,7 +39,7 @@
             // 
             // serviceMFCSInstaller
             // 
-            this.serviceMFCSInstaller.Description = "I2MFCS core service";
+            this.serviceMFCSInstaller.Description = "i2MFCS core service";
             this.serviceMFCSInstaller.DisplayName = "i2MFCS.Core";
             this.serviceMFCSInstaller.ServiceName = "i2MFCS CORE";
             // 

@@ -39,6 +39,7 @@
             // 
             // serviceTelegramsInstaller
             // 
+            this.serviceTelegramsInstaller.Description = "i2MFCS service for communication with PLCs";
             this.serviceTelegramsInstaller.DisplayName = "i2MFCS.Telegrams";
             this.serviceTelegramsInstaller.ServiceName = "i2MFCS.Telegrams";
             this.serviceTelegramsInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;

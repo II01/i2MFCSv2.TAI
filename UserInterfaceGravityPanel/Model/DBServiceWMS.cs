@@ -28,6 +28,28 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public int? GetOrderERPID (int? erpidref)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    if (erpidref.HasValue)
+                    {
+                        var order = dc.CommandERPs.Find(erpidref);
+                        return order?.ERP_ID;
+                    }
+                    else
+                        return null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         public Orders GetCurrentSubOrderForRamp(int ramp)
         {
             try
@@ -100,10 +122,10 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                     var oc = new OrderCount
                     {
                         Status = order.Where(p => p.Command.Status > (int)EnumWMSCommandStatus.Waiting).Min(p => (p == null || p.Command == null) ? 0 : p.Command.Status),
-                        All = order.Count(),
+                        All = order.Count(p => p.Command.Target.StartsWith("W:32")),
                         Active = order.Count(p => p.Command.Status == (int)EnumWMSCommandStatus.Active),
-                        Done = order.Count(p => p.Command.Status >= (int)EnumWMSCommandStatus.Canceled),
-                        Finished = order.Count(p => p.Command.Status == (int)EnumWMSCommandStatus.Finished)
+                        Done = order.Count(p => p.Command.Target.StartsWith("W:32") && p.Command.Status >= (int)EnumWMSCommandStatus.Canceled),
+                        Finished = order.Count(p => p.Command.Target.StartsWith("W:32") && p.Command.Status == (int)EnumWMSCommandStatus.Finished)
                     };
 
                     return oc;
@@ -124,17 +146,18 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                 {
                     string loc = $"W:32:{ramp:d2}";
 
-                    var lanes = dc.Places
-                                .Where(p => p.PlaceID.StartsWith(loc))
-                                .OrderByDescending(p => p.Time)
+                    var laneOrd = dc.Places
+                                  .Where(p => p.PlaceID.StartsWith(loc))
+                                  .OrderBy(p => p.PlaceID).ThenBy(p => p.Time)
+                                  .ToList();
+                    var lanes = laneOrd
                                 .GroupBy(
                                     (by) => by.PlaceID,
                                     (key, group) => new
                                     {
                                         Place = group.FirstOrDefault(),
                                         Count = group.Count()
-                                    })
-                                .OrderBy(p => p.Place.PlaceID)
+                                    })                                
                                 .ToList();
 
                     var List = new List<LaneData>();

@@ -42,7 +42,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="{Resx ExcludeWout}" HorizontalAlignment="Right"/>
-            <CheckBox Grid.Column="1" Margin="10,0,50,0" IsChecked = "{Binding Path=ExcludeWout}"/>
+            <CheckBox Grid.Column="1" Margin="10,0,0,0" IsChecked = "{Binding Path=ExcludeWout}"/>
         </Grid>
         <DataGrid Grid.Row="2"
             x:Name="dgPlaceIDs" 
@@ -81,7 +81,7 @@
                 <Button Name="bDelete" Margin="10,0,0,20" Content="{Resx Delete}" Command="{Binding Delete}"/>
                 <Button Name="bBook" Margin="10,0,0,20" Content="{Resx Rebook}" Command="{Binding Book}"/>
                 <Button Name="bBlock" Margin="10,0,0,20" Content="{Resx Quality}" Command="{Binding Block}"/>
-                <Button Name="bEdit" Margin="10,0,0,20" Content="{Resx Edit_SKU}" Command="{Binding Edit}"/>
+                <Button Name="bEdit" Margin="10,0,0,20" Content="{Resx EditSKU}" Command="{Binding Edit}"/>
             </StackPanel>
             <ContentControl x:Name="ccPlaceID" 
                         IsEnabled="{Binding EditEnabled}"                       

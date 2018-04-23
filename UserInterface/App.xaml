@@ -78,6 +78,12 @@
                 <x:Type TypeName="srv:EnumCommandReason"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
+        <ObjectDataProvider x:Key="UserAccessLevelList" MethodName="GetValues"
+                            ObjectType="{x:Type srv:EnumUserAccessLevel}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="srv:EnumUserAccessLevel"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
 
         <!-- data templates -->
         <DataTemplate DataType="{x:Type vm:AlarmsViewModel}">
@@ -205,6 +211,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:HistoryReleaseOrdersViewModel}">
             <views:HistoryReleaseOrdersView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:UserViewModel}">
+            <views:UserView />
         </DataTemplate>
 
         <!-- converters -->

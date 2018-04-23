@@ -174,7 +174,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <DataGrid.Columns >
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceID}" 
                                     Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
@@ -216,7 +216,7 @@
             </Grid.ColumnDefinitions>
             <Button Width="120" Grid.Row="0" Grid.Column="2" Margin="10,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             <Button Width="120" Grid.Row="1" Grid.Column="0" Margin="10,0,0,10" Content="{Resx ReleaseOrder}" Command="{Binding CmdReleaseOrder}" Visibility="Visible"/>
-            <Button Width="120" Grid.Row="1" Grid.Column="1" Margin="10,0,0,10" Content="{Resx DeleteOrder}" Command="{Binding CmdDeleteOrder}" Visibility="Visible"/>
+            <Button Width="120" Grid.Row="1" Grid.Column="1" Margin="10,0,0,10" Content="{Resx CancelOrder}" Command="{Binding CmdDeleteOrder}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="1" Grid.Column="2" Margin="10,0,0,10" Content="{Resx DeleteCommand}" Command="{Binding CmdDeleteCommand}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="2" Grid.Column="1" Margin="10,0,0,10" Content="{Resx ClearRamp}" Command="{Binding CmdClearTruckRamp}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="2" Grid.Column="2" Margin="10,0,0,10" Content="{Resx ReleaseRamp}" Command="{Binding CmdReleaseTruckRamp}" Visibility="Visible"/>

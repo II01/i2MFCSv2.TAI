@@ -146,4 +146,6 @@ namespace UserInterface.Services
         LocationFull = 5
     }
 
+    [TypeConverter(typeof(LocalizedEnumConverter))]
+    public enum EnumUserAccessLevel { Operator = 0, SuperUser, Admin };
 }

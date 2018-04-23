@@ -688,14 +688,14 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public void UpdateSubOrders(int orderid, int suborderid, Orders order)
+        public void UpdateSubOrders(int? erpid, int orderid, int suborderid, Orders order)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from or in dc.Orders
-                            where or.OrderID == orderid && or.SubOrderID == suborderid
+                            where or.ERP_ID == erpid && or.OrderID == orderid && or.SubOrderID == suborderid
                             select or;
                     foreach (var o in l)
                     {
@@ -710,14 +710,14 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void DeleteSubOrders(int orderid, int suborderid)
+        public void DeleteSubOrders(int? erpid, int orderid, int suborderid)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var items = from or in dc.Orders
-                                where or.OrderID == orderid && or.SubOrderID == suborderid
+                                where or.ERP_ID == erpid && or.OrderID == orderid && or.SubOrderID == suborderid
                                 select or;
                     dc.Orders.RemoveRange(items);
                     dc.SaveChanges();
@@ -734,7 +734,7 @@ namespace UserInterface.DataServiceWMS
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    return dc.Orders.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid) != null;
+                    return dc.Orders.FirstOrDefault(p => p.ERP_ID == null && p.OrderID == orderid && p.SubOrderID == suborderid) != null;
                 }
             }
             catch (Exception e)
