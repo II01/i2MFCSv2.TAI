@@ -5,13 +5,13 @@ namespace UserInterface.View
     /// <summary>
     /// Description for AlarmOverviewView.
     /// </summary>
-    public partial class SettingsView : UserControl
+    public partial class UsersView : UserControl
 
     {
         /// <summary>
         /// Initializes a new instance of the AlarmOverviewView class.
         /// </summary>
-        public SettingsView()
+        public UsersView()
         {
             InitializeComponent();
         }

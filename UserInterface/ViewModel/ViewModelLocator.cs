@@ -19,9 +19,9 @@ namespace UserInterface.ViewModel
             get { return ServiceLocator.Current.GetInstance<AlarmsViewModel>(); }
         }
 
-        public SettingsViewModel Settings
+        public UsersViewModel Users
         {
-            get { return ServiceLocator.Current.GetInstance<SettingsViewModel>(); }
+            get { return ServiceLocator.Current.GetInstance<UsersViewModel>(); }
         }
 
         public SimpleCommandsViewModel SimpleCommands
@@ -154,7 +154,7 @@ namespace UserInterface.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<AlarmsViewModel>();
-            SimpleIoc.Default.Register<SettingsViewModel>();
+            SimpleIoc.Default.Register<UsersViewModel>();
             SimpleIoc.Default.Register<SimpleCommandsViewModel>();
             SimpleIoc.Default.Register<MaterialsViewModel>();
             SimpleIoc.Default.Register<LocationsViewModel>();

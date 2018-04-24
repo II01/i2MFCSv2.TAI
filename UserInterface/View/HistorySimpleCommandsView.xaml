@@ -61,7 +61,6 @@
                 CanUserAddRows="False"
                 AutoGenerateColumns="False" 
                 IsReadOnly="True"
-                IsEnabled="{Binding IsEnabledCC, Converter={StaticResource InvertBool}}"
                 FontSize="{StaticResource BaseFontSize}"
                 ItemsSource="{Binding SimpleCommandList}"
                 SelectedItem ="{Binding SelectedContent}">

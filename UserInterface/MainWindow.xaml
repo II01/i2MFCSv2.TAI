@@ -179,7 +179,7 @@
                               IsEnabled="True"/>
             </TreeViewItem>
             <TreeViewItem Header="" Visibility="Hidden"/>
-            <TreeViewItem Header="{Resx Settings}" Tag="{Binding Settings, Source={StaticResource Locator}}"/>
+            <TreeViewItem Header="{Resx Users}" Tag="{Binding Users, Source={StaticResource Locator}}"/>
         </TreeView>
             <Grid Row="2" HorizontalAlignment="Left">
             <Grid.ColumnDefinitions>

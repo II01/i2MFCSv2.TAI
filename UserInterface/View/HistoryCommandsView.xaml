@@ -66,7 +66,6 @@
             x:Name="dgSimpleCommands" Grid.Row="3" 
             ItemsSource="{Binding CommandList}"
             SelectedItem="{Binding SelectedContent, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-            IsEnabled="{Binding IsEnabledCC, Converter={StaticResource InvertBool}}"
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -105,7 +104,6 @@
         <DataGrid 
             x:Name="dgManualCommands" Grid.Row="5" 
             ItemsSource="{Binding SimpleCommandList, IsAsync=True}"
-            IsEnabled="{Binding IsEnabledCC, Converter={StaticResource InvertBool}}"
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"

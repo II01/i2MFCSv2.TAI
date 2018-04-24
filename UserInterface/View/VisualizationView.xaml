@@ -18,9 +18,9 @@
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding OnLoaded}" />
         </i:EventTrigger>
-        <i:EventTrigger EventName="Closed">
+<!--        <i:EventTrigger EventName="Closed">
             <i:InvokeCommandAction Command="{Binding OnClose}" />
-        </i:EventTrigger>
+        </i:EventTrigger> -->
     </i:Interaction.Triggers>
 
     <UserControl.Resources>

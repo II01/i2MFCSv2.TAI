@@ -204,7 +204,7 @@
     <Compile Include="ViewModel\SimpleCommandCraneViewModel.cs" />
     <Compile Include="ViewModel\HistorySimpleCommandsViewModel.cs" />
     <Compile Include="ViewModel\SimpleCommandsViewModel.cs" />
-    <Compile Include="ViewModel\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\UsersViewModel.cs" />
     <Compile Include="ViewModel\SimpleCommandViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="ViewModel\VisualizationViewModel.cs" />
@@ -364,8 +364,8 @@
     <Compile Include="View\SimpleCommandsView.xaml.cs">
       <DependentUpon>SimpleCommandsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SettingsView.xaml.cs">
-      <DependentUpon>SettingsView.xaml</DependentUpon>
+    <Compile Include="View\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AlarmsView.xaml.cs">
       <DependentUpon>AlarmsView.xaml</DependentUpon>
@@ -580,7 +580,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SettingsView.xaml">
+    <Page Include="View\UsersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

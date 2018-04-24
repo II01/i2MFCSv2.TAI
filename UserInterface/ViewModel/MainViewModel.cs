@@ -208,7 +208,7 @@ namespace UserInterface.ViewModel
                 XAMLViewModelsToLoad = 2;    // visualization, control panel
                 Messenger.Default.Register<MessageLoadingCompleted>(this, m => StartCommunication());
 
-                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<SettingsViewModel>(), Visible = Visibility.Hidden });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<UsersViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<LocationsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<MaterialsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<SimpleCommandsViewModel>(), Visible = Visibility.Hidden });
@@ -235,7 +235,7 @@ namespace UserInterface.ViewModel
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryReleaseOrdersViewModel>(), Visible = Visibility.Hidden });
 
                 // intialize view models
-                SimpleIoc.Default.GetInstance<SettingsViewModel>().Initialize(Warehouse);
+                SimpleIoc.Default.GetInstance<UsersViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<LocationsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<MaterialsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<SimpleCommandsViewModel>().Initialize(Warehouse);
@@ -266,7 +266,7 @@ namespace UserInterface.ViewModel
 
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { this.AccessLevel = mc.AccessLevel; this.User = mc.User.ToUpper(); });
 
-                SimpleIoc.Default.GetInstance<SettingsViewModel>().SetLanguage();
+                SimpleIoc.Default.GetInstance<UsersViewModel>().SetLanguage();
             }
             catch (Exception e)
             {
@@ -312,7 +312,7 @@ namespace UserInterface.ViewModel
                 XAMLViewModelsToLoad--;
                 if (XAMLViewModelsToLoad == 0)
                 {
-                    SimpleIoc.Default.GetInstance<SettingsViewModel>().SendAccessLevelAndUser(2, "admin");
+                    SimpleIoc.Default.GetInstance<UsersViewModel>().SendAccessLevelAndUser(22, "admin");
                     Warehouse.WCFClient = new WCFUIClient();
                     Warehouse.WCFClient.Initialize(Warehouse);
                     Warehouse.StartCommunication();

@@ -14,7 +14,6 @@ namespace Database
     
     public partial class User
     {
-        public int ID { get; set; }
         public string User1 { get; set; }
         public string Password { get; set; }
         public int AccessLevel { get; set; }

@@ -26,7 +26,7 @@
         <TextBlock Text="{Resx PermissionWMS}" Grid.Row="1" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx PermissionMFCS}" Grid.Row="2" Margin="0,0,0,10"/>
         
-        <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
+        <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" IsEnabled="{Binding EditEnabledUser}"
                  Text = "{Binding Path=UserName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
         <ComboBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10"
                   SelectedItem="{Binding Path=AccessLevelWMS, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"

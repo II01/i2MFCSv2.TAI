@@ -100,18 +100,12 @@
           <Property Name="Discrimator" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Time" Type="datetime" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="ID" />
             <PropertyRef Name="User" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="AccessLevel" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
           <Property Name="AccessLevel" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__Command__Materia__60A75C0F">
@@ -245,14 +239,7 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
           <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PlaceID" EntityType="Self.PlaceID" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SimpleCommand" EntityType="Self.SimpleCommand" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [User].[ID] AS [ID], 
-    [User].[User] AS [User], 
-    [User].[Password] AS [Password], 
-    [User].[AccessLevel] AS [AccessLevel]
-    FROM [dbo].[User] AS [User]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Command__Materia__60A75C0F" Association="Self.FK__Command__Materia__60A75C0F">
             <End Role="MaterialID" EntitySet="MaterialID" />
             <End Role="Command" EntitySet="Command" />
@@ -645,14 +632,10 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
         <EnumType Name="EnumCommandReason" a:ExternalTypeName="Command.EnumCommandReason" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="ID" />
             <PropertyRef Name="User1" />
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="AccessLevel" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="User1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AccessLevel" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
@@ -804,7 +787,6 @@ warning 6002: The table/view 'MFCS.dbo.User' does not have a primary key defined
                 <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="User1" ColumnName="User" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

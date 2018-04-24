@@ -89,8 +89,8 @@
         <DataTemplate DataType="{x:Type vm:AlarmsViewModel}">
             <views:AlarmsView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
-            <views:SettingsView />
+        <DataTemplate DataType="{x:Type vm:UsersViewModel}">
+            <views:UsersView />
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:SimpleCommandsViewModel}">
             <views:SimpleCommandsView />

@@ -17,13 +17,20 @@ using System.Linq;
 
 namespace UserInterface.ViewModel
 {
-    public class SettingsViewModel: ViewModelBase
+    public class UsersViewModel: ViewModelBase
     {
+        public enum CommandType { None = 0, Add, Edit, Delete };
+
         #region members
         BasicWarehouse _warehouse;
+        private CommandType _selectedCommand;
         private string _password = "";
         private string _user = "";
         private bool _enabledReduceDB;
+        private bool _enabledCC;
+        private bool _editEnabled;
+        private bool _enabledUserManagement;
+
         private ObservableCollection<UserViewModel> _dataList;
         private UserViewModel _selected;
         private UserViewModel _detailed;
@@ -34,6 +41,12 @@ namespace UserInterface.ViewModel
         public RelayCommand Logout { get; private set; }
         public RelayCommand SwitchLanguage { get; private set; }
         public RelayCommand ReduceDB { get; private set; }
+        public RelayCommand Add { get; private set; }
+        public RelayCommand Edit { get; private set; }
+        public RelayCommand Delete { get; private set; }
+        public RelayCommand Confirm { get; private set; }
+        public RelayCommand Cancel { get; private set; }
+        public RelayCommand Refresh { get; private set; }
 
         public string User
         {
@@ -78,6 +91,53 @@ namespace UserInterface.ViewModel
                 {
                     _enabledReduceDB = value;
                     RaisePropertyChanged("EnabledReduceDB");
+                }
+            }
+        }
+        public bool EnabledUserManagement
+        {
+            get
+            {
+                return _enabledUserManagement;
+            }
+            set
+            {
+                if (_enabledUserManagement != value)
+                {
+                    _enabledUserManagement = value;
+                    RaisePropertyChanged("EnabledUserManagement");
+                }
+            }
+        }
+
+        public bool EditEnabled
+        {
+            get
+            {
+                return _editEnabled;
+            }
+            set
+            {
+                if (_editEnabled != value)
+                {
+                    _editEnabled = value;
+                    RaisePropertyChanged("EditEnabled");
+                }
+            }
+        }
+
+        public bool EnabledCC
+        {
+            get
+            {
+                return _enabledCC;
+            }
+            set
+            {
+                if (_enabledCC != value)
+                {
+                    _enabledCC = value;
+                    RaisePropertyChanged("EnabledCC");
                 }
             }
         }
@@ -132,12 +192,19 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region initialization
-        public SettingsViewModel()
+        public UsersViewModel()
         {
-            Login = new RelayCommand(() => ExecuteLogin());
-            Logout = new RelayCommand(() => ExecuteLogout());
+            Login = new RelayCommand(() => ExecuteLogin(), CanExecuteLogin);
+            Logout = new RelayCommand(() => ExecuteLogout(), CanExecuteLogout);
             SwitchLanguage = new RelayCommand(() => ExecuteSwitchLanguage());
             ReduceDB = new RelayCommand(async () => await ExecuteReduceDB());
+            Add = new RelayCommand(() => ExecuteAdd(), CanExecuteAdd);
+            Edit = new RelayCommand(() => ExecuteEdit(), CanExecuteEdit);
+            Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
+            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
+            Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
+            Refresh = new RelayCommand(() => ExecuteRefresh());
+
             Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
         }
         public void Initialize(BasicWarehouse warehouse)
@@ -172,6 +239,7 @@ namespace UserInterface.ViewModel
                     }
                 }
                 catch { }
+                // machine
                 try
                 {
                     if(!valid)
@@ -181,7 +249,8 @@ namespace UserInterface.ViewModel
                         }
                 }
                 catch { }
-                if(!valid )
+                // MFCS user
+                if(false && !valid )
                 {
                     User usr = _warehouse.DBService.GetUserPassword(User);
                     if (usr != null && usr.Password == Password)
@@ -207,8 +276,8 @@ namespace UserInterface.ViewModel
                     App.AccessLevel = 0;
                     SendAccessLevelAndUser(App.AccessLevel, "");
                 }
-
-                EnabledReduceDB = App.AccessLevel == 2;
+                EnabledReduceDB = App.AccessLevel == 22;
+                EnabledUserManagement = App.AccessLevel == 22;
             }
             catch (Exception e)
             {
@@ -217,6 +286,19 @@ namespace UserInterface.ViewModel
             }
         }
 
+        private bool CanExecuteLogin()
+        {
+            try
+            {
+                return !EditEnabled;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
         private void ExecuteLogout()
         {
             try
@@ -233,6 +315,204 @@ namespace UserInterface.ViewModel
                                     string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        private bool CanExecuteLogout()
+        {
+            try
+            {
+                return !EditEnabled;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
+        private void ExecuteAdd()
+        {
+            try
+            {
+                _selectedCommand = CommandType.Add;
+                EditEnabled = true;
+                EnabledCC = true;
+                Detailed = new UserViewModel();
+                Detailed.Initialize(_warehouse);
+                Detailed.EditEnabledUser = true;
+                Detailed.ValidationEnabled = true;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteAdd()
+        {
+            try
+            {
+                return !EditEnabled;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
+        private void ExecuteEdit()
+        {
+            try
+            {
+                _selectedCommand = CommandType.Edit;
+                EditEnabled = true;
+                EnabledCC = true;
+                Detailed = new UserViewModel();
+                Detailed.Initialize(_warehouse);
+                Detailed.ValidationEnabled = true;
+                Detailed.UserName = Selected.UserName;
+                Detailed.AccessLevelWMS = Selected.AccessLevelWMS;
+                Detailed.AccessLevelMFCS = Selected.AccessLevelMFCS;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteEdit()
+        {
+            try
+            {
+                return !EditEnabled && Selected != null;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
+        private void ExecuteDelete()
+        {
+            try
+            {
+                _selectedCommand = CommandType.Delete;
+                EditEnabled = false;
+                EnabledCC = true;
+                Detailed = Selected;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteDelete()
+        {
+            try
+            {
+                return !EditEnabled && Selected != null;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
+        private void ExecuteCancel()
+        {
+            try
+            {
+                EditEnabled = false;
+                EnabledCC = false;
+                Detailed = Selected;
+                if (Detailed != null)
+                    Detailed.ValidationEnabled = false;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
+            }
+        }
+        private bool CanExecuteCancel()
+        {
+            try
+            {
+                return EnabledCC;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
+        private void ExecuteConfirm()
+        {
+            try
+            {
+                EditEnabled = false;
+                EnabledCC = false;
+                try
+                {
+                    switch (_selectedCommand)
+                    {
+                        case CommandType.Add:
+                            _warehouse.DBService.AddUser(new User { User1 = Detailed.UserName, Password = "", AccessLevel = 10 * (int)Detailed.AccessLevelWMS + (int)Detailed.AccessLevelMFCS });
+                            DataList.Add(new UserViewModel { UserName = Detailed.UserName, AccessLevelWMS = Detailed.AccessLevelWMS, AccessLevelMFCS = Detailed.AccessLevelMFCS});
+                            Selected = DataList.FirstOrDefault(p => p.UserName == Detailed.UserName);
+                            break;
+                        case CommandType.Edit:
+                            _warehouse.DBService.UpdateUser(new User { User1 = Detailed.UserName, AccessLevel = 10 * (int)Detailed.AccessLevelWMS + (int)Detailed.AccessLevelMFCS });
+                            Selected.UserName = Detailed.UserName;
+                            Selected.AccessLevelWMS = Detailed.AccessLevelWMS;
+                            Selected.AccessLevelMFCS = Detailed.AccessLevelMFCS;
+                            break;
+                        case CommandType.Delete:
+                            _warehouse.DBService.DeleteUser(new User { User1 = Detailed.UserName, AccessLevel = 10 * (int)Detailed.AccessLevelWMS + (int)Detailed.AccessLevelMFCS });
+                            DataList.Remove(Detailed);
+                            break;
+                        default:
+                            break;
+                    }
+                    if (Detailed != null)
+                        Detailed.ValidationEnabled = false;
+                }
+                catch (Exception e)
+                {
+                    _warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, e.Message);
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        private bool CanExecuteConfirm()
+        {
+            try
+            {
+                return (EditEnabled && Detailed.AllPropertiesValid) || _selectedCommand == CommandType.Delete;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+
 
         public void SendAccessLevelAndUser(int al, string user)
         {
@@ -321,7 +601,7 @@ namespace UserInterface.ViewModel
                 foreach (var l in DataList)
                     l.Initialize(_warehouse);
                 if (u != null)
-                    Selected = DataList.FirstOrDefault(p => p.User == u.User);
+                    Selected = DataList.FirstOrDefault(p => p.UserName == u.UserName);
             }
             catch (Exception e)
             {
@@ -334,7 +614,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is SettingsViewModel)
+                if (vm is UsersViewModel)
                 {
                     ExecuteRefresh();
                 }

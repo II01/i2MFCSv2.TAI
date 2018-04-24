@@ -13,36 +13,25 @@ namespace UserInterface.ViewModel
     public sealed class UserViewModel: ViewModelBase, IDataErrorInfo
     {
         #region members
-        private User _user;
+        private string _userName;
         private EnumUserAccessLevel _accessLevelWMS;
         private EnumUserAccessLevel _accessLevelMFCS;
         private bool _allPropertiesValid = false;
         private bool _validationEnabled = false;
+        private bool _editEnabledUser;
         private BasicWarehouse _warehouse;
         #endregion
 
         #region properties
         PropertyValidator Validator { get; set; }
-        public User User
-        {
-            get { return _user; }
-            set
-            {
-                if (_user != value)
-                {
-                    _user = value;
-                    RaisePropertyChanged("User");
-                }
-            }
-        }
         public string UserName
         {
-            get { return _user.User1; }
+            get { return _userName; }
             set
             {
-                if (_user.User1 != value)
+                if (_userName != value)
                 {
-                    _user.User1 = value;
+                    _userName = value;
                     RaisePropertyChanged("UserName");
                 }
             }
@@ -71,6 +60,19 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public bool EditEnabledUser
+        {
+            get { return _editEnabledUser; }
+            set
+            {
+                if (_editEnabledUser != value)
+                {
+                    _editEnabledUser = value;
+                    RaisePropertyChanged("EditEnabledUser");
+                }
+            }
+        }
+
 
         public bool ValidationEnabled
         {
@@ -101,7 +103,7 @@ namespace UserInterface.ViewModel
         #region initialization
         public UserViewModel()
         {
-            _user = new User();
+            UserName = "";
             Validator = new PropertyValidator();
             ValidationEnabled = false;
         }
@@ -122,7 +124,7 @@ namespace UserInterface.ViewModel
         #region validation
         public string Error
         {
-            get { return (User as IDataErrorInfo).Error; }
+            get { return (this as IDataErrorInfo).Error; }
         }
 
         public string this[string propertyName]
@@ -137,8 +139,8 @@ namespace UserInterface.ViewModel
                         switch (propertyName)
                         {
                             case "UserName":
-                                if (_warehouse.DBService.GetUser(_user.User1) != null)
-                                    validationResult = ResourceReader.GetString("ERR_USER_EXISTS");
+                                if (_editEnabledUser && (_warehouse.DBService.GetUser(_userName) != null || _userName.Length == 0))
+                                    validationResult = ResourceReader.GetString("ERR_USER");
                                 break;
                         }
                     }

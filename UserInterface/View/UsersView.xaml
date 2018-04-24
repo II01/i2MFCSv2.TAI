@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="UserInterface.View.SettingsView"
+﻿<UserControl x:Class="UserInterface.View.UsersView"
         ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,7 +9,7 @@
         xmlns:local="clr-namespace:UserInterface.UserControls"
         xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
         mc:Ignorable="d ignore"
-        DataContext="{Binding Settings, Source={StaticResource Locator}}"
+        DataContext="{Binding Users, Source={StaticResource Locator}}"
         MinWidth="1000"
         MinHeight="750">
 
@@ -59,7 +59,7 @@
                         Command="{Binding ReduceDB}" IsEnabled="{Binding EnabledReduceDB}"/>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="2" Visibility="{Binding EnableUserManagement, Converter={StaticResource BoolToVisibility}}">
+        <Grid Grid.Row="1" Grid.Column="2" Visibility="{Binding EnabledUserManagement, Converter={StaticResource BoolToVisibility}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>

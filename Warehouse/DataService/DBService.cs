@@ -1359,13 +1359,28 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public void DeleteUser(string name)
+        public void AddUser(User user)
         {
             try
             {
                 using (var dc = new MFCSEntities())
                 {
-                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == name.ToUpper());
+                    dc.Users.Add(user);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void DeleteUser(User user)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == user.User1.ToUpper());
                     dc.Users.Remove(u);
                     dc.SaveChanges();
                 }
@@ -1376,14 +1391,14 @@ namespace Warehouse.DataService
             }
         }
 
-        public void UpdateUser(string name, int accessLevel)
+        public void UpdateUser(User user)
         {
             try
             {
                 using (var dc = new MFCSEntities())
                 {
-                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == name.ToUpper());
-                    u.AccessLevel = accessLevel;
+                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == user.User1.ToUpper());
+                    u.AccessLevel = user.AccessLevel;
                     dc.SaveChanges();
                 }
             }

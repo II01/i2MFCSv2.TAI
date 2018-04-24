@@ -73,9 +73,9 @@
                 <Button Name="bRefresh" Content="{Resx Refresh}" Command="{Binding Refresh}"></Button>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1" Margin="0,0,0,20" >
-                    <Button Name="bDelete" Margin="0,0,10,0" Content="{Resx Delete}" Command="{Binding Delete}" IsEnabled="{Binding EnabledFunction}"/>
-                    <Button Name="bCreate" Margin="0,0,10,0" Content="{Resx Create}" Command="{Binding Create}" IsEnabled="{Binding EnabledFunction}"/>
-                    <Button Name="bMove" Margin="0,0,0,0" Content="{Resx Rebook}" Command="{Binding Move}" IsEnabled="{Binding EnabledFunction}"/>
+                    <Button Name="bDelete" Margin="0,0,10,0" Content="{Resx Delete}" Command="{Binding Delete}" />
+                    <Button Name="bCreate" Margin="0,0,10,0" Content="{Resx Create}" Command="{Binding Create}" />
+                    <Button Name="bMove" Margin="0,0,0,0" Content="{Resx Rebook}" Command="{Binding Move}" />
             </StackPanel>
             <ContentControl x:Name="ccPlace" 
                             IsEnabled="{Binding EditEnabled}"

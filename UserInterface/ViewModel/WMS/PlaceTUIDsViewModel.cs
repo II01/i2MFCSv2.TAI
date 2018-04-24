@@ -33,6 +33,7 @@ namespace UserInterface.ViewModel
         private int _accessLevel;
         private string _accessUser;
         private bool _excludeWout = true;
+
         #endregion
 
         #region properites
