@@ -3616,10 +3616,10 @@
     <value>Communication error with MFCS (send direction)</value>
   </data>
   <data name="ALARM_200047" xml:space="preserve">
-    <value />
+    <value>Reserve</value>
   </data>
   <data name="ALARM_200048" xml:space="preserve">
-    <value />
+    <value>Reserve</value>
   </data>
   <data name="ALARM_200049" xml:space="preserve">
     <value>Errorous value OF absolute encoder OR magnet switches - hoist</value>
@@ -4280,5 +4280,38 @@
   </data>
   <data name="ExcludeWout" xml:space="preserve">
     <value>Hide TUs outside warehouse</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>User management</value>
+  </data>
+  <data name="PermissionWMS" xml:space="preserve">
+    <value>Access level WMS</value>
+  </data>
+  <data name="PermissionMFCS" xml:space="preserve">
+    <value>Access level MFCS</value>
+  </data>
+  <data name="Rack" xml:space="preserve">
+    <value>RRack</value>
+  </data>
+  <data name="HistoryWMSLog" xml:space="preserve">
+    <value>Log WMS</value>
+  </data>
+  <data name="HistoryReleaseOfOrders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="Quality_Control" xml:space="preserve">
+    <value>Quality Control</value>
+  </data>
+  <data name="ERR_USER" xml:space="preserve">
+    <value>Improper user name</value>
+  </data>
+  <data name="ERR_SUBORDERNAME" xml:space="preserve">
+    <value>Improper name of suborder</value>
+  </data>
+  <data name="ERR_OCCUPIED" xml:space="preserve">
+    <value>Location already occupied</value>
   </data>
 </root>

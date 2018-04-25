@@ -7396,7 +7396,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Reserve.
         /// </summary>
         public static string ALARM_200047 {
             get {
@@ -7405,7 +7405,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Reserve.
         /// </summary>
         public static string ALARM_200048 {
             get {
@@ -10942,6 +10942,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Location already occupied.
+        /// </summary>
+        public static string ERR_OCCUPIED {
+            get {
+                return ResourceManager.GetString("ERR_OCCUPIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong OrderID.
         /// </summary>
         public static string ERR_ORDERID {
@@ -11041,6 +11050,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Improper name of suborder.
+        /// </summary>
+        public static string ERR_SUBORDERNAME {
+            get {
+                return ResourceManager.GetString("ERR_SUBORDERNAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong task.
         /// </summary>
         public static string ERR_TASK {
@@ -11073,6 +11091,15 @@ namespace UserInterface.Properties {
         public static string ERR_UNIT {
             get {
                 return ResourceManager.GetString("ERR_UNIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Improper user name.
+        /// </summary>
+        public static string ERR_USER {
+            get {
+                return ResourceManager.GetString("ERR_USER", resourceCulture);
             }
         }
         
@@ -11295,9 +11322,27 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Orders.
         /// </summary>
+        public static string HistoryReleaseOfOrders {
+            get {
+                return ResourceManager.GetString("HistoryReleaseOfOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orders.
+        /// </summary>
         public static string HistoryReleaseOrders {
             get {
                 return ResourceManager.GetString("HistoryReleaseOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log WMS.
+        /// </summary>
+        public static string HistoryWMSLog {
+            get {
+                return ResourceManager.GetString("HistoryWMSLog", resourceCulture);
             }
         }
         
@@ -11644,6 +11689,24 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Access level MFCS.
+        /// </summary>
+        public static string PermissionMFCS {
+            get {
+                return ResourceManager.GetString("PermissionMFCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Access level WMS.
+        /// </summary>
+        public static string PermissionWMS {
+            get {
+                return ResourceManager.GetString("PermissionWMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Physical.
         /// </summary>
         public static string Physical {
@@ -11775,6 +11838,24 @@ namespace UserInterface.Properties {
         public static string Quality {
             get {
                 return ResourceManager.GetString("Quality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quality Control.
+        /// </summary>
+        public static string Quality_Control {
+            get {
+                return ResourceManager.GetString("Quality_Control", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RRack.
+        /// </summary>
+        public static string Rack {
+            get {
+                return ResourceManager.GetString("Rack", resourceCulture);
             }
         }
         
@@ -12477,6 +12558,24 @@ namespace UserInterface.Properties {
         public static string User {
             get {
                 return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User management.
+        /// </summary>
+        public static string UserManagement {
+            get {
+                return ResourceManager.GetString("UserManagement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string Users {
+            get {
+                return ResourceManager.GetString("Users", resourceCulture);
             }
         }
         

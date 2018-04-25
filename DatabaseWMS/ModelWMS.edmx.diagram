@@ -6,14 +6,14 @@
     <edmx:Diagrams>
       <Diagram DiagramId="96fe5388e0064c1fab4aa1eec12b7a0b" Name="Diagram1">
         <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.CommandERPs" Width="1.5" PointX="3.75" PointY="10" IsExpanded="true" />
-        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Commands" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Orders" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.PlaceIDs" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.CommandERPs" Width="1.5" PointX="12.375" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Commands" Width="1.5" PointX="4.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Orders" Width="1.5" PointX="10.125" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.PlaceIDs" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Places" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.SKU_ID" Width="1.5" PointX="3.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.SKU_ID" Width="1.5" PointX="10" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.TU_ID" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.TUs" Width="1.5" PointX="6" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.TUs" Width="1.5" PointX="4.75" PointY="9.5" IsExpanded="true" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Orders_dbo_CommandERPs_ERP_ID" ManuallyRouted="false" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Commands_dbo_Orders_Order_ID" ManuallyRouted="false" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Commands_dbo_PlaceIDs_Source" ManuallyRouted="false" />
@@ -26,7 +26,7 @@
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_TUs_dbo_SKU_ID_SKU_ID" ManuallyRouted="false" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_TUs_dbo_TU_ID_TU_ID" ManuallyRouted="false" />
         <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Parameters" Width="1.5" PointX="8.375" PointY="0.75" />
-        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Logs" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Logs" Width="1.5" PointX="11" PointY="2.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

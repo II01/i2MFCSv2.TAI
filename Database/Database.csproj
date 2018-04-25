@@ -148,6 +148,7 @@
     <Content Include="SQL\FEM\SQL_insert_FEM_C1C2C3_inout.sql" />
     <Content Include="SQL\FEM\SQL_insert_FEM_C1C2C3_in.sql" />
     <Content Include="SQL\FEM\SQL_insert_FEM_C1C2C3_out.sql" />
+    <Content Include="SQL\Init\SQLCleanDatabase.sql" />
     <Content Include="SQL\Other\SQLCheckIfCommandFinished.sql" />
     <Content Include="ModelCommand.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
