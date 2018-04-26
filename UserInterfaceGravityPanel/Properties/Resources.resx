@@ -215,4 +215,13 @@
   <data name="ShortDone" xml:space="preserve">
     <value>D</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="InitFailed" xml:space="preserve">
+    <value>Initialization failed</value>
+  </data>
+  <data name="RefreshFailed" xml:space="preserve">
+    <value>Refresh failed</value>
+  </data>
 </root>

@@ -29,6 +29,9 @@ namespace UserInterfaceGravityPanel.ViewModel
         private string _active;
         private string _done;
         private string _all;
+        private string _refreshfailed;
+        private string _initfailed;
+        private string _details;
         #endregion
 
         #region properties
@@ -198,6 +201,10 @@ namespace UserInterfaceGravityPanel.ViewModel
                 _active = rs.GetString("ShortActive");
                 _done = rs.GetString("ShortDone");
                 _all = rs.GetString("ShortAll");
+                // errors
+                _initfailed = rs.GetString("InitFailed");
+                _refreshfailed = rs.GetString("RefreshFailed");
+                _details = rs.GetString("Details");
 
                 // timer
                 _timer = new DispatcherTimer(DispatcherPriority.Render) { Interval = TimeSpan.FromSeconds(1) };
@@ -219,7 +226,7 @@ namespace UserInterfaceGravityPanel.ViewModel
             catch (Exception ex)
             {
                 ErrorVisibility = Visibility.Visible;
-                ErrorMessage = $"Initialization failed. Details: {ex.Message}";
+                ErrorMessage = $"Initialization failed.\nDetails:\n{ex.Message}";
             }
         }
 
@@ -244,7 +251,7 @@ namespace UserInterfaceGravityPanel.ViewModel
             catch (Exception ex)
             {
                 ErrorVisibility = Visibility.Visible;
-                ErrorMessage = $"Initialization failed. Details: {ex.Message}";
+                ErrorMessage = $"{_refreshfailed}. {_details}:\n{ex.Message}";
             }
         }
 

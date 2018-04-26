@@ -142,11 +142,29 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pallet to take.
         /// </summary>
         public static string FirstTU {
             get {
                 return ResourceManager.GetString("FirstTU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initialization failed.
+        /// </summary>
+        public static string InitFailed {
+            get {
+                return ResourceManager.GetString("InitFailed", resourceCulture);
             }
         }
         
@@ -237,6 +255,15 @@ namespace UserInterfaceGravityPanel.Properties {
         public static string Ramp {
             get {
                 return ResourceManager.GetString("Ramp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh failed.
+        /// </summary>
+        public static string RefreshFailed {
+            get {
+                return ResourceManager.GetString("RefreshFailed", resourceCulture);
             }
         }
         
