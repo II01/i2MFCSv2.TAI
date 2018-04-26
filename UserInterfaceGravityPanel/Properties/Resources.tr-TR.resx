@@ -150,69 +150,69 @@
     <comment>Don't translate</comment>
   </data>
   <data name="CurrentOrder" xml:space="preserve">
-    <value>!Current order</value>
-  </data>
-  <data name="Lane" xml:space="preserve">
-    <value>!Lane</value>
+    <value>Mevcut sipariş</value>
   </data>
   <data name="FirstTU" xml:space="preserve">
-    <value>!Pallet to take</value>
+    <value>Palet alma</value>
+  </data>
+  <data name="Lane" xml:space="preserve">
+    <value>Rota</value>
   </data>
   <data name="NoTUs" xml:space="preserve">
-    <value>!No. pallets</value>
+    <value>Palet Sayısı</value>
   </data>
   <data name="OrderID" xml:space="preserve">
-    <value>!Order:</value>
-  </data>
-  <data name="OrderStatus1" xml:space="preserve">
-    <value>!Active</value>
-  </data>
-  <data name="OrderStatus4" xml:space="preserve">
-    <value>!Canceled</value>
-  </data>
-  <data name="OrderStatus5" xml:space="preserve">
-    <value>!Finished</value>
-  </data>
-  <data name="OrderStatus2" xml:space="preserve">
-    <value>!On target</value>
-  </data>
-  <data name="OrderStatus3" xml:space="preserve">
-    <value>!On target partial</value>
+    <value>Sipariş:</value>
   </data>
   <data name="OrderStatus0" xml:space="preserve">
     <value>!-</value>
   </data>
+  <data name="OrderStatus1" xml:space="preserve">
+    <value>Etkin</value>
+  </data>
+  <data name="OrderStatus2" xml:space="preserve">
+    <value>Hedefte</value>
+  </data>
+  <data name="OrderStatus3" xml:space="preserve">
+    <value>Kısmi hedefte</value>
+  </data>
+  <data name="OrderStatus4" xml:space="preserve">
+    <value>İptal edildi</value>
+  </data>
+  <data name="OrderStatus5" xml:space="preserve">
+    <value>Sonlandırıldı</value>
+  </data>
   <data name="Ramp" xml:space="preserve">
-    <value>!RAMP</value>
-  </data>
-  <data name="SKUBatch" xml:space="preserve">
-    <value>!Batch</value>
-  </data>
-  <data name="SKUID" xml:space="preserve">
-    <value>!Material</value>
-  </data>
-  <data name="SKUQty" xml:space="preserve">
-    <value>!Quantity</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>!Status:</value>
-  </data>
-  <data name="SubOrderID" xml:space="preserve">
-    <value>!Customer:</value>
-  </data>
-  <data name="TUID" xml:space="preserve">
-    <value>!Barcode</value>
-  </data>
-  <data name="TUSubOrderID" xml:space="preserve">
-    <value>!Customer</value>
+    <value>Rampa</value>
   </data>
   <data name="ShortActive" xml:space="preserve">
-    <value>!R</value>
+    <value>R</value>
   </data>
   <data name="ShortAll" xml:space="preserve">
-    <value>!A</value>
+    <value>A</value>
   </data>
   <data name="ShortDone" xml:space="preserve">
-    <value>!D</value>
+    <value>D</value>
+  </data>
+  <data name="SKUBatch" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="SKUID" xml:space="preserve">
+    <value>Malzeme</value>
+  </data>
+  <data name="SKUQty" xml:space="preserve">
+    <value>Miktar</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="SubOrderID" xml:space="preserve">
+    <value>Müşteri:</value>
+  </data>
+  <data name="TUID" xml:space="preserve">
+    <value>Barkod</value>
+  </data>
+  <data name="TUSubOrderID" xml:space="preserve">
+    <value>Müşteri</value>
   </data>
 </root>

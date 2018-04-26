@@ -1,0 +1,104 @@
+2018-04-26 20:25:00:688->EVENT:PLC_Crane2:NotifyRcv(Telegrams.TelegramLife
+|10|11|20|202|1|1|16|0|2757
+|T.StartByte=10|T.SecondByte=11|T.Sequence=20|T.Sender=202|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2757
+:RcvThreading (Communicator.cs 129)
+
+2018-04-26 20:25:02:093->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 43)
+
+2018-04-26 20:25:02:146->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 183)
+
+2018-04-26 20:25:02:347->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:02:562->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 43)
+
+2018-04-26 20:25:02:649->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 183)
+
+2018-04-26 20:25:02:849->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:02:852->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:03:069->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:03:492->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|32|101|1|1|16|0|2654
+|T.StartByte=10|T.SecondByte=11|T.Sequence=32|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2654
+:RcvThreading (Communicator.cs 129)
+
+2018-04-26 20:25:06:651->EVENT:PLC_Crane3:NotifyRcv(Telegrams.TelegramLife
+|10|11|86|203|1|1|16|0|2694
+|T.StartByte=10|T.SecondByte=11|T.Sequence=86|T.Sender=203|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2694
+:RcvThreading (Communicator.cs 129)
+
+2018-04-26 20:25:07:520->EVENT:PLC_Crane1:NotifyRcv(Telegrams.TelegramLife
+|10|11|51|201|1|1|16|0|2785
+|T.StartByte=10|T.SecondByte=11|T.Sequence=51|T.Sender=201|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2785
+:RcvThreading (Communicator.cs 129)
+
+2018-04-26 20:25:07:645->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:07:721->EVENT:PLC_Crane3:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):AddSendTelegram (Communicator.cs 43)
+
+2018-04-26 20:25:07:770->EVENT:PLC_Crane3:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|203|1|16|0|2768
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=203|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2768
+):SendThreading (Communicator.cs 183)
+
+2018-04-26 20:25:07:792->EVENT:PLC_Crane1:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):AddSendTelegram (Communicator.cs 43)
+
+2018-04-26 20:25:07:844->EVENT:PLC_Crane1:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|201|1|16|0|2770
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=201|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2770
+):SendThreading (Communicator.cs 183)
+
+2018-04-26 20:25:08:016->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:08:017->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:08:134->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:12:155->EVENT:PLC_Crane2:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):AddSendTelegram (Communicator.cs 43)
+
+2018-04-26 20:25:12:225->EVENT:PLC_Crane2:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|202|1|16|0|2769
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=202|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2769
+):SendThreading (Communicator.cs 183)
+
+2018-04-26 20:25:12:672->EVENT:PLC_Conveyor:SendTelegrams.Enqueue(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):AddSendTelegram (Communicator.cs 43)
+
+2018-04-26 20:25:12:753->EVENT:PLC_Conveyor:NotifySend(Telegrams.TelegramLife
+|10|11|0|1|101|1|16|0|2686
+|T.StartByte=10|T.SecondByte=11|T.Sequence=0|T.Sender=1|T.Receiver=101|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2686
+):SendThreading (Communicator.cs 183)
+
+2018-04-26 20:25:12:947->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:13:183->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:13:184->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-26 20:25:13:205->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+
