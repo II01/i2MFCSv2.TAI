@@ -215,4 +215,13 @@
   <data name="TUSubOrderID" xml:space="preserve">
     <value>Müşteri</value>
   </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detaylar</value>
+  </data>
+  <data name="InitFailed" xml:space="preserve">
+    <value>Başlangıc Hatası</value>
+  </data>
+  <data name="RefreshFailed" xml:space="preserve">
+    <value>Yenileme Hatası</value>
+  </data>
 </root>

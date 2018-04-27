@@ -684,7 +684,7 @@
     <Conveyor Name="T114" Segment="T11A" PLC_ID="114" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="C101" Cost="1"/>
       <ConveyorAddress>114</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="011140" Offset="40" Range="10"/>
@@ -705,7 +705,7 @@
     <Conveyor Name="T115" Segment="T11B" PLC_ID="115" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="C102" Cost="1"/>
       <ConveyorAddress>115</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="011210" Offset="10" Range="10"/>
@@ -720,7 +720,7 @@
     <Conveyor Name="T121" Segment="T12A" PLC_ID="121" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="T122" Cost="1"/>
       <ConveyorAddress>121</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="012110" Offset="10" Range="10"/>
@@ -735,7 +735,7 @@
     <Conveyor Name="T122" Segment="T12B" PLC_ID="122" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="T123" Cost="1"/>
       <ConveyorAddress>122</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="012210" Offset="10" Range="10"/>
@@ -838,7 +838,7 @@
     <Conveyor Name="T214" Segment="T21A" PLC_ID="214" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="C201" Cost="1"/>
       <ConveyorAddress>214</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="021140" Offset="40" Range="10"/>
@@ -859,7 +859,7 @@
     <Conveyor Name="T215" Segment="T21B" PLC_ID="215" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="C202" Cost="1"/>
       <ConveyorAddress>215</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="021210" Offset="10" Range="10"/>
@@ -874,7 +874,7 @@
     <Conveyor Name="T221" Segment="T22A" PLC_ID="221" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="T222" Cost="1"/>
       <ConveyorAddress>221</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="022110" Offset="10" Range="10"/>
@@ -889,7 +889,7 @@
     <Conveyor Name="T222" Segment="T22B" PLC_ID="222" CommunicatorName="PLC_Conveyor" WriteToDB="Always" xsi:type="ConveyorIO">
       <XmlRouteNode Next="T223" Cost="1"/>
       <ConveyorAddress>222</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
+      <FLocation X="3420" Y="1180" Z="0"/>
       <ConveyorInfo>
         <AlarmList>
           <ALARM ID="022210" Offset="10" Range="10"/>

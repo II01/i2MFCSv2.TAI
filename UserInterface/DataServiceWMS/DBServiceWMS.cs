@@ -630,6 +630,9 @@ namespace UserInterface.DataServiceWMS
                                 select o;
                         foreach (var o in l)
                             o.Status = (o.Status == (int)EnumWMSOrderStatus.OnTarget) ? (int)EnumWMSOrderStatus.Finished : (int)EnumWMSOrderStatus.Cancel;
+                        var param = dc.Parameters.Find($"Counter[{destinationtStartsWith}]");
+                        if (param != null)
+                            param.Value = Convert.ToString(0);
                         dc.SaveChanges();
                     }
                 }

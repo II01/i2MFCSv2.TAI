@@ -160,7 +160,15 @@ namespace Warehouse.ConveyorUnits
                 if (t == null)
                     return;
                 if (t != null)
+                {
                     PLC_Status = t as TelegramCraneStatus;
+                    FLocation = new FLocation
+                    {
+                        X = PLC_Status.FPosition.X * 10,
+                        Y = PLC_Status.FPosition.Y * 10,
+                        Z = 0
+                    };
+                }
                 DirectVMNotify();
             }
             catch (Exception ex)
