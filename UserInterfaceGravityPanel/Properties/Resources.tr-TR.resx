@@ -142,27 +142,27 @@
     <comment>Don't translate</comment>
   </data>
   <data name="Color7" xml:space="preserve">
-    <value>Brown</value>
+    <value>DarkCyan</value>
     <comment>Don't translate</comment>
   </data>
   <data name="Color8" xml:space="preserve">
-    <value>Gray</value>
+    <value>DimGray</value>
     <comment>Don't translate</comment>
   </data>
   <data name="CurrentOrder" xml:space="preserve">
     <value>Mevcut sipariş</value>
   </data>
   <data name="FirstTU" xml:space="preserve">
-    <value>Palet alma</value>
+    <value>Alınan Palet</value>
   </data>
   <data name="Lane" xml:space="preserve">
-    <value>Rota</value>
+    <value>Hat</value>
   </data>
   <data name="NoTUs" xml:space="preserve">
     <value>Palet Sayısı</value>
   </data>
   <data name="OrderID" xml:space="preserve">
-    <value>Sipariş:</value>
+    <value>Araç No:</value>
   </data>
   <data name="OrderStatus0" xml:space="preserve">
     <value>!-</value>
@@ -186,16 +186,16 @@
     <value>Rampa</value>
   </data>
   <data name="ShortActive" xml:space="preserve">
-    <value>R</value>
-  </data>
-  <data name="ShortAll" xml:space="preserve">
     <value>A</value>
   </data>
+  <data name="ShortAll" xml:space="preserve">
+    <value>H</value>
+  </data>
   <data name="ShortDone" xml:space="preserve">
-    <value>D</value>
+    <value>Y</value>
   </data>
   <data name="SKUBatch" xml:space="preserve">
-    <value>Grup</value>
+    <value>Lot</value>
   </data>
   <data name="SKUID" xml:space="preserve">
     <value>Malzeme</value>
@@ -204,7 +204,7 @@
     <value>Miktar</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Durum</value>
+    <value>Durum:</value>
   </data>
   <data name="SubOrderID" xml:space="preserve">
     <value>Müşteri:</value>

@@ -83,7 +83,7 @@ namespace UserInterface.ViewModel
                         {
                             DetailedSKUID = SelectedSKUID;
                             TUList.Clear();
-                            var sl = _dbservicewms.GetTUs(DetailedSKUID.ID);
+                            var sl = _dbservicewms.GetAvailableTUs(DetailedSKUID.ID);
                             foreach (var s in sl)
                                 TUList.Add(new TUViewModel {TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
 
@@ -364,7 +364,7 @@ namespace UserInterface.ViewModel
                 {
                     SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == sl.ID);
                     TUList.Clear();
-                    var sdl = _dbservicewms.GetTUs(DetailedSKUID.ID);
+                    var sdl = _dbservicewms.GetAvailableTUs(DetailedSKUID.ID);
                     foreach (var s in sdl)
                         TUList.Add(new TUViewModel { TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
                 }

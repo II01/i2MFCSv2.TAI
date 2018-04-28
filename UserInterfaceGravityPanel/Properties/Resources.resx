@@ -142,11 +142,11 @@
     <comment>Don't translate</comment>
   </data>
   <data name="Color7" xml:space="preserve">
-    <value>Brown</value>
+    <value>DarkCyan</value>
     <comment>Don't translate</comment>
   </data>
   <data name="Color8" xml:space="preserve">
-    <value>Gray</value>
+    <value>DimGray</value>
     <comment>Don't translate</comment>
   </data>
   <data name="CurrentOrder" xml:space="preserve">
@@ -162,7 +162,7 @@
     <value>No. pallets</value>
   </data>
   <data name="OrderID" xml:space="preserve">
-    <value>Order:</value>
+    <value>Truck:</value>
   </data>
   <data name="OrderStatus1" xml:space="preserve">
     <value>Active</value>
@@ -207,10 +207,10 @@
     <value>Customer</value>
   </data>
   <data name="ShortActive" xml:space="preserve">
-    <value>R</value>
+    <value>A</value>
   </data>
   <data name="ShortAll" xml:space="preserve">
-    <value>A</value>
+    <value>W</value>
   </data>
   <data name="ShortDone" xml:space="preserve">
     <value>D</value>

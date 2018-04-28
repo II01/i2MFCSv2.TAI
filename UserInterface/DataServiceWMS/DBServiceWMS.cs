@@ -265,6 +265,26 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public List<TUs> GetAvailableTUs(string skuid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from t in dc.TUs
+                            where t.SKU_ID == skuid
+                            join p in dc.Places on t.TU_ID equals p.TU_ID
+                            where p.PlaceID != "W:out" && !p.PlaceID.StartsWith("W:32")
+                            orderby new { t.Batch, t.SKU_ID }
+                            select t;
+                    return l.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
         public Places FindPlaceByTUID(int tuid)
         {
             try

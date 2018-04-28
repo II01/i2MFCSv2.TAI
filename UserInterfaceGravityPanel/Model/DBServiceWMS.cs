@@ -174,7 +174,7 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                                 sku = new SKUData { SKU = tu.SKU_ID, SKUBatch = tu.Batch, SKUQty = tu.Qty };
 
                             var cmd = dc.Commands
-                                      .Where(pp => pp.TU_ID == p.Place.TU_ID)
+                                      .Where(pp => pp.TU_ID == p.Place.TU_ID && pp.Target.StartsWith("W:32"))
                                       .Join(dc.Orders,
                                             c => c.Order_ID,
                                             o => o.ID,

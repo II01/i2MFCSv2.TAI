@@ -1,0 +1,13 @@
+2018-04-28 21:10:15:149->EVENT:PLC_Conveyor:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-28 21:10:16:295->EVENT:PLC_Conveyor:NotifyRcv(Telegrams.TelegramLife
+|10|11|82|101|1|1|16|0|2604
+|T.StartByte=10|T.SecondByte=11|T.Sequence=82|T.Sender=101|T.Receiver=1|T.TelType=1|T.Length=16|T.TelCode=0|T.CRC=2604
+:RcvThreading (Communicator.cs 129)
+
+2018-04-28 21:10:19:029->EVENT:PLC_Crane1:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-28 21:10:19:031->EVENT:PLC_Crane2:OnRefresh called:RcvThreading (Communicator.cs 144)
+
+2018-04-28 21:10:19:056->EVENT:PLC_Crane3:OnRefresh called:RcvThreading (Communicator.cs 144)
+

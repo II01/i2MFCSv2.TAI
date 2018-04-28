@@ -115,7 +115,7 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Brown.
+        ///   Looks up a localized string similar to DarkCyan.
         /// </summary>
         public static string Color7 {
             get {
@@ -124,7 +124,7 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gray.
+        ///   Looks up a localized string similar to DimGray.
         /// </summary>
         public static string Color8 {
             get {
@@ -187,7 +187,7 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Order:.
+        ///   Looks up a localized string similar to Truck:.
         /// </summary>
         public static string OrderID {
             get {
@@ -268,7 +268,7 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to R.
+        ///   Looks up a localized string similar to A.
         /// </summary>
         public static string ShortActive {
             get {
@@ -277,7 +277,7 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A.
+        ///   Looks up a localized string similar to W.
         /// </summary>
         public static string ShortAll {
             get {

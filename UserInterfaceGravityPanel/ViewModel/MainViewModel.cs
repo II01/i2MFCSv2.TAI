@@ -273,10 +273,19 @@ namespace UserInterfaceGravityPanel.ViewModel
                 OrderInfo.SubOrderName = "";
                 OrderInfo.StatusSubOrder = "";
                 OrderInfo.PortionCommand = "";
+
                 if (order != null)
                 {
-                    OrderInfo.ERPID = order.ERP_ID == null ? "" : _dbservicewms.GetOrderERPID(order.ERP_ID).ToString();
-                    OrderInfo.OrderID = $" ::  {order.OrderID}";
+                    string[] split = order.SubOrderName.Split('#');
+                    string truckPlate = "";
+                    if (split.Length == 3)
+                        truckPlate = split[0];
+                    OrderInfo.ERPID = "";
+                    if (order.ERP_ID != null)
+                    {
+                        OrderInfo.ERPID = order.OrderID.ToString();
+                        OrderInfo.OrderID = $" ::  {truckPlate}";
+                    }
                 }
                 if (orderCount != null)
                 {
@@ -285,8 +294,12 @@ namespace UserInterfaceGravityPanel.ViewModel
                 }
                 if (suborder != null)
                 {
+                    string[] split = suborder.SubOrderName.Split('#');
+                    string customer = "";
+                    if (split.Length == 3)
+                        customer = split[2];
                     OrderInfo.SubOrderID = suborder.SubOrderID.ToString();
-                    OrderInfo.SubOrderName = $" ::  {suborder.SubOrderName}";
+                    OrderInfo.SubOrderName = $" ::  {customer}";
                 }
                 if (suborderCount != null)
                 {
@@ -319,9 +332,20 @@ namespace UserInterfaceGravityPanel.ViewModel
                             }
                             if (l.Suborder != null)
                             {
-                                last.SubOrderID = l.Suborder.SubOrderID;
-                                last.SubOrderBrush = SubOrderColor[(l.Suborder.SubOrderID+8-1) % 8];
-                                last.SubOrderName = l.Suborder.SubOrderName;
+                                string[] s = l.Suborder.SubOrderName.Split('#');
+                                if (s.Length == 3)
+                                {
+                                    Int32.TryParse(s[1], out int rc);
+                                    last.SubOrderID = rc;
+                                    last.SubOrderBrush = SubOrderColor[(rc-1) % 8];
+                                    last.SubOrderName = s[2].Trim();
+                                }
+                                else
+                                {
+                                    last.SubOrderID = l.Suborder.SubOrderID;
+                                    last.SubOrderBrush = SubOrderColor[(l.Suborder.SubOrderID-1+8) % 8];
+                                    last.SubOrderName = l.Suborder.SubOrderName;
+                                }
                             }
                         }
                         Lane[l.LaneID - 1].NumTU = l.Count;

@@ -381,7 +381,7 @@
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="001020" Offset="20" Range="10"/>
+          <ALARM ID="001010" Offset="10" Range="20"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="38B2"/>
