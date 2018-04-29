@@ -11,6 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using WCFClients;
 using UserInterface.DataServiceWMS;
+using System.Collections;
 
 namespace UserInterface.ViewModel
 {
@@ -31,6 +32,7 @@ namespace UserInterface.ViewModel
         private int _accessLevel;
         private string _accessUser;
         private ObservableCollection<TUViewModel> _TUList;
+        private int _numberOfSelectedItems;
         #endregion
 
         #region properites
@@ -39,6 +41,7 @@ namespace UserInterface.ViewModel
         public RelayCommand Confirm { get; private set; }
         public RelayCommand Cancel { get; private set; }
         public RelayCommand Refresh { get; private set; }
+        public RelayCommand<IList> SelectionChangedCommand { get; private set; }
 
         public ObservableCollection<SKUIDViewModel> SKUIDList
         {
@@ -150,6 +153,22 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public int NumberOfSelectedItems
+        {
+            get
+            {
+                return _numberOfSelectedItems;
+            }
+            set
+            {
+                if (_numberOfSelectedItems != value)
+                {
+                    _numberOfSelectedItems = value;
+                    RaisePropertyChanged("NumberOfSelectedItems");
+                }
+            }
+        }
         #endregion
 
         #region initialization
@@ -169,6 +188,7 @@ namespace UserInterface.ViewModel
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Refresh = new RelayCommand(() => ExecuteRefresh());
+            SelectionChangedCommand = new RelayCommand<IList>(items => NumberOfSelectedItems = items == null ? 0 : items.Count);
         }
 
         public void Initialize(BasicWarehouse warehouse)

@@ -117,15 +117,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC queue full.
         /// </summary>
-        public static string ALARM_000000 {
-            get {
-                return ResourceManager.GetString("ALARM_000000", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to TCP IP chanel fault.
-        /// </summary>
         public static string ALARM_000001 {
             get {
                 return ResourceManager.GetString("ALARM_000001", resourceCulture);
@@ -133,7 +124,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_02.
+        ///   Looks up a localized string similar to TCP IP chanel fault.
         /// </summary>
         public static string ALARM_000002 {
             get {
@@ -142,7 +133,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_03.
+        ///   Looks up a localized string similar to segment0_02.
         /// </summary>
         public static string ALARM_000003 {
             get {
@@ -151,7 +142,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_04.
+        ///   Looks up a localized string similar to segment0_03.
         /// </summary>
         public static string ALARM_000004 {
             get {
@@ -160,7 +151,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_05.
+        ///   Looks up a localized string similar to segment0_04.
         /// </summary>
         public static string ALARM_000005 {
             get {
@@ -169,7 +160,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_06.
+        ///   Looks up a localized string similar to segment0_05.
         /// </summary>
         public static string ALARM_000006 {
             get {
@@ -178,7 +169,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_07.
+        ///   Looks up a localized string similar to segment0_06.
         /// </summary>
         public static string ALARM_000007 {
             get {
@@ -187,11 +178,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment0_08.
+        ///   Looks up a localized string similar to segment0_07.
         /// </summary>
         public static string ALARM_000008 {
             get {
                 return ResourceManager.GetString("ALARM_000008", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment0_08.
+        /// </summary>
+        public static string ALARM_000009 {
+            get {
+                return ResourceManager.GetString("ALARM_000009", resourceCulture);
             }
         }
         
@@ -981,15 +981,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T01).
         /// </summary>
-        public static string ALARM_001000 {
-            get {
-                return ResourceManager.GetString("ALARM_001000", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment1_01.
-        /// </summary>
         public static string ALARM_001001 {
             get {
                 return ResourceManager.GetString("ALARM_001001", resourceCulture);
@@ -997,7 +988,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment1_02.
+        ///   Looks up a localized string similar to segment1_01.
         /// </summary>
         public static string ALARM_001002 {
             get {
@@ -1006,7 +997,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment1_03.
+        ///   Looks up a localized string similar to segment1_02.
         /// </summary>
         public static string ALARM_001003 {
             get {
@@ -1015,7 +1006,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment1_04.
+        ///   Looks up a localized string similar to segment1_03.
         /// </summary>
         public static string ALARM_001004 {
             get {
@@ -1024,7 +1015,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment1_05.
+        ///   Looks up a localized string similar to segment1_04.
         /// </summary>
         public static string ALARM_001005 {
             get {
@@ -1033,7 +1024,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment1_06.
+        ///   Looks up a localized string similar to segment1_05.
         /// </summary>
         public static string ALARM_001006 {
             get {
@@ -1042,7 +1033,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment1_07.
+        ///   Looks up a localized string similar to segment1_06.
         /// </summary>
         public static string ALARM_001007 {
             get {
@@ -1051,11 +1042,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment1_08.
+        ///   Looks up a localized string similar to segment1_07.
         /// </summary>
         public static string ALARM_001008 {
             get {
                 return ResourceManager.GetString("ALARM_001008", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment1_08.
+        /// </summary>
+        public static string ALARM_001009 {
+            get {
+                return ResourceManager.GetString("ALARM_001009", resourceCulture);
             }
         }
         
@@ -1377,15 +1377,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T02A).
         /// </summary>
-        public static string ALARM_002100 {
-            get {
-                return ResourceManager.GetString("ALARM_002100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment2_01.
-        /// </summary>
         public static string ALARM_002101 {
             get {
                 return ResourceManager.GetString("ALARM_002101", resourceCulture);
@@ -1393,7 +1384,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment2_02.
+        ///   Looks up a localized string similar to segment2_01.
         /// </summary>
         public static string ALARM_002102 {
             get {
@@ -1402,7 +1393,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment2_03.
+        ///   Looks up a localized string similar to segment2_02.
         /// </summary>
         public static string ALARM_002103 {
             get {
@@ -1411,7 +1402,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment2_04.
+        ///   Looks up a localized string similar to segment2_03.
         /// </summary>
         public static string ALARM_002104 {
             get {
@@ -1420,7 +1411,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment2_05.
+        ///   Looks up a localized string similar to segment2_04.
         /// </summary>
         public static string ALARM_002105 {
             get {
@@ -1429,7 +1420,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment2_06.
+        ///   Looks up a localized string similar to segment2_05.
         /// </summary>
         public static string ALARM_002106 {
             get {
@@ -1438,7 +1429,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment2_07.
+        ///   Looks up a localized string similar to segment2_06.
         /// </summary>
         public static string ALARM_002107 {
             get {
@@ -1447,11 +1438,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment2_08.
+        ///   Looks up a localized string similar to segment2_07.
         /// </summary>
         public static string ALARM_002108 {
             get {
                 return ResourceManager.GetString("ALARM_002108", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment2_08.
+        /// </summary>
+        public static string ALARM_002109 {
+            get {
+                return ResourceManager.GetString("ALARM_002109", resourceCulture);
             }
         }
         
@@ -1773,15 +1773,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T02B).
         /// </summary>
-        public static string ALARM_002200 {
-            get {
-                return ResourceManager.GetString("ALARM_002200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment3_01.
-        /// </summary>
         public static string ALARM_002201 {
             get {
                 return ResourceManager.GetString("ALARM_002201", resourceCulture);
@@ -1789,7 +1780,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment3_02.
+        ///   Looks up a localized string similar to segment3_01.
         /// </summary>
         public static string ALARM_002202 {
             get {
@@ -1798,7 +1789,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment3_03.
+        ///   Looks up a localized string similar to segment3_02.
         /// </summary>
         public static string ALARM_002203 {
             get {
@@ -1807,7 +1798,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment3_04.
+        ///   Looks up a localized string similar to segment3_03.
         /// </summary>
         public static string ALARM_002204 {
             get {
@@ -1816,7 +1807,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment3_05.
+        ///   Looks up a localized string similar to segment3_04.
         /// </summary>
         public static string ALARM_002205 {
             get {
@@ -1825,7 +1816,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment3_06.
+        ///   Looks up a localized string similar to segment3_05.
         /// </summary>
         public static string ALARM_002206 {
             get {
@@ -1834,7 +1825,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment3_07.
+        ///   Looks up a localized string similar to segment3_06.
         /// </summary>
         public static string ALARM_002207 {
             get {
@@ -1843,11 +1834,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment3_08.
+        ///   Looks up a localized string similar to segment3_07.
         /// </summary>
         public static string ALARM_002208 {
             get {
                 return ResourceManager.GetString("ALARM_002208", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment3_08.
+        /// </summary>
+        public static string ALARM_002209 {
+            get {
+                return ResourceManager.GetString("ALARM_002209", resourceCulture);
             }
         }
         
@@ -1899,15 +1899,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03A).
         /// </summary>
-        public static string ALARM_003100 {
-            get {
-                return ResourceManager.GetString("ALARM_003100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment4_01.
-        /// </summary>
         public static string ALARM_003101 {
             get {
                 return ResourceManager.GetString("ALARM_003101", resourceCulture);
@@ -1915,7 +1906,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment4_02.
+        ///   Looks up a localized string similar to segment4_01.
         /// </summary>
         public static string ALARM_003102 {
             get {
@@ -1924,7 +1915,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment4_03.
+        ///   Looks up a localized string similar to segment4_02.
         /// </summary>
         public static string ALARM_003103 {
             get {
@@ -1933,7 +1924,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment4_04.
+        ///   Looks up a localized string similar to segment4_03.
         /// </summary>
         public static string ALARM_003104 {
             get {
@@ -1942,7 +1933,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment4_05.
+        ///   Looks up a localized string similar to segment4_04.
         /// </summary>
         public static string ALARM_003105 {
             get {
@@ -1951,7 +1942,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment4_06.
+        ///   Looks up a localized string similar to segment4_05.
         /// </summary>
         public static string ALARM_003106 {
             get {
@@ -1960,7 +1951,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment4_07.
+        ///   Looks up a localized string similar to segment4_06.
         /// </summary>
         public static string ALARM_003107 {
             get {
@@ -1969,11 +1960,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment4_08.
+        ///   Looks up a localized string similar to segment4_07.
         /// </summary>
         public static string ALARM_003108 {
             get {
                 return ResourceManager.GetString("ALARM_003108", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment4_08.
+        /// </summary>
+        public static string ALARM_003109 {
+            get {
+                return ResourceManager.GetString("ALARM_003109", resourceCulture);
             }
         }
         
@@ -2205,15 +2205,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03B).
         /// </summary>
-        public static string ALARM_003200 {
-            get {
-                return ResourceManager.GetString("ALARM_003200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment5_01.
-        /// </summary>
         public static string ALARM_003201 {
             get {
                 return ResourceManager.GetString("ALARM_003201", resourceCulture);
@@ -2221,7 +2212,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment5_02.
+        ///   Looks up a localized string similar to segment5_01.
         /// </summary>
         public static string ALARM_003202 {
             get {
@@ -2230,7 +2221,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment5_03.
+        ///   Looks up a localized string similar to segment5_02.
         /// </summary>
         public static string ALARM_003203 {
             get {
@@ -2239,7 +2230,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment5_04.
+        ///   Looks up a localized string similar to segment5_03.
         /// </summary>
         public static string ALARM_003204 {
             get {
@@ -2248,7 +2239,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment5_05.
+        ///   Looks up a localized string similar to segment5_04.
         /// </summary>
         public static string ALARM_003205 {
             get {
@@ -2257,7 +2248,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment5_06.
+        ///   Looks up a localized string similar to segment5_05.
         /// </summary>
         public static string ALARM_003206 {
             get {
@@ -2266,7 +2257,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment5_07.
+        ///   Looks up a localized string similar to segment5_06.
         /// </summary>
         public static string ALARM_003207 {
             get {
@@ -2275,11 +2266,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment5_08.
+        ///   Looks up a localized string similar to segment5_07.
         /// </summary>
         public static string ALARM_003208 {
             get {
                 return ResourceManager.GetString("ALARM_003208", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment5_08.
+        /// </summary>
+        public static string ALARM_003209 {
+            get {
+                return ResourceManager.GetString("ALARM_003209", resourceCulture);
             }
         }
         
@@ -2331,15 +2331,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03C).
         /// </summary>
-        public static string ALARM_003300 {
-            get {
-                return ResourceManager.GetString("ALARM_003300", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment6_01.
-        /// </summary>
         public static string ALARM_003301 {
             get {
                 return ResourceManager.GetString("ALARM_003301", resourceCulture);
@@ -2347,7 +2338,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment6_02.
+        ///   Looks up a localized string similar to segment6_01.
         /// </summary>
         public static string ALARM_003302 {
             get {
@@ -2356,7 +2347,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment6_03.
+        ///   Looks up a localized string similar to segment6_02.
         /// </summary>
         public static string ALARM_003303 {
             get {
@@ -2365,7 +2356,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment6_04.
+        ///   Looks up a localized string similar to segment6_03.
         /// </summary>
         public static string ALARM_003304 {
             get {
@@ -2374,7 +2365,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment6_05.
+        ///   Looks up a localized string similar to segment6_04.
         /// </summary>
         public static string ALARM_003305 {
             get {
@@ -2383,7 +2374,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment6_06.
+        ///   Looks up a localized string similar to segment6_05.
         /// </summary>
         public static string ALARM_003306 {
             get {
@@ -2392,7 +2383,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment6_07.
+        ///   Looks up a localized string similar to segment6_06.
         /// </summary>
         public static string ALARM_003307 {
             get {
@@ -2401,11 +2392,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment6_08.
+        ///   Looks up a localized string similar to segment6_07.
         /// </summary>
         public static string ALARM_003308 {
             get {
                 return ResourceManager.GetString("ALARM_003308", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment6_08.
+        /// </summary>
+        public static string ALARM_003309 {
+            get {
+                return ResourceManager.GetString("ALARM_003309", resourceCulture);
             }
         }
         
@@ -2547,15 +2547,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03D).
         /// </summary>
-        public static string ALARM_003400 {
-            get {
-                return ResourceManager.GetString("ALARM_003400", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment7_01.
-        /// </summary>
         public static string ALARM_003401 {
             get {
                 return ResourceManager.GetString("ALARM_003401", resourceCulture);
@@ -2563,7 +2554,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment7_02.
+        ///   Looks up a localized string similar to segment7_01.
         /// </summary>
         public static string ALARM_003402 {
             get {
@@ -2572,7 +2563,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment7_03.
+        ///   Looks up a localized string similar to segment7_02.
         /// </summary>
         public static string ALARM_003403 {
             get {
@@ -2581,7 +2572,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment7_04.
+        ///   Looks up a localized string similar to segment7_03.
         /// </summary>
         public static string ALARM_003404 {
             get {
@@ -2590,7 +2581,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment7_05.
+        ///   Looks up a localized string similar to segment7_04.
         /// </summary>
         public static string ALARM_003405 {
             get {
@@ -2599,7 +2590,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment7_06.
+        ///   Looks up a localized string similar to segment7_05.
         /// </summary>
         public static string ALARM_003406 {
             get {
@@ -2608,7 +2599,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment7_07.
+        ///   Looks up a localized string similar to segment7_06.
         /// </summary>
         public static string ALARM_003407 {
             get {
@@ -2617,11 +2608,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment7_08.
+        ///   Looks up a localized string similar to segment7_07.
         /// </summary>
         public static string ALARM_003408 {
             get {
                 return ResourceManager.GetString("ALARM_003408", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment7_08.
+        /// </summary>
+        public static string ALARM_003409 {
+            get {
+                return ResourceManager.GetString("ALARM_003409", resourceCulture);
             }
         }
         
@@ -2673,15 +2673,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03E).
         /// </summary>
-        public static string ALARM_003500 {
-            get {
-                return ResourceManager.GetString("ALARM_003500", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment8_01.
-        /// </summary>
         public static string ALARM_003501 {
             get {
                 return ResourceManager.GetString("ALARM_003501", resourceCulture);
@@ -2689,7 +2680,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment8_02.
+        ///   Looks up a localized string similar to segment8_01.
         /// </summary>
         public static string ALARM_003502 {
             get {
@@ -2698,7 +2689,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment8_03.
+        ///   Looks up a localized string similar to segment8_02.
         /// </summary>
         public static string ALARM_003503 {
             get {
@@ -2707,7 +2698,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment8_04.
+        ///   Looks up a localized string similar to segment8_03.
         /// </summary>
         public static string ALARM_003504 {
             get {
@@ -2716,7 +2707,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment8_05.
+        ///   Looks up a localized string similar to segment8_04.
         /// </summary>
         public static string ALARM_003505 {
             get {
@@ -2725,7 +2716,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment8_06.
+        ///   Looks up a localized string similar to segment8_05.
         /// </summary>
         public static string ALARM_003506 {
             get {
@@ -2734,7 +2725,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment8_07.
+        ///   Looks up a localized string similar to segment8_06.
         /// </summary>
         public static string ALARM_003507 {
             get {
@@ -2743,11 +2734,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment8_08.
+        ///   Looks up a localized string similar to segment8_07.
         /// </summary>
         public static string ALARM_003508 {
             get {
                 return ResourceManager.GetString("ALARM_003508", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment8_08.
+        /// </summary>
+        public static string ALARM_003509 {
+            get {
+                return ResourceManager.GetString("ALARM_003509", resourceCulture);
             }
         }
         
@@ -2889,15 +2889,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03F).
         /// </summary>
-        public static string ALARM_003600 {
-            get {
-                return ResourceManager.GetString("ALARM_003600", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment9_01.
-        /// </summary>
         public static string ALARM_003601 {
             get {
                 return ResourceManager.GetString("ALARM_003601", resourceCulture);
@@ -2905,7 +2896,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment9_02.
+        ///   Looks up a localized string similar to segment9_01.
         /// </summary>
         public static string ALARM_003602 {
             get {
@@ -2914,7 +2905,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment9_03.
+        ///   Looks up a localized string similar to segment9_02.
         /// </summary>
         public static string ALARM_003603 {
             get {
@@ -2923,7 +2914,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment9_04.
+        ///   Looks up a localized string similar to segment9_03.
         /// </summary>
         public static string ALARM_003604 {
             get {
@@ -2932,7 +2923,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment9_05.
+        ///   Looks up a localized string similar to segment9_04.
         /// </summary>
         public static string ALARM_003605 {
             get {
@@ -2941,7 +2932,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment9_06.
+        ///   Looks up a localized string similar to segment9_05.
         /// </summary>
         public static string ALARM_003606 {
             get {
@@ -2950,7 +2941,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment9_07.
+        ///   Looks up a localized string similar to segment9_06.
         /// </summary>
         public static string ALARM_003607 {
             get {
@@ -2959,11 +2950,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment9_08.
+        ///   Looks up a localized string similar to segment9_07.
         /// </summary>
         public static string ALARM_003608 {
             get {
                 return ResourceManager.GetString("ALARM_003608", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment9_08.
+        /// </summary>
+        public static string ALARM_003609 {
+            get {
+                return ResourceManager.GetString("ALARM_003609", resourceCulture);
             }
         }
         
@@ -3015,15 +3015,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03G).
         /// </summary>
-        public static string ALARM_003700 {
-            get {
-                return ResourceManager.GetString("ALARM_003700", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment10_01.
-        /// </summary>
         public static string ALARM_003701 {
             get {
                 return ResourceManager.GetString("ALARM_003701", resourceCulture);
@@ -3031,7 +3022,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment10_02.
+        ///   Looks up a localized string similar to segment10_01.
         /// </summary>
         public static string ALARM_003702 {
             get {
@@ -3040,7 +3031,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment10_03.
+        ///   Looks up a localized string similar to segment10_02.
         /// </summary>
         public static string ALARM_003703 {
             get {
@@ -3049,7 +3040,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment10_04.
+        ///   Looks up a localized string similar to segment10_03.
         /// </summary>
         public static string ALARM_003704 {
             get {
@@ -3058,7 +3049,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment10_05.
+        ///   Looks up a localized string similar to segment10_04.
         /// </summary>
         public static string ALARM_003705 {
             get {
@@ -3067,7 +3058,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment10_06.
+        ///   Looks up a localized string similar to segment10_05.
         /// </summary>
         public static string ALARM_003706 {
             get {
@@ -3076,7 +3067,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment10_07.
+        ///   Looks up a localized string similar to segment10_06.
         /// </summary>
         public static string ALARM_003707 {
             get {
@@ -3085,11 +3076,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment10_08.
+        ///   Looks up a localized string similar to segment10_07.
         /// </summary>
         public static string ALARM_003708 {
             get {
                 return ResourceManager.GetString("ALARM_003708", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment10_08.
+        /// </summary>
+        public static string ALARM_003709 {
+            get {
+                return ResourceManager.GetString("ALARM_003709", resourceCulture);
             }
         }
         
@@ -3366,15 +3366,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T03H).
         /// </summary>
-        public static string ALARM_003800 {
-            get {
-                return ResourceManager.GetString("ALARM_003800", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment11_01.
-        /// </summary>
         public static string ALARM_003801 {
             get {
                 return ResourceManager.GetString("ALARM_003801", resourceCulture);
@@ -3382,7 +3373,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment11_02.
+        ///   Looks up a localized string similar to segment11_01.
         /// </summary>
         public static string ALARM_003802 {
             get {
@@ -3391,7 +3382,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment11_03.
+        ///   Looks up a localized string similar to segment11_02.
         /// </summary>
         public static string ALARM_003803 {
             get {
@@ -3400,7 +3391,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment11_04.
+        ///   Looks up a localized string similar to segment11_03.
         /// </summary>
         public static string ALARM_003804 {
             get {
@@ -3409,7 +3400,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment11_05.
+        ///   Looks up a localized string similar to segment11_04.
         /// </summary>
         public static string ALARM_003805 {
             get {
@@ -3418,7 +3409,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment11_06.
+        ///   Looks up a localized string similar to segment11_05.
         /// </summary>
         public static string ALARM_003806 {
             get {
@@ -3427,7 +3418,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment11_07.
+        ///   Looks up a localized string similar to segment11_06.
         /// </summary>
         public static string ALARM_003807 {
             get {
@@ -3436,11 +3427,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment11_08.
+        ///   Looks up a localized string similar to segment11_07.
         /// </summary>
         public static string ALARM_003808 {
             get {
                 return ResourceManager.GetString("ALARM_003808", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment11_08.
+        /// </summary>
+        public static string ALARM_003809 {
+            get {
+                return ResourceManager.GetString("ALARM_003809", resourceCulture);
             }
         }
         
@@ -3492,15 +3492,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T04A).
         /// </summary>
-        public static string ALARM_004100 {
-            get {
-                return ResourceManager.GetString("ALARM_004100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment20_01.
-        /// </summary>
         public static string ALARM_004101 {
             get {
                 return ResourceManager.GetString("ALARM_004101", resourceCulture);
@@ -3508,7 +3499,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment20_02.
+        ///   Looks up a localized string similar to segment20_01.
         /// </summary>
         public static string ALARM_004102 {
             get {
@@ -3517,7 +3508,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment20_03.
+        ///   Looks up a localized string similar to segment20_02.
         /// </summary>
         public static string ALARM_004103 {
             get {
@@ -3526,7 +3517,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment20_04.
+        ///   Looks up a localized string similar to segment20_03.
         /// </summary>
         public static string ALARM_004104 {
             get {
@@ -3535,7 +3526,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment20_05.
+        ///   Looks up a localized string similar to segment20_04.
         /// </summary>
         public static string ALARM_004105 {
             get {
@@ -3544,7 +3535,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment20_06.
+        ///   Looks up a localized string similar to segment20_05.
         /// </summary>
         public static string ALARM_004106 {
             get {
@@ -3553,7 +3544,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment20_07.
+        ///   Looks up a localized string similar to segment20_06.
         /// </summary>
         public static string ALARM_004107 {
             get {
@@ -3562,11 +3553,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment20_08.
+        ///   Looks up a localized string similar to segment20_07.
         /// </summary>
         public static string ALARM_004108 {
             get {
                 return ResourceManager.GetString("ALARM_004108", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment20_08.
+        /// </summary>
+        public static string ALARM_004109 {
+            get {
+                return ResourceManager.GetString("ALARM_004109", resourceCulture);
             }
         }
         
@@ -3618,15 +3618,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T04B).
         /// </summary>
-        public static string ALARM_004200 {
-            get {
-                return ResourceManager.GetString("ALARM_004200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment21_01.
-        /// </summary>
         public static string ALARM_004201 {
             get {
                 return ResourceManager.GetString("ALARM_004201", resourceCulture);
@@ -3634,7 +3625,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment21_02.
+        ///   Looks up a localized string similar to segment21_01.
         /// </summary>
         public static string ALARM_004202 {
             get {
@@ -3643,7 +3634,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment21_03.
+        ///   Looks up a localized string similar to segment21_02.
         /// </summary>
         public static string ALARM_004203 {
             get {
@@ -3652,7 +3643,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment21_04.
+        ///   Looks up a localized string similar to segment21_03.
         /// </summary>
         public static string ALARM_004204 {
             get {
@@ -3661,7 +3652,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment21_05.
+        ///   Looks up a localized string similar to segment21_04.
         /// </summary>
         public static string ALARM_004205 {
             get {
@@ -3670,7 +3661,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment21_06.
+        ///   Looks up a localized string similar to segment21_05.
         /// </summary>
         public static string ALARM_004206 {
             get {
@@ -3679,7 +3670,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment21_07.
+        ///   Looks up a localized string similar to segment21_06.
         /// </summary>
         public static string ALARM_004207 {
             get {
@@ -3688,11 +3679,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment21_08.
+        ///   Looks up a localized string similar to segment21_07.
         /// </summary>
         public static string ALARM_004208 {
             get {
                 return ResourceManager.GetString("ALARM_004208", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment21_08.
+        /// </summary>
+        public static string ALARM_004209 {
+            get {
+                return ResourceManager.GetString("ALARM_004209", resourceCulture);
             }
         }
         
@@ -3744,15 +3744,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T11A).
         /// </summary>
-        public static string ALARM_011100 {
-            get {
-                return ResourceManager.GetString("ALARM_011100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment12_01.
-        /// </summary>
         public static string ALARM_011101 {
             get {
                 return ResourceManager.GetString("ALARM_011101", resourceCulture);
@@ -3760,7 +3751,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment12_02.
+        ///   Looks up a localized string similar to segment12_01.
         /// </summary>
         public static string ALARM_011102 {
             get {
@@ -3769,7 +3760,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment12_03.
+        ///   Looks up a localized string similar to segment12_02.
         /// </summary>
         public static string ALARM_011103 {
             get {
@@ -3778,7 +3769,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment12_04.
+        ///   Looks up a localized string similar to segment12_03.
         /// </summary>
         public static string ALARM_011104 {
             get {
@@ -3787,7 +3778,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment12_05.
+        ///   Looks up a localized string similar to segment12_04.
         /// </summary>
         public static string ALARM_011105 {
             get {
@@ -3796,7 +3787,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment12_06.
+        ///   Looks up a localized string similar to segment12_05.
         /// </summary>
         public static string ALARM_011106 {
             get {
@@ -3805,7 +3796,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment12_07.
+        ///   Looks up a localized string similar to segment12_06.
         /// </summary>
         public static string ALARM_011107 {
             get {
@@ -3814,11 +3805,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment12_08.
+        ///   Looks up a localized string similar to segment12_07.
         /// </summary>
         public static string ALARM_011108 {
             get {
                 return ResourceManager.GetString("ALARM_011108", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment12_08.
+        /// </summary>
+        public static string ALARM_011109 {
+            get {
+                return ResourceManager.GetString("ALARM_011109", resourceCulture);
             }
         }
         
@@ -4140,15 +4140,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T11B).
         /// </summary>
-        public static string ALARM_011200 {
-            get {
-                return ResourceManager.GetString("ALARM_011200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment13_01.
-        /// </summary>
         public static string ALARM_011201 {
             get {
                 return ResourceManager.GetString("ALARM_011201", resourceCulture);
@@ -4156,7 +4147,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment13_02.
+        ///   Looks up a localized string similar to segment13_01.
         /// </summary>
         public static string ALARM_011202 {
             get {
@@ -4165,7 +4156,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment13_03.
+        ///   Looks up a localized string similar to segment13_02.
         /// </summary>
         public static string ALARM_011203 {
             get {
@@ -4174,7 +4165,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment13_04.
+        ///   Looks up a localized string similar to segment13_03.
         /// </summary>
         public static string ALARM_011204 {
             get {
@@ -4183,7 +4174,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment13_05.
+        ///   Looks up a localized string similar to segment13_04.
         /// </summary>
         public static string ALARM_011205 {
             get {
@@ -4192,7 +4183,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment13_06.
+        ///   Looks up a localized string similar to segment13_05.
         /// </summary>
         public static string ALARM_011206 {
             get {
@@ -4201,7 +4192,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment13_07.
+        ///   Looks up a localized string similar to segment13_06.
         /// </summary>
         public static string ALARM_011207 {
             get {
@@ -4210,11 +4201,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment13_08.
+        ///   Looks up a localized string similar to segment13_07.
         /// </summary>
         public static string ALARM_011208 {
             get {
                 return ResourceManager.GetString("ALARM_011208", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment13_08.
+        /// </summary>
+        public static string ALARM_011209 {
+            get {
+                return ResourceManager.GetString("ALARM_011209", resourceCulture);
             }
         }
         
@@ -4266,15 +4266,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T12A).
         /// </summary>
-        public static string ALARM_012100 {
-            get {
-                return ResourceManager.GetString("ALARM_012100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment14_01.
-        /// </summary>
         public static string ALARM_012101 {
             get {
                 return ResourceManager.GetString("ALARM_012101", resourceCulture);
@@ -4282,7 +4273,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment14_02.
+        ///   Looks up a localized string similar to segment14_01.
         /// </summary>
         public static string ALARM_012102 {
             get {
@@ -4291,7 +4282,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment14_03.
+        ///   Looks up a localized string similar to segment14_02.
         /// </summary>
         public static string ALARM_012103 {
             get {
@@ -4300,7 +4291,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment14_04.
+        ///   Looks up a localized string similar to segment14_03.
         /// </summary>
         public static string ALARM_012104 {
             get {
@@ -4309,7 +4300,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment14_05.
+        ///   Looks up a localized string similar to segment14_04.
         /// </summary>
         public static string ALARM_012105 {
             get {
@@ -4318,7 +4309,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment14_06.
+        ///   Looks up a localized string similar to segment14_05.
         /// </summary>
         public static string ALARM_012106 {
             get {
@@ -4327,7 +4318,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment14_07.
+        ///   Looks up a localized string similar to segment14_06.
         /// </summary>
         public static string ALARM_012107 {
             get {
@@ -4336,11 +4327,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment14_08.
+        ///   Looks up a localized string similar to segment14_07.
         /// </summary>
         public static string ALARM_012108 {
             get {
                 return ResourceManager.GetString("ALARM_012108", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment14_08.
+        /// </summary>
+        public static string ALARM_012109 {
+            get {
+                return ResourceManager.GetString("ALARM_012109", resourceCulture);
             }
         }
         
@@ -4392,15 +4392,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T12B).
         /// </summary>
-        public static string ALARM_012200 {
-            get {
-                return ResourceManager.GetString("ALARM_012200", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment15_01.
-        /// </summary>
         public static string ALARM_012201 {
             get {
                 return ResourceManager.GetString("ALARM_012201", resourceCulture);
@@ -4408,7 +4399,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment15_02.
+        ///   Looks up a localized string similar to segment15_01.
         /// </summary>
         public static string ALARM_012202 {
             get {
@@ -4417,7 +4408,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment15_03.
+        ///   Looks up a localized string similar to segment15_02.
         /// </summary>
         public static string ALARM_012203 {
             get {
@@ -4426,7 +4417,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment15_04.
+        ///   Looks up a localized string similar to segment15_03.
         /// </summary>
         public static string ALARM_012204 {
             get {
@@ -4435,7 +4426,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment15_05.
+        ///   Looks up a localized string similar to segment15_04.
         /// </summary>
         public static string ALARM_012205 {
             get {
@@ -4444,7 +4435,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment15_06.
+        ///   Looks up a localized string similar to segment15_05.
         /// </summary>
         public static string ALARM_012206 {
             get {
@@ -4453,7 +4444,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment15_07.
+        ///   Looks up a localized string similar to segment15_06.
         /// </summary>
         public static string ALARM_012207 {
             get {
@@ -4462,11 +4453,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment15_08.
+        ///   Looks up a localized string similar to segment15_07.
         /// </summary>
         public static string ALARM_012208 {
             get {
                 return ResourceManager.GetString("ALARM_012208", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment15_08.
+        /// </summary>
+        public static string ALARM_012209 {
+            get {
+                return ResourceManager.GetString("ALARM_012209", resourceCulture);
             }
         }
         
@@ -4788,15 +4788,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T32).
         /// </summary>
-        public static string ALARM_021100 {
-            get {
-                return ResourceManager.GetString("ALARM_021100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment16_01.
-        /// </summary>
         public static string ALARM_021101 {
             get {
                 return ResourceManager.GetString("ALARM_021101", resourceCulture);
@@ -4804,7 +4795,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment16_02.
+        ///   Looks up a localized string similar to segment16_01.
         /// </summary>
         public static string ALARM_021102 {
             get {
@@ -4813,7 +4804,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment16_03.
+        ///   Looks up a localized string similar to segment16_02.
         /// </summary>
         public static string ALARM_021103 {
             get {
@@ -4822,7 +4813,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment16_04.
+        ///   Looks up a localized string similar to segment16_03.
         /// </summary>
         public static string ALARM_021104 {
             get {
@@ -4831,7 +4822,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment16_05.
+        ///   Looks up a localized string similar to segment16_04.
         /// </summary>
         public static string ALARM_021105 {
             get {
@@ -4840,7 +4831,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment16_06.
+        ///   Looks up a localized string similar to segment16_05.
         /// </summary>
         public static string ALARM_021106 {
             get {
@@ -4849,7 +4840,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment16_07.
+        ///   Looks up a localized string similar to segment16_06.
         /// </summary>
         public static string ALARM_021107 {
             get {
@@ -4858,11 +4849,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment16_08.
+        ///   Looks up a localized string similar to segment16_07.
         /// </summary>
         public static string ALARM_021108 {
             get {
                 return ResourceManager.GetString("ALARM_021108", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment16_08.
+        /// </summary>
+        public static string ALARM_021109 {
+            get {
+                return ResourceManager.GetString("ALARM_021109", resourceCulture);
             }
         }
         
@@ -5310,15 +5310,6 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to MFC missmatch (segment T22A).
         /// </summary>
-        public static string ALARM_022100 {
-            get {
-                return ResourceManager.GetString("ALARM_022100", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to segment18_01.
-        /// </summary>
         public static string ALARM_022101 {
             get {
                 return ResourceManager.GetString("ALARM_022101", resourceCulture);
@@ -5326,7 +5317,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment18_02.
+        ///   Looks up a localized string similar to segment18_01.
         /// </summary>
         public static string ALARM_022102 {
             get {
@@ -5335,7 +5326,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment18_03.
+        ///   Looks up a localized string similar to segment18_02.
         /// </summary>
         public static string ALARM_022103 {
             get {
@@ -5344,7 +5335,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment18_04.
+        ///   Looks up a localized string similar to segment18_03.
         /// </summary>
         public static string ALARM_022104 {
             get {
@@ -5353,7 +5344,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment18_05.
+        ///   Looks up a localized string similar to segment18_04.
         /// </summary>
         public static string ALARM_022105 {
             get {
@@ -5362,7 +5353,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment18_06.
+        ///   Looks up a localized string similar to segment18_05.
         /// </summary>
         public static string ALARM_022106 {
             get {
@@ -5371,7 +5362,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment18_07.
+        ///   Looks up a localized string similar to segment18_06.
         /// </summary>
         public static string ALARM_022107 {
             get {
@@ -5380,11 +5371,20 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to segment18_08.
+        ///   Looks up a localized string similar to segment18_07.
         /// </summary>
         public static string ALARM_022108 {
             get {
                 return ResourceManager.GetString("ALARM_022108", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to segment18_08.
+        /// </summary>
+        public static string ALARM_022109 {
+            get {
+                return ResourceManager.GetString("ALARM_022109", resourceCulture);
             }
         }
         
@@ -9889,7 +9889,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Not blocked.
+        ///   Looks up a localized string similar to Available.
         /// </summary>
         public static string EnumBlockedWMS_Available {
             get {

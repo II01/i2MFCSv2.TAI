@@ -288,6 +288,7 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.AddOrder;
                 Detailed = new OrderViewModel();
                 Detailed.Initialize(_warehouse);
+                Detailed.EnableOrderAdd = true;
                 Detailed.EnableOrderEdit = true;
                 Detailed.EnableSubOrderEdit = true;
                 Detailed.EnableSKUEdit = true;
@@ -337,6 +338,7 @@ namespace UserInterface.ViewModel
                 Detailed = new OrderViewModel();
                 Detailed.Initialize(_warehouse);
                 Detailed.ValidationEnabled = true;
+                Detailed.EnableOrderAdd = false;
                 Detailed.EnableOrderEdit = true;
                 Detailed.EnableSubOrderEdit = false;
                 Detailed.EnableSKUEdit = false;
@@ -416,6 +418,7 @@ namespace UserInterface.ViewModel
                 _selectedCommand = CommandType.AddSubOrder;
                 Detailed = new OrderViewModel();
                 Detailed.Initialize(_warehouse);
+                Detailed.EnableOrderAdd = false;
                 Detailed.EnableOrderEdit = false;
                 Detailed.EnableSubOrderEdit = true;
                 Detailed.EnableSKUEdit = true;
@@ -466,6 +469,7 @@ namespace UserInterface.ViewModel
                 Detailed = new OrderViewModel();
                 Detailed.Initialize(_warehouse);
                 Detailed.ValidationEnabled = true;
+                Detailed.EnableOrderAdd = false;
                 Detailed.EnableOrderEdit = false;
                 Detailed.EnableSubOrderEdit = true;
                 Detailed.EnableSKUEdit = false;
@@ -546,6 +550,7 @@ namespace UserInterface.ViewModel
                 Detailed = new OrderViewModel();
                 Detailed.Initialize(_warehouse);
                 Detailed.ValidationEnabled = true;
+                Detailed.EnableOrderAdd = false;
                 Detailed.EnableOrderEdit = false;
                 Detailed.EnableSubOrderEdit = false;
                 Detailed.EnableSKUEdit = true;
@@ -595,6 +600,7 @@ namespace UserInterface.ViewModel
                 Detailed = new OrderViewModel();
                 Detailed.Initialize(_warehouse);
                 Detailed.ValidationEnabled = true;
+                Detailed.EnableOrderAdd = false;
                 Detailed.EnableOrderEdit = false;
                 Detailed.EnableSubOrderEdit = false;
                 Detailed.EnableSKUEdit = true;

@@ -3193,7 +3193,7 @@
     <value>Kaldırma Sınır Anahtarı Hatası, +L02-236S1</value>
   </data>
   <data name="ALARM_100017" xml:space="preserve">
-    <value>!Limit switch catching device - jaws, +L02-236S2</value>
+    <value>Güvenlik Sivici - Bıçaklar, +L02-236S2</value>
   </data>
   <data name="ALARM_100018" xml:space="preserve">
     <value>Kabin Kapısı 1, +L02-238S1</value>
@@ -3634,7 +3634,7 @@
     <value>Açı Hatası: fork 2, dip 2</value>
   </data>
   <data name="ALARM_200036" xml:space="preserve">
-    <value>!D425 Başlangıç Hatası</value>
+    <value>D425 Başlangıç Hatası</value>
   </data>
   <data name="ALARM_200037" xml:space="preserve">
     <value>Crane Yatay Ray Motoru Uzun Süre Çalışma Hatası, +EXT-211M1</value>
@@ -3922,7 +3922,7 @@
     <value>Reserve</value>
   </data>
   <data name="ALARM_300004" xml:space="preserve">
-    <value>24V fuse</value>
+    <value>24V Sigorta</value>
   </data>
   <data name="ALARM_300005" xml:space="preserve">
     <value>Dış Acil Stop</value>
@@ -4306,7 +4306,7 @@
     <value>Kullanıcı Yönetimi </value>
   </data>
   <data name="PermissionWMS" xml:space="preserve">
-    <value>!Access level WMS</value>
+    <value>WMS Erişim Seviyesi</value>
   </data>
   <data name="PermissionMFCS" xml:space="preserve">
     <value>MFCS Erişim Seviyesi</value>

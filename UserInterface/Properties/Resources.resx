@@ -1114,7 +1114,7 @@
     <value>Incorrect date</value>
   </data>
   <data name="EnumBlockedWMS_Available" xml:space="preserve">
-    <value>Not blocked</value>
+    <value>Available</value>
   </data>
   <data name="EnumBlockedWMS_Quality" xml:space="preserve">
     <value>Quality</value>

@@ -32,6 +32,7 @@ namespace UserInterfaceGravityPanel.ViewModel
         private string _refreshfailed;
         private string _initfailed;
         private string _details;
+        private int _refreshTime;
         #endregion
 
         #region properties
@@ -180,6 +181,12 @@ namespace UserInterfaceGravityPanel.ViewModel
                 {
                     _ramp = Math.Max(1, Math.Min(5, int.Parse(System.Configuration.ConfigurationManager.AppSettings["TruckRamp"])));
                     RampStr = _ramp.ToString();
+                }
+                catch { }
+                _refreshTime = 3;
+                try
+                {
+                    _refreshTime = Math.Max(1, Math.Min(10, int.Parse(System.Configuration.ConfigurationManager.AppSettings["RefreshTime"])));
                 }
                 catch { }
 

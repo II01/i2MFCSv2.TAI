@@ -43,7 +43,7 @@
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=ERPIDRef, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="false"/>
         <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=OrderID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="false"/>
+                 Text="{Binding Path=OrderID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableOrderAdd}"/>
         <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=Destination,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding Path=EnableOrderEdit}"/>
 <!--        <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" 

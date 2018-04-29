@@ -5,6 +5,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d"
         xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
@@ -70,7 +72,22 @@
                                     Width="*" Binding="{Binding FrequencyClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="3" Text="{Resx TUs}" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="{StaticResource MidFontSize}" FontWeight="Medium"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{Resx TUs}" TextWrapping="Wrap" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+                       FontSize="{StaticResource MidFontSize}" FontWeight="Medium"/>
+            <TextBlock Grid.Column="1" Text="{Resx Selected}" Margin="0,0,10,0"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                       FontSize="{StaticResource BaseFontSize}"/>
+            <TextBlock Grid.Column="2" Text="{Binding NumberOfSelectedItems}" Margin="0,0,10,0"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Right" 
+                       FontSize="{StaticResource BaseFontSize}"/>
+        </Grid>
         <DataGrid Grid.Row="4"
             x:Name="dgTUs" 
             ItemsSource="{Binding TUList}" 
@@ -95,6 +112,14 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ExpDate}" 
                                     Width="*" Binding="{Binding ExpDate}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <cmd:EventToCommand
+                        Command="{Binding SelectionChangedCommand}"
+                        CommandParameter="{Binding SelectedItems,
+                        ElementName=dgTUs}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

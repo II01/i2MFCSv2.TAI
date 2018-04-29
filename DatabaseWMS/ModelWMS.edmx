@@ -63,7 +63,7 @@
           <Property Name="SKU_Qty" Type="float" Nullable="false" />
           <Property Name="Destination" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
-          <Property Name="SKU_Batch" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="SKU_Batch" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Parameters">
@@ -121,7 +121,7 @@
           <Property Name="TU_ID" Type="int" Nullable="false" />
           <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Qty" Type="float" Nullable="false" />
-          <Property Name="Batch" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Batch" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ProdDate" Type="datetime" Nullable="false" />
           <Property Name="ExpDate" Type="datetime" Nullable="false" />
         </EntityType>
@@ -387,7 +387,7 @@
           <Property Name="SKU_Qty" Type="Double" Nullable="false" />
           <Property Name="Destination" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ReleaseTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SKU_Batch" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SKU_Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Status" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CommandERPs" Relationship="Self.FK_dbo_Orders_dbo_CommandERPs_ERP_ID" FromRole="Orders" ToRole="CommandERPs" />
           <NavigationProperty Name="Commands" Relationship="Self.FK_dbo_Commands_dbo_Orders_Order_ID" FromRole="Orders" ToRole="Commands" />
@@ -453,7 +453,7 @@
           <Property Name="TU_ID" Type="Int32" Nullable="false" />
           <Property Name="SKU_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Qty" Type="Double" Nullable="false" />
-          <Property Name="Batch" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ProdDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExpDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="SKU_ID1" Relationship="Self.FK_dbo_TUs_dbo_SKU_ID_SKU_ID" FromRole="TUs" ToRole="SKU_ID" />

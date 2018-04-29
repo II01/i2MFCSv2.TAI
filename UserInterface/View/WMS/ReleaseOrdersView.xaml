@@ -6,6 +6,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d"
         xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
@@ -178,8 +179,24 @@
                                     Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock Grid.Row="3" Grid.Column="1" Margin="0,0,0,0" Text="{Resx SKUs}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Margin="0,0,0,0" Text="{Resx SKUs}" 
+                       FontSize="{StaticResource MidFontSize}" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Medium"/>
+            <TextBlock Grid.Column="1" Margin="0,0,10,0" Text="{Resx Selected}" 
+                       FontSize="{StaticResource BaseFontSize}" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="2" Margin="0,0,0,0" Text="{Binding NumberOfSelectedItems}" 
+                       FontSize="{StaticResource BaseFontSize}" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        </Grid>
         <DataGrid Grid.Row="4" Grid.Column="1" Grid.RowSpan="3"
+            Name="dgTUs"
             ItemsSource="{Binding DataListTU}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
@@ -198,6 +215,14 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
                                     Width="4*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <cmd:EventToCommand
+                        Command="{Binding SelectionChangedCommand}"
+                        CommandParameter="{Binding SelectedItems,
+                        ElementName=dgTUs}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </DataGrid>
 
         

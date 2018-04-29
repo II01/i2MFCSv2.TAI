@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
 using System;
+using System.Collections;
 using System.Collections.ObjectModel;
 using System.Data.SqlTypes;
 using System.Diagnostics;
@@ -42,6 +43,7 @@ namespace UserInterface.ViewModel
         private int _accessLevel;
         private string _accessUser;
         private int? _suborderid;
+        private int _numberOfSelectedItems;
         #endregion
 
         #region properites
@@ -58,6 +60,7 @@ namespace UserInterface.ViewModel
         public RelayCommand Confirm { get; private set; }
         public RelayCommand<string> SetDestination { get; private set; }
         public RelayCommand<string> SetReleaseTime { get; private set; }
+        public RelayCommand<IList> SelectionChangedCommand { get; private set; }
 
         public ObservableCollection<ReleaseOrderViewModel> DataListOrder
         {
@@ -289,6 +292,22 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public int NumberOfSelectedItems
+        {
+            get
+            {
+                return _numberOfSelectedItems;
+            }
+            set
+            {
+                if (_numberOfSelectedItems != value)
+                {
+                    _numberOfSelectedItems = value;
+                    RaisePropertyChanged("NumberOfSelectedItems");
+                }
+            }
+        }
         #endregion
 
         #region initialization
@@ -319,6 +338,7 @@ namespace UserInterface.ViewModel
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             SetDestination = new RelayCommand<string>(dest => ExecuteSetDestination(dest));
             SetReleaseTime = new RelayCommand<string>(rt => ExecuteSetReleaseTime(rt));
+            SelectionChangedCommand = new RelayCommand<IList>(items => NumberOfSelectedItems = items == null ? 0 : items.Count);
         }
 
         public void Initialize(BasicWarehouse warehouse)
