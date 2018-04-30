@@ -304,7 +304,9 @@ namespace UserInterface.ViewModel
                                 break;
                             case "PlaceID":
                                 var pid = _dbservicewms.FindPlaceID(PlaceID);
-                                if (pid == null || pid.DimensionClass < 0)
+                                if (!PlaceID.StartsWith("W"))
+                                    validationResult = ResourceReader.GetString("ERR_NOTWH");
+                                else if (pid == null || pid.DimensionClass < 0)
                                     validationResult = ResourceReader.GetString("ERR_PLACE");
                                 else if (pid.DimensionClass < 999 && _dbservicewms.FindPlaceByPlace(PlaceID) != null)
                                     validationResult = ResourceReader.GetString("ERR_OCCUPIED");

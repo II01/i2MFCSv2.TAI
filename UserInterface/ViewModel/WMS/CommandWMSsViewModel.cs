@@ -13,6 +13,7 @@ using WCFClients;
 using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using DatabaseWMS;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -146,7 +147,7 @@ namespace UserInterface.ViewModel
             Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -158,7 +159,7 @@ namespace UserInterface.ViewModel
                 DataList = new ObservableCollection<CommandWMSViewModel>();
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -299,13 +300,14 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 int? wmsid = Selected?.WMSID;
+                var cmdswms = await _dbservicewms.GetCommandOrders(DateTime.Now.AddHours(-1), DateTime.MaxValue, (int)EnumCommandWMSStatus.Active);
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetCommandOrders(DateTime.Now.AddHours(-1), DateTime.MaxValue, (int)EnumCommandWMSStatus.Active))
+                foreach (var p in cmdswms)
                     DataList.Add(new CommandWMSViewModel
                     {
                         WMSID = p.ID,
@@ -334,13 +336,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is CommandWMSsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

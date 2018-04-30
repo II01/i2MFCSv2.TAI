@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -69,7 +70,7 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
             }
         }
 
-        public OrderCount GetCurrentOrderActivity(Orders o)
+        public async Task<OrderCount> GetCurrentOrderActivity(Orders o)
         {
             try
             {
@@ -77,18 +78,21 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                     return null;
                 using (var dc = new EntitiesWMS())
                 {
-                    var order = dc.Orders
+                    var order = await 
+                                dc.Orders
                                 .Where(p => p.ERP_ID == o.ERP_ID && p.OrderID == o.OrderID)
                                 .GroupBy(
                                     (by) => by.SubOrderID,
                                     (key, group) => new
                                     {
                                         Suborder = group.FirstOrDefault()
-                                    }).ToList();
+                                    }).ToListAsync();
 
                     var oc = new OrderCount
                     {
-                        Status = order.Where(p => p.Suborder.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p == null ? 0 : p.Suborder.Status),
+                        Status = order.Where(p => p.Suborder.Status > (int)EnumWMSOrderStatus.Waiting)
+                                      .DefaultIfEmpty()
+                                      .Min(p => p == null ? 0 : p.Suborder.Status),
                         All = order.Count(),
                         Active = order.Count(p => p.Suborder.Status == (int)EnumWMSOrderStatus.Active),
                         Done = order.Count(p => p.Suborder.Status >= (int)EnumWMSOrderStatus.OnTarget && p.Suborder.Status <= (int)EnumWMSOrderStatus.ReadyToTake),
@@ -103,7 +107,7 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public OrderCount GetCurrentSubOrderActivity(Orders ord)
+        public async Task<OrderCount> GetCurrentSubOrderActivity(Orders ord)
         {
             try
             {
@@ -112,16 +116,18 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
 
                 using (var dc = new EntitiesWMS())
                 {
-                    var order = dc.Orders
+                    var order = await dc.Orders
                                 .Where(p => p.ERP_ID == ord.ERP_ID && p.OrderID == ord.OrderID && p.SubOrderID == ord.SubOrderID)
                                 .Join(dc.Commands,
                                       o => o.ID,
                                       c => c.Order_ID,
-                                      (o, c) => new { Order = o, Command = c }).ToList();
+                                      (o, c) => new { Order = o, Command = c }).ToListAsync();
 
                     var oc = new OrderCount
                     {
-                        Status = order.Where(p => p.Command.Status > (int)EnumWMSCommandStatus.Waiting).Min(p => (p == null || p.Command == null) ? 0 : p.Command.Status),
+                        Status = order.Where(p => p.Command.Status > (int)EnumWMSCommandStatus.Waiting)
+                                      .DefaultIfEmpty()
+                                      .Min(p => (p == null || p.Command == null) ? 0 : p.Command.Status),
                         All = order.Count(p => p.Command.Target.StartsWith("W:32")),
                         Active = order.Count(p => p.Command.Status == (int)EnumWMSCommandStatus.Active),
                         Done = order.Count(p => p.Command.Target.StartsWith("W:32") && p.Command.Status >= (int)EnumWMSCommandStatus.Canceled),

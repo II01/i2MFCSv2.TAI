@@ -55,6 +55,7 @@ namespace UserInterface.ViewModel
         public RelayCommand DeleteCmd { get; private set; }
         public RelayCommand Confirm { get; private set; }
         public RelayCommand Cancel { get; private set; }
+        public RelayCommand RefreshSimpleCommands { get; private set; }
         public RelayCommand<IList> SelectionChangedCommand { get; private set; }
 
         public PropertyValidator Validator { get; set; }
@@ -129,29 +130,7 @@ namespace UserInterface.ViewModel
                     _selectedContent = value;
 
                     RaisePropertyChanged("SelectedContent");
-                    try
-                    {
-                        DetailedContent = SelectedContent;
-                        SimpleCommandList.Clear();
-                        if ( DetailedContent != null)
-                        {
-                            List<SimpleCommand> l = _warehouse.DBService.GetSimpleCommands(DetailedContent.Command.ID, SimpleCommand.EnumStatus.Finished, null, null);
-                            foreach (var cmd in l)
-                            {
-                                if (cmd is SimpleCraneCommand)
-                                    SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandCraneViewModel { Command = cmd });
-                                else if (cmd is SimpleSegmentCommand)
-                                    SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandSegmentViewModel { Command = cmd });
-                                else
-                                    SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandConveyorViewModel { Command = cmd });
-                            }
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, 
-                                            string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                    }
+                    DetailedContent = SelectedContent;
                 }
             }
         }
@@ -280,24 +259,15 @@ namespace UserInterface.ViewModel
             GenerateCmdOUT = new RelayCommand(() => ExecuteGenerateCmdOUT(), CanExecuteGenerateCmdOUT);
             GenerateCmdIN = new RelayCommand(() => ExecuteGenerateCmdIN(), CanExecuteGenerateCmdIN);
             GeneratePallets = new RelayCommand(() => ExecuteGeneratePallets(), CanExecuteGeneratePallets);
-            RefreshCmd = new RelayCommand(() => ExecuteRefresh(), CanExecuteRefresh);
+            RefreshCmd = new RelayCommand(async () => await ExecuteRefresh(), CanExecuteRefresh);
             AddCmdMat = new RelayCommand(() => ExecuteAddMat(), CanExecuteAddMat);
             AddCmdSeg = new RelayCommand(() => ExecuteAddSeg(), CanExecuteAddSeg);
             RestartCmd = new RelayCommand(() => ExecuteRestart(), CanExecuteRestart);
             DeleteCmd = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
-            SelectionChangedCommand = new RelayCommand<IList>(
-                items =>
-                {
-                    if (items == null)
-                    {
-                        NumberOfSelectedItems = 0;
-                        return;
-                    }
-
-                    NumberOfSelectedItems = items.Count;
-                });
+            RefreshSimpleCommands = new RelayCommand(async () => await ExecuteRefreshSimpleCommands());
+            SelectionChangedCommand = new RelayCommand<IList>(items => NumberOfSelectedItems = items == null? 0 : items.Count);
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -306,7 +276,7 @@ namespace UserInterface.ViewModel
             {
                 CommandList = new ObservableCollection<CommandViewModel>();
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -395,7 +365,7 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        public void ExecuteRefresh()
+        public async Task ExecuteRefresh()
         {
             try
             {
@@ -403,8 +373,9 @@ namespace UserInterface.ViewModel
 
 
                 var res = new ObservableCollection<CommandViewModel>();
+                var cmds = await _warehouse.DBService.GetCommands(Command.EnumCommandStatus.Active, DateTime.Now.AddMinutes(-30), DateTime.Now);
                 CommandList.Clear();
-                foreach (var c in _warehouse.DBService.GetCommands(Command.EnumCommandStatus.Active, DateTime.Now.AddMinutes(-30), DateTime.Now))
+                foreach (var c in cmds)
                 {
                     if (c is CommandMaterial)
                         CommandList.Add((CommandViewModel)new CommandMaterialViewModel { Command = c });
@@ -424,6 +395,33 @@ namespace UserInterface.ViewModel
                                     string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public async Task ExecuteRefreshSimpleCommands()
+        {
+            try
+            {
+                SimpleCommandList.Clear();
+                if (DetailedContent != null)
+                {
+                    List<SimpleCommand> l = await _warehouse.DBService.GetSimpleCommands(DetailedContent.Command.ID, SimpleCommand.EnumStatus.Finished, null, null);
+                    foreach (var cmd in l)
+                    {
+                        if (cmd is SimpleCraneCommand)
+                            SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandCraneViewModel { Command = cmd });
+                        else if (cmd is SimpleSegmentCommand)
+                            SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandSegmentViewModel { Command = cmd });
+                        else
+                            SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandConveyorViewModel { Command = cmd });
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         public bool CanExecuteRefresh()
         {
             try
@@ -720,13 +718,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is CommandsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

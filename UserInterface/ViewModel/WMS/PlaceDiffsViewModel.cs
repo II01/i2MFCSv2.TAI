@@ -14,6 +14,7 @@ using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using DatabaseWMS;
 using UserInterface.ProxyWMS_UI;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -124,7 +125,7 @@ namespace UserInterface.ViewModel
             UpdateWMS = new RelayCommand(() => ExecuteUpdateWMS(), CanExecuteUpdateWMS);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -136,7 +137,7 @@ namespace UserInterface.ViewModel
                 DataList = new ObservableCollection<PlaceDiffViewModel>();
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -285,13 +286,14 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 int? tuid = Selected?.TUID;
                 DataList = new ObservableCollection<PlaceDiffViewModel>();
-                foreach (var p in _dbservicewms.PlaceWMSandMFCSDiff())
+                var diffs = await _dbservicewms.PlaceWMSandMFCSDiff();
+                foreach (var p in diffs)
                     DataList.Add(new PlaceDiffViewModel
                     {
                         TUID = p.TUID,
@@ -310,13 +312,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is PlaceDiffsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

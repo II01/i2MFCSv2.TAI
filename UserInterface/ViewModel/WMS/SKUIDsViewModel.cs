@@ -12,6 +12,7 @@ using UserInterface.Messages;
 using WCFClients;
 using UserInterface.DataServiceWMS;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -41,6 +42,7 @@ namespace UserInterface.ViewModel
         public RelayCommand Confirm { get; private set; }
         public RelayCommand Cancel { get; private set; }
         public RelayCommand Refresh { get; private set; }
+        public RelayCommand RefreshTUs { get; private set; }
         public RelayCommand<IList> SelectionChangedCommand { get; private set; }
 
         public ObservableCollection<SKUIDViewModel> SKUIDList
@@ -80,23 +82,6 @@ namespace UserInterface.ViewModel
                 {
                     _selectedSKUID = value;
                     RaisePropertyChanged("SelectedSKUID");
-                    try
-                    {
-                        if (_selectedSKUID != null)
-                        {
-                            DetailedSKUID = SelectedSKUID;
-                            TUList.Clear();
-                            var sl = _dbservicewms.GetAvailableTUs(DetailedSKUID.ID);
-                            foreach (var s in sl)
-                                TUList.Add(new TUViewModel {TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
-
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
-                        throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
-                    }
                 }
             }
         }
@@ -187,7 +172,8 @@ namespace UserInterface.ViewModel
             Edit = new RelayCommand(() => ExecuteEdit(), CanExecuteEdit);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
+            RefreshTUs = new RelayCommand(async () => await ExecuteRefreshTUs());
             SelectionChangedCommand = new RelayCommand<IList>(items => NumberOfSelectedItems = items == null ? 0 : items.Count);
         }
 
@@ -201,7 +187,7 @@ namespace UserInterface.ViewModel
                 DetailedSKUID.Initialize(_warehouse);
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -370,24 +356,18 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 SKUIDViewModel sl = SelectedSKUID; 
                 SKUIDList.Clear();
-                foreach (var p in _dbservicewms.GetSKUIDs())
+                var skuids = await _dbservicewms.GetSKUIDs();
+                foreach (var p in skuids)
                     SKUIDList.Add(new SKUIDViewModel { ID = p.ID, Description = p.Description, DefaultQty = p.DefaultQty, Unit = p.Unit, Weight = p.Weight, FrequencyClass = p.FrequencyClass });
                 foreach (var l in SKUIDList)
                     l.Initialize(_warehouse);
-                if (sl != null)
-                {
-                    SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == sl.ID);
-                    TUList.Clear();
-                    var sdl = _dbservicewms.GetAvailableTUs(DetailedSKUID.ID);
-                    foreach (var s in sdl)
-                        TUList.Add(new TUViewModel { TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
-                }
+                SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == sl.ID);
             }
             catch (Exception e)
             {
@@ -395,14 +375,32 @@ namespace UserInterface.ViewModel
                                     string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+        private async Task ExecuteRefreshTUs()
+        {
+            try
+            {
+                TUList.Clear();
+                if (SelectedSKUID != null)
+                {
+                    var sdl = await _dbservicewms.GetAvailableTUs(SelectedSKUID.ID);
+                    foreach (var s in sdl)
+                        TUList.Add(new TUViewModel { TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is SKUIDsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

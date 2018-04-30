@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Globalization;
@@ -266,7 +267,7 @@ namespace Warehouse.DataService
             }
 
         }
-        public List<SimpleCommand> GetSimpleCommands(int? commandId, SimpleCommand.EnumStatus statusLessOrEqual, DateTime? dateFrom, DateTime? dateTo)
+        public async Task<List<SimpleCommand>> GetSimpleCommands(int? commandId, SimpleCommand.EnumStatus statusLessOrEqual, DateTime? dateFrom, DateTime? dateTo)
         {
             try
             {
@@ -278,7 +279,7 @@ namespace Warehouse.DataService
                                    (!commandId.HasValue || (c.Command_ID == commandId.Value))
                              orderby c.ID descending
                              select c).Take(5000);
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -712,7 +713,7 @@ namespace Warehouse.DataService
             }
         }
 
-        public List<Command> GetCommands(Command.EnumCommandStatus statusLessOrEqual, DateTime? dateFrom, DateTime? dateTo)
+        public async Task<List<Command>> GetCommands(Command.EnumCommandStatus statusLessOrEqual, DateTime? dateFrom, DateTime? dateTo)
         {
             try
             {
@@ -724,7 +725,7 @@ namespace Warehouse.DataService
                              orderby c.ID descending
                              select c).Take(5000);
 
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1092,7 +1093,7 @@ namespace Warehouse.DataService
             }
         }
 
-        public List<Alarm> GetAlarms(DateTime timeFrom, DateTime timeTo, string unit, string id, string stat)
+        public async Task<List<Alarm>> GetAlarms(DateTime timeFrom, DateTime timeTo, string unit, string id, string stat)
         {
             try
             {
@@ -1104,7 +1105,7 @@ namespace Warehouse.DataService
                                    (id == null || a.AlarmID.Contains(id))
                              orderby a.ArrivedTime descending
                              select a).Take(5000);
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1112,7 +1113,7 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<Event> GetEvents(DateTime timeFrom, DateTime timeTo, string sev, string typ)
+        public async Task<List<Event>> GetEvents(DateTime timeFrom, DateTime timeTo, string sev, string typ)
         {
             try
             {
@@ -1122,7 +1123,7 @@ namespace Warehouse.DataService
                              where (e.Time >= timeFrom) && (e.Time <= timeTo)
                              orderby e.Time descending
                              select e).Take(5000);
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1130,7 +1131,7 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<Movement> GetMovements(DateTime timeFrom, DateTime timeTo, string loc, string tu)
+        public async Task<List<Movement>> GetMovements(DateTime timeFrom, DateTime timeTo, string loc, string tu)
         {
             try
             {
@@ -1144,7 +1145,7 @@ namespace Warehouse.DataService
                                    (tu == null || m.Material.ToString().Contains(tu))
                              orderby m.Time descending
                              select m).Take(5000);
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1152,7 +1153,7 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<PlaceID> GetPlaceIDs()
+        public async Task<List<PlaceID>> GetPlaceIDs()
         {
             try
             {
@@ -1160,7 +1161,7 @@ namespace Warehouse.DataService
                 {
                     var l = from p in dc.PlaceIDs
                             select p;
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1191,7 +1192,7 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<Place> GetPlaces(bool excludeWout)
+        public async Task<List<Place>> GetPlaces(bool excludeWout)
         {
             try
             {
@@ -1200,7 +1201,7 @@ namespace Warehouse.DataService
                     var l = from m in dc.Places
                             //where !excludeWout || (excludeWout && m.Place1 != "W:out")
                             select m;
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)

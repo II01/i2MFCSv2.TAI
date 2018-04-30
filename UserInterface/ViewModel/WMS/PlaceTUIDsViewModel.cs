@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using DatabaseWMS;
 using UserInterface.ProxyWMS_UI;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -193,7 +194,7 @@ namespace UserInterface.ViewModel
             Block = new RelayCommand(() => ExecuteBlock(), CanExecuteBlock);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
             SelectionChangedCommand = new RelayCommand<IList>(items => NumberOfSelectedItems = items == null ? 0 : items.Count);
         }
 
@@ -206,7 +207,7 @@ namespace UserInterface.ViewModel
                 DataList = new ObservableCollection<PlaceTUIDViewModel>();
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -295,7 +296,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 2;
+                return !EditEnabled && (Selected != null) && (Selected.PlaceID.StartsWith("W")) && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -341,7 +342,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 2;
+                return !EditEnabled && (Selected != null) && (Selected.PlaceID.StartsWith("W")) && AccessLevel /10 >= 2;
             }
             catch (Exception e)
             {
@@ -423,7 +424,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (Selected != null) && AccessLevel/10 >= 1;
+                return !EditEnabled && (Selected != null) && Selected.PlaceID.StartsWith("W") && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {
@@ -566,13 +567,14 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 int? tuid = Selected?.TUID; 
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetPlaceTUIDs(ExcludeWout))
+                var placetuids = await _dbservicewms.GetPlaceTUIDs(ExcludeWout);
+                foreach (var p in placetuids)
                     DataList.Add(new PlaceTUIDViewModel
                     {
                         TUID = p.TUID,
@@ -596,13 +598,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is PlaceTUIDsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

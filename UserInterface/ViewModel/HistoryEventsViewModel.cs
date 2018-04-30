@@ -10,6 +10,7 @@ using System.Linq;
 using System.Windows;
 using UserInterface.Messages;
 using GalaSoft.MvvmLight.Messaging;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -134,7 +135,7 @@ namespace UserInterface.ViewModel
         public HistoryEventsViewModel()
         {
             EventList = new ObservableCollection<EventViewModel>();
-            Refresh = new RelayCommand(ExecuteRefresh);
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -158,15 +159,16 @@ namespace UserInterface.ViewModel
 
         #region commands
 
-        public void ExecuteRefresh()
+        public async Task ExecuteRefresh()
         {
             try
             {
                 var si = SelectedItem;
 
                 var el = EventList;
+                var evs = await _warehouse.DBService.GetEvents(DateFrom.TimeStamp, DateTo.TimeStamp, Severity, Type);
                 el.Clear();
-                foreach (var e in _warehouse.DBService.GetEvents(DateFrom.TimeStamp, DateTo.TimeStamp, Severity, Type))
+                foreach (var e in evs)
                     el.Add( new EventViewModel { Event = e });
                 EventList = el;
                 

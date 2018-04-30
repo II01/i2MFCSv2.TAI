@@ -10708,6 +10708,33 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrator.
+        /// </summary>
+        public static string EnumUserAccessLevel_Admin {
+            get {
+                return ResourceManager.GetString("EnumUserAccessLevel_Admin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operator.
+        /// </summary>
+        public static string EnumUserAccessLevel_Operator {
+            get {
+                return ResourceManager.GetString("EnumUserAccessLevel_Operator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Super user.
+        /// </summary>
+        public static string EnumUserAccessLevel_SuperUser {
+            get {
+                return ResourceManager.GetString("EnumUserAccessLevel_SuperUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active.
         /// </summary>
         public static string EnumWMSOrderStatus_Active {
@@ -10929,6 +10956,15 @@ namespace UserInterface.Properties {
         public static string ERR_NOLOCATION {
             get {
                 return ResourceManager.GetString("ERR_NOLOCATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not warehouse location.
+        /// </summary>
+        public static string ERR_NOTWH {
+            get {
+                return ResourceManager.GetString("ERR_NOTWH", resourceCulture);
             }
         }
         

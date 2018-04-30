@@ -69,7 +69,7 @@
                 <scada:UCSegment Canvas.Left="1206" Canvas.Top="0" Width="80" Height="74"
                                DataContext="{Binding Device[T]}"/>
                 <!-- Segment T01 -->
-                <scada:UCSegment Canvas.Left="1595" Canvas.Top="00" Width="305" Height="213"
+                <scada:UCSegment Canvas.Left="1596" Canvas.Top="69" Width="154" Height="145"
                                  DataContext="{Binding Device[T01]}"/>
                 <Ellipse Canvas.Left="1747" Canvas.Top="-7" Width="84"  Height="84" Stroke="SkyBlue" StrokeThickness="1"  />
                 <scada:UCConveyor Canvas.Left="1820" Canvas.Top="5" Sensor1Visibility="Visible"/>

@@ -13,6 +13,7 @@ using WCFClients;
 using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using DatabaseWMS;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -176,7 +177,7 @@ namespace UserInterface.ViewModel
             EditEnabled = false;
             EnabledCC = false;
 
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -205,13 +206,14 @@ namespace UserInterface.ViewModel
 
         #region commands
 
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 int? erpid = Selected?.ERPID;
+                var cmderps = await _dbservicewms.GetCommandERPs(DateFrom.TimeStamp, DateTo.TimeStamp, -1);
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetCommandERPs(DateFrom.TimeStamp, DateTo.TimeStamp, -1))
+                foreach (var p in cmderps)
                     DataList.Add(new CommandERPViewModel
                     {
                         ID = p.ID,

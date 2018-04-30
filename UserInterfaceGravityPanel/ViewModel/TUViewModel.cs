@@ -11,7 +11,8 @@ namespace UserInterfaceGravityPanel.ViewModel
         private string _subOrderName;
         private SolidColorBrush _subOrderBrush;
         private string _SKUID;
-        private string _SKUBatch;
+        private string _SKUBatch1;
+        private string _SKUBatch2;
         private double _SKUQty;
         #endregion
 
@@ -76,15 +77,27 @@ namespace UserInterfaceGravityPanel.ViewModel
                 }
             }
         }
-        public string SKUBatch
+        public string SKUBatch1
         {
-            get { return _SKUBatch; }
+            get { return _SKUBatch1; }
             set
             {
-                if (_SKUBatch != value)
+                if (_SKUBatch1 != value)
                 {
-                    _SKUBatch = value;
-                    RaisePropertyChanged("SKUBatch");
+                    _SKUBatch1 = value;
+                    RaisePropertyChanged("SKUBatch1");
+                }
+            }
+        }
+        public string SKUBatch2
+        {
+            get { return _SKUBatch2; }
+            set
+            {
+                if (_SKUBatch2 != value)
+                {
+                    _SKUBatch2 = value;
+                    RaisePropertyChanged("SKUBatch2");
                 }
             }
         }

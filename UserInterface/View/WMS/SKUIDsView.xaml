@@ -57,17 +57,22 @@
             AutoGenerateColumns="False" 
             IsReadOnly="True"
             FontSize="{StaticResource BaseFontSize}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged" >
+                    <i:InvokeCommandAction Command="{Binding RefreshTUs}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
                                     Width="*" Binding="{Binding ID}"   dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Description}" 
-                                    Width="*" Binding="{Binding Description}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding Description}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=DefaultQty}" 
                                     Width="*" Binding="{Binding DefaultQty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Unit}" 
                                     Width="*" Binding="{Binding Unit}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Weight}" 
-                                    Width="*" Binding="{Binding Weight}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Weight}" 
+                                    Width="*" Binding="{Binding Weight}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=FrequencyClass}" 
                                     Width="*" Binding="{Binding FrequencyClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>

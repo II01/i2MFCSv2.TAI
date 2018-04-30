@@ -12,6 +12,7 @@ using Database;
 using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -181,7 +182,7 @@ namespace UserInterface.ViewModel
                 _devices.AddRange(_warehouse.CraneList.ConvertAll(n => n.Name));
                 _devices.Sort();
 
-                Refresh = new RelayCommand(() => ExecuteRefresh(), CanExecuteRefresh);
+                Refresh = new RelayCommand(async () => await ExecuteRefresh(), CanExecuteRefresh);
                 Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
                 Create = new RelayCommand(() => ExecuteCreate(), CanExecuteCreate);
                 Move = new RelayCommand(() => ExecuteMove(), CanExecuteMove);
@@ -207,7 +208,7 @@ namespace UserInterface.ViewModel
 */
                 DetailedPlace.Initialize(_warehouse);
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -219,13 +220,14 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 MaterialViewModel c = SelectedPlace;
+                var mats = await _warehouse.DBService.GetPlaces(_excludeWout);
                 PlaceList.Clear();
-                foreach (var p in _warehouse.DBService.GetPlaces(_excludeWout))
+                foreach (var p in mats)
                     PlaceList.Add(new MaterialViewModel { Location = p.Place1, ID = p.Material });
                 foreach (var mvm in PlaceList)
                     mvm.Initialize(_warehouse);
@@ -464,13 +466,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is MaterialsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

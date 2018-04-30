@@ -11,6 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using WCFClients;
 using UserInterface.DataServiceWMS;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -72,7 +73,7 @@ namespace UserInterface.ViewModel
         #region initialization
         public LogsViewModel()
         {
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -95,7 +96,7 @@ namespace UserInterface.ViewModel
                     l.Initialize(_warehouse);
 */
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -106,13 +107,14 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 int? id = Selected?.ID;
+                var logs = await _dbservicewms.GetLogs();
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetLogs())
+                foreach (var p in logs)
                     DataList.Add(new LogViewModel
                     {
                         ID = p.ID,
@@ -133,13 +135,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is LogsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

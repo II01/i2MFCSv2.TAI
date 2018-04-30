@@ -231,7 +231,7 @@ namespace UserInterface.ViewModel
                 Records = 0;
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
-                Messenger.Default.Register<MessageViewChanged>(this, async (vm) => await ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, (vm) => ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -267,7 +267,8 @@ namespace UserInterface.ViewModel
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
                     {
-                        ERPID = p.ERPIDStokbar,
+                        ERPID = p.ERPID,
+                        ERPIDref = p.ERPIDStokbar,
                         OrderID = p.OrderID,
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
@@ -277,6 +278,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataListOrder)
                     l.Initialize(_warehouse);
+                Records = DataListOrder.Count();
                 if (orderid != null)
                     SelectedOrder = DataListOrder.FirstOrDefault(p => p.ERPID == erpid && p.OrderID == orderid);
             }
@@ -364,13 +366,13 @@ namespace UserInterface.ViewModel
         }
 
         #endregion
-        public async Task ExecuteViewActivated(ViewModelBase vm)
+        public void ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is HistoryReleaseOrdersViewModel)
                 {
-                    ; // await ExecuteRefresh();
+                    // ExecuteRefresh();
                 }
             }
             catch (Exception e)

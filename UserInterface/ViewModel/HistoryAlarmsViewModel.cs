@@ -11,6 +11,7 @@ using System.Windows.Data;
 using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using Database;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -135,7 +136,7 @@ namespace UserInterface.ViewModel
         public HistoryAlarmsViewModel()
         {
             AlarmList = new ObservableCollection<AlarmViewModel>();
-            Refresh = new RelayCommand(ExecuteRefresh);
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -159,15 +160,16 @@ namespace UserInterface.ViewModel
 
         #region commands
 
-        public void ExecuteRefresh()
+        public async Task ExecuteRefresh()
         {
             try
             {
                 var si = SelectedItem;
 
                 var al = AlarmList;
+                var als = await _warehouse.DBService.GetAlarms(DateFrom.TimeStamp, DateTo.TimeStamp, Unit, ID, Status);
                 al.Clear();
-                foreach (var a in _warehouse.DBService.GetAlarms(DateFrom.TimeStamp, DateTo.TimeStamp, Unit, ID, Status))
+                foreach (var a in als)
                 {
                     al.Add(new AlarmViewModel
                     {

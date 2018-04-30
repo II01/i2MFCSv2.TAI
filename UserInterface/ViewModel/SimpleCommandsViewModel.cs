@@ -10,6 +10,7 @@ using System.Diagnostics;
 using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using System.Collections;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -154,7 +155,7 @@ namespace UserInterface.ViewModel
 
             SelectedContent = null;
 
-            RefreshCmd = new RelayCommand(() => ExecuteRefreshCommand());
+            RefreshCmd = new RelayCommand(async () => await ExecuteRefreshCommand());
             ConveyorCmd = new RelayCommand(() => ExecuteConveyorCommand(), CanExecuteConveyorCommand);
             CraneCmd = new RelayCommand(() => ExecuteCraneCommand(), CanExecuteCraneCommand);
             SegmentCmd = new RelayCommand(() => ExecuteSegmentCommand(), CanExecuteSegmentCommand);
@@ -175,7 +176,7 @@ namespace UserInterface.ViewModel
                 });
 
             Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
-            Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+            Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -197,13 +198,14 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
-        private void ExecuteRefreshCommand()
+        private async Task ExecuteRefreshCommand()
         {
             try
             {
                 SimpleCommandViewModel sc = SelectedContent;
+                var scmds = await _warehouse.DBService.GetSimpleCommands(null, SimpleCommand.EnumStatus.InPlc, DateTime.Now.AddMinutes(-30), DateTime.Now);
                 SimpleCommandList.Clear();
-                foreach (var s in _warehouse.DBService.GetSimpleCommands(null, SimpleCommand.EnumStatus.InPlc, DateTime.Now.AddMinutes(-30), DateTime.Now))
+                foreach (var s in scmds)
                 {
                     if (s is SimpleCraneCommand)
                         SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandCraneViewModel { Command = s });
@@ -510,13 +512,13 @@ namespace UserInterface.ViewModel
         }
 
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is SimpleCommandsViewModel)
                 {
-                    ExecuteRefreshCommand();
+                    await ExecuteRefreshCommand();
                 }
             }
             catch (Exception e)

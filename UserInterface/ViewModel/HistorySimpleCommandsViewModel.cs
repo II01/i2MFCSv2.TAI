@@ -9,6 +9,7 @@ using Warehouse.Model;
 using System.Diagnostics;
 using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -97,7 +98,7 @@ namespace UserInterface.ViewModel
         public HistorySimpleCommandsViewModel()
         {
             SelectedContent = null;
-            RefreshCmd = new RelayCommand(() => ExecuteRefreshCommand());
+            RefreshCmd = new RelayCommand(async () => await ExecuteRefreshCommand());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -123,13 +124,14 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
-        private void ExecuteRefreshCommand()
+        private async Task ExecuteRefreshCommand()
         {
             try
             {
                 SimpleCommandViewModel sc = SelectedContent;
+                var scmds = await _warehouse.DBService.GetSimpleCommands(null, SimpleCommand.EnumStatus.Finished, DateFrom.TimeStamp, DateTo.TimeStamp);
                 SimpleCommandList.Clear();
-                foreach (var s in _warehouse.DBService.GetSimpleCommands(null, SimpleCommand.EnumStatus.Finished, DateFrom.TimeStamp, DateTo.TimeStamp))
+                foreach (var s in scmds)
                 {
                     if (s is SimpleCraneCommand)
                         SimpleCommandList.Add((SimpleCommandViewModel)new SimpleCommandCraneViewModel { Command = s });

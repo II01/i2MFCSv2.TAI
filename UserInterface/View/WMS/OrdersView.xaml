@@ -4,6 +4,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         mc:Ignorable="d"
@@ -50,6 +51,11 @@
             AutoGenerateColumns="False" 
             IsReadOnly="True"
             FontSize="{StaticResource BaseFontSize}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged" >
+                    <i:InvokeCommandAction Command="{Binding RefreshSubOrders}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ERPID}" 
                                     Width="*" Binding="{Binding ERPIDRef}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>

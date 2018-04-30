@@ -70,8 +70,8 @@
                     </MultiBinding>
                 </Button.IsEnabled>
             </Button>
-            <TextBlock Grid.RowSpan="2" Grid.Column="4" VerticalAlignment="Bottom" Text="{Resx Records}" Margin="0,0,0,-12"/>
-            <TextBlock Grid.RowSpan="2" Grid.Column="5" VerticalAlignment="Bottom" Text="{Binding Records}" Margin="5,0,0,-12"/>
+            <TextBlock Grid.RowSpan="2" Grid.Column="4" VerticalAlignment="Bottom" Text="{Resx Records}" Margin="0,0,0,-28"/>
+            <TextBlock Grid.RowSpan="2" Grid.Column="5" VerticalAlignment="Bottom" Text="{Binding Records}" Margin="5,0,0,-28"/>
         </Grid>
         <TextBlock Grid.Row="2" Grid.ColumnSpan="2" Margin="0,0,0,0" Text="{Resx Orders}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         <DataGrid Grid.Row="3" Margin="0,0,0,0" Grid.ColumnSpan="3"
@@ -94,7 +94,7 @@
             </i:Interaction.Triggers>
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ERPID}" 
-                                Width="*" Binding="{Binding ERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="*" Binding="{Binding ERPIDref}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=OrderID}" 
                                 Width="*" Binding="{Binding OrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Destination}" 

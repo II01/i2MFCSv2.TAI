@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Resources;
 using System.Threading;
 using UserInterfaceGravityPanel.DataServiceWMS;
+using System.Threading.Tasks;
 
 namespace UserInterfaceGravityPanel.ViewModel
 {
@@ -213,11 +214,6 @@ namespace UserInterfaceGravityPanel.ViewModel
                 _refreshfailed = rs.GetString("RefreshFailed");
                 _details = rs.GetString("Details");
 
-                // timer
-                _timer = new DispatcherTimer(DispatcherPriority.Render) { Interval = TimeSpan.FromSeconds(1) };
-                _timer.Tick += new EventHandler(OnTimer);
-                _timer.Start();
-
                 // db
                 _dbservicewms = new DBServiceWMS();
 
@@ -229,6 +225,11 @@ namespace UserInterfaceGravityPanel.ViewModel
 
                 ErrorVisibility = Visibility.Hidden;
                 ErrorMessage = "";
+
+                // timer
+                _timer = new DispatcherTimer(DispatcherPriority.Render) { Interval = TimeSpan.FromSeconds(1) };
+                _timer.Tick += new EventHandler(OnTimer);
+                _timer.Start();
             }
             catch (Exception ex)
             {
@@ -243,14 +244,14 @@ namespace UserInterfaceGravityPanel.ViewModel
             OnClose = new RelayCommand(() => ExecuteOnClose());
         }
 
-        private void OnTimer(object state, EventArgs e)
+        private async void OnTimer(object state, EventArgs e)
         {
             try
             {
                 CurrentTime = string.Format("{0} {1}", DateTime.Now.ToShortDateString(), DateTime.Now.ToLongTimeString());
                 if (DateTime.Now.Second % 5 == _ramp - 1) // each panel starts at different time (if clocks are in sync)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                     ErrorVisibility = Visibility.Hidden;
                     ErrorMessage = "";
                 }
@@ -262,14 +263,14 @@ namespace UserInterfaceGravityPanel.ViewModel
             }
         }
 
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 var order = _dbservicewms.GetCurrentOrderForRamp(_ramp);
                 var suborder = _dbservicewms.GetCurrentSubOrderForRamp(_ramp);
-                var orderCount = _dbservicewms.GetCurrentOrderActivity(order);
-                var suborderCount = _dbservicewms.GetCurrentSubOrderActivity(suborder);
+                var orderCount = await _dbservicewms.GetCurrentOrderActivity(order);
+                var suborderCount = await _dbservicewms.GetCurrentSubOrderActivity(suborder);
 
                 // orderviewmodel
                 OrderInfo.ERPID = "";
@@ -334,7 +335,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                             if (l.SKU != null)
                             {
                                 last.SKUID = l.SKU.SKU;
-                                last.SKUBatch = l.SKU.SKUBatch;
+                                last.SKUBatch1 = l.SKU.SKUBatch;
                                 last.SKUQty = l.SKU.SKUQty;
                             }
                             if (l.Suborder != null)

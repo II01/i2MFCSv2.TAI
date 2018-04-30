@@ -11,6 +11,7 @@ using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using WCFClients;
 using UserInterface.DataServiceWMS;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -113,7 +114,7 @@ namespace UserInterface.ViewModel
         #region initialization
         public HistoryLogsViewModel()
         {
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -140,13 +141,14 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 int? id = Selected?.ID;
+                var logs = await _dbservicewms.GetLogs(DateFrom.TimeStamp, DateTo.TimeStamp);
                 DataList.Clear();
-                foreach (var p in _dbservicewms.GetLogs(DateFrom.TimeStamp, DateTo.TimeStamp))
+                foreach (var p in logs)
                     DataList.Add(new LogViewModel
                     {
                         ID = p.ID,

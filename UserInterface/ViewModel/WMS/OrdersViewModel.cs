@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using UserInterface.DataServiceWMS;
 using UserInterface.Messages;
 using UserInterface.Services;
@@ -33,10 +34,13 @@ namespace UserInterface.ViewModel
         private DBServiceWMS _dbservicewms;
         private int _accessLevel;
         private string _accessUser;
+        int _suborderid;
+        int _skuid;
         #endregion
 
         #region properites
         public RelayCommand Refresh { get; private set; }
+        public RelayCommand RefreshSubOrders { get; private set; }        
         public RelayCommand AddOrder { get; private set; }
         public RelayCommand EditOrder { get; private set; }
         public RelayCommand DeleteOrder { get; private set; }
@@ -243,7 +247,7 @@ namespace UserInterface.ViewModel
 
             _selectedCommand = CommandType.None;
 
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
             AddOrder = new RelayCommand(() => ExecuteAddOrder(), CanExecuteAddOrder);
             EditOrder = new RelayCommand(() => ExecuteEditOrder(), CanExecuteEditOrder);
             DeleteOrder = new RelayCommand(() => ExecuteDeleteOrder(), CanExecuteDeleteOrder);
@@ -254,7 +258,7 @@ namespace UserInterface.ViewModel
             EditSKU = new RelayCommand(() => ExecuteEditSKU(), CanExecuteEditSKU);
             DeleteSKU = new RelayCommand(() => ExecuteDeleteSKU(), CanExecuteDeleteSKU);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
-            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
+            Confirm = new RelayCommand(async () => await ExecuteConfirm(), CanExecuteConfirm);
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -268,7 +272,7 @@ namespace UserInterface.ViewModel
                 DataListSKU = new ObservableCollection<OrderViewModel>();
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -703,7 +707,7 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteConfirm()
+        private async Task ExecuteConfirm()
         {
             int orderid, suborderid;
             string skuid;
@@ -719,7 +723,7 @@ namespace UserInterface.ViewModel
                         case CommandType.AddOrder:
                             _dbservicewms.AddOrder(Detailed.Order);
                             orderid = Detailed.OrderID;
-                            ExecuteRefresh();
+                            await ExecuteRefresh();
                             SelectedOrder = DataListOrder.FirstOrDefault(p => p.OrderID == orderid);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add order: {Detailed.Order.ToString()}");
                             break;
@@ -739,13 +743,13 @@ namespace UserInterface.ViewModel
                         case CommandType.DeleteOrder:
                             _dbservicewms.DeleteOrders(SelectedOrder.ERPID, SelectedOrder.OrderID);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete order: {Detailed.Order.ToString()}");
-                            ExecuteRefresh();
+                            await ExecuteRefresh();
                             break;
                         case CommandType.AddSubOrder:
                             _dbservicewms.AddOrder(Detailed.Order);
                             orderid = Detailed.OrderID;
                             suborderid = Detailed.SubOrderID;
-                            ExecuteRefresh();
+                            await ExecuteRefresh();
                             SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add suborder: {Detailed.Order.ToString()}");
                             break;
@@ -766,7 +770,7 @@ namespace UserInterface.ViewModel
                         case CommandType.DeleteSubOrder:
                             _dbservicewms.DeleteSubOrders(Detailed.ERPID, Detailed.OrderID, Detailed.SubOrderID);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete suborder: {Detailed.Order.ToString()}");
-                            ExecuteRefresh();
+                            await ExecuteRefresh();
                             break;
                         case CommandType.AddSKU:
                             if (Detailed.Order.SubOrderName == null)
@@ -776,7 +780,7 @@ namespace UserInterface.ViewModel
                             suborderid = Detailed.SubOrderID;
                             skuid = Detailed.SKUID;
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add SKU: {Detailed.Order.ToString()}");
-                            ExecuteRefresh();
+                            await ExecuteRefresh();
                             SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid);
                             SelectedSKU = DataListSKU.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid && p.SKUID == skuid);
                             break;
@@ -790,7 +794,7 @@ namespace UserInterface.ViewModel
                         case CommandType.DeleteSKU:
                             _dbservicewms.DeleteSKU(Detailed.Order);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete SKU: {Detailed.Order.ToString()}");
-                            ExecuteRefresh();
+                            await ExecuteRefresh();
                             break;
                         default:
                             break;
@@ -827,30 +831,17 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 int? erpid= SelectedOrder == null ? -1 : SelectedOrder.ERPID;
                 int orderid = SelectedOrder == null ? -1 : SelectedOrder.OrderID;
-                int suborderid = SelectedSubOrder == null ? -1 : SelectedSubOrder.SubOrderID;
-                int skuid = SelectedSKU == null ? -1 : SelectedSKU.ID;
-                ExecuteRefreshOrder();
+                _suborderid = SelectedSubOrder == null ? -1 : SelectedSubOrder.SubOrderID;
+                _skuid = SelectedSKU == null ? -1 : SelectedSKU.ID;
+                await ExecuteRefreshOrder();
                 if (orderid != -1)
-                {
                     SelectedOrder = DataListOrder.FirstOrDefault(p => p.ERPID == erpid && p.OrderID == orderid);
-                    if (SelectedOrder != null)
-                    {
-                        if (suborderid != -1)
-                            SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.SubOrderID == suborderid);
-                        if(SelectedSubOrder == null)
-                            SelectedSubOrder = DataListSubOrder.FirstOrDefault();
-                        if (skuid != -1)
-                            SelectedSKU = DataListSKU.FirstOrDefault(p => p.ID == skuid);
-                        if(SelectedSKU == null)
-                            SelectedSKU = DataListSKU.FirstOrDefault();
-                    }
-                }
             }
             catch (Exception e)
             {
@@ -858,12 +849,13 @@ namespace UserInterface.ViewModel
                                     string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        private void ExecuteRefreshOrder()
+        private async Task ExecuteRefreshOrder()
         {
             try
             {
+                var orders = await _dbservicewms.GetOrdersDistinct(DateTime.Now.AddDays(-1), DateTime.MaxValue, (int)EnumWMSOrderStatus.ReadyToTake);
                 DataListOrder.Clear();
-                foreach (var p in _dbservicewms.GetOrdersDistinct(DateTime.Now.AddDays(-1), DateTime.MaxValue, (int)EnumWMSOrderStatus.ReadyToTake))
+                foreach (var p in orders)
                     DataListOrder.Add(new OrderViewModel
                     {
                         ID = 0,
@@ -913,6 +905,14 @@ namespace UserInterface.ViewModel
                         });
                     foreach (var l in DataListOrder)
                         l.Initialize(_warehouse);
+                    if (SelectedOrder != null)
+                    {
+                        if (_suborderid != -1)
+                            SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.SubOrderID == _suborderid);
+                        if (SelectedSubOrder == null)
+                            SelectedSubOrder = DataListSubOrder.FirstOrDefault();
+                    }
+                    ExecuteRefreshSKU();
                 }
             }
             catch (Exception e)
@@ -946,6 +946,10 @@ namespace UserInterface.ViewModel
                         });
                     foreach (var l in DataListOrder)
                         l.Initialize(_warehouse);
+                    if (_skuid != -1)
+                        SelectedSKU = DataListSKU.FirstOrDefault(p => p.ID == _skuid);
+                    if (SelectedSKU == null)
+                        SelectedSKU = DataListSKU.FirstOrDefault();
                 }
             }
             catch (Exception e)
@@ -955,13 +959,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is OrdersViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)

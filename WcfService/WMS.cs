@@ -38,7 +38,7 @@ namespace WcfService
                                     dc.MaterialIDs.Add(new MaterialID { ID = c.TU_ID, Size = 1, Weight = 1 });
                                 dc.Commands.Add(new CommandMaterial
                                 {
-                                    WMS_ID = c.Order_ID,
+                                    WMS_ID = c.Order_ID, 
                                     Source = c.Source,
                                     Target = c.Target,
                                     Info = "WMS",

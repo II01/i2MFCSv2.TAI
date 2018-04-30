@@ -4314,4 +4314,16 @@
   <data name="ERR_USER" xml:space="preserve">
     <value>Uyumsuz Kullanıcı Adı</value>
   </data>
+  <data name="ERR_NOTWH" xml:space="preserve">
+    <value>Depoda Yer Yok</value>
+  </data>
+  <data name="EnumUserAccessLevel_Admin" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="EnumUserAccessLevel_Operator" xml:space="preserve">
+    <value>Operatör</value>
+  </data>
+  <data name="EnumUserAccessLevel_SuperUser" xml:space="preserve">
+    <value>Yönetici</value>
+  </data>
 </root>

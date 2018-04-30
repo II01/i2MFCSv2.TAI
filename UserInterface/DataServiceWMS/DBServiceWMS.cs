@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Database;
 using DatabaseWMS;
@@ -29,7 +27,7 @@ namespace UserInterface.DataServiceWMS
             EventLog = w;
         }
 
-        public List<SKU_ID> GetSKUIDs()
+        public async Task<List<SKU_ID>> GetSKUIDs()
         {
             try
             {
@@ -37,7 +35,7 @@ namespace UserInterface.DataServiceWMS
                 {
                     var l = from p in dc.SKU_ID
                             select p;
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -196,7 +194,7 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<PlaceTUID> GetPlaceTUIDs(bool excludeWout)
+        public async Task<List<PlaceTUID>> GetPlaceTUIDs(bool excludeWout)
         {
             try
             {
@@ -214,7 +212,7 @@ namespace UserInterface.DataServiceWMS
                                 Blocked = t.Blocked,
                                 TimeStamp = p.Time
                             };
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -265,7 +263,7 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<TUs> GetAvailableTUs(string skuid)
+        public async Task<List<TUs>> GetAvailableTUs(string skuid)
         {
             try
             {
@@ -277,7 +275,7 @@ namespace UserInterface.DataServiceWMS
                             where p.PlaceID != "W:out" && !p.PlaceID.StartsWith("W:32")
                             orderby new { t.Batch, t.SKU_ID }
                             select t;
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -474,7 +472,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<OrderReduction> GetOrdersDistinct(DateTime timeFrom, DateTime timeTo, int statusLessOrEqual)
+        public async Task<List<OrderReduction>> GetOrdersDistinct(DateTime timeFrom, DateTime timeTo, int statusLessOrEqual)
         {
             try
             {
@@ -495,7 +493,7 @@ namespace UserInterface.DataServiceWMS
                                 ReleaseTime = grpO.FirstOrDefault().ReleaseTime,
                                 Status = grpO.Any(p => p.Status > (int)EnumWMSOrderStatus.Waiting) ? grpO.Where(p => p.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Status) : 0
                             };
-                    return l.ToList();
+                    return await l.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -588,6 +586,12 @@ namespace UserInterface.DataServiceWMS
                         o.Destination = order.Destination;
                         o.ReleaseTime = order.ReleaseTime;
                         o.Status = order.Status;
+                    }
+                    if(erpid != null && order.Status == (int)EnumWMSOrderStatus.Cancel)
+                    {
+                        var ec = dc.CommandERPs.Find(order.ERP_ID);
+                        if(ec != null)
+                            ec.Status = (int)EnumCommandERPStatus.Canceled;
                     }
                     dc.SaveChanges();
                 }
@@ -819,7 +823,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<CommandERPs> GetCommandERPs(DateTime timeFrom, DateTime timeTo,  int statusLessOrEqual)
+        public async Task<List<CommandERPs>> GetCommandERPs(DateTime timeFrom, DateTime timeTo,  int statusLessOrEqual)
         {
             try
             {
@@ -829,7 +833,7 @@ namespace UserInterface.DataServiceWMS
                                  where c.Status <= statusLessOrEqual || (c.Time >= timeFrom && c.Time <= timeTo)
                                  orderby c.ID descending
                                  select c).Take(5000);
-                    return items.ToList();
+                    return await items.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1080,7 +1084,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<CommandWMSOrder> GetCommandOrders(DateTime dateFrom, DateTime dateTo, int statusLessOrEqual)
+        public async Task<List<CommandWMSOrder>> GetCommandOrders(DateTime dateFrom, DateTime dateTo, int statusLessOrEqual)
         {
             try
             {
@@ -1105,7 +1109,7 @@ namespace UserInterface.DataServiceWMS
                                      OrderSKUID = c.Order_ID.HasValue ? c.Orders.SKU_ID : "",
                                      OrderSKUBatch = c.Order_ID.HasValue ? c.Orders.SKU_Batch : ""
                                  }).Take(5000);
-                    return items.ToList();
+                    return await items.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1114,21 +1118,21 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<PlaceDiff> PlaceWMSandMFCSDiff()
+        public async Task<List<PlaceDiff>> PlaceWMSandMFCSDiff()
         {
             try
             {
                 using (var dcw = new EntitiesWMS())
                 using (var dcm = new MFCSEntities())
                 {
-                    var itemsw = (from pw in dcw.Places
-                                  select new PlaceDiff{ TUID = pw.TU_ID, PlaceWMS = pw.PlaceID, TimeWMS = pw.Time}).ToList();
-                    var itemsm = (from pm in dcm.Places
-                                  select new PlaceDiff{ TUID = pm.Material, PlaceMFCS = pm.Place1, TimeMFCS = pm.Time}).ToList();
+                    var itemsw = await (from pw in dcw.Places
+                                  select new PlaceDiff{ TUID = pw.TU_ID, PlaceWMS = pw.PlaceID, TimeWMS = pw.Time}).ToListAsync();
+                    var itemsm = await (from pm in dcm.Places
+                                  select new PlaceDiff{ TUID = pm.Material, PlaceMFCS = pm.Place1, TimeMFCS = pm.Time}).ToListAsync();
                     var itemsu = itemsw.Union(itemsm);
                     var items = itemsu.Select(p => p.TUID).Distinct();
 
-                    var listd = (from i in items
+                    var itemsd = from i in items
                                  join iw in itemsw on i equals iw.TUID into joinw
                                  from jw in joinw.DefaultIfEmpty()
                                  join im in itemsm on i equals im.TUID into joinm
@@ -1141,8 +1145,8 @@ namespace UserInterface.DataServiceWMS
                                      PlaceMFCS = jm?.PlaceMFCS,
                                      TimeWMS = jw?.TimeWMS,
                                      TimeMFCS = jm?.TimeMFCS,
-                                 }).ToList();
-                    return listd;
+                                 };
+                    return itemsd.ToList();
                 }
             }
             catch (Exception e)
@@ -1169,13 +1173,13 @@ namespace UserInterface.DataServiceWMS
                             dcm.Places.Remove(place);
                             AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, delete TU: |{place.Place1}|{place.Material:d9}|");
                         }
-                        if (l.PlaceWMS != null && l.PlaceWMS.StartsWith("W"))
+                        if (l.PlaceWMS != null && l.PlaceWMS.StartsWith("W") && l.PlaceWMS != "W:out")
                         {
                             dcm.Places.Add(new Place { Material = l.TUID, Place1 = l.PlaceWMS, Time = DateTime.Now });
                             AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add TU: |{l.PlaceWMS}|{l.TUID:d9}|");
                         }
+                        dcm.SaveChanges();
                     }
-                    dcm.SaveChanges();
                 }
             }
             catch (Exception e)
@@ -1218,7 +1222,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<Logs> GetLogs()
+        public async Task<List<Logs>> GetLogs()
         {
             try
             {
@@ -1227,7 +1231,7 @@ namespace UserInterface.DataServiceWMS
                     var items = (from l in dcw.Logs
                                  orderby l.ID descending
                                  select l).Take(1000);
-                    return items.ToList();
+                    return await items.ToListAsync();
                 }
             }
             catch (Exception e)
@@ -1235,7 +1239,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public List<Logs> GetLogs(DateTime dateFrom, DateTime dateTo)
+        public async Task<List<Logs>> GetLogs(DateTime dateFrom, DateTime dateTo)
         {
             try
             {
@@ -1245,7 +1249,7 @@ namespace UserInterface.DataServiceWMS
                                  where l.Time >= dateFrom && l.Time <= dateTo
                                  orderby l.ID descending
                                  select l).Take(5000);
-                    return items.ToList();
+                    return await items.ToListAsync();
                 }
             }
             catch (Exception e)

@@ -9,7 +9,5 @@ namespace UserInterface.DataServiceWMS
 {
     interface IDBServiceWMS
     {
-        List<SKU_ID> GetSKUIDs();
-        SKU_ID FindSKUID(string skuid);
     }
 }

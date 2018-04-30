@@ -10,6 +10,7 @@ using System.Diagnostics;
 using Database;
 using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -117,7 +118,7 @@ namespace UserInterface.ViewModel
         #region intialization    
         public HistoryMovementsViewModel()
         {
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -141,13 +142,14 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
                 MovementViewModel sm = SelectedMovement;
+                var moves = await _warehouse.DBService.GetMovements(DateFrom.TimeStamp, DateTo.TimeStamp, Location, TransportUnit);
                 MovementList.Clear();
-                foreach(var m in _warehouse.DBService.GetMovements(DateFrom.TimeStamp, DateTo.TimeStamp, Location, TransportUnit))
+                foreach(var m in moves)
                     MovementList.Add( new MovementViewModel { Movement = m});
                 if( sm != null)
                     SelectedMovement = MovementList.FirstOrDefault(p => p.ID == sm.ID);

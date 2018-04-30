@@ -4314,4 +4314,16 @@
   <data name="ERR_OCCUPIED" xml:space="preserve">
     <value>Location already occupied</value>
   </data>
+  <data name="ERR_NOTWH" xml:space="preserve">
+    <value>Not warehouse location</value>
+  </data>
+  <data name="EnumUserAccessLevel_Admin" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="EnumUserAccessLevel_Operator" xml:space="preserve">
+    <value>Operator</value>
+  </data>
+  <data name="EnumUserAccessLevel_SuperUser" xml:space="preserve">
+    <value>Super user</value>
+  </data>
 </root>

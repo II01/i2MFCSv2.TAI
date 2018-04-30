@@ -53,9 +53,9 @@
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <Label  Grid.Row="4" Grid.Column="1"
                 Content="{x:Static props:Resources.SKUBatch}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  Grid.Row="5" Grid.Column="1"
+            <Label  Grid.Row="5" Grid.Column="1" 
                 Content="{x:Static props:Resources.SKUQty}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
@@ -76,8 +76,8 @@
                 Text="{Binding SKUID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <TextBlock  Grid.Row="4" Grid.Column="3"
-                Text="{Binding SKUBatch}" 
+            <TextBlock  Grid.Row="4" Grid.Column="3" Height="Auto" TextWrapping="Wrap"
+                Text="{Binding SKUBatch1}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <TextBlock  Grid.Row="5" Grid.Column="3"

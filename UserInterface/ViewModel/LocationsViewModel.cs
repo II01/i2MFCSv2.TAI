@@ -10,6 +10,7 @@ using System.Diagnostics;
 using GalaSoft.MvvmLight.Messaging;
 using UserInterface.Messages;
 using WCFClients;
+using System.Threading.Tasks;
 
 namespace UserInterface.ViewModel
 {
@@ -140,8 +141,8 @@ namespace UserInterface.ViewModel
 
             Edit = new RelayCommand(() => ExecuteEdit(), CanExecuteEdit);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
-            Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
-            Refresh = new RelayCommand(() => ExecuteRefresh());
+            Confirm = new RelayCommand(async () => await ExecuteConfirm(), CanExecuteConfirm);
+            Refresh = new RelayCommand(async () => await ExecuteRefresh());
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -157,7 +158,7 @@ namespace UserInterface.ViewModel
 */
                 DetailedLocation.Initialize(_warehouse);
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
-                Messenger.Default.Register<MessageViewChanged>(this, vm => ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageViewChanged>(this, async vm => await ExecuteViewActivated(vm.ViewModel));
             }
             catch (Exception e)
             {
@@ -225,7 +226,7 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteConfirm()
+        private async Task ExecuteConfirm()
         {
             bool rebuildRoute;
 
@@ -259,20 +260,7 @@ namespace UserInterface.ViewModel
                                                   DetailedLocation.Blocked,
                                                   DetailedLocation.Reserved));
                 if(SelectedLocation.ID != DetailedLocation.ID)
-                {
-                    try
-                    {
-                        LocationList.Clear();
-                        foreach (var p in _warehouse.DBService.GetPlaceIDs())
-                            LocationList.Add(new LocationViewModel { ID = p.ID, Size = p.Size, Blocked = p.Blocked, Reserved = p.Reserved });
-                        foreach (var l in LocationList)
-                            l.Initialize(_warehouse);
-                    }
-                    catch (Exception e)
-                    {
-                        _warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, e.Message);
-                    }
-                }
+                    await ExecuteRefresh();
 
             }
             catch (Exception e)
@@ -294,13 +282,14 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRefresh()
+        private async Task ExecuteRefresh()
         {
             try
             {
-                LocationViewModel sl = SelectedLocation; 
+                LocationViewModel sl = SelectedLocation;
+                var plcs = await _warehouse.DBService.GetPlaceIDs();
                 LocationList.Clear();
-                foreach (var p in _warehouse.DBService.GetPlaceIDs())
+                foreach (var p in plcs)
                     LocationList.Add(new LocationViewModel { ID = p.ID, Size = p.Size, Blocked = p.Blocked, Reserved = p.Reserved });
                 foreach (var l in LocationList)
                     l.Initialize(_warehouse);
@@ -314,13 +303,13 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
-        public void ExecuteViewActivated(ViewModelBase vm)
+        public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
                 if (vm is LocationsViewModel)
                 {
-                    ExecuteRefresh();
+                    await ExecuteRefresh();
                 }
             }
             catch (Exception e)
