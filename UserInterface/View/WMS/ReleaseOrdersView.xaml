@@ -185,7 +185,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Margin="0,0,0,0" Text="{Resx SKUs}" 
+            <TextBlock Grid.Column="0" Margin="0,0,0,0" Text="{Resx TUs}" 
                        FontSize="{StaticResource MidFontSize}" 
                        VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Medium"/>
             <TextBlock Grid.Column="1" Margin="0,0,10,0" Text="{Resx Selected}" 

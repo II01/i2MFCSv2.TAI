@@ -300,7 +300,7 @@ namespace UserInterface.ViewModel
                         {
                             case "TUID":
                                 if (TUID == 0 || _dbservicewms.FindPlaceByTUID(TUID) != null)
-                                    validationResult = ResourceReader.GetString("ERR_TUID");
+                                    validationResult = ResourceReader.GetString("ERR_MATERIALEXISTS");
                                 break;
                             case "PlaceID":
                                 var pid = _dbservicewms.FindPlaceID(PlaceID);

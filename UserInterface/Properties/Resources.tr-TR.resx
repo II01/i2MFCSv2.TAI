@@ -127,7 +127,7 @@
     <value>Komutlar</value>
   </data>
   <data name="Transport_units" xml:space="preserve">
-    <value>Taşıma Birimi</value>
+    <value>Paletler</value>
   </data>
   <data name="Extras" xml:space="preserve">
     <value>Ekstralar</value>
@@ -154,10 +154,10 @@
     <value>Ayarlar /Settings</value>
   </data>
   <data name="Execute_WMS_commands" xml:space="preserve">
-    <value>WMS komutu çalıştır</value>
+    <value>WMS modülü aktif</value>
   </data>
   <data name="Execute_MFCS_commands" xml:space="preserve">
-    <value>MFCS komutu çalıştır</value>
+    <value>WMS modülü aktif değil</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Başla</value>
@@ -229,7 +229,7 @@
     <value>Zaman</value>
   </data>
   <data name="TU" xml:space="preserve">
-    <value>TU</value>
+    <value>Palet</value>
   </data>
   <data name="Source" xml:space="preserve">
     <value>Kaynak</value>
@@ -250,7 +250,7 @@
     <value>Detaylı Basit Komut</value>
   </data>
   <data name="Cmd_TU" xml:space="preserve">
-    <value>Cmd TU</value>
+    <value>Cmd Palet</value>
   </data>
   <data name="Cmd_segment" xml:space="preserve">
     <value>Cmd Bölmesi</value>
@@ -283,13 +283,13 @@
     <value>Crane 3</value>
   </data>
   <data name="Shuttle4" xml:space="preserve">
-    <value>Yer Arabası 4</value>
+    <value>PAM 4</value>
   </data>
   <data name="Shuttle5" xml:space="preserve">
-    <value>Yer Arabası 5</value>
+    <value>PAM 5</value>
   </data>
   <data name="Timestamp" xml:space="preserve">
-    <value>Zaman işareti</value>
+    <value>Zaman İşareti</value>
   </data>
   <data name="Severity" xml:space="preserve">
     <value>Sıklık</value>
@@ -376,46 +376,46 @@
     <value>Araç Komutu</value>
   </data>
   <data name="ERR_NULL" xml:space="preserve">
-    <value>Database bağlantı Hatası</value>
+    <value>Veritabanı Bağlantı Hatası</value>
   </data>
   <data name="ERR_EXCEPTION" xml:space="preserve">
     <value>İstisnalar</value>
   </data>
   <data name="ERR_TASK" xml:space="preserve">
-    <value>Yanlış görev</value>
+    <value>Yanlış Görev</value>
   </data>
   <data name="ERR_MATERIALNOTEXISTS" xml:space="preserve">
-    <value>Palet depoda mevcut değil</value>
+    <value>Palet Depoda Mevcut Değil</value>
   </data>
   <data name="ERR_MATERIALEXISTS" xml:space="preserve">
-    <value>Palet depoda mevcut</value>
+    <value>Palet Depoda Mevcut</value>
   </data>
   <data name="ERR_LOCATION" xml:space="preserve">
     <value>Yanlış Yer</value>
   </data>
   <data name="ERR_ROUTE" xml:space="preserve">
-    <value>Rota mevcut değil</value>
+    <value>Rota Mevcut Değil</value>
   </data>
   <data name="ERR_PRIORITY" xml:space="preserve">
     <value>Yanlış öncelik</value>
   </data>
   <data name="ERR_RACKNOTOK" xml:space="preserve">
-    <value>Raf Adresi hatalı</value>
+    <value>Raf Adresi Hatalı</value>
   </data>
   <data name="WMS" xml:space="preserve">
     <value>WMS</value>
   </data>
   <data name="MFCS" xml:space="preserve">
-    <value>MFCS</value>
+    <value>WMS Yok</value>
   </data>
   <data name="Simple" xml:space="preserve">
-    <value>Sade</value>
+    <value>Basit</value>
   </data>
   <data name="ERR_TIME" xml:space="preserve">
-    <value>Yanlış Zaman formatı</value>
+    <value>Yanlış Zaman Formatı</value>
   </data>
   <data name="ERR_NOLOCATION" xml:space="preserve">
-    <value>Adres mevcut değil</value>
+    <value>Adres Mevcut Değil</value>
   </data>
   <data name="ERR_LOCATIONFULL" xml:space="preserve">
     <value>Dolu yer</value>
@@ -568,7 +568,7 @@
     <value>Malzeme Bilgi</value>
   </data>
   <data name="EnumCommandTUTask_Move" xml:space="preserve">
-    <value>Malzeme Hareket</value>
+    <value>Malzeme Hareketi</value>
   </data>
   <data name="EnumEventSeverity_Error" xml:space="preserve">
     <value>Hata</value>
@@ -598,7 +598,7 @@
     <value>Sil</value>
   </data>
   <data name="EnumMovementTask_Move" xml:space="preserve">
-    <value>HAreket</value>
+    <value>Hareket</value>
   </data>
   <data name="EnumSimpleCommandConveyorTask_Cancel" xml:space="preserve">
     <value>İptal</value>
@@ -631,10 +631,10 @@
     <value>Toplama</value>
   </data>
   <data name="EnumSimpleCommandSegmentTask_AutoOff" xml:space="preserve">
-    <value>Bölme kapalı</value>
+    <value>Bölme Kapalı</value>
   </data>
   <data name="EnumSimpleCommandSegmentTask_AutoOn" xml:space="preserve">
-    <value>Bölme açık</value>
+    <value>Bölme Açık</value>
   </data>
   <data name="EnumSimpleCommandSegmentTask_Info" xml:space="preserve">
     <value>Bilgi</value>
@@ -658,10 +658,10 @@
     <value>Yaz (WR)</value>
   </data>
   <data name="EnumSimpleCommandTask_AutoOff" xml:space="preserve">
-    <value>Bölme kapalı</value>
+    <value>Bölme Kapalı</value>
   </data>
   <data name="EnumSimpleCommandTask_AutoOn" xml:space="preserve">
-    <value>Bölme açık</value>
+    <value>Bölme Açık</value>
   </data>
   <data name="EnumSimpleCommandTask_Cancel" xml:space="preserve">
     <value>İptal</value>
@@ -688,7 +688,7 @@
     <value>Sıfırla</value>
   </data>
   <data name="ERR_RANGE" xml:space="preserve">
-    <value>Değer sınırlandırması</value>
+    <value>Değer Sınırlandırması</value>
   </data>
   <data name="LocationShort" xml:space="preserve">
     <value>L</value>
@@ -697,7 +697,7 @@
     <value>Mode</value>
   </data>
   <data name="SM" xml:space="preserve">
-    <value>Durum makinesi</value>
+    <value>Makine Durumu</value>
   </data>
   <data name="StateMachineShort" xml:space="preserve">
     <value>S</value>
@@ -766,10 +766,10 @@
     <value>Pozisyon</value>
   </data>
   <data name="Sensors" xml:space="preserve">
-    <value>Sensors</value>
+    <value>Sensörler</value>
   </data>
   <data name="State_machine" xml:space="preserve">
-    <value>Durum Makinesi</value>
+    <value>Makine Durumu</value>
   </data>
   <data name="Tasks" xml:space="preserve">
     <value>Görev</value>
@@ -778,13 +778,13 @@
     <value>Tepe</value>
   </data>
   <data name="Database_management" xml:space="preserve">
-    <value>Database Yönetimi</value>
+    <value>Veritabanı Yönetimi</value>
   </data>
   <data name="ReduceDB" xml:space="preserve">
-    <value>Databasi Düşür</value>
+    <value>Veritabanı Azalt</value>
   </data>
   <data name="Refresh" xml:space="preserve">
-    <value>Tazele</value>
+    <value>Yenile</value>
   </data>
   <data name="User" xml:space="preserve">
     <value>Kullanıcı</value>
@@ -811,28 +811,28 @@
     <value>PLC</value>
   </data>
   <data name="ERR_REASON" xml:space="preserve">
-    <value>Algılanamayan durum</value>
+    <value>Algılanamayan Durum</value>
   </data>
   <data name="ERR_BLOCKED" xml:space="preserve">
-    <value>Konum blokeli</value>
+    <value>Konum Blokeli</value>
   </data>
   <data name="EnumCommandStatus_Waiting" xml:space="preserve">
     <value>Aktif Değil (WA)</value>
   </data>
   <data name="EnumCommandTask_InfoSlot" xml:space="preserve">
-    <value>Depo yeri bilgisi</value>
+    <value>Depo Yeri bilgisi</value>
   </data>
   <data name="Selected" xml:space="preserve">
     <value>Seçilmiş</value>
   </data>
   <data name="Shuttle3" xml:space="preserve">
-    <value>Yer Arabası 3</value>
+    <value>PAM 3</value>
   </data>
   <data name="ReleaseOrders" xml:space="preserve">
     <value>Siparişleri Serbest Bırak</value>
   </data>
   <data name="TUs" xml:space="preserve">
-    <value>Taşıma Birimleri</value>
+    <value>Paletler</value>
   </data>
   <data name="CommandERPs" xml:space="preserve">
     <value>ERP Komutları</value>
@@ -880,10 +880,10 @@
     <value>SKU ID</value>
   </data>
   <data name="SKUBatch" xml:space="preserve">
-    <value>Parça</value>
+    <value>Grup</value>
   </data>
   <data name="TUID" xml:space="preserve">
-    <value>TB ID</value>
+    <value>Palet ID</value>
   </data>
   <data name="SKU" xml:space="preserve">
     <value>SKU</value>
@@ -1006,19 +1006,19 @@
     <value>Rampa Serbest</value>
   </data>
   <data name="Ramp1" xml:space="preserve">
-    <value>T1</value>
+    <value>R1</value>
   </data>
   <data name="Ramp2" xml:space="preserve">
-    <value>T2</value>
+    <value>R2</value>
   </data>
   <data name="Ramp3" xml:space="preserve">
-    <value>T3</value>
+    <value>R3</value>
   </data>
   <data name="Ramp4" xml:space="preserve">
-    <value>T4</value>
+    <value>R4</value>
   </data>
   <data name="Ramp5" xml:space="preserve">
-    <value>T5</value>
+    <value>R5</value>
   </data>
   <data name="B2B" xml:space="preserve">
     <value>B2B</value>
@@ -1069,7 +1069,7 @@
     <value>Ağırlık</value>
   </data>
   <data name="ERR_MATERIALEXSITS" xml:space="preserve">
-    <value>Taşıma ünitesi depoda mevcut</value>
+    <value>Palet Depoda Mevcut</value>
   </data>
   <data name="ERR_ORDERID" xml:space="preserve">
     <value>Yanlış Sipariş ID</value>
@@ -1087,7 +1087,7 @@
     <value>Yer Aralığı</value>
   </data>
   <data name="ERR_TUID" xml:space="preserve">
-    <value>TU ID Mevcut Değil</value>
+    <value>Palet ID Mevcut Değil</value>
   </data>
   <data name="ERR_PLACE" xml:space="preserve">
     <value>Yanlış Yer</value>
@@ -1495,7 +1495,7 @@
     <value>crane 2 Ulaşılabilir Değil</value>
   </data>
   <data name="ALARM_000086" xml:space="preserve">
-    <value>Yer Arabası 3 Ulaşılabilir Değil</value>
+    <value>PAM 3 Ulaşılabilir Değil</value>
   </data>
   <data name="ALARM_000087" xml:space="preserve">
     <value>segment0_87</value>
@@ -1831,10 +1831,10 @@
     <value>T025 Sınır Anahtarı</value>
   </data>
   <data name="ALARM_002214" xml:space="preserve">
-    <value>T025 not ready (46Q1)</value>
+    <value>T025 Hazır Değil (46Q1)</value>
   </data>
   <data name="ALARM_003101" xml:space="preserve">
-    <value>MFC Hazır Değil (segment T03A)</value>
+    <value>MFC Yanlış Eşleştirme  (segment T03A)</value>
   </data>
   <data name="ALARM_003102" xml:space="preserve">
     <value>segment4_01</value>
@@ -3253,7 +3253,7 @@
     <value>D425 Başlangıç Hatası </value>
   </data>
   <data name="ALARM_100037" xml:space="preserve">
-    <value>Crane Yatay Ray Motoru Uzun Süre Çalışma Hatası, +EXT-211M1</value>
+    <value>Crane Yatay Hareket Uzun Süre Çalışma Hatası, +EXT-211M1</value>
   </data>
   <data name="ALARM_100038" xml:space="preserve">
     <value>Crane Dikey Kaldırma Motoru Uzun Süre Çalışma Hatası , +EXT-215M1</value>
@@ -3613,7 +3613,7 @@
     <value>Fork 2, dip 2 Ortada Değil</value>
   </data>
   <data name="ALARM_200029" xml:space="preserve">
-    <value>!Reserve</value>
+    <value>Reserve</value>
   </data>
   <data name="ALARM_200030" xml:space="preserve">
     <value>Açı Hatası: Crane Yatay Hareketi</value>
@@ -4051,7 +4051,7 @@
     <value>Başarısız Malzeme Hareketi</value>
   </data>
   <data name="ALARM_300047" xml:space="preserve">
-    <value>!Reserve</value>
+    <value>Reserve</value>
   </data>
   <data name="ALARM_300048" xml:space="preserve">
     <value>Uzun Süre Çalışma Hatası, Alıcı</value>
@@ -4255,19 +4255,19 @@
     <value>!Reserve</value>
   </data>
   <data name="ALARM_300115" xml:space="preserve">
-    <value>!Reserve</value>
+    <value>Servis M Gerekli</value>
   </data>
   <data name="ALARM_300116" xml:space="preserve">
-    <value>!Reserve</value>
+    <value>Servis 3M Gerekli</value>
   </data>
   <data name="ALARM_300117" xml:space="preserve">
-    <value>!Reserve</value>
+    <value>Servis 6M Gerekli</value>
   </data>
   <data name="ALARM_300118" xml:space="preserve">
-    <value>!Reserve</value>
+    <value>Servis 12M Gerekli</value>
   </data>
   <data name="ALARM_300119" xml:space="preserve">
-    <value>!Reserve</value>
+    <value>Servis 5 Gerekli</value>
   </data>
   <data name="ALARM_300120" xml:space="preserve">
     <value>D425 Mesaj: Sürücü Nesne Alarmı</value>
@@ -4325,5 +4325,8 @@
   </data>
   <data name="EnumUserAccessLevel_SuperUser" xml:space="preserve">
     <value>Yönetici</value>
+  </data>
+  <data name="Core" xml:space="preserve">
+    <value>Ana Modül</value>
   </data>
 </root>

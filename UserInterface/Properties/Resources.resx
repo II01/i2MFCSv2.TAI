@@ -154,10 +154,10 @@
     <value>Settings / Ayarlar</value>
   </data>
   <data name="Execute_WMS_commands" xml:space="preserve">
-    <value>Execute WMS commands</value>
+    <value>Enable WMS module</value>
   </data>
   <data name="Execute_MFCS_commands" xml:space="preserve">
-    <value>Execute MFCS commands</value>
+    <value>Disable WMS module</value>
   </data>
   <data name="Start" xml:space="preserve">
     <value>Start</value>
@@ -405,8 +405,8 @@
   <data name="WMS" xml:space="preserve">
     <value>WMS</value>
   </data>
-  <data name="MFCS" xml:space="preserve">
-    <value>MFCS</value>
+  <data name="Core" xml:space="preserve">
+    <value>Core</value>
   </data>
   <data name="Simple" xml:space="preserve">
     <value>Simple</value>
@@ -826,7 +826,7 @@
     <value>Selected</value>
   </data>
   <data name="Shuttle3" xml:space="preserve">
-    <value>Shuttle3</value>
+    <value>Shuttle 3</value>
   </data>
   <data name="ReleaseOrders" xml:space="preserve">
     <value>Release orders</value>
@@ -955,7 +955,7 @@
     <value>Update WMS</value>
   </data>
   <data name="UpdateMFCS" xml:space="preserve">
-    <value>Update MFCS</value>
+    <value>Update Core</value>
   </data>
   <data name="PositionTravel" xml:space="preserve">
     <value>Position travel</value>
@@ -976,7 +976,7 @@
     <value>Unblock</value>
   </data>
   <data name="PlaceID" xml:space="preserve">
-    <value>Place ID</value>
+    <value>Location</value>
   </data>
   <data name="Add" xml:space="preserve">
     <value>Add</value>
@@ -1012,19 +1012,19 @@
     <value>Release ramp</value>
   </data>
   <data name="Ramp1" xml:space="preserve">
-    <value>T1</value>
+    <value>R1</value>
   </data>
   <data name="Ramp2" xml:space="preserve">
-    <value>T2</value>
+    <value>R2</value>
   </data>
   <data name="Ramp3" xml:space="preserve">
-    <value>T3</value>
+    <value>R3</value>
   </data>
   <data name="Ramp4" xml:space="preserve">
-    <value>T4</value>
+    <value>R4</value>
   </data>
   <data name="Ramp5" xml:space="preserve">
-    <value>T5</value>
+    <value>R5</value>
   </data>
   <data name="B2B" xml:space="preserve">
     <value>B2B</value>
@@ -4204,19 +4204,19 @@
     <value>Reserve</value>
   </data>
   <data name="ALARM_300115" xml:space="preserve">
-    <value>Reserve</value>
+    <value>Service M required</value>
   </data>
   <data name="ALARM_300116" xml:space="preserve">
-    <value>Reserve</value>
+    <value>Service 3M required</value>
   </data>
   <data name="ALARM_300117" xml:space="preserve">
-    <value>Reserve</value>
+    <value>Service 6M required</value>
   </data>
   <data name="ALARM_300118" xml:space="preserve">
-    <value>Reserve</value>
+    <value>Service 12M required</value>
   </data>
   <data name="ALARM_300119" xml:space="preserve">
-    <value>Reserve</value>
+    <value>Service 5 required</value>
   </data>
   <data name="ALARM_300120" xml:space="preserve">
     <value>D425 message: drive object alarm</value>
@@ -4291,7 +4291,7 @@
     <value>Access level WMS</value>
   </data>
   <data name="PermissionMFCS" xml:space="preserve">
-    <value>Access level MFCS</value>
+    <value>Access level Core</value>
   </data>
   <data name="Rack" xml:space="preserve">
     <value>RRack</value>
@@ -4325,5 +4325,8 @@
   </data>
   <data name="EnumUserAccessLevel_SuperUser" xml:space="preserve">
     <value>Super user</value>
+  </data>
+  <data name="MFCS" xml:space="preserve">
+    <value>No WMS</value>
   </data>
 </root>

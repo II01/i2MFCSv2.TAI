@@ -9160,7 +9160,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reserve.
+        ///   Looks up a localized string similar to Service M required.
         /// </summary>
         public static string ALARM_300115 {
             get {
@@ -9169,7 +9169,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reserve.
+        ///   Looks up a localized string similar to Service 3M required.
         /// </summary>
         public static string ALARM_300116 {
             get {
@@ -9178,7 +9178,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reserve.
+        ///   Looks up a localized string similar to Service 6M required.
         /// </summary>
         public static string ALARM_300117 {
             get {
@@ -9187,7 +9187,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reserve.
+        ///   Looks up a localized string similar to Service 12M required.
         /// </summary>
         public static string ALARM_300118 {
             get {
@@ -9196,7 +9196,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reserve.
+        ///   Looks up a localized string similar to Service 5 required.
         /// </summary>
         public static string ALARM_300119 {
             get {
@@ -9633,6 +9633,15 @@ namespace UserInterface.Properties {
         public static string Conveyors {
             get {
                 return ResourceManager.GetString("Conveyors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Core.
+        /// </summary>
+        public static string Core {
+            get {
+                return ResourceManager.GetString("Core", resourceCulture);
             }
         }
         
@@ -11176,7 +11185,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Execute MFCS commands.
+        ///   Looks up a localized string similar to Disable WMS module.
         /// </summary>
         public static string Execute_MFCS_commands {
             get {
@@ -11194,7 +11203,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Execute WMS commands.
+        ///   Looks up a localized string similar to Enable WMS module.
         /// </summary>
         public static string Execute_WMS_commands {
             get {
@@ -11518,7 +11527,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MFCS.
+        ///   Looks up a localized string similar to No WMS.
         /// </summary>
         public static string MFCS {
             get {
@@ -11725,7 +11734,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access level MFCS.
+        ///   Looks up a localized string similar to Access level Core.
         /// </summary>
         public static string PermissionMFCS {
             get {
@@ -11752,7 +11761,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Place ID.
+        ///   Looks up a localized string similar to Location.
         /// </summary>
         public static string PlaceID {
             get {
@@ -11905,7 +11914,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T1.
+        ///   Looks up a localized string similar to R1.
         /// </summary>
         public static string Ramp1 {
             get {
@@ -11914,7 +11923,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T2.
+        ///   Looks up a localized string similar to R2.
         /// </summary>
         public static string Ramp2 {
             get {
@@ -11923,7 +11932,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T3.
+        ///   Looks up a localized string similar to R3.
         /// </summary>
         public static string Ramp3 {
             get {
@@ -11932,7 +11941,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T4.
+        ///   Looks up a localized string similar to R4.
         /// </summary>
         public static string Ramp4 {
             get {
@@ -11941,7 +11950,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to T5.
+        ///   Looks up a localized string similar to R5.
         /// </summary>
         public static string Ramp5 {
             get {
@@ -12157,7 +12166,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Shuttle3.
+        ///   Looks up a localized string similar to Shuttle 3.
         /// </summary>
         public static string Shuttle3 {
             get {
@@ -12571,7 +12580,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update MFCS.
+        ///   Looks up a localized string similar to Update Core.
         /// </summary>
         public static string UpdateMFCS {
             get {

@@ -21,28 +21,28 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+<!--            <RowDefinition />
             <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition /> -->
         </Grid.RowDefinitions>
-        <TextBlock Text="{Resx ID}" Grid.Row="0" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx PositionTravel}" Grid.Row="1" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
+        <TextBlock Text="{Resx PlaceID}" Grid.Row="0" Margin="0,0,0,10"/>
+<!--        <TextBlock Text="{Resx PositionTravel}" Grid.Row="1" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
         <TextBlock Text="{Resx PositionHoist}" Grid.Row="2" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
-        <TextBlock Text="{Resx DimensionClass}" Grid.Row="3" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
-        <TextBlock Text="{Resx FrequencyClass}" Grid.Row="4" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
-        <TextBlock Text="{Resx Status}" Grid.Row="5" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
+        <TextBlock Text="{Resx DimensionClass}" Grid.Row="3" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/> -->
+        <TextBlock Text="{Resx FrequencyClass}" Grid.Row="1" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
+        <TextBlock Text="{Resx Status}" Grid.Row="2" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
         
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=ID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding EditVisible, Converter={StaticResource InvertBool}}"/>
-        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
+<!--        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=PositionTravel,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
         <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=PositionHoist,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
         <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=DimensionClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
-        <TextBox Grid.Row="4" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=DimensionClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/> -->
+        <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=FrequencyClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
-        <TextBox Grid.Row="5" Grid.Column="2" Margin="0,0,0,10" 
+        <TextBox Grid.Row="2    " Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=Status,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
     </Grid>
 

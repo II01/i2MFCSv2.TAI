@@ -260,7 +260,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return  !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS && 
+                if (SimpleIoc.Default.GetInstance<ControlPanelViewModel>() == null)
+                    return false;
+                return !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS && 
                         !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun && 
                         !EditEnabled && AccessLevel/10 >= 2;
             }
@@ -297,6 +299,8 @@ namespace UserInterface.ViewModel
         {
             try
             {
+                if (SimpleIoc.Default.GetInstance<ControlPanelViewModel>() == null)
+                    return false;
                 return  !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS &&
                         !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun &&
                         !EditEnabled && AccessLevel/10 >= 2;

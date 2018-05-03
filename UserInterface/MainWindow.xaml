@@ -130,7 +130,7 @@
                                IsEnabled="True"/>
                 </TreeViewItem>
             </TreeViewItem>
-            <TreeViewItem Header ="{Resx MFCS}" IsExpanded="True" IsEnabled="True">
+            <TreeViewItem Header ="{Resx Core}" IsExpanded="True" IsEnabled="True">
                 <TreeViewItem  Header="{Resx Commands}" 
                            Tag="{Binding Commands, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>

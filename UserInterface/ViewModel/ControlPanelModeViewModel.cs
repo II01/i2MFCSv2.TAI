@@ -144,6 +144,7 @@ namespace UserInterface.ViewModel
             StateRun = false;
 
             Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; });
+            Messenger.Default.Register<MessageLanguageChanged>(this, (mc) => CommandSource = ResourceReader.GetString(StateWMS ? "WMS" : "MFCS"));
         }
         public ControlPanelModeViewModel()
         {
@@ -214,7 +215,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                CommandTypeVisibility = (vm is SimpleCommandsViewModel);
+                CommandTypeVisibility = (vm is SimpleCommandViewModel);
             }
             catch (Exception e)
             {

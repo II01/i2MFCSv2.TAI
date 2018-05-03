@@ -365,6 +365,7 @@ namespace UserInterface.ViewModel
                 Detailed.AllowFieldChange = true;
                 Detailed.AllowBlockedChange = false;
                 Detailed.ValidationEnabled = true;
+                Detailed.TUID = 1;
                 Detailed.TUID = 0;
                 Detailed.PlaceID = "";
                 Detailed.DimensionClass = 0;
