@@ -59,7 +59,7 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="SubOrderID" Type="int" Nullable="false" />
           <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="SubOrderName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubOrderName" Type="nvarchar(max)" Nullable="false" />
           <Property Name="SKU_Qty" Type="float" Nullable="false" />
           <Property Name="Destination" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
@@ -383,7 +383,7 @@
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="SubOrderID" Type="Int32" Nullable="false" />
           <Property Name="SKU_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SubOrderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubOrderName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SKU_Qty" Type="Double" Nullable="false" />
           <Property Name="Destination" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ReleaseTime" Type="DateTime" Nullable="false" Precision="3" />

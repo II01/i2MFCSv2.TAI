@@ -22,67 +22,74 @@
                 Content="{x:Static props:Resources.FirstTU}" 
                 HorizontalAlignment="Left" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <Grid Grid.Row="1" Background="{Binding SubOrderBrush}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid Grid.Row="1" Margin="0,0,0,0"  Background="{Binding SubOrderBrush}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="300"/>
             </Grid.RowDefinitions>
             <!-- column 0-->
-            <Label  Grid.Row="0" Grid.Column="1"
-                Content="{x:Static props:Resources.TUID}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  Grid.Row="1" Grid.Column="1"
-                Content="{x:Static props:Resources.TUSubOrderID}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  Grid.Row="3" Grid.Column="1"
-                Content="{x:Static props:Resources.SKUID}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  Grid.Row="4" Grid.Column="1"
-                Content="{x:Static props:Resources.SKUBatch}" 
+            <TextBlock  Grid.Row="0" Grid.Column="1"
+                Text="{x:Static props:Resources.TUID}" 
                 HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <Label  Grid.Row="5" Grid.Column="1" 
-                Content="{x:Static props:Resources.SKUQty}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+            <TextBlock  Grid.Row="6" Grid.Column="1"
+                Text="{x:Static props:Resources.Route}" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <TextBlock  Grid.Row="7" Grid.Column="1" 
+                Text="{x:Static props:Resources.TUSubOrderID}" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <TextBlock  Grid.Row="2" Grid.Column="1"
+                Text="{x:Static props:Resources.SKUID}" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <TextBlock  Grid.Row="3" Grid.Column="1"
+                Text="{x:Static props:Resources.SKUBatch}"  
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <TextBlock  Grid.Row="4" Grid.Column="1" 
+                Text="{x:Static props:Resources.SKUQty}" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <!-- Column 2-->
             <TextBlock  Grid.Row="0" Grid.Column="3"
                 Text="{Binding TUID}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <TextBlock  Grid.Row="1" Grid.Column="3"
+            <TextBlock  Grid.Row="6" Grid.Column="3"
                 Text="{Binding SubOrderID}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+            <TextBlock  Grid.Row="7" Grid.Column="3" TextWrapping="Wrap"
+                Text="{Binding SubOrderName}" 
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
             <TextBlock  Grid.Row="2" Grid.Column="3"
-                Text="{Binding SubOrderName}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <TextBlock  Grid.Row="3" Grid.Column="3"
                 Text="{Binding SKUID}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <TextBlock  Grid.Row="4" Grid.Column="3" Height="Auto" TextWrapping="Wrap"
+            <TextBlock  Grid.Row="3" Grid.Column="3" TextWrapping="Wrap"
                 Text="{Binding SKUBatch1}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-            <TextBlock  Grid.Row="5" Grid.Column="3"
+            <TextBlock  Grid.Row="4" Grid.Column="3"
                 Text="{Binding SKUQty}" 
-                HorizontalAlignment="Left" VerticalAlignment="Center"
+                HorizontalAlignment="Left" VerticalAlignment="Top"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
         </Grid>
     </Grid>

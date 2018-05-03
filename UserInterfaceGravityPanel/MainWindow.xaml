@@ -81,9 +81,9 @@
 
     <Grid Background="Black"  >
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" MinHeight="180"/> 
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="Auto" MinHeight="180"/> 
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>

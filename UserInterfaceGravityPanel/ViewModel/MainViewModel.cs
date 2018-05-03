@@ -221,7 +221,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                 OrderInfo = new OrderViewModel();
                 Lane = new ObservableCollection<LaneViewModel>();
                 for (int i = 0; i < 4; i++)
-                    Lane.Add( new LaneViewModel {LaneID=_ramp*10+i+1, NumTU = 0});
+                    Lane.Add( new LaneViewModel {LaneID=_ramp*0+i+1, NumTU = 0});
 
                 ErrorVisibility = Visibility.Hidden;
                 ErrorMessage = "";
@@ -285,26 +285,41 @@ namespace UserInterfaceGravityPanel.ViewModel
                 if (order != null)
                 {
                     string[] split = order.SubOrderName.Split('#');
+                    string operation = "";
+                    string truckType = "";
                     string truckPlate = "";
-                    if (split.Length == 3)
-                        truckPlate = split[0];
-                    OrderInfo.ERPID = "";
+                    string truckNumber = "";
+                    if (split.Length == 5)
+                    {
+                        operation = split[2];
+                        truckType = split[3];
+                        truckPlate = split[4];
+                        truckNumber = split[5];
+                    }
+                    OrderInfo.OrderID = "";
                     if (order.ERP_ID != null)
                     {
-                        OrderInfo.ERPID = order.OrderID.ToString();
-                        OrderInfo.OrderID = $" ::  {truckPlate}";
+                        OrderInfo.OrderID = order.SubOrderID.ToString();
+                        OrderInfo.Operation = operation;
+                        OrderInfo.TruckPlate = truckPlate;
+                        OrderInfo.TruckType = truckType;
+                        OrderInfo.TruckNumber = truckNumber;
                     }
                 }
                 if (orderCount != null)
                 {
                     OrderInfo.StatusOrder = OrderStatus[(int)orderCount.Status];
                     OrderInfo.PortionSubOrder = $" ::  {_active} {orderCount.Active}/{orderCount.All}   {_done} {orderCount.Done}/{orderCount.All}";
+                    OrderInfo.SuborderTotal = orderCount.All.ToString();
+                    OrderInfo.SuborderActive = orderCount.Active.ToString();
+                    OrderInfo.SuborderDone = orderCount.Done.ToString();
+                    OrderInfo.PalletVisibility = orderCount.Active == 0 ? Visibility.Hidden : Visibility.Visible;
                 }
                 if (suborder != null)
                 {
                     string[] split = suborder.SubOrderName.Split('#');
                     string customer = "";
-                    if (split.Length == 3)
+                    if (split.Length == 5)
                         customer = split[2];
                     OrderInfo.SubOrderID = suborder.SubOrderID.ToString();
                     OrderInfo.SubOrderName = $" ::  {customer}";
@@ -313,6 +328,9 @@ namespace UserInterfaceGravityPanel.ViewModel
                 {
                     OrderInfo.StatusSubOrder = OrderStatus[(int)suborderCount.Status];
                     OrderInfo.PortionCommand = $" ::  {_active} {suborderCount.Active}/{suborderCount.All}   {_done} {suborderCount.Done}/{suborderCount.All}";
+                    OrderInfo.CommandTotal = suborderCount.All.ToString();
+                    OrderInfo.CommandDone = suborderCount.Done.ToString();
+                    OrderInfo.CommandActive = suborderCount.Active.ToString();
                 }
 
                 // laneviewmodel
@@ -341,12 +359,12 @@ namespace UserInterfaceGravityPanel.ViewModel
                             if (l.Suborder != null)
                             {
                                 string[] s = l.Suborder.SubOrderName.Split('#');
-                                if (s.Length == 3)
+                                if (s.Length == 5)
                                 {
                                     Int32.TryParse(s[1], out int rc);
                                     last.SubOrderID = rc;
                                     last.SubOrderBrush = SubOrderColor[(rc-1) % 8];
-                                    last.SubOrderName = s[2].Trim();
+                                    last.SubOrderName = s[0].Trim();
                                 }
                                 else
                                 {

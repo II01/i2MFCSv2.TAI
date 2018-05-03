@@ -162,7 +162,7 @@
     <value>Palet Sayısı</value>
   </data>
   <data name="OrderID" xml:space="preserve">
-    <value>Araç No:</value>
+    <value>Yükleme Kodu</value>
   </data>
   <data name="OrderStatus0" xml:space="preserve">
     <value>-</value>
@@ -195,7 +195,7 @@
     <value>Y</value>
   </data>
   <data name="SKUBatch" xml:space="preserve">
-    <value>Lot</value>
+    <value>Batch</value>
   </data>
   <data name="SKUID" xml:space="preserve">
     <value>Malzeme</value>
@@ -204,10 +204,10 @@
     <value>Miktar</value>
   </data>
   <data name="Status" xml:space="preserve">
-    <value>Durum:</value>
+    <value>Durum</value>
   </data>
   <data name="SubOrderID" xml:space="preserve">
-    <value>Müşteri:</value>
+    <value>P Araç No</value>
   </data>
   <data name="TUID" xml:space="preserve">
     <value>Barkod</value>
@@ -223,5 +223,35 @@
   </data>
   <data name="RefreshFailed" xml:space="preserve">
     <value>Yenileme Hatası</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>İş Emri Tipi</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Rutlar</value>
+  </data>
+  <data name="TruckPlate" xml:space="preserve">
+    <value>Plakası</value>
+  </data>
+  <data name="TruckType" xml:space="preserve">
+    <value>Tipi</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Aktif</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Onaylanan</value>
+  </data>
+  <data name="Pallet" xml:space="preserve">
+    <value>Paletlar</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Toplam</value>
+  </data>
+  <data name="Truck" xml:space="preserve">
+    <value>Araç</value>
+  </data>
+  <data name="TruckNumber" xml:space="preserve">
+    <value>P No.</value>
   </data>
 </root>

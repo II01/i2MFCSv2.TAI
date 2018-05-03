@@ -224,4 +224,34 @@
   <data name="RefreshFailed" xml:space="preserve">
     <value>Refresh failed</value>
   </data>
+  <data name="Route" xml:space="preserve">
+    <value>Route</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Operation:</value>
+  </data>
+  <data name="TruckPlate" xml:space="preserve">
+    <value>Truck plate:</value>
+  </data>
+  <data name="TruckType" xml:space="preserve">
+    <value>Truck type:</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Truck" xml:space="preserve">
+    <value>Truck</value>
+  </data>
+  <data name="TruckNumber" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="Pallet" xml:space="preserve">
+    <value>Pallet</value>
+  </data>
 </root>

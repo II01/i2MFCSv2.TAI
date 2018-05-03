@@ -61,6 +61,15 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to White.
         /// </summary>
         public static string Color1 {
@@ -151,6 +160,15 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Done.
+        /// </summary>
+        public static string Done {
+            get {
+                return ResourceManager.GetString("Done", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pallet to take.
         /// </summary>
         public static string FirstTU {
@@ -183,6 +201,15 @@ namespace UserInterfaceGravityPanel.Properties {
         public static string NoTUs {
             get {
                 return ResourceManager.GetString("NoTUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation:.
+        /// </summary>
+        public static string Operation {
+            get {
+                return ResourceManager.GetString("Operation", resourceCulture);
             }
         }
         
@@ -250,6 +277,15 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pallet.
+        /// </summary>
+        public static string Pallet {
+            get {
+                return ResourceManager.GetString("Pallet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RAMP.
         /// </summary>
         public static string Ramp {
@@ -264,6 +300,15 @@ namespace UserInterfaceGravityPanel.Properties {
         public static string RefreshFailed {
             get {
                 return ResourceManager.GetString("RefreshFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Route.
+        /// </summary>
+        public static string Route {
+            get {
+                return ResourceManager.GetString("Route", resourceCulture);
             }
         }
         
@@ -336,6 +381,51 @@ namespace UserInterfaceGravityPanel.Properties {
         public static string SubOrderID {
             get {
                 return ResourceManager.GetString("SubOrderID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string Total {
+            get {
+                return ResourceManager.GetString("Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Truck.
+        /// </summary>
+        public static string Truck {
+            get {
+                return ResourceManager.GetString("Truck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No..
+        /// </summary>
+        public static string TruckNumber {
+            get {
+                return ResourceManager.GetString("TruckNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Truck plate:.
+        /// </summary>
+        public static string TruckPlate {
+            get {
+                return ResourceManager.GetString("TruckPlate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Truck type:.
+        /// </summary>
+        public static string TruckType {
+            get {
+                return ResourceManager.GetString("TruckType", resourceCulture);
             }
         }
         

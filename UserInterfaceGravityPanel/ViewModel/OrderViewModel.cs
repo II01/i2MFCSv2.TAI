@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
+using System.Windows;
 
 namespace UserInterfaceGravityPanel.ViewModel
 {
@@ -13,6 +14,17 @@ namespace UserInterfaceGravityPanel.ViewModel
         private string _portionCommand;
         private string _statusOrder;
         private string _statusSubOrder;
+        private string _operation;
+        private string _truckNumber;
+        private string _truckType;
+        private string _truckPlate;
+        private string _commandTotal;
+        private string _commandActive;
+        private string _commandDone;
+        private string _suborderTotal;
+        private string _suborderActive;
+        private string _suborderDone;
+        private Visibility _palletVisibility;
         #endregion
 
         #region properties
@@ -115,6 +127,139 @@ namespace UserInterfaceGravityPanel.ViewModel
                 }
             }
         }
+        public string Operation
+        {
+            get { return _operation; }
+            set
+            {
+                if (_operation != value)
+                {
+                    _operation = value;
+                    RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        public string TruckNumber
+        {
+            get { return _truckNumber; }
+            set
+            {
+                if (_truckNumber != value)
+                {
+                    _truckNumber = value;
+                    RaisePropertyChanged("TruckNumber");
+                }
+            }
+        }
+        public string TruckType
+        {
+            get { return _truckType; }
+            set
+            {
+                if (_truckType != value)
+                {
+                    _truckType = value;
+                    RaisePropertyChanged("TruckType");
+                }
+            }
+        }
+        public string TruckPlate
+        {
+            get { return _truckPlate; }
+            set
+            {
+                if (_truckPlate != value)
+                {
+                    _truckPlate = value;
+                    RaisePropertyChanged("TruckPlate");
+                }
+            }
+        }
+        public string SuborderTotal
+        {
+            get { return _suborderTotal; }
+            set
+            {
+                if (_suborderTotal != value)
+                {
+                    _suborderTotal = value;
+                    RaisePropertyChanged("SuborderTotal");
+                }
+            }
+        }
+        public string SuborderActive
+        {
+            get { return _suborderActive; }
+            set
+            {
+                if (_suborderActive != value)
+                {
+                    _suborderActive = value;
+                    RaisePropertyChanged("SuborderActive");
+                }
+            }
+        }
+        public string SuborderDone
+        {
+            get { return _suborderDone; }
+            set
+            {
+                if (_suborderDone != value)
+                {
+                    _suborderDone = value;
+                    RaisePropertyChanged("SuborderDone");
+                }
+            }
+        }
+        public string CommandTotal
+        {
+            get { return _commandTotal; }
+            set
+            {
+                if (_commandTotal != value)
+                {
+                    _commandTotal = value;
+                    RaisePropertyChanged("CommandTotal");
+                }
+            }
+        }
+        public string CommandActive
+        {
+            get { return _commandActive; }
+            set
+            {
+                if (_commandActive != value)
+                {
+                    _commandActive = value;
+                    RaisePropertyChanged("CommandActive");
+                }
+            }
+        }
+        public string CommandDone
+        {
+            get { return _commandDone; }
+            set
+            {
+                if (_commandDone != value)
+                {
+                    _commandDone = value;
+                    RaisePropertyChanged("CommandDone");
+                }
+            }
+        }
+        public Visibility PalletVisibility
+        {
+            get { return _palletVisibility; }
+            set
+            {
+                if (_palletVisibility != value)
+                {
+                    _palletVisibility = value;
+                    RaisePropertyChanged("PalletVisibility");
+                }
+            }
+        }
+
         #endregion
 
         #region initialization
