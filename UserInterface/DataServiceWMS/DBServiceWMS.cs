@@ -897,7 +897,7 @@ namespace UserInterface.DataServiceWMS
                     var orders = from so in (await single.ToListAsync())
                                  join ce in dc.CommandERPs on so.suborder.orders.ERP_ID equals ce.ID into cenull
                                  from ce in cenull.DefaultIfEmpty()
-                                 orderby so.suborder.orders.ERP_ID, so.suborder.orders.OrderID descending, so.suborder.orders.SubOrderID ascending
+                                 orderby so.suborder.orders.ERP_ID descending, so.suborder.orders.OrderID descending, so.suborder.orders.SubOrderID ascending
                                  group so by new { ERPID = so.suborder.orders.ERP_ID, ERPIDSB = ce?.ERP_ID, OrderID = so.suborder.orders.OrderID } into grpO
                                  select new OrderReduction
                                  {
@@ -941,6 +941,7 @@ namespace UserInterface.DataServiceWMS
                                     ERPIDStokbar = null,
                                     OrderID = grp.FirstOrDefault().SubOrder.OrderID,
                                     SubOrderID = grp.FirstOrDefault().SubOrder.SubOrderID,
+                                    SubOrderERPID = grp.FirstOrDefault().SubOrder.SubOrderERPID,
                                     SubOrderName = grp.FirstOrDefault().SubOrder.SubOrderName,
                                     CountAll = grp.Where(p => p.Command != null).Count(),
                                     CountActive = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status == (int)EnumCommandWMSStatus.Active),
@@ -976,6 +977,7 @@ namespace UserInterface.DataServiceWMS
                                    ERPIDStokbar = null,
                                    OrderID = grp.FirstOrDefault().SubOrder.OrderID,
                                    SubOrderID = grp.FirstOrDefault().SubOrder.SubOrderID,
+                                   SubOrderERPID = grp.FirstOrDefault().SubOrder.SubOrderERPID,
                                    SubOrderName = grp.FirstOrDefault().SubOrder.SubOrderName,
                                    WMSID = grp.FirstOrDefault().SubOrder.ID,
                                    SKUID = grp.FirstOrDefault().SubOrder.SKU_ID,
@@ -985,7 +987,8 @@ namespace UserInterface.DataServiceWMS
                                    CountActive = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status == (int)EnumCommandWMSStatus.Active),
                                    CountMoveDone = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
                                    CountFinished = grp.Where(p => p.Command != null).Count(pp => pp.Command.Status > (int)EnumCommandWMSStatus.Active),
-                                   Status = grp.Any(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting) ? grp.Where(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Command.Status) : 0
+                                   //                                   Status = grp.Any(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting) ? grp.Where(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting).Min(p => p.Command.Status) : 0
+                                   Status = grp.Where(p => p.Command.Status > (int)EnumWMSOrderStatus.Waiting).DefaultIfEmpty().Min(p => p == null ? 0 : p.Command.Status)
                                };
                     return await subs.ToListAsync();
                 }
@@ -1018,6 +1021,7 @@ namespace UserInterface.DataServiceWMS
                                      OrderERPID = c.Order_ID.HasValue ? c.Orders.ERP_ID : 0,
                                      OrderOrderID = c.Order_ID.HasValue ? c.Orders.OrderID : 0,
                                      OrderSubOrderID = c.Order_ID.HasValue ? c.Orders.SubOrderID : 0,
+                                     OrderSubOrderERPID = c.Order_ID.HasValue ? c.Orders.SubOrderERPID : 0,
                                      OrderSubOrderName = c.Order_ID.HasValue ? c.Orders.SubOrderName : "",
                                      OrderSKUID = c.Order_ID.HasValue ? c.Orders.SKU_ID : "",
                                      OrderSKUBatch = c.Order_ID.HasValue ? c.Orders.SKU_Batch : ""
@@ -1105,6 +1109,7 @@ namespace UserInterface.DataServiceWMS
                                      OrderERPID = c.Order_ID.HasValue ? c.Orders.ERP_ID : 0,
                                      OrderOrderID = c.Order_ID.HasValue ? c.Orders.OrderID : 0,
                                      OrderSubOrderID = c.Order_ID.HasValue ? c.Orders.SubOrderID : 0,
+                                     OrderSubOrderERPID = c.Order_ID.HasValue ? c.Orders.SubOrderERPID : 0,
                                      OrderSubOrderName = c.Order_ID.HasValue ? c.Orders.SubOrderName : "",
                                      OrderSKUID = c.Order_ID.HasValue ? c.Orders.SKU_ID : "",
                                      OrderSKUBatch = c.Order_ID.HasValue ? c.Orders.SKU_Batch : ""

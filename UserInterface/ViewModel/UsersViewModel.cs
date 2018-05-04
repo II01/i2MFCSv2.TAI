@@ -303,6 +303,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
+                EnabledUserManagement = false;
                 if (App.AccessLevel != 0)
                 {
                     App.AccessLevel = 0;

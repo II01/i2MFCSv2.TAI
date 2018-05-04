@@ -305,6 +305,7 @@ namespace UserInterface.ViewModel
                 Detailed.Destination = "";
                 Detailed.ReleaseTime = SqlDateTime.MaxValue.Value;
                 Detailed.SubOrderID = 0;
+                Detailed.SubOrderERPID = 0;
                 Detailed.SubOrderName = "";
                 Detailed.SKUID = "";
                 Detailed.SKUBatch = "";
@@ -355,6 +356,7 @@ namespace UserInterface.ViewModel
                 Detailed.Destination = SelectedSubOrder.Destination;
                 Detailed.ReleaseTime = SelectedSubOrder.ReleaseTime;
                 Detailed.SubOrderID = SelectedSubOrder.SubOrderID;
+                Detailed.SubOrderERPID = SelectedSubOrder.SubOrderERPID;
                 Detailed.SubOrderName = SelectedSubOrder.SubOrderName;
                 Detailed.SKUID = SelectedSubOrder.SKUID;
                 Detailed.SKUBatch = SelectedSubOrder.SKUBatch;
@@ -434,7 +436,7 @@ namespace UserInterface.ViewModel
                 Detailed.OrderID = SelectedOrder.OrderID;
                 Detailed.Destination = SelectedOrder.Destination;
                 Detailed.ReleaseTime = SelectedOrder.ReleaseTime;
-                Detailed.SubOrderID = 0;
+                Detailed.SubOrderERPID = 0;
                 Detailed.SubOrderName = "";
                 Detailed.SKUID = "";
                 Detailed.SKUBatch = "";
@@ -486,6 +488,7 @@ namespace UserInterface.ViewModel
                 Detailed.Destination = SelectedSubOrder.Destination;
                 Detailed.ReleaseTime = SelectedSubOrder.ReleaseTime;
                 Detailed.SubOrderID = SelectedSubOrder.SubOrderID;
+                Detailed.SubOrderERPID = SelectedSubOrder.SubOrderERPID;
                 Detailed.SubOrderName = SelectedSubOrder.SubOrderName;
                 Detailed.SKUID = SelectedSubOrder.SKUID;
                 Detailed.SKUBatch = SelectedSubOrder.SKUBatch;
@@ -566,6 +569,7 @@ namespace UserInterface.ViewModel
                 Detailed.Destination = SelectedSubOrder.Destination;
                 Detailed.ReleaseTime = SelectedSubOrder.ReleaseTime;
                 Detailed.SubOrderID = SelectedSubOrder.SubOrderID;
+                Detailed.SubOrderERPID = SelectedSubOrder.SubOrderERPID;
                 Detailed.SubOrderName = SelectedSubOrder.SubOrderName;
                 Detailed.SKUID = "";
                 Detailed.SKUBatch = "";
@@ -617,6 +621,7 @@ namespace UserInterface.ViewModel
                 Detailed.Destination = SelectedSKU.Destination;
                 Detailed.ReleaseTime = SelectedSKU.ReleaseTime;
                 Detailed.SubOrderID = SelectedSKU.SubOrderID;
+                Detailed.SubOrderERPID = SelectedSKU.SubOrderERPID;
                 Detailed.SubOrderName = SelectedSKU.SubOrderName;
                 Detailed.SKUID = SelectedSKU.SKUID;
                 Detailed.SKUBatch = SelectedSKU.SKUBatch;
@@ -721,6 +726,7 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.AddOrder:
+                            Detailed.Order.SubOrderERPID = Detailed.Order.SubOrderID;
                             _dbservicewms.AddOrder(Detailed.Order);
                             orderid = Detailed.OrderID;
                             await ExecuteRefresh();
@@ -746,6 +752,7 @@ namespace UserInterface.ViewModel
                             await ExecuteRefresh();
                             break;
                         case CommandType.AddSubOrder:
+                            Detailed.Order.SubOrderERPID = Detailed.Order.SubOrderID;
                             _dbservicewms.AddOrder(Detailed.Order);
                             orderid = Detailed.OrderID;
                             suborderid = Detailed.SubOrderID;
@@ -754,6 +761,7 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add suborder: {Detailed.Order.ToString()}");
                             break;
                         case CommandType.EditSubOrder:
+                            Detailed.Order.SubOrderERPID = Detailed.Order.SubOrderID;
                             _dbservicewms.UpdateSubOrders(Detailed.ERPID, SelectedSubOrder.OrderID, SelectedSubOrder.SubOrderID, Detailed.Order);
                             var lse = from d in DataListSubOrder
                                       where d.OrderID == SelectedSubOrder.OrderID && d.SubOrderID == SelectedSubOrder.SubOrderID
@@ -775,6 +783,7 @@ namespace UserInterface.ViewModel
                         case CommandType.AddSKU:
                             if (Detailed.Order.SubOrderName == null)
                                 Detailed.Order.SubOrderName = Detailed.Order.SubOrderID.ToString();
+                            Detailed.Order.SubOrderERPID = Detailed.Order.SubOrderID;
                             _dbservicewms.AddSKU(Detailed.Order);
                             orderid = Detailed.OrderID;
                             suborderid = Detailed.SubOrderID;
@@ -785,6 +794,7 @@ namespace UserInterface.ViewModel
                             SelectedSKU = DataListSKU.FirstOrDefault(p => p.OrderID == orderid && p.SubOrderID == suborderid && p.SKUID == skuid);
                             break;
                         case CommandType.EditSKU:
+                            Detailed.Order.SubOrderERPID = Detailed.Order.SubOrderID;
                             _dbservicewms.UpdateSKU(Detailed.Order);
                             SelectedSKU.SKUID = Detailed.SKUID;
                             SelectedSKU.SKUBatch = Detailed.SKUBatch;
@@ -865,6 +875,7 @@ namespace UserInterface.ViewModel
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
                         SubOrderID = p.SubOrderID,
+                        SubOrderERPID = p.SubOrderERPID,
                         SubOrderName = p.SubOrderName,
                         SKUID = null,
                         SKUBatch = null,
@@ -897,6 +908,7 @@ namespace UserInterface.ViewModel
                             Destination = p.Destination,
                             ReleaseTime = p.ReleaseTime,
                             SubOrderID = p.SubOrderID,
+                            SubOrderERPID = p.SubOrderERPID,
                             SubOrderName = p.SubOrderName,
                             SKUID = p.SKU_ID,
                             SKUBatch = p.SKU_Batch,
@@ -938,6 +950,7 @@ namespace UserInterface.ViewModel
                             Destination = p.Destination,
                             ReleaseTime = p.ReleaseTime,
                             SubOrderID = p.SubOrderID,
+                            SubOrderERPID = p.SubOrderERPID,
                             SubOrderName = p.SubOrderName,
                             SKUID = p.SKU_ID,
                             SKUBatch = p.SKU_Batch,

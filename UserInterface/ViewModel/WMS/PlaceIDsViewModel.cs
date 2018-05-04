@@ -264,7 +264,7 @@ namespace UserInterface.ViewModel
                     return false;
                 return !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS && 
                         !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun && 
-                        !EditEnabled && AccessLevel/10 >= 2;
+                        !EditEnabled && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {
@@ -303,7 +303,7 @@ namespace UserInterface.ViewModel
                     return false;
                 return  !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateWMS &&
                         !SimpleIoc.Default.GetInstance<ControlPanelViewModel>().Modes.StateRun &&
-                        !EditEnabled && AccessLevel/10 >= 2;
+                        !EditEnabled && AccessLevel/10 >= 1;
             }
             catch (Exception e)
             {

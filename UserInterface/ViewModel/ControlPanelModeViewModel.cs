@@ -215,7 +215,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                CommandTypeVisibility = (vm is SimpleCommandViewModel);
+                CommandTypeVisibility = (vm is SimpleCommandsViewModel);
             }
             catch (Exception e)
             {

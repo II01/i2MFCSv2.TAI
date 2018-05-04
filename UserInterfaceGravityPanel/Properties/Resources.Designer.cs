@@ -70,6 +70,15 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active Route.
+        /// </summary>
+        public static string ActiveRoute {
+            get {
+                return ResourceManager.GetString("ActiveRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to White.
         /// </summary>
         public static string Color1 {
@@ -309,6 +318,15 @@ namespace UserInterfaceGravityPanel.Properties {
         public static string Route {
             get {
                 return ResourceManager.GetString("Route", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Routes.
+        /// </summary>
+        public static string Routes {
+            get {
+                return ResourceManager.GetString("Routes", resourceCulture);
             }
         }
         

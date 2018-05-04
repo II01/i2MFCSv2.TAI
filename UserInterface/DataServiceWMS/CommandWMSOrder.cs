@@ -17,6 +17,7 @@ namespace UserInterface.DataServiceWMS
         public int? OrderERPID { get; set; }
         public int OrderOrderID { get; set; }
         public int OrderSubOrderID { get; set; }
+        public int OrderSubOrderERPID { get; set; }
         public string OrderSubOrderName { get; set; }
         public string OrderSKUID { get; set; }
         public string OrderSKUBatch { get; set; }

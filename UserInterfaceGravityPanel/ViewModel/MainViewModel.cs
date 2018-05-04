@@ -274,6 +274,7 @@ namespace UserInterfaceGravityPanel.ViewModel
 
                 // orderviewmodel
                 OrderInfo.ERPID = "";
+                OrderInfo.Operation = "";
                 OrderInfo.OrderID = "";
                 OrderInfo.StatusOrder = "";
                 OrderInfo.PortionSubOrder = "";
@@ -281,40 +282,39 @@ namespace UserInterfaceGravityPanel.ViewModel
                 OrderInfo.SubOrderName = "";
                 OrderInfo.StatusSubOrder = "";
                 OrderInfo.PortionCommand = "";
+                OrderInfo.TruckPlate = "";
+                OrderInfo.TruckType = "";
+                OrderInfo.TruckNumber = "";
 
                 if (order != null)
                 {
-                    string[] split = order.SubOrderName.Split('#');
-                    string operation = "";
-                    string truckType = "";
-                    string truckPlate = "";
-                    string truckNumber = "";
-                    if (split.Length == 5)
-                    {
-                        operation = split[2];
-                        truckType = split[3];
-                        truckPlate = split[4];
-                        truckNumber = split[5];
-                    }
-                    OrderInfo.OrderID = "";
                     if (order.ERP_ID != null)
                     {
-                        OrderInfo.OrderID = order.SubOrderID.ToString();
-                        OrderInfo.Operation = operation;
-                        OrderInfo.TruckPlate = truckPlate;
-                        OrderInfo.TruckType = truckType;
-                        OrderInfo.TruckNumber = truckNumber;
+                        OrderInfo.OrderID = order.SubOrderERPID.ToString();
+                        string[] split = order.SubOrderName.Split('#');
+                        if( split.Length == 5)
+                        {
+                            OrderInfo.Operation = split[1];
+                            OrderInfo.TruckType = split[2];
+                            OrderInfo.TruckPlate = split[3];
+                            OrderInfo.TruckNumber = split[4];
+                        }
                     }
+                    else
+                        OrderInfo.OrderID = order.OrderID.ToString();
                 }
+                OrderInfo.RightVisibility = order == null ? Visibility.Hidden : Visibility.Visible;
+
                 if (orderCount != null)
                 {
                     OrderInfo.StatusOrder = OrderStatus[(int)orderCount.Status];
-                    OrderInfo.PortionSubOrder = $" ::  {_active} {orderCount.Active}/{orderCount.All}   {_done} {orderCount.Done}/{orderCount.All}";
+                    OrderInfo.PortionSubOrder = $"{_active} {orderCount.Active}/{orderCount.All}   {_done} {orderCount.Done}/{orderCount.All}";
                     OrderInfo.SuborderTotal = orderCount.All.ToString();
                     OrderInfo.SuborderActive = orderCount.Active.ToString();
                     OrderInfo.SuborderDone = orderCount.Done.ToString();
                     OrderInfo.PalletVisibility = orderCount.Active == 0 ? Visibility.Hidden : Visibility.Visible;
                 }
+                OrderInfo.SubOrderID = "-";
                 if (suborder != null)
                 {
                     string[] split = suborder.SubOrderName.Split('#');
@@ -322,12 +322,12 @@ namespace UserInterfaceGravityPanel.ViewModel
                     if (split.Length == 5)
                         customer = split[2];
                     OrderInfo.SubOrderID = suborder.SubOrderID.ToString();
-                    OrderInfo.SubOrderName = $" ::  {customer}";
+                    OrderInfo.SubOrderName = $"{customer}";
                 }
                 if (suborderCount != null)
                 {
                     OrderInfo.StatusSubOrder = OrderStatus[(int)suborderCount.Status];
-                    OrderInfo.PortionCommand = $" ::  {_active} {suborderCount.Active}/{suborderCount.All}   {_done} {suborderCount.Done}/{suborderCount.All}";
+                    OrderInfo.PortionCommand = $"{_active} {suborderCount.Active}/{suborderCount.All}   {_done} {suborderCount.Done}/{suborderCount.All}";
                     OrderInfo.CommandTotal = suborderCount.All.ToString();
                     OrderInfo.CommandDone = suborderCount.Done.ToString();
                     OrderInfo.CommandActive = suborderCount.Active.ToString();
@@ -358,20 +358,10 @@ namespace UserInterfaceGravityPanel.ViewModel
                             }
                             if (l.Suborder != null)
                             {
+                                last.SubOrderID = l.Suborder.SubOrderID;
+                                last.SubOrderBrush = SubOrderColor[(last.SubOrderID - 1 + 8) % 8];
                                 string[] s = l.Suborder.SubOrderName.Split('#');
-                                if (s.Length == 5)
-                                {
-                                    Int32.TryParse(s[1], out int rc);
-                                    last.SubOrderID = rc;
-                                    last.SubOrderBrush = SubOrderColor[(rc-1) % 8];
-                                    last.SubOrderName = s[0].Trim();
-                                }
-                                else
-                                {
-                                    last.SubOrderID = l.Suborder.SubOrderID;
-                                    last.SubOrderBrush = SubOrderColor[(l.Suborder.SubOrderID-1+8) % 8];
-                                    last.SubOrderName = l.Suborder.SubOrderName;
-                                }
+                                last.SubOrderName = s.Length > 0 ? s[0].Trim() : l.Suborder.SubOrderName;
                             }
                         }
                         Lane[l.LaneID - 1].NumTU = l.Count;

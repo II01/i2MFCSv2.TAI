@@ -946,10 +946,10 @@
     <value>Time WMS</value>
   </data>
   <data name="PlaceMFCS" xml:space="preserve">
-    <value>Place MFCS</value>
+    <value>Place Core</value>
   </data>
   <data name="TimeMFCS" xml:space="preserve">
-    <value>Time MFCS</value>
+    <value>Time Core</value>
   </data>
   <data name="UpdateWMS" xml:space="preserve">
     <value>Update WMS</value>
@@ -4328,5 +4328,8 @@
   </data>
   <data name="MFCS" xml:space="preserve">
     <value>No WMS</value>
+  </data>
+  <data name="SubOrderERPID" xml:space="preserve">
+    <value>Stokbar Ref</value>
   </data>
 </root>

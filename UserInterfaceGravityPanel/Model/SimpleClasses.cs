@@ -32,6 +32,7 @@ namespace UserInterfaceGravityPanel.Model
     public class SubOrderData
     {
         public int SubOrderID { get; set; }
+        public int SubOrderERPID { get; set; }
         public string SubOrderName { get; set; }
     }
 }

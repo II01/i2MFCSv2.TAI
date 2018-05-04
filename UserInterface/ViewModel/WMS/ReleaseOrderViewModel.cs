@@ -104,6 +104,19 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public int SubOrderERPID
+        {
+            get { return _data.SubOrderERPID; }
+            set
+            {
+                if (_data.SubOrderERPID != value)
+                {
+                    _data.SubOrderERPID = value;
+                    RaisePropertyChanged("SubOrderERPID");
+                }
+            }
+        }
+
         public string SKUID
         {
             get { return _data.SKU_ID; }

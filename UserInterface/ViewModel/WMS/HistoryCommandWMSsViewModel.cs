@@ -225,6 +225,7 @@ namespace UserInterface.ViewModel
                         OrderERPID = p.OrderERPID,
                         OrderOrderID = p.OrderOrderID,
                         OrderSubOrderID = p.OrderSubOrderID,
+                        OrderSubOrderERPID = p.OrderSubOrderERPID,
                         OrderSubOrderName = p.OrderSubOrderName,
                         OrderSKUID = p.OrderSKUID,
                         OrderSKUBatch = p.OrderSKUBatch

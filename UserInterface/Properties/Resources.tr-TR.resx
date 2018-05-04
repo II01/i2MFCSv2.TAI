@@ -4329,4 +4329,7 @@
   <data name="Core" xml:space="preserve">
     <value>Ana Modül</value>
   </data>
+  <data name="SubOrderERPID" xml:space="preserve">
+    <value>Stokbar Ref</value>
+  </data>
 </root>

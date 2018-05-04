@@ -82,7 +82,7 @@
     <Grid Background="Black"  >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="180"/> 
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="Auto"/>
@@ -96,7 +96,7 @@
             <ColumnDefinition Width="20"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Row="2" HorizontalAlignment="Left">
+        <Grid Row="2" > 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -139,7 +139,7 @@
                 Content="{Binding CurrentTime}" 
                 HorizontalAlignment="Right" VerticalAlignment="Center"
                 FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
-        <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"
+        <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Margin="0,20,0,0"
                         Content="{Binding OrderInfo}"
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Stretch"/>

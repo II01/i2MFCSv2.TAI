@@ -59,12 +59,13 @@
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="SubOrderID" Type="int" Nullable="false" />
           <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="SubOrderName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SubOrderName" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="SKU_Qty" Type="float" Nullable="false" />
           <Property Name="Destination" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
           <Property Name="SKU_Batch" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="SubOrderERPID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Parameters">
           <Key>
@@ -383,7 +384,7 @@
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="SubOrderID" Type="Int32" Nullable="false" />
           <Property Name="SKU_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="SubOrderName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SubOrderName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SKU_Qty" Type="Double" Nullable="false" />
           <Property Name="Destination" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="ReleaseTime" Type="DateTime" Nullable="false" Precision="3" />
@@ -393,6 +394,7 @@
           <NavigationProperty Name="Commands" Relationship="Self.FK_dbo_Commands_dbo_Orders_Order_ID" FromRole="Orders" ToRole="Commands" />
           <NavigationProperty Name="PlaceIDs" Relationship="Self.FK_dbo_Orders_dbo_PlaceIDs_Destination" FromRole="Orders" ToRole="PlaceIDs" />
           <NavigationProperty Name="SKU_ID1" Relationship="Self.FK_dbo_Orders_dbo_SKU_ID_SKU_ID" FromRole="Orders" ToRole="SKU_ID" />
+          <Property Name="SubOrderERPID" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="PlaceIDs">
           <Key>
@@ -729,6 +731,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.Orders">
               <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="SubOrderERPID" ColumnName="SubOrderERPID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ERP_ID" ColumnName="ERP_ID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />

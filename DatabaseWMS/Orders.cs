@@ -31,6 +31,7 @@ namespace DatabaseWMS
         public System.DateTime ReleaseTime { get; set; }
         public string SKU_Batch { get; set; }
         public int Status { get; set; }
+        public int SubOrderERPID { get; set; }
     
         public virtual CommandERPs CommandERPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

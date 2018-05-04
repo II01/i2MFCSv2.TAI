@@ -55,7 +55,6 @@ namespace UserInterface.ViewModel
         public RelayCommand DeleteCmd { get; private set; }
         public RelayCommand Confirm { get; private set; }
         public RelayCommand Cancel { get; private set; }
-        public RelayCommand RefreshSimpleCommands { get; private set; }
         public RelayCommand<IList> SelectionChangedCommand { get; private set; }
 
         public PropertyValidator Validator { get; set; }
@@ -266,8 +265,7 @@ namespace UserInterface.ViewModel
             DeleteCmd = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
-            RefreshSimpleCommands = new RelayCommand(async () => await ExecuteRefreshSimpleCommands());
-            SelectionChangedCommand = new RelayCommand<IList>(items => NumberOfSelectedItems = items == null? 0 : items.Count);
+            SelectionChangedCommand = new RelayCommand<IList>(async (items) => await ExecuteRefreshSimpleCommands(items));
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -396,10 +394,12 @@ namespace UserInterface.ViewModel
             }
         }
 
-        public async Task ExecuteRefreshSimpleCommands()
+        public async Task ExecuteRefreshSimpleCommands(IList items)
         {
             try
             {
+                NumberOfSelectedItems = items == null ? 0 : items.Count;
+
                 SimpleCommandList.Clear();
                 if (DetailedContent != null)
                 {

@@ -224,8 +224,8 @@
   <data name="RefreshFailed" xml:space="preserve">
     <value>Refresh failed</value>
   </data>
-  <data name="Route" xml:space="preserve">
-    <value>Route</value>
+  <data name="Routes" xml:space="preserve">
+    <value>Routes</value>
   </data>
   <data name="Operation" xml:space="preserve">
     <value>Operation:</value>
@@ -253,5 +253,11 @@
   </data>
   <data name="Pallet" xml:space="preserve">
     <value>Pallet</value>
+  </data>
+  <data name="ActiveRoute" xml:space="preserve">
+    <value>Active Route</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Route</value>
   </data>
 </root>

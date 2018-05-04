@@ -227,7 +227,7 @@
   <data name="Operation" xml:space="preserve">
     <value>İş Emri Tipi</value>
   </data>
-  <data name="Route" xml:space="preserve">
+  <data name="Routes" xml:space="preserve">
     <value>Rutlar</value>
   </data>
   <data name="TruckPlate" xml:space="preserve">
@@ -243,7 +243,7 @@
     <value>Onaylanan</value>
   </data>
   <data name="Pallet" xml:space="preserve">
-    <value>Paletlar</value>
+    <value>Paletler</value>
   </data>
   <data name="Total" xml:space="preserve">
     <value>Toplam</value>
@@ -253,5 +253,11 @@
   </data>
   <data name="TruckNumber" xml:space="preserve">
     <value>P No.</value>
+  </data>
+  <data name="ActiveRoute" xml:space="preserve">
+    <value>Rut Aktif</value>
+  </data>
+  <data name="Route" xml:space="preserve">
+    <value>Rut</value>
   </data>
 </root>

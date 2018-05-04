@@ -1,5 +1,4 @@
-﻿delete from [User]
-delete from [Alarm]
+﻿delete from [Alarm]
 delete from [Event]
 delete from [Movement]
 delete from [Command]
@@ -8,7 +7,6 @@ delete from [Place]
 delete from [MaterialID] 
 
 select
-	(select count(*) from [User]) as tUser,
 	(select count(*) from [Alarm]) as tAlarm,
 	(select count(*) from [Event]) as tEvent,
 	(select count(*) from [Movement]) as tMovement,

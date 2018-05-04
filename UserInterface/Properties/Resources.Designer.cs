@@ -11779,7 +11779,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Place MFCS.
+        ///   Looks up a localized string similar to Place Core.
         /// </summary>
         public static string PlaceMFCS {
             get {
@@ -12337,6 +12337,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stokbar Ref.
+        /// </summary>
+        public static string SubOrderERPID {
+            get {
+                return ResourceManager.GetString("SubOrderERPID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Suborder ID.
         /// </summary>
         public static string SubOrderID {
@@ -12454,7 +12463,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time MFCS.
+        ///   Looks up a localized string similar to Time Core.
         /// </summary>
         public static string TimeMFCS {
             get {

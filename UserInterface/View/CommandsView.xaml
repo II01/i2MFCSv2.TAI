@@ -94,9 +94,6 @@
                         CommandParameter="{Binding SelectedItems,
                         ElementName=dgCommands}" />
                 </i:EventTrigger>
-                <i:EventTrigger EventName="SelectedItemChanged" >
-                    <i:InvokeCommandAction Command="{Binding RefreshSimpleCommands}" />
-                </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
         <TextBlock Text="{Resx Detailed_simple_commands}" Grid.Row="3" FontWeight="Medium" FontSize="{StaticResource MidFontSize}"/>

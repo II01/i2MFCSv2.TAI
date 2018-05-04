@@ -312,7 +312,8 @@ namespace UserInterface.ViewModel
                 XAMLViewModelsToLoad--;
                 if (XAMLViewModelsToLoad == 0)
                 {
-                    SimpleIoc.Default.GetInstance<UsersViewModel>().SendAccessLevelAndUser(22, "admin");
+                    if (System.Configuration.ConfigurationManager.AppSettings["CommissionningMode"]=="ii")
+                        SimpleIoc.Default.GetInstance<UsersViewModel>().SendAccessLevelAndUser(22, "root");
                     Warehouse.WCFClient = new WCFUIClient();
                     Warehouse.WCFClient.Initialize(Warehouse);
                     Warehouse.StartCommunication();

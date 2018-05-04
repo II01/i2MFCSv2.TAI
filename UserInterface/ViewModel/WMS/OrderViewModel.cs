@@ -127,6 +127,19 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public int SubOrderERPID
+        {
+            get { return _data.SubOrderERPID; }
+            set
+            {
+                if (_data.SubOrderERPID != value)
+                {
+                    _data.SubOrderERPID = value;
+                    RaisePropertyChanged("SubOrderERPID");
+                }
+            }
+        }
+
         public string SubOrderName
         {
             get { return _data.SubOrderName; }
@@ -278,6 +291,7 @@ namespace UserInterface.ViewModel
             ReferenceSubOrderID = 0;
             OrderID = -1;
             SubOrderID = -1;
+            SubOrderERPID = -1;
             SKUQty = -1;
             Validator = new PropertyValidator();
             ValidationEnabled = false;
@@ -330,6 +344,10 @@ namespace UserInterface.ViewModel
                                 break;
                             case "SubOrderID":
                                 if (SubOrderID <= 0 || (_dbservicewms.ExistsSubOrderID(OrderID, SubOrderID) && SubOrderID != ReferenceSubOrderID))
+                                    validationResult = ResourceReader.GetString("ERR_SUBORDERID");
+                                break;
+                            case "SubOrderERPID":
+                                if (SubOrderERPID < 0 )
                                     validationResult = ResourceReader.GetString("ERR_SUBORDERID");
                                 break;
                             case "SubOrderName":

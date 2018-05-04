@@ -14,6 +14,7 @@ using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using DatabaseWMS;
 using System.Threading.Tasks;
+using UserInterface.ProxyWMS_UI;
 
 namespace UserInterface.ViewModel
 {
@@ -191,6 +192,7 @@ namespace UserInterface.ViewModel
                 Detailed.OrderERPID = Selected.OrderERPID;
                 Detailed.OrderOrderID = Selected.OrderOrderID;
                 Detailed.OrderSubOrderID = Selected.OrderSubOrderID;
+                Detailed.OrderSubOrderERPID = Selected.OrderSubOrderERPID;
                 Detailed.OrderSubOrderName = Selected.OrderSubOrderName;
                 Detailed.OrderSKUID = Selected.OrderSKUID;
                 Detailed.OrderSKUBatch = Selected.OrderSKUBatch;
@@ -256,19 +258,14 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Delete:
-                            _dbservicewms.UpdateCommand(new Commands
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.CancelCommand(new DTOCommand
                                 {
-                                    ID = Detailed.WMSID,
-                                    Order_ID = Detailed.OrderID,
-                                    TU_ID = Detailed.TUID,
-                                    Source = Detailed.Source,
-                                    Target = Detailed.Target,
-                                    Status = (int)EnumCommandWMSStatus.Canceled,
-                                    Time = DateTime.Now
+                                    ID = Selected.WMSID
                                 });
-                            Detailed.Status = EnumCommandWMSStatus.Canceled;
-                            Selected.Status = Detailed.Status;
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Command WMS cancel: {Detailed.Data.ToString()}");
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete command: |{Selected.WMSID}|");
+                            }
                             break;
                         default:
                             break;
@@ -320,6 +317,7 @@ namespace UserInterface.ViewModel
                         OrderERPID = p.OrderERPID,
                         OrderOrderID = p.OrderOrderID,
                         OrderSubOrderID = p.OrderSubOrderID,
+                        OrderSubOrderERPID = p.OrderSubOrderERPID,
                         OrderSubOrderName = p.OrderSubOrderName,
                         OrderSKUID = p.OrderSKUID,
                         OrderSKUBatch = p.OrderSKUBatch

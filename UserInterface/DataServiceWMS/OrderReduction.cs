@@ -12,6 +12,7 @@ namespace UserInterface.DataServiceWMS
         public int? ERPIDStokbar { get; set; }
         public int OrderID { get; set; }
         public int SubOrderID { get; set; }
+        public int SubOrderERPID { get; set; }
         public int WMSID { get; set; }
         public string SubOrderName { get; set; }
         public string Destination { get; set; }

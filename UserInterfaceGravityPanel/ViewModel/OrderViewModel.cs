@@ -25,6 +25,7 @@ namespace UserInterfaceGravityPanel.ViewModel
         private string _suborderActive;
         private string _suborderDone;
         private Visibility _palletVisibility;
+        private Visibility _rightVisibility;
         #endregion
 
         #region properties
@@ -256,6 +257,18 @@ namespace UserInterfaceGravityPanel.ViewModel
                 {
                     _palletVisibility = value;
                     RaisePropertyChanged("PalletVisibility");
+                }
+            }
+        }
+        public Visibility RightVisibility
+        {
+            get { return _rightVisibility; }
+            set
+            {
+                if (_rightVisibility != value)
+                {
+                    _rightVisibility = value;
+                    RaisePropertyChanged("RightVisibility");
                 }
             }
         }
