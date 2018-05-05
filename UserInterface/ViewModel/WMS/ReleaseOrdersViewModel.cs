@@ -20,7 +20,7 @@ namespace UserInterface.ViewModel
 {
     public sealed class ReleaseOrdersViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, ReleaseOrder, DeleteOrder, DeleteCommand, ClearRamp, ReleaseRamp };
+        public enum CommandType { None = 0, ReleaseOrder, DeleteOrder, DeleteSubOrder, DeleteCommand, ClearRamp, ReleaseRamp };
 
         #region members
         private CommandType _selectedCmd;
@@ -53,6 +53,7 @@ namespace UserInterface.ViewModel
         public RelayCommand RefreshTU { get; private set; }
         public RelayCommand CmdReleaseOrder { get; private set; }
         public RelayCommand CmdDeleteOrder { get; private set; }
+        public RelayCommand CmdDeleteSubOrder { get; private set; }
         public RelayCommand CmdDeleteCommand { get; private set; }
         public RelayCommand CmdClearTruckRamp { get; private set; }
         public RelayCommand CmdReleaseTruckRamp { get; private set; }
@@ -331,6 +332,7 @@ namespace UserInterface.ViewModel
             RefreshTU = new RelayCommand(async () => await ExecuteRefreshTU());
             CmdReleaseOrder = new RelayCommand(() => ExecuteReleaseOrder(), CanExecuteReleaseOrder);
             CmdDeleteOrder = new RelayCommand(() => ExecuteDeleteOrder(), CanExecuteDeleteOrder);
+            CmdDeleteSubOrder = new RelayCommand(() => ExecuteDeleteSubOrder(), CanExecuteDeleteSubOrder);
             CmdDeleteCommand = new RelayCommand(() => ExecuteDeleteCommand(), CanExecuteDeleteCommand);
             CmdClearTruckRamp = new RelayCommand(() => ExecuteClearTruckRamp(), CanExecuteClearTruckRamp);
             CmdReleaseTruckRamp = new RelayCommand(() => ExecuteReleaseTruckRamp(), CanExecuteReleaseTruckRamp);
@@ -433,7 +435,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return SelectedOrder != null && SelectedOrder.Status < EnumWMSOrderStatus.Cancel && !EditEnabled && AccessLevel/10 >= 2;
+                return SelectedOrder != null && SelectedOrder.Status <= EnumWMSOrderStatus.Active && !EditEnabled && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -443,6 +445,33 @@ namespace UserInterface.ViewModel
             }
         }
 
+        private void ExecuteDeleteSubOrder()
+        {
+            try
+            {
+                EditEnabled = false;
+                EnabledCC = true;
+                _selectedCmd = CommandType.DeleteSubOrder;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        private bool CanExecuteDeleteSubOrder()
+        {
+            try
+            {
+                return SelectedSubOrder != null && SelectedSubOrder.Status <= EnumWMSOrderStatus.Active && !EditEnabled && AccessLevel / 10 >= 2;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
         private void ExecuteDeleteCommand()
         {
             try
@@ -598,6 +627,10 @@ namespace UserInterface.ViewModel
                             }
                             SelectedOrder.Status = DetailedOrder.Status;
                             break;
+                        case CommandType.DeleteSubOrder:
+                            if (SelectedSubOrder.Status == EnumWMSOrderStatus.Waiting)
+                                _dbservicewms.UpdateSubOrderStatus(SelectedSubOrder.ID, EnumWMSOrderStatus.Cancel);
+                            break;
                         case CommandType.DeleteCommand:
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
@@ -639,7 +672,8 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return (_selectedCmd == CommandType.DeleteOrder || _selectedCmd == CommandType.DeleteCommand || 
+                return (_selectedCmd == CommandType.DeleteOrder ||
+                        _selectedCmd == CommandType.DeleteSubOrder || _selectedCmd == CommandType.DeleteCommand || 
                         _selectedCmd == CommandType.ClearRamp || _selectedCmd == CommandType.ReleaseRamp ||
                         (EditEnabled && DetailedOrder.AllPropertiesValid)) && AccessLevel/10 >= 1;
             }

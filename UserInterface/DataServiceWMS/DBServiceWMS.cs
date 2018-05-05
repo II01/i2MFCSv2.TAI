@@ -602,6 +602,27 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public void UpdateSubOrderStatus(int id, EnumWMSOrderStatus status)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from or in dc.Orders
+                            where or.ID == id
+                            select or;
+                    foreach (var o in l)
+                    {
+                        o.Status = (int)status;
+                    }
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
         public bool ClearRamp(string destinationtStartsWith)
         {
             try

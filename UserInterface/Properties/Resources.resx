@@ -4332,4 +4332,7 @@
   <data name="SubOrderERPID" xml:space="preserve">
     <value>Stokbar Ref</value>
   </data>
+  <data name="CancelSubOrder" xml:space="preserve">
+    <value>Cancel Suborder</value>
+  </data>
 </root>

@@ -9475,6 +9475,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel Suborder.
+        /// </summary>
+        public static string CancelSubOrder {
+            get {
+                return ResourceManager.GetString("CancelSubOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change language.
         /// </summary>
         public static string Change_language {

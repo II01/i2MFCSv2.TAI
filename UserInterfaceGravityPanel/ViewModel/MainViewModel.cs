@@ -312,9 +312,9 @@ namespace UserInterfaceGravityPanel.ViewModel
                     OrderInfo.SuborderTotal = orderCount.All.ToString();
                     OrderInfo.SuborderActive = orderCount.Active.ToString();
                     OrderInfo.SuborderDone = orderCount.Done.ToString();
-                    OrderInfo.PalletVisibility = orderCount.Active == 0 ? Visibility.Hidden : Visibility.Visible;
                 }
                 OrderInfo.SubOrderID = "-";
+                OrderInfo.PalletVisibility = Visibility.Hidden;
                 if (suborder != null)
                 {
                     string[] split = suborder.SubOrderName.Split('#');
@@ -331,6 +331,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                     OrderInfo.CommandTotal = suborderCount.All.ToString();
                     OrderInfo.CommandDone = suborderCount.Done.ToString();
                     OrderInfo.CommandActive = suborderCount.Active.ToString();
+                    OrderInfo.PalletVisibility = suborderCount.Active == 0 ? Visibility.Hidden : Visibility.Visible;
                 }
 
                 // laneviewmodel
