@@ -156,7 +156,8 @@ namespace Warehouse.Strategy
 
 
                     if (c1c != null && c2c != null && c1c.Task == c2c.Task && 
-                        c1c.Source.StartsWith("W") && c2c.Source.StartsWith("W") && c1c.Source.Substring(0, 11) == c2c.Source.Substring(0, 11))
+                        c1c.Source.StartsWith("W") && c2c.Source.StartsWith("W") && 
+                        c1c.Source.Substring(0, c1c.Source.Length-1) == c2c.Source.Substring(0, c2c.Source.Length-1))
                         opposite = (c1c.Task == SimpleCommand.EnumTask.Pick && c1c.Source.EndsWith("2") && c2c.Source.EndsWith("1")) ||
                                    (c1c.Task == SimpleCommand.EnumTask.Drop && c1c.Source.EndsWith("1") && c2c.Source.EndsWith("2"));
                     else
