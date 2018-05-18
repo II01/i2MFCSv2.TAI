@@ -301,7 +301,7 @@ namespace UserInterface.ViewModel
                 Detailed.ReferenceSubOrderID = 0;
                 Detailed.ERPID = null;
                 Detailed.ERPIDRef = null;
-                Detailed.OrderID = 0;
+                Detailed.OrderID = _dbservicewms.GetLastUsedOrderID()+1;
                 Detailed.Destination = "";
                 Detailed.ReleaseTime = SqlDateTime.MaxValue.Value;
                 Detailed.SubOrderID = 0;
@@ -436,6 +436,7 @@ namespace UserInterface.ViewModel
                 Detailed.OrderID = SelectedOrder.OrderID;
                 Detailed.Destination = SelectedOrder.Destination;
                 Detailed.ReleaseTime = SelectedOrder.ReleaseTime;
+                Detailed.SubOrderID = 0;
                 Detailed.SubOrderERPID = 0;
                 Detailed.SubOrderName = "";
                 Detailed.SKUID = "";
@@ -976,7 +977,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is OrdersViewModel)
+                if (vm is OrdersViewModel && !EnabledCC)
                 {
                     await ExecuteRefresh();
                 }

@@ -101,21 +101,21 @@
             </i:Interaction.Triggers>
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderID}" 
-                                Width="*" Binding="{Binding SubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding SubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderERPID}" 
-                                Width="*" Binding="{Binding SubOrderERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding SubOrderERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
-                                Width="*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
-                                Width="*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" 
-                                Width="*" Binding="{Binding SKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="3*" Binding="{Binding SKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUQty}" 
-                                Width="*" Binding="{Binding SKUQty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding SKUQty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionSubOrder}" 
-                                Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
-                                Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
         </DataGrid>
 

@@ -354,7 +354,8 @@ namespace Warehouse.ConveyorUnits
                     Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Command,
                                         String.Format("{0} Confirmation({1}), Fault({2})",
                                         cmd.ToString(), tel.Confirmation, tel.Fault));
-                    Warehouse.SteeringCommands.Run = (tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYMFCS) ||
+                    Warehouse.SteeringCommands.Run &= tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYMFCS ||
+                                                      tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYWAREHOUSE ||
                                                       (tel.Confirmation == TelegramCraneTO.CONFIRMATION_FAULT &&
                                                        (tel.Fault == TelegramCraneTO.FAULT_CANCEL_NOCMD || tel.Fault > TelegramCraneTO.FAULT_REPEATORDER));
                 }

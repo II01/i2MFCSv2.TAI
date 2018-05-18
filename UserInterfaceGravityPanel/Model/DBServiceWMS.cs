@@ -90,9 +90,12 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
 
                     var oc = new OrderCount
                     {
-                        Status = order.Where(p => p.Suborder.Status > (int)EnumWMSOrderStatus.Waiting)
-                                      .DefaultIfEmpty()
-                                      .Min(p => p == null ? 0 : p.Suborder.Status),
+                        Status = order.Any(p => p.Suborder.Status > (int)EnumWMSOrderStatus.Waiting) ?
+                                                order.Min(p => p.Suborder.Status > (int)EnumWMSOrderStatus.Waiting ? 
+                                                p.Suborder.Status : (int)EnumWMSOrderStatus.Active) : (int)EnumWMSOrderStatus.Waiting,
+//                        Status = order.Where(p => p.Suborder.Status > (int)EnumWMSOrderStatus.Waiting)
+//                                      .DefaultIfEmpty()
+//                                      .Min(p => p == null ? 0 : p.Suborder.Status),
                         All = order.Count(),
                         Active = order.Count(p => p.Suborder.Status == (int)EnumWMSOrderStatus.Active),
                         Done = order.Count(p => p.Suborder.Status >= (int)EnumWMSOrderStatus.OnTarget && p.Suborder.Status <= (int)EnumWMSOrderStatus.ReadyToTake),
@@ -125,9 +128,10 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
 
                     var oc = new OrderCount
                     {
-                        Status = order.Where(p => p.Command.Status > (int)EnumWMSCommandStatus.Waiting)
-                                      .DefaultIfEmpty()
-                                      .Min(p => (p == null || p.Command == null) ? 0 : p.Command.Status),
+                        Status = order.FirstOrDefault().Order.Status,
+//                        order.Where(p => p.Command.Status > (int)EnumWMSCommandStatus.Waiting)
+//                                      .DefaultIfEmpty()
+//                                      .Min(p => (p == null || p.Command == null) ? 0 : p.Command.Status),
                         All = order.Count(p => p.Command.Target.StartsWith("W:32")),
                         Active = order.Count(p => p.Command.Status == (int)EnumWMSCommandStatus.Active),
                         Done = order.Count(p => p.Command.Target.StartsWith("W:32") && p.Command.Status >= (int)EnumWMSCommandStatus.Canceled),

@@ -609,27 +609,32 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Release order: {DetailedOrder.Order.ToString()}");
                             break;
                         case CommandType.DeleteOrder:
-                            if(SelectedOrder.Status == EnumWMSOrderStatus.Waiting)
-                                _dbservicewms.UpdateOrders(DetailedOrder.ERPID, DetailedOrder.OrderID, DetailedOrder.Order);
-                            else
+                            using (WMSToUIClient client = new WMSToUIClient())
                             {
-                                using (WMSToUIClient client = new WMSToUIClient())
+                                client.CancelOrder(new DTOOrder
                                 {
-                                    client.CancelOrder(new DTOOrder
-                                    {
-                                        ERP_ID = DetailedOrder.ERPIDref,
-                                        OrderID = DetailedOrder.OrderID,
-                                        ReleaseTime = DetailedOrder.ReleaseTime,
-                                        Destination = DetailedOrder.Destination
-                                    });
-                                    _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Cancel order: {DetailedOrder.Order.ToString()}");
-                                }
+                                    ID = 0,
+                                    ERP_ID = DetailedOrder.ERPIDref,
+                                    OrderID = DetailedOrder.OrderID,
+                                    ReleaseTime = DetailedOrder.ReleaseTime,
+                                    Destination = DetailedOrder.Destination
+                                });
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Cancel order: {DetailedOrder.Order.ToString()}");
                             }
-                            SelectedOrder.Status = DetailedOrder.Status;
                             break;
                         case CommandType.DeleteSubOrder:
-                            if (SelectedSubOrder.Status == EnumWMSOrderStatus.Waiting)
-                                _dbservicewms.UpdateSubOrderStatus(SelectedSubOrder.ID, EnumWMSOrderStatus.Cancel);
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.CancelOrder(new DTOOrder
+                                {
+                                    ID = SelectedSubOrder.ID,
+                                    ERP_ID = SelectedSubOrder.ERPIDref,
+                                    OrderID = SelectedSubOrder.OrderID,
+                                    ReleaseTime = SelectedSubOrder.ReleaseTime,
+                                    Destination = SelectedSubOrder.Destination
+                                });
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Cancel suborder: {DetailedOrder.Order.ToString()}");
+                            }
                             break;
                         case CommandType.DeleteCommand:
                             using (WMSToUIClient client = new WMSToUIClient())
@@ -738,7 +743,9 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if(SelectedOrder != null)
                 {
-                    foreach (var p in await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID))
+                    var suborders = await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID);
+                    DataListSubOrder.Clear();
+                    foreach (var p in suborders)
                         DataListSubOrder.Add(new ReleaseOrderViewModel
                         {
                             ID = p.WMSID,
@@ -776,7 +783,9 @@ namespace UserInterface.ViewModel
                 DataListCommand.Clear();
                 if( SelectedSubOrder != null )
                 {
-                    foreach (var cmd in await _dbservicewms.GetCommandsWMSForSubOrder(SelectedSubOrder.ID))
+                    var cmds = await _dbservicewms.GetCommandsWMSForSubOrder(SelectedSubOrder.ID);
+                    DataListCommand.Clear();
+                    foreach (var cmd in cmds)
                     {
                         DataListCommand.Add(new CommandWMSViewModel
                         {

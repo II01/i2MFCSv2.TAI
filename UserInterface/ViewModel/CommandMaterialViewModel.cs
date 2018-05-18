@@ -266,7 +266,8 @@ namespace UserInterface.ViewModel
                                 case "Source":
                                     if (_warehouse.DBService.FindPlaceID(Source) == null)
                                         validationResult = ResourceReader.GetString("ERR_LOCATION");
-                                    else if (TaskTU == EnumCommandTUTask.Move && !(_warehouse.WCFClient as WCFUIClient).NotifyUIClient.RouteExists(Source, Target, false))
+                                    else if (TaskTU == EnumCommandTUTask.Move && _warehouse.DBService.FindPlaceID(Target) != null && 
+                                            !(_warehouse.WCFClient as WCFUIClient).NotifyUIClient.RouteExists(Source, Target, false))
                                         validationResult = ResourceReader.GetString("ERR_ROUTE");
                                     else
                                     {
@@ -284,7 +285,8 @@ namespace UserInterface.ViewModel
                                 case "Target":
                                     if (_warehouse.DBService.FindPlaceID(Target) == null)
                                         validationResult = ResourceReader.GetString("ERR_LOCATION");
-                                    else if (TaskTU == EnumCommandTUTask.Move && !(_warehouse.WCFClient as WCFUIClient).NotifyUIClient.RouteExists(Source, Target, false))
+                                    else if (TaskTU == EnumCommandTUTask.Move && _warehouse.DBService.FindPlaceID(Source) != null && 
+                                            !(_warehouse.WCFClient as WCFUIClient).NotifyUIClient.RouteExists(Source, Target, false))
                                         validationResult = ResourceReader.GetString("ERR_ROUTE");
                                     else
                                     {

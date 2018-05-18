@@ -360,9 +360,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                SKUIDViewModel sl = SelectedSKUID; 
-                SKUIDList.Clear();
+                SKUIDViewModel sl = SelectedSKUID;
                 var skuids = await _dbservicewms.GetSKUIDs();
+                SKUIDList.Clear();
                 foreach (var p in skuids)
                     SKUIDList.Add(new SKUIDViewModel { ID = p.ID, Description = p.Description, DefaultQty = p.DefaultQty, Unit = p.Unit, Weight = p.Weight, FrequencyClass = p.FrequencyClass });
                 foreach (var l in SKUIDList)
@@ -383,6 +383,7 @@ namespace UserInterface.ViewModel
                 if (SelectedSKUID != null)
                 {
                     var sdl = await _dbservicewms.GetAvailableTUs(SelectedSKUID.ID);
+                    TUList.Clear();
                     foreach (var s in sdl)
                         TUList.Add(new TUViewModel { TUID = s.TU_ID, SKUID = s.SKU_ID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate });
                 }

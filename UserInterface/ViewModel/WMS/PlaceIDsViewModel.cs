@@ -445,9 +445,10 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                string id = SelectedPlaceID?.ID; 
+                string id = SelectedPlaceID?.ID;
+                var placeids = await _dbservicewms.GetPlaceIDs(0, int.MaxValue);
                 PlaceIDList.Clear();
-                foreach (var p in await _dbservicewms.GetPlaceIDs(0, int.MaxValue))
+                foreach (var p in placeids)
                     PlaceIDList.Add(new PlaceIDViewModel
                     {
                         ID = p.ID,
