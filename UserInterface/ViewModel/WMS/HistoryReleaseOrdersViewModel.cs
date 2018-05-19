@@ -296,7 +296,9 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if(SelectedOrder != null)
                 {
-                    foreach (var p in await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID))
+                    var suborders = await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID);
+                    DataListSubOrder.Clear();
+                    foreach (var p in suborders)
                         DataListSubOrder.Add(new ReleaseOrderViewModel
                         {
                             ID = p.WMSID,
@@ -334,7 +336,9 @@ namespace UserInterface.ViewModel
                 DataListCommand.Clear();
                 if( SelectedSubOrder != null )
                 {
-                    foreach (var cmd in await _dbservicewms.GetCommandsWMSForSubOrder(SelectedSubOrder.ID))
+                    var cmds = await _dbservicewms.GetCommandsWMSForSubOrder(SelectedSubOrder.ID);
+                    DataListCommand.Clear();
+                    foreach (var cmd in cmds)
                     {
                         DataListCommand.Add(new CommandWMSViewModel
                         {

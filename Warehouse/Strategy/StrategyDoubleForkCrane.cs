@@ -94,7 +94,7 @@ namespace Warehouse.Strategy
             FLocation fpos1 = GetLocation(cmd1.Source);
             FLocation fpos2 = GetLocation(cmd2.Source);
 
-            return (location - fpos1).Abs() <= (location - fpos2).Abs();
+            return Math.Abs(location.X - fpos1.X) <= Math.Abs(location.X - fpos2.X);
         }
 
         public override void Strategy()

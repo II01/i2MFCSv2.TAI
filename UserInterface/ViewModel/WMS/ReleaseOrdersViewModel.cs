@@ -603,7 +603,7 @@ namespace UserInterface.ViewModel
                     switch (_selectedCmd)
                     {
                         case CommandType.ReleaseOrder:
-                            _dbservicewms.UpdateOrders(DetailedOrder.ERPIDref, DetailedOrder.OrderID, DetailedOrder.Order);
+                            _dbservicewms.UpdateOrders(DetailedOrder.ERPID, DetailedOrder.OrderID, DetailedOrder.Order);
                             SelectedOrder.Destination = DetailedOrder.Destination;
                             SelectedOrder.ReleaseTime = DetailedOrder.ReleaseTime;
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Release order: {DetailedOrder.Order.ToString()}");
@@ -614,7 +614,7 @@ namespace UserInterface.ViewModel
                                 client.CancelOrder(new DTOOrder
                                 {
                                     ID = 0,
-                                    ERP_ID = DetailedOrder.ERPIDref,
+                                    ERP_ID = DetailedOrder.ERPID,
                                     OrderID = DetailedOrder.OrderID,
                                     ReleaseTime = DetailedOrder.ReleaseTime,
                                     Destination = DetailedOrder.Destination
@@ -823,8 +823,9 @@ namespace UserInterface.ViewModel
             {
                 string placeid = SelectedPlace?.ID;
 
+                var placeids = await _dbservicewms.GetPlaceIDs(-1, -1);
                 DataListPlace.Clear();
-                foreach (var pl in await _dbservicewms.GetPlaceIDs(-1, -1))
+                foreach (var pl in placeids)
                 {
                     DataListPlace.Add(new PlaceIDViewModel
                     {
@@ -850,7 +851,9 @@ namespace UserInterface.ViewModel
                 DataListTU.Clear();
                 if (SelectedPlace != null)
                 {
-                    foreach (var tu in await _dbservicewms.GetPlaces(SelectedPlace.ID))
+                    var tus = await _dbservicewms.GetPlaces(SelectedPlace.ID);
+                    DataListTU.Clear();
+                    foreach (var tu in tus)
                     {
                         DataListTU.Add(new PlaceViewModel
                         {
