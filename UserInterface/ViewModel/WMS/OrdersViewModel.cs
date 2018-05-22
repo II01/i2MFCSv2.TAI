@@ -864,7 +864,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                var orders = await _dbservicewms.GetOrdersDistinct(DateTime.Now.AddDays(-1), DateTime.MaxValue, (int)EnumWMSOrderStatus.ReadyToTake);
+                var orders = await _dbservicewms.GetOrdersDistinct(DateTime.Now.AddDays(-1), DateTime.MaxValue, (int)EnumWMSOrderStatus.OnTargetPart);
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new OrderViewModel

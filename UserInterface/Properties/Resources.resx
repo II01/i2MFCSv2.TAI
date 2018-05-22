@@ -853,7 +853,7 @@
     <value>Compare databases</value>
   </data>
   <data name="WMSLog" xml:space="preserve">
-    <value>WMS Log</value>
+    <value>Log WMS</value>
   </data>
   <data name="ERPID" xml:space="preserve">
     <value>ERP ID</value>
@@ -4334,5 +4334,11 @@
   </data>
   <data name="CancelSubOrder" xml:space="preserve">
     <value>Cancel Suborder</value>
+  </data>
+  <data name="EnumWMSOrderStatus_OnTargetAll" xml:space="preserve">
+    <value>Delivered All</value>
+  </data>
+  <data name="EnumWMSOrderStatus_OnTargetPart" xml:space="preserve">
+    <value>Delivered Part</value>
   </data>
 </root>

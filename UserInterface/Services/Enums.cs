@@ -43,8 +43,8 @@ namespace UserInterface.Services
     {
         Waiting = 0,
         Active = 1,
-        OnTarget = 2,
-        ReadyToTake = 3,
+        OnTargetPart = 2,
+        OnTargetAll = 3,
         Cancel = 4,
         Finished = 5
     }

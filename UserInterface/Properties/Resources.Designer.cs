@@ -10789,6 +10789,24 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delivered All.
+        /// </summary>
+        public static string EnumWMSOrderStatus_OnTargetAll {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_OnTargetAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delivered Part.
+        /// </summary>
+        public static string EnumWMSOrderStatus_OnTargetPart {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_OnTargetPart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ready to take.
         /// </summary>
         public static string EnumWMSOrderStatus_ReadyToTake {
@@ -12706,7 +12724,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to WMS Log.
+        ///   Looks up a localized string similar to Log WMS.
         /// </summary>
         public static string WMSLog {
             get {

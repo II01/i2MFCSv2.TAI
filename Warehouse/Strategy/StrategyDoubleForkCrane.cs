@@ -94,7 +94,7 @@ namespace Warehouse.Strategy
             FLocation fpos1 = GetLocation(cmd1.Source);
             FLocation fpos2 = GetLocation(cmd2.Source);
 
-            return Math.Abs(location.X - fpos1.X) <= Math.Abs(location.X - fpos2.X);
+            return (location - fpos1).Distance() <= (location - fpos2).Distance();
         }
 
         public override void Strategy()
@@ -102,6 +102,8 @@ namespace Warehouse.Strategy
             try
             {
 
+                if ((!Strategy1.Crane.Remote() || !Strategy1.Crane.Communicator.Online() || Strategy1.Crane.LongTermBlock()))
+                    return;
                 if (!Warehouse.StrategyActive)
                     return;
                 if (!Warehouse.SteeringCommands.Run)
@@ -122,14 +124,14 @@ namespace Warehouse.Strategy
                 if (Strategy1.Crane.FastCommand == null)
                     Strategy1.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy1.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
 
-                SimpleCraneCommand c1c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy1.Crane.Name) ? null : Strategy1.GetNewCommand(remote);
+                SimpleCraneCommand c1c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy1.Crane.Name) ? null : Strategy1.GetNewCommand(remote, null);
                 //                SimpleCraneCommand c1b = Strategy1.GetNewCommand(remote);
 
                 Strategy2.BannedPlaces.AddRange(Strategy1.BannedPlaces);
 
                 if (Strategy2.Crane.FastCommand == null)
                     Strategy2.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy2.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
-                SimpleCraneCommand c2c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy2.Crane.Name) ? null : Strategy2.GetNewCommand(remote);
+                SimpleCraneCommand c2c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy2.Crane.Name) ? null : Strategy2.GetNewCommand(remote, c1c);
                 //                SimpleCraneCommand c2b = Strategy2.GetNewCommand(remote);
 
                 Strategy1.WriteCommandToPLC(Strategy1.Crane.FastCommand, true);
@@ -181,14 +183,14 @@ namespace Warehouse.Strategy
                         Strategy1.WriteCommandToPLC(c1c);
                     else
                         Strategy2.WriteCommandToPLC(c2c);
-                }
-                else if (c1c != null && Strategy2.Command == null)
+                } 
+                else if (c1c != null && (Strategy2.Command == null || (c1c.Task == Strategy2.Command.Task && c1c.Source.StartsWith("T") && Strategy2.Command.Source.StartsWith("T"))))
                 {
                     if (c1c.Task == SimpleCommand.EnumTask.Pick)
                         Strategy1.PrefferedInput = !Strategy1.PrefferedInput;
                     Strategy1.WriteCommandToPLC(c1c);
                 }
-                else if (c2c != null && Strategy1.Command == null)
+                else if (c2c != null && (Strategy1.Command == null || (c2c.Task == Strategy1.Command.Task && c2c.Source.StartsWith("T") && Strategy1.Command.Source.StartsWith("T"))))
                 {
                     if (c2c.Task == SimpleCommand.EnumTask.Pick)
                         Strategy1.PrefferedInput = !Strategy1.PrefferedInput;

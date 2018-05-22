@@ -1224,11 +1224,11 @@
   <data name="EnumWMSOrderStatus_Finished" xml:space="preserve">
     <value>Sonlandı</value>
   </data>
-  <data name="EnumWMSOrderStatus_OnTarget" xml:space="preserve">
-    <value>Hedefte</value>
+  <data name="EnumWMSOrderStatus_OnTargetPart" xml:space="preserve">
+    <value>Hedefte kısım</value>
   </data>
-  <data name="EnumWMSOrderStatus_ReadyToTake" xml:space="preserve">
-    <value>Almaya Hazır</value>
+  <data name="EnumWMSOrderStatus_OnTargetAll" xml:space="preserve">
+    <value>Hedefte tüm</value>
   </data>
   <data name="EnumWMSOrderStatus_Waiting" xml:space="preserve">
     <value>Beklemede</value>
@@ -4334,5 +4334,11 @@
   </data>
   <data name="CancelSuborder" xml:space="preserve">
     <value>Alt Sipariş İptal</value>
+  </data>
+  <data name="DeliveredAll" xml:space="preserve">
+    <value>Delivered All</value>
+  </data>
+  <data name="DeliveredPart" xml:space="preserve">
+    <value>Delivered Part</value>
   </data>
 </root>

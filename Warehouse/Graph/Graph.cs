@@ -7,24 +7,81 @@ using Warehouse.ConveyorUnits;
 
 namespace Warehouse.Model
 {
+
+    public class Route
+    {
+        public List<RouteDescription> Items { get; set; }
+        public double Cost { get; set; }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("Cost = {0}, {1}", Cost, Items[0].ToString());
+            for (int i = 1; i < Items.Count; i++)
+                sb.AppendFormat(" -> {0}", Items[i].ToString());
+            return sb.ToString();
+        }
+    }
+
+
+    public class RouteDescription
+    {
+        public ConveyorBasic First { get; set; }
+        public ConveyorBasic Next { get; set; }
+        public ConveyorBasic Final { get; set; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("[{0} : {1} .. {2}]", First.Name, Next.Name, Final.Name);
+            return sb.ToString();
+        }
+    }
+
     public partial class BasicWarehouse
     {
         private List<ConveyorBasic> visited = null;
 
 
-        public class RouteDescription
-        {
-            public ConveyorBasic First { get; set; }
-            public ConveyorBasic Next { get; set; }
-            public ConveyorBasic Final { get; set; }
 
-            public override string ToString()
+        public int CountSimpleCommandToAcumulation(ConveyorBasic cb, List<ConveyorBasic> visited, SimpleCraneCommand otherDeck)
+        {
+            int res = 0;
+            if ((cb == null) || visited.Contains(cb) || !(cb is Conveyor) || (cb is Conveyor && (cb as Conveyor).AcumulationMark))
+                return 0;
+            res = DBService.CountSimpleCraneCommandForTarget(cb.Name, true);
+            if (otherDeck != null && cb.Name == otherDeck.Source && otherDeck.Task == SimpleCommand.EnumTask.Drop)
+                res++;
+
+            visited.Add(cb);
+            if (cb is ConveyorJunction)
             {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendFormat("[{0} : {1} .. {2}]", First.Name, Next.Name, Final.Name);
-                return sb.ToString();
+                foreach (var item in (cb as ConveyorJunction).RouteDef.Node)
+                    res += CountSimpleCommandToAcumulation(item.Next, visited, otherDeck);
+            }
+            else if (cb.Route != null)
+                res += CountSimpleCommandToAcumulation(cb.Route.Next, visited, otherDeck);
+            return res;
+        }
+
+/*
+        private int CalcFreePlace1(Route route, List<ConveyorBasic> visited)
+        {
+            int res = 0;
+            foreach (var r in route.Items)
+            {
+                ConveyorBasic cb = r.Next;
+                if (!(cb is Conveyor))
+                    return res;
+                while (cb != r.Final)
+                {
+                    Conveyor c = cb as Conveyor;
+                    if (c.Accumulation && c.Place == null)
+                        res++;
+                    cb = cb.Route.Next;
+                }
             }
         }
+*/
 
         private int CalcFreePlace(ConveyorBasic cb, List<ConveyorBasic> visited)
         {
@@ -75,19 +132,6 @@ namespace Warehouse.Model
             return list;
         }
 
-        public class Route
-        {
-            public List<RouteDescription> Items { get; set; }
-            public double Cost { get; set; }
-            public override string ToString()
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendFormat("Cost = {0}, {1}", Cost, Items[0].ToString());
-                for (int i = 1; i < Items.Count; i++)
-                    sb.AppendFormat(" -> {0}", Items[i].ToString());
-                return sb.ToString();
-            }
-        }
 
         public void BuildRoutes(bool ignoreBlocked)
         {

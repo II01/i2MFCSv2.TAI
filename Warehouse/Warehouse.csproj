@@ -90,6 +90,7 @@
     <Compile Include="ConveyorUnits\ConveyorBasicInfo.cs" />
     <Compile Include="ConveyorUnits\ConveyorIOAndOutput.cs" />
     <Compile Include="ConveyorUnits\MainPanel.cs" />
+    <Compile Include="ProjectLogic\ProjectLogic.cs" />
     <Compile Include="ConveyorUnits\Segment.cs" />
     <Compile Include="ConveyorUnits\SegmentConveyor.cs" />
     <Compile Include="ConveyorUnits\SegmentCrane.cs" />

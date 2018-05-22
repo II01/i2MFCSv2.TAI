@@ -35,9 +35,9 @@ namespace Warehouse.ConveyorUnits
             return new FLocation { X = a.X - b.X, Y = a.Y - b.Y, Z = a.Z - b.Z };
         }
 
-        public double Abs()
+        public double Distance()
         {
-            return Math.Sqrt(X * X + Y * Y + Z * Z);
+            return Math.Sqrt(1 * X * X + 0 * Y * Y + 0 * Z * Z);
         }
     }
 

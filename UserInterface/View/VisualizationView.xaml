@@ -66,7 +66,7 @@
         <Viewbox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Stretch">
             <Canvas Margin="0,0,0,0" Width="1900" Height="950">
                 <!-- Segment T -->
-                <scada:UCSegment Canvas.Left="1206" Canvas.Top="0" Width="80" Height="74"
+                <scada:UCSegment Canvas.Left="817" Canvas.Top="60" Width="305" Height="44"
                                DataContext="{Binding Device[T]}"/>
                 <!-- Segment T01 -->
                 <scada:UCSegment Canvas.Left="1596" Canvas.Top="69" Width="154" Height="145"

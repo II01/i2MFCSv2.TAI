@@ -54,6 +54,7 @@ namespace Warehouse.ConveyorUnits
         [XmlAttribute]
         [DefaultValue(false)]
         public bool AcumulationMark { get; set; }
+ 
         public ConveyorInfo ConveyorInfo { get; set; }
 
         [XmlIgnore]

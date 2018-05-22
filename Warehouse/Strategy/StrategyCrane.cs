@@ -86,14 +86,14 @@ namespace Warehouse.Strategy
             }
         }
 
-        private SimpleCraneCommand GetCommandFromFreeState(bool inputPreference, bool automatic, List<string> bannedPlaces)
+        private SimpleCraneCommand GetCommandFromFreeState(bool inputPreference, bool automatic, List<string> bannedPlaces, SimpleCraneCommand otherDeck)
         {
             try
             {
                 // pick pallet from input line
 
                 var cmdInput = Crane.FindBestInput(automatic, ForcedInput);
-                var CmdWarehouse = Crane.FindBestWarehouse(automatic, bannedPlaces);
+                var CmdWarehouse = Crane.FindBestWarehouse(automatic, bannedPlaces, otherDeck);
 
                 if ((inputPreference && cmdInput != null) || (cmdInput != null && CmdWarehouse == null))
                 {
@@ -155,35 +155,47 @@ namespace Warehouse.Strategy
             }
         }
 
-        public SimpleCraneCommand GetNewCommand(bool remote)
+        public SimpleCraneCommand GetNewCommand(bool remote, SimpleCraneCommand otherDeck)
         {
             if (Command == null || Command.Status >= SimpleCommand.EnumStatus.Canceled)
             {
-                Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, remote);  // for move to work
-                if (!(Command != null && Command.Task == SimpleCommand.EnumTask.Move))
+                if (!Warehouse.SteeringCommands.AutomaticMode)
+                    Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, false);  // for simple commands
+                else
                 {
-                    if (Crane.Place != null)
-                        Command = GetCommandFromOccupiedState(Crane.Place.Material, remote);
-                    else
-                        Command = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces);
+                    Command = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, true);  // for move to work
+                    if (!(Command != null && Command.Task == SimpleCommand.EnumTask.Move))
+                    {
+                        if (Crane.Place != null)
+                            Command = GetCommandFromOccupiedState(Crane.Place.Material, remote);
+                        else
+                            Command = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces, otherDeck);
+                    }
                 }
+
                 return Command;
             }
 
             if (BufferCommand == null || BufferCommand.Status >= SimpleCommand.EnumStatus.Canceled)
             {
-                if (Command.Task == SimpleCommand.EnumTask.Move)
+                if (!Warehouse.SteeringCommands.AutomaticMode)
+                    BufferCommand = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, false);  // for simple commands
+                else
                 {
-                    // check for outbound
-                    if (Crane.Place != null)
-                        BufferCommand = GetCommandFromOccupiedState(Crane.Place.Material, remote);
-                    else
-                        BufferCommand = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces);
+                    if (Command.Task == SimpleCommand.EnumTask.Move)
+                    {
+                        // check for outbound
+                        if (Crane.Place != null)
+                            BufferCommand = GetCommandFromOccupiedState(Crane.Place.Material, remote);
+                        else
+                            BufferCommand = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces, otherDeck);
+                    }
+                    else if (Command.Task == SimpleCommand.EnumTask.Pick)
+                        BufferCommand = GetCommandFromOccupiedState(Command.Material.Value, remote);
+                    else if (Command.Task == SimpleCommand.EnumTask.Drop)
+                        BufferCommand = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces, otherDeck);
                 }
-                else if (Command.Task == SimpleCommand.EnumTask.Pick)
-                    BufferCommand = GetCommandFromOccupiedState(Command.Material.Value, remote);
-                else if (Command.Task == SimpleCommand.EnumTask.Drop)
-                    BufferCommand = GetCommandFromFreeState(PrefferedInput, remote, BannedPlaces);
+
                 return BufferCommand;
             }
 
@@ -222,7 +234,7 @@ namespace Warehouse.Strategy
             if (!Warehouse.StrategyActive)
                 return;
 
-            if ((!Crane.Remote() || !Crane.Communicator.Online() || !Crane.Automatic() || Crane.LongTermBlock()))      // Uros
+            if ((!Crane.Remote() || !Crane.Communicator.Online() || Crane.LongTermBlock()))
                 return;
             if (!Warehouse.SteeringCommands.Run)
                 return;
@@ -240,8 +252,8 @@ namespace Warehouse.Strategy
                 if (Crane.FastCommand == null)
                     Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
 
-                GetNewCommand(remote);
-                GetNewCommand(remote);
+                GetNewCommand(remote, null);
+                GetNewCommand(remote, null);
 
                     // make double cycles
                 if (PickAction != null)

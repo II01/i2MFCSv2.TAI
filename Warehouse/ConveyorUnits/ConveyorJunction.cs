@@ -33,7 +33,7 @@ namespace Warehouse.ConveyorUnits
     public class RouteDef
     {
         [XmlIgnore]
-        public List<Model.BasicWarehouse.Route> FinalRouteCost { get; set; }
+        public List<Route> FinalRouteCost { get; set; }
 
         public List<XmlRouteNode> XmlRoute { get; set; }
 
@@ -49,7 +49,7 @@ namespace Warehouse.ConveyorUnits
         private Random Random { get; set; }
         private Dictionary<string, List<string>> ConveyorNamesOnCommunicator { get; set; }
         [XmlIgnore]
-        public BasicWarehouse.Route ActiveRoute { get; set; }
+        public Route ActiveRoute { get; set; }
         [XmlIgnore]
         public int? ActiveMaterial { get; set; }
 
@@ -182,7 +182,12 @@ namespace Warehouse.ConveyorUnits
                             if (cmd != null && !error)
                             {
                                 var routes = from route in RouteDef.FinalRouteCost
-                                             where route.Items.Last().Final.Compatible(cmd.Target) && route.Items[0].Final is Conveyor && Warehouse.FreePlaces(route.Items[0].Next) > 0
+                                             where route.Items.Last().Final.Compatible(cmd.Target) // && route.Items[0].Final is Conveyor
+                                             select route;
+
+                                if(routes.Count() > 1 )
+                                    routes = from route in RouteDef.FinalRouteCost
+                                             where route.Items.Last().Final.Compatible(cmd.Target) && route.Items[0].Final is Conveyor && Warehouse.AllowRoute(this, route) &&  Warehouse.FreePlaces(route.Items[0].Next) > 0
                                              select route;
 
                                 // transport command handle
@@ -283,7 +288,7 @@ namespace Warehouse.ConveyorUnits
                     };
                 }
                 RouteDef.Node = new List<RouteNode>();
-                RouteDef.FinalRouteCost = new List<BasicWarehouse.Route>();
+                RouteDef.FinalRouteCost = new List<Route>();
                 foreach (XmlRouteNode node in RouteDef.XmlRoute)
                 {
                     RouteDef.Node.Add(new RouteNode { Next = Warehouse.FindConveyorBasic(node.Next), Cost = node.Cost });

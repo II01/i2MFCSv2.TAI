@@ -930,7 +930,8 @@ namespace Warehouse.DataService
                     return      (from sc in dc.SimpleCommands
                                  where sc.Status < SimpleCommand.EnumStatus.Canceled &&
                                   ((automatic && sc.Command_ID != null) || (!automatic && sc.Command_ID == null)) &&
-                                  sc.Source == target && sc.Task == SimpleCommand.EnumTask.Drop
+                                  (((sc is SimpleCraneCommand) && sc.Source == target && sc.Task == SimpleCommand.EnumTask.Drop) || 
+                                   ((sc is SimpleConveyorCommand) && (sc as SimpleConveyorCommand).Target == target && sc.Task == SimpleConveyorCommand.EnumTask.Move))
                                  select sc).Count();
             }
             catch (Exception ex)

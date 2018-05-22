@@ -263,7 +263,7 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public async Task<List<TUs>> GetAvailableTUs(string skuid)
+        public async Task<List<TUPlaceID>> GetAvailableTUs(string skuid)
         {
             try
             {
@@ -272,9 +272,21 @@ namespace UserInterface.DataServiceWMS
                     var l = from t in dc.TUs
                             where t.SKU_ID == skuid
                             join p in dc.Places on t.TU_ID equals p.TU_ID
-                            where p.PlaceID != "W:out" && !p.PlaceID.StartsWith("W:32")
+                            where p.PlaceID != "W:out" && !p.PlaceID.StartsWith("W:32") && !p.PlaceID.StartsWith("T")
+                            join pid in dc.PlaceIDs on p.PlaceID equals pid.ID
+                            join tid in dc.TU_ID on t.TU_ID equals tid.ID
                             orderby new { t.Batch, t.SKU_ID }
-                            select t;
+                            select new TUPlaceID
+                            {
+                                TUID = t.TU_ID,
+                                SKUID = t.SKU_ID,
+                                Batch = t.Batch,
+                                Qty = t.Qty,
+                                ProdDate = t.ProdDate,
+                                ExpDate = t.ExpDate,
+                                Location = pid.ID,
+                                Status = (EnumBlockedWMS)(pid.Status & tid.Blocked)
+                            };
                     return await l.ToListAsync();
                 }
             }
@@ -693,10 +705,10 @@ namespace UserInterface.DataServiceWMS
                     {
                         var l = from o in dc.Orders
                                 where o.Destination.StartsWith(destinationtStartsWith) &&
-                                      o.Status == (int)EnumWMSOrderStatus.OnTarget || o.Status == (int)EnumWMSOrderStatus.ReadyToTake
+                                      o.Status == (int)EnumWMSOrderStatus.OnTargetPart || o.Status == (int)EnumWMSOrderStatus.OnTargetAll
                                 select o;
                         foreach (var o in l)
-                            o.Status = (o.Status == (int)EnumWMSOrderStatus.OnTarget) ? (int)EnumWMSOrderStatus.Finished : (int)EnumWMSOrderStatus.Cancel;
+                            o.Status = (o.Status == (int)EnumWMSOrderStatus.OnTargetAll) ? (int)EnumWMSOrderStatus.Finished : (int)EnumWMSOrderStatus.Cancel;
                         var param = dc.Parameters.Find($"Counter[{destinationtStartsWith}]");
                         if (param != null)
                             param.Value = Convert.ToString(0);
@@ -952,7 +964,7 @@ namespace UserInterface.DataServiceWMS
                                      LastChange = grpO.FirstOrDefault().lastchange,
                                      CountAll = grpO.Count(),
                                      CountActive = grpO.Count(p => p.suborder.orders.Status == (int)EnumWMSOrderStatus.Active),
-                                     CountMoveDone = grpO.Count(p => p.suborder.orders.Status >= (int)EnumWMSOrderStatus.OnTarget && p.suborder.orders.Status <= (int)EnumWMSOrderStatus.ReadyToTake),
+                                     CountMoveDone = grpO.Count(p => p.suborder.orders.Status >= (int)EnumWMSOrderStatus.OnTargetAll && p.suborder.orders.Status <= (int)EnumWMSOrderStatus.OnTargetPart),
                                      CountFinished = grpO.Count(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Cancel),
                                      Status = grpO.Any(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting) ? 
                                                        grpO.Min(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting ? p.suborder.orders.Status : (int)EnumWMSOrderStatus.Active) : (int)EnumWMSOrderStatus.Waiting

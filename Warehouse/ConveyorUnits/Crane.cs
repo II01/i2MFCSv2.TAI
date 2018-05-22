@@ -729,9 +729,10 @@ namespace Warehouse.ConveyorUnits
                 Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
                 throw new CraneException(String.Format("{0} Crane.FindBestInput failed ({1})", Name, automatic));
             }
-       }
+        }
 
-        public SimpleCraneCommand FindBestWarehouse(bool automatic, List<string> bannedPlaces)
+
+        public SimpleCraneCommand FindBestWarehouse(bool automatic, List<string> bannedPlaces, SimpleCraneCommand otherDeck)
         {
             try
             {
@@ -742,7 +743,8 @@ namespace Warehouse.ConveyorUnits
                     foreach (var route in OutRouteDef.FinalRouteCost)
                         if (route.Items.Last().Final.Compatible(cmd.Target))  // && route.Items[0].Final.Place == null)
                         {
-                            if (Warehouse.FreePlaces(route.Items[0].Final) > Warehouse.DBService.CountSimpleCraneCommandForTarget(route.Items[0].Final.Name, true) ||
+                            int cnt = Warehouse.CountSimpleCommandToAcumulation(route.Items[0].Final, new List<ConveyorBasic>(), otherDeck);
+                            if (Warehouse.FreePlaces(route.Items[0].Final) > cnt ||
                                 route.Items[0].Final is Crane)
                             {
                                 int a = Warehouse.FreePlaces(route.Items[0].Final);
@@ -872,7 +874,7 @@ namespace Warehouse.ConveyorUnits
                         throw new BasicWarehouseException(String.Format("{0} has no XmlRoute defined", Name));
                     OutConveyor = new List<IConveyorIO>();
                     OutRouteDef.Node = new List<RouteNode>();
-                    OutRouteDef.FinalRouteCost = new List<BasicWarehouse.Route>();
+                    OutRouteDef.FinalRouteCost = new List<Route>();
                     foreach (XmlRouteNode node in OutRouteDef.XmlRoute)
                     {
                         OutRouteDef.Node.Add(new RouteNode { Next = Warehouse.FindConveyorBasic(node.Next), Cost = node.Cost });

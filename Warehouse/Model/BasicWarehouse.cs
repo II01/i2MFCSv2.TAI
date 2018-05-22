@@ -85,7 +85,6 @@ namespace Warehouse.Model
         public Dictionary<string, Segment> Segment { get; private set; }
 
 
-
         [XmlIgnore]
         public List<Action <DateTime, Event.EnumSeverity, Event.EnumType, string>> OnNewEvent { get; set; }
         [XmlIgnore]

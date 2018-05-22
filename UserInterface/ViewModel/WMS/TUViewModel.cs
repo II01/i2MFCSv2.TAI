@@ -14,6 +14,7 @@ namespace UserInterface.ViewModel
     {
         #region members
         private TUs _data;
+        private PlaceIDs _dataPlaceID;
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
@@ -31,6 +32,18 @@ namespace UserInterface.ViewModel
                 {
                     _data = value;
                     RaisePropertyChanged("Data");
+                }
+            }
+        }
+        public PlaceIDs DataPlaceID
+        {
+            get { return _dataPlaceID; }
+            set
+            {
+                if (_dataPlaceID != value)
+                {
+                    _dataPlaceID = value;
+                    RaisePropertyChanged("DataPlaceID");
                 }
             }
         }
@@ -109,6 +122,30 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public string Location
+        {
+            get { return _dataPlaceID.ID; }
+            set
+            {
+                if (_dataPlaceID.ID != value)
+                {
+                    _dataPlaceID.ID = value;
+                    RaisePropertyChanged("Location");
+                }
+            }
+        }
+        public EnumBlockedWMS Status
+        {
+            get { return (EnumBlockedWMS)_dataPlaceID.Status; }
+            set
+            {
+                if (_dataPlaceID.Status != (int)value)
+                {
+                    _dataPlaceID.Status = (int)value;
+                    RaisePropertyChanged("Status");
+                }
+            }
+        }
         public bool ValidationEnabled
         {
             get { return _validationEnabled; }
@@ -140,6 +177,7 @@ namespace UserInterface.ViewModel
         public TUViewModel()
         {
             _data = new TUs();
+            _dataPlaceID = new PlaceIDs();
             _dbservicewms = new DBServiceWMS(null);
             Validator = new PropertyValidator();
             ValidationEnabled = false;
