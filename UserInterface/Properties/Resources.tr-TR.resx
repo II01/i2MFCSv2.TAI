@@ -1225,10 +1225,10 @@
     <value>Sonlandı</value>
   </data>
   <data name="EnumWMSOrderStatus_OnTargetPart" xml:space="preserve">
-    <value>Hedefte kısım</value>
+    <value>Hedefte kısmi</value>
   </data>
   <data name="EnumWMSOrderStatus_OnTargetAll" xml:space="preserve">
-    <value>Hedefte tüm</value>
+    <value>Hedefte hepsi</value>
   </data>
   <data name="EnumWMSOrderStatus_Waiting" xml:space="preserve">
     <value>Beklemede</value>

@@ -171,10 +171,10 @@
     <value>Etkin</value>
   </data>
   <data name="OrderStatus2" xml:space="preserve">
-    <value>Hedefte</value>
+    <value>Hedefte kısmi</value>
   </data>
   <data name="OrderStatus3" xml:space="preserve">
-    <value>Kısmi hedefte</value>
+    <value>Hedefte hepsi</value>
   </data>
   <data name="OrderStatus4" xml:space="preserve">
     <value>İptal edildi</value>

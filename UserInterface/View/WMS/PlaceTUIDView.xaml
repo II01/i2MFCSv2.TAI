@@ -38,7 +38,7 @@
         <TextBlock Text="{Resx SKUID}" Grid.Row="3" Margin="0,0,0,10" VerticalAlignment="Top"/>
 
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
-                 Text ="{Binding Path=TUID,  Converter={StaticResource PalletIntAndString}, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowTUIDChange}"/>
+                 Text ="{Binding Path=TUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowTUIDChange}"/>
         <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=PlaceID,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="{Binding AllowPlaceChange}"/>
 <!--        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 

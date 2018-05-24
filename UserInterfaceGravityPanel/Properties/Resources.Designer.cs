@@ -250,7 +250,7 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On target.
+        ///   Looks up a localized string similar to On target part.
         /// </summary>
         public static string OrderStatus2 {
             get {
@@ -259,7 +259,7 @@ namespace UserInterfaceGravityPanel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On target partial.
+        ///   Looks up a localized string similar to On target all.
         /// </summary>
         public static string OrderStatus3 {
             get {

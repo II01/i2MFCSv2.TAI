@@ -124,6 +124,9 @@ namespace Warehouse.Strategy
                 if (Strategy1.Crane.FastCommand == null)
                     Strategy1.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy1.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
 
+                if (!Strategy1.Crane.Automatic())
+                    return;
+
                 SimpleCraneCommand c1c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy1.Crane.Name) ? null : Strategy1.GetNewCommand(remote, null);
                 //                SimpleCraneCommand c1b = Strategy1.GetNewCommand(remote);
 

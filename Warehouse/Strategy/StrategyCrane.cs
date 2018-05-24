@@ -236,9 +236,9 @@ namespace Warehouse.Strategy
 
             if ((!Crane.Remote() || !Crane.Communicator.Online() || Crane.LongTermBlock()))
                 return;
-            if (!Warehouse.SteeringCommands.Run)
-                return;
             if (!Crane.CheckIfAllNotified())
+                return;
+            if (!Warehouse.SteeringCommands.Run)
                 return;
 
             try
@@ -251,6 +251,9 @@ namespace Warehouse.Strategy
 
                 if (Crane.FastCommand == null)
                     Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
+
+                if (!Crane.Automatic())
+                    return;
 
                 GetNewCommand(remote, null);
                 GetNewCommand(remote, null);

@@ -10789,7 +10789,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delivered All.
+        ///   Looks up a localized string similar to On target all.
         /// </summary>
         public static string EnumWMSOrderStatus_OnTargetAll {
             get {
@@ -10798,7 +10798,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delivered Part.
+        ///   Looks up a localized string similar to On target part.
         /// </summary>
         public static string EnumWMSOrderStatus_OnTargetPart {
             get {

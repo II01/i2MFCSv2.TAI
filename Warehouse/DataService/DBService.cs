@@ -302,6 +302,29 @@ namespace Warehouse.DataService
                 throw new DBServiceException(String.Format("DBService.FindCommandByID failed ({0})", id));
             }
         }
+
+        public Command FindCommandByPlaceID(string placeid)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var place = dc.Places.FirstOrDefault(p => p.Place1 == placeid);
+                    if (place != null)
+                        return dc.Commands.FirstOrDefault(p => p is CommandMaterial &&
+                                                               (p as CommandMaterial).Material == place.Material &&
+                                                               p.Status == Command.EnumCommandStatus.Active);
+                    else
+                        return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                EventLog?.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new DBServiceException(String.Format("DBService.FindCommandByID failed ({0})", placeid));
+            }
+        }
+
         public void CommandSimpleCommandsCancel(Command command)
         {
             try

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,15 @@ namespace Warehouse.Model
                 case "T031":
                     if (r.Items.Last().Final.Name.StartsWith("C2"))
                     {
-                        return Conveyor["T032"].Place == null && Conveyor["T033"].Place == null && Conveyor["T034"].Place == null && Conveyor["T035"].Place == null && Conveyor["T211"].Place == null;
+                        int freeCount = Conveyor.Count(p => p.Key.StartsWith("T21") && p.Value.Place == null);
+
+                        List<string> convs = new List<string>(new string[] { "T032", "T033", "T034", "T035" });
+                        foreach (var c in convs)
+                            if (Conveyor[c].Place != null && DBService.FindCommandByPlaceID(c) != null &&
+                                (DBService.FindCommandByPlaceID(c) as CommandMaterial).Target.StartsWith("W:2"))
+                                freeCount--;                    
+
+                        return freeCount > 0;
                     }
                     return true;
                 default:

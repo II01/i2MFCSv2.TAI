@@ -4336,9 +4336,9 @@
     <value>Cancel Suborder</value>
   </data>
   <data name="EnumWMSOrderStatus_OnTargetAll" xml:space="preserve">
-    <value>Delivered All</value>
+    <value>On target all</value>
   </data>
   <data name="EnumWMSOrderStatus_OnTargetPart" xml:space="preserve">
-    <value>Delivered Part</value>
+    <value>On target part</value>
   </data>
 </root>
