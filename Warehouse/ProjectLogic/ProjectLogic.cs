@@ -28,6 +28,14 @@ namespace Warehouse.Model
                         return freeCount > 0;
                     }
                     return true;
+                case "T125":
+                    if (Conveyor["T032"].Place != null)
+                        return false;
+                    return true;
+                case "T225":
+                    if (Conveyor["T036"].Place != null)
+                        return false;
+                    return true;
                 default:
                     return true;
             }

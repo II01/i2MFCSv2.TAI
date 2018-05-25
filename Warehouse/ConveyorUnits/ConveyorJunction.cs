@@ -182,7 +182,7 @@ namespace Warehouse.ConveyorUnits
                             if (cmd != null && !error)
                             {
                                 var routes = from route in RouteDef.FinalRouteCost
-                                             where route.Items.Last().Final.Compatible(cmd.Target) // && route.Items[0].Final is Conveyor
+                                             where route.Items.Last().Final.Compatible(cmd.Target) && Warehouse.AllowRoute(this, route) // && route.Items[0].Final is Conveyor
                                              select route;
 
                                 if(routes.Count() > 1 )
