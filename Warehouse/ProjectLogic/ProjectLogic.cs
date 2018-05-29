@@ -17,15 +17,15 @@ namespace Warehouse.Model
                 case "T031":
                     if (r.Items.Last().Final.Name.StartsWith("C2"))
                     {
-                        int freeCount = Conveyor.Count(p => p.Key.StartsWith("T21") && p.Value.Place == null);
+                        int availablePlaces = 4;
 
-                        List<string> convs = new List<string>(new string[] { "T032", "T033", "T034", "T035" });
+                        List<string> convs = new List<string>(new string[] { "T032", "T033", "T034", "T035", "T211", "T212", "T213", "T214" });
                         foreach (var c in convs)
                             if (Conveyor[c].Place != null && DBService.FindCommandByPlaceID(c) != null &&
                                 (DBService.FindCommandByPlaceID(c) as CommandMaterial).Target.StartsWith("W:2"))
-                                freeCount--;                    
+                                availablePlaces--;                    
 
-                        return freeCount > 0;
+                        return availablePlaces > 0;
                     }
                     return true;
                 case "T125":

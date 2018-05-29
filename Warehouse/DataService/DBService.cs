@@ -425,11 +425,12 @@ namespace Warehouse.DataService
                         else
                         {
                             var lna = from sc in dc.SimpleCommands
-                                      where (sc.Command_ID == c.ID) && (sc.Status == SimpleCommand.EnumStatus.NotActive)
+                                      where (sc.Command_ID == c.ID) && (sc.Status == SimpleCommand.EnumStatus.NotActive) || !(sc is SimpleCraneCommand)
                                       select sc;
                             lna.ToList().ForEach(sc => sc.Status = SimpleCommand.EnumStatus.Canceled);
                             var la = from sc in dc.SimpleCommands
                                      where (sc.Command_ID == c.ID) && 
+                                     (sc is SimpleCraneCommand) &&
                                      (sc.Status > SimpleCommand.EnumStatus.NotActive && sc.Status <= SimpleCommand.EnumStatus.InPlc) &&
                                      (sc.Task >= SimpleCommand.EnumTask.Move && sc.Task <= SimpleCommand.EnumTask.Drop)
                                      select sc;

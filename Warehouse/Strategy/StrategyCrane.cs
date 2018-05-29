@@ -233,12 +233,9 @@ namespace Warehouse.Strategy
                 Crane.FastCommand = null;
             if (!Warehouse.StrategyActive)
                 return;
-
-            if ((!Crane.Remote() || !Crane.Communicator.Online() || Crane.LongTermBlock()))
+            if (!Warehouse.SteeringCommands.Run)
                 return;
             if (!Crane.CheckIfAllNotified())
-                return;
-            if (!Warehouse.SteeringCommands.Run)
                 return;
 
             try
@@ -252,6 +249,10 @@ namespace Warehouse.Strategy
                 if (Crane.FastCommand == null)
                     Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
 
+                WriteCommandToPLC(Crane.FastCommand, true);
+
+                if ((!Crane.Remote() || !Crane.Communicator.Online() || Crane.LongTermBlock()))
+                    return;
                 if (!Crane.Automatic())
                     return;
 
@@ -264,7 +265,6 @@ namespace Warehouse.Strategy
 
                 WriteCommandToPLC(Command);
                 WriteCommandToPLC(BufferCommand);
-                WriteCommandToPLC(Crane.FastCommand, true);
 
                 BannedPlaces.Clear();
             }

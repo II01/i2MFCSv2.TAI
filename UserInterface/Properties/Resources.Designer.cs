@@ -10789,7 +10789,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On target all.
+        ///   Looks up a localized string similar to On target (all).
         /// </summary>
         public static string EnumWMSOrderStatus_OnTargetAll {
             get {
@@ -10798,7 +10798,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to On target part.
+        ///   Looks up a localized string similar to On target (part).
         /// </summary>
         public static string EnumWMSOrderStatus_OnTargetPart {
             get {
@@ -12058,6 +12058,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Refresh Sub.
+        /// </summary>
+        public static string RefreshSubOrder {
+            get {
+                return ResourceManager.GetString("RefreshSubOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Release orders.
         /// </summary>
         public static string ReleaseOfOrders {
@@ -12342,6 +12351,15 @@ namespace UserInterface.Properties {
         public static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status Num.
+        /// </summary>
+        public static string StatusNum {
+            get {
+                return ResourceManager.GetString("StatusNum", resourceCulture);
             }
         }
         

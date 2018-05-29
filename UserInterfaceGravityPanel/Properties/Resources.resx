@@ -174,10 +174,10 @@
     <value>Finished</value>
   </data>
   <data name="OrderStatus2" xml:space="preserve">
-    <value>On target part</value>
+    <value>On target (part)</value>
   </data>
   <data name="OrderStatus3" xml:space="preserve">
-    <value>On target all</value>
+    <value>On target (all)</value>
   </data>
   <data name="OrderStatus0" xml:space="preserve">
     <value>-</value>

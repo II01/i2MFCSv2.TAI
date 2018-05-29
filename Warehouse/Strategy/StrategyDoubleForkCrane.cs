@@ -102,14 +102,10 @@ namespace Warehouse.Strategy
             try
             {
 
-                if ((!Strategy1.Crane.Remote() || !Strategy1.Crane.Communicator.Online() || Strategy1.Crane.LongTermBlock()))
-                    return;
                 if (!Warehouse.StrategyActive)
                     return;
                 if (!Warehouse.SteeringCommands.Run)
                     return;
-                //                if (!Strategy1.Crane.Automatic() || !Strategy2.Crane.Automatic())
-                //                    return;
 
                 bool remote = Warehouse.SteeringCommands.RemoteMode;
                 LinkedConveyor lc = null;
@@ -123,7 +119,14 @@ namespace Warehouse.Strategy
 
                 if (Strategy1.Crane.FastCommand == null)
                     Strategy1.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy1.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
+                if (Strategy2.Crane.FastCommand == null)
+                    Strategy2.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy2.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
 
+                Strategy1.WriteCommandToPLC(Strategy1.Crane.FastCommand, true);
+                Strategy2.WriteCommandToPLC(Strategy2.Crane.FastCommand, true);
+
+                if ((!Strategy1.Crane.Remote() || !Strategy1.Crane.Communicator.Online() || Strategy1.Crane.LongTermBlock()))
+                    return;
                 if (!Strategy1.Crane.Automatic())
                     return;
 
@@ -132,13 +135,8 @@ namespace Warehouse.Strategy
 
                 Strategy2.BannedPlaces.AddRange(Strategy1.BannedPlaces);
 
-                if (Strategy2.Crane.FastCommand == null)
-                    Strategy2.Crane.FastCommand = Warehouse.DBService.FindFirstFastSimpleCraneCommand(Strategy2.Crane.Name, Warehouse.SteeringCommands.AutomaticMode);
                 SimpleCraneCommand c2c = Warehouse.DBService.CheckIfPlaceBlocked(Strategy2.Crane.Name) ? null : Strategy2.GetNewCommand(remote, c1c);
                 //                SimpleCraneCommand c2b = Strategy2.GetNewCommand(remote);
-
-                Strategy1.WriteCommandToPLC(Strategy1.Crane.FastCommand, true);
-                Strategy2.WriteCommandToPLC(Strategy2.Crane.FastCommand, true);
 
                 if (c1c != null && c2c != null && c1c.Task == c2c.Task)
                 //                    && ((Strategy1.Crane.Command == null && Strategy2.Crane.Command == null) || 

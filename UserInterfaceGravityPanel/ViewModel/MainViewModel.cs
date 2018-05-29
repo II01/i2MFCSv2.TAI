@@ -292,7 +292,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                     {
                         OrderInfo.OrderID = order.SubOrderERPID.ToString();
                         string[] split = order.SubOrderName.Split('#');
-                        if( split.Length == 5)
+                        if( split.Length >= 5)
                         {
                             OrderInfo.Operation = split[1];
                             OrderInfo.TruckType = split[2];
@@ -319,7 +319,7 @@ namespace UserInterfaceGravityPanel.ViewModel
                 {
                     string[] split = suborder.SubOrderName.Split('#');
                     string customer = "";
-                    if (split.Length == 5)
+                    if (split.Length >= 5)
                         customer = split[2];
                     OrderInfo.SubOrderID = suborder.SubOrderID.ToString();
                     OrderInfo.SubOrderName = $"{customer}";

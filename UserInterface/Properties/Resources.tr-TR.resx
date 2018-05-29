@@ -1225,10 +1225,10 @@
     <value>Sonlandı</value>
   </data>
   <data name="EnumWMSOrderStatus_OnTargetPart" xml:space="preserve">
-    <value>Hedefte kısmi</value>
+    <value>Hedefte (kısmi)</value>
   </data>
   <data name="EnumWMSOrderStatus_OnTargetAll" xml:space="preserve">
-    <value>Hedefte hepsi</value>
+    <value>Hedefte (hepsi)</value>
   </data>
   <data name="EnumWMSOrderStatus_Waiting" xml:space="preserve">
     <value>Beklemede</value>
@@ -4340,5 +4340,11 @@
   </data>
   <data name="DeliveredPart" xml:space="preserve">
     <value>Delivered Part</value>
+  </data>
+  <data name="RefreshSubOrder" xml:space="preserve">
+    <value>Yenile Alt</value>
+  </data>
+  <data name="StatusNum" xml:space="preserve">
+    <value>Durum Sayısal</value>
   </data>
 </root>

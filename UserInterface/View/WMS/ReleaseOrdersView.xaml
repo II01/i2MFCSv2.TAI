@@ -74,7 +74,7 @@
                                 Width="*" Binding="{Binding ReleaseTime}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=LastChange}" 
                                 Width="*" Binding="{Binding LastChange}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionOrder}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=StatusNum}" 
                                 Width="*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                 Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
@@ -104,15 +104,15 @@
                                 Width="2*" Binding="{Binding SubOrderID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderERPID}" 
                                 Width="2*" Binding="{Binding SubOrderERPID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
-                                Width="2*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
                                 Width="2*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" 
                                 Width="3*" Binding="{Binding SKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SubOrderName}" 
+                                Width="2*" Binding="{Binding SubOrderName}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUQty}" 
                                 Width="2*" Binding="{Binding SKUQty}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PortionSubOrder}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=StatusNum}" 
                                 Width="2*" Binding="{Binding Portion}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                 Width="2*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
@@ -241,7 +241,8 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Button Width="120" Grid.Row="0" Grid.Column="2" Margin="10,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
+            <Button Width="120" Grid.Row="0" Grid.Column="1" Margin="10,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
+            <Button Width="120" Grid.Row="0" Grid.Column="2" Margin="10,0,0,10" Content="{Resx RefreshSubOrder}" Command="{Binding RefreshOneOrder}"/>
             <Button Width="120" Grid.Row="1" Grid.Column="0" Margin="10,0,0,10" Content="{Resx CancelOrder}" Command="{Binding CmdDeleteOrder}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="1" Grid.Column="1" Margin="10,0,0,10" Content="{Resx CancelSubOrder}" Command="{Binding CmdDeleteSubOrder}" Visibility="Visible"/>
             <Button Width="120" Grid.Row="1" Grid.Column="2" Margin="10,0,0,10" Content="{Resx DeleteCommand}" Command="{Binding CmdDeleteCommand}" Visibility="Visible"/>

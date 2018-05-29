@@ -935,20 +935,24 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public async Task<List<OrderReduction>> GetOrdersWithCount(DateTime timeFrom, DateTime timeTo, int statusLessOrEqual)
+        public async Task<List<OrderReduction>> GetOrdersWithCount(DateTime timeFrom, DateTime timeTo, int statusLessOrEqual, int? erpid, int? orderid )
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var suborders = from o in dc.Orders
+                                    where (erpid == null && orderid == null) || (o.ERP_ID == erpid && o.OrderID == orderid)
                                     where o.Status <= statusLessOrEqual || (o.ReleaseTime >= timeFrom && o.ReleaseTime <= timeTo)
                                     join c in dc.Commands on o.ID equals c.Order_ID into ordersComands
                                     from oc in ordersComands.DefaultIfEmpty()
                                     select new { orders = o, lastChange = oc == null? o.ReleaseTime : oc.LastChange };
                     var single = from oc in suborders
                                  group oc by new { oc.orders.ID} into grpSO
-                                 select new{ suborder = grpSO.FirstOrDefault(), lastchange = grpSO.Max(p => p.lastChange == null? grpSO.FirstOrDefault().orders.ReleaseTime : p.lastChange)};
+                                 select new {
+                                    suborder = grpSO.FirstOrDefault(),
+                                    lastchange = grpSO.Max(p => p.lastChange == null? grpSO.FirstOrDefault().orders.ReleaseTime : p.lastChange)
+                                 };
                     var orders = from so in (await single.ToListAsync())
                                  join ce in dc.CommandERPs on so.suborder.orders.ERP_ID equals ce.ID into cenull
                                  from ce in cenull.DefaultIfEmpty()
@@ -964,8 +968,8 @@ namespace UserInterface.DataServiceWMS
                                      LastChange = grpO.FirstOrDefault().lastchange,
                                      CountAll = grpO.Count(),
                                      CountActive = grpO.Count(p => p.suborder.orders.Status == (int)EnumWMSOrderStatus.Active),
-                                     CountMoveDone = grpO.Count(p => p.suborder.orders.Status >= (int)EnumWMSOrderStatus.OnTargetAll && p.suborder.orders.Status <= (int)EnumWMSOrderStatus.OnTargetPart),
-                                     CountFinished = grpO.Count(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Cancel),
+                                     CountMoveDone = grpO.Count(p => p.suborder.orders.Status == (int)EnumWMSOrderStatus.OnTargetPart || p.suborder.orders.Status == (int)EnumWMSOrderStatus.Cancel),
+                                     CountFinished = grpO.Count(p => p.suborder.orders.Status == (int)EnumWMSOrderStatus.OnTargetAll || p.suborder.orders.Status == (int)EnumWMSOrderStatus.Finished),
                                      Status = grpO.Any(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting) ? 
                                                        grpO.Min(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting ? p.suborder.orders.Status : (int)EnumWMSOrderStatus.Active) : (int)EnumWMSOrderStatus.Waiting
                                  };

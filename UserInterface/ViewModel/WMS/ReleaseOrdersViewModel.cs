@@ -43,11 +43,13 @@ namespace UserInterface.ViewModel
         private int _accessLevel;
         private string _accessUser;
         private int? _suborderid;
+        private int? _commandid;
         private int _numberOfSelectedItems;
         #endregion
 
         #region properites
         public RelayCommand Refresh { get; private set; }
+        public RelayCommand RefreshOneOrder { get; private set; }
         public RelayCommand RefreshSubOrder { get; private set; }
         public RelayCommand RefreshCommand { get; private set; }
         public RelayCommand RefreshTU { get; private set; }
@@ -327,6 +329,7 @@ namespace UserInterface.ViewModel
             _selectedCmd = CommandType.None;
 
             Refresh = new RelayCommand(async () => await ExecuteRefresh());
+            RefreshOneOrder = new RelayCommand(async () => await ExecuteRefreshSelectedOrder());
             RefreshSubOrder = new RelayCommand(async () => await ExecuteRefreshSubOrder());
             RefreshCommand = new RelayCommand(async () => await ExecuteRefreshCommandWMS());
             RefreshTU = new RelayCommand(async () => await ExecuteRefreshTU());
@@ -693,7 +696,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                await ExecuteRefreshOrder();
+                await ExecuteRefreshOrders();
                 await ExecuteRefreshPlace();
             }
             catch (Exception e)
@@ -702,15 +705,17 @@ namespace UserInterface.ViewModel
                                     string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        private async Task ExecuteRefreshOrder()
+        private async Task ExecuteRefreshOrders()
         {
             try
             {
                 int? erpid = SelectedOrder?.ERPID;
                 int? orderid = SelectedOrder?.OrderID;
-                _suborderid = SelectedSubOrder?.SubOrderID;
+                _suborderid = SelectedSubOrder?.ID;
+                _commandid = SelectedCommand?.WMSID;
 
-                var orders = await _dbservicewms.GetOrdersWithCount(DateTime.Now.AddDays(-1), DateTime.Now, (int)EnumWMSOrderStatus.OnTargetPart);
+                var orders = await _dbservicewms.GetOrdersWithCount(DateTime.Now.AddDays(-1), DateTime.Now, (int)EnumWMSOrderStatus.OnTargetPart, null, null);
+
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
@@ -721,7 +726,7 @@ namespace UserInterface.ViewModel
                         Destination = p.Destination,
                         ReleaseTime = p.ReleaseTime,
                         LastChange = p.LastChange,
-                        Portion = $"{p.CountActive}/{p.CountAll} - {p.CountMoveDone}/{p.CountAll} - {p.CountFinished}/{p.CountAll}",
+                        Portion = $"{p.CountAll - p.CountActive - p.CountMoveDone - p.CountFinished}+{p.CountActive}+{p.CountMoveDone}+{p.CountFinished}={p.CountAll}",
                         Status = (EnumWMSOrderStatus)p.Status
                     });
                 foreach (var l in DataListOrder)
@@ -736,10 +741,56 @@ namespace UserInterface.ViewModel
             }
         }
 
+        private async Task ExecuteRefreshSelectedOrder()
+        {
+            try
+            {
+                if(SelectedOrder != null)
+                {
+                    int? erpid = SelectedOrder?.ERPID;
+                    int? orderid = SelectedOrder?.OrderID;
+
+                    var orders = await _dbservicewms.GetOrdersWithCount(DateTime.Now.AddDays(-1), DateTime.Now, (int)EnumWMSOrderStatus.OnTargetPart, 
+                                                                        SelectedOrder.ERPID, SelectedOrder.OrderID);
+                    var o = orders.FirstOrDefault();
+                    if (o != null)
+                    {
+                        int idx = DataListOrder.IndexOf(SelectedOrder);
+
+                        if (idx >= 0)
+                        {
+                            DataListOrder[idx] = new ReleaseOrderViewModel
+                            {
+                                ERPID = o.ERPID,
+                                ERPIDref = o.ERPIDStokbar,
+                                OrderID = o.OrderID,
+                                Destination = o.Destination,
+                                ReleaseTime = o.ReleaseTime,
+                                LastChange = o.LastChange,
+                                Portion = $"{o.CountAll - o.CountActive - o.CountMoveDone - o.CountFinished}+{o.CountActive}+{o.CountMoveDone}+{o.CountFinished}={o.CountAll}",
+                                Status = (EnumWMSOrderStatus)o.Status
+                            };
+                            DataListOrder[idx].Initialize(_warehouse);
+                        }
+                        if (orderid != null)
+                            SelectedOrder = DataListOrder.FirstOrDefault(p => p.ERPID == erpid && p.OrderID == orderid);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         private async Task ExecuteRefreshSubOrder()
         {
             try
             {
+                if( _suborderid == null)
+                    _suborderid = SelectedSubOrder?.ID;
+
                 DataListSubOrder.Clear();
                 if(SelectedOrder != null)
                 {
@@ -757,15 +808,16 @@ namespace UserInterface.ViewModel
                             SKUID = p.SKUID,
                             SKUBatch = p.SKUBatch,
                             SKUQty = p.SKUQty,
-                            Portion = $"{p.CountActive}/{p.CountAll} - {p.CountFinished}/{p.CountAll}",
+                            Portion = $"{p.CountAll-p.CountActive-p.CountFinished}+{p.CountActive}+{p.CountFinished}={p.CountAll}",
                             Status = (EnumWMSOrderStatus)p.Status
                         });
                     foreach (var l in DataListOrder)
                         l.Initialize(_warehouse);
                     if (_suborderid != null)
-                        SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.SubOrderID == _suborderid);
+                        SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.ID == _suborderid);
                     if(SelectedSubOrder == null)
                         SelectedSubOrder = DataListSubOrder.FirstOrDefault();
+                    _suborderid = null;
                 }
 
             }
@@ -779,7 +831,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                int? wmsid = SelectedCommand?.WMSID;
+                if (_commandid == null)
+                    _commandid = SelectedCommand?.WMSID;
+
                 DataListCommand.Clear();
                 if( SelectedSubOrder != null )
                 {
@@ -807,8 +861,8 @@ namespace UserInterface.ViewModel
                     }
                     foreach (var l in DataListCommand)
                         l.Initialize(_warehouse);
-                    if (wmsid != null)
-                        SelectedCommand = DataListCommand.FirstOrDefault(p => p.WMSID == wmsid);
+                    if (_commandid != null)
+                        SelectedCommand = DataListCommand.FirstOrDefault(p => p.WMSID == _commandid.Value);
                 }
             }
             catch (Exception e)

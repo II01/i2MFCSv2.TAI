@@ -105,14 +105,14 @@
                 <TreeViewItem  Header="{Resx TUs}" 
                            Tag="{Binding PlaceTUIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
+                <TreeViewItem  Header="{Resx SKUIDs}" 
+                               Tag="{Binding SKUIDs, Source={StaticResource Locator}}" 
+                               IsEnabled="True"/>
                 <TreeViewItem Header ="{Resx Extras}" IsExpanded="False" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}">
 
                     <TreeViewItem  Header="{Resx PlaceIDs}" 
                            Tag="{Binding PlaceIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
-                    <TreeViewItem  Header="{Resx SKUIDs}" 
-                               Tag="{Binding SKUIDs, Source={StaticResource Locator}}" 
-                               IsEnabled="True"/>
                     <TreeViewItem  Header="{Resx CommandERPs}" 
                            Tag="{Binding CommandERPs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>

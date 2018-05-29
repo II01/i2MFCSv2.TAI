@@ -262,7 +262,7 @@ namespace UserInterface.ViewModel
                 int? orderid = SelectedOrder?.OrderID;
                 _suborderid = SelectedSubOrder?.SubOrderID;
 
-                var orders = await _dbservicewms.GetOrdersWithCount(DateFrom.TimeStamp, DateTo.TimeStamp, -1);
+                var orders = await _dbservicewms.GetOrdersWithCount(DateFrom.TimeStamp, DateTo.TimeStamp, -1, null, null);
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel

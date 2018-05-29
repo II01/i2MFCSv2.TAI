@@ -32,9 +32,8 @@
         <TextBlock Text="{Resx OrderID}" Grid.Row="1" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Destination}" Grid.Row="2" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx ReleaseTime}" Grid.Row="4" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx Done}" Grid.Row="6" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx Finished}" Grid.Row="7" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx Status}" Grid.Row="8" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx StatusNum}" Grid.Row="6" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Status}" Grid.Row="7" Margin="0,0,0,10"/>
 
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=ERPID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="false"/>
@@ -108,10 +107,8 @@
         
 
         <TextBox Grid.Row="6" Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=PortionActive,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
+                 Text="{Binding Path=Portion,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
         <TextBox Grid.Row="7" Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=PortionDone,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
-        <TextBox Grid.Row="8" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=Status,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }" IsEnabled="False"/>
     </Grid>
 
