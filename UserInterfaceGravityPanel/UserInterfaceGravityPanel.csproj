@@ -180,9 +180,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="i2MFCS.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <SplashScreen Include="View\SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
@@ -190,6 +187,9 @@
       <Project>{8f49c154-d8f5-45eb-8970-a787ac8097d2}</Project>
       <Name>DatabaseWMS</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="i2MFCS.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
