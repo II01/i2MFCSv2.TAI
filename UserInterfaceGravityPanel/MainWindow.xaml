@@ -138,7 +138,7 @@
         <Label  Grid.Row="4" Grid.Column="6"
                 Content="{Binding CurrentTime}" 
                 HorizontalAlignment="Right" VerticalAlignment="Center"
-                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}"/>
+                FontSize="{StaticResource MidFontSize}" FontWeight="Bold" Foreground="{StaticResource ResourceKey=Text1}" Visibility="Hidden"/>
         <ContentControl Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Margin="0,20,0,0"
                         Content="{Binding OrderInfo}"
                         HorizontalAlignment="Stretch" 

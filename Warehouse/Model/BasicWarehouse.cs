@@ -484,28 +484,35 @@ namespace Warehouse.Model
                         int idxp = idx;
                         if (idx % 10 == 0) // button pressed at the end of ramp
                         {
-                            idx = idx / 10;
-                            loc = $"W:32:{idx:D2}";
-                            if (dc.Places.Any(p => p.Place1.StartsWith(loc))) // ramp is full, remove pallets
+                            using (WMSToMFCSClient client = new WMSToMFCSClient())
                             {
-                                var pallets = (from p in dc.Places
-                                               where p.Place1.StartsWith(loc)
-                                               select p).ToList();
-                                foreach (var pal in pallets)
+                                idx = idx / 10;
+                                loc = $"W:32:{idx:D2}";
+                                bool canDelete;
+                                try
                                 {
-                                    DBService.MaterialDelete(pal.Place1, pal.Material);
-                                    OnMaterialMove?.Invoke(pal, EnumMovementTask.Delete);
-                                    //DBService.MaterialMove(pal.Material, pal.Place1, "W:out");
-                                    //Place pl = new Place { Material = pal.Material, Place1 = "W:out", Time = DateTime.Now };
-                                    //OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                                    canDelete = !client.OrderForRampActive(loc);
                                 }
-                            }
-                            else // release ramp
-                            {
-                                using (WMSToMFCSClient client = new WMSToMFCSClient())
+                                catch
                                 {
+                                    canDelete = true;
+                                }
+                                if (canDelete && dc.Places.Any(p => p.Place1.StartsWith(loc))) // ramp is full, remove pallets
+                                {
+                                    var pallets = (from p in dc.Places
+                                                   where p.Place1.StartsWith(loc)
+                                                   select p).ToList();
+                                    foreach (var pal in pallets)
+                                    {
+                                        DBService.MaterialDelete(pal.Place1, pal.Material);
+                                        OnMaterialMove?.Invoke(pal, EnumMovementTask.Delete);
+                                        //DBService.MaterialMove(pal.Material, pal.Place1, "W:out");
+                                        //Place pl = new Place { Material = pal.Material, Place1 = "W:out", Time = DateTime.Now };
+                                        //OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
+                                    }
+                                }
+                                else // release ramp
                                     client.DestinationEmptied(loc);
-                                }
                             }
                         }
                         else // sensor detected removal

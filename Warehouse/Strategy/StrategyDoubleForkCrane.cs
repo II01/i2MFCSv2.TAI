@@ -104,7 +104,7 @@ namespace Warehouse.Strategy
 
                 if (!Warehouse.StrategyActive)
                     return;
-                if (!Warehouse.SteeringCommands.Run)
+                if (!Strategy1.Crane.Communicator.Online())
                     return;
 
                 bool remote = Warehouse.SteeringCommands.RemoteMode;
@@ -125,7 +125,9 @@ namespace Warehouse.Strategy
                 Strategy1.WriteCommandToPLC(Strategy1.Crane.FastCommand, true);
                 Strategy2.WriteCommandToPLC(Strategy2.Crane.FastCommand, true);
 
-                if ((!Strategy1.Crane.Remote() || !Strategy1.Crane.Communicator.Online() || Strategy1.Crane.LongTermBlock()))
+                if (!Warehouse.SteeringCommands.Run)
+                    return;
+                if ((!Strategy1.Crane.Remote() || Strategy1.Crane.LongTermBlock()))
                     return;
                 if (!Strategy1.Crane.Automatic())
                     return;

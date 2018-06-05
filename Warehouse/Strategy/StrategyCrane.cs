@@ -231,10 +231,11 @@ namespace Warehouse.Strategy
         {
             if (Crane.PLC_Status != null )
                 Crane.FastCommand = null;
+
             if (!Warehouse.StrategyActive)
                 return;
-            if (!Warehouse.SteeringCommands.Run)
-                return;
+            if (!Crane.Communicator.Online())
+                    return;
             if (!Crane.CheckIfAllNotified())
                 return;
 
@@ -251,7 +252,9 @@ namespace Warehouse.Strategy
 
                 WriteCommandToPLC(Crane.FastCommand, true);
 
-                if ((!Crane.Remote() || !Crane.Communicator.Online() || Crane.LongTermBlock()))
+                if (!Warehouse.SteeringCommands.Run)
+                    return;
+                if ((!Crane.Remote() || Crane.LongTermBlock()))
                     return;
                 if (!Crane.Automatic())
                     return;

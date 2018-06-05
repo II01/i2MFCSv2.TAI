@@ -32,6 +32,12 @@ namespace Warehouse.ServiceReferenceWMSToMFCS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/DestinationEmptied", ReplyAction="http://tempuri.org/IWMSToMFCS/DestinationEmptiedResponse")]
         System.Threading.Tasks.Task DestinationEmptiedAsync(string place);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/OrderForRampActive", ReplyAction="http://tempuri.org/IWMSToMFCS/OrderForRampActiveResponse")]
+        bool OrderForRampActive(string ramp);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToMFCS/OrderForRampActive", ReplyAction="http://tempuri.org/IWMSToMFCS/OrderForRampActiveResponse")]
+        System.Threading.Tasks.Task<bool> OrderForRampActiveAsync(string ramp);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +89,14 @@ namespace Warehouse.ServiceReferenceWMSToMFCS {
         
         public System.Threading.Tasks.Task DestinationEmptiedAsync(string place) {
             return base.Channel.DestinationEmptiedAsync(place);
+        }
+        
+        public bool OrderForRampActive(string ramp) {
+            return base.Channel.OrderForRampActive(ramp);
+        }
+        
+        public System.Threading.Tasks.Task<bool> OrderForRampActiveAsync(string ramp) {
+            return base.Channel.OrderForRampActiveAsync(ramp);
         }
     }
 }

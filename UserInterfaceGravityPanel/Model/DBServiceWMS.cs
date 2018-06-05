@@ -188,8 +188,8 @@ namespace UserInterfaceGravityPanel.DataServiceWMS
                                       .Join(dc.Orders,
                                             c => c.Order_ID,
                                             o => o.ID,
-                                            (c, o) => new { o.SubOrderID, o.SubOrderName, o.Status })
-                                      .Where(pp => pp.Status < (int)EnumWMSOrderStatus.Cancel)
+                                            (c, o) => new { c.ID, o.SubOrderID, o.SubOrderName, o.Status })
+                                      .OrderByDescending(pp => pp.ID)
                                       .FirstOrDefault();
                             SubOrderData so = null;
                             if (cmd != null)
