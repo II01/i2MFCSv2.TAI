@@ -953,11 +953,11 @@ namespace UserInterface.DataServiceWMS
                                     suborder = grpSO.FirstOrDefault(),
                                     lastchange = grpSO.Max(p => p.lastChange == null? grpSO.FirstOrDefault().orders.ReleaseTime : p.lastChange)
                                  };
-                    var orders = from so in (await single.ToListAsync())
+                    var orders = from so in single
                                  join ce in dc.CommandERPs on so.suborder.orders.ERP_ID equals ce.ID into cenull
                                  from ce in cenull.DefaultIfEmpty()
                                  orderby so.suborder.orders.ERP_ID descending, so.suborder.orders.OrderID descending, so.suborder.orders.SubOrderID ascending
-                                 group so by new { ERPID = so.suborder.orders.ERP_ID, ERPIDSB = ce?.ERP_ID, OrderID = so.suborder.orders.OrderID } into grpO
+                                 group so by new { ERPID = so.suborder.orders.ERP_ID, ERPIDSB = ce.ERP_ID, OrderID = so.suborder.orders.OrderID } into grpO
                                  select new OrderReduction
                                  {
                                      ERPID = grpO.Key.ERPID,
@@ -973,7 +973,7 @@ namespace UserInterface.DataServiceWMS
                                      Status = grpO.Any(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting) ? 
                                                        grpO.Min(p => p.suborder.orders.Status > (int)EnumWMSOrderStatus.Waiting ? p.suborder.orders.Status : (int)EnumWMSOrderStatus.Active) : (int)EnumWMSOrderStatus.Waiting
                                  };
-                    return orders.ToList();
+                    return await orders.ToListAsync();
                 }
             }
             catch (Exception e)
