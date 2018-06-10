@@ -160,13 +160,16 @@ namespace Warehouse.Strategy
                         lastloc = Strategy1.Crane.FLocation;
 
 
-                    if (c1c != null && c2c != null && c1c.Task == c2c.Task && 
-                        c1c.Source.StartsWith("W") && c2c.Source.StartsWith("W") && 
-                        c1c.Source.Substring(0, c1c.Source.Length-1) == c2c.Source.Substring(0, c2c.Source.Length-1))
+                    if (c1c != null && c2c != null && c1c.Task == c2c.Task &&
+                        c1c.Source.StartsWith("W") && c2c.Source.StartsWith("W") &&
+                        c1c.Source.Substring(0, c1c.Source.Length - 1) == c2c.Source.Substring(0, c2c.Source.Length - 1))
                         opposite = (c1c.Task == SimpleCommand.EnumTask.Pick && c1c.Source.EndsWith("2") && c2c.Source.EndsWith("1")) ||
                                    (c1c.Task == SimpleCommand.EnumTask.Drop && c1c.Source.EndsWith("1") && c2c.Source.EndsWith("2"));
                     else
-                        opposite = !NearestCmd1(c1c, c2c, lastloc);
+                    {
+                        opposite = (c1c.Task == SimpleCommand.EnumTask.Drop && GetLocation(c1c.Source).X > GetLocation(c2c.Source).X) ||
+                                   (c1c.Task == SimpleCommand.EnumTask.Pick && GetLocation(c1c.Source).X < GetLocation(c2c.Source).X);
+                    }
 
                     if (!opposite)
                     {
@@ -187,13 +190,13 @@ namespace Warehouse.Strategy
                     else
                         Strategy2.WriteCommandToPLC(c2c);
                 } 
-                else if (c1c != null && (Strategy2.Command == null || (c1c.Task == Strategy2.Command.Task && c1c.Source.StartsWith("T") && Strategy2.Command.Source.StartsWith("T"))))
+                else if (c1c != null && (Strategy1.Command == null || Strategy1.Command.Status < SimpleCommand.EnumStatus.Written) && (Strategy2.Command == null || (c1c.Task == Strategy2.Command.Task && c1c.Source.StartsWith("T") && Strategy2.Command.Source.StartsWith("T"))))
                 {
                     if (c1c.Task == SimpleCommand.EnumTask.Pick)
                         Strategy1.PrefferedInput = !Strategy1.PrefferedInput;
                     Strategy1.WriteCommandToPLC(c1c);
                 }
-                else if (c2c != null && (Strategy1.Command == null || (c2c.Task == Strategy1.Command.Task && c2c.Source.StartsWith("T") && Strategy1.Command.Source.StartsWith("T"))))
+                else if (c2c != null && (Strategy2.Command == null || Strategy2.Command.Status < SimpleCommand.EnumStatus.Written) && (Strategy1.Command == null || (c2c.Task == Strategy1.Command.Task && c2c.Source.StartsWith("T") && Strategy1.Command.Source.StartsWith("T"))))
                 {
                     if (c2c.Task == SimpleCommand.EnumTask.Pick)
                         Strategy1.PrefferedInput = !Strategy1.PrefferedInput;

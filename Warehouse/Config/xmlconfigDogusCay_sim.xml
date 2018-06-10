@@ -376,7 +376,7 @@
   <!-- Conveyors -->
   <ConveyorList>
 
-    <Conveyor Name="T013" Segment="T02A" PLC_ID="013" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="Conveyor">
+    <Conveyor Name="T013" Segment="T01" PLC_ID="013" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="Conveyor">
       <XmlRouteNode Next="T014" Cost="1"/>
       <ConveyorAddress>013</ConveyorAddress>
       <FLocation X="10" Y="10" Z="10"/>
