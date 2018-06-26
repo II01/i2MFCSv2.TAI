@@ -4267,7 +4267,7 @@
     <value>Commands WMS</value>
   </data>
   <data name="HistoryLogsWMS" xml:space="preserve">
-    <value>Logs WMS</value>
+    <value>Log WMS</value>
   </data>
   <data name="HistoryReleaseOrders" xml:space="preserve">
     <value>Orders</value>
@@ -4294,7 +4294,7 @@
     <value>Access level Core</value>
   </data>
   <data name="Rack" xml:space="preserve">
-    <value>RRack</value>
+    <value> Rack</value>
   </data>
   <data name="HistoryWMSLog" xml:space="preserve">
     <value>Log WMS</value>

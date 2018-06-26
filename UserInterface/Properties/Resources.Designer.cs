@@ -11383,7 +11383,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Logs WMS.
+        ///   Looks up a localized string similar to Log WMS.
         /// </summary>
         public static string HistoryLogsWMS {
             get {
@@ -11923,7 +11923,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RRack.
+        ///   Looks up a localized string similar to  Rack.
         /// </summary>
         public static string Rack {
             get {

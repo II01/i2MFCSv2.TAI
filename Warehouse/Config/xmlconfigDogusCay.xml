@@ -17,8 +17,8 @@
       <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
       <Version>CRANE</Version>
       <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
-      <StringSendIPEndPoint>192.168.1.204:2001</StringSendIPEndPoint>
-      <StringRcvIPEndPoint>192.168.1.204:2002</StringRcvIPEndPoint>
+      <StringSendIPEndPoint>192.168.60.80:2001</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.60.80:2002</StringRcvIPEndPoint>
     </BasicCommunicator>
 
     <BasicCommunicator Name="PLC_Crane2" PLC_ID="202" MFCS_ID="1" xsi:type="Communicator">
@@ -27,8 +27,8 @@
       <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
       <Version>CRANE</Version>
       <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
-      <StringSendIPEndPoint>192.168.1.204:2003</StringSendIPEndPoint>
-      <StringRcvIPEndPoint>192.168.1.204:2004</StringRcvIPEndPoint>
+      <StringSendIPEndPoint>192.168.60.85:2001</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.60.85:2002</StringRcvIPEndPoint>
     </BasicCommunicator>
 
     <BasicCommunicator Name="PLC_Crane3" PLC_ID="203" MFCS_ID="1" xsi:type="Communicator">
@@ -37,8 +37,8 @@
       <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
       <Version>CRANE</Version>
       <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
-      <StringSendIPEndPoint>192.168.1.204:2005</StringSendIPEndPoint>
-      <StringRcvIPEndPoint>192.168.1.204:2006</StringRcvIPEndPoint>
+      <StringSendIPEndPoint>192.168.60.90:2001</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.60.90:2002</StringRcvIPEndPoint>
     </BasicCommunicator>
 
     <BasicCommunicator Name="PLC_Conveyor" PLC_ID="101" MFCS_ID="1" xsi:type="Communicator" >
@@ -47,8 +47,8 @@
       <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
       <Version>TRANSPORT</Version>
       <KeepALiveTimeSeconds>10</KeepALiveTimeSeconds>
-      <StringSendIPEndPoint>192.168.1.203:2001</StringSendIPEndPoint>
-      <StringRcvIPEndPoint>192.168.1.203:2002</StringRcvIPEndPoint>
+      <StringSendIPEndPoint>192.168.60.50:2001</StringSendIPEndPoint>
+      <StringRcvIPEndPoint>192.168.60.50:2002</StringRcvIPEndPoint>
     </BasicCommunicator>
 
   </CommunicatorList>
@@ -376,26 +376,12 @@
   <!-- Conveyors -->
   <ConveyorList>
 
-    <Conveyor Name="T013" Segment="T01" PLC_ID="013" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="Conveyor">
-      <XmlRouteNode Next="T014" Cost="1"/>
-      <ConveyorAddress>013</ConveyorAddress>
-      <FLocation X="10" Y="10" Z="10"/>
-      <ConveyorInfo>
-        <AlarmList>
-          <ALARM ID="001010" Offset="10" Range="10"/>
-        </AlarmList>
-        <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="46B1"/>
-        </SensorList>
-      </ConveyorInfo>
-    </Conveyor>
-	
     <Conveyor Name="T014" Segment="T01" PLC_ID="014" CommunicatorName="PLC_Conveyor" WriteToDB="Try" xsi:type="ConveyorJunction">
       <ConveyorAddress>014</ConveyorAddress>
       <FLocation X="10" Y="10" Z="10"/>
       <ConveyorInfo>
         <AlarmList>
-          <ALARM ID="001020" Offset="20" Range="10"/>
+          <ALARM ID="001010" Offset="10" Range="20"/>
         </AlarmList>
         <SensorList>
           <Sensor Offset="8" Description="Occupied" Reference="38B2"/>

@@ -128,14 +128,14 @@ namespace MFCS.Communication
                                 NotifyRcv(tel);
                                 Log.AddLog(Log.Severity.EVENT, Name, $"NotifyRcv({tel.ToString()}");
                                 LastNotifyTime = DateTime.Now;
-                                try
-                                {
+//                                try
+//                                {
                                     read = rcvTel.ReadAsync();
-                                }
-                                catch(Exception ex)
-                                {
-
-                                }
+//                                }
+//                                catch(Exception ex)
+//                                {
+//
+//                                }
                             }
                             if (task == delay)
                             {
