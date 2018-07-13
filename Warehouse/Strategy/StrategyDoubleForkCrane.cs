@@ -104,7 +104,7 @@ namespace Warehouse.Strategy
 
                 if (!Warehouse.StrategyActive)
                     return;
-                if (!Strategy1.Crane.Communicator.Online())
+                if (!Strategy1.Crane.Communicator.Online()) 
                     return;
 
                 bool remote = Warehouse.SteeringCommands.RemoteMode;

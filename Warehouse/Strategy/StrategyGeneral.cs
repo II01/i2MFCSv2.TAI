@@ -238,7 +238,7 @@ namespace Warehouse.Strategy
         {
             try
             {
-                if (CurrentTask == null || CurrentTask.IsCompleted)
+                if (CurrentTask == null || CurrentTask.IsCompleted || CurrentTask.IsCanceled || CurrentTask.IsFaulted)
                 {
                     CurrentTask = StrategyAsync();
                     Task task = Task.Run(async () => await CurrentTask);
@@ -249,6 +249,7 @@ namespace Warehouse.Strategy
             }
             catch (Exception e)
             {
+                CurrentTask = null;
                 Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, e.Message);
                 throw new StrategyCraneException(String.Format("{0} Strategy failed.", Name));
             }
