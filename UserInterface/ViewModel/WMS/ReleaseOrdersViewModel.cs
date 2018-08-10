@@ -657,7 +657,11 @@ namespace UserInterface.ViewModel
                             }
                             break;
                         case CommandType.ReleaseRamp:
-                            _dbservicewms.ReleaseRamp(SelectedPlaceID);
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.ReleaseRamp(SelectedPlaceID);
+                            }
+                            //_dbservicewms.ReleaseRamp(SelectedPlaceID);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Release ramp: |{SelectedPlaceID}|");
                             break;
                     }

@@ -40,6 +40,36 @@
           <Property Name="Time" Type="datetime" Nullable="false" />
           <Property Name="LastChange" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="HistCommands">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Order_ID" Type="int" />
+          <Property Name="TU_ID" Type="int" Nullable="false" />
+          <Property Name="Source" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Target" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="LastChange" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HistOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ERP_ID" Type="int" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="SubOrderID" Type="int" Nullable="false" />
+          <Property Name="SubOrderERPID" Type="int" Nullable="false" />
+          <Property Name="SKU_ID" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="SubOrderName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SKU_Qty" Type="float" Nullable="false" />
+          <Property Name="Destination" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ReleaseTime" Type="datetime" Nullable="false" />
+          <Property Name="SKU_Batch" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Logs">
           <Key>
             <PropertyRef Name="ID" />
@@ -178,6 +208,98 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_HistOrders_Order_ID">
+          <End Role="HistOrders" Type="Self.HistOrders" Multiplicity="0..1" />
+          <End Role="HistCommands" Type="Self.HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HistOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_PlaceIDs_Source">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistCommands" Type="Self.HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_PlaceIDs_Target">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1" />
+          <End Role="HistCommands" Type="Self.HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_TU_ID_TU_ID">
+          <End Role="TU_ID" Type="Self.TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistCommands" Type="Self.HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID">
+          <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="0..1" />
+          <End Role="HistOrders" Type="Self.HistOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommandERPs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistOrders">
+              <PropertyRef Name="ERP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistOrders_dbo_PlaceIDs_Destination">
+          <End Role="PlaceIDs" Type="Self.PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistOrders" Type="Self.HistOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistOrders">
+              <PropertyRef Name="Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID">
+          <End Role="SKU_ID" Type="Self.SKU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="HistOrders" Type="Self.HistOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SKU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistOrders">
+              <PropertyRef Name="SKU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
           <End Role="CommandERPs" Type="Self.CommandERPs" Multiplicity="0..1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -278,6 +400,8 @@
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CommandERPs" EntityType="Self.CommandERPs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Commands" EntityType="Self.Commands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistCommands" EntityType="Self.HistCommands" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistOrders" EntityType="Self.HistOrders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parameters" EntityType="Self.Parameters" Schema="dbo" store:Type="Tables" />
@@ -301,6 +425,34 @@
           <AssociationSet Name="FK_dbo_Commands_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_Commands_dbo_TU_ID_TU_ID">
             <End Role="TU_ID" EntitySet="TU_ID" />
             <End Role="Commands" EntitySet="Commands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_HistOrders_Order_ID" Association="Self.FK_dbo_HistCommands_dbo_HistOrders_Order_ID">
+            <End Role="HistOrders" EntitySet="HistOrders" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_PlaceIDs_Source" Association="Self.FK_dbo_HistCommands_dbo_PlaceIDs_Source">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_PlaceIDs_Target" Association="Self.FK_dbo_HistCommands_dbo_PlaceIDs_Target">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_TU_ID_TU_ID" Association="Self.FK_dbo_HistCommands_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID" Association="Self.FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID">
+            <End Role="CommandERPs" EntitySet="CommandERPs" />
+            <End Role="HistOrders" EntitySet="HistOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistOrders_dbo_PlaceIDs_Destination" Association="Self.FK_dbo_HistOrders_dbo_PlaceIDs_Destination">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="HistOrders" EntitySet="HistOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID" Association="Self.FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID">
+            <End Role="SKU_ID" EntitySet="SKU_ID" />
+            <End Role="HistOrders" EntitySet="HistOrders" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_Orders_dbo_CommandERPs_ERP_ID" Association="Self.FK_dbo_Orders_dbo_CommandERPs_ERP_ID">
             <End Role="CommandERPs" EntitySet="CommandERPs" />
@@ -357,6 +509,7 @@
           <Property Name="Reference" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ERP_ID" Type="Int32" Nullable="false" />
           <Property Name="LastChange" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="HistOrders" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID" FromRole="CommandERPs" ToRole="HistOrders" />
         </EntityType>
         <EntityType Name="Commands">
           <Key>
@@ -410,6 +563,9 @@
           <NavigationProperty Name="Commands1" Relationship="Self.FK_dbo_Commands_dbo_PlaceIDs_Target" FromRole="PlaceIDs" ToRole="Commands" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_PlaceIDs_Destination" FromRole="PlaceIDs" ToRole="Orders" />
           <NavigationProperty Name="Places" Relationship="Self.FK_dbo_Places_dbo_PlaceIDs_PlaceID" FromRole="PlaceIDs" ToRole="Places" />
+          <NavigationProperty Name="HistCommands" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Source" FromRole="PlaceIDs" ToRole="HistCommands" />
+          <NavigationProperty Name="HistCommands1" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Target" FromRole="PlaceIDs" ToRole="HistCommands" />
+          <NavigationProperty Name="HistOrders" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_PlaceIDs_Destination" FromRole="PlaceIDs" ToRole="HistOrders" />
         </EntityType>
         <EntityType Name="Places">
           <Key>
@@ -435,6 +591,7 @@
           <Property Name="FrequencyClass" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_dbo_Orders_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="Orders" />
           <NavigationProperty Name="TUs" Relationship="Self.FK_dbo_TUs_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="TUs" />
+          <NavigationProperty Name="HistOrders" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="HistOrders" />
         </EntityType>
         <EntityType Name="TU_ID">
           <Key>
@@ -446,6 +603,7 @@
           <NavigationProperty Name="Commands" Relationship="Self.FK_dbo_Commands_dbo_TU_ID_TU_ID" FromRole="TU_ID" ToRole="Commands" />
           <NavigationProperty Name="Places" Relationship="Self.FK_dbo_Places_dbo_TU_ID_TU_ID" FromRole="TU_ID" ToRole="Places" />
           <NavigationProperty Name="TUs" Relationship="Self.FK_dbo_TUs_dbo_TU_ID_TU_ID" FromRole="TU_ID" ToRole="TUs" />
+          <NavigationProperty Name="HistCommands" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_TU_ID_TU_ID" FromRole="TU_ID" ToRole="HistCommands" />
         </EntityType>
         <EntityType Name="TUs">
           <Key>
@@ -667,6 +825,36 @@
           </AssociationSet>
           <EntitySet Name="Parameters" EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Parameters" />
           <EntitySet Name="Logs" EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Logs" />
+          <EntitySet Name="HistCommands" EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands" />
+          <EntitySet Name="HistOrders" EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.HistOrders" />
+          <AssociationSet Name="FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID" Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID">
+            <End Role="CommandERPs" EntitySet="CommandERPs" />
+            <End Role="HistOrders" EntitySet="HistOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_HistOrders_Order_ID" Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_HistOrders_Order_ID">
+            <End Role="HistOrders" EntitySet="HistOrders" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_PlaceIDs_Source" Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Source">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_PlaceIDs_Target" Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Target">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistCommands_dbo_TU_ID_TU_ID" Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_TU_ID_TU_ID">
+            <End Role="TU_ID" EntitySet="TU_ID" />
+            <End Role="HistCommands" EntitySet="HistCommands" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistOrders_dbo_PlaceIDs_Destination" Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_PlaceIDs_Destination">
+            <End Role="PlaceIDs" EntitySet="PlaceIDs" />
+            <End Role="HistOrders" EntitySet="HistOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID" Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID">
+            <End Role="SKU_ID" EntitySet="SKU_ID" />
+            <End Role="HistOrders" EntitySet="HistOrders" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Parameters">
           <Key>
@@ -685,6 +873,136 @@
           <Property Name="Source" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="HistCommands">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Order_ID" Type="Int32" />
+          <Property Name="TU_ID" Type="Int32" Nullable="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Target" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastChange" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="HistOrders" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_HistOrders_Order_ID" FromRole="HistCommands" ToRole="HistOrders" />
+          <NavigationProperty Name="PlaceIDs" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Source" FromRole="HistCommands" ToRole="PlaceIDs" />
+          <NavigationProperty Name="PlaceIDs1" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Target" FromRole="HistCommands" ToRole="PlaceIDs" />
+          <NavigationProperty Name="TU_ID1" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_TU_ID_TU_ID" FromRole="HistCommands" ToRole="TU_ID" />
+        </EntityType>
+        <EntityType Name="HistOrders">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ERP_ID" Type="Int32" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="SubOrderID" Type="Int32" Nullable="false" />
+          <Property Name="SubOrderERPID" Type="Int32" Nullable="false" />
+          <Property Name="SKU_ID" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="SubOrderName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SKU_Qty" Type="Double" Nullable="false" />
+          <Property Name="Destination" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ReleaseTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SKU_Batch" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CommandERPs" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID" FromRole="HistOrders" ToRole="CommandERPs" />
+          <NavigationProperty Name="HistCommands" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_HistOrders_Order_ID" FromRole="HistOrders" ToRole="HistCommands" />
+          <NavigationProperty Name="PlaceIDs" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_PlaceIDs_Destination" FromRole="HistOrders" ToRole="PlaceIDs" />
+          <NavigationProperty Name="SKU_ID1" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID" FromRole="HistOrders" ToRole="SKU_ID" />
+        </EntityType>
+        <Association Name="FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID">
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.CommandERPs" Role="CommandERPs" Multiplicity="0..1" />
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistOrders" Role="HistOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CommandERPs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistOrders">
+              <PropertyRef Name="ERP_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_HistOrders_Order_ID">
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistOrders" Role="HistOrders" Multiplicity="0..1" />
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands" Role="HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HistOrders">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="Order_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_PlaceIDs_Source">
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.PlaceIDs" Role="PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands" Role="HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_PlaceIDs_Target">
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.PlaceIDs" Role="PlaceIDs" Multiplicity="1" />
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands" Role="HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="Target" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistCommands_dbo_TU_ID_TU_ID">
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.TU_ID" Role="TU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands" Role="HistCommands" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistCommands">
+              <PropertyRef Name="TU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistOrders_dbo_PlaceIDs_Destination">
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.PlaceIDs" Role="PlaceIDs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistOrders" Role="HistOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceIDs">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistOrders">
+              <PropertyRef Name="Destination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID">
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.SKU_ID" Role="SKU_ID" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="i2MFCS.WMS.Database.Tables.WMSContextModel.HistOrders" Role="HistOrders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SKU_ID">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HistOrders">
+              <PropertyRef Name="SKU_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -816,6 +1134,38 @@
                 <ScalarProperty Name="Source" ColumnName="Source" />
                 <ScalarProperty Name="Message" ColumnName="Message" />
                 <ScalarProperty Name="Severity" ColumnName="Severity" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistCommands">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands">
+              <MappingFragment StoreEntitySet="HistCommands">
+                <ScalarProperty Name="LastChange" ColumnName="LastChange" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="TU_ID" ColumnName="TU_ID" />
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistOrders">
+            <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.HistOrders">
+              <MappingFragment StoreEntitySet="HistOrders">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SKU_Batch" ColumnName="SKU_Batch" />
+                <ScalarProperty Name="ReleaseTime" ColumnName="ReleaseTime" />
+                <ScalarProperty Name="Destination" ColumnName="Destination" />
+                <ScalarProperty Name="SKU_Qty" ColumnName="SKU_Qty" />
+                <ScalarProperty Name="SubOrderName" ColumnName="SubOrderName" />
+                <ScalarProperty Name="SKU_ID" ColumnName="SKU_ID" />
+                <ScalarProperty Name="SubOrderERPID" ColumnName="SubOrderERPID" />
+                <ScalarProperty Name="SubOrderID" ColumnName="SubOrderID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ERP_ID" ColumnName="ERP_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -210,7 +210,7 @@ namespace UserInterface.ViewModel
             try
             {
                 int? wmsid = Selected?.WMSID;
-                var cmdswms = await _dbservicewms.GetCommandOrders(DateFrom.TimeStamp, DateTo.TimeStamp, -1);
+                var cmdswms = await _dbservicewms.GetHistCommandOrders(DateFrom.TimeStamp, DateTo.TimeStamp, -1);
                 DataList.Clear();
                 foreach (var p in cmdswms)
                     DataList.Add(new CommandWMSViewModel

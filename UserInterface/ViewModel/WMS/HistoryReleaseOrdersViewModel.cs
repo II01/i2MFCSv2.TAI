@@ -262,7 +262,7 @@ namespace UserInterface.ViewModel
                 int? orderid = SelectedOrder?.OrderID;
                 _suborderid = SelectedSubOrder?.SubOrderID;
 
-                var orders = await _dbservicewms.GetOrdersWithCount(DateFrom.TimeStamp, DateTo.TimeStamp, -1, null, null);
+                var orders = await _dbservicewms.GetHistOrdersWithCount(DateFrom.TimeStamp, DateTo.TimeStamp, -1, null, null);
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
@@ -296,7 +296,7 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if(SelectedOrder != null)
                 {
-                    var suborders = await _dbservicewms.GetSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID);
+                    var suborders = await _dbservicewms.GetHistSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID);
                     DataListSubOrder.Clear();
                     foreach (var p in suborders)
                         DataListSubOrder.Add(new ReleaseOrderViewModel
@@ -336,7 +336,7 @@ namespace UserInterface.ViewModel
                 DataListCommand.Clear();
                 if( SelectedSubOrder != null )
                 {
-                    var cmds = await _dbservicewms.GetCommandsWMSForSubOrder(SelectedSubOrder.ID);
+                    var cmds = await _dbservicewms.GetHistCommandsWMSForSubOrder(SelectedSubOrder.ID);
                     DataListCommand.Clear();
                     foreach (var cmd in cmds)
                     {

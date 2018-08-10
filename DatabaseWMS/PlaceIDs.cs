@@ -21,6 +21,9 @@ namespace DatabaseWMS
             this.Commands1 = new HashSet<Commands>();
             this.Orders = new HashSet<Orders>();
             this.Places = new HashSet<Places>();
+            this.HistCommands = new HashSet<HistCommands>();
+            this.HistCommands1 = new HashSet<HistCommands>();
+            this.HistOrders = new HashSet<HistOrders>();
         }
     
         public string ID { get; set; }
@@ -38,5 +41,11 @@ namespace DatabaseWMS
         public virtual ICollection<Orders> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Places> Places { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HistCommands> HistCommands { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HistCommands> HistCommands1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HistOrders> HistOrders { get; set; }
     }
 }

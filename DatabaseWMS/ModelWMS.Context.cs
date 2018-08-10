@@ -36,5 +36,7 @@ namespace DatabaseWMS
         public virtual DbSet<TUs> TUs { get; set; }
         public virtual DbSet<Parameters> Parameters { get; set; }
         public virtual DbSet<Logs> Logs { get; set; }
+        public virtual DbSet<HistCommands> HistCommands { get; set; }
+        public virtual DbSet<HistOrders> HistOrders { get; set; }
     }
 }

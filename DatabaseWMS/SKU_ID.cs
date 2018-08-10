@@ -19,6 +19,7 @@ namespace DatabaseWMS
         {
             this.Orders = new HashSet<Orders>();
             this.TUs = new HashSet<TUs>();
+            this.HistOrders = new HashSet<HistOrders>();
         }
     
         public string ID { get; set; }
@@ -32,5 +33,7 @@ namespace DatabaseWMS
         public virtual ICollection<Orders> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TUs> TUs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HistOrders> HistOrders { get; set; }
     }
 }

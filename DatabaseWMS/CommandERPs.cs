@@ -18,6 +18,7 @@ namespace DatabaseWMS
         public CommandERPs()
         {
             this.Orders = new HashSet<Orders>();
+            this.HistOrders = new HashSet<HistOrders>();
         }
     
         public int ID { get; set; }
@@ -30,5 +31,7 @@ namespace DatabaseWMS
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HistOrders> HistOrders { get; set; }
     }
 }

@@ -27,6 +27,15 @@
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_TUs_dbo_TU_ID_TU_ID" ManuallyRouted="false" />
         <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Parameters" Width="1.5" PointX="8.375" PointY="0.75" />
         <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Logs" Width="1.5" PointX="11" PointY="2.125" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands" Width="1.5" PointX="13.75" PointY="0.75" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.HistOrders" Width="1.5" PointX="14.625" PointY="7" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_CommandERPs_ERP_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_HistOrders_Order_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Source" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Target" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_TU_ID_TU_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_PlaceIDs_Destination" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

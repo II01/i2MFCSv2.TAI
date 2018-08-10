@@ -59,6 +59,12 @@
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="HistCommands.cs">
+      <DependentUpon>ModelWMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistOrders.cs">
+      <DependentUpon>ModelWMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Logs.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>

@@ -411,9 +411,9 @@ namespace Warehouse.DataService
                 using (var dc = new MFCSEntities())
                 {
                     c = dc.Commands.Find(cmd.CommandID);
-                    if(c!= null)
+                    if (c != null)
                     {
-                        if(c.Task == Command.EnumCommandTask.CancelCommand)
+                        if (c.Task == Command.EnumCommandTask.CancelCommand)
                         {
                             var lna = from sc in dc.SimpleCommands
                                       where (sc.Command_ID == c.ID)
@@ -425,11 +425,11 @@ namespace Warehouse.DataService
                         else
                         {
                             var lna = from sc in dc.SimpleCommands
-                                      where (sc.Command_ID == c.ID) && (sc.Status == SimpleCommand.EnumStatus.NotActive) || !(sc is SimpleCraneCommand)
+                                      where (sc.Command_ID == c.ID)  // && (sc.Status == SimpleCommand.EnumStatus.NotActive || !(sc is SimpleCraneCommand))
                                       select sc;
-                            lna.ToList().ForEach(sc => sc.Status = SimpleCommand.EnumStatus.Canceled);
+                            lna.ToList().Where(p => p.Status == SimpleCommand.EnumStatus.NotActive || !(p is SimpleCraneCommand)).ToList().ForEach(sc => sc.Status = SimpleCommand.EnumStatus.Canceled);
                             var la = from sc in dc.SimpleCommands
-                                     where (sc.Command_ID == c.ID) && 
+                                     where (sc.Command_ID == c.ID) &&
                                      (sc is SimpleCraneCommand) &&
                                      (sc.Status > SimpleCommand.EnumStatus.NotActive && sc.Status <= SimpleCommand.EnumStatus.InPlc) &&
                                      (sc.Task >= SimpleCommand.EnumTask.Move && sc.Task <= SimpleCommand.EnumTask.Drop)
@@ -437,9 +437,6 @@ namespace Warehouse.DataService
                             if (la.Count() == 0)
                             {
                                 c.Status = Command.EnumCommandStatus.Canceled;
-                                dc.Commands.Attach(c);
-                                dc.Entry(c).State = System.Data.Entity.EntityState.Modified;
-                                dc.SaveChanges();
                                 cmd.Status = Command.EnumCommandStatus.Finished;
                             }
                             else
@@ -461,20 +458,14 @@ namespace Warehouse.DataService
                                     }
                                 }
                                 if (cmd.Status < Command.EnumCommandStatus.Active)
-                                {
                                     cmd.Status = Command.EnumCommandStatus.Active;
-                                    UpdateCommand(cmd);
-                                }
-                                // TODO: discuss Toni
-//                                c.Status = Command.EnumCommandStatus.Canceled;
-//                                dc.Commands.Attach(c);
-//                                dc.Entry(c).State = System.Data.Entity.EntityState.Modified;
-//                                dc.SaveChanges();
-//                                cmd.Status = Command.EnumCommandStatus.Finished;
                             }
                         }
                     }
+                    else
+                        cmd.Status = Command.EnumCommandStatus.Finished;
                     dc.SaveChanges();
+                    UpdateCommand(cmd);
                     return c;
                 }
             }
@@ -1335,6 +1326,44 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
+        public async Task MoveCommamdsToHist(DateTime date)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    string datestr = $"{date.Year}-{date.Month}-{date.Day}";
+                    string querystr =
+                            $@"-- insert commands
+                               insert into dbo.HistCommand
+                               select c.ID, c.WMS_ID, c.Task, c.Material, c.Source, c.Target, c.Segment, c.CommandID, c.Priority, c.Info, c.Status, c.Reason, c.Discrimator, c.Time
+                               from dbo.Command c
+                               left join dbo.HistCommand h on c.ID = h.ID
+                               where c.Time < '{datestr}' and c.Status >= 2 and h.ID is null
+                               -- insert simple commands
+                               insert into dbo.HistSimpleCommand
+                               select sc.ID, sc.Command_ID, sc.Unit, sc.Material, sc.Source, sc.Target, sc.Task, sc.Segment, sc.CancelID, sc.Status, sc.Reason, sc.Discrimator, sc.Time
+                               from dbo.Command c
+                               right join dbo.SimpleCommand sc on c.ID = sc.Command_ID
+                               left join dbo.HistSimpleCommand hsc on sc.ID = hsc.ID
+                               where c.Time < '{datestr}' and c.Status >= 2 and hsc.ID is null
+                               -- cascade delete commands and simple commands
+                               delete
+                               from dbo.Command
+                               where Time < '{datestr}' and Status >= 2
+                               -- delete standalone simple commands
+                               delete dbo.SimpleCommand
+                               where Command_ID is null and Time < '{datestr}' and Status >= 2";
+                    await dc.Database.ExecuteSqlCommandAsync(querystr);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
 
         public void ClearRamp(string ramp)
         {

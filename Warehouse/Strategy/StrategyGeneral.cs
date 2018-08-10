@@ -110,6 +110,11 @@ namespace Warehouse.Strategy
                     // send time sync
                     Warehouse.SegmentList.ForEach(s => s.SetClock(0));
 
+                    // move old commands to history
+                    DateTime dt = DateTime.Now.AddDays(-30);
+                    await Warehouse.DBService.MoveCommamdsToHist(dt);
+                    Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, $"Copy Commands and SimpleCommands older than {dt.Date} to history tables.");
+
                     // check database size
                     if (Warehouse.DBService.GetDBSizeInGB() > _dataBaseSizeGBMax)
                     {
@@ -210,14 +215,14 @@ namespace Warehouse.Strategy
                             break;
                         case Command.EnumCommandTask.CancelCommand:
                             Command c = Warehouse.DBService.ExecuteCancelCommand(cmd as CommandCommand);
-                            if( c!= null)
+                            if (c != null)
                             {
                                 Warehouse.OnCommandFinish?.Invoke(c);
-                                if (cmd.Status == Command.EnumCommandStatus.Finished)
-                                {
-                                    Warehouse.DBService.UpdateCommand(cmd);
-                                    Warehouse.OnCommandFinish?.Invoke(cmd);
-                                }
+                            }
+                            if (cmd.Status == Command.EnumCommandStatus.Finished)
+                            {
+                                Warehouse.DBService.UpdateCommand(cmd);
+                                Warehouse.OnCommandFinish?.Invoke(cmd);
                             }
                             break;
                         case Command.EnumCommandTask.Move:
@@ -238,11 +243,22 @@ namespace Warehouse.Strategy
         {
             try
             {
+                if (CurrentTask != null)
+                    Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, $"CurrentTask:{CurrentTask.Status}");
+                else
+                    Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, $"CurrentTask:null");
+
                 if (CurrentTask == null || CurrentTask.IsCompleted || CurrentTask.IsCanceled || CurrentTask.IsFaulted)
                 {
-                    CurrentTask = StrategyAsync();
-                    Task task = Task.Run(async () => await CurrentTask);
-                    task.ConfigureAwait(false);
+                    // Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, $"CurrentTaskStart");
+                    // CurrentTask = StrategyAsync();
+
+                    CurrentTask = Task.Run( async () =>
+                                            {
+                                                Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, "strategyAsync call");
+                                                await StrategyAsync();
+                                            });
+                    CurrentTask.ConfigureAwait(false);
                 }
 //                if (CurrentTask != null && CurrentTask.IsCompleted)
 //                    CurrentTask = null;
