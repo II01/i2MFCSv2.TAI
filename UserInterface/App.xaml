@@ -235,80 +235,18 @@
 
         <vm:ControlPanelViewModel x:Key="cpvm">
             <vm:ControlPanelViewModel.Device>
-                <vm:ControlPanelSegmentsViewModel x:Key="Conveyors" UCName ="{Resx ResxName=UserInterface.Properties.Resources, Key=Conveyors}" DeviceNames="T|T01|T02A|T02B|T03A|T03B|T03C|T03D|T03E|T03F|T03G|T03H|T04A|T04B|T11A|T11B|T12A|T12B|T21A|T21B|T22A|T22B"/>
-                <vm:ControlPanelSegmentsViewModel x:Key="Vehicles" UCName ="{Resx ResxName=UserInterface.Properties.Resources, Key=Vehicles}" DeviceNames="C1|C2|S3"/>
-                <vm:ControlPanelSegmentsViewModel x:Key="Crane1" UCName ="{Resx ResxName=UserInterface.Properties.Resources, Key=Crane1}" DeviceNames="C1"/>
-                <vm:ControlPanelSegmentsViewModel x:Key="Crane2" UCName ="{Resx ResxName=UserInterface.Properties.Resources, Key=Crane2}" DeviceNames="C2"/>
-                <vm:ControlPanelSegmentsViewModel x:Key="Shuttle3" UCName ="{Resx ResxName=UserInterface.Properties.Resources, Key=Shuttle3}" DeviceNames="S3"/>
+                <vm:ControlPanelSegmentsViewModel x:Key="Conveyor" UCName ="{Resx ResxName=UserInterface.Properties.Resources, Key=Conveyor}" DeviceNames="T|T1"/>
+                <vm:ControlPanelSegmentsViewModel x:Key="Crane" UCName ="{Resx ResxName=UserInterface.Properties.Resources, Key=Crane}" DeviceNames="C1"/>
             </vm:ControlPanelViewModel.Device>
         </vm:ControlPanelViewModel>
 
         <vm:VisualizationViewModel x:Key="vvm">
             <vm:VisualizationViewModel.Device>
                 <vm:VisuSegmentViewModel x:Key="T" DeviceName="T"/>
-                <vm:VisuSegmentViewModel x:Key="T01" DeviceName="T01"/>
-                <vm:VisuConveyorViewModel x:Key="T012" DeviceName="T012"/>
-                <vm:VisuConveyorViewModel x:Key="T013" DeviceName="T013"/>
-                <vm:VisuConveyorViewModel x:Key="T014" DeviceName="T014"/>
-                <vm:VisuConveyorViewModel x:Key="T015" DeviceName="T015"/>
-                <vm:VisuSegmentViewModel x:Key="T02A" DeviceName="T02A"/>
-                <vm:VisuConveyorViewModel x:Key="T021" DeviceName="T021"/>
-                <vm:VisuConveyorViewModel x:Key="T022" DeviceName="T022"/>
-                <vm:VisuConveyorViewModel x:Key="T023" DeviceName="T023"/>
-                <vm:VisuConveyorViewModel x:Key="T024" DeviceName="T024"/>
-                <vm:VisuSegmentViewModel x:Key="T02B" DeviceName="T02B"/>
-                <vm:VisuConveyorViewModel x:Key="T025" DeviceName="T025"/>
-                <vm:VisuSegmentViewModel x:Key="T03A" DeviceName="T03A"/>
-                <vm:VisuConveyorViewModel x:Key="T031" DeviceName="T031"/>
-                <vm:VisuSegmentViewModel x:Key="T03B" DeviceName="T03B"/>
-                <vm:VisuConveyorViewModel x:Key="T032" DeviceName="T032"/>
-                <vm:VisuSegmentViewModel x:Key="T03C" DeviceName="T03C"/>
-                <vm:VisuConveyorViewModel x:Key="T033" DeviceName="T033"/>
-                <vm:VisuSegmentViewModel x:Key="T03D" DeviceName="T03D"/>
-                <vm:VisuConveyorViewModel x:Key="T034" DeviceName="T034"/>
-                <vm:VisuSegmentViewModel x:Key="T03E" DeviceName="T03E"/>
-                <vm:VisuConveyorViewModel x:Key="T035" DeviceName="T035"/>
-                <vm:VisuSegmentViewModel x:Key="T03F" DeviceName="T03F"/>
-                <vm:VisuConveyorViewModel x:Key="T036" DeviceName="T036"/>
-                <vm:VisuSegmentViewModel x:Key="T03G" DeviceName="T03G"/>
-                <vm:VisuConveyorViewModel x:Key="T037" DeviceName="T037"/>
-                <vm:VisuSegmentViewModel x:Key="T03H" DeviceName="T03H"/>
-                <vm:VisuConveyorViewModel x:Key="T038" DeviceName="T038"/>
-                <vm:VisuSegmentViewModel x:Key="T04A" DeviceName="T04A"/>
+                <vm:VisuSegmentViewModel x:Key="T1" DeviceName="T1"/>
                 <vm:VisuConveyorViewModel x:Key="T041" DeviceName="T041"/>
-                <vm:VisuSegmentViewModel x:Key="T04B" DeviceName="T04B"/>
-                <vm:VisuConveyorViewModel x:Key="T042" DeviceName="T042"/>
-                <vm:VisuSegmentViewModel x:Key="T11A" DeviceName="T11A"/>
-                <vm:VisuConveyorViewModel x:Key="T111" DeviceName="T111"/>
-                <vm:VisuConveyorViewModel x:Key="T112" DeviceName="T112"/>
-                <vm:VisuConveyorViewModel x:Key="T113" DeviceName="T113"/>
-                <vm:VisuConveyorViewModel x:Key="T114" DeviceName="T114"/>
-                <vm:VisuSegmentViewModel x:Key="T11B" DeviceName="T11B"/>
-                <vm:VisuConveyorViewModel x:Key="T115" DeviceName="T115"/>
-                <vm:VisuSegmentViewModel x:Key="T12A" DeviceName="T12A"/>
-                <vm:VisuConveyorViewModel x:Key="T121" DeviceName="T121"/>
-                <vm:VisuSegmentViewModel x:Key="T12B" DeviceName="T12B"/>
-                <vm:VisuConveyorViewModel x:Key="T122" DeviceName="T122"/>
-                <vm:VisuConveyorViewModel x:Key="T123" DeviceName="T123"/>
-                <vm:VisuConveyorViewModel x:Key="T124" DeviceName="T124"/>
-                <vm:VisuConveyorViewModel x:Key="T125" DeviceName="T125"/>
-                <vm:VisuSegmentViewModel x:Key="T21A" DeviceName="T21A"/>
-                <vm:VisuConveyorViewModel x:Key="T211" DeviceName="T211"/>
-                <vm:VisuConveyorViewModel x:Key="T212" DeviceName="T212"/>
-                <vm:VisuConveyorViewModel x:Key="T213" DeviceName="T213"/>
-                <vm:VisuConveyorViewModel x:Key="T214" DeviceName="T214"/>
-                <vm:VisuSegmentViewModel x:Key="T21B" DeviceName="T21B"/>
-                <vm:VisuConveyorViewModel x:Key="T215" DeviceName="T215"/>
-                <vm:VisuSegmentViewModel x:Key="T22A" DeviceName="T22A"/>
-                <vm:VisuConveyorViewModel x:Key="T221" DeviceName="T221"/>
-                <vm:VisuSegmentViewModel x:Key="T22B" DeviceName="T22B"/>
-                <vm:VisuConveyorViewModel x:Key="T222" DeviceName="T222"/>
-                <vm:VisuConveyorViewModel x:Key="T223" DeviceName="T223"/>
-                <vm:VisuConveyorViewModel x:Key="T224" DeviceName="T224"/>
-                <vm:VisuConveyorViewModel x:Key="T225" DeviceName="T225"/>
-                <vm:VisuVehicleDoubleDeckViewModel x:Key="C1" DeviceName="C1" Strategy="Strategy-C101-C102"/>
-                <vm:VisuVehicleDoubleDeckViewModel x:Key="C2" DeviceName="C2" Strategy="Strategy-C201-C202"/>
-                <vm:VisuVehicleSingleDeckViewModel x:Key="S3" DeviceName="S3" Strategy="Strategy-C301"/>
+                <vm:VisuDimensionCheckViewModel x:Key="DCT041" DeviceName="T041"/>
+                <vm:VisuVehicleSingleDeckViewModel x:Key="C1" DeviceName="C1" Strategy="Strategy-C101"/>
             </vm:VisualizationViewModel.Device>
         </vm:VisualizationViewModel>
 

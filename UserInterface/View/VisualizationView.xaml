@@ -18,7 +18,7 @@
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding OnLoaded}" />
         </i:EventTrigger>
-<!--        <i:EventTrigger EventName="Closed">
+        <!--        <i:EventTrigger EventName="Closed">
             <i:InvokeCommandAction Command="{Binding OnClose}" />
         </i:EventTrigger> -->
     </i:Interaction.Triggers>
@@ -26,29 +26,13 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <scada:PhysicalToPixel x:Key="PhysicalToPixel" />
-            <x:Array Type="scada:ScalingPoint"  x:Key="Crane1Scaling">
-                <scada:ScalingPoint Pixel="732" Physical="241"/>
-                <scada:ScalingPoint Pixel="722" Physical="341"/>
-                <scada:ScalingPoint Pixel="645" Physical="502"/>
-                <scada:ScalingPoint Pixel="562" Physical="602"/>
-                <scada:ScalingPoint Pixel="31" Physical="13679"/>
-                <scada:ScalingPoint Pixel="21" Physical="13779"/>
-            </x:Array>
-            <x:Array Type="scada:ScalingPoint"  x:Key="Crane2Scaling">
-                <scada:ScalingPoint Pixel="732" Physical="241"/>
-                <scada:ScalingPoint Pixel="722" Physical="341"/>
-                <scada:ScalingPoint Pixel="645" Physical="502"/>
-                <scada:ScalingPoint Pixel="562" Physical="602"/>
-                <scada:ScalingPoint Pixel="31" Physical="13679"/>
-                <scada:ScalingPoint Pixel="21" Physical="13779"/>
-            </x:Array>
-            <x:Array Type="scada:ScalingPoint"  x:Key="Shuttle3Scaling">
-                <scada:ScalingPoint Pixel="1722" Physical="145"/>
-                <scada:ScalingPoint Pixel="1712" Physical="195"/>
-                <scada:ScalingPoint Pixel="1531"  Physical="1028"/>
-                <scada:ScalingPoint Pixel="1450"  Physical="1341"/> 
-                <scada:ScalingPoint Pixel="1120"  Physical="2841"/>
-                <scada:ScalingPoint Pixel="1110"  Physical="2890"/>
+            <x:Array Type="scada:ScalingPoint"  x:Key="CraneScaling">
+<!--            <scada:ScalingPoint Pixel="1410" Physical="-516"/>  
+                <scada:ScalingPoint Pixel="115"  Physical="2683"/>
+                <scada:ScalingPoint Pixel="46"  Physical="2802"/> --> 
+                <scada:ScalingPoint Pixel="46"  Physical="90"/>         
+                <scada:ScalingPoint Pixel="115"  Physical="200"/>
+                <scada:ScalingPoint Pixel="1410" Physical="2600"/>
             </x:Array>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -64,199 +48,35 @@
         </Border>
 
         <Viewbox Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Stretch">
-            <Canvas Margin="0,0,0,0" Width="1900" Height="950">
-                
+            <Canvas Margin="0,0,0,0" Width="1600" Height="800">
+
                 <!-- Segment T -->
-                <scada:UCSegment Canvas.Left="1055" Canvas.Top="69" Width="230" Height="35"
+                <scada:UCSegment Canvas.Left="0" Canvas.Top="40" Width="40" Height="237"
                                DataContext="{Binding Device[T]}"/>
-                <!-- Segment T01 -->
-                <scada:UCSegment Canvas.Left="1596" Canvas.Top="69" Width="154" Height="145"
-                                 DataContext="{Binding Device[T01]}"/>
-                <Ellipse Canvas.Left="1747" Canvas.Top="-7" Width="84"  Height="84" Stroke="SkyBlue" StrokeThickness="1"  />
-                <scada:UCConveyor Canvas.Left="1820" Canvas.Top="5" Sensor1Visibility="Visible"/>
-                <scada:UCConveyor Canvas.Left="1745" Canvas.Top="5" Sensor1Visibility="Visible"/>
-                <scada:UCConveyor Canvas.Left="1670" Canvas.Top="5" Sensor1Visibility="Visible"/>
-                <scada:UCConveyor Canvas.Left="1595" Canvas.Top="5" Sensor1Visibility="Visible"/>
-                <scada:UCConveyor Canvas.Left="1595" Canvas.Top="75" Sensor1Visibility="Visible"/>
-                <scada:UCConveyor Canvas.Left="1595" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T014]}"/>
-                <scada:UCConveyor Canvas.Left="1670" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T015]}"/>
-                <!-- Segment T02A -->
-                <scada:UCSegment Canvas.Left="1288" Canvas.Top="140" Width="305" Height="74"
-                                 DataContext="{Binding Device[T02A]}"/>
-                <scada:UCConveyor Canvas.Left="1512" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T021]}"/>
-                <scada:UCConveyor Canvas.Left="1437" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T022]}"/>
-                <scada:UCConveyor Canvas.Left="1362" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T023]}"/>
-                <scada:UCConveyor Canvas.Left="1287" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T024]}"/>
-                <!-- Segment T02B -->
-                <scada:UCSegment Canvas.Left="1206" Canvas.Top="140" Width="80" Height="74"
-                                 DataContext="{Binding Device[T02B]}"/>
-                <scada:UCConveyor Canvas.Left="1206" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T025]}"/>
-                <!-- Segment T03A -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="140" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03A]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T031]}"/>
-                <!-- Segment T03B -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="217" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03B]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="222" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T032]}"/>
-                <!-- Segment T03C -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="294" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03C]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="299" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T033]}"/>
-                <!-- Segment T03D -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="371" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03D]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="376" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T034]}"/>
-                <!-- Segment T03E -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="448" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03E]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="453" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T035]}"/>
-                <!-- Segment T03F -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="525" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03F]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="530" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T036]}"/>
-                <!-- Segment T03G -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="602" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03G]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="607" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T037]}"/>
-                <!-- Segment T03H -->
-                <scada:UCSegment Canvas.Left="1124" Canvas.Top="679" Width="80" Height="74"
-                                 DataContext="{Binding Device[T03H]}"/>
-                <scada:UCConveyor Canvas.Left="1124" Canvas.Top="684" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T038]}"/>
-                <!-- Segment T04A -->
-                <scada:UCSegment Canvas.Left="1454" Canvas.Top="679" Width="80" Height="74"
-                                 DataContext="{Binding Device[T04A]}"/>
-                <scada:UCConveyor Canvas.Left="1454" Canvas.Top="684" Sensor1Visibility="Visible"
+                <!-- Segment T1 -->
+                <scada:UCSegment Canvas.Left="50" Canvas.Top="203" Width="80" Height="74"
+                                 DataContext="{Binding Device[T1]}"/>
+                <scada:UCConveyor Canvas.Left="50" Canvas.Top="208" Sensor1Visibility="Visible"
                                   DataContext="{Binding Device[T041]}"/>
-                <!-- Segment T04B -->
-                <scada:UCSegment Canvas.Left="1535" Canvas.Top="679" Width="80" Height="74"
-                                 DataContext="{Binding Device[T04B]}"/>
-                <scada:UCConveyor Canvas.Left="1535" Canvas.Top="684" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T042]}"/>
-                <!-- Segment T11A -->
-                <scada:UCSegment Canvas.Left="817" Canvas.Top="140" Width="305" Height="74"
-                                 DataContext="{Binding Device[T11A]}"/>
-                <scada:UCConveyor Canvas.Left="1042" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T111]}"/>
-                <scada:UCConveyor Canvas.Left="967" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T112]}"/>
-                <scada:UCConveyor Canvas.Left="892" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T113]}"/>
-                <scada:UCConveyor Canvas.Left="817" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T114]}"/>
-                <!-- Segment T11B -->
-                <scada:UCSegment Canvas.Left="733" Canvas.Top="140" Width="82" Height="74"
-                                 DataContext="{Binding Device[T11B]}"/>
-                <scada:UCConveyor Canvas.Left="733" Canvas.Top="145" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T115]}"/>
-                <!-- Segment T12A -->
-                <scada:UCSegment Canvas.Left="733" Canvas.Top="294" Width="82" Height="74"
-                                 DataContext="{Binding Device[T12A]}"/>
-                <scada:UCConveyor Canvas.Left="733" Canvas.Top="299" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T121]}"/>
-                <!-- Segment T12B -->
-                <scada:UCSegment Canvas.Left="817" Canvas.Top="294" Width="305" Height="74"
-                                 DataContext="{Binding Device[T12B]}"/>
-                <scada:UCConveyor Canvas.Left="817" Canvas.Top="299" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T122]}"/>
-                <scada:UCConveyor Canvas.Left="892" Canvas.Top="299" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T123]}"/>
-                <scada:UCConveyor Canvas.Left="967" Canvas.Top="299" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T124]}"/>
-                <scada:UCConveyor Canvas.Left="1042" Canvas.Top="299" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T125]}"/>
-                <!-- Segment T21A -->
-                <scada:UCSegment Canvas.Left="817" Canvas.Top="448" Width="305" Height="74"
-                                 DataContext="{Binding Device[T21A]}"/>
-                <scada:UCConveyor Canvas.Left="1042" Canvas.Top="453" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T211]}"/>
-                <scada:UCConveyor Canvas.Left="967" Canvas.Top="453" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T212]}"/>
-                <scada:UCConveyor Canvas.Left="892" Canvas.Top="453" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T213]}"/>
-                <scada:UCConveyor Canvas.Left="817" Canvas.Top="453" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T214]}"/>
-                <!-- Segment T21B -->
-                <scada:UCSegment Canvas.Left="733" Canvas.Top="448" Width="82" Height="74"
-                                 DataContext="{Binding Device[T21B]}"/>
-                <scada:UCConveyor Canvas.Left="733" Canvas.Top="453" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T215]}"/>
-                <!-- Segment T22A -->
-                <scada:UCSegment Canvas.Left="733" Canvas.Top="602" Width="82" Height="74"
-                                 DataContext="{Binding Device[T22A]}"/>
-                <scada:UCConveyor Canvas.Left="733" Canvas.Top="607" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T221]}"/>
-                <!-- Segment T22B -->
-                <scada:UCSegment Canvas.Left="817" Canvas.Top="602" Width="305" Height="74"
-                                 DataContext="{Binding Device[T22B]}"/>
-                <scada:UCConveyor Canvas.Left="817" Canvas.Top="607" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T222]}"/>
-                <scada:UCConveyor Canvas.Left="892" Canvas.Top="607" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T223]}"/>
-                <scada:UCConveyor Canvas.Left="967" Canvas.Top="607" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T224]}"/>
-                <scada:UCConveyor Canvas.Left="1042" Canvas.Top="607" Sensor1Visibility="Visible"
-                                  DataContext="{Binding Device[T225]}"/>
+                <scada:UCDimensionCheck Canvas.Left="50" Canvas.Top="308" 
+                                        DataContext="{Binding Device[DCT041]}"/>
                 <!-- Crane 1 -->
-                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="58" Canvas.Top="101" Width="673" Height="113">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock Text="{Resx Rack}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Foreground="SkyBlue"/>
-                        <TextBlock Text="11" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="16" Foreground="SkyBlue"/>
-                    </StackPanel>
-                </Border>
-                <scada:UCVehicleDoubleDeckFromRight Canvas.Top="217" FlowDirection="LeftToRight"
-                                                Canvas.Left="{Binding Position, Converter={StaticResource PhysicalToPixel}, ConverterParameter={StaticResource Crane1Scaling}}"
-                                                DataContext="{Binding Device[C1]}"/>
-                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="58" Canvas.Top="294" Width="673" Height="113">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="50" Canvas.Top="40" Width="1440" Height="74">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <TextBlock Text="{Resx Rack}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Foreground="SkyBlue"/>
                         <TextBlock Text="12" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="16" Foreground="SkyBlue"/>
                     </StackPanel>
                 </Border>
-                <!-- Crane 2 -->
-                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="58" Canvas.Top="410" Width="673" Height="113">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock Text="{Resx Rack}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Foreground="SkyBlue"/>
-                        <TextBlock Text="21" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="16" Foreground="SkyBlue"/>
-                    </StackPanel>
-                </Border>
-                <scada:UCVehicleDoubleDeckFromRight Canvas.Top="525" FlowDirection="LeftToRight"
-                                                Canvas.Left="{Binding Position, Converter={StaticResource PhysicalToPixel}, ConverterParameter={StaticResource Crane2Scaling}}"
-                                                DataContext="{Binding Device[C2]}"/>
-                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="58" Canvas.Top="602" Width="673" Height="113">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                        <TextBlock Text="{Resx Rack}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Foreground="SkyBlue"/>
-                        <TextBlock Text="22" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="16" Foreground="SkyBlue"/>
-                    </StackPanel>
-                </Border>
-                <!-- shuttle 3 -->
-                <scada:UCVehicleSingleDeck Canvas.Top="756" FlowDirection="LeftToRight"
-                                           Canvas.Left="{Binding Position, Converter={StaticResource PhysicalToPixel}, ConverterParameter={StaticResource Shuttle3Scaling}}"
-                                           DataContext="{Binding Device[S3]}"/>
-                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="1148" Canvas.Top="834" Width="645" Height="113">
+                <scada:UCVehicleSingleDeck Canvas.Top="121" FlowDirection="LeftToRight"
+                                           Canvas.Left="{Binding Position, Converter={StaticResource PhysicalToPixel}, ConverterParameter={StaticResource CraneScaling}}"
+                                           DataContext="{Binding Device[C1]}"/>
+                <Border CornerRadius="8" BorderBrush="SkyBlue" BorderThickness="2" Canvas.Left="135" Canvas.Top="203" Width="1355" Height="74">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <TextBlock Text="{Resx Rack}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Foreground="SkyBlue"/>
-                        <TextBlock Text="32" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="16" Foreground="SkyBlue"/>
+                        <TextBlock Text="11" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="16" Foreground="SkyBlue"/>
                     </StackPanel>
                 </Border>
             </Canvas>
         </Viewbox>
-
-
     </Grid>
 </UserControl>

@@ -39,7 +39,7 @@ namespace Warehouse.Strategy
         public SimpleCraneCommand DropAction { get; set; }
 
         [XmlIgnore]
-        public ConveyorIO ForcedInput { get; set; }
+        public IConveyorIO ForcedInput { get; set; }
         private bool LastInBound { get; set; } // was last command inbound
 
         public StrategyCrane() : base()
@@ -178,9 +178,7 @@ namespace Warehouse.Strategy
 
             if (BufferCommand == null || BufferCommand.Status >= SimpleCommand.EnumStatus.Canceled)
             {
-                if (!Warehouse.SteeringCommands.AutomaticMode)
-                    BufferCommand = Warehouse.DBService.FindFirstSimpleCraneCommand(Crane.Name, false);  // for simple commands
-                else
+                if (Warehouse.SteeringCommands.AutomaticMode)
                 {
                     if (Command.Task == SimpleCommand.EnumTask.Move)
                     {

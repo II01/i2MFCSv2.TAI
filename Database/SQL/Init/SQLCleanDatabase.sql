@@ -12,6 +12,8 @@ select
 	(select count(*) from [Movement]) as tMovement,
 	(select count(*) from [Command]) as tCommand,
 	(select count(*) from [SimpleCommand]) as tSimpleCommand,
+	(select count(*) from [HistCommand]) as tCommand,
+	(select count(*) from [HistSimpleCommand]) as tSimpleCommand,
 	(select count(*) from [Place]) as tPlace,
 	(select count(*) from [MaterialID]) as tMaterialID
 

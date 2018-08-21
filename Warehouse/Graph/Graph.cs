@@ -224,6 +224,11 @@ namespace Warehouse.Model
                         res.Item1.ForEach(p => newRes.Add(p));
                     }
                 }
+                if (t is IConveyorOutput && level > 0)
+                {
+                    RouteDescription rd = new RouteDescription { First = t, Next = t, Final = t };
+                    newRes.Add(new Route { Cost = 0, Items = new List<RouteDescription> { rd } } );
+                }
                 visited.Remove(t);
                 return new Tuple<List<Route>, bool>(newRes, newRes.Count > 0);
             }

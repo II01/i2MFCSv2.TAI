@@ -44,6 +44,7 @@ namespace Warehouse.Model
     [XmlInclude(typeof(ConveyorJunction))]
     [XmlInclude(typeof(ConveyorOutput))]
     [XmlInclude(typeof(ConveyorIOAndOutput))]
+    [XmlInclude(typeof(ConveyorJunctionAndIOAndOutput))]
     [XmlInclude(typeof(ConveyorOutputDefault))]
     [XmlInclude(typeof(SegmentCrane))]
     [XmlInclude(typeof(SegmentConveyor))]
@@ -366,10 +367,10 @@ namespace Warehouse.Model
         {
             Crane c = node.Next as Crane;
             if (c.InConveyor == null)
-                c.InConveyor = new List<ConveyorIO>();
-            if (!(tr is ConveyorIO))
-                throw new BasicWarehouseException(String.Format("{0} is connected to {1} but is not ConveyorIO", tr.Name, node.Next.Name));
-            c.InConveyor.Add(tr as ConveyorIO);
+                c.InConveyor = new List<IConveyorIO>();
+            if (!(tr is IConveyorIO)) // && !(tr is ConveyorIOAndOutput) && !(tr is ConveyorJunctionAndIOAndOutput))
+                throw new BasicWarehouseException(String.Format("{0} is connected to {1} but does not have IConveyorIO iterface", tr.Name, node.Next.Name));
+            c.InConveyor.Add(tr as IConveyorIO); // as ConveyorIO);
         }
 
         public void Serialize(string configFile)

@@ -229,15 +229,6 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="XmlRouteNode" nillable="true" type="XmlRouteNode" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ConveyorJunctionAndIOAndOutput">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ConveyorJunction">
-        <xs:sequence>
-          <xs:element minOccurs="0" maxOccurs="1" name="CraneAddress" type="LPosition" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="ConveyorIO">
     <xs:complexContent mixed="false">
       <xs:extension base="ConveyorJunction">

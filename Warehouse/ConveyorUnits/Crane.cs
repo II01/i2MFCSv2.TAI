@@ -75,7 +75,7 @@ namespace Warehouse.ConveyorUnits
         public LPosition LPHomePosition { get; set; }
 
         [XmlIgnore]
-        public List<ConveyorIO> InConveyor { get; set; }
+        public List<IConveyorIO> InConveyor { get; set; }
         [XmlIgnore]
         public List<IConveyorIO> OutConveyor { get; set; }
 
@@ -323,6 +323,20 @@ namespace Warehouse.ConveyorUnits
                         AssignCommandsAfterFinish();
                     }
                 }
+                else if (tel.Confirmation == TelegramCraneTO.CONFIRMATION_DIMENSIONCHECKERROR)
+                {
+                    cmd.Reason = SimpleCommand.EnumReason.DimensionCheck;
+                    FinishCommand(tel.MFCS_ID, cmd, SimpleCommand.EnumStatus.Canceled);
+                    Command Command = Warehouse.DBService.FindCommandByID(cmd.Command_ID.Value);
+                    if (Command != null)
+                    {
+                        Command.Status = Database.Command.EnumCommandStatus.Canceled;
+                        Warehouse.DBService.UpdateCommand(Command);
+                        Warehouse.OnCommandFinish?.Invoke(Command);
+                    }
+                    else
+                        throw new ConveyorBasicException(String.Format("{0} has no corresponding Command", cmd != null ? cmd.ToString() : "null"));
+                }
                 else if (tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYWAREHOUSE ||
                          tel.Confirmation == TelegramCraneTO.CONFIRMATION_FAULT ||
                          tel.Confirmation == TelegramCraneTO.CONFIRMATION_CANCELBYMFCS)
@@ -434,8 +448,8 @@ namespace Warehouse.ConveyorUnits
                 }
                 else
                 {
-                    ConveyorIO cIO = FindInConveyor(source);
-                    Move(material, cIO, this);
+                    IConveyorIO cIO = FindInConveyor(source);
+                    Move(material, cIO as ConveyorBasic, this);
                 }
             }
             catch (Exception ex)
@@ -659,7 +673,7 @@ namespace Warehouse.ConveyorUnits
             public int? Material { get; set; }
         }
 
-        public SimpleCraneCommand FindBestInput(bool automatic, ConveyorIO forcedInput )
+        public SimpleCraneCommand FindBestInput(bool automatic, IConveyorIO forcedInput )
         {
             try
             {
@@ -809,11 +823,11 @@ namespace Warehouse.ConveyorUnits
             return true;
         }
 
-        protected ConveyorIO FindInConveyor(string name)
+        protected IConveyorIO FindInConveyor(string name)
         {
             try
             {
-                return InConveyor.Find(prop => prop.Name == name) as ConveyorIO;
+                return InConveyor.Find(prop => prop.Name == name) as IConveyorIO;
             }
             catch(Exception ex)
             {

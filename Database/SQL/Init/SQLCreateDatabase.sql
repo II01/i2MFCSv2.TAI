@@ -206,50 +206,10 @@ GO
 
 --- create locations ---
 
+use [MFCS]
 INSERT INTO [PlaceID] values 
-	('C101', 1, 0, 0),
-	('C102', 1, 0, 0),
-	('C201', 1, 0, 0),
-	('C202', 1, 0, 0),
-	('C301', 1, 0, 0),
-	('T013', 1, 0, 0),
-	('T014', 1, 0, 0),
-	('T015', 1, 0, 0),
-	('T021', 1, 0, 0),
-	('T022', 1, 0, 0),
-	('T023', 1, 0, 0),
-	('T024', 1, 0, 0),
-	('T025', 1, 0, 0),
-	('T031', 1, 0, 0),
-	('T032', 1, 0, 0),
-	('T033', 1, 0, 0),
-	('T034', 1, 0, 0),
-	('T035', 1, 0, 0),
-	('T036', 1, 0, 0),
-	('T037', 1, 0, 0),
-	('T038', 1, 0, 0),
-	('T111', 1, 0, 0),
-	('T112', 1, 0, 0),
-	('T113', 1, 0, 0),
-	('T114', 1, 0, 0),
-	('T115', 1, 0, 0),
-	('T121', 1, 0, 0),
-	('T122', 1, 0, 0),
-	('T123', 1, 0, 0),
-	('T124', 1, 0, 0),
-	('T125', 1, 0, 0),
-	('T211', 1, 0, 0),
-	('T212', 1, 0, 0),
-	('T213', 1, 0, 0),
-	('T214', 1, 0, 0),
-	('T215', 1, 0, 0),
-	('T221', 1, 0, 0),
-	('T222', 1, 0, 0),
-	('T223', 1, 0, 0),
-	('T224', 1, 0, 0),
-	('T225', 1, 0, 0),
-	('T041', 1, 0, 0),
-	('T042', 1, 0, 0)
+	('C101', 2, 0, 0),
+	('T100', 2, 0, 0)
 
 declare @r int
 declare @rr int
@@ -258,34 +218,31 @@ declare @xx int
 declare @y int
 declare @z int
 declare @loc nvarchar(20)
+declare @heightclass int
 set @r = 0
-while(@r < 4) begin
+while(@r < 2) begin
 	set @rr = (@r/2+1) * 10 + (@r % 2+1)
 	set @r = @r + 1
 	set @x=0
-	while(@x < 126) begin
+	while(@x < 26) begin
 		set @x = @x + 1
 		set @y=0
-		while(@y < 9) begin
+		while(@y < 10) begin
 			set @y = @y + 1
+			if @y=4 or @y>=9
+				set @heightclass=2
+			else 
+				set @heightclass=1
 			set @z=0
-			while(@z < 2) begin
+			while(@z < 1) begin
 				set @z = @z + 1
-				set @loc = 'W:' + RIGHT('00'+CAST(@rr AS VARCHAR(2)),2) + ':' + RIGHT('000'+CAST(@x AS VARCHAR(3)),3) + ':' + CAST(@y AS VARCHAR(1)) + ':' + CAST(@z AS VARCHAR(1))
-				INSERT INTO [PlaceID] values (@loc, 1, 0, 0)
+				set @loc = 'W:' + RIGHT('00'+CAST(@rr AS VARCHAR(2)),2) + ':' + RIGHT('00'+CAST(@x AS VARCHAR(2)),2) + ':' + RIGHT('00'+CAST(@y AS VARCHAR(2)),2) + ':' + CAST(@z AS VARCHAR(1))
+				INSERT INTO [PlaceID] values (@loc, @heightclass, 0, 0)
 			end
 		end
 	end
 end
-set @x=0
-while(@x < 5) begin
-	set @x = @x + 1
-	set @xx = 0
-	while(@xx < 4) begin
-		set @xx = @xx + 1
-		set @loc = 'W:32:0' + CAST(@x AS VARCHAR(1)) + CAST(@xx as VARCHAR(1)) + ':1:1'
-		INSERT INTO [PlaceID] values (@loc, 999, 0, 0)
-	end 
-end
 
-GO
+delete from PlaceID
+where ID like 'W:11:01:%'
+

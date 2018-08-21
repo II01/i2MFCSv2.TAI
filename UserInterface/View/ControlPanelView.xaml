@@ -27,11 +27,8 @@
         </Grid.ColumnDefinitions>
         <scada:UCMode Grid.Column="0" DataContext="{Binding Modes}"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1">
-            <scada:UCSegments DataContext="{Binding Device[Conveyors]}"/>
-<!--            <scada:UCSegments DataContext="{Binding Device[Vehicles]}"/> -->
-            <scada:UCSegments DataContext="{Binding Device[Crane1]}"/>
-            <scada:UCSegments DataContext="{Binding Device[Crane2]}"/>
-            <scada:UCSegments DataContext="{Binding Device[Shuttle3]}"/>
+            <scada:UCSegments DataContext="{Binding Device[Conveyor]}"/>
+            <scada:UCSegments DataContext="{Binding Device[Crane]}"/>
         </StackPanel>
     </Grid>
 </UserControl>

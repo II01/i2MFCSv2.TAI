@@ -24,9 +24,9 @@ namespace Warehouse.Strategy
         public string ConveyorCrane1Name { get; set; }
         public string ConveyorCrane2Name { get; set; }
         [XmlIgnore]
-        public ConveyorIO ConveyorCrane1 { get; set; }
+        public IConveyorIO ConveyorCrane1 { get; set; }
         [XmlIgnore]
-        public ConveyorIO ConveyorCrane2 { get; set; }
+        public IConveyorIO ConveyorCrane2 { get; set; }
 
 
         public LinkedConveyor()

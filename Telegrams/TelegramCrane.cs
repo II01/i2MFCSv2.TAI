@@ -65,6 +65,7 @@ namespace Telegrams
         public const Int16 CONFIRMATION_CANCELBYMFCS = 102;
         public const Int16 CONFIRMATION_CANCELBYWAREHOUSE = 103;
         public const Int16 CONFIRMATION_INITIALNOTIFY = 104;
+        public const Int16 CONFIRMATION_DIMENSIONCHECKERROR = 105;
         public const Int16 CONFIRMATION_FAULT = 0;
 
         public const Int16 FAULT_OK = 0;

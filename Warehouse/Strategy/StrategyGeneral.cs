@@ -243,25 +243,14 @@ namespace Warehouse.Strategy
         {
             try
             {
-                if (CurrentTask != null)
-                    Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, $"CurrentTask:{CurrentTask.Status}");
-                else
-                    Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, $"CurrentTask:null");
-
                 if (CurrentTask == null || CurrentTask.IsCompleted || CurrentTask.IsCanceled || CurrentTask.IsFaulted)
                 {
-                    // Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, $"CurrentTaskStart");
-                    // CurrentTask = StrategyAsync();
-
                     CurrentTask = Task.Run( async () =>
                                             {
-                                                Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Program, "strategyAsync call");
                                                 await StrategyAsync();
                                             });
                     CurrentTask.ConfigureAwait(false);
                 }
-//                if (CurrentTask != null && CurrentTask.IsCompleted)
-//                    CurrentTask = null;
             }
             catch (Exception e)
             {

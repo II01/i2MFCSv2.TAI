@@ -49,7 +49,7 @@ namespace Warehouse.Common
         public override string ToString()
         {
             if (Shelve > 0)
-                return String.Format("W:{0:d2}:{1:d3}:{2:d1}:{3:d1}", Shelve, Travel, Height, Depth);  // project specific
+                return String.Format("W:{0:d2}:{1:d2}:{2:d2}:{3:d1}", Shelve, Travel, Height, Depth);  // project specific
             else
                 return Name;
         }

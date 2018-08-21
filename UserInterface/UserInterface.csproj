@@ -154,6 +154,9 @@
     <Compile Include="Services\ResourceReader.cs" />
     <Compile Include="Services\UIException.cs" />
     <Compile Include="UserControls\Common.cs" />
+    <Compile Include="UserControls\UCDimensionCheck.xaml.cs">
+      <DependentUpon>UCDimensionCheck.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCConveyor.xaml.cs">
       <DependentUpon>UCConveyor.xaml</DependentUpon>
     </Compile>
@@ -209,6 +212,7 @@
     <Compile Include="ViewModel\SimpleCommandViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
     <Compile Include="ViewModel\VisualizationViewModel.cs" />
+    <Compile Include="ViewModel\VisuDimensionCheckViewModel.cs" />
     <Compile Include="ViewModel\VisuConveyorViewModel.cs" />
     <Compile Include="ViewModel\VisuDetailViewModel.cs" />
     <Compile Include="ViewModel\VisuDeviceBasicViewModel.cs" />
@@ -381,6 +385,10 @@
     <Compile Include="View\VisualizationView.xaml.cs">
       <DependentUpon>VisualizationView.xaml</DependentUpon>
     </Compile>
+    <Page Include="UserControls\UCDimensionCheck.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\UCConveyor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -628,12 +636,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="App_site.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="App_sim.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Core.DataExchange.xsd">
       <SubType>Designer</SubType>
     </None>

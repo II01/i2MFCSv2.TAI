@@ -20,7 +20,8 @@ namespace Database
             OK = 0,
             Command = 1,
             MFCS = 2,
-            Warehouse = 3
+            Warehouse = 3,
+            DimensionCheck = 4
         }
         public abstract string ToSmallString();
 

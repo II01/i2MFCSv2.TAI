@@ -222,7 +222,7 @@ namespace UserInterface.ViewModel
 
                 Position = _info.FPosition.X;
                 Location = _info.LPosition.R == 0 ? string.Format("T{0:d3}", _info.LPosition.X) :
-                                                    string.Format("W:{0:d2}:{1:d3}:{2:d1}:{3:d1}", _info.LPosition.R,   // project specific
+                                                    string.Format("W:{0:d2}:{1:d2}:{2:d2}:{3:d1}", _info.LPosition.R,   // project specific
                                                                                                    _info.LPosition.X,
                                                                                                    _info.LPosition.Y,
                                                                                                    _info.LPosition.Z);

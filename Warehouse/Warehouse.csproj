@@ -89,6 +89,7 @@
     </Compile>
     <Compile Include="ConveyorUnits\ConveyorBasicInfo.cs" />
     <Compile Include="ConveyorUnits\ConveyorIOAndOutput.cs" />
+    <Compile Include="ConveyorUnits\ConveyorJunctionAndIOAndOutput.cs" />
     <Compile Include="ConveyorUnits\MainPanel.cs" />
     <Compile Include="ProjectLogic\ProjectLogic.cs" />
     <Compile Include="ConveyorUnits\Segment.cs" />
@@ -186,20 +187,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\xmlconfigDogusCay_site.xml">
+    <Content Include="Config\xmlconfigTAI.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Config\xmlconfigDogusCay_sim.xml">
+    <Content Include="Config\xmlconfigUITAI.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Config\xmlconfigDogusCay.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Config\xmlconfigUIDogusCay.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Config\xmlconfigUIDogusCay_sim.xml" />
-    <Content Include="Config\xmlconfigUIDogusCay_site.xml" />
     <None Include="Connected Services\ServiceReferenceWMSToMFCS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

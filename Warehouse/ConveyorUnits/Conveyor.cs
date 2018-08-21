@@ -32,6 +32,10 @@ namespace Warehouse.ConveyorUnits
         public Int32 Material { get; set; }
 
         [DataMember]
+        [XmlIgnore]
+        public BitArray MaterialError { get; set; }
+
+        [DataMember]
         public List<State> StateList { get; set; }
 
 
@@ -124,6 +128,7 @@ namespace Warehouse.ConveyorUnits
                 {
                     ConveyorInfo.Name = Name;
                     ConveyorInfo.Material = Place != null ? Place.Material : 0;
+                    ConveyorInfo.MaterialError = (t as TelegramTransportTO).Palette.FaultCode;
                     CallNotifyVM(ConveyorInfo);
                 }
             }
@@ -136,7 +141,7 @@ namespace Warehouse.ConveyorUnits
                     msg = (t as TelegramTransportTO).MFCS_ID.ToString();
                 Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, 
                                    String.Format("Conveyor.OnTelegramTransportTO place {0}, telID {1}", Name,  msg, ex.Message));
-                Warehouse.SteeringCommands.Run = false;
+//                Warehouse.SteeringCommands.Run = false; // todo: jure bug, on site put back to function
             }
         }
 
