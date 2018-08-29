@@ -185,6 +185,10 @@ namespace Warehouse.ConveyorUnits
                 TelegramCraneTO tel = t as TelegramCraneTO;
                 Command_Status = tel;
 
+                // check if material exists
+                if (tel.Order != TelegramCraneTO.ORDER_DELETEPALETTE)
+                    CreateOrUpdateMaterialID(tel.Palette);
+
                 // check if this is move command
                 if (tel.Order < 50)
                 {

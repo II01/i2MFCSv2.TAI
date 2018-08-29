@@ -401,9 +401,9 @@ namespace UserInterface.ViewModel
                 NumberOfSelectedItems = items == null ? 0 : items.Count;
 
                 SimpleCommandList.Clear();
-                if (DetailedContent != null)
+                if (SelectedContent != null)
                 {
-                    List<SimpleCommand> l = await _warehouse.DBService.GetSimpleCommands(DetailedContent.Command.ID, SimpleCommand.EnumStatus.Finished, null, null);
+                    List<SimpleCommand> l = await _warehouse.DBService.GetSimpleCommands(SelectedContent.Command.ID, SimpleCommand.EnumStatus.Finished, null, null);
                     foreach (var cmd in l)
                     {
                         if (cmd is SimpleCraneCommand)
@@ -671,6 +671,7 @@ namespace UserInterface.ViewModel
             }
         }
         #endregion
+
         #region validation
         public string Error
         {

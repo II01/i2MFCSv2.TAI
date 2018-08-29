@@ -192,6 +192,10 @@ namespace Warehouse.ConveyorUnits
         {
             try
             {
+                // update materialID
+                if (tel.Confirmation != TelegramTransportTO.CONFIRMATION_PALETTETAKEN && tel.Confirmation != TelegramTransportTO.CONFIRMATION_PALETTEDELETED)
+                    CreateOrUpdateMaterialID(tel.Palette);
+
                 if (tel.Confirmation == TelegramTransportTO.CONFIRMATION_NOTIFY)
                 {
 //                    Move(tel.Palette.Barcode, Warehouse.FindDeviceByPLC_ID(tel.Previous), this);

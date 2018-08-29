@@ -198,7 +198,7 @@ namespace Warehouse.Model
             {
                 DBService.AddCommand(cmd);
                 if (cmd.Task == Command.EnumCommandTask.CreateMaterial)
-                    CreateMaterial((uint)cmd.Material.Value, cmd.Source, cmd.ID);
+                    CreateMaterial((uint)cmd.Material.Value, cmd.Source, cmd.ID, false, false);
                 if (cmd.Task == Command.EnumCommandTask.DeleteMaterial)
                     DeleteMaterial((uint)cmd.Material.Value, cmd.Source, cmd.ID);
             }
@@ -208,7 +208,7 @@ namespace Warehouse.Model
             }
         }
 
-        public void CreateMaterial(UInt32 material, string place, int? mfcs_id )
+        public void CreateMaterial(UInt32 material, string place, int? mfcs_id, bool ignoreMaterialExsists, bool ignorePlaceExsists )
         {
             try
             {
@@ -225,9 +225,9 @@ namespace Warehouse.Model
                 //    pm = null;
                 //}
 
-                if (pm != null) // material exists
+                if (!ignoreMaterialExsists && pm != null) // material exists
                 {
-                    if (mfcs_id.HasValue) 
+                    if (mfcs_id.HasValue)
                     {
                         Command cmd = DBService.FindCommandByID(mfcs_id.Value);
                         cmd.Reason = Command.EnumCommandReason.MFCS;
@@ -236,7 +236,7 @@ namespace Warehouse.Model
                         OnCommandFinish?.Invoke(cmd);
                     }
                 }
-                else if (pp != null && pid.Size != 999) // place is full
+                else if (!ignorePlaceExsists && pp != null && pid.Size != 999) // place is full
                 {
                     if (mfcs_id.HasValue)
                     {

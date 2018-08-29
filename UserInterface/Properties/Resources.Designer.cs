@@ -10240,6 +10240,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Move material.
+        /// </summary>
+        public static string EnumCommandTask_MoveMaterial {
+            get {
+                return ResourceManager.GetString("EnumCommandTask_MoveMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Segment homing.
         /// </summary>
         public static string EnumCommandTask_SegmentHome {
@@ -11095,6 +11104,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Size outside range.
+        /// </summary>
+        public static string ERR_SIZE {
+            get {
+                return ResourceManager.GetString("ERR_SIZE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SKU does not exist.
         /// </summary>
         public static string ERR_SKU {
@@ -11172,6 +11190,15 @@ namespace UserInterface.Properties {
         public static string ERR_USER {
             get {
                 return ResourceManager.GetString("ERR_USER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Weight outside range.
+        /// </summary>
+        public static string ERR_WEIGHT {
+            get {
+                return ResourceManager.GetString("ERR_WEIGHT", resourceCulture);
             }
         }
         

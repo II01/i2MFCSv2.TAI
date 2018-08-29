@@ -370,6 +370,20 @@ namespace Warehouse.ConveyorUnits
             }
         }
 
+        public void CreateOrUpdateMaterialID(Palette pal)
+        {
+            try
+            {
+                if (pal != null)
+                    Warehouse.DBService.CreateOrUpdateMaterialID((int)pal.Barcode, pal.Type, pal.Weight);
+            }
+            catch (Exception ex)
+            {
+                Warehouse.AddEvent(Event.EnumSeverity.Error, Event.EnumType.Exception, ex.Message);
+                throw new ConveyorBasicException(String.Format("{0} ConveyorBasic.CreateOrUpdateMaterialID fault material ({1}).", Name, pal.Barcode));
+            }
+        }
+
         public bool Compatible(string target)
         {
             try

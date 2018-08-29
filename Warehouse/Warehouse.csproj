@@ -91,6 +91,7 @@
     <Compile Include="ConveyorUnits\ConveyorIOAndOutput.cs" />
     <Compile Include="ConveyorUnits\ConveyorJunctionAndIOAndOutput.cs" />
     <Compile Include="ConveyorUnits\MainPanel.cs" />
+    <Compile Include="DataService\QueryClasses.cs" />
     <Compile Include="ProjectLogic\ProjectLogic.cs" />
     <Compile Include="ConveyorUnits\Segment.cs" />
     <Compile Include="ConveyorUnits\SegmentConveyor.cs" />

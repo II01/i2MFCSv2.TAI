@@ -140,9 +140,8 @@ namespace Warehouse.Strategy
                     {
                         case Command.EnumCommandTask.CreateMaterial:
                         case Command.EnumCommandTask.DeleteMaterial:
-                            if (cmd.Task == Command.EnumCommandTask.CreateMaterial)
-                                Warehouse.CreateMaterial((uint)(cmd as CommandMaterial).Material.Value, (cmd as CommandMaterial).Source, cmd.ID);
-                            else
+                            bool move = cmd.Task == Command.EnumCommandTask.CreateMaterial && cmd.Info == "move";
+                            if (cmd.Task == Command.EnumCommandTask.DeleteMaterial || move)
                             {
                                 int m;
                                 if (!(cmd as CommandMaterial).Material.HasValue)
@@ -154,6 +153,10 @@ namespace Warehouse.Strategy
                                     m = (cmd as CommandMaterial).Material.Value;
                                 Warehouse.DeleteMaterial((uint)m, (cmd as CommandMaterial).Source, cmd.ID);
                             }
+                            if (move)
+                                Warehouse.CreateMaterial((uint)(cmd as CommandMaterial).Material.Value, (cmd as CommandMaterial).Target, cmd.ID, true, (cmd as CommandMaterial).Source == (cmd as CommandMaterial).Target);
+                            else if (cmd.Task == Command.EnumCommandTask.CreateMaterial)
+                                Warehouse.CreateMaterial((uint)(cmd as CommandMaterial).Material.Value, (cmd as CommandMaterial).Source, cmd.ID, false, false);
                             break;
                         case Command.EnumCommandTask.SegmentInfo:
                         case Command.EnumCommandTask.SegmentOn:

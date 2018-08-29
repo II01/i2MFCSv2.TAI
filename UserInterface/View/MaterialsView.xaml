@@ -23,7 +23,7 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="530"/>
             </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
                 <TextBlock Text="{Resx Transport_units}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
@@ -58,7 +58,11 @@
                                         Width="*" Binding="{Binding ID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                     <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Location}" 
                                         Width="*" Binding="{Binding Location}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                </DataGrid.Columns>
+                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Size}" 
+                                            Width="*" Binding="{Binding Size}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Weight}" 
+                                            Width="*" Binding="{Binding Weight}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+            </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <cmd:EventToCommand
@@ -75,7 +79,8 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="0" Grid.Column="1" Margin="0,0,0,20" >
                     <Button Name="bDelete" Margin="0,0,10,0" Content="{Resx Delete}" Command="{Binding Delete}" />
                     <Button Name="bCreate" Margin="0,0,10,0" Content="{Resx Create}" Command="{Binding Create}" />
-<!--                    <Button Name="bMove" Margin="0,0,0,0" Content="{Resx Rebook}" Command="{Binding Move}" /> -->
+                    <Button Name="bMove" Margin="0,0,10,0" Content="{Resx Rebook}" Command="{Binding Move}" />
+                    <Button Name="bChangeHC" Margin="0,0,0,0" Content="{Resx Change}" Command="{Binding Change}" />
             </StackPanel>
             <ContentControl x:Name="ccPlace" 
                             IsEnabled="{Binding EditEnabled}"

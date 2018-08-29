@@ -18,7 +18,7 @@ namespace UserInterface.ViewModel
 {
     public sealed class MaterialsViewModel: ViewModelBase
     {
-        enum CommandType { None, Delete, Create, Move };
+        enum CommandType { None, Delete, Create, Move, Change };
 
         #region members
         private BasicWarehouse _warehouse;
@@ -39,6 +39,7 @@ namespace UserInterface.ViewModel
         public RelayCommand Delete { get; private set; }
         public RelayCommand Create { get; private set; }
         public RelayCommand Move { get; private set; }
+        public RelayCommand Change { get; private set; }
         public RelayCommand Cancel { get; private set; }
         public RelayCommand Confirm { get; private set; }
         public RelayCommand<IList> SelectionChangedCommand { get; private set; }
@@ -71,6 +72,8 @@ namespace UserInterface.ViewModel
                         {
                             DetailedPlace.ID = _selectedPlace.ID;
                             DetailedPlace.Location = _selectedPlace.Location;
+                            DetailedPlace.Size = _selectedPlace.Size;
+                            DetailedPlace.Weight = _selectedPlace.Weight;
                         }
                     }
                     catch (Exception e)
@@ -186,6 +189,7 @@ namespace UserInterface.ViewModel
                 Delete = new RelayCommand(() => ExecuteDelete(), CanExecuteDelete);
                 Create = new RelayCommand(() => ExecuteCreate(), CanExecuteCreate);
                 Move = new RelayCommand(() => ExecuteMove(), CanExecuteMove);
+                Change = new RelayCommand(() => ExecuteChange(), CanExecuteChange);
                 Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
                 Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
                 SelectionChangedCommand = new RelayCommand<IList>(
@@ -225,10 +229,10 @@ namespace UserInterface.ViewModel
             try
             {
                 MaterialViewModel c = SelectedPlace;
-                var mats = await _warehouse.DBService.GetPlaces(_excludeWout);
+                var mats = await _warehouse.DBService.GetPlacesMaterialID(_excludeWout);
                 PlaceList.Clear();
                 foreach (var p in mats)
-                    PlaceList.Add(new MaterialViewModel { Location = p.Place1, ID = p.Material });
+                    PlaceList.Add(new MaterialViewModel { Location = p.Location, ID = p.ID, Size = p.Size, Weight = p.Weight });
                 foreach (var mvm in PlaceList)
                     mvm.Initialize(_warehouse);
 //                RaisePropertyChanged("PlaceList");
@@ -263,6 +267,7 @@ namespace UserInterface.ViewModel
                 _cmdtype = CommandType.Delete;
                 DetailedPlace.EnabledLocation = false;
                 DetailedPlace.EnabledMaterial = false;
+                DetailedPlace.EnabledProperty = false;
                 EditEnabled = true;
                 EnabledCC = true;
             }
@@ -295,6 +300,7 @@ namespace UserInterface.ViewModel
                 _cmdtype = CommandType.Create;
                 DetailedPlace.EnabledLocation = true;
                 DetailedPlace.EnabledMaterial = true;
+                DetailedPlace.EnabledProperty = true;
                 EditEnabled = true;
                 EnabledCC = true;
                 DetailedPlace.ID = 0;
@@ -326,6 +332,7 @@ namespace UserInterface.ViewModel
                 _cmdtype = CommandType.Move;
                 DetailedPlace.EnabledLocation = true;
                 DetailedPlace.EnabledMaterial = false;
+                DetailedPlace.EnabledProperty = false;
                 EditEnabled = true;
                 EnabledCC = true;
             }
@@ -348,6 +355,36 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
+        private void ExecuteChange()
+        {
+            try
+            {
+                _cmdtype = CommandType.Change;
+                DetailedPlace.EnabledLocation = false;
+                DetailedPlace.EnabledMaterial = false;
+                DetailedPlace.EnabledProperty = true;
+                EditEnabled = true;
+                EnabledCC = true;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        private bool CanExecuteChange()
+        {
+            try
+            {
+                return !EnabledCC && (SelectedPlace != null) && AccessLevel % 10 >= 1;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
         private void ExecuteCancel()
         {
             try
@@ -355,6 +392,7 @@ namespace UserInterface.ViewModel
                 _cmdtype = CommandType.None;
                 DetailedPlace.EnabledLocation = false;
                 DetailedPlace.EnabledMaterial = false;
+                DetailedPlace.EnabledProperty = false;
                 DetailedPlace.ID = 1;                   // dirty trick: force valid value to remove red square
                 DetailedPlace.Location = "T001";        // dirty trick: force valid value to remove red square
                 if (SelectedPlace != null)
@@ -407,7 +445,7 @@ namespace UserInterface.ViewModel
                         });
                         break;
                     case CommandType.Create:
-                        _warehouse.DBService.FindMaterialID(DetailedPlace.ID, true);
+                        _warehouse.DBService.CreateOrUpdateMaterialID(DetailedPlace.ID, DetailedPlace.Size, DetailedPlace.Weight);
                         _warehouse.DBService.AddCommand(new CommandMaterial
                         {
                             Task = Command.EnumCommandTask.CreateMaterial,
@@ -421,19 +459,24 @@ namespace UserInterface.ViewModel
                     case CommandType.Move:
                         _warehouse.DBService.AddCommand(new CommandMaterial
                         {
-                            Task = Command.EnumCommandTask.DeleteMaterial,
+                            Task = Command.EnumCommandTask.CreateMaterial,
                             Material = DetailedPlace.ID,
                             Source = _warehouse.DBService.FindMaterial(DetailedPlace.ID).Place1,
-                            Target = _warehouse.DBService.FindMaterial(DetailedPlace.ID).Place1,
+                            Target = DetailedPlace.Location,
+                            Info = "move",
                             Status = Command.EnumCommandStatus.NotActive,
                             Time = DateTime.Now
                         });
+                        break;
+                    case CommandType.Change:
+                        _warehouse.DBService.CreateOrUpdateMaterialID(DetailedPlace.ID, DetailedPlace.Size, DetailedPlace.Weight);
                         _warehouse.DBService.AddCommand(new CommandMaterial
                         {
                             Task = Command.EnumCommandTask.CreateMaterial,
                             Material = DetailedPlace.ID,
                             Source = DetailedPlace.Location,
                             Target = DetailedPlace.Location,
+                            Info = "move",
                             Status = Command.EnumCommandStatus.NotActive,
                             Time = DateTime.Now
                         });
@@ -442,6 +485,7 @@ namespace UserInterface.ViewModel
                 _cmdtype = CommandType.None;
                 DetailedPlace.EnabledLocation = false;
                 DetailedPlace.EnabledMaterial = false;
+                DetailedPlace.EnabledProperty = false;
                 EditEnabled = false;
                 EnabledCC = false;
             }

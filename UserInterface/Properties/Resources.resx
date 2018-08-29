@@ -4347,4 +4347,13 @@
   <data name="StatusNum" xml:space="preserve">
     <value>Status Num</value>
   </data>
+  <data name="ERR_SIZE" xml:space="preserve">
+    <value>Size outside range</value>
+  </data>
+  <data name="ERR_WEIGHT" xml:space="preserve">
+    <value>Weight outside range</value>
+  </data>
+  <data name="EnumCommandTask_MoveMaterial" xml:space="preserve">
+    <value>Move material</value>
+  </data>
 </root>

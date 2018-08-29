@@ -21,9 +21,13 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <TextBlock Text="{Resx Transport_unit}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Location}" Grid.Row="1" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Size}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Weight}" Grid.Row="3" Margin="0,0,0,10"/>
         <TextBox Name = "tbTU" Grid.Row="0" Grid.Column="2" 
                         Text = "{Binding Path=IDString, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
                         IsEnabled="{Binding EnabledMaterial}" 
@@ -31,6 +35,14 @@
         <TextBox Name = "tbLocation" Grid.Row="1" Grid.Column="2" 
                         Text="{Binding Location, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
                         IsEnabled="{Binding EnabledLocation}" 
+                        Margin="0,0,0,10"/>
+        <TextBox Name = "tbSize" Grid.Row="2" Grid.Column="2" 
+                        Text="{Binding Size, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{Binding EnabledProperty}" 
+                        Margin="0,0,0,10"/>
+        <TextBox Name = "tbWeight" Grid.Row="3" Grid.Column="2" 
+                        Text="{Binding Weight, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"
+                        IsEnabled="{Binding EnabledProperty}" 
                         Margin="0,0,0,10"/>
     </Grid>
 </UserControl>

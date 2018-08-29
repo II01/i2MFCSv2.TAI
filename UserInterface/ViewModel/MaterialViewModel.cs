@@ -19,6 +19,7 @@ namespace UserInterface.ViewModel
 
         private bool _enabledMaterial;
         private bool _enabledLocation;
+        private bool _enabledProperty;
         private bool _allPropertiesValid;
         #endregion
 
@@ -46,6 +47,18 @@ namespace UserInterface.ViewModel
                 {
                     _enabledLocation = value;
                     RaisePropertyChanged("EnabledLocation");
+                }
+            }
+        }
+        public bool EnabledProperty
+        {
+            get { return _enabledProperty; }
+            set
+            {
+                if (_enabledProperty != value)
+                {
+                    _enabledProperty = value;
+                    RaisePropertyChanged("EnabledProperty");
                 }
             }
         }
@@ -185,6 +198,14 @@ namespace UserInterface.ViewModel
                                 validationResult = ResourceReader.GetString("ERR_NOLOCATION");
                             else if (EnabledLocation && _warehouse.DBService.FindPlace(Location) != null)
                                 validationResult = ResourceReader.GetString("ERR_LOCATIONFULL");
+                            break;
+                        case "Size":
+                            if (EnabledProperty && !(Size >= 0 && Size <= 2))
+                                validationResult = ResourceReader.GetString("ERR_SIZE");
+                            break;
+                        case "Weight":
+                            if (EnabledProperty && !(Weight >= 10000 && Weight < 30000))
+                                validationResult = ResourceReader.GetString("ERR_WEIGHT");
                             break;
                     }
                     Validator.AddOrUpdate(propertyName, validationResult == String.Empty);

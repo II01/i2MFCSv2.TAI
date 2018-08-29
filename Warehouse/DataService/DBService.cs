@@ -1017,7 +1017,7 @@ namespace Warehouse.DataService
                     // only for test - unkwnon palets are automatically created
                     if (matID == null && create)
                     {
-                        matID = new MaterialID { ID = (int)material, Size = 1, Weight = 1 };
+                        matID = new MaterialID { ID = (int)material, Size = 0, Weight = 0 };
                         dc.MaterialIDs.Add(matID);
                         dc.SaveChanges();
                     }
@@ -1217,6 +1217,23 @@ namespace Warehouse.DataService
                     var l = from m in dc.Places
                             //where !excludeWout || (excludeWout && m.Place1 != "W:out")
                             select m;
+                    return await l.ToListAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public async Task<List<PlaceMaterialID>> GetPlacesMaterialID(bool excludeWout)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    var l = from p in dc.Places
+                            select new PlaceMaterialID { ID = p.Material, Location = p.Place1, Size = p.MaterialID.Size, Weight = p.MaterialID.Weight };
                     return await l.ToListAsync();
                 }
             }
@@ -1455,6 +1472,32 @@ namespace Warehouse.DataService
                     var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == user.User1.ToUpper());
                     u.AccessLevel = user.AccessLevel;
                     dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public MaterialID CreateOrUpdateMaterialID(int barcode, int type, int weight)
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    MaterialID mid = dc.MaterialIDs.Find(barcode);
+                    if (mid == null)
+                    {
+                        mid = new MaterialID { ID = barcode, Size = type, Weight = weight };
+                        dc.MaterialIDs.Add(mid);
+                    }
+                    else
+                    {
+                        mid.Size = type;
+                        mid.Weight = weight;
+                    }
+                    dc.SaveChanges();
+                    return mid;
                 }
             }
             catch (Exception e)
