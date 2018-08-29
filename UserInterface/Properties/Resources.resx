@@ -4356,4 +4356,7 @@
   <data name="EnumCommandTask_MoveMaterial" xml:space="preserve">
     <value>Move material</value>
   </data>
+  <data name="ERR_LOCATIONCLASS" xml:space="preserve">
+    <value>Wrong location class</value>
+  </data>
 </root>

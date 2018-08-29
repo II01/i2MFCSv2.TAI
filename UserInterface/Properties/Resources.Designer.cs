@@ -10933,6 +10933,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wrong location class.
+        /// </summary>
+        public static string ERR_LOCATIONCLASS {
+            get {
+                return ResourceManager.GetString("ERR_LOCATIONCLASS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location does not exist.
         /// </summary>
         public static string ERR_LOCATIONEXISTS {

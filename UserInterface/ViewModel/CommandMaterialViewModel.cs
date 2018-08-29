@@ -296,6 +296,13 @@ namespace UserInterface.ViewModel
                                             frontLoc = frontLoc.Substring(0, frontLoc.Length - 1) + '1';
                                         if (_warehouse.DBService.FindPlaceID(Target).Blocked || _warehouse.DBService.FindPlaceID(frontLoc).Blocked)
                                             validationResult = ResourceReader.GetString("ERR_BLOCKED");
+                                        else
+                                        {
+                                            var mat = Material.HasValue ? _warehouse.DBService.FindMaterialID(Material.Value, false) : null;
+                                            var pid = _warehouse.DBService.FindPlaceID(Target);
+                                            if (Target.StartsWith("W") && mat != null && pid != null && mat.ID/10000 > pid.Size)
+                                                validationResult = ResourceReader.GetString("ERR_LOCATIONCLASS");
+                                        }
                                     }
                                     break;
                                 case "Priority":

@@ -303,6 +303,13 @@ namespace UserInterface.ViewModel
                                                 validationResult = ResourceReader.GetString("ERR_LOCATIONEXISTS");
                                             else if (!inconv && !outconv && !wh)
                                                 validationResult = ResourceReader.GetString("ERR_LOCATION");
+                                            else if (wh && TaskCrane == EnumSimpleCommandCraneTask.Drop)
+                                            {
+                                                var mat = _warehouse.DBService.FindMaterialID(_command.Material.Value, false);
+                                                var pid = _warehouse.DBService.FindPlaceID(Source);
+                                                if (mat != null && pid != null && mat.Weight/10000 > pid.Size )
+                                                    validationResult = ResourceReader.GetString("ERR_LOCATIONCLASS");
+                                            }
                                         }
                                     }
                                 }
