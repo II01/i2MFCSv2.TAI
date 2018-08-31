@@ -18,6 +18,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="placeID" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
+        <xs:element minOccurs="0" name="TU_dimension" type="xs:int" />
         <xs:element minOccurs="0" name="changeType" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>

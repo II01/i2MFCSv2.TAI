@@ -110,6 +110,9 @@
                                IsEnabled="True"/>
                 <TreeViewItem Header ="{Resx Extras}" IsExpanded="False" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}">
 
+                    <TreeViewItem  Header="{Resx PackageIDs}" 
+                           Tag="{Binding PackageIDs, Source={StaticResource Locator}}" 
+                           IsEnabled="True"/>
                     <TreeViewItem  Header="{Resx PlaceIDs}" 
                            Tag="{Binding PlaceIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>

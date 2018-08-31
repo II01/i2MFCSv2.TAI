@@ -25,11 +25,13 @@
       <xs:element minOccurs="0" name="ERP_ID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="QualityControlOrder" type="xs:boolean" />
       <xs:element minOccurs="0" name="ReleaseTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="SKU_Batch" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SKU_ID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SKU_Qty" type="xs:double" />
       <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="SubOrderERPID" type="xs:int" />
       <xs:element minOccurs="0" name="SubOrderID" type="xs:int" />
       <xs:element minOccurs="0" name="SubOrderName" nillable="true" type="xs:string" />
     </xs:sequence>

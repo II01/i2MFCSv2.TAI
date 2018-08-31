@@ -184,46 +184,48 @@
     <Compile Include="UserControls\UCVehicleSingleDeck.xaml.cs">
       <DependentUpon>UCVehicleSingleDeck.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\CommandCommandViewModel.cs" />
-    <Compile Include="ViewModel\HistoryCommandsViewModel.cs" />
-    <Compile Include="ViewModel\EventViewModel.cs" />
-    <Compile Include="ViewModel\HistoryDateTimePickerViewModel.cs" />
-    <Compile Include="ViewModel\HistoryAlarmsViewModel.cs" />
-    <Compile Include="ViewModel\CommandSegmentViewModel.cs" />
-    <Compile Include="ViewModel\CommandViewModel.cs" />
-    <Compile Include="ViewModel\CommandsViewModel.cs" />
-    <Compile Include="ViewModel\CommandMaterialViewModel.cs" />
-    <Compile Include="ViewModel\ControlPanelModeViewModel.cs" />
-    <Compile Include="ViewModel\HistoryEventsViewModel.cs" />
-    <Compile Include="ViewModel\EventsViewModel.cs" />
-    <Compile Include="ViewModel\ControlPanelViewModel.cs" />
-    <Compile Include="ViewModel\MovementViewModel.cs" />
-    <Compile Include="ViewModel\HistoryMovementsViewModel.cs" />
-    <Compile Include="ViewModel\MaterialViewModel.cs" />
-    <Compile Include="ViewModel\LocationViewModel.cs" />
-    <Compile Include="ViewModel\LocationsViewModel.cs" />
-    <Compile Include="ViewModel\MaterialsViewModel.cs" />
-    <Compile Include="ViewModel\SimpleCommandSegmentViewModel.cs" />
-    <Compile Include="ViewModel\SimpleCommandConveyorViewModel.cs" />
-    <Compile Include="ViewModel\SimpleCommandCraneViewModel.cs" />
-    <Compile Include="ViewModel\HistorySimpleCommandsViewModel.cs" />
-    <Compile Include="ViewModel\SimpleCommandsViewModel.cs" />
-    <Compile Include="ViewModel\UsersViewModel.cs" />
-    <Compile Include="ViewModel\SimpleCommandViewModel.cs" />
-    <Compile Include="ViewModel\UserViewModel.cs" />
-    <Compile Include="ViewModel\VisualizationViewModel.cs" />
-    <Compile Include="ViewModel\VisuDimensionCheckViewModel.cs" />
-    <Compile Include="ViewModel\VisuConveyorViewModel.cs" />
-    <Compile Include="ViewModel\VisuDetailViewModel.cs" />
-    <Compile Include="ViewModel\VisuDeviceBasicViewModel.cs" />
-    <Compile Include="ViewModel\ControlPanelSegmentsViewModel.cs" />
-    <Compile Include="ViewModel\VisuSegmentViewModel.cs" />
-    <Compile Include="ViewModel\VisuVehicleDoubleDeckViewModel.cs" />
-    <Compile Include="ViewModel\VisuVehicleSingleDeckViewModel.cs" />
+    <Compile Include="ViewModel\Core\CommandCommandViewModel.cs" />
+    <Compile Include="ViewModel\Core\HistoryCommandsViewModel.cs" />
+    <Compile Include="ViewModel\Core\EventViewModel.cs" />
+    <Compile Include="ViewModel\Core\HistoryDateTimePickerViewModel.cs" />
+    <Compile Include="ViewModel\Core\HistoryAlarmsViewModel.cs" />
+    <Compile Include="ViewModel\Core\CommandSegmentViewModel.cs" />
+    <Compile Include="ViewModel\Core\CommandViewModel.cs" />
+    <Compile Include="ViewModel\Core\CommandsViewModel.cs" />
+    <Compile Include="ViewModel\Core\CommandMaterialViewModel.cs" />
+    <Compile Include="ViewModel\Core\ControlPanelModeViewModel.cs" />
+    <Compile Include="ViewModel\Core\HistoryEventsViewModel.cs" />
+    <Compile Include="ViewModel\Core\EventsViewModel.cs" />
+    <Compile Include="ViewModel\Core\ControlPanelViewModel.cs" />
+    <Compile Include="ViewModel\Core\MovementViewModel.cs" />
+    <Compile Include="ViewModel\Core\HistoryMovementsViewModel.cs" />
+    <Compile Include="ViewModel\Core\MaterialViewModel.cs" />
+    <Compile Include="ViewModel\Core\LocationViewModel.cs" />
+    <Compile Include="ViewModel\Core\LocationsViewModel.cs" />
+    <Compile Include="ViewModel\Core\MaterialsViewModel.cs" />
+    <Compile Include="ViewModel\Core\SimpleCommandSegmentViewModel.cs" />
+    <Compile Include="ViewModel\Core\SimpleCommandConveyorViewModel.cs" />
+    <Compile Include="ViewModel\Core\SimpleCommandCraneViewModel.cs" />
+    <Compile Include="ViewModel\Core\HistorySimpleCommandsViewModel.cs" />
+    <Compile Include="ViewModel\Core\SimpleCommandsViewModel.cs" />
+    <Compile Include="ViewModel\Core\UsersViewModel.cs" />
+    <Compile Include="ViewModel\Core\SimpleCommandViewModel.cs" />
+    <Compile Include="ViewModel\Core\UserViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisualizationViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisuDimensionCheckViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisuConveyorViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisuDetailViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisuDeviceBasicViewModel.cs" />
+    <Compile Include="ViewModel\Core\ControlPanelSegmentsViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisuSegmentViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisuVehicleDoubleDeckViewModel.cs" />
+    <Compile Include="ViewModel\Core\VisuVehicleSingleDeckViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryCommandERPsViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryCommandWMSsViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryLogsViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryReleaseOrdersViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PackageIDsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\PackageIDViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceDiffsViewModel.cs" />
@@ -245,35 +247,35 @@
     <Compile Include="ViewModel\WMS\TUViewModel.cs" />
     <Compile Include="ViewModel\WMS\TUSKUIDViewModel.cs" />
     <Compile Include="ViewModel\WMS\SKUIDViewModel.cs" />
-    <Compile Include="View\CommandCommandView.xaml.cs">
+    <Compile Include="View\Core\CommandCommandView.xaml.cs">
       <DependentUpon>CommandCommandView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HistoryCommandsView.xaml.cs">
+    <Compile Include="View\Core\HistoryCommandsView.xaml.cs">
       <DependentUpon>HistoryCommandsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HistoryAlarmsView.xaml.cs">
+    <Compile Include="View\Core\HistoryAlarmsView.xaml.cs">
       <DependentUpon>HistoryAlarmsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CommandSegmentView.xaml.cs">
+    <Compile Include="View\Core\CommandSegmentView.xaml.cs">
       <DependentUpon>CommandSegmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CommandsView.xaml.cs">
+    <Compile Include="View\Core\CommandsView.xaml.cs">
       <DependentUpon>CommandsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Converters.cs" />
-    <Compile Include="View\HistoryDateTimePickerView.xaml.cs">
+    <Compile Include="View\Core\Converters.cs" />
+    <Compile Include="View\Core\HistoryDateTimePickerView.xaml.cs">
       <DependentUpon>HistoryDateTimePickerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HistoryEventsView.xaml.cs">
+    <Compile Include="View\Core\HistoryEventsView.xaml.cs">
       <DependentUpon>HistoryEventsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EventsView.xaml.cs">
+    <Compile Include="View\Core\EventsView.xaml.cs">
       <DependentUpon>EventsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HistoryMovementsView.xaml.cs">
+    <Compile Include="View\Core\HistoryMovementsView.xaml.cs">
       <DependentUpon>HistoryMovementsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UserView.xaml.cs">
+    <Compile Include="View\Core\UserView.xaml.cs">
       <DependentUpon>UserView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\HistoryCommandERPsView.xaml.cs">
@@ -287,6 +289,12 @@
     </Compile>
     <Compile Include="View\WMS\HistoryReleaseOrdersView.xaml.cs">
       <DependentUpon>HistoryReleaseOrdersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\PackageIDsView.xaml.cs">
+      <DependentUpon>PackageIDsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\PackageIDView.xaml.cs">
+      <DependentUpon>PackageIDView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\ReleaseOrdersView.xaml.cs">
       <DependentUpon>ReleaseOrdersView.xaml</DependentUpon>
@@ -336,53 +344,53 @@
     <Compile Include="View\WMS\SKUIDView.xaml.cs">
       <DependentUpon>SKUIDView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaterialView.xaml.cs">
+    <Compile Include="View\Core\MaterialView.xaml.cs">
       <DependentUpon>MaterialView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ControlPanelView.xaml.cs">
+    <Compile Include="View\Core\ControlPanelView.xaml.cs">
       <DependentUpon>ControlPanelView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LocationView.xaml.cs">
+    <Compile Include="View\Core\LocationView.xaml.cs">
       <DependentUpon>LocationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\LocationsView.xaml.cs">
+    <Compile Include="View\Core\LocationsView.xaml.cs">
       <DependentUpon>LocationsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SimpleCommandConveyorView.xaml.cs">
+    <Compile Include="View\Core\SimpleCommandConveyorView.xaml.cs">
       <DependentUpon>SimpleCommandConveyorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\CommandMaterialView.xaml.cs">
+    <Compile Include="View\Core\CommandMaterialView.xaml.cs">
       <DependentUpon>CommandMaterialView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SimpleCommandCraneView.xaml.cs">
+    <Compile Include="View\Core\SimpleCommandCraneView.xaml.cs">
       <DependentUpon>SimpleCommandCraneView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MaterialsView.xaml.cs">
+    <Compile Include="View\Core\MaterialsView.xaml.cs">
       <DependentUpon>MaterialsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SimpleCommandSegmentView.xaml.cs">
+    <Compile Include="View\Core\SimpleCommandSegmentView.xaml.cs">
       <DependentUpon>SimpleCommandSegmentView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HistorySimpleCommandsView.xaml.cs">
+    <Compile Include="View\Core\HistorySimpleCommandsView.xaml.cs">
       <DependentUpon>HistorySimpleCommandsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\SimpleCommandsView.xaml.cs">
+    <Compile Include="View\Core\SimpleCommandsView.xaml.cs">
       <DependentUpon>SimpleCommandsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\UsersView.xaml.cs">
+    <Compile Include="View\Core\UsersView.xaml.cs">
       <DependentUpon>UsersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AlarmsView.xaml.cs">
+    <Compile Include="View\Core\AlarmsView.xaml.cs">
       <DependentUpon>AlarmsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\AlarmsViewModel.cs" />
-    <Compile Include="ViewModel\AlarmViewModel.cs" />
+    <Compile Include="ViewModel\Core\AlarmsViewModel.cs" />
+    <Compile Include="ViewModel\Core\AlarmViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="View\MultipleChoiceFilter.xaml.cs">
+    <Compile Include="View\Core\MultipleChoiceFilter.xaml.cs">
       <DependentUpon>MultipleChoiceFilter.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\VisualizationView.xaml.cs">
+    <Compile Include="View\Core\VisualizationView.xaml.cs">
       <DependentUpon>VisualizationView.xaml</DependentUpon>
     </Compile>
     <Page Include="UserControls\UCDimensionCheck.xaml">
@@ -425,43 +433,43 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\CommandCommandView.xaml">
+    <Page Include="View\Core\CommandCommandView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\HistoryCommandsView.xaml">
+    <Page Include="View\Core\HistoryCommandsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\HistoryAlarmsView.xaml">
+    <Page Include="View\Core\HistoryAlarmsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\CommandSegmentView.xaml">
+    <Page Include="View\Core\CommandSegmentView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\CommandsView.xaml">
+    <Page Include="View\Core\CommandsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\HistoryDateTimePickerView.xaml">
+    <Page Include="View\Core\HistoryDateTimePickerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\HistoryEventsView.xaml">
+    <Page Include="View\Core\HistoryEventsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\EventsView.xaml">
+    <Page Include="View\Core\EventsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\HistoryMovementsView.xaml">
+    <Page Include="View\Core\HistoryMovementsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UserView.xaml">
+    <Page Include="View\Core\UserView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -478,6 +486,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WMS\HistoryReleaseOrdersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\PackageIDsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\PackageIDView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -545,55 +561,55 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaterialView.xaml">
+    <Page Include="View\Core\MaterialView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\ControlPanelView.xaml">
+    <Page Include="View\Core\ControlPanelView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LocationView.xaml">
+    <Page Include="View\Core\LocationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\LocationsView.xaml">
+    <Page Include="View\Core\LocationsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SimpleCommandConveyorView.xaml">
+    <Page Include="View\Core\SimpleCommandConveyorView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\CommandMaterialView.xaml">
+    <Page Include="View\Core\CommandMaterialView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SimpleCommandCraneView.xaml">
+    <Page Include="View\Core\SimpleCommandCraneView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MaterialsView.xaml">
+    <Page Include="View\Core\MaterialsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SimpleCommandSegmentView.xaml">
+    <Page Include="View\Core\SimpleCommandSegmentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\HistorySimpleCommandsView.xaml">
+    <Page Include="View\Core\HistorySimpleCommandsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SimpleCommandsView.xaml">
+    <Page Include="View\Core\SimpleCommandsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\UsersView.xaml">
+    <Page Include="View\Core\UsersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\AlarmsView.xaml">
+    <Page Include="View\Core\AlarmsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -609,11 +625,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\MultipleChoiceFilter.xaml">
+    <Page Include="View\Core\MultipleChoiceFilter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\VisualizationView.xaml">
+    <Page Include="View\Core\VisualizationView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -636,20 +652,20 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Core.DataExchange.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Core.DataExchange1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO1.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.Tables1.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.Tables.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\service1.wsdl" />
-    <None Include="Connected Services\ProxyWMS_UI\service2.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\service.wsdl" />
+    <None Include="Connected Services\ProxyWMS_UI\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\service21.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProxyWMS_UI\UserInterface.ProxyWMS_UI.DTOCommand.datasource">
@@ -718,7 +734,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <SplashScreen Include="View\SplashScreen.png" />
+    <SplashScreen Include="View\Core\SplashScreen.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

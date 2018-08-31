@@ -20,6 +20,7 @@ namespace DatabaseWMS
             this.Orders = new HashSet<Orders>();
             this.TUs = new HashSet<TUs>();
             this.HistOrders = new HashSet<HistOrders>();
+            this.Package_ID = new HashSet<Package_ID>();
         }
     
         public string ID { get; set; }
@@ -28,6 +29,9 @@ namespace DatabaseWMS
         public string Unit { get; set; }
         public double Weight { get; set; }
         public int FrequencyClass { get; set; }
+        public int Length { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
@@ -35,5 +39,7 @@ namespace DatabaseWMS
         public virtual ICollection<TUs> TUs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistOrders> HistOrders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Package_ID> Package_ID { get; set; }
     }
 }

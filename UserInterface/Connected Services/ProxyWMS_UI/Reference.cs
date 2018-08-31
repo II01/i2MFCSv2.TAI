@@ -193,6 +193,9 @@ namespace UserInterface.ProxyWMS_UI {
         private int OrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool QualityControlOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime ReleaseTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -206,6 +209,9 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SubOrderERPIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SubOrderIDField;
@@ -276,6 +282,19 @@ namespace UserInterface.ProxyWMS_UI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool QualityControlOrder {
+            get {
+                return this.QualityControlOrderField;
+            }
+            set {
+                if ((this.QualityControlOrderField.Equals(value) != true)) {
+                    this.QualityControlOrderField = value;
+                    this.RaisePropertyChanged("QualityControlOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime ReleaseTime {
             get {
                 return this.ReleaseTimeField;
@@ -341,6 +360,19 @@ namespace UserInterface.ProxyWMS_UI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SubOrderERPID {
+            get {
+                return this.SubOrderERPIDField;
+            }
+            set {
+                if ((this.SubOrderERPIDField.Equals(value) != true)) {
+                    this.SubOrderERPIDField = value;
+                    this.RaisePropertyChanged("SubOrderERPID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int SubOrderID {
             get {
                 return this.SubOrderIDField;
@@ -386,6 +418,12 @@ namespace UserInterface.ProxyWMS_UI {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DimensionMFCSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DimensionWMSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PlaceMFCSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -407,6 +445,32 @@ namespace UserInterface.ProxyWMS_UI {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DimensionMFCS {
+            get {
+                return this.DimensionMFCSField;
+            }
+            set {
+                if ((this.DimensionMFCSField.Equals(value) != true)) {
+                    this.DimensionMFCSField = value;
+                    this.RaisePropertyChanged("DimensionMFCS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DimensionWMS {
+            get {
+                return this.DimensionWMSField;
+            }
+            set {
+                if ((this.DimensionWMSField.Equals(value) != true)) {
+                    this.DimensionWMSField = value;
+                    this.RaisePropertyChanged("DimensionWMS");
+                }
             }
         }
         

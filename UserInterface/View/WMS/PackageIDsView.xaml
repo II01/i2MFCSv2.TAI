@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="UserInterface.View.PlaceTUIDsView"
+﻿<UserControl x:Class="UserInterface.View.PackageIDsView"
         ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -12,7 +12,7 @@
         xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
         xmlns:src="clr-namespace:UserInterface.View"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-        DataContext="{Binding PlaceTUIDs, Source={StaticResource Locator}}"
+        DataContext="{Binding PackageIDs, Source={StaticResource Locator}}"
         d:DesignWidth="1280"
         d:DesignHeight="720">
 
@@ -33,29 +33,30 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
-            <TextBlock Text="{Resx TUs}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
+            <TextBlock Text="{Resx PackageIDs}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
         </Border>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="{Resx ExcludeWout}" HorizontalAlignment="Right"/>
-            <CheckBox Grid.Column="1" Margin="10,0,0,0" IsChecked = "{Binding Path=ExcludeWout}"/>
-            <TextBlock Grid.Column="2" Margin="20,0,10,0" Text="{Resx Selected}" HorizontalAlignment="Right"/>
-            <TextBlock Grid.Column="3" Text="{Binding NumberOfSelectedItems}" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="0" Margin="0,0,10,0" Text="{Resx Selected}" 
+                       FontSize="{StaticResource BaseFontSize}" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="1" Margin="0,0,0,0" Text="{Binding NumberOfSelectedItems}" 
+                       FontSize="{StaticResource BaseFontSize}" 
+                       VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         </Grid>
         <DataGrid Grid.Row="2"
             x:Name="dgPlaceIDs" 
-            ItemsSource="{Binding DataList}" 
+            ItemsSource="{Binding PackageIDList}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding Selected, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+            SelectedItem="{Binding SelectedPackageID, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+            SelectionMode="Extended"
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
@@ -64,27 +65,19 @@
             IsReadOnly="True"
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" 
-                                    Width="*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceID}" 
-                                    Width="*" Binding="{Binding PlaceID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Dimension}" 
-                                    Width="*" Binding="{Binding DimensionClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
-                                    Width="*" Binding="{Binding TimeStamp}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Blocked}" 
-                                    Width="*" Binding="{Binding Blocked}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
+                                    Width="*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
+                                    Width="*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}" 
+                                    Width="*" Binding="{Binding Batch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <cmd:EventToCommand
                         Command="{Binding SelectionChangedCommand}"
                         CommandParameter="{Binding SelectedItems,
-                        ElementName=dgPlaceIDs}" />
+                        ElementName=dgPackageIDs}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
@@ -93,15 +86,12 @@
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-<!--                <Button Name="bAdd" Margin="10,0,0,20" Content="{Resx Add}" Command="{Binding Add}"/>
-                <Button Name="bDelete" Margin="10,0,0,20" Content="{Resx Delete}" Command="{Binding Delete}"/> 
-                <Button Name="bBook" Margin="10,0,0,20" Content="{Resx Rebook}" Command="{Binding Book}"/> -->
-                <Button Name="bBlock" Margin="10,0,0,20" Content="{Resx Quality}" Command="{Binding Block}"/>
-                <Button Name="bEdit" Margin="10,0,0,20" Content="{Resx EditSKU}" Command="{Binding Edit}"/>
+                <Button Margin="10,0,0,20" Content="{Resx Add}" Command="{Binding Add}" />
+                <Button Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/>
             </StackPanel>
-            <ContentControl x:Name="ccPlaceID" 
+            <ContentControl x:Name="ccPackageID" 
                         IsEnabled="{Binding EditEnabled}"                       
-                        Content="{Binding Detailed}"
+                        Content="{Binding DetailedPackageID}"
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Top"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

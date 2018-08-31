@@ -44,6 +44,23 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public List<SKU_ID> GetSKUIDsSync()
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from p in dc.SKU_ID
+                            select p;
+                    return l.ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         public SKU_ID FindSKUID(string skuid)
         {
             try
@@ -98,6 +115,79 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public async Task<List<Package_ID>> GetPackageIDs()
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from p in dc.Package_ID
+                            select p;
+                    return await l.ToListAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public int CountPackageIDs(string IDStartsWith)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    if (IDStartsWith == null)
+                        IDStartsWith = "";
+                    var l = from p in dc.Package_ID
+                            where p.ID.StartsWith(IDStartsWith)
+                            select p;
+                    return l.Count();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void AddPackageID(Package_ID pid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    dc.Package_ID.Add(new Package_ID { ID = pid.ID, SKU_ID = pid.SKU_ID, Batch = pid.Batch });
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void UpdatePackageID(Package_ID pid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = dc.Package_ID.Find(pid.ID);
+                    if (l != null)
+                    {
+                        dc.Package_ID.Attach(l);
+                        l.SKU_ID = pid.SKU_ID;
+                        l.Batch = pid.Batch;
+                        dc.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
 
         public async Task<List<PlaceIDs>> GetPlaceIDs(int dimensionClassMin, int dimensionClassMax)
         {
@@ -136,6 +226,7 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+
         public PlaceIDs FindPlaceID(string placeid)
         {
             try
@@ -1348,9 +1439,9 @@ namespace UserInterface.DataServiceWMS
                 using (var dcm = new MFCSEntities())
                 {
                     var itemsw = await (from pw in dcw.Places
-                                  select new PlaceDiff{ TUID = pw.TU_ID, PlaceWMS = pw.PlaceID, TimeWMS = pw.Time}).ToListAsync();
+                                  select new PlaceDiff{ TUID = pw.TU_ID, PlaceWMS = pw.PlaceID, DimensionWMS = pw.TU_ID1.DimensionClass, TimeWMS = pw.Time}).ToListAsync();
                     var itemsm = await (from pm in dcm.Places
-                                  select new PlaceDiff{ TUID = pm.Material, PlaceMFCS = pm.Place1, TimeMFCS = pm.Time}).ToListAsync();
+                                  select new PlaceDiff{ TUID = pm.Material, PlaceMFCS = pm.Place1, DimensionMFCS = pm.MaterialID.Weight, TimeMFCS = pm.Time}).ToListAsync();
                     var itemsu = itemsw.Union(itemsm);
                     var items = itemsu.Select(p => p.TUID).Distinct();
 
@@ -1359,12 +1450,14 @@ namespace UserInterface.DataServiceWMS
                                  from jw in joinw.DefaultIfEmpty()
                                  join im in itemsm on i equals im.TUID into joinm
                                  from jm in joinm.DefaultIfEmpty()
-                                 where (jw?.PlaceWMS != jm?.PlaceMFCS) && !(jw != null && jw.PlaceWMS == "W:out" && jm == null)
+                                 where (jw?.PlaceWMS != jm?.PlaceMFCS || jw?.DimensionWMS != jm?.DimensionMFCS) && !(jw != null && jw.PlaceWMS == "W:out" && jm == null)
                                  select new PlaceDiff
                                  {
                                      TUID = i,
                                      PlaceWMS = jw?.PlaceWMS,
                                      PlaceMFCS = jm?.PlaceMFCS,
+                                     DimensionWMS = jw?.DimensionWMS,
+                                     DimensionMFCS = jm?.DimensionMFCS,
                                      TimeWMS = jw?.TimeWMS,
                                      TimeMFCS = jm?.TimeMFCS,
                                  };
@@ -1384,11 +1477,14 @@ namespace UserInterface.DataServiceWMS
                 {
                     foreach (var l in list)
                     {
-                        if (dcm.MaterialIDs.FirstOrDefault(p => p.ID == l.TUID) == null)
+                        var mid = dcm.MaterialIDs.FirstOrDefault(p => p.ID == l.TUID);
+                        if (mid == null)
                         {
-                            dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 1, Weight = 1 });
+                            dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 0, Weight = l.DimensionWMS.Value });
                             AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add MaterialID: |{l.TUID:d9}|");
                         }
+                        else
+                            mid.Weight = l.DimensionWMS.Value;
                         var place = dcm.Places.FirstOrDefault(pp => pp.Material == l.TUID);
                         if (place != null)
                         {

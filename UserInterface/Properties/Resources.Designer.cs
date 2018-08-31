@@ -9637,6 +9637,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Conveyor.
+        /// </summary>
+        public static string Conveyor {
+            get {
+                return ResourceManager.GetString("Conveyor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Conveyors.
         /// </summary>
         public static string Conveyors {
@@ -9651,6 +9660,15 @@ namespace UserInterface.Properties {
         public static string Core {
             get {
                 return ResourceManager.GetString("Core", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crane.
+        /// </summary>
+        public static string Crane {
+            get {
+                return ResourceManager.GetString("Crane", resourceCulture);
             }
         }
         
@@ -11050,6 +11068,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Package exists.
+        /// </summary>
+        public static string ERR_PACKAGEID_EXISTS {
+            get {
+                return ResourceManager.GetString("ERR_PACKAGEID_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wrong location.
         /// </summary>
         public static string ERR_PLACE {
@@ -11136,6 +11163,15 @@ namespace UserInterface.Properties {
         public static string ERR_SKUID {
             get {
                 return ResourceManager.GetString("ERR_SKUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SKUID does not exist.
+        /// </summary>
+        public static string ERR_SKUID_NONE {
+            get {
+                return ResourceManager.GetString("ERR_SKUID_NONE", resourceCulture);
             }
         }
         
@@ -11788,6 +11824,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Packages.
+        /// </summary>
+        public static string PackageIDs {
+            get {
+                return ResourceManager.GetString("PackageIDs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -12279,6 +12324,24 @@ namespace UserInterface.Properties {
         public static string Simple_commands {
             get {
                 return ResourceManager.GetString("Simple_commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size MFCS.
+        /// </summary>
+        public static string SizeMFCS {
+            get {
+                return ResourceManager.GetString("SizeMFCS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size WMS.
+        /// </summary>
+        public static string SizeWMS {
+            get {
+                return ResourceManager.GetString("SizeWMS", resourceCulture);
             }
         }
         

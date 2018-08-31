@@ -247,12 +247,26 @@ namespace UserInterface.ViewModel
                     {
                         case CommandType.UpdateMFCS:
                             foreach (var d in DataList)
-                                pd.Add(new DataServiceWMS.PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
+                                pd.Add(new DataServiceWMS.PlaceDiff {
+                                    TUID = d.TUID,
+                                    PlaceMFCS = d.PlaceMFCS,
+                                    PlaceWMS = d.PlaceWMS,
+                                    DimensionMFCS = d.DimensionMFCS,
+                                    DimensionWMS = d.DimensionWMS,
+                                    TimeMFCS = d.TimeMFCS,
+                                    TimeWMS = d.TimeWMS });
                             _dbservicewms.UpdatePlacesMFCS(pd, _accessUser);
                             break;
                         case CommandType.UpdateWMS:
                             foreach (var d in DataList) 
-                                pdproxy.Add(new ProxyWMS_UI.PlaceDiff { TUID = d.TUID, PlaceMFCS = d.PlaceMFCS, PlaceWMS = d.PlaceWMS, TimeMFCS = d.TimeMFCS, TimeWMS = d.TimeWMS });
+                                pdproxy.Add(new ProxyWMS_UI.PlaceDiff {
+                                    TUID = d.TUID,
+                                    PlaceMFCS = d.PlaceMFCS,
+                                    PlaceWMS = d.PlaceWMS,
+                                    DimensionMFCS = d.DimensionMFCS != null? d.DimensionMFCS.Value: 0,
+                                    DimensionWMS = d.DimensionWMS != null? d.DimensionWMS.Value: 0,
+                                    TimeMFCS = d.TimeMFCS,
+                                    TimeWMS = d.TimeWMS });
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
                                 client.UpdatePlace(pdproxy.ToArray(), _accessUser);
@@ -299,6 +313,8 @@ namespace UserInterface.ViewModel
                         TUID = p.TUID,
                         PlaceMFCS = p.PlaceMFCS,
                         PlaceWMS = p.PlaceWMS,
+                        DimensionMFCS = p.DimensionMFCS,
+                        DimensionWMS = p.DimensionWMS,
                         TimeMFCS = p.TimeMFCS,
                         TimeWMS = p.TimeWMS
                     });

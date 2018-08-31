@@ -53,10 +53,14 @@
                                     Width="*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceWMS}" 
                                     Width="*" Binding="{Binding PlaceWMS}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SizeWMS}" 
+                                    Width="*" Binding="{Binding DimensionWMS}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TimeWMS}" 
                                     Width="*" Binding="{Binding TimeWMS}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceMFCS}" 
                                     Width="*" Binding="{Binding PlaceMFCS}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SizeMFCS}" 
+                                    Width="*" Binding="{Binding DimensionMFCS}" dgx:DataGridFilterColumn.IsFilterVisible="True" />
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TimeMFCS}" 
                                     Width="*" Binding="{Binding TimeMFCS}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>

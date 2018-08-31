@@ -12,34 +12,26 @@ namespace DatabaseWMS
     using System;
     using System.Collections.Generic;
     
-    public partial class TU_ID
+    public partial class Package_ID
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TU_ID()
+        public Package_ID()
         {
-            this.Commands = new HashSet<Commands>();
-            this.Places = new HashSet<Places>();
-            this.TUs = new HashSet<TUs>();
-            this.HistCommands = new HashSet<HistCommands>();
             this.HistOrders = new HashSet<HistOrders>();
             this.Orders = new HashSet<Orders>();
+            this.TUs = new HashSet<TUs>();
         }
     
-        public int ID { get; set; }
-        public int DimensionClass { get; set; }
-        public int Blocked { get; set; }
+        public string ID { get; set; }
+        public string SKU_ID { get; set; }
+        public string Batch { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Commands> Commands { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Places> Places { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TUs> TUs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HistCommands> HistCommands { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistOrders> HistOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
+        public virtual SKU_ID SKU_ID1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TUs> TUs { get; set; }
     }
 }

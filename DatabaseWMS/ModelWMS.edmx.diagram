@@ -36,6 +36,13 @@
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_TU_ID_TU_ID" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_PlaceIDs_Destination" />
         <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID" />
+        <EntityTypeShape EntityType="i2MFCS.WMS.Database.Tables.WMSContextModel.Package_ID" Width="1.5" PointX="12.25" PointY="11.125" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_Package_ID_FK_Package_ID_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_TU_ID_TU_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Orders_dbo_Package_ID_FK_Package_ID_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Orders_dbo_TU_ID_TU_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Package_ID_dbo_SKU_ID_SKU_ID" />
+        <AssociationConnector Association="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_TUs_dbo_Package_ID_FK_Package_ID_ID" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

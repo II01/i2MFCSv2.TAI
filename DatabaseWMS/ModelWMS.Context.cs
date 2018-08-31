@@ -38,5 +38,6 @@ namespace DatabaseWMS
         public virtual DbSet<Logs> Logs { get; set; }
         public virtual DbSet<HistCommands> HistCommands { get; set; }
         public virtual DbSet<HistOrders> HistOrders { get; set; }
+        public virtual DbSet<Package_ID> Package_ID { get; set; }
     }
 }

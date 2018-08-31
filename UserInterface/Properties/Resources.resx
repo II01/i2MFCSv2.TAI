@@ -4359,4 +4359,25 @@
   <data name="ERR_LOCATIONCLASS" xml:space="preserve">
     <value>Wrong location class</value>
   </data>
+  <data name="Conveyor" xml:space="preserve">
+    <value>Conveyor</value>
+  </data>
+  <data name="Crane" xml:space="preserve">
+    <value>Crane</value>
+  </data>
+  <data name="SizeMFCS" xml:space="preserve">
+    <value>Size MFCS</value>
+  </data>
+  <data name="SizeWMS" xml:space="preserve">
+    <value>Size WMS</value>
+  </data>
+  <data name="ERR_PACKAGEID_EXISTS" xml:space="preserve">
+    <value>Package exists</value>
+  </data>
+  <data name="ERR_SKUID_NONE" xml:space="preserve">
+    <value>SKUID does not exist</value>
+  </data>
+  <data name="PackageIDs" xml:space="preserve">
+    <value>Packages</value>
+  </data>
 </root>

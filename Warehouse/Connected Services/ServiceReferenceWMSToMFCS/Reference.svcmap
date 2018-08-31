@@ -19,12 +19,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="6f512db3-897f-40de-b104-31fdf3cd32d4" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="f4b429bb-a9a5-4291-8001-2c51e8287595" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex" />
-    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="4d67ee84-8596-4614-8a48-fdb8186fecc3" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="39356636-7b04-4688-8926-371149e48b87" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="aa1eacab-3aea-4686-9bb1-84cd0549c4eb" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="ece32a2a-d6a5-4bb1-bf29-4a2d6b0e9b02" SourceId="1" SourceUrl="http://localhost:9010/i2MFCS.WMS/WMSToMFCS/mex/mex/mex/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

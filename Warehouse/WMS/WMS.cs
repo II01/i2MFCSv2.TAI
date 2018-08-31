@@ -286,7 +286,9 @@ namespace Warehouse.WMS
                 {
                     if (place.Material < 1000000000)
                     {
-                        await client.PlaceChangedAsync(place.Place1, place.Material, $"{act}{err}");
+                        var mid = Warehouse.DBService.FindMaterialID(place.Material, false);
+                        int dc = mid != null ? mid.Weight : 0;
+                        await client.PlaceChangedAsync(place.Place1, place.Material, dc, $"{act}{err}");
                         Warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.WMS, $"WMS_PlaceChanged called ({place.Place1}|{place.Material}|{act}{err})");
                     }
                     else

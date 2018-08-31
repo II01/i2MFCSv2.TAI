@@ -55,6 +55,31 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public int? DimensionWMS
+        {
+            get { return _placeDiff.DimensionWMS; }
+            set
+            {
+                if (_placeDiff.DimensionWMS != value)
+                {
+                    _placeDiff.DimensionWMS = value;
+                    RaisePropertyChanged("DimensionWMS");
+                }
+            }
+        }
+        public int? DimensionMFCS
+        {
+            get { return _placeDiff.DimensionMFCS; }
+            set
+            {
+                if (_placeDiff.DimensionMFCS != value)
+                {
+                    _placeDiff.DimensionMFCS = value;
+                    RaisePropertyChanged("DimensionMFCS");
+                }
+            }
+        }
+
         public DateTime? TimeWMS
         {
             get { return _placeDiff.TimeWMS; }
