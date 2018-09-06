@@ -477,7 +477,7 @@ namespace UserInterface.ViewModel
                             TU_ID tuid = new TU_ID { ID = Detailed.TUID, DimensionClass = Detailed.DimensionClass, Blocked = (int)Detailed.Blocked };
                             List<TUs> tulist = new List<TUs>();
                             foreach (var l in Detailed.DetailList)
-                                tulist.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate  });
+//                                tulist.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate  });
                             _dbservicewms.UpdateTUID(tuid);
                             _dbservicewms.UpdateTUs(tuid, tulist);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit TUID: {tuid.ToString()}");
@@ -528,7 +528,7 @@ namespace UserInterface.ViewModel
                         case CommandType.Add:
                             List<TUs> tul = new List<TUs>();
                             foreach (var l in Detailed.DetailList)
-                                tul.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate });
+//                                tul.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate });
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
                                 var pd = new ProxyWMS_UI.PlaceDiff[] { new ProxyWMS_UI.PlaceDiff { TUID = Detailed.TUID, PlaceWMS = null, PlaceMFCS = Detailed.PlaceID } };

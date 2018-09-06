@@ -9385,6 +9385,33 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Boxes.
+        /// </summary>
+        public static string Boxes {
+            get {
+                return ResourceManager.GetString("Boxes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Box ID.
+        /// </summary>
+        public static string BoxID {
+            get {
+                return ResourceManager.GetString("BoxID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Boxes.
+        /// </summary>
+        public static string BoxIDs {
+            get {
+                return ResourceManager.GetString("BoxIDs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Buffer.
         /// </summary>
         public static string Buffer {
@@ -10492,6 +10519,60 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string EnumOrderOperation_Confirm {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drop Box.
+        /// </summary>
+        public static string EnumOrderOperation_DropBox {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_DropBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move TUID.
+        /// </summary>
+        public static string EnumOrderOperation_MoveTray {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_MoveTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick Box.
+        /// </summary>
+        public static string EnumOrderOperation_PickBox {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_PickBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove TUID.
+        /// </summary>
+        public static string EnumOrderOperation_RetrieveTray {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_RetrieveTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add TUID.
+        /// </summary>
+        public static string EnumOrderOperation_StoreTray {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_StoreTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string EnumSimpleCommandConveyorTask_Cancel {
@@ -10807,6 +10888,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string EnumWMSOrderStatus_Inactive {
+            get {
+                return ResourceManager.GetString("EnumWMSOrderStatus_Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to On target.
         /// </summary>
         public static string EnumWMSOrderStatus_OnTarget {
@@ -10875,6 +10965,15 @@ namespace UserInterface.Properties {
         public static string ERR_BLOCKED {
             get {
                 return ResourceManager.GetString("ERR_BLOCKED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Box exists.
+        /// </summary>
+        public static string ERR_BOXID_EXISTS {
+            get {
+                return ResourceManager.GetString("ERR_BOXID_EXISTS", resourceCulture);
             }
         }
         
@@ -10978,6 +11077,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Boxes belong to two or more TUs.
+        /// </summary>
+        public static string ERR_MANYTUIDFORBOXES {
+            get {
+                return ResourceManager.GetString("ERR_MANYTUIDFORBOXES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transport unit exists in warehouse.
         /// </summary>
         public static string ERR_MATERIALEXISTS {
@@ -11023,6 +11131,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Box not in the database.
+        /// </summary>
+        public static string ERR_NOBOXID {
+            get {
+                return ResourceManager.GetString("ERR_NOBOXID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location does not exist in warehouse.
         /// </summary>
         public static string ERR_NOLOCATION {
@@ -11064,15 +11181,6 @@ namespace UserInterface.Properties {
         public static string ERR_ORDERID {
             get {
                 return ResourceManager.GetString("ERR_ORDERID", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Package exists.
-        /// </summary>
-        public static string ERR_PACKAGEID_EXISTS {
-            get {
-                return ResourceManager.GetString("ERR_PACKAGEID_EXISTS", resourceCulture);
             }
         }
         
@@ -11212,11 +11320,47 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Box already on TU.
+        /// </summary>
+        public static string ERR_TUBOXEXISTS {
+            get {
+                return ResourceManager.GetString("ERR_TUBOXEXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Box ID does not exist in the warhouse.
+        /// </summary>
+        public static string ERR_TUBOXNOEXISTS {
+            get {
+                return ResourceManager.GetString("ERR_TUBOXNOEXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Box not found on any TU.
+        /// </summary>
+        public static string ERR_TUBOXNOTEXISTS {
+            get {
+                return ResourceManager.GetString("ERR_TUBOXNOTEXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TU ID does not exist.
         /// </summary>
         public static string ERR_TUID {
             get {
                 return ResourceManager.GetString("ERR_TUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TU ID exist.
+        /// </summary>
+        public static string ERR_TUIDEXISTS {
+            get {
+                return ResourceManager.GetString("ERR_TUIDEXISTS", resourceCulture);
             }
         }
         
@@ -11797,6 +11941,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Operation.
+        /// </summary>
+        public static string Operation {
+            get {
+                return ResourceManager.GetString("Operation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order ID.
         /// </summary>
         public static string OrderID {
@@ -11820,15 +11973,6 @@ namespace UserInterface.Properties {
         public static string Other_language {
             get {
                 return ResourceManager.GetString("Other_language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Packages.
-        /// </summary>
-        public static string PackageIDs {
-            get {
-                return ResourceManager.GetString("PackageIDs", resourceCulture);
             }
         }
         
@@ -12445,6 +12589,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Station.
+        /// </summary>
+        public static string Station {
+            get {
+                return ResourceManager.GetString("Station", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string Status {
@@ -12513,6 +12666,15 @@ namespace UserInterface.Properties {
         public static string SubOrders {
             get {
                 return ResourceManager.GetString("SubOrders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Suggest TU.
+        /// </summary>
+        public static string SuggestTU {
+            get {
+                return ResourceManager.GetString("SuggestTU", resourceCulture);
             }
         }
         

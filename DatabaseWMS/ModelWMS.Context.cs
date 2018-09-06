@@ -26,18 +26,18 @@ namespace DatabaseWMS
         }
     
         public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
+        public virtual DbSet<Box_ID> Box_ID { get; set; }
         public virtual DbSet<CommandERPs> CommandERPs { get; set; }
         public virtual DbSet<Commands> Commands { get; set; }
+        public virtual DbSet<HistCommands> HistCommands { get; set; }
+        public virtual DbSet<HistOrders> HistOrders { get; set; }
+        public virtual DbSet<Logs> Logs { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
+        public virtual DbSet<Parameters> Parameters { get; set; }
         public virtual DbSet<PlaceIDs> PlaceIDs { get; set; }
         public virtual DbSet<Places> Places { get; set; }
         public virtual DbSet<SKU_ID> SKU_ID { get; set; }
         public virtual DbSet<TU_ID> TU_ID { get; set; }
         public virtual DbSet<TUs> TUs { get; set; }
-        public virtual DbSet<Parameters> Parameters { get; set; }
-        public virtual DbSet<Logs> Logs { get; set; }
-        public virtual DbSet<HistCommands> HistCommands { get; set; }
-        public virtual DbSet<HistOrders> HistOrders { get; set; }
-        public virtual DbSet<Package_ID> Package_ID { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="UserInterface.View.PackageIDsView"
+﻿<UserControl x:Class="UserInterface.View.BoxIDsView"
         ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -12,7 +12,7 @@
         xmlns:dgx="clr-namespace:DataGridExtensions;assembly=DataGridExtensions"
         xmlns:src="clr-namespace:UserInterface.View"
         xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
-        DataContext="{Binding PackageIDs, Source={StaticResource Locator}}"
+        DataContext="{Binding BoxIDs, Source={StaticResource Locator}}"
         d:DesignWidth="1280"
         d:DesignHeight="720">
 
@@ -36,7 +36,7 @@
             <ColumnDefinition Width="400"/>
         </Grid.ColumnDefinitions>
         <Border Grid.ColumnSpan="2" BorderBrush="SkyBlue" BorderThickness="0,0,0,5" Margin="0,0,0,20">
-            <TextBlock Text="{Resx PackageIDs}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
+            <TextBlock Text="{Resx BoxIDs}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource LargeFontSize}"/>
         </Border>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -52,10 +52,10 @@
         </Grid>
         <DataGrid Grid.Row="2"
             x:Name="dgPlaceIDs" 
-            ItemsSource="{Binding PackageIDList}" 
+            ItemsSource="{Binding BoxIDList}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding SelectedPackageID, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+            SelectedItem="{Binding SelectedBoxID, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
             SelectionMode="Extended"
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
@@ -77,7 +77,7 @@
                     <cmd:EventToCommand
                         Command="{Binding SelectionChangedCommand}"
                         CommandParameter="{Binding SelectedItems,
-                        ElementName=dgPackageIDs}" />
+                        ElementName=dgBoxIDs}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
@@ -89,9 +89,9 @@
                 <Button Margin="10,0,0,20" Content="{Resx Add}" Command="{Binding Add}" />
                 <Button Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/>
             </StackPanel>
-            <ContentControl x:Name="ccPackageID" 
+            <ContentControl x:Name="ccBoxID" 
                         IsEnabled="{Binding EditEnabled}"                       
-                        Content="{Binding DetailedPackageID}"
+                        Content="{Binding DetailedBoxID}"
                         HorizontalAlignment="Stretch" 
                         VerticalAlignment="Top"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

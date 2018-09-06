@@ -8,6 +8,7 @@ namespace UserInterface.DataServiceWMS
 {
     public class TUSKUID
     {
+        public string BoxID { get; set; }
         public string SKUID { get; set; }
         public double Qty { get; set; }
         public string Batch { get; set; }

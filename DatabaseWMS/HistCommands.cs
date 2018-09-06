@@ -22,7 +22,10 @@ namespace DatabaseWMS
         public int Status { get; set; }
         public System.DateTime Time { get; set; }
         public System.DateTime LastChange { get; set; }
+        public string Box_ID { get; set; }
+        public int Type { get; set; }
     
+        public virtual Box_ID Box_ID1 { get; set; }
         public virtual HistOrders HistOrders { get; set; }
         public virtual PlaceIDs PlaceIDs { get; set; }
         public virtual PlaceIDs PlaceIDs1 { get; set; }

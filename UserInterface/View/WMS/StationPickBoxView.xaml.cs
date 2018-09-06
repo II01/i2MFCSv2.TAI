@@ -5,13 +5,13 @@ namespace UserInterface.View
     /// <summary>
     /// Description for AlarmOverviewView.
     /// </summary>
-    public partial class PackageIDsView : UserControl
+    public partial class StationPickBoxView : UserControl
 
     {
         /// <summary>
         /// Initializes a new instance of the AlarmOverviewView class.
         /// </summary>
-        public PackageIDsView()
+        public StationPickBoxView()
         {
             InitializeComponent();
         }

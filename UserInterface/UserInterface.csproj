@@ -224,8 +224,14 @@
     <Compile Include="ViewModel\WMS\HistoryCommandWMSsViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryLogsViewModel.cs" />
     <Compile Include="ViewModel\WMS\HistoryReleaseOrdersViewModel.cs" />
-    <Compile Include="ViewModel\WMS\PackageIDsViewModel.cs" />
-    <Compile Include="ViewModel\WMS\PackageIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\BoxIDsViewModel.cs" />
+    <Compile Include="ViewModel\WMS\BoxIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\StationPickBoxViewModel.cs" />
+    <Compile Include="ViewModel\WMS\StationRemoveTrayViewModel.cs" />
+    <Compile Include="ViewModel\WMS\StationDropBoxViewModel.cs" />
+    <Compile Include="ViewModel\WMS\StationViewModel.cs" />
+    <Compile Include="ViewModel\WMS\StationStoreTrayViewModel.cs" />
+    <Compile Include="ViewModel\WMS\StationsViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\ReleaseOrderViewModel.cs" />
     <Compile Include="ViewModel\WMS\PlaceDiffsViewModel.cs" />
@@ -290,11 +296,26 @@
     <Compile Include="View\WMS\HistoryReleaseOrdersView.xaml.cs">
       <DependentUpon>HistoryReleaseOrdersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WMS\PackageIDsView.xaml.cs">
-      <DependentUpon>PackageIDsView.xaml</DependentUpon>
+    <Compile Include="View\WMS\BoxIDsView.xaml.cs">
+      <DependentUpon>BoxIDsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WMS\PackageIDView.xaml.cs">
-      <DependentUpon>PackageIDView.xaml</DependentUpon>
+    <Compile Include="View\WMS\BoxIDView.xaml.cs">
+      <DependentUpon>BoxIDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\StationPickBoxView.xaml.cs">
+      <DependentUpon>StationPickBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\StationRemoveTrayView.xaml.cs">
+      <DependentUpon>StationRemoveTrayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\StationDropBoxView.xaml.cs">
+      <DependentUpon>StationDropBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\StationStoreTrayView.xaml.cs">
+      <DependentUpon>StationStoreTrayView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\StationsView.xaml.cs">
+      <DependentUpon>StationsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\ReleaseOrdersView.xaml.cs">
       <DependentUpon>ReleaseOrdersView.xaml</DependentUpon>
@@ -489,11 +510,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\WMS\PackageIDsView.xaml">
+    <Page Include="View\WMS\BoxIDsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\WMS\PackageIDView.xaml">
+    <Page Include="View\WMS\BoxIDView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\StationPickBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\StationRemoveTrayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\StationDropBoxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\StationStoreTrayView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\StationsView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -652,20 +693,23 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.tr-TR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Core.DataExchange1.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\Arrays.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Core.DataExchange.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.Tables.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.DTO1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\service.wsdl" />
-    <None Include="Connected Services\ProxyWMS_UI\service.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\i2MFCS.WMS.Database.Tables1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProxyWMS_UI\service1.xsd">
+    <None Include="Connected Services\ProxyWMS_UI\service1.wsdl" />
+    <None Include="Connected Services\ProxyWMS_UI\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyWMS_UI\service21.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProxyWMS_UI\UserInterface.ProxyWMS_UI.DTOCommand.datasource">

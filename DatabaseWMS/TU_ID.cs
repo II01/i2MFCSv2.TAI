@@ -18,11 +18,11 @@ namespace DatabaseWMS
         public TU_ID()
         {
             this.Commands = new HashSet<Commands>();
-            this.Places = new HashSet<Places>();
-            this.TUs = new HashSet<TUs>();
             this.HistCommands = new HashSet<HistCommands>();
             this.HistOrders = new HashSet<HistOrders>();
             this.Orders = new HashSet<Orders>();
+            this.Places = new HashSet<Places>();
+            this.TUs = new HashSet<TUs>();
         }
     
         public int ID { get; set; }
@@ -32,14 +32,14 @@ namespace DatabaseWMS
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commands> Commands { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Places> Places { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TUs> TUs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistCommands> HistCommands { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistOrders> HistOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Places> Places { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TUs> TUs { get; set; }
     }
 }

@@ -4371,13 +4371,67 @@
   <data name="SizeWMS" xml:space="preserve">
     <value>Size WMS</value>
   </data>
-  <data name="ERR_PACKAGEID_EXISTS" xml:space="preserve">
-    <value>Package exists</value>
+  <data name="ERR_BOXID_EXISTS" xml:space="preserve">
+    <value>Box exists</value>
   </data>
   <data name="ERR_SKUID_NONE" xml:space="preserve">
     <value>SKUID does not exist</value>
   </data>
-  <data name="PackageIDs" xml:space="preserve">
-    <value>Packages</value>
+  <data name="BoxIDs" xml:space="preserve">
+    <value>Boxes</value>
+  </data>
+  <data name="ERR_TUIDEXISTS" xml:space="preserve">
+    <value>TU ID exist</value>
+  </data>
+  <data name="BoxID" xml:space="preserve">
+    <value>Box ID</value>
+  </data>
+  <data name="Station" xml:space="preserve">
+    <value>Station</value>
+  </data>
+  <data name="Operation" xml:space="preserve">
+    <value>Operation</value>
+  </data>
+  <data name="EnumOrderOperation_Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="EnumOrderOperation_DropBox" xml:space="preserve">
+    <value>Drop Box</value>
+  </data>
+  <data name="EnumOrderOperation_MoveTray" xml:space="preserve">
+    <value>Move TUID</value>
+  </data>
+  <data name="EnumOrderOperation_PickBox" xml:space="preserve">
+    <value>Pick Box</value>
+  </data>
+  <data name="EnumOrderOperation_RetrieveTray" xml:space="preserve">
+    <value>Remove TUID</value>
+  </data>
+  <data name="EnumOrderOperation_StoreTray" xml:space="preserve">
+    <value>Add TUID</value>
+  </data>
+  <data name="EnumWMSOrderStatus_Inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="Boxes" xml:space="preserve">
+    <value>Boxes</value>
+  </data>
+  <data name="ERR_NOBOXID" xml:space="preserve">
+    <value>Box not in the database</value>
+  </data>
+  <data name="ERR_TUBOXEXISTS" xml:space="preserve">
+    <value>Box already on TU</value>
+  </data>
+  <data name="ERR_TUBOXNOTEXISTS" xml:space="preserve">
+    <value>Box not found on any TU</value>
+  </data>
+  <data name="SuggestTU" xml:space="preserve">
+    <value>Suggest TU</value>
+  </data>
+  <data name="ERR_MANYTUIDFORBOXES" xml:space="preserve">
+    <value>Boxes belong to two or more TUs</value>
+  </data>
+  <data name="ERR_TUBOXNOEXISTS" xml:space="preserve">
+    <value>Box ID does not exist in the warhouse</value>
   </data>
 </root>

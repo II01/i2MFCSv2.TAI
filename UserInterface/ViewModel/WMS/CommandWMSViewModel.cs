@@ -75,6 +75,18 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public string BoxID
+        {
+            get { return _data.Box_ID; }
+            set
+            {
+                if (_data.Box_ID != value)
+                {
+                    _data.Box_ID = value;
+                    RaisePropertyChanged("BoxID");
+                }
+            }
+        }
         public string Source
         {
             get { return _data.Source; }
@@ -96,6 +108,19 @@ namespace UserInterface.ViewModel
                 {
                     _data.Target = value;
                     RaisePropertyChanged("Target");
+                }
+            }
+        }
+
+        public EnumOrderOperation Operation
+        {
+            get { return (EnumOrderOperation)_data.Operation; }
+            set
+            {
+                if (_data.Operation != (int)value)
+                {
+                    _data.Operation = (int)value;
+                    RaisePropertyChanged("Operation");
                 }
             }
         }

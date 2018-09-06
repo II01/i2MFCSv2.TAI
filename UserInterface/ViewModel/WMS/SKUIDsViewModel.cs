@@ -384,9 +384,9 @@ namespace UserInterface.ViewModel
                 {
                     var sdl = await _dbservicewms.GetAvailableTUs(SelectedSKUID.ID);
                     TUList.Clear();
-                    foreach (var s in sdl)
-                        TUList.Add(new TUViewModel { TUID = s.TUID, SKUID = s.SKUID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate,
-                                                     Location = s.Location, Status = (EnumBlockedWMS)s.Status });
+//                    foreach (var s in sdl)
+//                        TUList.Add(new TUViewModel { TUID = s.TUID, SKUID = s.SKUID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate,
+//                                                     Location = s.Location, Status = (EnumBlockedWMS)s.Status });
                 }
             }
             catch (Exception e)

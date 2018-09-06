@@ -9,7 +9,7 @@ namespace DatabaseWMS
     public partial class Orders
     {
         override public string ToString()
-        {
+        {             
             string erpid = ERP_ID.HasValue ? ERP_ID.Value.ToString() : "-";
             return $"|{erpid}|{OrderID}|{SubOrderID}|{SubOrderERPID}|{SubOrderName}|{SKU_ID}|{SKU_Batch}|{Destination}|{ReleaseTime}|{Status}|";
         }

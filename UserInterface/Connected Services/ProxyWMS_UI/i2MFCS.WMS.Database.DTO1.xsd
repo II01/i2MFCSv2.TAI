@@ -9,11 +9,13 @@
   <xs:element name="ArrayOfDTOCommand" nillable="true" type="tns:ArrayOfDTOCommand" />
   <xs:complexType name="DTOCommand">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Box_ID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="LastChange" type="xs:dateTime" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="Operation" type="q1:Command.CommandOperation" />
       <xs:element minOccurs="0" name="Order_ID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="Status" type="q1:Command.CommandStatus" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="Status" type="q2:Command.CommandStatus" />
       <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
       <xs:element minOccurs="0" name="Target" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -21,19 +23,22 @@
   <xs:element name="DTOCommand" nillable="true" type="tns:DTOCommand" />
   <xs:complexType name="DTOOrder">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Boxes" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ERP_ID" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="Operation" type="q3:Order.OrderOperation" />
       <xs:element minOccurs="0" name="OrderID" type="xs:int" />
       <xs:element minOccurs="0" name="QualityControlOrder" type="xs:boolean" />
       <xs:element minOccurs="0" name="ReleaseTime" type="xs:dateTime" />
       <xs:element minOccurs="0" name="SKU_Batch" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SKU_ID" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="SKU_Qty" type="xs:double" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Status" type="xs:int" />
-      <xs:element minOccurs="0" name="SubOrderERPID" type="xs:int" />
       <xs:element minOccurs="0" name="SubOrderID" type="xs:int" />
       <xs:element minOccurs="0" name="SubOrderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="DTOOrder" nillable="true" type="tns:DTOOrder" />

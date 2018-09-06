@@ -98,6 +98,9 @@
             <TreeViewItem Header="{Resx Alarms}" 
                           Tag="{Binding Alarms, Source={StaticResource Locator}}" 
                           IsEnabled="True"/>
+            <TreeViewItem Header ="{Resx Station}"
+                          Tag="{Binding Stations, Source={StaticResource Locator}}" 
+                          IsEnabled="True"/>
             <TreeViewItem  Header="{Resx WMS}" IsExpanded="True" IsEnabled="True">
                 <TreeViewItem  Header="{Resx ReleaseOrders}" 
                            Tag="{Binding ReleaseOrders, Source={StaticResource Locator}}" 
@@ -110,8 +113,8 @@
                                IsEnabled="True"/>
                 <TreeViewItem Header ="{Resx Extras}" IsExpanded="False" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}">
 
-                    <TreeViewItem  Header="{Resx PackageIDs}" 
-                           Tag="{Binding PackageIDs, Source={StaticResource Locator}}" 
+                    <TreeViewItem  Header="{Resx BoxIDs}" 
+                           Tag="{Binding BoxIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
                     <TreeViewItem  Header="{Resx PlaceIDs}" 
                            Tag="{Binding PlaceIDs, Source={StaticResource Locator}}" 

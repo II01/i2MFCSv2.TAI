@@ -33,16 +33,16 @@ namespace DatabaseWMS
         public string SKU_Batch { get; set; }
         public int Status { get; set; }
         public int TU_ID { get; set; }
-        public string SKU_Package { get; set; }
-        public int Type { get; set; }
-        public string FK_Package_ID_ID { get; set; }
+        public string FK_Box_ID_ID { get; set; }
+        public string Box_ID { get; set; }
+        public int Operation { get; set; }
     
+        public virtual Box_ID Box_ID1 { get; set; }
         public virtual CommandERPs CommandERPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistCommands> HistCommands { get; set; }
         public virtual PlaceIDs PlaceIDs { get; set; }
         public virtual SKU_ID SKU_ID1 { get; set; }
-        public virtual Package_ID Package_ID { get; set; }
         public virtual TU_ID TU_ID1 { get; set; }
     }
 }

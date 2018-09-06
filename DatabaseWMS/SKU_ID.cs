@@ -17,10 +17,9 @@ namespace DatabaseWMS
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SKU_ID()
         {
-            this.Orders = new HashSet<Orders>();
-            this.TUs = new HashSet<TUs>();
+            this.Box_ID = new HashSet<Box_ID>();
             this.HistOrders = new HashSet<HistOrders>();
-            this.Package_ID = new HashSet<Package_ID>();
+            this.Orders = new HashSet<Orders>();
         }
     
         public string ID { get; set; }
@@ -34,12 +33,10 @@ namespace DatabaseWMS
         public int Height { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TUs> TUs { get; set; }
+        public virtual ICollection<Box_ID> Box_ID { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistOrders> HistOrders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Package_ID> Package_ID { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

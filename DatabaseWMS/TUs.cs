@@ -15,15 +15,13 @@ namespace DatabaseWMS
     public partial class TUs
     {
         public int TU_ID { get; set; }
-        public string SKU_ID { get; set; }
         public double Qty { get; set; }
-        public string Batch { get; set; }
         public System.DateTime ProdDate { get; set; }
         public System.DateTime ExpDate { get; set; }
-        public string Package_ID { get; set; }
+        public string Box_ID { get; set; }
     
-        public virtual SKU_ID SKU_ID1 { get; set; }
+        public virtual Box_ID Box_ID1 { get; set; }
+        public virtual Box_ID Box_ID2 { get; set; }
         public virtual TU_ID TU_ID1 { get; set; }
-        public virtual Package_ID Package_ID1 { get; set; }
     }
 }

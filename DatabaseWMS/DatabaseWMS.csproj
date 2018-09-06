@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Box_ID.cs">
+      <DependentUpon>ModelWMS.tt</DependentUpon>
+    </Compile>
     <Compile Include="CommandERPs.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>
@@ -86,9 +89,6 @@
     <Compile Include="Orders.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Package_ID.cs">
-      <DependentUpon>ModelWMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="Parameters.cs">
       <DependentUpon>ModelWMS.tt</DependentUpon>
     </Compile>
@@ -120,6 +120,7 @@
     <None Include="App.Config" />
     <None Include="ModelWMS.edmx.diagram">
       <DependentUpon>ModelWMS.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

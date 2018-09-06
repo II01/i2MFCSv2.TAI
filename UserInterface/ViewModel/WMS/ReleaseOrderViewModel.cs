@@ -154,6 +154,42 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public int TUID
+        {
+            get { return _data.TU_ID; }
+            set
+            {
+                if (_data.TU_ID != value)
+                {
+                    _data.TU_ID = value;
+                    RaisePropertyChanged("TUID");
+                }
+            }
+        }
+        public string BoxID
+        {
+            get { return _data.Box_ID; }
+            set
+            {
+                if (_data.Box_ID != value)
+                {
+                    _data.Box_ID = value;
+                    RaisePropertyChanged("BoxID");
+                }
+            }
+        }
+        public EnumOrderOperation Operation
+        {
+            get { return (EnumOrderOperation)_data.Operation; }
+            set
+            {
+                if (_data.Operation != (int)value)
+                {
+                    _data.Operation = (int)value;
+                    RaisePropertyChanged("Operation");
+                }
+            }
+        }
 
 
         public string SubOrderName

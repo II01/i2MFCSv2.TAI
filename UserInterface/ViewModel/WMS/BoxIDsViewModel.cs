@@ -19,17 +19,17 @@ using System.Collections;
 
 namespace UserInterface.ViewModel
 {
-    public sealed class PackageIDsViewModel : ViewModelBase
+    public sealed class BoxIDsViewModel : ViewModelBase
     {
         public enum CommandType { None = 0, Add, Edit};
 
         #region members
         private CommandType _selectedCommand;
-        private ObservableCollection<PackageIDViewModel> _PackageIDList;
-        private PackageIDViewModel _selectedPackageID;
-        private List<PackageIDViewModel> _selectedPackageIDs;
-        private PackageIDViewModel _detailedPackageID;
-        private PackageIDViewModel _managePackageID;
+        private ObservableCollection<BoxIDViewModel> _boxIDList;
+        private BoxIDViewModel _selectedBoxID;
+        private List<BoxIDViewModel> _selectedBoxIDs;
+        private BoxIDViewModel _detailedBoxID;
+        private BoxIDViewModel _manageBoxID;
         private bool _editEnabled;
         private bool _enabledCC;
         private BasicWarehouse _warehouse;
@@ -47,40 +47,40 @@ namespace UserInterface.ViewModel
         public RelayCommand Refresh { get; private set; }
         public RelayCommand<IList> SelectionChangedCommand { get; private set; }
 
-        public ObservableCollection<PackageIDViewModel> PackageIDList
+        public ObservableCollection<BoxIDViewModel> BoxIDList
         {
-            get { return _PackageIDList; }
+            get { return _boxIDList; }
             set
             {
-                if (_PackageIDList != value)
+                if (_boxIDList != value)
                 {
-                    _PackageIDList = value;
-                    RaisePropertyChanged("PackageIDList");
+                    _boxIDList = value;
+                    RaisePropertyChanged("BoxIDList");
                 }
             }
         }
 
-        public PackageIDViewModel SelectedPackageID
+        public BoxIDViewModel SelectedBoxID
         {
             get
             {
-                return _selectedPackageID;
+                return _selectedBoxID;
             }
             set
             {
-                if (_selectedPackageID != value)
+                if (_selectedBoxID != value)
                 {
-                    _selectedPackageID = value;
-                    RaisePropertyChanged("SelectedPackageID");
+                    _selectedBoxID = value;
+                    RaisePropertyChanged("SelectedBoxID");
                     try
                     {
-                        if (_selectedPackageID != null)
+                        if (_selectedBoxID != null)
                         {
                             var l = new List<string>();
-                            l.Add(SelectedPackageID.SKUID);
-                            SelectedPackageID.SKUIDs = l;                            
-                            DetailedPackageID = SelectedPackageID;
-                            DetailedPackageID.EditVisible = true;
+                            l.Add(SelectedBoxID.SKUID);
+                            SelectedBoxID.SKUIDs = l;                            
+                            DetailedBoxID = SelectedBoxID;
+                            DetailedBoxID.EditVisible = true;
                         }
                     }
                     catch (Exception e)
@@ -92,31 +92,31 @@ namespace UserInterface.ViewModel
             }
         }
 
-        public List<PackageIDViewModel> SelectedPackageIDs
+        public List<BoxIDViewModel> SelectedBoxIDs
         {
             get
             {
-                return _selectedPackageIDs;
+                return _selectedBoxIDs;
             }
             set
             {
-                if (_selectedPackageIDs != value)
+                if (_selectedBoxIDs != value)
                 {
-                    _selectedPackageIDs = value;
-                    RaisePropertyChanged("SelectedPackageIDs");
+                    _selectedBoxIDs = value;
+                    RaisePropertyChanged("SelectedBoxIDs");
                 }
             }
         }
 
-        public PackageIDViewModel DetailedPackageID
+        public BoxIDViewModel DetailedBoxID
         {
-            get { return _detailedPackageID; }
+            get { return _detailedBoxID; }
             set
             {
-                if (_detailedPackageID != value)
+                if (_detailedBoxID != value)
                 {
-                    _detailedPackageID = value;
-                    RaisePropertyChanged("DetailedPackageID");
+                    _detailedBoxID = value;
+                    RaisePropertyChanged("DetailedBoxID");
                 }
             }
         }
@@ -181,12 +181,12 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region initialization
-        public PackageIDsViewModel()
+        public BoxIDsViewModel()
         {
-            DetailedPackageID = null;
-            SelectedPackageID = null;
-            _managePackageID = new PackageIDViewModel();
-            _managePackageID.Initialize(_warehouse);
+            DetailedBoxID = null;
+            SelectedBoxID = null;
+            _manageBoxID = new BoxIDViewModel();
+            _manageBoxID.Initialize(_warehouse);
 
             EditEnabled = false;
             EnabledCC = false;
@@ -207,8 +207,8 @@ namespace UserInterface.ViewModel
             _dbservicewms = new DBServiceWMS(_warehouse);
             try
             {
-                PackageIDList = new ObservableCollection<PackageIDViewModel>();
-                SelectedPackageIDs = new List<PackageIDViewModel>();
+                BoxIDList = new ObservableCollection<BoxIDViewModel>();
+                SelectedBoxIDs = new List<BoxIDViewModel>();
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, async (vm) => await ExecuteViewActivated(vm.ViewModel));
@@ -229,15 +229,15 @@ namespace UserInterface.ViewModel
                 EditEnabled = true;
                 EnabledCC = true;
                 _selectedCommand = CommandType.Add;
-                _managePackageID.ID = "";
-                _managePackageID.SKUID = "";
-                _managePackageID.Batch = "";
-                _managePackageID.SKUIDs = _dbservicewms.GetSKUIDsSync().ConvertAll(p => p.ID);
-                if (_managePackageID.SKUIDs.Count > 0)
-                    _managePackageID.SKUID = _managePackageID.SKUIDs[0];
-                DetailedPackageID = _managePackageID;
-                DetailedPackageID.AddEnabled = true;
-                DetailedPackageID.ValidationEnabled = true;
+                _manageBoxID.ID = "";
+                _manageBoxID.SKUID = "";
+                _manageBoxID.Batch = "";
+                _manageBoxID.SKUIDs = _dbservicewms.GetSKUIDsSync().ConvertAll(p => p.ID);
+                if (_manageBoxID.SKUIDs.Count > 0)
+                    _manageBoxID.SKUID = _manageBoxID.SKUIDs[0];
+                DetailedBoxID = _manageBoxID;
+                DetailedBoxID.AddEnabled = true;
+                DetailedBoxID.ValidationEnabled = true;
             }
             catch (Exception e)
             {
@@ -267,13 +267,13 @@ namespace UserInterface.ViewModel
                 EditEnabled = true;
                 EnabledCC = true;                
                 _selectedCommand = CommandType.Edit;
-                _managePackageID.ID = SelectedPackageID.ID;
-                _managePackageID.SKUID = SelectedPackageID.SKUID;
-                _managePackageID.Batch = SelectedPackageID.Batch;
-                _managePackageID.SKUIDs = _dbservicewms.GetSKUIDsSync().ConvertAll(p => p.ID);
-                DetailedPackageID = _managePackageID;
-                DetailedPackageID.AddEnabled = false;
-                DetailedPackageID.ValidationEnabled = true;
+                _manageBoxID.ID = SelectedBoxID.ID;
+                _manageBoxID.SKUID = SelectedBoxID.SKUID;
+                _manageBoxID.Batch = SelectedBoxID.Batch;
+                _manageBoxID.SKUIDs = _dbservicewms.GetSKUIDsSync().ConvertAll(p => p.ID);
+                DetailedBoxID = _manageBoxID;
+                DetailedBoxID.AddEnabled = false;
+                DetailedBoxID.ValidationEnabled = true;
             }
             catch (Exception e)
             {
@@ -286,7 +286,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !EditEnabled && (SelectedPackageID != null) && AccessLevel/10 >= 2;
+                return !EditEnabled && (SelectedBoxID != null) && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -302,12 +302,12 @@ namespace UserInterface.ViewModel
             {
                 EditEnabled = false;
                 EnabledCC = false;
-                if (DetailedPackageID != null)
+                if (DetailedBoxID != null)
                 {
-                    DetailedPackageID.EditVisible = true;
-                    DetailedPackageID.ValidationEnabled = false;
+                    DetailedBoxID.EditVisible = true;
+                    DetailedBoxID.ValidationEnabled = false;
                 }
-                DetailedPackageID = SelectedPackageID;
+                DetailedBoxID = SelectedBoxID;
             }
             catch (Exception e)
             {
@@ -331,7 +331,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                DetailedPackageID.EditVisible = true;
+                DetailedBoxID.EditVisible = true;
                 EditEnabled = false;
                 EnabledCC = false;
                 try
@@ -339,25 +339,25 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Add:
-                            _dbservicewms.AddPackageID(DetailedPackageID.PackageID);
+                            _dbservicewms.AddBoxID(DetailedBoxID.BoxID);
                             _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                String.Format("PackageID added: id: {0}", DetailedPackageID.ID));
-                            SelectedPackageID = DetailedPackageID;
+                                                String.Format("BoxID added: id: {0}", DetailedBoxID.ID));
+                            SelectedBoxID = DetailedBoxID;
                             await ExecuteRefresh();
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add PackageID: {DetailedPackageID.PackageID.ToString()}");
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add BoxID: {DetailedBoxID.BoxID.ToString()}");
                             break;
                         case CommandType.Edit:
-                            _dbservicewms.UpdatePackageID(DetailedPackageID.PackageID);
+                            _dbservicewms.UpdateBoxID(DetailedBoxID.BoxID);
                             _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
-                                                String.Format("PackageID changed: id: {0}", DetailedPackageID.ID));
-                            SelectedPackageID.ID = DetailedPackageID.ID;
-                            SelectedPackageID.SKUID = DetailedPackageID.SKUID;
-                            SelectedPackageID.Batch = DetailedPackageID.Batch;
-                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit PackageID: {DetailedPackageID.PackageID.ToString()}");
+                                                String.Format("BoxID changed: id: {0}", DetailedBoxID.ID));
+                            SelectedBoxID.ID = DetailedBoxID.ID;
+                            SelectedBoxID.SKUID = DetailedBoxID.SKUID;
+                            SelectedBoxID.Batch = DetailedBoxID.Batch;
+                            _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit BoxID: {DetailedBoxID.BoxID.ToString()}");
                             break;
                     }
-                    if (DetailedPackageID != null)
-                        DetailedPackageID.ValidationEnabled = false;
+                    if (DetailedBoxID != null)
+                        DetailedBoxID.ValidationEnabled = false;
                 }
                 catch (Exception e)
                 {
@@ -374,7 +374,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return EditEnabled && DetailedPackageID.AllPropertiesValid && AccessLevel/10 >= 2;
+                return EditEnabled && DetailedBoxID.AllPropertiesValid && AccessLevel/10 >= 2;
             }
             catch (Exception e)
             {
@@ -387,20 +387,20 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                string id = SelectedPackageID?.ID;
-                var packageids = await _dbservicewms.GetPackageIDs();
-                PackageIDList.Clear();
-                foreach (var p in packageids)
-                    PackageIDList.Add(new PackageIDViewModel
+                string id = SelectedBoxID?.ID;
+                var BoxIDs = await _dbservicewms.GetBoxIDs();
+                BoxIDList.Clear();
+                foreach (var p in BoxIDs)
+                    BoxIDList.Add(new BoxIDViewModel
                     {
                         ID = p.ID,
                         SKUID = p.SKU_ID,
                         Batch = p.Batch
                     });
-                foreach (var l in PackageIDList)
+                foreach (var l in BoxIDList)
                     l.Initialize(_warehouse);
                 if ( id != null)
-                    SelectedPackageID = PackageIDList.FirstOrDefault(p => p.ID == id);
+                    SelectedBoxID = BoxIDList.FirstOrDefault(p => p.ID == id);
             }
             catch (Exception e)
             {
@@ -413,7 +413,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if (vm is PackageIDsViewModel)
+                if (vm is BoxIDsViewModel)
                 {
                     await ExecuteRefresh();
                 }

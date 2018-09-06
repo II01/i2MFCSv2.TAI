@@ -17,8 +17,8 @@ namespace DatabaseWMS
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CommandERPs()
         {
-            this.Orders = new HashSet<Orders>();
             this.HistOrders = new HashSet<HistOrders>();
+            this.Orders = new HashSet<Orders>();
         }
     
         public int ID { get; set; }
@@ -30,8 +30,8 @@ namespace DatabaseWMS
         public System.DateTime LastChange { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HistOrders> HistOrders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

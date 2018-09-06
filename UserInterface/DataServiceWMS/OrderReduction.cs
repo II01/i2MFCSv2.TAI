@@ -19,6 +19,8 @@ namespace UserInterface.DataServiceWMS
         public string SKUID { get; set; }
         public string SKUBatch { get; set; }
         public double SKUQty { get; set; }
+        public int TUID { get; set; }
+        public string BoxID { get; set; }
 
 
         public DateTime ReleaseTime { get; set; }

@@ -10,10 +10,10 @@ using System.Collections.Generic;
 
 namespace UserInterface.ViewModel
 {
-    public sealed class PackageIDViewModel: ViewModelBase, IDataErrorInfo
+    public sealed class BoxIDViewModel: ViewModelBase, IDataErrorInfo
     {
         #region members
-        private Package_ID _packageid;
+        private Box_ID _boxid;
         private List<string> _SKUIDs;
         
         private bool _allPropertiesValid = false;
@@ -26,15 +26,15 @@ namespace UserInterface.ViewModel
 
         #region properties
         PropertyValidator Validator { get; set; }
-        public Package_ID PackageID
+        public Box_ID BoxID
         {
-            get { return _packageid; }
+            get { return _boxid; }
             set
             {
-                if (_packageid != value)
+                if (_boxid != value)
                 {
-                    _packageid = value;
-                    RaisePropertyChanged("PackageID");
+                    _boxid = value;
+                    RaisePropertyChanged("BoxID");
                 }
             }
         }
@@ -52,12 +52,12 @@ namespace UserInterface.ViewModel
         }
         public string ID
         {
-            get { return _packageid.ID;  }
+            get { return _boxid.ID;  }
             set
             {
-                if( _packageid.ID != value )
+                if( _boxid.ID != value )
                 {
-                    _packageid.ID = value;
+                    _boxid.ID = value;
                     RaisePropertyChanged("ID");
                 }
             }
@@ -65,12 +65,12 @@ namespace UserInterface.ViewModel
 
         public string SKUID
         {
-            get { return _packageid.SKU_ID; }
+            get { return _boxid.SKU_ID; }
             set
             {
-                if(_packageid.SKU_ID != value)
+                if(_boxid.SKU_ID != value)
                 {
-                    _packageid.SKU_ID = value;
+                    _boxid.SKU_ID = value;
                     RaisePropertyChanged("SKUID");
                 }
             }
@@ -78,12 +78,12 @@ namespace UserInterface.ViewModel
 
         public string Batch
         {
-            get { return _packageid.Batch; }
+            get { return _boxid.Batch; }
             set
             {
-                if (_packageid.Batch != value)
+                if (_boxid.Batch != value)
                 {
-                    _packageid.Batch = value;
+                    _boxid.Batch = value;
                     RaisePropertyChanged("Batch");
                 }
             }
@@ -142,9 +142,9 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region initialization
-        public PackageIDViewModel()
+        public BoxIDViewModel()
         {
-            _packageid = new Package_ID();
+            _boxid = new Box_ID();
             _SKUIDs = new List<string>();
             Validator = new PropertyValidator();
             ValidationEnabled = false;
@@ -169,7 +169,7 @@ namespace UserInterface.ViewModel
         #region validation
         public string Error
         {
-            get { return (PackageID as IDataErrorInfo).Error; }
+            get { return (BoxID as IDataErrorInfo).Error; }
         }
 
         public string this[string propertyName]
@@ -184,8 +184,8 @@ namespace UserInterface.ViewModel
                         switch (propertyName)
                         {
                             case "ID":
-                                if(AddEnabled && _dbservicewms.CountPackageIDs(ID) != 0 || ID.Length == 0)
-                                    validationResult = ResourceReader.GetString("ERR_PACKAGEID_EXISTS");
+                                if(AddEnabled && _dbservicewms.CountBoxIDs(ID) != 0 || ID.Length == 0)
+                                    validationResult = ResourceReader.GetString("ERR_BOXID_EXISTS");
                                 break;
                             case "SKUID":
                                 if (_dbservicewms.FindSKUID(SKUID) == null || SKUID == null || SKUID.Length == 0)

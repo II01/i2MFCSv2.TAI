@@ -41,12 +41,13 @@ namespace UserInterface.Services
     [TypeConverter(typeof(LocalizedEnumConverter))]
     public enum EnumWMSOrderStatus : int
     {
-        Waiting = 0,
-        Active = 1,
-        OnTargetPart = 2,
-        OnTargetAll = 3,
-        Cancel = 4,
-        Finished = 5
+        Inactive = 0,
+        Waiting = 1,
+        Active = 2,
+        OnTargetPart = 3,
+        OnTargetAll = 4,
+        Cancel = 5,
+        Finished = 6
     }
     public enum EnumCommandWMSStatus : int
     {
@@ -148,4 +149,16 @@ namespace UserInterface.Services
 
     [TypeConverter(typeof(LocalizedEnumConverter))]
     public enum EnumUserAccessLevel { Operator = 0, SuperUser, Admin };
+
+    [TypeConverter(typeof(LocalizedEnumConverter))]
+    public enum EnumOrderOperation : int
+    {
+        None = 0,
+        StoreTray = 1,
+        MoveTray = 2,
+        DropBox = 3,
+        PickBox = 4,
+        RetrieveTray = 5,
+        Confirm = 6
+    }
 }

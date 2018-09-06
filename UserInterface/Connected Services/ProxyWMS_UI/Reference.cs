@@ -23,10 +23,16 @@ namespace UserInterface.ProxyWMS_UI {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Box_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime LastChangeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.CommandCommandOperation OperationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> Order_IDField;
@@ -54,6 +60,19 @@ namespace UserInterface.ProxyWMS_UI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Box_ID {
+            get {
+                return this.Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Box_IDField, value) != true)) {
+                    this.Box_IDField = value;
+                    this.RaisePropertyChanged("Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int ID {
             get {
                 return this.IDField;
@@ -75,6 +94,19 @@ namespace UserInterface.ProxyWMS_UI {
                 if ((this.LastChangeField.Equals(value) != true)) {
                     this.LastChangeField = value;
                     this.RaisePropertyChanged("LastChange");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.CommandCommandOperation Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
                 }
             }
         }
@@ -155,6 +187,32 @@ namespace UserInterface.ProxyWMS_UI {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Command.CommandOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    public enum CommandCommandOperation : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        StoreTray = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DropBox = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MoveTray = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PickBox = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RetrieveTray = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Confirm = 6,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Command.CommandStatus", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
     public enum CommandCommandStatus : int {
         
@@ -181,6 +239,9 @@ namespace UserInterface.ProxyWMS_UI {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BoxesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DestinationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -188,6 +249,9 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.OrderOrderOperation OperationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int OrderIDField;
@@ -208,16 +272,19 @@ namespace UserInterface.ProxyWMS_UI {
         private double SKU_QtyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int StatusField;
+        private string SourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SubOrderERPIDField;
+        private int StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int SubOrderIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SubOrderNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TU_IDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -226,6 +293,19 @@ namespace UserInterface.ProxyWMS_UI {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Boxes {
+            get {
+                return this.BoxesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BoxesField, value) != true)) {
+                    this.BoxesField = value;
+                    this.RaisePropertyChanged("Boxes");
+                }
             }
         }
         
@@ -264,6 +344,19 @@ namespace UserInterface.ProxyWMS_UI {
                 if ((this.IDField.Equals(value) != true)) {
                     this.IDField = value;
                     this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.OrderOrderOperation Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
                 }
             }
         }
@@ -347,6 +440,19 @@ namespace UserInterface.ProxyWMS_UI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Source {
+            get {
+                return this.SourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
+                    this.SourceField = value;
+                    this.RaisePropertyChanged("Source");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Status {
             get {
                 return this.StatusField;
@@ -355,19 +461,6 @@ namespace UserInterface.ProxyWMS_UI {
                 if ((this.StatusField.Equals(value) != true)) {
                     this.StatusField = value;
                     this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SubOrderERPID {
-            get {
-                return this.SubOrderERPIDField;
-            }
-            set {
-                if ((this.SubOrderERPIDField.Equals(value) != true)) {
-                    this.SubOrderERPIDField = value;
-                    this.RaisePropertyChanged("SubOrderERPID");
                 }
             }
         }
@@ -398,6 +491,19 @@ namespace UserInterface.ProxyWMS_UI {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TU_ID {
+            get {
+                return this.TU_IDField;
+            }
+            set {
+                if ((this.TU_IDField.Equals(value) != true)) {
+                    this.TU_IDField = value;
+                    this.RaisePropertyChanged("TU_ID");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -406,6 +512,32 @@ namespace UserInterface.ProxyWMS_UI {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order.OrderOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    public enum OrderOrderOperation : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        StoreTray = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        DropBox = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MoveTray = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PickBox = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        RetrieveTray = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Confirm = 6,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -594,6 +726,12 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/UpdatePlace", ReplyAction="http://tempuri.org/IWMSToUI/UpdatePlaceResponse")]
         System.Threading.Tasks.Task UpdatePlaceAsync(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/SuggestTUID", ReplyAction="http://tempuri.org/IWMSToUI/SuggestTUIDResponse")]
+        int SuggestTUID(string[] tuids);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/SuggestTUID", ReplyAction="http://tempuri.org/IWMSToUI/SuggestTUIDResponse")]
+        System.Threading.Tasks.Task<int> SuggestTUIDAsync(string[] tuids);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -677,6 +815,14 @@ namespace UserInterface.ProxyWMS_UI {
         
         public System.Threading.Tasks.Task UpdatePlaceAsync(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user) {
             return base.Channel.UpdatePlaceAsync(diffs, user);
+        }
+        
+        public int SuggestTUID(string[] tuids) {
+            return base.Channel.SuggestTUID(tuids);
+        }
+        
+        public System.Threading.Tasks.Task<int> SuggestTUIDAsync(string[] tuids) {
+            return base.Channel.SuggestTUIDAsync(tuids);
         }
     }
 }

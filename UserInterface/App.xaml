@@ -215,11 +215,26 @@
         <DataTemplate DataType="{x:Type vm:UserViewModel}">
             <views:UserView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:PackageIDsViewModel}">
-            <views:PackageIDsView />
+        <DataTemplate DataType="{x:Type vm:BoxIDsViewModel}">
+            <views:BoxIDsView />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:PackageIDViewModel}">
-            <views:PackageIDView />
+        <DataTemplate DataType="{x:Type vm:BoxIDViewModel}">
+            <views:BoxIDView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StationsViewModel}">
+            <views:StationsView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StationStoreTrayViewModel}">
+            <views:StationStoreTrayView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StationRemoveTrayViewModel}">
+            <views:StationRemoveTrayView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StationDropBoxViewModel}">
+            <views:StationDropBoxView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StationPickBoxViewModel}">
+            <views:StationPickBoxView />
         </DataTemplate>
 
         <!-- converters -->

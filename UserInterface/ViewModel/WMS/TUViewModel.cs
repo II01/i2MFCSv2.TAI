@@ -47,7 +47,7 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-        public string SKUID
+/*        public string SKUID
         {
             get { return _data.SKU_ID;  }
             set
@@ -59,7 +59,7 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-
+*/
         public int TUID
         {
             get { return _data.TU_ID; }
@@ -86,7 +86,7 @@ namespace UserInterface.ViewModel
             }
         }
 
-        public string Batch
+/*        public string Batch
         {
             get { return _data.Batch; }
             set
@@ -98,6 +98,7 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+*/
         public DateTime ProdDate
         {
             get { return _data.ProdDate; }
@@ -217,8 +218,8 @@ namespace UserInterface.ViewModel
                         switch (propertyName)
                         {
                             case "SKUID":
-                                if (_dbservicewms.FindSKUID(SKUID) == null)
-                                    validationResult = ResourceReader.GetString("ERR_SKUID");
+//                                if (_dbservicewms.FindSKUID(SKUID) == null)
+//                                    validationResult = ResourceReader.GetString("ERR_SKUID");
                                 break;
                             case "Qty":
                                 if (Qty <= 0 )

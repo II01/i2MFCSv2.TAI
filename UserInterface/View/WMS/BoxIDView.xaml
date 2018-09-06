@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="UserInterface.View.PackageIDView"
+﻿<UserControl x:Class="UserInterface.View.BoxIDView"
         ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -22,7 +22,7 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <TextBlock Text="{Resx PackageID}" Grid.Row="0" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx BoxID}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx SKUID}" Grid.Row="1" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
         <TextBlock Text="{Resx Batch}" Grid.Row="2" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
         
