@@ -56,6 +56,7 @@ namespace UserInterface.ViewModel
             {
                 base.Initialize(warehouse);
                 OperationName = "Store tray";
+                TUID = DBServiceWMS.GetTUIDOnPlaceID(DBServiceWMS.GetParameter("Place.IOStation")).ID;
             }
             catch (Exception e)
             {
@@ -83,8 +84,12 @@ namespace UserInterface.ViewModel
                             case "TUIDstr":
                                 if (TUID == 0)
                                     validationResult = ResourceReader.GetString("ERR_TUID");
-                                else if (DBServiceWMS.FindPlaceByTUID(TUID) != null)
-                                    validationResult = ResourceReader.GetString("ERR_TUIDEXISTS");
+                                else
+                                {
+                                    var place = DBServiceWMS.FindPlaceByTUID(TUID);
+                                    if (place != null && place.PlaceID != DBServiceWMS.GetParameter("Place.IOStation") )
+                                        validationResult = ResourceReader.GetString("ERR_TUIDEXISTS");
+                                }
                                 break;
                         }
                     }

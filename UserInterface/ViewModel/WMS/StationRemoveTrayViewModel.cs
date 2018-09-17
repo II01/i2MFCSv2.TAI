@@ -8,6 +8,9 @@ using Warehouse.Model;
 using System.Diagnostics;
 using UserInterface.DataServiceWMS;
 using System.Data.SqlTypes;
+using GalaSoft.MvvmLight.Messaging;
+using UserInterface.Messages;
+using System.Windows.Input;
 
 namespace UserInterface.ViewModel
 {
@@ -16,18 +19,22 @@ namespace UserInterface.ViewModel
         #region members
         private string _tuidstr;
         private int _tuid;
+        private string _placeid;
         #endregion
 
         #region properties
         public string TUIDstr
         {
-            get { return _tuid != 0 ? _tuid.ToString() : ""; }
+            get { return _tuidstr; }
             set
             {
                 if (_tuidstr != value)
                 {
                     _tuidstr = value;
-                    TUID = Int32.TryParse(_tuidstr, out int res) ? res : 0;
+                    int idx = _tuidstr.IndexOf('.');
+                    if (idx == -1)
+                        idx = _tuidstr.Length;
+                    TUID = Int32.TryParse(_tuidstr.Substring(0, idx), out int res) ? res : 0;
                     RaisePropertyChanged("TUIDstr");
                 }
             }
@@ -41,6 +48,18 @@ namespace UserInterface.ViewModel
                 {
                     _tuid = value;
                     RaisePropertyChanged("TUID");
+                }
+            }
+        }
+        public string PlaceID
+        {
+            get { return _placeid; }
+            set
+            {
+                if (_placeid != value)
+                {
+                    _placeid = value;
+                    RaisePropertyChanged("PlaceID");
                 }
             }
         }
@@ -81,8 +100,18 @@ namespace UserInterface.ViewModel
                         switch (propertyName)
                         {
                             case "TUIDstr":
-                                if (TUID == 0 || DBServiceWMS.FindPlaceByTUID(TUID) == null)
+                                PlaceID = "";
+                                if (TUID == 0)
                                     validationResult = ResourceReader.GetString("ERR_TUID");
+                                else 
+                                {
+                                    var place = DBServiceWMS.FindPlaceByTUID(TUID);
+                                    if (place == null || place.PlaceID == "W:out")
+                                        validationResult = ResourceReader.GetString("ERR_TUID");
+                                    else if (!DBServiceWMS.IsTUIDEmpty(place.TU_ID))
+                                        validationResult = ResourceReader.GetString("ERR_TUIDFULL");
+                                    PlaceID = place?.PlaceID;
+                                }
                                 break;
                         }
                     }

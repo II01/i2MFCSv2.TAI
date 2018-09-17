@@ -236,6 +236,9 @@
         <DataTemplate DataType="{x:Type vm:StationPickBoxViewModel}">
             <views:StationPickBoxView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StationActionViewModel}">
+            <views:StationActionView />
+        </DataTemplate>
 
         <!-- converters -->
         <views:AddMultConverter x:Key="AddMultConverter" />

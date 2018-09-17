@@ -15,52 +15,53 @@
         d:DesignWidth="1280"
         d:DesignHeight="720">
 
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,-10,0">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,-173,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="173"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" Text="{Resx Boxes}"
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" Text="{Resx Boxes}"
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Margin="30,0,0,0"  Height="100"
+                   VerticalAlignment="Top" FontWeight="Medium"/>
+        <TextBox   Name ="tbBoxes" 
+                   Grid.Row="0" Grid.Column="1" Margin="20,0,0,0"
                    TextWrapping="Wrap" AcceptsReturn="True" 
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"
-                   Text="{Binding Boxes, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
-            <TextBox.Style>
-                <Style>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding SetFocus}" Value="True">
-                            <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Mode=Self}}"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
-        </TextBox>
-        <Button Grid.Row="1" Grid.Column="1" Margin="10,0,0,10" Content="{Resx SuggestTU}" Command="{Binding SuggestTU}" Visibility="Visible" HorizontalAlignment="Right"/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Margin="10,0,0,0" Text="{Resx TUID}"
+                   VerticalAlignment="Stretch" FontWeight="Medium"
+                   Text="{Binding Boxes, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,0" Text="{Resx TUID}"
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Margin="30,0,0,0" 
+                   VerticalAlignment="Top" FontWeight="Medium"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="20,0,0,0" 
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"
-                   Text="{Binding TUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
-        </TextBox>
-        <TextBlock Grid.Row="3" Grid.Column="0" Margin="10,0,0,0" Text="{Resx PlaceID}"
+                   VerticalAlignment="Top" FontWeight="Medium"
+                   Text="{Binding TUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,0,0,0" Text="{Resx PlaceID}"
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="30,0,0,0" 
+                   VerticalAlignment="Top" FontWeight="Medium"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="20,0,0,0" 
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"
-                   Text="{Binding PlaceID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
-        </TextBox>
+                   VerticalAlignment="Top" FontWeight="Medium"
+                   Text="{Binding PlaceID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+        <Grid Grid.Column="3" Grid.Row="0" Grid.RowSpan="8" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="155"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="1" BorderBrush="SkyBlue" BorderThickness="3" CornerRadius="3" Background="SkyBlue">
+                <Button Margin="0,0,7,0" Height="60" Content="{Resx SuggestTU}" Command="{Binding SuggestTU}" Visibility="Visible" HorizontalAlignment="Right"/>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

@@ -12,7 +12,7 @@
   <CommunicatorList>
 
     <BasicCommunicator Name="PLC_Crane" PLC_ID="201" MFCS_ID="1" xsi:type="Communicator">
-      <RefreshTimeSeconds>5</RefreshTimeSeconds>
+      <RefreshTimeSeconds>2</RefreshTimeSeconds>
       <SendTimeOutSeconds>40</SendTimeOutSeconds>
       <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
       <Version>CRANE</Version>
@@ -22,7 +22,7 @@
     </BasicCommunicator>
 
     <BasicCommunicator Name="PLC_Conveyor" PLC_ID="101" MFCS_ID="1" xsi:type="Communicator" >
-      <RefreshTimeSeconds>5</RefreshTimeSeconds>
+      <RefreshTimeSeconds>2</RefreshTimeSeconds>
       <SendTimeOutSeconds>40</SendTimeOutSeconds>
       <RcvTimeOutSeconds>40</RcvTimeOutSeconds>
       <Version>TRANSPORT</Version>

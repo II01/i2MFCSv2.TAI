@@ -401,6 +401,8 @@ namespace UserInterface.ViewModel
                     l.Initialize(_warehouse);
                 if ( id != null)
                     SelectedBoxID = BoxIDList.FirstOrDefault(p => p.ID == id);
+                if (SelectedBoxID == null)
+                    SelectedBoxID = BoxIDList.FirstOrDefault();
             }
             catch (Exception e)
             {

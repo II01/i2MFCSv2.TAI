@@ -1233,7 +1233,7 @@ namespace Warehouse.DataService
                 using (var dc = new MFCSEntities())
                 {
                     var l = from p in dc.Places
-                            select new PlaceMaterialID { ID = p.Material, Location = p.Place1, Size = p.MaterialID.Size, Weight = p.MaterialID.Weight };
+                            select new PlaceMaterialID { ID = p.Material, Location = p.Place1, Size = p.MaterialID.Weight/10000, Weight = p.MaterialID.Weight%10000 };
                     return await l.ToListAsync();
                 }
             }
@@ -1479,22 +1479,23 @@ namespace Warehouse.DataService
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
-        public MaterialID CreateOrUpdateMaterialID(int barcode, int type, int weight)
+        public MaterialID CreateOrUpdateMaterialID(int barcode, int size, int? weight)
         {
             try
             {
                 using (var dc = new MFCSEntities())
                 {
                     MaterialID mid = dc.MaterialIDs.Find(barcode);
-                    if (mid == null)
+                    if (mid == null && weight.HasValue)
                     {
-                        mid = new MaterialID { ID = barcode, Size = type, Weight = weight };
+                        mid = new MaterialID { ID = barcode, Size = 0, Weight = size*10000+weight.Value };
                         dc.MaterialIDs.Add(mid);
                     }
                     else
                     {
-                        mid.Size = type;
-                        mid.Weight = weight;
+                        mid.Size = 0;
+                        int w = weight == null ? mid.Weight % 10000 : weight.Value;
+                        mid.Weight = size*10000+w;
                     }
                     dc.SaveChanges();
                     return mid;

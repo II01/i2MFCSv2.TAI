@@ -34,6 +34,7 @@ namespace UserInterface.DataServiceWMS
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from p in dc.SKU_ID
+                            where p.ID != "-"
                             select p;
                     return await l.ToListAsync();
                 }
@@ -105,6 +106,9 @@ namespace UserInterface.DataServiceWMS
                         l.Unit = SKUID.Unit;
                         l.Weight = SKUID.Weight;
                         l.FrequencyClass = SKUID.FrequencyClass;
+                        l.Length = SKUID.Length;
+                        l.Width = SKUID.Width;
+                        l.Height = SKUID.Height;
                         dc.SaveChanges();
                     }
                 }
@@ -122,6 +126,7 @@ namespace UserInterface.DataServiceWMS
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from p in dc.Box_ID
+                            where p.ID != "-"
                             select p;
                     return await l.ToListAsync();
                 }
@@ -356,6 +361,34 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public async Task<List<TUSKUID>> GetTUSKUIDsAsync(int tuid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var l = from t in dc.TUs
+                            join b in dc.Box_ID on t.Box_ID equals b.ID
+                            where t.TU_ID == tuid
+                            orderby t.Box_ID
+                            select new TUSKUID
+                            {
+                                BoxID = t.Box_ID,
+                                SKUID = t.Box_ID1.SKU_ID,
+                                Batch = t.Box_ID1.Batch,
+                                Qty = t.Qty,
+                                ProdDate = t.ProdDate,
+                                ExpDate = t.ExpDate,
+                                Description = t.Box_ID1.SKU_ID1.Description
+                            };
+                    return await l.ToListAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
         public List<TUs> GetTUs(string skuid)
         {
             try
@@ -386,17 +419,19 @@ namespace UserInterface.DataServiceWMS
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from t in dc.TUs
-//                            where t.SKU_ID == skuid
+                            join b in dc.Box_ID on t.Box_ID equals b.ID
+                            where b.SKU_ID == skuid
                             join p in dc.Places on t.TU_ID equals p.TU_ID
-                            where p.PlaceID != "W:out" && !p.PlaceID.StartsWith("W:32") && !p.PlaceID.StartsWith("T")
+                            where p.PlaceID != "W:out"
                             join pid in dc.PlaceIDs on p.PlaceID equals pid.ID
                             join tid in dc.TU_ID on t.TU_ID equals tid.ID
-//                            orderby new { t.Batch, t.SKU_ID }
+                            orderby t.Box_ID
                             select new TUPlaceID
                             {
                                 TUID = t.TU_ID,
-//                                SKUID = t.SKU_ID,
-//                                Batch = t.Batch,
+                                BoxID = t.Box_ID,
+                                SKUID = b.SKU_ID,
+                                Batch = b.Batch,
                                 Qty = t.Qty,
                                 ProdDate = t.ProdDate,
                                 ExpDate = t.ExpDate,
@@ -565,6 +600,22 @@ namespace UserInterface.DataServiceWMS
                 throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
             }
         }
+        public void DeleteBox(string boxid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var ldel = dc.TUs.Where(p => p.Box_ID == boxid).ToList();
+                    dc.TUs.RemoveRange(ldel);
+                    dc.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
 
         public void AddTUs(List<TUs> tus)
         {
@@ -582,14 +633,14 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public List<Orders> GetOrders(int statusLessOrEqual)
+        public List<Orders> GetOrders(int statusMoreOrEqual, int statusLessOrEqual)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
                     var l = (from c in dc.Orders
-                             where c.Status <= statusLessOrEqual
+                             where c.Status >= statusMoreOrEqual && c.Status <= statusLessOrEqual
                              orderby c.ERP_ID, c.OrderID descending, c.SubOrderID ascending
                              select c).Take(5000);
 
@@ -633,7 +684,7 @@ namespace UserInterface.DataServiceWMS
                 using (var dc = new EntitiesWMS())
                 {
                     var l = from c in dc.Orders
-                            where c.Status <= statusLessOrEqual || (c.ReleaseTime >= timeFrom && c.ReleaseTime <= timeTo)
+                            where c.Status <= statusLessOrEqual || (c.ReleaseTime >= timeFrom && c.ReleaseTime <= timeTo && timeFrom <= timeTo)
                             orderby c.ERP_ID, c.OrderID descending, c.SubOrderID ascending
                             group c by new {ERPID = c.ERP_ID, OrderID = c.OrderID} into grpO
                             select new OrderReduction
@@ -1518,7 +1569,7 @@ namespace UserInterface.DataServiceWMS
                     var itemsw = await (from pw in dcw.Places
                                   select new PlaceDiff{ TUID = pw.TU_ID, PlaceWMS = pw.PlaceID, DimensionWMS = pw.TU_ID1.DimensionClass, TimeWMS = pw.Time}).ToListAsync();
                     var itemsm = await (from pm in dcm.Places
-                                  select new PlaceDiff{ TUID = pm.Material, PlaceMFCS = pm.Place1, DimensionMFCS = pm.MaterialID.Weight, TimeMFCS = pm.Time}).ToListAsync();
+                                  select new PlaceDiff{ TUID = pm.Material, PlaceMFCS = pm.Place1, DimensionMFCS = pm.MaterialID.Weight/10000, TimeMFCS = pm.Time}).ToListAsync();
                     var itemsu = itemsw.Union(itemsm);
                     var items = itemsu.Select(p => p.TUID).Distinct();
 
@@ -1557,11 +1608,11 @@ namespace UserInterface.DataServiceWMS
                         var mid = dcm.MaterialIDs.FirstOrDefault(p => p.ID == l.TUID);
                         if (mid == null)
                         {
-                            dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 0, Weight = l.DimensionWMS.Value });
+                            dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 0, Weight = 10000 * l.DimensionWMS.Value });
                             AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add MaterialID: |{l.TUID:d9}|");
                         }
                         else
-                            mid.Weight = l.DimensionWMS.Value;
+                            mid.Weight = 10000*l.DimensionWMS.Value + mid.Weight % 10000;
                         var place = dcm.Places.FirstOrDefault(pp => pp.Material == l.TUID);
                         if (place != null)
                         {
@@ -1718,6 +1769,7 @@ namespace UserInterface.DataServiceWMS
                         SKU_Batch = "-",
                         Destination = dcw.Parameters.Find("Place.IOStation").Value,
                         Operation = (int)EnumOrderOperation.StoreTray,
+                        Status = (int)EnumWMSOrderStatus.Waiting,
                         ReleaseTime = DateTime.Now
                     });
                     dcw.SaveChanges();
@@ -1747,6 +1799,7 @@ namespace UserInterface.DataServiceWMS
                         SKU_Batch = "-",
                         Destination = dcw.Parameters.Find("Place.IOStation").Value,
                         Operation = (int)EnumOrderOperation.RetrieveTray,
+                        Status = (int)EnumWMSOrderStatus.Waiting,
                         ReleaseTime = DateTime.Now
                     });
                     dcw.SaveChanges();
@@ -1779,6 +1832,7 @@ namespace UserInterface.DataServiceWMS
                             SKU_Batch = dcw.Box_ID.Find(b).Batch,
                             Destination = dcw.Parameters.Find("Place.IOStation").Value,
                             Operation = (int)EnumOrderOperation.DropBox,
+                            Status = (int)EnumWMSOrderStatus.Waiting,
                             ReleaseTime = DateTime.Now
                         });
                     }
@@ -1812,6 +1866,7 @@ namespace UserInterface.DataServiceWMS
                             SKU_Batch = dcw.Box_ID.Find(b).Batch,
                             Destination = dcw.Parameters.Find("Place.IOStation").Value,
                             Operation = (int)EnumOrderOperation.PickBox,
+                            Status = (int)EnumWMSOrderStatus.Waiting,
                             ReleaseTime = DateTime.Now
                         });
                     }
@@ -1867,6 +1922,83 @@ namespace UserInterface.DataServiceWMS
                 {
                     var box = dc.Box_ID.Find(boxid);
                     return box;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public bool IsTUIDEmpty(int tuid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    return !dc.TUs.Any(p => p.TU_ID == tuid);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public Orders GetActiveOrder()
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    return dc.Orders.FirstOrDefault(p => p.Status == (int)EnumWMSOrderStatus.Active);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public bool CanStoreTray(string placeid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var pl = dc.Places.FirstOrDefault(p => p.PlaceID == placeid);
+                    if (pl == null)
+                        return false;
+                    return !dc.Orders.Any(p => p.Status == (int)EnumWMSOrderStatus.Active && p.TU_ID == pl.TU_ID);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+
+        public string GetParameter(string par)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    return dc.Parameters.Find(par).Value;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public TU_ID GetTUIDOnPlaceID(string placeid)
+        {
+            try
+            {
+                using (var dc = new EntitiesWMS())
+                {
+                    var place = dc.Places.FirstOrDefault(p => p.PlaceID == placeid);
+                    return place != null ? place.TU_ID1 : null;
                 }
             }
             catch (Exception e)

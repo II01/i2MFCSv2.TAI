@@ -17,21 +17,21 @@
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Margin="10,0,0,0" Text="{Resx TUID}"
+        <TextBlock Grid.Column="0" Margin="0,0,0,0" Text="{Resx TUID}"
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"/>
-        <TextBox    Grid.Column="1" Margin="30,0,0,0" 
-                    FontSize="{StaticResource LargeFontSize}" 
-                    VerticalAlignment="Center" FontWeight="Medium"
+                   VerticalAlignment="Top" FontWeight="Medium"/>
+        <TextBox    Grid.Column="1" Margin="20,0,0,0" 
+                    FontSize="{StaticResource LargeFontSize}" IsEnabled="False"
+                    VerticalAlignment="Top" FontWeight="Medium"
                     Text="{Binding TUIDstr, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
-            <TextBox.Style>
+<!--            <TextBox.Style>
                 <Style>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding SetFocus}" Value="True">
@@ -39,7 +39,7 @@
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
-            </TextBox.Style>
+            </TextBox.Style> -->
         </TextBox>
     </Grid>
 </UserControl>

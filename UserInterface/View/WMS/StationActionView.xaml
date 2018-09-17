@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="UserInterface.View.StationPickBoxView"
+﻿<UserControl x:Class="UserInterface.View.StationActionView"
         ResxExtension.DefaultResxName="UserInterface.Properties.Resources" Language="{UICulture}"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -27,7 +27,7 @@
         <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" Text="{Resx Boxes}"
                    FontSize="{StaticResource LargeFontSize}" 
                    VerticalAlignment="Top" FontWeight="Medium"/>
-        <TextBox   Name="tbBoxes"
+        <TextBox   Name="tbBoxes" 
                    Grid.Row="0" Grid.Column="1" Margin="20,0,0,0"  Height="100"
                    TextWrapping="Wrap" AcceptsReturn="True" 
                    FontSize="{StaticResource LargeFontSize}" 

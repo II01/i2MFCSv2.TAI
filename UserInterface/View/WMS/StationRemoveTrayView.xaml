@@ -17,29 +17,31 @@
 
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="90"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="0" Margin="10,0,0,0" Text="{Resx TUID}"
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,0" Text="{Resx TUID}"
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"/>
-        <TextBox Grid.Column="1" Margin="30,0,0,0" 
+                   VerticalAlignment="Top" FontWeight="Medium"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Margin="20,0,0,0" 
+                 Name="tbTUID"
                    FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Center" FontWeight="Medium"
+                   VerticalAlignment="Top" FontWeight="Medium"
                    Text="{Binding TUIDstr, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
-            <TextBox.Style>
-                <Style>
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding SetFocus}" Value="True">
-                            <Setter Property="FocusManager.FocusedElement" Value="{Binding RelativeSource={RelativeSource Mode=Self}}"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBox.Style>
         </TextBox>
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,0" Text="{Resx PlaceID}"
+                FontSize="{StaticResource LargeFontSize}" 
+                VerticalAlignment="Top" FontWeight="Medium"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Margin="20,0,0,0" 
+                 IsReadOnly="True"
+                FontSize="{StaticResource LargeFontSize}" 
+                VerticalAlignment="Top" FontWeight="Medium"
+                Text="{Binding PlaceID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

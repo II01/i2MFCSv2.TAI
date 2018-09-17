@@ -60,6 +60,9 @@ namespace UserInterface.ViewModel
                 if (_boxes != value)
                 {
                     _boxes = value;
+                    Regex regex = new Regex(@"[0-9]+[0-9\s]*");
+                    if (!regex.IsMatch(_boxes))
+                        _boxes = "";
                     RaisePropertyChanged("Boxes");
                 }
             }
@@ -100,7 +103,7 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region commands
-        private async Task ExecuteSuggestTU()
+        public async Task ExecuteSuggestTU()
         {
             try
             {
@@ -118,7 +121,7 @@ namespace UserInterface.ViewModel
             }
         }
 
-        private bool CanExecuteSuggestTU()
+        public bool CanExecuteSuggestTU()
         {
             try
             {
@@ -153,25 +156,30 @@ namespace UserInterface.ViewModel
                                     var p = DBServiceWMS.FindPlaceByTUID(TUID);
                                     if (p == null)
                                         validationResult = ResourceReader.GetString("ERR_TUID");
-                                    else if (!p.PlaceID.StartsWith("W:1") && !p.PlaceID.StartsWith("W:2"))
+                                    else if (p.PlaceID.StartsWith("W:out"))
                                         validationResult = ResourceReader.GetString("ERR_TUID");
+                                    var place = DBServiceWMS.GetPlaceWithTUID(TUID);
+                                    PlaceID = place != null ? place.PlaceID : "-";
                                 }
                                 break;
                             case "Boxes":
-                                string [] boxArray = Regex.Split(Boxes, @"[,|;\s\n]+");
-                                _boxList.Clear();
-                                foreach (var b in boxArray)
+                                if( Boxes != null)
                                 {
-                                    if (b != "")
+                                    string[] boxArray = Regex.Split(Boxes, @"[,|;\s\n]+");
+                                    _boxList.Clear();
+                                    foreach (var b in boxArray)
                                     {
-                                        if (DBServiceWMS.FindBoxByBoxID(b) == null)
-                                            validationResult = ResourceReader.GetString("ERR_NOBOXID");
-                                        else if (DBServiceWMS.FindTUByBoxID(b) != null)
-                                            validationResult = ResourceReader.GetString("ERR_TUBOXEXISTS");
-                                        else if (_boxList.Contains(b))
-                                            validationResult = ResourceReader.GetString("ERR_TUBOXEXISTS");
-                                        else
-                                            _boxList.Add(b);
+                                        if (b != "")
+                                        {
+                                            if (DBServiceWMS.FindBoxByBoxID(b) == null)
+                                                validationResult = ResourceReader.GetString("ERR_NOBOXID");
+                                            else if (DBServiceWMS.FindTUByBoxID(b) != null)
+                                                validationResult = ResourceReader.GetString("ERR_TUBOXEXISTS");
+                                            else if (_boxList.Contains(b))
+                                                validationResult = ResourceReader.GetString("ERR_TUBOXEXISTS");
+                                            else
+                                                _boxList.Add(b);
+                                        }
                                     }
                                 }
                                 if (validationResult != String.Empty)

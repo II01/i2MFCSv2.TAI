@@ -15,6 +15,7 @@ namespace UserInterface.ViewModel
         #region members
         private TUs _data;
         private PlaceIDs _dataPlaceID;
+        private Box_ID _dataBoxID;
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
@@ -47,19 +48,19 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-/*        public string SKUID
+        public Box_ID DataBoxID
         {
-            get { return _data.SKU_ID;  }
+            get { return _dataBoxID; }
             set
             {
-                if( _data.SKU_ID != value )
+                if (_dataBoxID != value)
                 {
-                    _data.SKU_ID = value;
-                    RaisePropertyChanged("SKUID");
+                    _dataBoxID = value;
+                    RaisePropertyChanged("DataBoxID");
                 }
             }
         }
-*/
+
         public int TUID
         {
             get { return _data.TU_ID; }
@@ -86,19 +87,6 @@ namespace UserInterface.ViewModel
             }
         }
 
-/*        public string Batch
-        {
-            get { return _data.Batch; }
-            set
-            {
-                if (_data.Batch != value)
-                {
-                    _data.Batch = value;
-                    RaisePropertyChanged("Batch");
-                }
-            }
-        }
-*/
         public DateTime ProdDate
         {
             get { return _data.ProdDate; }
@@ -123,6 +111,18 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public string BoxID
+        {
+            get { return _data.Box_ID; }
+            set
+            {
+                if (_data.Box_ID != value)
+                {
+                    _data.Box_ID = value;
+                    RaisePropertyChanged("BoxID");
+                }
+            }
+        }
         public string Location
         {
             get { return _dataPlaceID.ID; }
@@ -135,6 +135,20 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public string Batch
+        {
+            get { return _dataBoxID.Batch; }
+            set
+            {
+                if (_dataBoxID.Batch != value)
+                {
+                    _dataBoxID.Batch = value;
+                    RaisePropertyChanged("Batch");
+                }
+            }
+        }
+
         public EnumBlockedWMS Status
         {
             get { return (EnumBlockedWMS)_dataPlaceID.Status; }
@@ -179,6 +193,7 @@ namespace UserInterface.ViewModel
         {
             _data = new TUs();
             _dataPlaceID = new PlaceIDs();
+            _dataBoxID = new Box_ID();
             _dbservicewms = new DBServiceWMS(null);
             Validator = new PropertyValidator();
             ValidationEnabled = false;
@@ -217,9 +232,9 @@ namespace UserInterface.ViewModel
                     {
                         switch (propertyName)
                         {
-                            case "SKUID":
-//                                if (_dbservicewms.FindSKUID(SKUID) == null)
-//                                    validationResult = ResourceReader.GetString("ERR_SKUID");
+                            case "BoxID":
+                                if (_dbservicewms.FindSKUID(BoxID) == null)
+                                    validationResult = ResourceReader.GetString("ERR_BOXID");
                                 break;
                             case "Qty":
                                 if (Qty <= 0 )

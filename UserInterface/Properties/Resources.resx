@@ -4392,7 +4392,7 @@
   <data name="Operation" xml:space="preserve">
     <value>Operation</value>
   </data>
-  <data name="EnumOrderOperation_Confirm" xml:space="preserve">
+  <data name="EnumOrderOperation_ConfirmFinish" xml:space="preserve">
     <value>Confirm</value>
   </data>
   <data name="EnumOrderOperation_DropBox" xml:space="preserve">
@@ -4433,5 +4433,50 @@
   </data>
   <data name="ERR_TUBOXNOEXISTS" xml:space="preserve">
     <value>Box ID does not exist in the warhouse</value>
+  </data>
+  <data name="EnumOrderOperation_ConfirmStore" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ERR_TUIDFULL" xml:space="preserve">
+    <value>Transport unit has boxes</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Activate Order</value>
+  </data>
+  <data name="ChangeHC" xml:space="preserve">
+    <value>Change Height</value>
+  </data>
+  <data name="CommandsOfOrder" xml:space="preserve">
+    <value>Commands of order</value>
+  </data>
+  <data name="DropBox" xml:space="preserve">
+    <value>Drop Box</value>
+  </data>
+  <data name="OrderDetails" xml:space="preserve">
+    <value>Order details</value>
+  </data>
+  <data name="PickBox" xml:space="preserve">
+    <value>Pick Box</value>
+  </data>
+  <data name="RemoveTray" xml:space="preserve">
+    <value>Remove TU</value>
+  </data>
+  <data name="StationTUID" xml:space="preserve">
+    <value>Station TUID</value>
+  </data>
+  <data name="StoreTray" xml:space="preserve">
+    <value>Store TU</value>
+  </data>
+  <data name="TUIDHeightClass" xml:space="preserve">
+    <value>Height class</value>
   </data>
 </root>

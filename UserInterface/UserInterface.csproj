@@ -226,6 +226,7 @@
     <Compile Include="ViewModel\WMS\HistoryReleaseOrdersViewModel.cs" />
     <Compile Include="ViewModel\WMS\BoxIDsViewModel.cs" />
     <Compile Include="ViewModel\WMS\BoxIDViewModel.cs" />
+    <Compile Include="ViewModel\WMS\StationActionViewModel.cs" />
     <Compile Include="ViewModel\WMS\StationPickBoxViewModel.cs" />
     <Compile Include="ViewModel\WMS\StationRemoveTrayViewModel.cs" />
     <Compile Include="ViewModel\WMS\StationDropBoxViewModel.cs" />
@@ -301,6 +302,9 @@
     </Compile>
     <Compile Include="View\WMS\BoxIDView.xaml.cs">
       <DependentUpon>BoxIDView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WMS\StationActionView.xaml.cs">
+      <DependentUpon>StationActionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\WMS\StationPickBoxView.xaml.cs">
       <DependentUpon>StationPickBoxView.xaml</DependentUpon>
@@ -515,6 +519,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\WMS\BoxIDView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WMS\StationActionView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

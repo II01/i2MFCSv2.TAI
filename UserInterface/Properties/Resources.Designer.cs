@@ -61,6 +61,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activate Order.
+        /// </summary>
+        public static string Activate {
+            get {
+                return ResourceManager.GetString("Activate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active.
         /// </summary>
         public static string Active {
@@ -9520,6 +9529,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Height.
+        /// </summary>
+        public static string ChangeHC {
+            get {
+                return ResourceManager.GetString("ChangeHC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Class.
         /// </summary>
         public static string Class {
@@ -9633,6 +9651,15 @@ namespace UserInterface.Properties {
         public static string Commands {
             get {
                 return ResourceManager.GetString("Commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commands of order.
+        /// </summary>
+        public static string CommandsOfOrder {
+            get {
+                return ResourceManager.GetString("CommandsOfOrder", resourceCulture);
             }
         }
         
@@ -9849,6 +9876,15 @@ namespace UserInterface.Properties {
         public static string Drive_ready {
             get {
                 return ResourceManager.GetString("Drive_ready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Drop Box.
+        /// </summary>
+        public static string DropBox {
+            get {
+                return ResourceManager.GetString("DropBox", resourceCulture);
             }
         }
         
@@ -10521,9 +10557,18 @@ namespace UserInterface.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Confirm.
         /// </summary>
-        public static string EnumOrderOperation_Confirm {
+        public static string EnumOrderOperation_ConfirmFinish {
             get {
-                return ResourceManager.GetString("EnumOrderOperation_Confirm", resourceCulture);
+                return ResourceManager.GetString("EnumOrderOperation_ConfirmFinish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string EnumOrderOperation_ConfirmStore {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_ConfirmStore", resourceCulture);
             }
         }
         
@@ -11365,6 +11410,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transport unit has boxes.
+        /// </summary>
+        public static string ERR_TUIDFULL {
+            get {
+                return ResourceManager.GetString("ERR_TUIDFULL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vehicle does not exist in warehouse.
         /// </summary>
         public static string ERR_UNIT {
@@ -11505,6 +11559,15 @@ namespace UserInterface.Properties {
         public static string From {
             get {
                 return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height.
+        /// </summary>
+        public static string Height {
+            get {
+                return ResourceManager.GetString("Height", resourceCulture);
             }
         }
         
@@ -11667,6 +11730,15 @@ namespace UserInterface.Properties {
         public static string LastChange {
             get {
                 return ResourceManager.GetString("LastChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Length.
+        /// </summary>
+        public static string Length {
+            get {
+                return ResourceManager.GetString("Length", resourceCulture);
             }
         }
         
@@ -11950,6 +12022,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order details.
+        /// </summary>
+        public static string OrderDetails {
+            get {
+                return ResourceManager.GetString("OrderDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Order ID.
         /// </summary>
         public static string OrderID {
@@ -12009,6 +12090,15 @@ namespace UserInterface.Properties {
         public static string Physical {
             get {
                 return ResourceManager.GetString("Physical", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick Box.
+        /// </summary>
+        public static string PickBox {
+            get {
+                return ResourceManager.GetString("PickBox", resourceCulture);
             }
         }
         
@@ -12346,6 +12436,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remove TU.
+        /// </summary>
+        public static string RemoveTray {
+            get {
+                return ResourceManager.GetString("RemoveTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reserved.
         /// </summary>
         public static string Reserved {
@@ -12598,6 +12697,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Station TUID.
+        /// </summary>
+        public static string StationTUID {
+            get {
+                return ResourceManager.GetString("StationTUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string Status {
@@ -12621,6 +12729,15 @@ namespace UserInterface.Properties {
         public static string Stop {
             get {
                 return ResourceManager.GetString("Stop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Store TU.
+        /// </summary>
+        public static string StoreTray {
+            get {
+                return ResourceManager.GetString("StoreTray", resourceCulture);
             }
         }
         
@@ -12859,6 +12976,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Height class.
+        /// </summary>
+        public static string TUIDHeightClass {
+            get {
+                return ResourceManager.GetString("TUIDHeightClass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Transport Units.
         /// </summary>
         public static string TUs {
@@ -12963,6 +13089,15 @@ namespace UserInterface.Properties {
         public static string Weight {
             get {
                 return ResourceManager.GetString("Weight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Width.
+        /// </summary>
+        public static string Width {
+            get {
+                return ResourceManager.GetString("Width", resourceCulture);
             }
         }
         

@@ -8,15 +8,15 @@ namespace UserInterface.View
     /// <summary>
     /// Description for AlarmOverviewView.
     /// </summary>
-    public partial class StationRemoveTrayView : UserControl
+    public partial class StationActionView : UserControl
 
     {
         /// <summary>
         /// Initializes a new instance of the AlarmOverviewView class.
         /// </summary>
-        private static readonly Regex regex = new Regex(@"[0-9]+");
+        private static readonly Regex regex = new Regex(@"[0-9\s]+");
 
-        public StationRemoveTrayView()
+        public StationActionView()
         {
             InitializeComponent();
             this.Loaded += ViewLoaded;
@@ -32,7 +32,7 @@ namespace UserInterface.View
 
         void ViewLoaded(object sender, RoutedEventArgs e)
         {
-            tbTUID.Focus();
+            tbBoxes.Focus();
         }
     }
 }

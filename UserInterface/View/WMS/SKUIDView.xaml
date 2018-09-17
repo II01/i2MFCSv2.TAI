@@ -27,23 +27,32 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{Resx ID}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Description}" Grid.Row="1" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx DefaultQty}" Grid.Row="2" Margin="0,0,0,10"/>
+<!--        <TextBlock Text="{Resx DefaultQty}" Grid.Row="2" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Unit}" Grid.Row="3" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Weight}" Grid.Row="4" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx FrequencyClass}" Grid.Row="5" Margin="0,0,0,10"/>
-        
+        <TextBlock Text="{Resx FrequencyClass}" Grid.Row="5" Margin="0,0,0,10"/> -->
+        <TextBlock Text="{Resx Length}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Width}" Grid.Row="3" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Height}" Grid.Row="4" Margin="0,0,0,10"/>
+
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=ID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding Path=AllowChangeIndex}"/>
         <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=Description,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
-        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
+<!--        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=DefaultQty,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
         <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=Unit,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
         <TextBox Grid.Row="4" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=Weight,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
         <TextBox Grid.Row="5" Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=FrequencyClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
+                 Text="{Binding Path=FrequencyClass,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/> -->
+        <TextBox Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Length,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
+        <TextBox Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Width,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
+        <TextBox Grid.Row="4" Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Height,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
     </Grid>
 
 </UserControl>

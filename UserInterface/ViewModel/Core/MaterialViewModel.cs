@@ -204,7 +204,7 @@ namespace UserInterface.ViewModel
                                 validationResult = ResourceReader.GetString("ERR_SIZE");
                             break;
                         case "Weight":
-                            if (EnabledProperty && !(Weight >= 10000 && Weight < 30000))
+                            if (EnabledProperty && !(Weight >= 0 && Weight < 10000))
                                 validationResult = ResourceReader.GetString("ERR_WEIGHT");
                             break;
                     }

@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using System.Globalization;
+using System.Windows.Input;
 
 namespace UserInterface.Messages
 {
@@ -24,5 +25,10 @@ namespace UserInterface.Messages
     public class MessageValidationInfo
     {
         public bool AllPropertiesValid { get; set; }
+    }
+
+    public class MessageKeyPressed
+    {
+        public string KeyPressed { get; set; }
     }
 }

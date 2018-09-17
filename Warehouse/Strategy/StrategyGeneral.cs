@@ -156,7 +156,7 @@ namespace Warehouse.Strategy
                             if (move)
                                 Warehouse.CreateMaterial((uint)(cmd as CommandMaterial).Material.Value, (cmd as CommandMaterial).Target, cmd.ID, true, (cmd as CommandMaterial).Source == (cmd as CommandMaterial).Target);
                             else if (cmd.Task == Command.EnumCommandTask.CreateMaterial)
-                                Warehouse.CreateMaterial((uint)(cmd as CommandMaterial).Material.Value, (cmd as CommandMaterial).Source, cmd.ID, false, false);
+                                Warehouse.CreateMaterial((uint)(cmd as CommandMaterial).Material.Value, (cmd as CommandMaterial).Source, cmd.ID, cmd.Info == "modify", cmd.Info == "modify");
                             break;
                         case Command.EnumCommandTask.SegmentInfo:
                         case Command.EnumCommandTask.SegmentOn:

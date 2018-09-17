@@ -263,6 +263,7 @@ namespace UserInterface.ViewModel
                 foreach (var p in _dbservicewms.GetTUSKUIDs(TUID))
                     DetailList.Add(new TUSKUIDViewModel
                     {
+                        BoxID = p.BoxID,
                         SKUID = p.SKUID,
                         Qty = p.Qty,
                         Batch = p.Batch,

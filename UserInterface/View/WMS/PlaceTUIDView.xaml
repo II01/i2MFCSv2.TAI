@@ -35,9 +35,9 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{Resx TUID}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx PlaceID}" Grid.Row="1" Margin="0,0,0,10"/>
-<!--        <TextBlock Text="{Resx DimensionClass}" Grid.Row="2" Margin="0,0,0,10"/> -->
-        <TextBlock Text="{Resx Blocked}" Grid.Row="2" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx SKUID}" Grid.Row="3" Margin="0,0,0,10" VerticalAlignment="Top"/>
+        <TextBlock Text="{Resx DimensionClass}" Grid.Row="2" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx Blocked}" Grid.Row="3" Margin="0,0,0,10"/>
+        <TextBlock Text="{Resx SKUID}" Grid.Row="4" Margin="0,0,0,10" VerticalAlignment="Top"/>
 
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text ="{Binding Path=TUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AllowTUIDChange}"/>
@@ -64,18 +64,20 @@
                         SelectedItem="{Binding Selected, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                         >
             <DataGrid.Columns>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=BoxID}" 
+                                    Binding="{Binding BoxID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
                                     Binding="{Binding SKUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Description}" Width="*" IsReadOnly="True"
-                                    Binding="{Binding Description}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Qty}"
-                                    Binding="{Binding Qty, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}"
                                     Binding="{Binding Batch, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Description}" Width="*" IsReadOnly="True"
+                                    Binding="{Binding Description}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Qty}"
+                                    Binding="{Binding Qty, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ProdDate}"
                                     Binding="{Binding ProdDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ExpDate}"
-                                    Binding="{Binding ExpDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ExpDate}"
+                                    Binding="{Binding ExpDate, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
             </DataGrid.Columns>
         </DataGrid>
 

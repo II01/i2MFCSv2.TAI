@@ -15,6 +15,7 @@ using WCFClients;
 using System.Threading;
 using SimpleLog;
 using UserInterface.DataServiceWMS;
+using System.Windows.Input;
 
 namespace UserInterface.ViewModel
 {
@@ -58,6 +59,7 @@ namespace UserInterface.ViewModel
         public BasicWarehouse Warehouse { get; set; }
         public RelayCommand OnLoaded { get; private set; }
         public RelayCommand OnClose { get; private set; }
+        public RelayCommand<EventArgs> OnKeyDown { get; private set; }
         public RelayCommand<object> TreeviewSelectedItemChanged { get; private set; }
 
         public int XAMLViewModelsToLoad { get; set;}
@@ -214,7 +216,7 @@ namespace UserInterface.ViewModel
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<SimpleCommandsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<CommandsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<AlarmsViewModel>(), Visible = Visibility.Hidden });
-                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<VisualizationViewModel>(), Visible = Visibility.Visible });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<VisualizationViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryEventsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryAlarmsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryMovementsViewModel>(), Visible = Visibility.Hidden });
@@ -223,8 +225,8 @@ namespace UserInterface.ViewModel
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<SKUIDsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceIDsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceTUIDsViewModel>(), Visible = Visibility.Hidden });
-                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<OrdersViewModel>(), Visible = Visibility.Hidden });
-                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<ReleaseOrdersViewModel>(), Visible = Visibility.Hidden });
+//                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<OrdersViewModel>(), Visible = Visibility.Hidden });
+//                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<ReleaseOrdersViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<CommandERPsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<CommandWMSsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<PlaceDiffsViewModel>(), Visible = Visibility.Hidden });
@@ -234,7 +236,7 @@ namespace UserInterface.ViewModel
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryCommandERPsViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<HistoryReleaseOrdersViewModel>(), Visible = Visibility.Hidden });
                 ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<BoxIDsViewModel>(), Visible = Visibility.Hidden });
-                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<StationsViewModel>(), Visible = Visibility.Hidden });
+                ViewModel.Add(new ViewModelBaseExtended { View = SimpleIoc.Default.GetInstance<StationsViewModel>(), Visible = Visibility.Visible });
 
                 // intialize view models
                 SimpleIoc.Default.GetInstance<UsersViewModel>().Initialize(Warehouse);
@@ -252,8 +254,8 @@ namespace UserInterface.ViewModel
                 SimpleIoc.Default.GetInstance<SKUIDsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<PlaceIDsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<PlaceTUIDsViewModel>().Initialize(Warehouse);
-                SimpleIoc.Default.GetInstance<OrdersViewModel>().Initialize(Warehouse);
-                SimpleIoc.Default.GetInstance<ReleaseOrdersViewModel>().Initialize(Warehouse);
+//                SimpleIoc.Default.GetInstance<OrdersViewModel>().Initialize(Warehouse);
+//                SimpleIoc.Default.GetInstance<ReleaseOrdersViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<CommandERPsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<CommandWMSsViewModel>().Initialize(Warehouse);
                 SimpleIoc.Default.GetInstance<PlaceDiffsViewModel>().Initialize(Warehouse);
@@ -286,6 +288,18 @@ namespace UserInterface.ViewModel
         {
             Warehouse.Dispose();
         }
+        public void ExecuteOnkeyDown(EventArgs ea)
+        {
+            //            if (ea?.Text == "#")
+            //                ea.Handled = true;
+            //            else
+            string key = ((KeyEventArgs)ea).Key.ToString().ToUpper();
+            if (key == "OEMPERIOD")
+                key = ".";
+            else if (key.Length > 1)
+                key = "";
+            Messenger.Default.Send<MessageKeyPressed>(new MessageKeyPressed() { KeyPressed = key });
+        }
 
         public MainViewModel()
         {
@@ -295,6 +309,7 @@ namespace UserInterface.ViewModel
 
                 OnLoaded = new RelayCommand(() => ExecuteOnLoaded());
                 OnClose = new RelayCommand(() => ExecuteOnClose());
+                OnKeyDown = new RelayCommand<EventArgs>(ExecuteOnkeyDown);
                 TreeviewSelectedItemChanged = new RelayCommand<object>((param1) => ExecuteTreeviewSelectedItemChanged(param1));
 
                 _timer = new DispatcherTimer(DispatcherPriority.Render){Interval = TimeSpan.FromSeconds(1)};
@@ -318,6 +333,7 @@ namespace UserInterface.ViewModel
                 {
                     if (System.Configuration.ConfigurationManager.AppSettings["CommissionningMode"]=="ii")
                         SimpleIoc.Default.GetInstance<UsersViewModel>().SendAccessLevelAndUser(22, "root");
+                    ExecuteTreeviewSelectedItemChanged(SimpleIoc.Default.GetInstance<StationsViewModel>());
                     Warehouse.WCFClient = new WCFUIClient();
                     Warehouse.WCFClient.Initialize(Warehouse);
                     Warehouse.StartCommunication();

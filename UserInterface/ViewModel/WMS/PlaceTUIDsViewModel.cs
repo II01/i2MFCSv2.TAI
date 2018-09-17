@@ -589,8 +589,10 @@ namespace UserInterface.ViewModel
                 if (tuid != null)
                 {
                     Selected = DataList.FirstOrDefault(p => p.TUID == tuid);
-                    Detailed = Selected;
                 }
+                if( Selected == null )
+                    Selected = DataList.FirstOrDefault();
+                Detailed = Selected;
             }
             catch (Exception e)
             {

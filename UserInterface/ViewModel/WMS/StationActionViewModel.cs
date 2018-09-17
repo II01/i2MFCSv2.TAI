@@ -11,14 +11,21 @@ using System.Data.SqlTypes;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
+using UserInterface.ProxyWMS_UI;
+using UserInterface.Messages;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace UserInterface.ViewModel
 {
-    public sealed class StationPickBoxViewModel: StationViewModel
+    public sealed class StationActionViewModel: StationViewModel
     {
+        public enum CommandType { None = 0, DropBox, PickBox };
         #region members
+        private List<CommandWMSOrder> _cmds;
         private string _boxes = "";
         private List<string> _boxList;
+        private int _accessLevel;
+        private string _accessUser;
         #endregion
 
         #region properties
@@ -54,7 +61,10 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region initialization
-        public StationPickBoxViewModel() : base()
+
+        public CommandType Command { get; set; }
+
+        public StationActionViewModel() : base()
         {
             _boxList = new List<string>();
         }
@@ -63,7 +73,24 @@ namespace UserInterface.ViewModel
             try
             {
                 base.Initialize(warehouse);
-                OperationName = "Pick box";
+                OperationName = "Action";
+                _accessUser = "";
+                Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { _accessLevel = mc.AccessLevel; _accessUser = mc.User; });
+            }
+            catch (Exception e)
+            {
+                Warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception, e.Message);
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public void Initialize(BasicWarehouse warehouse, List<CommandWMSOrder> cmds)
+        {
+            try
+            {
+                base.Initialize(warehouse);
+                OperationName = "Action";
+                _cmds = cmds;
+                ValidationEnabled = true;
             }
             catch (Exception e)
             {
@@ -93,28 +120,38 @@ namespace UserInterface.ViewModel
                                 _boxList.Clear();
                                 foreach (var b in boxArray)
                                 {
-                                    if (b != "")
+                                    var c = _cmds.Find(p => p.Box_ID == b);
+                                    if ( c != null)
                                     {
-                                        if (DBServiceWMS.FindBoxByBoxID(b) == null)
-                                            validationResult = ResourceReader.GetString("ERR_NOBOXID");
-                                        else if (DBServiceWMS.FindTUByBoxID(b) == null)
-                                            validationResult = ResourceReader.GetString("ERR_TUBOXNOEXISTS");
-                                        else if (_boxList.Contains(b))
-                                            validationResult = ResourceReader.GetString("ERR_TUBOXEXISTS");
-                                        else
-                                            _boxList.Add(b);
+                                        if (Command == CommandType.DropBox)
+                                        {
+                                            DBServiceWMS.AddTUs(new List<TUs>() {
+                                                    new TUs
+                                                    {
+                                                        TU_ID = c.TU_ID,
+                                                        Box_ID = c.Box_ID,
+                                                        Qty = 1,
+                                                        ProdDate = DateTime.Now,
+                                                        ExpDate = DateTime.Now
+                                                    }});
+                                            DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Drop: {c.Box_ID} to {c.TU_ID}");
+                                            Boxes = "";
+                                        }
+                                        else if (Command == CommandType.PickBox)
+                                        {
+                                            DBServiceWMS.DeleteBox(c.Box_ID);
+                                            DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Pick: {c.Box_ID} from {c.TU_ID}");
+                                            Boxes = "";
+                                        }
+
+                                        using (WMSToUIClient client = new WMSToUIClient())
+                                        {
+                                            client.CommandStatusChangedAsync(c.ID, (int)EnumCommandWMSStatus.Finished);
+                                        }
                                     }
                                 }
-                                if (validationResult != String.Empty)
-                                    _boxList.Clear();
-                                else
-                                {
-                                    var x = DBServiceWMS.GetTUIDsForBoxes(_boxList);
-                                    if (x.Count == 0)
-                                        validationResult = ResourceReader.GetString("ERR_NOTUID");
-                                    if (x.Count > 1)
-                                        validationResult = ResourceReader.GetString("ERR_MANYTUIDFORBOXES");
-                                }
+                                if(Boxes != "")
+                                    validationResult = ResourceReader.GetString("ERR_TUID");
                                 break;
 
                         }

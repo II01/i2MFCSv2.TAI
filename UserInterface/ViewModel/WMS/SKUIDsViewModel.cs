@@ -81,6 +81,7 @@ namespace UserInterface.ViewModel
                 if (_selectedSKUID != value)
                 {
                     _selectedSKUID = value;
+                    DetailedSKUID = SelectedSKUID;
                     RaisePropertyChanged("SelectedSKUID");
                 }
             }
@@ -159,10 +160,9 @@ namespace UserInterface.ViewModel
         #region initialization
         public SKUIDsViewModel()
         {
-            DetailedSKUID = new SKUIDViewModel();
             TUList = new ObservableCollection<TUViewModel>();
             SelectedSKUID = null;
-
+            DetailedSKUID = new SKUIDViewModel();
             EditEnabled = false;
             EnabledCC = false;
 
@@ -364,10 +364,23 @@ namespace UserInterface.ViewModel
                 var skuids = await _dbservicewms.GetSKUIDs();
                 SKUIDList.Clear();
                 foreach (var p in skuids)
-                    SKUIDList.Add(new SKUIDViewModel { ID = p.ID, Description = p.Description, DefaultQty = p.DefaultQty, Unit = p.Unit, Weight = p.Weight, FrequencyClass = p.FrequencyClass });
+                    SKUIDList.Add(new SKUIDViewModel {
+                        ID = p.ID,
+                        Description = p.Description,
+                        DefaultQty = p.DefaultQty,
+                        Unit = p.Unit,
+                        Weight = p.Weight,
+                        FrequencyClass = p.FrequencyClass,
+                        Length = p.Length,
+                        Width = p.Width,
+                        Height = p.Height
+                    });
                 foreach (var l in SKUIDList)
                     l.Initialize(_warehouse);
-                SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == sl.ID);
+                if (SelectedSKUID != null)
+                    SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == sl.ID);
+                if (SelectedSKUID == null)
+                    SelectedSKUID = SKUIDList.FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -384,9 +397,16 @@ namespace UserInterface.ViewModel
                 {
                     var sdl = await _dbservicewms.GetAvailableTUs(SelectedSKUID.ID);
                     TUList.Clear();
-//                    foreach (var s in sdl)
-//                        TUList.Add(new TUViewModel { TUID = s.TUID, SKUID = s.SKUID, Batch = s.Batch, Qty = s.Qty, ProdDate = s.ProdDate, ExpDate = s.ExpDate,
-//                                                     Location = s.Location, Status = (EnumBlockedWMS)s.Status });
+                    foreach (var s in sdl)
+                        TUList.Add(new TUViewModel {
+                            TUID = s.TUID,
+                            BoxID = s.BoxID,
+                            Batch = s.Batch,
+                            Qty = s.Qty,
+                            ProdDate = s.ProdDate,
+                            ExpDate = s.ExpDate,
+                            Location = s.Location,
+                            Status = (EnumBlockedWMS)s.Status });
                 }
             }
             catch (Exception e)

@@ -197,19 +197,22 @@ namespace UserInterface.ProxyWMS_UI {
         StoreTray = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DropBox = 2,
+        ConfirmStore = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         MoveTray = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PickBox = 4,
+        DropBox = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RetrieveTray = 5,
+        PickBox = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Confirm = 6,
+        RetrieveTray = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConfirmFinish = 7,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -525,19 +528,22 @@ namespace UserInterface.ProxyWMS_UI {
         StoreTray = 1,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        DropBox = 2,
+        ConfirmStore = 2,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         MoveTray = 3,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PickBox = 4,
+        DropBox = 4,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        RetrieveTray = 5,
+        PickBox = 5,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Confirm = 6,
+        RetrieveTray = 6,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ConfirmFinish = 7,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -732,6 +738,12 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/SuggestTUID", ReplyAction="http://tempuri.org/IWMSToUI/SuggestTUIDResponse")]
         System.Threading.Tasks.Task<int> SuggestTUIDAsync(string[] tuids);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/CommandStatusChanged", ReplyAction="http://tempuri.org/IWMSToUI/CommandStatusChangedResponse")]
+        void CommandStatusChanged(int cmdId, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/CommandStatusChanged", ReplyAction="http://tempuri.org/IWMSToUI/CommandStatusChangedResponse")]
+        System.Threading.Tasks.Task CommandStatusChangedAsync(int cmdId, int status);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -823,6 +835,14 @@ namespace UserInterface.ProxyWMS_UI {
         
         public System.Threading.Tasks.Task<int> SuggestTUIDAsync(string[] tuids) {
             return base.Channel.SuggestTUIDAsync(tuids);
+        }
+        
+        public void CommandStatusChanged(int cmdId, int status) {
+            base.Channel.CommandStatusChanged(cmdId, status);
+        }
+        
+        public System.Threading.Tasks.Task CommandStatusChangedAsync(int cmdId, int status) {
+            return base.Channel.CommandStatusChangedAsync(cmdId, status);
         }
     }
 }

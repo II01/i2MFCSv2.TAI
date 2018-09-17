@@ -7,6 +7,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
         xmlns:p = "clr-namespace:UserInterface.Properties"
         xmlns:ignore="http://www.galasoft.ch/ignore"
         xmlns:system="clr-namespace:System;assembly=mscorlib"
@@ -14,7 +15,9 @@
         mc:Ignorable="d"
         d:DesignWidth="1280"
         d:DesignHeight="720"
-        WindowState="Maximized"
+        Width="1920"
+        Height="1080"
+        WindowState="Normal"
         Title="{Resx Title}"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
         FontSize="{StaticResource BaseFontSize}"
@@ -25,6 +28,9 @@
         </i:EventTrigger>
         <i:EventTrigger EventName="Closed">
             <i:InvokeCommandAction Command="{Binding OnClose}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="KeyDown" >
+            <cmd:EventToCommand Command="{Binding OnKeyDown}" PassEventArgsToCommand="True"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Control.Resources>
@@ -102,20 +108,23 @@
                           Tag="{Binding Stations, Source={StaticResource Locator}}" 
                           IsEnabled="True"/>
             <TreeViewItem  Header="{Resx WMS}" IsExpanded="True" IsEnabled="True">
-                <TreeViewItem  Header="{Resx ReleaseOrders}" 
+<!--                <TreeViewItem  Header="{Resx ReleaseOrders}" 
                            Tag="{Binding ReleaseOrders, Source={StaticResource Locator}}" 
-                           IsEnabled="True"/>
+                           IsEnabled="True"/> -->
                 <TreeViewItem  Header="{Resx TUs}" 
                            Tag="{Binding PlaceTUIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
                 <TreeViewItem  Header="{Resx SKUIDs}" 
                                Tag="{Binding SKUIDs, Source={StaticResource Locator}}" 
                                IsEnabled="True"/>
-                <TreeViewItem Header ="{Resx Extras}" IsExpanded="False" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}">
-
-                    <TreeViewItem  Header="{Resx BoxIDs}" 
+                <TreeViewItem  Header="{Resx BoxIDs}" 
                            Tag="{Binding BoxIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
+                <TreeViewItem Header ="{Resx Extras}" IsExpanded="False" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}">
+
+<!--                    <TreeViewItem  Header="{Resx PrepareOrders}" 
+                           Tag="{Binding Orders, Source={StaticResource Locator}}" 
+                           IsEnabled="True"/> -->
                     <TreeViewItem  Header="{Resx PlaceIDs}" 
                            Tag="{Binding PlaceIDs, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
@@ -124,9 +133,6 @@
                            IsEnabled="True"/>
                     <TreeViewItem  Header="{Resx CommandWMSs}" 
                            Tag="{Binding CommandWMSs, Source={StaticResource Locator}}" 
-                           IsEnabled="True"/>
-                    <TreeViewItem  Header="{Resx PrepareOrders}" 
-                           Tag="{Binding Orders, Source={StaticResource Locator}}" 
                            IsEnabled="True"/>
                     <TreeViewItem Header="{Resx ComparePlaces}"
                               Tag="{Binding PlaceDiffs, Source={StaticResource Locator}}" 

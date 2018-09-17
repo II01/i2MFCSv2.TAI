@@ -4,11 +4,12 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="None" />
       <xs:enumeration value="StoreTray" />
-      <xs:enumeration value="DropBox" />
+      <xs:enumeration value="ConfirmStore" />
       <xs:enumeration value="MoveTray" />
+      <xs:enumeration value="DropBox" />
       <xs:enumeration value="PickBox" />
       <xs:enumeration value="RetrieveTray" />
-      <xs:enumeration value="Confirm" />
+      <xs:enumeration value="ConfirmFinish" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Command.CommandOperation" nillable="true" type="tns:Command.CommandOperation" />
@@ -25,11 +26,12 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="None" />
       <xs:enumeration value="StoreTray" />
-      <xs:enumeration value="DropBox" />
+      <xs:enumeration value="ConfirmStore" />
       <xs:enumeration value="MoveTray" />
+      <xs:enumeration value="DropBox" />
       <xs:enumeration value="PickBox" />
       <xs:enumeration value="RetrieveTray" />
-      <xs:enumeration value="Confirm" />
+      <xs:enumeration value="ConfirmFinish" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="Order.OrderOperation" nillable="true" type="tns:Order.OrderOperation" />

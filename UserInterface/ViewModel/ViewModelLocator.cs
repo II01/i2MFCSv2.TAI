@@ -178,8 +178,8 @@ namespace UserInterface.ViewModel
             SimpleIoc.Default.Register<SKUIDsViewModel>();
             SimpleIoc.Default.Register<PlaceIDsViewModel>();
             SimpleIoc.Default.Register<PlaceTUIDsViewModel>();
-            SimpleIoc.Default.Register<OrdersViewModel>();
-            SimpleIoc.Default.Register<ReleaseOrdersViewModel>();
+//            SimpleIoc.Default.Register<OrdersViewModel>();
+//            SimpleIoc.Default.Register<ReleaseOrdersViewModel>();
             SimpleIoc.Default.Register<CommandERPsViewModel>();
             SimpleIoc.Default.Register<CommandWMSsViewModel>();
             SimpleIoc.Default.Register<PlaceDiffsViewModel>();

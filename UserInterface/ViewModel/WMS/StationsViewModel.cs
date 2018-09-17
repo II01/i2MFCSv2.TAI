@@ -1,4 +1,5 @@
 ﻿using Database;
+using DatabaseWMS;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using GalaSoft.MvvmLight.Messaging;
@@ -9,6 +10,8 @@ using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using System.Windows.Threading;
 using UserInterface.DataServiceWMS;
 using UserInterface.Messages;
 using UserInterface.ProxyWMS_UI;
@@ -20,26 +23,34 @@ namespace UserInterface.ViewModel
 {
     public sealed class StationsViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, ActivateOrder, CancelOrder, StoreTray, RemoveTray, DropBox, PickBox };
+        public enum CommandType { None = 0, ChangeHeightClass, ActivateOrder, CancelOrder, StoreTray, RemoveTray, DropBox, PickBox };
 
         #region members
         private CommandType _selectedCmd;
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
         private StationViewModel _operation;
+        private ReleaseOrderViewModel _activeOrder;
         private ObservableCollection<ReleaseOrderViewModel> _dataListOrder;
         private ObservableCollection<ReleaseOrderViewModel> _dataListSubOrder;
         private ObservableCollection<CommandWMSViewModel> _dataListCommand;
+        private ObservableCollection<TUSKUIDViewModel> _dataListBoxes;
         private ReleaseOrderViewModel _selectedOrder;
         private ReleaseOrderViewModel _selectedSubOrder;
         private ReleaseOrderViewModel _detailedOrder;
         private CommandWMSViewModel _selectedCommand;
+        private TU_ID _activeTUID;
         private bool _editEnabled;
         private bool _enabledCC;
         private int _accessLevel;
         private string _accessUser;
         private int? _suborderid;
         private int? _commandid;
+        private string _bcrcommand = "";
+        private bool _donotrefreshsuborder;
+        private DispatcherTimer _timer;
+        private ViewModelBase _activevm;
+        private bool _visibleOperation;
         #endregion
 
         #region properites
@@ -47,13 +58,16 @@ namespace UserInterface.ViewModel
         public RelayCommand RefreshCommand { get; private set; }
         public RelayCommand CmdRefresh { get; private set; }
         public RelayCommand CmdStart { get; private set; }
+        public RelayCommand CmdFinish { get; private set; }
         public RelayCommand CmdStop { get; private set; }
+        public RelayCommand CmdChangeHC { get; private set; }
         public RelayCommand CmdStoreTray { get; private set; }
         public RelayCommand CmdRemoveTray { get; private set; }
         public RelayCommand CmdDropBox { get; private set; }
         public RelayCommand CmdPickBox { get; private set; }
         public RelayCommand Cancel { get; private set; }
         public RelayCommand Confirm { get; private set; }
+        public RelayCommand<MessageKeyPressed> KeyDown { get; private set; }
 
         public StationViewModel Operation
         {
@@ -64,6 +78,18 @@ namespace UserInterface.ViewModel
                 {
                     _operation = value;
                     RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        public ReleaseOrderViewModel ActiveOrder
+        {
+            get { return _activeOrder; }
+            set
+            {
+                if (_activeOrder != value)
+                {
+                    _activeOrder = value;
+                    RaisePropertyChanged("ActiveOrder");
                 }
             }
         }
@@ -100,6 +126,18 @@ namespace UserInterface.ViewModel
                 {
                     _dataListCommand = value;
                     RaisePropertyChanged("DataListCommand");
+                }
+            }
+        }
+        public ObservableCollection<TUSKUIDViewModel> DataListBoxes
+        {
+            get { return _dataListBoxes; }
+            set
+            {
+                if (_dataListBoxes != value)
+                {
+                    _dataListBoxes = value;
+                    RaisePropertyChanged("DataListBoxes");
                 }
             }
         }
@@ -173,6 +211,45 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public TU_ID ActiveTUID
+        {
+            get { return _activeTUID; }
+            set
+            {
+                if (_activeTUID != value)
+                {
+                    _activeTUID = value;
+                    RaisePropertyChanged("ActiveTUID");
+                    RaisePropertyChanged("ActiveTUIDID");
+                    RaisePropertyChanged("ActiveTUIDHC");
+                }
+            }
+        }
+        public int? ActiveTUIDID
+        {
+            get { return _activeTUID?.ID; }
+            set
+            {
+                if (_activeTUID.ID != value)
+                {
+                    _activeTUID.ID = value??0;
+                    RaisePropertyChanged("ActiveTUIDID");
+                }
+            }
+        }
+        public int? ActiveTUIDHC
+        {
+            get { return _activeTUID?.DimensionClass; }
+            set
+            {
+                if (_activeTUID.DimensionClass != value)
+                {
+                    _activeTUID.DimensionClass = value??0;
+                    RaisePropertyChanged("ActiveTUIDHC");
+                }
+            }
+        }
+
         public bool EditEnabled
         {
             get { return _editEnabled; }
@@ -194,6 +271,18 @@ namespace UserInterface.ViewModel
                 {
                     _enabledCC = value;
                     RaisePropertyChanged("EnabledCC");
+                }
+            }
+        }
+        public bool VisibleOperation
+        {
+            get { return _visibleOperation; }
+            set
+            {
+                if (_visibleOperation != value)
+                {
+                    _visibleOperation = value;
+                    RaisePropertyChanged("VisibleOperation");
                 }
             }
         }
@@ -226,33 +315,45 @@ namespace UserInterface.ViewModel
             EnabledCC = false;
 
             _selectedCmd = CommandType.None;
+            _activeTUID = new TU_ID();
 
             RefreshSubOrder = new RelayCommand(async () => await ExecuteRefreshSubOrder());
             RefreshCommand = new RelayCommand(async () => await ExecuteRefreshCommandWMS());
             CmdRefresh = new RelayCommand(async() => await ExecuteRefresh());
             CmdStart = new RelayCommand(() => ExecuteStart(), CanExecuteStart);
+            CmdFinish = new RelayCommand(async () => await ExecuteFinish(), CanExecuteFinish);
             CmdStop = new RelayCommand(() => ExecuteStop(), CanExecuteStop);
+            CmdChangeHC = new RelayCommand(() => ExecuteChangeHC(), CanExecuteChangeHC);
             CmdStoreTray = new RelayCommand(() => ExecuteStoreTray(), CanExecuteStoreTray);
             CmdRemoveTray = new RelayCommand(() => ExecuteRemoveTray(), CanExecuteRemoveTray);
             CmdDropBox = new RelayCommand(() => ExecuteDropBox(), CanExecuteDropBox);
             CmdPickBox = new RelayCommand(() => ExecutePickBox(), CanExecutePickBox);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
-
+            KeyDown = new RelayCommand<MessageKeyPressed>(async (k) => await ExecuteKeyPressed(k));
         }
 
         public void Initialize(BasicWarehouse warehouse)
         {
             _warehouse = warehouse;
             _dbservicewms = new DBServiceWMS(_warehouse);
+            VisibleOperation = false;
             try
             {
                 DataListOrder = new ObservableCollection<ReleaseOrderViewModel>();
                 DataListSubOrder = new ObservableCollection<ReleaseOrderViewModel>();
                 DataListCommand = new ObservableCollection<CommandWMSViewModel>();
+                DataListBoxes = new ObservableCollection<TUSKUIDViewModel>();
+
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, async (vm) => await ExecuteViewActivated(vm.ViewModel));
+                Messenger.Default.Register<MessageKeyPressed>(this, (k) => ExecuteKeyPressed(k));
+
+                _timer = new DispatcherTimer();
+                _timer.Interval = TimeSpan.FromMilliseconds(1000);
+                _timer.Tick += (sender, args) => { ExecuteRefresh(); };
+                _timer.Start();
             }
             catch (Exception e)
             {
@@ -281,7 +382,46 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return Operation == null;
+                return Operation == null && DataListOrder != null && DataListOrder.FirstOrDefault(p => p.Status == EnumWMSOrderStatus.Inactive) != null;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
+        private async Task ExecuteFinish()
+        {
+            try
+            {
+                try
+                {
+                    using (WMSToUIClient client = new WMSToUIClient())
+                    {
+                        var cmd = DataListCommand.FirstOrDefault(p => (p.Operation == EnumOrderOperation.ConfirmStore || p.Operation == EnumOrderOperation.ConfirmFinish) && p.Status == EnumCommandWMSStatus.Active);
+                        await client.CommandStatusChangedAsync(cmd.WMSID, (int)EnumCommandWMSStatus.Finished);
+                    }
+                }
+                catch (Exception e)
+                {
+                    _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                       string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteFinish()
+        {
+            try
+            {
+                return DataListCommand != null && 
+                       DataListCommand.Any(p => (p.Operation == EnumOrderOperation.ConfirmStore || p.Operation == EnumOrderOperation.ConfirmFinish) && p.Status == EnumCommandWMSStatus.Active);
             }
             catch (Exception e)
             {
@@ -294,6 +434,9 @@ namespace UserInterface.ViewModel
         {
             try
             {
+                _selectedCmd = CommandType.CancelOrder;
+                Operation = null;
+                EnabledCC = true;
             }
             catch (Exception e)
             {
@@ -306,7 +449,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return Operation == null;
+                return Operation == null && SelectedOrder != null;
             }
             catch (Exception e)
             {
@@ -316,13 +459,56 @@ namespace UserInterface.ViewModel
             }
         }
 
+        private void ExecuteChangeHC()
+        {
+            try
+            {
+                _selectedCmd = CommandType.ChangeHeightClass;
+                string io = _dbservicewms.GetParameter("Place.IOStation");
+                Operation = null;
+                EnabledCC = false;
+                _warehouse.DBService.CreateOrUpdateMaterialID(_activeTUID.ID, (_activeTUID.DimensionClass + 1) % 3, null);
+                _warehouse.DBService.AddCommand(new CommandMaterial
+                {
+                    Task = Command.EnumCommandTask.CreateMaterial,
+                    Material = _activeTUID.ID,
+                    Source = io,
+                    Target = io,
+                    Info = "modify",
+                    Status = Command.EnumCommandStatus.NotActive,
+                    Time = DateTime.Now
+                });
+                _selectedCmd = CommandType.None;
+
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        private bool CanExecuteChangeHC()
+        {
+            try
+            {
+                return Operation == null && _activeTUID != null && ActiveOrder == null;
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+                return false;
+            }
+        }
         private void ExecuteStoreTray()
         {
             try
             {
                 _selectedCmd = CommandType.StoreTray;
                 EditEnabled = true;
-                EnabledCC = true;                
+                EnabledCC = true;
+                VisibleOperation = true;
                 Operation = new StationStoreTrayViewModel();
                 Operation.Initialize(_warehouse);
                 Operation.ValidationEnabled = true;
@@ -339,7 +525,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return Operation == null;
+                return Operation == null && _dbservicewms != null && _dbservicewms.CanStoreTray(_dbservicewms.GetParameter("Place.IOStation"));
             }
             catch (Exception e)
             {
@@ -355,6 +541,7 @@ namespace UserInterface.ViewModel
                 _selectedCmd = CommandType.RemoveTray;
                 EditEnabled = true;
                 EnabledCC = true;
+                VisibleOperation = true;
                 Operation = new StationRemoveTrayViewModel();
                 Operation.Initialize(_warehouse);
                 Operation.ValidationEnabled = true;
@@ -387,6 +574,7 @@ namespace UserInterface.ViewModel
                 _selectedCmd = CommandType.DropBox;
                 EditEnabled = true;
                 EnabledCC = true;
+                VisibleOperation = true;
                 Operation = new StationDropBoxViewModel();
                 Operation.Initialize(_warehouse);
                 Operation.ValidationEnabled = true;
@@ -419,6 +607,7 @@ namespace UserInterface.ViewModel
                 _selectedCmd = CommandType.PickBox;
                 EditEnabled = true;
                 EnabledCC = true;
+                VisibleOperation = true;
                 Operation = new StationPickBoxViewModel();
                 Operation.Initialize(_warehouse);
                 Operation.ValidationEnabled = true;
@@ -445,11 +634,85 @@ namespace UserInterface.ViewModel
             }
         }
 
+        private async Task ExecuteKeyPressed(MessageKeyPressed mkp)
+        {
+            try
+            {
+                if(_activevm is StationsViewModel)
+                {
+                    _bcrcommand = _bcrcommand + mkp.KeyPressed.ToUpper(); ;
+                    if (!_bcrcommand.StartsWith("."))
+                        _bcrcommand = "";
+                    else if (_bcrcommand.StartsWith(".."))
+                        _bcrcommand = ".";
+
+                    switch (_bcrcommand)
+                    {
+                        case ".AC.":
+                            if (CanExecuteStart())
+                                ExecuteStart();
+                            break;
+                        case ".TS.":
+                            if (CanExecuteStoreTray())
+                                ExecuteStoreTray();
+                            break;
+                        case ".TR.":
+                            if (CanExecuteRemoveTray())
+                                ExecuteRemoveTray();
+                            break;
+                        case ".BD.":
+                            if (CanExecuteDropBox())
+                                ExecuteDropBox();
+                            break;
+                        case ".BP.":
+                            if (CanExecutePickBox())
+                                ExecutePickBox();
+                            break;
+                        case ".CN.":
+                            if (CanExecuteCancel())
+                                ExecuteCancel();
+                            break;
+                        case ".OK.":
+                            if (Operation == null)
+                            {
+                                if (CanExecuteFinish())
+                                    await ExecuteFinish();
+                            }
+                            else
+                            {
+                                if (Operation is StationDropBoxViewModel)
+                                {
+                                    var o = Operation as StationDropBoxViewModel;
+                                    if (!o.AllPropertiesValid && o.CanExecuteSuggestTU())
+                                        await o.ExecuteSuggestTU();
+                                    else if (CanExecuteConfirm())
+                                        ExecuteConfirm();
+                                }
+                                else if (CanExecuteConfirm())
+                                    ExecuteConfirm();
+                            }
+                            break;
+
+                    }
+
+                    if (_bcrcommand.Length >= 4)
+                        _bcrcommand = "";
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         private void ExecuteCancel()
         {
             try
             {
                 Operation = null;
+                EnabledCC = false;
+                VisibleOperation = false;
             }
             catch (Exception e)
             {
@@ -460,7 +723,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return Operation != null;
+                return EnabledCC; 
             }
             catch (Exception e)
             {
@@ -475,6 +738,7 @@ namespace UserInterface.ViewModel
             {
                 EditEnabled = false;
                 EnabledCC = false;
+                VisibleOperation = false;
                 try
                 {
                     switch (_selectedCmd)
@@ -490,6 +754,17 @@ namespace UserInterface.ViewModel
                             break;
                         case CommandType.PickBox:
                             _dbservicewms.CreateOrder_PickBox((Operation as StationPickBoxViewModel).BoxList);
+                            break;
+                        case CommandType.CancelOrder:
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.CancelOrder(new DTOOrder
+                                {
+                                    ERP_ID = SelectedOrder.ERPID,
+                                    OrderID = SelectedOrder.OrderID,
+                                    SubOrderID = 0      // cancel all suborders
+                                });
+                            }
                             break;
                     }
                     _selectedCmd = CommandType.None;
@@ -510,7 +785,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return Operation != null && Operation.AllPropertiesValid;
+                return (Operation != null && Operation.AllPropertiesValid) || _selectedCmd == CommandType.CancelOrder;
             }
             catch (Exception e)
             {
@@ -523,7 +798,12 @@ namespace UserInterface.ViewModel
         {
             try
             {
+                if (!(_activevm is StationsViewModel))
+                    return;
+
                 await ExecuteRefreshOrders();
+                await ExecuteRefreshCommandWMS();
+                await ExecuteRefreshBoxes();
             }
             catch (Exception e)
             {
@@ -537,11 +817,33 @@ namespace UserInterface.ViewModel
             {
                 int? erpid = SelectedOrder?.ERPID;
                 int? orderid = SelectedOrder?.OrderID;
+                int? ao_erpid = ActiveOrder?.ERPID;
+                int? ao_orderid = ActiveOrder?.OrderID;
                 _suborderid = SelectedSubOrder?.ID;
                 _commandid = SelectedCommand?.WMSID;
 
-                var orders = await _dbservicewms.GetOrdersDistinct(DateTime.Now.AddYears(-1), DateTime.Now, (int)EnumWMSOrderStatus.OnTargetPart);
+                var ao = _dbservicewms.GetOrders((int)EnumWMSOrderStatus.Active, (int)EnumWMSOrderStatus.Active).FirstOrDefault();
+                if (ao != null)
+                    ActiveOrder = new ReleaseOrderViewModel
+                    {
+                        ERPID = ao.ERP_ID,
+                        OrderID = ao.OrderID,
+                        TUID = ao.TU_ID,
+                        BoxID = ao.Box_ID,
+                        SKUID = ao.SKU_ID,
+                        SKUBatch = ao.SKU_Batch,
+                        Destination = ao.Destination,
+                        ReleaseTime = ao.ReleaseTime,
+                        Status = (EnumWMSOrderStatus)ao.Status
+                    };
+                else
+                    ActiveOrder = null;
+//                if(ao_erpid != ActiveOrder?.ERPID || ao_orderid != ActiveOrder?.OrderID)
+//                    await ExecuteRefreshCommandWMS();
 
+                var orders = await _dbservicewms.GetOrdersDistinct(DateTime.Now.AddSeconds(1), DateTime.Now, (int)EnumWMSOrderStatus.OnTargetPart);
+
+                _donotrefreshsuborder = true;
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
@@ -559,8 +861,13 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in DataListOrder)
                     l.Initialize(_warehouse);
+                _donotrefreshsuborder = false;
                 if (orderid != null)
                     SelectedOrder = DataListOrder.FirstOrDefault(p => p.ERPID == erpid && p.OrderID == orderid);
+                else
+                    SelectedOrder = DataListOrder.FirstOrDefault();
+                if (SelectedOrder == null)
+                    await ExecuteRefreshSubOrder();
             }
             catch (Exception e)
             {
@@ -573,11 +880,14 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                if( _suborderid == null)
+                if (_donotrefreshsuborder)
+                    return;
+                if ( _suborderid == null)
                     _suborderid = SelectedSubOrder?.ID;
 
-                DataListSubOrder.Clear();
-                if(SelectedOrder != null)
+                if (DataListOrder.Count == 0)
+                    DataListSubOrder.Clear();
+                if (SelectedOrder != null)
                 {
                     var suborders = await _dbservicewms.GetSubOrders(SelectedOrder.ERPID, SelectedOrder.OrderID);
                     DataListSubOrder.Clear();
@@ -601,10 +911,10 @@ namespace UserInterface.ViewModel
                         });
                     foreach (var l in DataListOrder)
                         l.Initialize(_warehouse);
-                    if (_suborderid != null)
-                        SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.ID == _suborderid);
-                    if(SelectedSubOrder == null)
-                        SelectedSubOrder = DataListSubOrder.FirstOrDefault();
+//                    if (_suborderid != null)
+//                        SelectedSubOrder = DataListSubOrder.FirstOrDefault(p => p.ID == _suborderid);
+//                    if(SelectedSubOrder == null)
+//                        SelectedSubOrder = DataListSubOrder.FirstOrDefault();
                     _suborderid = null;
                 }
 
@@ -622,11 +932,10 @@ namespace UserInterface.ViewModel
                 if (_commandid == null)
                     _commandid = SelectedCommand?.WMSID;
 
+                var cmds = ActiveOrder != null ? await _dbservicewms.GetCommandsWMSForOrder(ActiveOrder.ERPID, ActiveOrder.OrderID) : null;
                 DataListCommand.Clear();
-                if( SelectedSubOrder != null )
+                if ( cmds != null )
                 {
-                    var cmds = await _dbservicewms.GetCommandsWMSForOrder(SelectedOrder.ERPID, SelectedOrder.OrderID);
-                    DataListCommand.Clear();
                     foreach (var cmd in cmds)
                     {
                         DataListCommand.Add(new CommandWMSViewModel
@@ -651,8 +960,35 @@ namespace UserInterface.ViewModel
                     }
                     foreach (var l in DataListCommand)
                         l.Initialize(_warehouse);
-                    if (_commandid != null)
-                        SelectedCommand = DataListCommand.FirstOrDefault(p => p.WMSID == _commandid.Value);
+
+                    var cmdsDrop = cmds
+                                        .Where(p => p.Status == (int)EnumCommandWMSStatus.Active && p.Operation == (int)EnumOrderOperation.DropBox)
+                                        .Select(p => p)
+                                        .ToList();
+                    var cmdsPick = cmds
+                                        .Where(p => p.Status == (int)EnumCommandWMSStatus.Active && p.Operation == (int)EnumOrderOperation.PickBox)
+                                        .Select(p => p)
+                                        .ToList();
+                    if (cmdsDrop.Count > 0 && Operation == null)
+                    {
+                        Operation = new StationActionViewModel();
+                        (Operation as StationActionViewModel).Initialize(_warehouse, cmdsDrop);
+                        (Operation as StationActionViewModel).Command = StationActionViewModel.CommandType.DropBox;
+                        EditEnabled = true;
+                    }
+                    if (cmdsPick.Count > 0 && Operation == null)
+                    {
+                        Operation = new StationActionViewModel();
+                        (Operation as StationActionViewModel).Initialize(_warehouse, cmdsPick);
+                        (Operation as StationActionViewModel).Command = StationActionViewModel.CommandType.PickBox;
+                        EditEnabled = true;
+                    }
+                    else if (cmdsDrop.Count == 0 && cmdsPick.Count == 0 && Operation is StationActionViewModel)
+                    {
+                        Operation = null;
+                        EditEnabled = false;
+                    }
+
                 }
             }
             catch (Exception e)
@@ -662,11 +998,45 @@ namespace UserInterface.ViewModel
             }
         }
 
+        private async Task ExecuteRefreshBoxes()
+        {
+            try
+            {
+                ActiveTUID = _dbservicewms.GetTUIDOnPlaceID(_dbservicewms.GetParameter("Place.IOStation"));
+
+                var tus = _activeTUID != null ? await _dbservicewms.GetTUSKUIDsAsync(_activeTUID.ID) : null;
+
+                DataListBoxes.Clear();
+                if (tus != null)
+                {
+                    foreach (var tu in tus)
+                    {
+                        DataListBoxes.Add(new TUSKUIDViewModel
+                        {
+                            BoxID = tu.BoxID,
+                            SKUID = tu.SKUID,
+                            Batch = tu.Batch,
+                            Qty = tu.Qty,
+                            ProdDate = tu.ProdDate,
+                            ExpDate = tu.ExpDate
+                        });
+                    }
+                    foreach (var l in DataListBoxes)
+                        l.Initialize(_warehouse);
+                }
+            }
+            catch (Exception e)
+            {
+                _warehouse.AddEvent(Database.Event.EnumSeverity.Error, Database.Event.EnumType.Exception,
+                                    string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
         #endregion
         public async Task ExecuteViewActivated(ViewModelBase vm)
         {
             try
             {
+                _activevm = vm;
                 if (vm is StationsViewModel)
                 {
                     await ExecuteRefresh();

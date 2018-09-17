@@ -37,6 +37,20 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public string BoxID
+        {
+            get { return _data.BoxID; }
+            set
+            {
+                if (_data.BoxID != value)
+                {
+                    _data.BoxID = value;
+                    RaisePropertyChanged("BoxID");
+                }
+            }
+        }
+
         public string SKUID
         {
             get { return _data.SKUID;  }

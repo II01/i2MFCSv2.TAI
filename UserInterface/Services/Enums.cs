@@ -155,10 +155,11 @@ namespace UserInterface.Services
     {
         None = 0,
         StoreTray = 1,
-        MoveTray = 2,
-        DropBox = 3,
-        PickBox = 4,
-        RetrieveTray = 5,
-        Confirm = 6
+        ConfirmStore = 2, 
+        MoveTray = 3,
+        DropBox = 4,
+        PickBox = 5,
+        RetrieveTray = 6,
+        ConfirmFinish = 7
     }
 }

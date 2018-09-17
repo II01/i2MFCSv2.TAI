@@ -337,7 +337,8 @@ namespace Warehouse.ConveyorUnits
         {
             try
             {
-                if (Place != null)
+
+                if (Place != null && !(Place.Material == material))  // !(...) added to allo height class overwrite 
                     throw new ConveyorBasicException(String.Format("{0} is not empty.", Name));
 
                 //                Warehouse.DBService.MaterialCreate( Name,  (int) material, true);
@@ -375,7 +376,7 @@ namespace Warehouse.ConveyorUnits
             try
             {
                 if (pal != null)
-                    Warehouse.DBService.CreateOrUpdateMaterialID((int)pal.Barcode, pal.Type, pal.Weight);
+                    Warehouse.DBService.CreateOrUpdateMaterialID((int)pal.Barcode, pal.Weight/10000, pal.Weight%10000);
             }
             catch (Exception ex)
             {

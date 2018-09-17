@@ -68,7 +68,7 @@
                                     Width="*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PlaceID}" 
                                     Width="*" Binding="{Binding PlaceID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Dimension}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=DimensionClass}" 
                                     Width="*" Binding="{Binding DimensionClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
                                     Width="*" Binding="{Binding TimeStamp}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
