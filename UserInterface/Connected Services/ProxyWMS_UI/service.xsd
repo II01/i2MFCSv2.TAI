@@ -3,6 +3,7 @@
   <xs:import namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.DTO" />
   <xs:import namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Core.DataExchange" />
   <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" />
   <xs:element name="GetCommands">
     <xs:complexType>
       <xs:sequence />
@@ -115,6 +116,30 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="CommandStatusChangedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTUs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="tus" nillable="true" type="q6:ArrayOfTU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTUsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="tu" nillable="true" type="q7:TU" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTUResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

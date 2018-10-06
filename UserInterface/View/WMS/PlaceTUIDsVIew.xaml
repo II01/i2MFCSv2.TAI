@@ -93,10 +93,10 @@
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-<!--                <Button Name="bAdd" Margin="10,0,0,20" Content="{Resx Add}" Command="{Binding Add}"/>
-                <Button Name="bDelete" Margin="10,0,0,20" Content="{Resx Delete}" Command="{Binding Delete}"/> 
-                <Button Name="bBook" Margin="10,0,0,20" Content="{Resx Rebook}" Command="{Binding Book}"/> -->
-                <Button Name="bBlock" Margin="10,0,0,20" Content="{Resx Quality}" Command="{Binding Block}"/>
+                <Button Name="bAdd" Margin="10,0,0,20" Content="{Resx Add}" Command="{Binding Add}"/>
+                <Button Name="bDelete" Margin="10,0,0,20" Content="{Resx Delete}" Command="{Binding Delete}"/>
+                <Button Name="bBook" Margin="10,0,0,20" Content="{Resx Rebook}" Command="{Binding Book}"/>
+<!--                <Button Name="bBlock" Margin="10,0,0,20" Content="{Resx Quality}" Command="{Binding Block}"/> -->
                 <Button Name="bEdit" Margin="10,0,0,20" Content="{Resx EditSKU}" Command="{Binding Edit}"/>
             </StackPanel>
             <ContentControl x:Name="ccPlaceID" 

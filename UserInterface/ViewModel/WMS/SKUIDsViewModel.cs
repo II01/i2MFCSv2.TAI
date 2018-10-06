@@ -242,6 +242,9 @@ namespace UserInterface.ViewModel
                     Description = SelectedSKUID.Description,
                     DefaultQty = SelectedSKUID.DefaultQty,
                     Unit = SelectedSKUID.Unit,
+                    Length = SelectedSKUID.Length,
+                    Width = SelectedSKUID.Width,
+                    Height = SelectedSKUID.Height,
                     Weight = SelectedSKUID.Weight,
                     FrequencyClass = SelectedSKUID.FrequencyClass
                 };
@@ -323,6 +326,9 @@ namespace UserInterface.ViewModel
                             SelectedSKUID.Description = DetailedSKUID.Description;
                             SelectedSKUID.DefaultQty = DetailedSKUID.DefaultQty;
                             SelectedSKUID.Unit = DetailedSKUID.Unit;
+                            SelectedSKUID.Length = DetailedSKUID.Length;
+                            SelectedSKUID.Width = DetailedSKUID.Width;
+                            SelectedSKUID.Height = DetailedSKUID.Height;
                             SelectedSKUID.Weight = DetailedSKUID.Weight;
                             SelectedSKUID.FrequencyClass = DetailedSKUID.FrequencyClass;
                             break;
@@ -377,7 +383,7 @@ namespace UserInterface.ViewModel
                     });
                 foreach (var l in SKUIDList)
                     l.Initialize(_warehouse);
-                if (SelectedSKUID != null)
+                if (sl != null)
                     SelectedSKUID = SKUIDList.FirstOrDefault(p => p.ID == sl.ID);
                 if (SelectedSKUID == null)
                     SelectedSKUID = SKUIDList.FirstOrDefault();

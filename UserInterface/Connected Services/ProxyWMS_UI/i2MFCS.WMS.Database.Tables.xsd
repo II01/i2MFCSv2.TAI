@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Command.CommandOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="StoreTray" />
+      <xs:enumeration value="ConfirmStore" />
+      <xs:enumeration value="MoveTray" />
+      <xs:enumeration value="DropBox" />
+      <xs:enumeration value="PickBox" />
+      <xs:enumeration value="RetrieveTray" />
+      <xs:enumeration value="ConfirmFinish" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Command.CommandOperation" nillable="true" type="tns:Command.CommandOperation" />
+  <xs:simpleType name="Command.CommandStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotActive" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Command.CommandStatus" nillable="true" type="tns:Command.CommandStatus" />
+  <xs:simpleType name="Order.OrderOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="StoreTray" />
+      <xs:enumeration value="ConfirmStore" />
+      <xs:enumeration value="MoveTray" />
+      <xs:enumeration value="DropBox" />
+      <xs:enumeration value="PickBox" />
+      <xs:enumeration value="RetrieveTray" />
+      <xs:enumeration value="ConfirmFinish" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Order.OrderOperation" nillable="true" type="tns:Order.OrderOperation" />
+  <xs:complexType name="ArrayOfTU">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TU" nillable="true" type="tns:TU" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTU" nillable="true" type="tns:ArrayOfTU" />
+  <xs:complexType name="TU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Box_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExpDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FK_Box_ID" nillable="true" type="tns:Box_ID" />
+      <xs:element minOccurs="0" name="FK_TU_ID" nillable="true" type="tns:TU_ID" />
+      <xs:element minOccurs="0" name="ProdDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Qty" type="xs:double" />
+      <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TU" nillable="true" type="tns:TU" />
+  <xs:complexType name="Box_ID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Batch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FK_Command" nillable="true" type="tns:ArrayOfCommand" />
+      <xs:element minOccurs="0" name="FK_HistCommand" nillable="true" type="tns:ArrayOfHistCommand" />
+      <xs:element minOccurs="0" name="FK_HistOrder" nillable="true" type="tns:ArrayOfHistOrder" />
+      <xs:element minOccurs="0" name="FK_Order" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="FK_SKU_ID" nillable="true" type="tns:SKU_ID" />
+      <xs:element minOccurs="0" name="FK_TU" nillable="true" type="tns:ArrayOfTU" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SKU_ID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Box_ID" nillable="true" type="tns:Box_ID" />
+  <xs:complexType name="ArrayOfCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Command" nillable="true" type="tns:Command" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommand" nillable="true" type="tns:ArrayOfCommand" />
+  <xs:complexType name="Command">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Box_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FK_Box_ID" nillable="true" type="tns:Box_ID" />
+      <xs:element minOccurs="0" name="FK_OrderID" nillable="true" type="tns:Order" />
+      <xs:element minOccurs="0" name="FK_Source" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="FK_TU_ID" nillable="true" type="tns:TU_ID" />
+      <xs:element minOccurs="0" name="FK_Target" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastChange" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Operation" type="tns:Command.CommandOperation" />
+      <xs:element minOccurs="0" name="Order_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:Command.CommandStatus" />
+      <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Command" nillable="true" type="tns:Command" />
+  <xs:complexType name="Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Box_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ERP_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Box_ID" nillable="true" type="tns:Box_ID" />
+      <xs:element minOccurs="0" name="FK_CommandERP" nillable="true" type="tns:CommandERP" />
+      <xs:element minOccurs="0" name="FK_Commands" nillable="true" type="tns:ArrayOfCommand" />
+      <xs:element minOccurs="0" name="FK_Destination" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="FK_SKU_ID" nillable="true" type="tns:SKU_ID" />
+      <xs:element minOccurs="0" name="FK_TU_ID" nillable="true" type="tns:TU_ID" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Operation" type="tns:Order.OrderOperation" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReleaseTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SKU_Batch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SKU_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SKU_Qty" type="xs:double" />
+      <xs:element minOccurs="0" name="Status" type="tns:Order.OrderStatus" />
+      <xs:element minOccurs="0" name="SubOrderERPID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubOrderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Order" nillable="true" type="tns:Order" />
+  <xs:complexType name="CommandERP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Command" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ERP_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Command" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastChange" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Reference" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:CommandERP.CommandERPStatus" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommandERP" nillable="true" type="tns:CommandERP" />
+  <xs:complexType name="ArrayOfOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Order" nillable="true" type="tns:Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrder" nillable="true" type="tns:ArrayOfOrder" />
+  <xs:simpleType name="CommandERP.CommandERPStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotActive" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Finished" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CommandERP.CommandERPStatus" nillable="true" type="tns:CommandERP.CommandERPStatus" />
+  <xs:complexType name="PlaceID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DimensionClass" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_HistOrders" nillable="true" type="tns:ArrayOfHistOrder" />
+      <xs:element minOccurs="0" name="FK_Orders" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="FK_Places" nillable="true" type="tns:ArrayOfPlace" />
+      <xs:element minOccurs="0" name="FK_Source_Commands" nillable="true" type="tns:ArrayOfCommand" />
+      <xs:element minOccurs="0" name="FK_Source_HistCommands" nillable="true" type="tns:ArrayOfHistCommand" />
+      <xs:element minOccurs="0" name="FK_Target_Commands" nillable="true" type="tns:ArrayOfCommand" />
+      <xs:element minOccurs="0" name="FK_Target_HistCommands" nillable="true" type="tns:ArrayOfHistCommand" />
+      <xs:element minOccurs="0" name="FrequencyClass" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PositionHoist" type="xs:double" />
+      <xs:element minOccurs="0" name="PositionTravel" type="xs:double" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlaceID" nillable="true" type="tns:PlaceID" />
+  <xs:complexType name="ArrayOfHistOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistOrder" nillable="true" type="tns:HistOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistOrder" nillable="true" type="tns:ArrayOfHistOrder" />
+  <xs:complexType name="HistOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Box_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Destination" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ERP_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Box_ID" nillable="true" type="tns:Box_ID" />
+      <xs:element minOccurs="0" name="FK_CommandERP" nillable="true" type="tns:CommandERP" />
+      <xs:element minOccurs="0" name="FK_Destination" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="FK_HistCommands" nillable="true" type="tns:ArrayOfHistCommand" />
+      <xs:element minOccurs="0" name="FK_SKU_ID" nillable="true" type="tns:SKU_ID" />
+      <xs:element minOccurs="0" name="FK_TU_ID" nillable="true" type="tns:TU_ID" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Operation" type="tns:HistOrder.HistOrderOperation" />
+      <xs:element minOccurs="0" name="OrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="ReleaseTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SKU_Batch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SKU_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SKU_Qty" type="xs:double" />
+      <xs:element minOccurs="0" name="Status" type="tns:HistOrder.HistOrderStatus" />
+      <xs:element minOccurs="0" name="SubOrderERPID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubOrderID" type="xs:int" />
+      <xs:element minOccurs="0" name="SubOrderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistOrder" nillable="true" type="tns:HistOrder" />
+  <xs:complexType name="ArrayOfHistCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistCommand" nillable="true" type="tns:HistCommand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistCommand" nillable="true" type="tns:ArrayOfHistCommand" />
+  <xs:complexType name="HistCommand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Box_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FK_Box_ID" nillable="true" type="tns:Box_ID" />
+      <xs:element minOccurs="0" name="FK_HistOrderID" nillable="true" type="tns:HistOrder" />
+      <xs:element minOccurs="0" name="FK_Source" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="FK_TU_ID" nillable="true" type="tns:TU_ID" />
+      <xs:element minOccurs="0" name="FK_Target" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastChange" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Operation" type="tns:HistCommand.HistCommandOperation" />
+      <xs:element minOccurs="0" name="Order_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="tns:HistCommand.HistCommandStatus" />
+      <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Target" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistCommand" nillable="true" type="tns:HistCommand" />
+  <xs:complexType name="TU_ID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Blocked" type="xs:int" />
+      <xs:element minOccurs="0" name="DimensionClass" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Command" nillable="true" type="tns:ArrayOfCommand" />
+      <xs:element minOccurs="0" name="FK_Order" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="FK_Place" nillable="true" type="tns:ArrayOfPlace" />
+      <xs:element minOccurs="0" name="FK_TU" nillable="true" type="tns:ArrayOfTU" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TU_ID" nillable="true" type="tns:TU_ID" />
+  <xs:complexType name="ArrayOfPlace">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Place" nillable="true" type="tns:Place" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlace" nillable="true" type="tns:ArrayOfPlace" />
+  <xs:complexType name="Place">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_PlaceID" nillable="true" type="tns:PlaceID" />
+      <xs:element minOccurs="0" name="FK_TU_ID" nillable="true" type="tns:TU_ID" />
+      <xs:element minOccurs="0" name="PlaceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TU_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Place" nillable="true" type="tns:Place" />
+  <xs:simpleType name="HistCommand.HistCommandOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="StoreTray" />
+      <xs:enumeration value="ConfirmStore" />
+      <xs:enumeration value="MoveTray" />
+      <xs:enumeration value="DropBox" />
+      <xs:enumeration value="PickBox" />
+      <xs:enumeration value="RetrieveTray" />
+      <xs:enumeration value="ConfirmFinish" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HistCommand.HistCommandOperation" nillable="true" type="tns:HistCommand.HistCommandOperation" />
+  <xs:simpleType name="HistCommand.HistCommandStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotActive" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HistCommand.HistCommandStatus" nillable="true" type="tns:HistCommand.HistCommandStatus" />
+  <xs:complexType name="SKU_ID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DefaultQty" type="xs:double" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FK_Orders" nillable="true" type="tns:ArrayOfOrder" />
+      <xs:element minOccurs="0" name="FrequencyClass" type="xs:int" />
+      <xs:element minOccurs="0" name="Height" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Length" type="xs:int" />
+      <xs:element minOccurs="0" name="Unit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Weight" type="xs:double" />
+      <xs:element minOccurs="0" name="Width" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SKU_ID" nillable="true" type="tns:SKU_ID" />
+  <xs:simpleType name="HistOrder.HistOrderOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="StoreTray" />
+      <xs:enumeration value="ConfirmStore" />
+      <xs:enumeration value="MoveTray" />
+      <xs:enumeration value="DropBox" />
+      <xs:enumeration value="PickBox" />
+      <xs:enumeration value="RetrieveTray" />
+      <xs:enumeration value="ConfirmFinish" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HistOrder.HistOrderOperation" nillable="true" type="tns:HistOrder.HistOrderOperation" />
+  <xs:simpleType name="HistOrder.HistOrderStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disabled" />
+      <xs:enumeration value="NotActive" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="OnTargetPart" />
+      <xs:enumeration value="OnTargetAll" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="HistOrder.HistOrderStatus" nillable="true" type="tns:HistOrder.HistOrderStatus" />
+  <xs:simpleType name="Order.OrderStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Disabled" />
+      <xs:enumeration value="NotActive" />
+      <xs:enumeration value="Active" />
+      <xs:enumeration value="OnTargetPart" />
+      <xs:enumeration value="OnTargetAll" />
+      <xs:enumeration value="Canceled" />
+      <xs:enumeration value="Finished" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Order.OrderStatus" nillable="true" type="tns:Order.OrderStatus" />
+</xs:schema>

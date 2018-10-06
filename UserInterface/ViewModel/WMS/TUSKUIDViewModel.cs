@@ -16,6 +16,7 @@ namespace UserInterface.ViewModel
     {
         #region members
         private TUSKUID _data;
+        private int _tuid;
         private bool _allPropertiesValid = false;
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
@@ -63,7 +64,6 @@ namespace UserInterface.ViewModel
                 }
             }
         }
-
         public double Qty
         {
             get { return _data.Qty; }
@@ -175,6 +175,7 @@ namespace UserInterface.ViewModel
             AllowChangeIndex = false;
             ProdDate = DateTime.Now;
             ExpDate = DateTime.Now;
+            Messenger.Default.Register<MessageValidationTUID>(this, msg => { _tuid = msg.TUID; });
         }
         public void Initialize(BasicWarehouse warehouse)
         {
@@ -182,6 +183,7 @@ namespace UserInterface.ViewModel
             try
             {
                 _dbservicewms = new DBServiceWMS(warehouse);
+                Messenger.Default.Send<MessageValidationRequestTUID>(new MessageValidationRequestTUID { Trigger = true } );
             }
             catch (Exception e)
             {
@@ -208,17 +210,33 @@ namespace UserInterface.ViewModel
                     {
                         switch (propertyName)
                         {
-                            case "SKUID":
-                                if (_dbservicewms.FindSKUID(SKUID) == null)
-                                    validationResult = ResourceReader.GetString("ERR_SKUID");
+                            case "BoxID":
+                                var b = _dbservicewms.FindBoxByBoxID(BoxID);
+                                if (b != null)
+                                {
+                                    SKUID = b.SKU_ID;
+                                    Batch = b.Batch;
+                                    Description = _dbservicewms.FindSKUID(SKUID)?.Description ?? "-";
+                                    var tu = _dbservicewms.FindTUByBoxID(BoxID);
+                                    if ( tu != null && tu.TU_ID != _tuid)
+                                        validationResult = ResourceReader.GetString("ERR_BOXID_EXISTS");
+                                }
+                                else
+                                {
+                                    SKUID = null;
+                                    Batch = null;
+                                    Description = null;
+                                    if (BoxID != null)
+                                        validationResult = ResourceReader.GetString("ERR_BOXID_EXISTS");
+                                }
                                 break;
                             case "Qty":
                                 if (Qty <= 0 )
                                     validationResult = ResourceReader.GetString("ERR_RANGE");
                                 break;
-                            case "Batch":
-                                if (Batch == null)
-                                    validationResult = ResourceReader.GetString("ERR_BATCH");
+                            case "DimensionClass":
+                                if (Qty <= 0)
+                                    validationResult = ResourceReader.GetString("ERR_CLASS");
                                 break;
                             case "ProdDate":
                                 if (ProdDate < SqlDateTime.MinValue.Value || ProdDate > SqlDateTime.MaxValue.Value)

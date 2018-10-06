@@ -70,11 +70,11 @@
 <!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PositionTravel}" 
                                     Width="*" Binding="{Binding PositionTravel}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=PositionHoist}" 
-                                    Width="*" Binding="{Binding PositionHoist}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="*" Binding="{Binding PositionHoist}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=DimensionClass}" 
-                                    Width="*" Binding="{Binding DimensionClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=FrequencyClass}" 
-                                    Width="*" Binding="{Binding FrequencyClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="*" Binding="{Binding DimensionClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=FrequencyClass}" 
+                                    Width="*" Binding="{Binding FrequencyClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
                                     Width="*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
@@ -87,14 +87,14 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical" VerticalAlignment="Stretch">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Margin="10,0,0,20" Content="{Resx Block}" Command="{Binding Block}" />
                 <Button Margin="10,0,0,20" Content="{Resx Unblock}" Command="{Binding Unblock}" />
-                <Button Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/>
+                <!--                <Button Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/> -->
             </StackPanel>
             <ContentControl x:Name="ccPlaceID" 
                         IsEnabled="{Binding EditEnabled}"                       
@@ -112,5 +112,6 @@
                         Visibility="{Binding EnabledCC, Converter={StaticResource BoolToVisibility}}"/>
             </StackPanel>
         </StackPanel>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Text="{Resx MsgBlock}" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
     </Grid>
 </UserControl>

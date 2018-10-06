@@ -55,8 +55,8 @@
                                     Width="*" Binding="{Binding Size}" />
                 <DataGridCheckBoxColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Blocked}" 
                                         Width="*" Binding="{Binding Blocked}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridCheckBoxColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Reserved}" 
-                                        Width="*" Binding="{Binding Reserved}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridCheckBoxColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Reserved}" 
+                                        Width="*" Binding="{Binding Reserved}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">

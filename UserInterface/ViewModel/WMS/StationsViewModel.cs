@@ -39,7 +39,7 @@ namespace UserInterface.ViewModel
         private ReleaseOrderViewModel _selectedSubOrder;
         private ReleaseOrderViewModel _detailedOrder;
         private CommandWMSViewModel _selectedCommand;
-        private TU_ID _activeTUID;
+        private DatabaseWMS.TU_ID _activeTUID;
         private bool _editEnabled;
         private bool _enabledCC;
         private int _accessLevel;
@@ -211,7 +211,7 @@ namespace UserInterface.ViewModel
             }
         }
 
-        public TU_ID ActiveTUID
+        public DatabaseWMS.TU_ID ActiveTUID
         {
             get { return _activeTUID; }
             set
@@ -315,7 +315,7 @@ namespace UserInterface.ViewModel
             EnabledCC = false;
 
             _selectedCmd = CommandType.None;
-            _activeTUID = new TU_ID();
+            _activeTUID = new DatabaseWMS.TU_ID();
 
             RefreshSubOrder = new RelayCommand(async () => await ExecuteRefreshSubOrder());
             RefreshCommand = new RelayCommand(async () => await ExecuteRefreshCommandWMS());
@@ -470,12 +470,12 @@ namespace UserInterface.ViewModel
                 _warehouse.DBService.CreateOrUpdateMaterialID(_activeTUID.ID, (_activeTUID.DimensionClass + 1) % 3, null);
                 _warehouse.DBService.AddCommand(new CommandMaterial
                 {
-                    Task = Command.EnumCommandTask.CreateMaterial,
+                    Task = Database.Command.EnumCommandTask.CreateMaterial,
                     Material = _activeTUID.ID,
                     Source = io,
                     Target = io,
                     Info = "modify",
-                    Status = Command.EnumCommandStatus.NotActive,
+                    Status = Database.Command.EnumCommandStatus.NotActive,
                     Time = DateTime.Now
                 });
                 _selectedCmd = CommandType.None;
@@ -710,6 +710,19 @@ namespace UserInterface.ViewModel
         {
             try
             {
+                if(Operation is StationActionViewModel)
+                {
+                    var cmd = DataListCommand.FirstOrDefault(p => p.Status == EnumCommandWMSStatus.Active);
+                    if (cmd != null)
+                        using (WMSToUIClient client = new WMSToUIClient())
+                        {
+                            client.CancelCommand(new DTOCommand
+                            {
+                                ID = cmd.WMSID
+                            });
+                        }
+                }
+
                 Operation = null;
                 EnabledCC = false;
                 VisibleOperation = false;
@@ -974,6 +987,8 @@ namespace UserInterface.ViewModel
                         Operation = new StationActionViewModel();
                         (Operation as StationActionViewModel).Initialize(_warehouse, cmdsDrop);
                         (Operation as StationActionViewModel).Command = StationActionViewModel.CommandType.DropBox;
+                        VisibleOperation = true;
+                        EnabledCC = true;
                         EditEnabled = true;
                     }
                     if (cmdsPick.Count > 0 && Operation == null)
@@ -981,11 +996,15 @@ namespace UserInterface.ViewModel
                         Operation = new StationActionViewModel();
                         (Operation as StationActionViewModel).Initialize(_warehouse, cmdsPick);
                         (Operation as StationActionViewModel).Command = StationActionViewModel.CommandType.PickBox;
+                        VisibleOperation = true;
+                        EnabledCC = true;
                         EditEnabled = true;
                     }
                     else if (cmdsDrop.Count == 0 && cmdsPick.Count == 0 && Operation is StationActionViewModel)
                     {
                         Operation = null;
+                        VisibleOperation = false;
+                        EnabledCC = false;
                         EditEnabled = false;
                     }
 

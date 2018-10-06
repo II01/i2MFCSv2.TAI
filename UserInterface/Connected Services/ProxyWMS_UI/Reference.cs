@@ -11,8 +11,9 @@
 namespace UserInterface.ProxyWMS_UI {
     using System.Runtime.Serialization;
     using System;
-    
-    
+    using DatabaseWMS;
+    using System.Collections.Generic;
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DTOCommand", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.DTO")]
@@ -32,7 +33,7 @@ namespace UserInterface.ProxyWMS_UI {
         private System.DateTime LastChangeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.ProxyWMS_UI.CommandCommandOperation OperationField;
+        private UserInterface.ProxyWMS_UI.Command.CommandOperation OperationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> Order_IDField;
@@ -41,7 +42,7 @@ namespace UserInterface.ProxyWMS_UI {
         private string SourceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.ProxyWMS_UI.CommandCommandStatus StatusField;
+        private UserInterface.ProxyWMS_UI.Command.CommandStatus StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TU_IDField;
@@ -99,7 +100,7 @@ namespace UserInterface.ProxyWMS_UI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.ProxyWMS_UI.CommandCommandOperation Operation {
+        public UserInterface.ProxyWMS_UI.Command.CommandOperation Operation {
             get {
                 return this.OperationField;
             }
@@ -138,7 +139,7 @@ namespace UserInterface.ProxyWMS_UI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.ProxyWMS_UI.CommandCommandStatus Status {
+        public UserInterface.ProxyWMS_UI.Command.CommandStatus Status {
             get {
                 return this.StatusField;
             }
@@ -186,50 +187,319 @@ namespace UserInterface.ProxyWMS_UI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Command.CommandOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
-    public enum CommandCommandOperation : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="Command", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class Command : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 0,
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        StoreTray = 1,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Box_IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConfirmStore = 2,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Box_ID FK_Box_IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MoveTray = 3,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order FK_OrderIDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DropBox = 4,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.PlaceID FK_SourceField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PickBox = 5,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU_ID FK_TU_IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RetrieveTray = 6,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.PlaceID FK_TargetField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConfirmFinish = 7,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Command.CommandStatus", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
-    public enum CommandCommandStatus : int {
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NotActive = 0,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastChangeField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Active = 1,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Command.CommandOperation OperationField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Canceled = 2,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> Order_IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Finished = 3,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Command.CommandStatus StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TargetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Box_ID {
+            get {
+                return this.Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Box_IDField, value) != true)) {
+                    this.Box_IDField = value;
+                    this.RaisePropertyChanged("Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Box_ID FK_Box_ID {
+            get {
+                return this.FK_Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Box_IDField, value) != true)) {
+                    this.FK_Box_IDField = value;
+                    this.RaisePropertyChanged("FK_Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order FK_OrderID {
+            get {
+                return this.FK_OrderIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_OrderIDField, value) != true)) {
+                    this.FK_OrderIDField = value;
+                    this.RaisePropertyChanged("FK_OrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.PlaceID FK_Source {
+            get {
+                return this.FK_SourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_SourceField, value) != true)) {
+                    this.FK_SourceField = value;
+                    this.RaisePropertyChanged("FK_Source");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU_ID FK_TU_ID {
+            get {
+                return this.FK_TU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TU_IDField, value) != true)) {
+                    this.FK_TU_IDField = value;
+                    this.RaisePropertyChanged("FK_TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.PlaceID FK_Target {
+            get {
+                return this.FK_TargetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TargetField, value) != true)) {
+                    this.FK_TargetField = value;
+                    this.RaisePropertyChanged("FK_Target");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastChange {
+            get {
+                return this.LastChangeField;
+            }
+            set {
+                if ((this.LastChangeField.Equals(value) != true)) {
+                    this.LastChangeField = value;
+                    this.RaisePropertyChanged("LastChange");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Command.CommandOperation Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Order_ID {
+            get {
+                return this.Order_IDField;
+            }
+            set {
+                if ((this.Order_IDField.Equals(value) != true)) {
+                    this.Order_IDField = value;
+                    this.RaisePropertyChanged("Order_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Source {
+            get {
+                return this.SourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
+                    this.SourceField = value;
+                    this.RaisePropertyChanged("Source");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Command.CommandStatus Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TU_ID {
+            get {
+                return this.TU_IDField;
+            }
+            set {
+                if ((this.TU_IDField.Equals(value) != true)) {
+                    this.TU_IDField = value;
+                    this.RaisePropertyChanged("TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Target {
+            get {
+                return this.TargetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TargetField, value) != true)) {
+                    this.TargetField = value;
+                    this.RaisePropertyChanged("Target");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="Command.CommandOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum CommandOperation : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            None = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            StoreTray = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmStore = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            MoveTray = 3,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            DropBox = 4,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            PickBox = 5,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            RetrieveTray = 6,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmFinish = 7,
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="Command.CommandStatus", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum CommandStatus : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            NotActive = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Active = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Canceled = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Finished = 3,
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -254,7 +524,7 @@ namespace UserInterface.ProxyWMS_UI {
         private int IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UserInterface.ProxyWMS_UI.OrderOrderOperation OperationField;
+        private UserInterface.ProxyWMS_UI.Order.OrderOperation OperationField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int OrderIDField;
@@ -352,7 +622,7 @@ namespace UserInterface.ProxyWMS_UI {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public UserInterface.ProxyWMS_UI.OrderOrderOperation Operation {
+        public UserInterface.ProxyWMS_UI.Order.OrderOperation Operation {
             get {
                 return this.OperationField;
             }
@@ -517,33 +787,424 @@ namespace UserInterface.ProxyWMS_UI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Order.OrderOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
-    public enum OrderOrderOperation : int {
+    [System.Runtime.Serialization.DataContractAttribute(Name="Order", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class Order : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 0,
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        StoreTray = 1,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Box_IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConfirmStore = 2,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DestinationField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MoveTray = 3,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ERP_IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DropBox = 4,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Box_ID FK_Box_IDField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PickBox = 5,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.CommandERP FK_CommandERPField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RetrieveTray = 6,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Command[] FK_CommandsField;
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ConfirmFinish = 7,
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.PlaceID FK_DestinationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.SKU_ID FK_SKU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU_ID FK_TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order.OrderOperation OperationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ReleaseTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SKU_BatchField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SKU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SKU_QtyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order.OrderStatus StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SubOrderERPIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SubOrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubOrderNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TU_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Box_ID {
+            get {
+                return this.Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Box_IDField, value) != true)) {
+                    this.Box_IDField = value;
+                    this.RaisePropertyChanged("Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Destination {
+            get {
+                return this.DestinationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DestinationField, value) != true)) {
+                    this.DestinationField = value;
+                    this.RaisePropertyChanged("Destination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ERP_ID {
+            get {
+                return this.ERP_IDField;
+            }
+            set {
+                if ((this.ERP_IDField.Equals(value) != true)) {
+                    this.ERP_IDField = value;
+                    this.RaisePropertyChanged("ERP_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Box_ID FK_Box_ID {
+            get {
+                return this.FK_Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Box_IDField, value) != true)) {
+                    this.FK_Box_IDField = value;
+                    this.RaisePropertyChanged("FK_Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.CommandERP FK_CommandERP {
+            get {
+                return this.FK_CommandERPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_CommandERPField, value) != true)) {
+                    this.FK_CommandERPField = value;
+                    this.RaisePropertyChanged("FK_CommandERP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Command[] FK_Commands {
+            get {
+                return this.FK_CommandsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_CommandsField, value) != true)) {
+                    this.FK_CommandsField = value;
+                    this.RaisePropertyChanged("FK_Commands");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.PlaceID FK_Destination {
+            get {
+                return this.FK_DestinationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_DestinationField, value) != true)) {
+                    this.FK_DestinationField = value;
+                    this.RaisePropertyChanged("FK_Destination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.SKU_ID FK_SKU_ID {
+            get {
+                return this.FK_SKU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_SKU_IDField, value) != true)) {
+                    this.FK_SKU_IDField = value;
+                    this.RaisePropertyChanged("FK_SKU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU_ID FK_TU_ID {
+            get {
+                return this.FK_TU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TU_IDField, value) != true)) {
+                    this.FK_TU_IDField = value;
+                    this.RaisePropertyChanged("FK_TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order.OrderOperation Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderID {
+            get {
+                return this.OrderIDField;
+            }
+            set {
+                if ((this.OrderIDField.Equals(value) != true)) {
+                    this.OrderIDField = value;
+                    this.RaisePropertyChanged("OrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ReleaseTime {
+            get {
+                return this.ReleaseTimeField;
+            }
+            set {
+                if ((this.ReleaseTimeField.Equals(value) != true)) {
+                    this.ReleaseTimeField = value;
+                    this.RaisePropertyChanged("ReleaseTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SKU_Batch {
+            get {
+                return this.SKU_BatchField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SKU_BatchField, value) != true)) {
+                    this.SKU_BatchField = value;
+                    this.RaisePropertyChanged("SKU_Batch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SKU_ID {
+            get {
+                return this.SKU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SKU_IDField, value) != true)) {
+                    this.SKU_IDField = value;
+                    this.RaisePropertyChanged("SKU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SKU_Qty {
+            get {
+                return this.SKU_QtyField;
+            }
+            set {
+                if ((this.SKU_QtyField.Equals(value) != true)) {
+                    this.SKU_QtyField = value;
+                    this.RaisePropertyChanged("SKU_Qty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order.OrderStatus Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SubOrderERPID {
+            get {
+                return this.SubOrderERPIDField;
+            }
+            set {
+                if ((this.SubOrderERPIDField.Equals(value) != true)) {
+                    this.SubOrderERPIDField = value;
+                    this.RaisePropertyChanged("SubOrderERPID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SubOrderID {
+            get {
+                return this.SubOrderIDField;
+            }
+            set {
+                if ((this.SubOrderIDField.Equals(value) != true)) {
+                    this.SubOrderIDField = value;
+                    this.RaisePropertyChanged("SubOrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SubOrderName {
+            get {
+                return this.SubOrderNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubOrderNameField, value) != true)) {
+                    this.SubOrderNameField = value;
+                    this.RaisePropertyChanged("SubOrderName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TU_ID {
+            get {
+                return this.TU_IDField;
+            }
+            set {
+                if ((this.TU_IDField.Equals(value) != true)) {
+                    this.TU_IDField = value;
+                    this.RaisePropertyChanged("TU_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="Order.OrderOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum OrderOperation : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            None = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            StoreTray = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmStore = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            MoveTray = 3,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            DropBox = 4,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            PickBox = 5,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            RetrieveTray = 6,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmFinish = 7,
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="Order.OrderStatus", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum OrderStatus : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Disabled = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            NotActive = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Active = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            OnTargetPart = 3,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            OnTargetAll = 4,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Canceled = 5,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Finished = 6,
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -687,6 +1348,1924 @@ namespace UserInterface.ProxyWMS_UI {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TU", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class TU : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Box_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ExpDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Box_ID FK_Box_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU_ID FK_TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ProdDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double QtyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TU_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Box_ID {
+            get {
+                return this.Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Box_IDField, value) != true)) {
+                    this.Box_IDField = value;
+                    this.RaisePropertyChanged("Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ExpDate {
+            get {
+                return this.ExpDateField;
+            }
+            set {
+                if ((this.ExpDateField.Equals(value) != true)) {
+                    this.ExpDateField = value;
+                    this.RaisePropertyChanged("ExpDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Box_ID FK_Box_ID {
+            get {
+                return this.FK_Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Box_IDField, value) != true)) {
+                    this.FK_Box_IDField = value;
+                    this.RaisePropertyChanged("FK_Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU_ID FK_TU_ID {
+            get {
+                return this.FK_TU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TU_IDField, value) != true)) {
+                    this.FK_TU_IDField = value;
+                    this.RaisePropertyChanged("FK_TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ProdDate {
+            get {
+                return this.ProdDateField;
+            }
+            set {
+                if ((this.ProdDateField.Equals(value) != true)) {
+                    this.ProdDateField = value;
+                    this.RaisePropertyChanged("ProdDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Qty {
+            get {
+                return this.QtyField;
+            }
+            set {
+                if ((this.QtyField.Equals(value) != true)) {
+                    this.QtyField = value;
+                    this.RaisePropertyChanged("Qty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TU_ID {
+            get {
+                return this.TU_IDField;
+            }
+            set {
+                if ((this.TU_IDField.Equals(value) != true)) {
+                    this.TU_IDField = value;
+                    this.RaisePropertyChanged("TU_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Box_ID", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class Box_ID : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BatchField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Command[] FK_CommandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistCommand[] FK_HistCommandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistOrder[] FK_HistOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order[] FK_OrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.SKU_ID FK_SKU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU[] FK_TUField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SKU_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Batch {
+            get {
+                return this.BatchField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BatchField, value) != true)) {
+                    this.BatchField = value;
+                    this.RaisePropertyChanged("Batch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Command[] FK_Command {
+            get {
+                return this.FK_CommandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_CommandField, value) != true)) {
+                    this.FK_CommandField = value;
+                    this.RaisePropertyChanged("FK_Command");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistCommand[] FK_HistCommand {
+            get {
+                return this.FK_HistCommandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_HistCommandField, value) != true)) {
+                    this.FK_HistCommandField = value;
+                    this.RaisePropertyChanged("FK_HistCommand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistOrder[] FK_HistOrder {
+            get {
+                return this.FK_HistOrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_HistOrderField, value) != true)) {
+                    this.FK_HistOrderField = value;
+                    this.RaisePropertyChanged("FK_HistOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order[] FK_Order {
+            get {
+                return this.FK_OrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_OrderField, value) != true)) {
+                    this.FK_OrderField = value;
+                    this.RaisePropertyChanged("FK_Order");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.SKU_ID FK_SKU_ID {
+            get {
+                return this.FK_SKU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_SKU_IDField, value) != true)) {
+                    this.FK_SKU_IDField = value;
+                    this.RaisePropertyChanged("FK_SKU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU[] FK_TU {
+            get {
+                return this.FK_TUField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TUField, value) != true)) {
+                    this.FK_TUField = value;
+                    this.RaisePropertyChanged("FK_TU");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IDField, value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SKU_ID {
+            get {
+                return this.SKU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SKU_IDField, value) != true)) {
+                    this.SKU_IDField = value;
+                    this.RaisePropertyChanged("SKU_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TU_ID", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class TU_ID : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BlockedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DimensionClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Command[] FK_CommandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order[] FK_OrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Place[] FK_PlaceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU[] FK_TUField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Blocked {
+            get {
+                return this.BlockedField;
+            }
+            set {
+                if ((this.BlockedField.Equals(value) != true)) {
+                    this.BlockedField = value;
+                    this.RaisePropertyChanged("Blocked");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DimensionClass {
+            get {
+                return this.DimensionClassField;
+            }
+            set {
+                if ((this.DimensionClassField.Equals(value) != true)) {
+                    this.DimensionClassField = value;
+                    this.RaisePropertyChanged("DimensionClass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Command[] FK_Command {
+            get {
+                return this.FK_CommandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_CommandField, value) != true)) {
+                    this.FK_CommandField = value;
+                    this.RaisePropertyChanged("FK_Command");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order[] FK_Order {
+            get {
+                return this.FK_OrderField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_OrderField, value) != true)) {
+                    this.FK_OrderField = value;
+                    this.RaisePropertyChanged("FK_Order");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Place[] FK_Place {
+            get {
+                return this.FK_PlaceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_PlaceField, value) != true)) {
+                    this.FK_PlaceField = value;
+                    this.RaisePropertyChanged("FK_Place");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU[] FK_TU {
+            get {
+                return this.FK_TUField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TUField, value) != true)) {
+                    this.FK_TUField = value;
+                    this.RaisePropertyChanged("FK_TU");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SKU_ID", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class SKU_ID : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DefaultQtyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order[] FK_OrdersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FrequencyClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int HeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LengthField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UnitField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double WeightField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int WidthField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double DefaultQty {
+            get {
+                return this.DefaultQtyField;
+            }
+            set {
+                if ((this.DefaultQtyField.Equals(value) != true)) {
+                    this.DefaultQtyField = value;
+                    this.RaisePropertyChanged("DefaultQty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order[] FK_Orders {
+            get {
+                return this.FK_OrdersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_OrdersField, value) != true)) {
+                    this.FK_OrdersField = value;
+                    this.RaisePropertyChanged("FK_Orders");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FrequencyClass {
+            get {
+                return this.FrequencyClassField;
+            }
+            set {
+                if ((this.FrequencyClassField.Equals(value) != true)) {
+                    this.FrequencyClassField = value;
+                    this.RaisePropertyChanged("FrequencyClass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Height {
+            get {
+                return this.HeightField;
+            }
+            set {
+                if ((this.HeightField.Equals(value) != true)) {
+                    this.HeightField = value;
+                    this.RaisePropertyChanged("Height");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IDField, value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Length {
+            get {
+                return this.LengthField;
+            }
+            set {
+                if ((this.LengthField.Equals(value) != true)) {
+                    this.LengthField = value;
+                    this.RaisePropertyChanged("Length");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Unit {
+            get {
+                return this.UnitField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UnitField, value) != true)) {
+                    this.UnitField = value;
+                    this.RaisePropertyChanged("Unit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Width {
+            get {
+                return this.WidthField;
+            }
+            set {
+                if ((this.WidthField.Equals(value) != true)) {
+                    this.WidthField = value;
+                    this.RaisePropertyChanged("Width");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistCommand", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class HistCommand : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Box_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Box_ID FK_Box_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistOrder FK_HistOrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.PlaceID FK_SourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU_ID FK_TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.PlaceID FK_TargetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastChangeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistCommand.HistCommandOperation OperationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> Order_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistCommand.HistCommandStatus StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TargetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Box_ID {
+            get {
+                return this.Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Box_IDField, value) != true)) {
+                    this.Box_IDField = value;
+                    this.RaisePropertyChanged("Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Box_ID FK_Box_ID {
+            get {
+                return this.FK_Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Box_IDField, value) != true)) {
+                    this.FK_Box_IDField = value;
+                    this.RaisePropertyChanged("FK_Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistOrder FK_HistOrderID {
+            get {
+                return this.FK_HistOrderIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_HistOrderIDField, value) != true)) {
+                    this.FK_HistOrderIDField = value;
+                    this.RaisePropertyChanged("FK_HistOrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.PlaceID FK_Source {
+            get {
+                return this.FK_SourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_SourceField, value) != true)) {
+                    this.FK_SourceField = value;
+                    this.RaisePropertyChanged("FK_Source");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU_ID FK_TU_ID {
+            get {
+                return this.FK_TU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TU_IDField, value) != true)) {
+                    this.FK_TU_IDField = value;
+                    this.RaisePropertyChanged("FK_TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.PlaceID FK_Target {
+            get {
+                return this.FK_TargetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TargetField, value) != true)) {
+                    this.FK_TargetField = value;
+                    this.RaisePropertyChanged("FK_Target");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastChange {
+            get {
+                return this.LastChangeField;
+            }
+            set {
+                if ((this.LastChangeField.Equals(value) != true)) {
+                    this.LastChangeField = value;
+                    this.RaisePropertyChanged("LastChange");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistCommand.HistCommandOperation Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Order_ID {
+            get {
+                return this.Order_IDField;
+            }
+            set {
+                if ((this.Order_IDField.Equals(value) != true)) {
+                    this.Order_IDField = value;
+                    this.RaisePropertyChanged("Order_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Source {
+            get {
+                return this.SourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SourceField, value) != true)) {
+                    this.SourceField = value;
+                    this.RaisePropertyChanged("Source");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistCommand.HistCommandStatus Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TU_ID {
+            get {
+                return this.TU_IDField;
+            }
+            set {
+                if ((this.TU_IDField.Equals(value) != true)) {
+                    this.TU_IDField = value;
+                    this.RaisePropertyChanged("TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Target {
+            get {
+                return this.TargetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TargetField, value) != true)) {
+                    this.TargetField = value;
+                    this.RaisePropertyChanged("Target");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="HistCommand.HistCommandOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum HistCommandOperation : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            None = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            StoreTray = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmStore = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            MoveTray = 3,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            DropBox = 4,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            PickBox = 5,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            RetrieveTray = 6,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmFinish = 7,
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="HistCommand.HistCommandStatus", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum HistCommandStatus : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            NotActive = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Active = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Canceled = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Finished = 3,
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HistOrder", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class HistOrder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Box_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DestinationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ERP_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Box_ID FK_Box_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.CommandERP FK_CommandERPField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.PlaceID FK_DestinationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistCommand[] FK_HistCommandsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.SKU_ID FK_SKU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU_ID FK_TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistOrder.HistOrderOperation OperationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ReleaseTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SKU_BatchField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SKU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double SKU_QtyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistOrder.HistOrderStatus StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SubOrderERPIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int SubOrderIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SubOrderNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TU_IDField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Box_ID {
+            get {
+                return this.Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Box_IDField, value) != true)) {
+                    this.Box_IDField = value;
+                    this.RaisePropertyChanged("Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Destination {
+            get {
+                return this.DestinationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DestinationField, value) != true)) {
+                    this.DestinationField = value;
+                    this.RaisePropertyChanged("Destination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ERP_ID {
+            get {
+                return this.ERP_IDField;
+            }
+            set {
+                if ((this.ERP_IDField.Equals(value) != true)) {
+                    this.ERP_IDField = value;
+                    this.RaisePropertyChanged("ERP_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Box_ID FK_Box_ID {
+            get {
+                return this.FK_Box_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Box_IDField, value) != true)) {
+                    this.FK_Box_IDField = value;
+                    this.RaisePropertyChanged("FK_Box_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.CommandERP FK_CommandERP {
+            get {
+                return this.FK_CommandERPField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_CommandERPField, value) != true)) {
+                    this.FK_CommandERPField = value;
+                    this.RaisePropertyChanged("FK_CommandERP");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.PlaceID FK_Destination {
+            get {
+                return this.FK_DestinationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_DestinationField, value) != true)) {
+                    this.FK_DestinationField = value;
+                    this.RaisePropertyChanged("FK_Destination");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistCommand[] FK_HistCommands {
+            get {
+                return this.FK_HistCommandsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_HistCommandsField, value) != true)) {
+                    this.FK_HistCommandsField = value;
+                    this.RaisePropertyChanged("FK_HistCommands");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.SKU_ID FK_SKU_ID {
+            get {
+                return this.FK_SKU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_SKU_IDField, value) != true)) {
+                    this.FK_SKU_IDField = value;
+                    this.RaisePropertyChanged("FK_SKU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU_ID FK_TU_ID {
+            get {
+                return this.FK_TU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TU_IDField, value) != true)) {
+                    this.FK_TU_IDField = value;
+                    this.RaisePropertyChanged("FK_TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistOrder.HistOrderOperation Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((this.OperationField.Equals(value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrderID {
+            get {
+                return this.OrderIDField;
+            }
+            set {
+                if ((this.OrderIDField.Equals(value) != true)) {
+                    this.OrderIDField = value;
+                    this.RaisePropertyChanged("OrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ReleaseTime {
+            get {
+                return this.ReleaseTimeField;
+            }
+            set {
+                if ((this.ReleaseTimeField.Equals(value) != true)) {
+                    this.ReleaseTimeField = value;
+                    this.RaisePropertyChanged("ReleaseTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SKU_Batch {
+            get {
+                return this.SKU_BatchField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SKU_BatchField, value) != true)) {
+                    this.SKU_BatchField = value;
+                    this.RaisePropertyChanged("SKU_Batch");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SKU_ID {
+            get {
+                return this.SKU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SKU_IDField, value) != true)) {
+                    this.SKU_IDField = value;
+                    this.RaisePropertyChanged("SKU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double SKU_Qty {
+            get {
+                return this.SKU_QtyField;
+            }
+            set {
+                if ((this.SKU_QtyField.Equals(value) != true)) {
+                    this.SKU_QtyField = value;
+                    this.RaisePropertyChanged("SKU_Qty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistOrder.HistOrderStatus Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SubOrderERPID {
+            get {
+                return this.SubOrderERPIDField;
+            }
+            set {
+                if ((this.SubOrderERPIDField.Equals(value) != true)) {
+                    this.SubOrderERPIDField = value;
+                    this.RaisePropertyChanged("SubOrderERPID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int SubOrderID {
+            get {
+                return this.SubOrderIDField;
+            }
+            set {
+                if ((this.SubOrderIDField.Equals(value) != true)) {
+                    this.SubOrderIDField = value;
+                    this.RaisePropertyChanged("SubOrderID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SubOrderName {
+            get {
+                return this.SubOrderNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubOrderNameField, value) != true)) {
+                    this.SubOrderNameField = value;
+                    this.RaisePropertyChanged("SubOrderName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TU_ID {
+            get {
+                return this.TU_IDField;
+            }
+            set {
+                if ((this.TU_IDField.Equals(value) != true)) {
+                    this.TU_IDField = value;
+                    this.RaisePropertyChanged("TU_ID");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="HistOrder.HistOrderOperation", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum HistOrderOperation : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            None = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            StoreTray = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmStore = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            MoveTray = 3,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            DropBox = 4,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            PickBox = 5,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            RetrieveTray = 6,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            ConfirmFinish = 7,
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="HistOrder.HistOrderStatus", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum HistOrderStatus : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Disabled = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            NotActive = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Active = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            OnTargetPart = 3,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            OnTargetAll = 4,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Canceled = 5,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Finished = 6,
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PlaceID", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class PlaceID : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DimensionClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistOrder[] FK_HistOrdersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order[] FK_OrdersField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Place[] FK_PlacesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Command[] FK_Source_CommandsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistCommand[] FK_Source_HistCommandsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Command[] FK_Target_CommandsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.HistCommand[] FK_Target_HistCommandsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FrequencyClassField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PositionHoistField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PositionTravelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int StatusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DimensionClass {
+            get {
+                return this.DimensionClassField;
+            }
+            set {
+                if ((this.DimensionClassField.Equals(value) != true)) {
+                    this.DimensionClassField = value;
+                    this.RaisePropertyChanged("DimensionClass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistOrder[] FK_HistOrders {
+            get {
+                return this.FK_HistOrdersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_HistOrdersField, value) != true)) {
+                    this.FK_HistOrdersField = value;
+                    this.RaisePropertyChanged("FK_HistOrders");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order[] FK_Orders {
+            get {
+                return this.FK_OrdersField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_OrdersField, value) != true)) {
+                    this.FK_OrdersField = value;
+                    this.RaisePropertyChanged("FK_Orders");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Place[] FK_Places {
+            get {
+                return this.FK_PlacesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_PlacesField, value) != true)) {
+                    this.FK_PlacesField = value;
+                    this.RaisePropertyChanged("FK_Places");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Command[] FK_Source_Commands {
+            get {
+                return this.FK_Source_CommandsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Source_CommandsField, value) != true)) {
+                    this.FK_Source_CommandsField = value;
+                    this.RaisePropertyChanged("FK_Source_Commands");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistCommand[] FK_Source_HistCommands {
+            get {
+                return this.FK_Source_HistCommandsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Source_HistCommandsField, value) != true)) {
+                    this.FK_Source_HistCommandsField = value;
+                    this.RaisePropertyChanged("FK_Source_HistCommands");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Command[] FK_Target_Commands {
+            get {
+                return this.FK_Target_CommandsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Target_CommandsField, value) != true)) {
+                    this.FK_Target_CommandsField = value;
+                    this.RaisePropertyChanged("FK_Target_Commands");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.HistCommand[] FK_Target_HistCommands {
+            get {
+                return this.FK_Target_HistCommandsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_Target_HistCommandsField, value) != true)) {
+                    this.FK_Target_HistCommandsField = value;
+                    this.RaisePropertyChanged("FK_Target_HistCommands");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int FrequencyClass {
+            get {
+                return this.FrequencyClassField;
+            }
+            set {
+                if ((this.FrequencyClassField.Equals(value) != true)) {
+                    this.FrequencyClassField = value;
+                    this.RaisePropertyChanged("FrequencyClass");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IDField, value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double PositionHoist {
+            get {
+                return this.PositionHoistField;
+            }
+            set {
+                if ((this.PositionHoistField.Equals(value) != true)) {
+                    this.PositionHoistField = value;
+                    this.RaisePropertyChanged("PositionHoist");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double PositionTravel {
+            get {
+                return this.PositionTravelField;
+            }
+            set {
+                if ((this.PositionTravelField.Equals(value) != true)) {
+                    this.PositionTravelField = value;
+                    this.RaisePropertyChanged("PositionTravel");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CommandERP", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class CommandERP : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ERP_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.Order[] FK_CommandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime LastChangeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReferenceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.CommandERP.CommandERPStatus StatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Command {
+            get {
+                return this.CommandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommandField, value) != true)) {
+                    this.CommandField = value;
+                    this.RaisePropertyChanged("Command");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ERP_ID {
+            get {
+                return this.ERP_IDField;
+            }
+            set {
+                if ((this.ERP_IDField.Equals(value) != true)) {
+                    this.ERP_IDField = value;
+                    this.RaisePropertyChanged("ERP_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.Order[] FK_Command {
+            get {
+                return this.FK_CommandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_CommandField, value) != true)) {
+                    this.FK_CommandField = value;
+                    this.RaisePropertyChanged("FK_Command");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ID {
+            get {
+                return this.IDField;
+            }
+            set {
+                if ((this.IDField.Equals(value) != true)) {
+                    this.IDField = value;
+                    this.RaisePropertyChanged("ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime LastChange {
+            get {
+                return this.LastChangeField;
+            }
+            set {
+                if ((this.LastChangeField.Equals(value) != true)) {
+                    this.LastChangeField = value;
+                    this.RaisePropertyChanged("LastChange");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Reference {
+            get {
+                return this.ReferenceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReferenceField, value) != true)) {
+                    this.ReferenceField = value;
+                    this.RaisePropertyChanged("Reference");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.CommandERP.CommandERPStatus Status {
+            get {
+                return this.StatusField;
+            }
+            set {
+                if ((this.StatusField.Equals(value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+        [System.Runtime.Serialization.DataContractAttribute(Name="CommandERP.CommandERPStatus", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+        public enum CommandERPStatus : int {
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            NotActive = 0,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Active = 1,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Canceled = 2,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Finished = 3,
+            
+            [System.Runtime.Serialization.EnumMemberAttribute()]
+            Error = 4,
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Place", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables")]
+    [System.SerializableAttribute()]
+    public partial class Place : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.PlaceID FK_PlaceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UserInterface.ProxyWMS_UI.TU_ID FK_TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PlaceIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TU_IDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime TimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] TimeStampField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.PlaceID FK_PlaceID {
+            get {
+                return this.FK_PlaceIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_PlaceIDField, value) != true)) {
+                    this.FK_PlaceIDField = value;
+                    this.RaisePropertyChanged("FK_PlaceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UserInterface.ProxyWMS_UI.TU_ID FK_TU_ID {
+            get {
+                return this.FK_TU_IDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FK_TU_IDField, value) != true)) {
+                    this.FK_TU_IDField = value;
+                    this.RaisePropertyChanged("FK_TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PlaceID {
+            get {
+                return this.PlaceIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlaceIDField, value) != true)) {
+                    this.PlaceIDField = value;
+                    this.RaisePropertyChanged("PlaceID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TU_ID {
+            get {
+                return this.TU_IDField;
+            }
+            set {
+                if ((this.TU_IDField.Equals(value) != true)) {
+                    this.TU_IDField = value;
+                    this.RaisePropertyChanged("TU_ID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Time {
+            get {
+                return this.TimeField;
+            }
+            set {
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] TimeStamp {
+            get {
+                return this.TimeStampField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TimeStampField, value) != true)) {
+                    this.TimeStampField = value;
+                    this.RaisePropertyChanged("TimeStamp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProxyWMS_UI.IWMSToUI")]
     public interface IWMSToUI {
@@ -744,6 +3323,18 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/CommandStatusChanged", ReplyAction="http://tempuri.org/IWMSToUI/CommandStatusChangedResponse")]
         System.Threading.Tasks.Task CommandStatusChangedAsync(int cmdId, int status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/AddTUs", ReplyAction="http://tempuri.org/IWMSToUI/AddTUsResponse")]
+        void AddTUs(UserInterface.ProxyWMS_UI.TU[] tus);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/AddTUs", ReplyAction="http://tempuri.org/IWMSToUI/AddTUsResponse")]
+        System.Threading.Tasks.Task AddTUsAsync(UserInterface.ProxyWMS_UI.TU[] tus);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/DeleteTU", ReplyAction="http://tempuri.org/IWMSToUI/DeleteTUResponse")]
+        void DeleteTU(UserInterface.ProxyWMS_UI.TU tu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/DeleteTU", ReplyAction="http://tempuri.org/IWMSToUI/DeleteTUResponse")]
+        System.Threading.Tasks.Task DeleteTUAsync(UserInterface.ProxyWMS_UI.TU tu);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -843,6 +3434,22 @@ namespace UserInterface.ProxyWMS_UI {
         
         public System.Threading.Tasks.Task CommandStatusChangedAsync(int cmdId, int status) {
             return base.Channel.CommandStatusChangedAsync(cmdId, status);
+        }
+        
+        public void AddTUs(UserInterface.ProxyWMS_UI.TU[] tus) {
+            base.Channel.AddTUs(tus);
+        }
+        
+        public System.Threading.Tasks.Task AddTUsAsync(UserInterface.ProxyWMS_UI.TU[] tus) {
+            return base.Channel.AddTUsAsync(tus);
+        }
+        
+        public void DeleteTU(UserInterface.ProxyWMS_UI.TU tu) {
+            base.Channel.DeleteTU(tu);
+        }
+        
+        public System.Threading.Tasks.Task DeleteTUAsync(UserInterface.ProxyWMS_UI.TU tu) {
+            return base.Channel.DeleteTUAsync(tu);
         }
     }
 }

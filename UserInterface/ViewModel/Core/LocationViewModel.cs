@@ -132,7 +132,7 @@ namespace UserInterface.ViewModel
                     switch (propertyName)
                     {
                         case "Size":
-                            if (ID != null && Size != 1 && Size != 999)
+                            if (ID != null && !(Size >= 0 && Size <= 2))
                                 validationResult = ResourceReader.GetString("ERR_RANGE") + " 1, 999";
                             break;
                     }

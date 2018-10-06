@@ -10591,6 +10591,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -.
+        /// </summary>
+        public static string EnumOrderOperation_None {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_None", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Pick Box.
         /// </summary>
         public static string EnumOrderOperation_PickBox {
@@ -11019,6 +11028,15 @@ namespace UserInterface.Properties {
         public static string ERR_BOXID_EXISTS {
             get {
                 return ResourceManager.GetString("ERR_BOXID_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dimension class does not fit to location.
+        /// </summary>
+        public static string ERR_CLASS {
+            get {
+                return ResourceManager.GetString("ERR_CLASS", resourceCulture);
             }
         }
         
@@ -11892,6 +11910,15 @@ namespace UserInterface.Properties {
         public static string Movements {
             get {
                 return ResourceManager.GetString("Movements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To blok/unblock locations disable WMS module..
+        /// </summary>
+        public static string MsgBlock {
+            get {
+                return ResourceManager.GetString("MsgBlock", resourceCulture);
             }
         }
         

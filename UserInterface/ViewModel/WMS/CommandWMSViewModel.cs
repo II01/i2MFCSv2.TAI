@@ -150,6 +150,18 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public DateTime LastChange
+        {
+            get { return _data.LastChange; }
+            set
+            {
+                if (_data.LastChange != value)
+                {
+                    _data.LastChange = value;
+                    RaisePropertyChanged("LastChange");
+                }
+            }
+        }
         public int? OrderERPID
         {
             get { return _data.OrderERPID; }

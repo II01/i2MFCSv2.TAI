@@ -262,7 +262,7 @@ namespace UserInterface.ViewModel
                 int? orderid = SelectedOrder?.OrderID;
                 _suborderid = SelectedSubOrder?.SubOrderID;
 
-                var orders = await _dbservicewms.GetHistOrdersWithCount(DateFrom.TimeStamp, DateTo.TimeStamp, -1, null, null);
+                var orders = await _dbservicewms.GetHistOrdersDistinct(DateFrom.TimeStamp, DateTo.TimeStamp, -1);
                 DataListOrder.Clear();
                 foreach (var p in orders)
                     DataListOrder.Add(new ReleaseOrderViewModel
@@ -296,21 +296,21 @@ namespace UserInterface.ViewModel
                 DataListSubOrder.Clear();
                 if(SelectedOrder != null)
                 {
-                    var suborders = await _dbservicewms.GetHistSubOrdersBySKUWithCount(SelectedOrder.ERPID, SelectedOrder.OrderID);
+                    var suborders = await _dbservicewms.GetHistSubOrders(SelectedOrder.ERPID, SelectedOrder.OrderID);
                     DataListSubOrder.Clear();
                     foreach (var p in suborders)
                         DataListSubOrder.Add(new ReleaseOrderViewModel
                         {
-                            ID = p.WMSID,
-                            ERPID = p.ERPID,
                             OrderID = p.OrderID,
                             SubOrderID = p.SubOrderID,
                             SubOrderERPID = p.SubOrderERPID,
                             SubOrderName = p.SubOrderName,
-                            SKUID = p.SKUID,
-                            SKUBatch = p.SKUBatch,
-                            SKUQty = p.SKUQty,
-                            Portion = $"{p.CountActive}/{p.CountAll} - {p.CountFinished}/{p.CountAll}",
+                            TUID = p.TU_ID,
+                            BoxID = p.Box_ID,
+                            SKUID = p.SKU_ID,
+                            SKUBatch = p.SKU_Batch,
+                            SKUQty = p.SKU_Qty,
+                            Operation = (EnumOrderOperation)p.Operation,                            
                             Status = (EnumWMSOrderStatus)p.Status
                         });
                     foreach (var l in DataListOrder)
@@ -336,7 +336,7 @@ namespace UserInterface.ViewModel
                 DataListCommand.Clear();
                 if( SelectedSubOrder != null )
                 {
-                    var cmds = await _dbservicewms.GetHistCommandsWMSForSubOrder(SelectedSubOrder.ID);
+                    var cmds = await _dbservicewms.GetHistCommandsWMSForOrder(SelectedOrder.ERPID, SelectedOrder.OrderID);
                     DataListCommand.Clear();
                     foreach (var cmd in cmds)
                     {
@@ -351,10 +351,13 @@ namespace UserInterface.ViewModel
                             OrderSubOrderName = cmd.OrderSubOrderName,
                             OrderSKUID = cmd.OrderSKUID,
                             OrderSKUBatch = cmd.OrderSKUBatch,
+                            Operation = (EnumOrderOperation)cmd.Operation,
+                            BoxID = cmd.Box_ID,
                             Source = cmd.Source,
                             Target = cmd.Target,
                             TUID = cmd.TU_ID,
                             Time = cmd.Time,
+                            LastChange = cmd.LastChange,
                             Status = (EnumCommandWMSStatus)cmd.Status,
                         });
                     }

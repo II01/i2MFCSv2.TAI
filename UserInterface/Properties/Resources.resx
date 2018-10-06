@@ -4479,4 +4479,13 @@
   <data name="TUIDHeightClass" xml:space="preserve">
     <value>Height class</value>
   </data>
+  <data name="EnumOrderOperation_None" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="MsgBlock" xml:space="preserve">
+    <value>To blok/unblock locations disable WMS module.</value>
+  </data>
+  <data name="ERR_CLASS" xml:space="preserve">
+    <value>Dimension class does not fit to location</value>
+  </data>
 </root>

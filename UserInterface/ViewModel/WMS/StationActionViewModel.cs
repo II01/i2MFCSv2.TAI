@@ -123,29 +123,30 @@ namespace UserInterface.ViewModel
                                     var c = _cmds.Find(p => p.Box_ID == b);
                                     if ( c != null)
                                     {
-                                        if (Command == CommandType.DropBox)
+                                        using (WMSToUIClient client = new WMSToUIClient())
                                         {
-                                            DBServiceWMS.AddTUs(new List<TUs>() {
-                                                    new TUs
+                                            if (Command == CommandType.DropBox)
+                                            {
+                                                var tul = new List<TU>() {
+                                                    new TU
                                                     {
                                                         TU_ID = c.TU_ID,
                                                         Box_ID = c.Box_ID,
                                                         Qty = 1,
                                                         ProdDate = DateTime.Now,
                                                         ExpDate = DateTime.Now
-                                                    }});
-                                            DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Drop: {c.Box_ID} to {c.TU_ID}");
-                                            Boxes = "";
-                                        }
-                                        else if (Command == CommandType.PickBox)
-                                        {
-                                            DBServiceWMS.DeleteBox(c.Box_ID);
-                                            DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Pick: {c.Box_ID} from {c.TU_ID}");
-                                            Boxes = "";
-                                        }
+                                                    }};
+                                                client.AddTUs(tul.ToArray());
+                                                DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Drop: {c.Box_ID} to {c.TU_ID}");
+                                                Boxes = "";
+                                            }
+                                            else if (Command == CommandType.PickBox)
+                                            {
+                                                DBServiceWMS.DeleteBox(c.Box_ID);
+                                                DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Pick: {c.Box_ID} from {c.TU_ID}");
+                                                Boxes = "";
+                                            }
 
-                                        using (WMSToUIClient client = new WMSToUIClient())
-                                        {
                                             client.CommandStatusChangedAsync(c.ID, (int)EnumCommandWMSStatus.Finished);
                                         }
                                     }

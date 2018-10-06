@@ -238,7 +238,7 @@ namespace UserInterface.ViewModel
             _allowPlaceChange = false;
             _allowFieldChange = false;
             _allowBlockedChange = false;
-            _subTableValidation = false;
+            _subTableValidation = true;
             Messenger.Default.Register<MessageValidationInfo>(this, msg => { SubTableValidation = msg.AllPropertiesValid; });
         }
         public void Initialize(BasicWarehouse warehouse)
@@ -312,6 +312,12 @@ namespace UserInterface.ViewModel
                                 else if (pid.DimensionClass < 999 && _dbservicewms.FindPlaceByPlace(PlaceID) != null)
                                     validationResult = ResourceReader.GetString("ERR_OCCUPIED");
                                 break;
+                            case "DimensionClass":
+                                var p = _dbservicewms.FindPlaceID(PlaceID);
+                                if (p != null && DimensionClass > p.DimensionClass)
+                                    validationResult = ResourceReader.GetString("ERR_CLASS");
+                                break;
+
                         }
                     }
                     Validator.AddOrUpdate(propertyName, validationResult == String.Empty);

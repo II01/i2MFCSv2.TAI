@@ -196,6 +196,7 @@ namespace UserInterface.ViewModel
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             Refresh = new RelayCommand(async () => await ExecuteRefresh());
             SelectionChangedCommand = new RelayCommand<IList>(items => NumberOfSelectedItems = items == null ? 0 : items.Count);
+            Messenger.Default.Register<MessageValidationRequestTUID>(this, msg => Messenger.Default.Send(new MessageValidationTUID { TUID = Detailed?.TUID ?? 0 }));
         }
 
         public void Initialize(BasicWarehouse warehouse)
@@ -474,10 +475,15 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Edit:
-                            TU_ID tuid = new TU_ID { ID = Detailed.TUID, DimensionClass = Detailed.DimensionClass, Blocked = (int)Detailed.Blocked };
+                            DatabaseWMS.TU_ID tuid = new DatabaseWMS.TU_ID { ID = Detailed.TUID, DimensionClass = Detailed.DimensionClass, Blocked = (int)Detailed.Blocked };
                             List<TUs> tulist = new List<TUs>();
                             foreach (var l in Detailed.DetailList)
-//                                tulist.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate  });
+                                tulist.Add(new TUs {
+                                    TU_ID = Detailed.TUID,
+                                    Box_ID = l.BoxID,
+                                    Qty = 1,
+                                    ProdDate = l.ProdDate,
+                                    ExpDate = l.ExpDate  });
                             _dbservicewms.UpdateTUID(tuid);
                             _dbservicewms.UpdateTUs(tuid, tulist);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Edit TUID: {tuid.ToString()}");
@@ -491,7 +497,7 @@ namespace UserInterface.ViewModel
                             {
                                 var pd = new ProxyWMS_UI.PlaceDiff[] { new ProxyWMS_UI.PlaceDiff { TUID = Detailed.TUID, PlaceWMS = Selected.PlaceID, PlaceMFCS = Detailed.PlaceID } };
                                 client.UpdatePlace(pd, _accessUser);
-                                _dbservicewms.UpdatePlaceMFCS(new Place {Material = Detailed.TUID, Place1 = Detailed.PlaceID });
+                                _dbservicewms.UpdatePlaceMFCS(new Database.Place {Material = Detailed.TUID, Place1 = Detailed.PlaceID });
                             }
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Rebook TUID: {Detailed.TUID} {Detailed.PlaceID}");
                             Selected.TUID = Detailed.TUID;
@@ -516,9 +522,9 @@ namespace UserInterface.ViewModel
                             {
                                 var pd = new ProxyWMS_UI.PlaceDiff[] { new ProxyWMS_UI.PlaceDiff { TUID = Detailed.TUID, PlaceWMS = Detailed.PlaceID, PlaceMFCS = null } };
                                 client.UpdatePlace(pd, _accessUser);
-                                _dbservicewms.UpdatePlaceMFCS(new Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID});
+                                _dbservicewms.UpdatePlaceMFCS(new Database.Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID});
                             }
-                            _dbservicewms.DeletePlaceMFCS(new Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID } );
+                            _dbservicewms.DeletePlaceMFCS(new Database.Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID } );
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Delete Place: {Detailed.TUID}, {Detailed.PlaceID}");
                             Selected.TUID = Detailed.TUID;
                             Selected.PlaceID = Detailed.PlaceID;
@@ -528,12 +534,22 @@ namespace UserInterface.ViewModel
                         case CommandType.Add:
                             List<TUs> tul = new List<TUs>();
                             foreach (var l in Detailed.DetailList)
-//                                tul.Add(new TUs { TU_ID = Detailed.TUID, SKU_ID = l.SKUID, Qty = l.Qty, Batch = l.Batch, ProdDate = l.ProdDate, ExpDate = l.ExpDate });
+                                tul.Add(new TUs {
+                                    TU_ID = Detailed.TUID,
+                                    Box_ID = l.BoxID,
+                                    Qty = 1,
+                                    ProdDate = l.ProdDate,
+                                    ExpDate = l.ExpDate });
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
-                                var pd = new ProxyWMS_UI.PlaceDiff[] { new ProxyWMS_UI.PlaceDiff { TUID = Detailed.TUID, PlaceWMS = null, PlaceMFCS = Detailed.PlaceID } };
+                                var pd = new ProxyWMS_UI.PlaceDiff[] {
+                                    new ProxyWMS_UI.PlaceDiff {
+                                        TUID = Detailed.TUID,
+                                        PlaceWMS = null,
+                                        PlaceMFCS = Detailed.PlaceID,
+                                        DimensionMFCS = Detailed.DimensionClass }};
                                 client.UpdatePlace(pd, _accessUser);
-                                _dbservicewms.UpdatePlaceMFCS(new Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID });
+                                _dbservicewms.UpdatePlaceMFCS(new Database.Place { Material = Detailed.TUID, Place1 = Detailed.PlaceID });
                             }
                             _dbservicewms.AddTUs(tul);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add Place: {Detailed.TUID}, {Detailed.PlaceID}");

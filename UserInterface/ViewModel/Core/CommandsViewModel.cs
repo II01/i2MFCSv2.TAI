@@ -562,7 +562,7 @@ namespace UserInterface.ViewModel
         {
             try
             {
-                return !IsEnabledCC && (SelectedContent != null) && AccessLevel%10 >= 1;
+                return !IsEnabledCC && (SelectedContent != null && SelectedContent.Status < EnumCommandStatus.Finished) && AccessLevel%10 >= 1;
             }
             catch (Exception e)
             {

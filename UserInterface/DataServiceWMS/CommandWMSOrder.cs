@@ -25,6 +25,7 @@ namespace UserInterface.DataServiceWMS
         public string OrderSKUID { get; set; }
         public string OrderSKUBatch { get; set; }
         public DateTime Time { get; set; }
+        public DateTime LastChange { get; set; }
 
         public CommandWMSOrder()
         {

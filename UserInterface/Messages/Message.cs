@@ -26,6 +26,14 @@ namespace UserInterface.Messages
     {
         public bool AllPropertiesValid { get; set; }
     }
+    public class MessageValidationRequestTUID
+    {
+        public bool Trigger { get; set; }
+    }
+    public class MessageValidationTUID
+    {
+        public int TUID;
+    }
 
     public class MessageKeyPressed
     {

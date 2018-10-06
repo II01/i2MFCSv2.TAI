@@ -48,8 +48,8 @@
         <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
             <TextBox Margin="0,0,0,10" Width="150"
                      Text="{Binding Path=Blocked,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
-            <TextBlock Margin="50,0,0,10" Text="{Resx Quality_Control}"/>
-            <CheckBox Margin="10,0,0,10" IsChecked = "{Binding Path=BlockedQC}" IsEnabled="{Binding AllowBlockedChange}"/>
+<!--            <TextBlock Margin="50,0,0,10" Text="{Resx Quality_Control}"/>
+            <CheckBox Margin="10,0,0,10" IsChecked = "{Binding Path=BlockedQC}" IsEnabled="{Binding AllowBlockedChange}"/> -->
         </StackPanel>
         <DataGrid Grid.Row="4" Grid.Column ="2" Grid.RowSpan="2"
             ItemsSource="{Binding DetailList}" Margin="0,0,0,0"
@@ -66,9 +66,9 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=BoxID}" 
                                     Binding="{Binding BoxID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" IsReadOnly="True" 
                                     Binding="{Binding SKUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}"
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}" IsReadOnly="True" 
                                     Binding="{Binding Batch, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Description}" Width="*" IsReadOnly="True"
                                     Binding="{Binding Description}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>

@@ -63,7 +63,7 @@
           <Property Name="Time" Type="datetime" Nullable="false" />
           <Property Name="LastChange" Type="datetime" Nullable="false" />
           <Property Name="Box_ID" Type="nvarchar" MaxLength="30" />
-          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Operation" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="HistOrders">
           <Key>
@@ -836,12 +836,12 @@
           <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="LastChange" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Box_ID" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Type" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Box_ID1" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_Box_ID_Box_ID" FromRole="HistCommands" ToRole="Box_ID" />
           <NavigationProperty Name="HistOrders" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_HistOrders_Order_ID" FromRole="HistCommands" ToRole="HistOrders" />
           <NavigationProperty Name="PlaceIDs" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Source" FromRole="HistCommands" ToRole="PlaceIDs" />
           <NavigationProperty Name="PlaceIDs1" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_PlaceIDs_Target" FromRole="HistCommands" ToRole="PlaceIDs" />
           <NavigationProperty Name="TU_ID1" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistCommands_dbo_TU_ID_TU_ID" FromRole="HistCommands" ToRole="TU_ID" />
+          <Property Name="Operation" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="HistOrders">
           <Key>
@@ -1388,7 +1388,7 @@
           <EntitySetMapping Name="HistCommands">
             <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.HistCommands">
               <MappingFragment StoreEntitySet="HistCommands">
-                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
                 <ScalarProperty Name="Box_ID" ColumnName="Box_ID" />
                 <ScalarProperty Name="LastChange" ColumnName="LastChange" />
                 <ScalarProperty Name="Time" ColumnName="Time" />

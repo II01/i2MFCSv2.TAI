@@ -26,13 +26,13 @@
         <TextBlock Text="{Resx Location}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Class}" Grid.Row="1" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx Blocked}" Grid.Row="2" Margin="0,0,0,10"/>
-        <TextBlock Text="{Resx Reserved}" Grid.Row="3" Margin="0,0,0,10"/>
+<!--        <TextBlock Text="{Resx Reserved}" Grid.Row="3" Margin="0,0,0,10"/> -->
         <TextBox Name = "tbLocation" Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=ID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="False"/>
         <TextBox Name = "tbSize" Grid.Row="1" Grid.Column="2" Margin="0,0,0,10" 
                  Text="{Binding Path=Size,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
         <CheckBox Name = "cbBlocked" Grid.Row="2" Grid.Column="2" Margin="0,0,0,10" IsChecked = "{Binding Path=Blocked}"  />
-        <CheckBox Name = "cbReserved" Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" IsChecked = "{Binding Path=Reserved}"  />
+<!--        <CheckBox Name = "cbReserved" Grid.Row="3" Grid.Column="2" Margin="0,0,0,10" IsChecked = "{Binding Path=Reserved}"  /> -->
     </Grid>
 
 </UserControl>
