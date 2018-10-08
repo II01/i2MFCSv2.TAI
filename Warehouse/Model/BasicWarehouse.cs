@@ -492,7 +492,7 @@ namespace Warehouse.Model
                                 bool canDelete;
                                 try
                                 {
-                                    canDelete = !client.OrderForRampActive(loc);
+                                    canDelete = false; // !client.OrderForRampActive(loc);
                                 }
                                 catch
                                 {
@@ -512,8 +512,8 @@ namespace Warehouse.Model
                                         //OnMaterialMove?.Invoke(pl, EnumMovementTask.Move);
                                     }
                                 }
-                                else // release ramp
-                                    client.DestinationEmptied(loc);
+//                                else // release ramp
+//                                    client.DestinationEmptied(loc);
                             }
                         }
                         else // sensor detected removal

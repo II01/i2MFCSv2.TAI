@@ -14,6 +14,7 @@ using UserInterface.DataServiceWMS;
 using System.Collections.Generic;
 using DatabaseWMS;
 using System.Threading.Tasks;
+using UserInterface.ProxyWMS_UI;
 
 namespace UserInterface.ViewModel
 {
@@ -248,15 +249,10 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Delete:
-                            _dbservicewms.UpdateCommandERP(new CommandERPs
-                                                           {
-                                                                ID = Detailed.ID,
-                                                                ERP_ID = Detailed.ERPID,
-                                                                Reference = Detailed.Reference,
-                                                                Command = Detailed.Command,
-                                                                LastChange = DateTime.Now,
-                                                                Status = (int)EnumCommandERPStatus.Canceled
-                                                            });
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.UpdateERPCommandStatus(Detailed.ID, CommandERP.CommandERPStatus.Canceled);
+                            }
                             Detailed.Status = EnumCommandERPStatus.Canceled;
                             Selected.ERPID = Detailed.ERPID;
                             Selected.Reference = Detailed.Reference;

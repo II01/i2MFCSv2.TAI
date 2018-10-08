@@ -659,7 +659,7 @@ namespace UserInterface.ViewModel
                         case CommandType.ReleaseRamp:
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
-                                client.ReleaseRamp(SelectedPlaceID);
+//                                client.ReleaseRamp(SelectedPlaceID);
                             }
                             //_dbservicewms.ReleaseRamp(SelectedPlaceID);
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Release ramp: |{SelectedPlaceID}|");

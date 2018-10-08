@@ -40,12 +40,6 @@
   <wsdl:message name="IWMSToUI_BlockTU_OutputMessage">
     <wsdl:part name="parameters" element="tns:BlockTUResponse" />
   </wsdl:message>
-  <wsdl:message name="IWMSToUI_ReleaseRamp_InputMessage">
-    <wsdl:part name="parameters" element="tns:ReleaseRamp" />
-  </wsdl:message>
-  <wsdl:message name="IWMSToUI_ReleaseRamp_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ReleaseRampResponse" />
-  </wsdl:message>
   <wsdl:message name="IWMSToUI_UpdatePlace_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdatePlace" />
   </wsdl:message>
@@ -76,6 +70,24 @@
   <wsdl:message name="IWMSToUI_DeleteTU_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteTUResponse" />
   </wsdl:message>
+  <wsdl:message name="IWMSToUI_BoxEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:BoxEntry" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_BoxEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BoxEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_StoreTUID_InputMessage">
+    <wsdl:part name="parameters" element="tns:StoreTUID" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_StoreTUID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StoreTUIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_UpdateERPCommandStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateERPCommandStatus" />
+  </wsdl:message>
+  <wsdl:message name="IWMSToUI_UpdateERPCommandStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateERPCommandStatusResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWMSToUI">
     <wsdl:operation name="GetCommands">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/GetCommands" message="tns:IWMSToUI_GetCommands_InputMessage" />
@@ -97,10 +109,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/BlockTU" message="tns:IWMSToUI_BlockTU_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/BlockTUResponse" message="tns:IWMSToUI_BlockTU_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ReleaseRamp">
-      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/ReleaseRamp" message="tns:IWMSToUI_ReleaseRamp_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/ReleaseRampResponse" message="tns:IWMSToUI_ReleaseRamp_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="UpdatePlace">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/UpdatePlace" message="tns:IWMSToUI_UpdatePlace_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/UpdatePlaceResponse" message="tns:IWMSToUI_UpdatePlace_OutputMessage" />
@@ -120,6 +128,18 @@
     <wsdl:operation name="DeleteTU">
       <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/DeleteTU" message="tns:IWMSToUI_DeleteTU_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/DeleteTUResponse" message="tns:IWMSToUI_DeleteTU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BoxEntry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/BoxEntry" message="tns:IWMSToUI_BoxEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/BoxEntryResponse" message="tns:IWMSToUI_BoxEntry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StoreTUID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/StoreTUID" message="tns:IWMSToUI_StoreTUID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/StoreTUIDResponse" message="tns:IWMSToUI_StoreTUID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateERPCommandStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWMSToUI/UpdateERPCommandStatus" message="tns:IWMSToUI_UpdateERPCommandStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWMSToUI/UpdateERPCommandStatusResponse" message="tns:IWMSToUI_UpdateERPCommandStatus_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWMSToUI" type="tns:IWMSToUI">
@@ -169,15 +189,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ReleaseRamp">
-      <soap:operation soapAction="http://tempuri.org/IWMSToUI/ReleaseRamp" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="UpdatePlace">
       <soap:operation soapAction="http://tempuri.org/IWMSToUI/UpdatePlace" style="document" />
       <wsdl:input>
@@ -216,6 +227,33 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteTU">
       <soap:operation soapAction="http://tempuri.org/IWMSToUI/DeleteTU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoxEntry">
+      <soap:operation soapAction="http://tempuri.org/IWMSToUI/BoxEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StoreTUID">
+      <soap:operation soapAction="http://tempuri.org/IWMSToUI/StoreTUID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateERPCommandStatus">
+      <soap:operation soapAction="http://tempuri.org/IWMSToUI/UpdateERPCommandStatus" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -140,11 +140,11 @@
     <None Include="Config\BasicWarehouse.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service.wsdl" />
-    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service.xsd">
+    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service1.wsdl" />
+    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service1.xsd">
+    <None Include="Connected Services\ServiceReferenceWMSToMFCS\service21.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\WCF_RcvTelProxy\service.wsdl" />

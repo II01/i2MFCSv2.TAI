@@ -348,7 +348,7 @@ namespace UserInterface.ViewModel
                 _accessUser = "";
                 Messenger.Default.Register<MessageAccessLevel>(this, (mc) => { AccessLevel = mc.AccessLevel; _accessUser = mc.User; });
                 Messenger.Default.Register<MessageViewChanged>(this, async (vm) => await ExecuteViewActivated(vm.ViewModel));
-                Messenger.Default.Register<MessageKeyPressed>(this, (k) => ExecuteKeyPressed(k));
+                Messenger.Default.Register<MessageKeyPressed>(this, async (k) => await ExecuteKeyPressed(k));
 
                 _timer = new DispatcherTimer();
                 _timer.Interval = TimeSpan.FromMilliseconds(1000);
@@ -757,7 +757,11 @@ namespace UserInterface.ViewModel
                     switch (_selectedCmd)
                     {
                         case CommandType.StoreTray:
-                            _dbservicewms.CreateOrder_StoreTUID((Operation as StationStoreTrayViewModel).TUID);
+                            using (WMSToUIClient client = new WMSToUIClient())
+                            {
+                                client.StoreTUID((Operation as StationStoreTrayViewModel).TUID);
+//                              _dbservicewms.CreateOrder_StoreTUID((Operation as StationStoreTrayViewModel).TUID);
+                            }
                             break;
                         case CommandType.RemoveTray:
                             _dbservicewms.CreateOrder_RemoveTUID((Operation as StationRemoveTrayViewModel).TUID);
@@ -1007,7 +1011,6 @@ namespace UserInterface.ViewModel
                         EnabledCC = false;
                         EditEnabled = false;
                     }
-
                 }
             }
             catch (Exception e)

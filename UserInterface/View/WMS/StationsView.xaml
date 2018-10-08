@@ -146,11 +146,11 @@
             <TextBlock Text="/" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="10,0,0,0"/>
             <TextBlock Text="{Binding ActiveOrder.OrderID}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="10,0,0,0"/>
         </StackPanel>
-        <DataGrid Grid.Row="6" Grid.Column="1" Margin="0,0,0,0"
+        <DataGrid Name ="dgCmd" Grid.Row="6" Grid.Column="1" Margin="0,0,0,0"
             ItemsSource="{Binding DataListCommand, Mode=TwoWay}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
-            SelectedItem="{Binding SelectedCommand}" 
+            SelectedItem="{Binding SelectedCommand, Mode=TwoWay}" 
             IsEnabled="{Binding EditEnabled, Converter={StaticResource InvertBool}}"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"

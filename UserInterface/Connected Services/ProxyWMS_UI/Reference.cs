@@ -11,9 +11,8 @@
 namespace UserInterface.ProxyWMS_UI {
     using System.Runtime.Serialization;
     using System;
-    using DatabaseWMS;
-    using System.Collections.Generic;
-
+    
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="DTOCommand", Namespace="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.DTO")]
@@ -3300,12 +3299,6 @@ namespace UserInterface.ProxyWMS_UI {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BlockTU", ReplyAction="http://tempuri.org/IWMSToUI/BlockTUResponse")]
         System.Threading.Tasks.Task BlockTUAsync(int TUID, bool block, int reason);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/ReleaseRamp", ReplyAction="http://tempuri.org/IWMSToUI/ReleaseRampResponse")]
-        void ReleaseRamp(string destinationStartsWith);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/ReleaseRamp", ReplyAction="http://tempuri.org/IWMSToUI/ReleaseRampResponse")]
-        System.Threading.Tasks.Task ReleaseRampAsync(string destinationStartsWith);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/UpdatePlace", ReplyAction="http://tempuri.org/IWMSToUI/UpdatePlaceResponse")]
         void UpdatePlace(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user);
         
@@ -3335,6 +3328,24 @@ namespace UserInterface.ProxyWMS_UI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/DeleteTU", ReplyAction="http://tempuri.org/IWMSToUI/DeleteTUResponse")]
         System.Threading.Tasks.Task DeleteTUAsync(UserInterface.ProxyWMS_UI.TU tu);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BoxEntry", ReplyAction="http://tempuri.org/IWMSToUI/BoxEntryResponse")]
+        void BoxEntry(string box);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/BoxEntry", ReplyAction="http://tempuri.org/IWMSToUI/BoxEntryResponse")]
+        System.Threading.Tasks.Task BoxEntryAsync(string box);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/StoreTUID", ReplyAction="http://tempuri.org/IWMSToUI/StoreTUIDResponse")]
+        void StoreTUID(int tuid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/StoreTUID", ReplyAction="http://tempuri.org/IWMSToUI/StoreTUIDResponse")]
+        System.Threading.Tasks.Task StoreTUIDAsync(int tuid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/UpdateERPCommandStatus", ReplyAction="http://tempuri.org/IWMSToUI/UpdateERPCommandStatusResponse")]
+        void UpdateERPCommandStatus(int erpid, UserInterface.ProxyWMS_UI.CommandERP.CommandERPStatus status);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWMSToUI/UpdateERPCommandStatus", ReplyAction="http://tempuri.org/IWMSToUI/UpdateERPCommandStatusResponse")]
+        System.Threading.Tasks.Task UpdateERPCommandStatusAsync(int erpid, UserInterface.ProxyWMS_UI.CommandERP.CommandERPStatus status);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3404,14 +3415,6 @@ namespace UserInterface.ProxyWMS_UI {
             return base.Channel.BlockTUAsync(TUID, block, reason);
         }
         
-        public void ReleaseRamp(string destinationStartsWith) {
-            base.Channel.ReleaseRamp(destinationStartsWith);
-        }
-        
-        public System.Threading.Tasks.Task ReleaseRampAsync(string destinationStartsWith) {
-            return base.Channel.ReleaseRampAsync(destinationStartsWith);
-        }
-        
         public void UpdatePlace(UserInterface.ProxyWMS_UI.PlaceDiff[] diffs, string user) {
             base.Channel.UpdatePlace(diffs, user);
         }
@@ -3450,6 +3453,30 @@ namespace UserInterface.ProxyWMS_UI {
         
         public System.Threading.Tasks.Task DeleteTUAsync(UserInterface.ProxyWMS_UI.TU tu) {
             return base.Channel.DeleteTUAsync(tu);
+        }
+        
+        public void BoxEntry(string box) {
+            base.Channel.BoxEntry(box);
+        }
+        
+        public System.Threading.Tasks.Task BoxEntryAsync(string box) {
+            return base.Channel.BoxEntryAsync(box);
+        }
+        
+        public void StoreTUID(int tuid) {
+            base.Channel.StoreTUID(tuid);
+        }
+        
+        public System.Threading.Tasks.Task StoreTUIDAsync(int tuid) {
+            return base.Channel.StoreTUIDAsync(tuid);
+        }
+        
+        public void UpdateERPCommandStatus(int erpid, UserInterface.ProxyWMS_UI.CommandERP.CommandERPStatus status) {
+            base.Channel.UpdateERPCommandStatus(erpid, status);
+        }
+        
+        public System.Threading.Tasks.Task UpdateERPCommandStatusAsync(int erpid, UserInterface.ProxyWMS_UI.CommandERP.CommandERPStatus status) {
+            return base.Channel.UpdateERPCommandStatusAsync(erpid, status);
         }
     }
 }

@@ -1460,6 +1460,7 @@ namespace UserInterface.DataServiceWMS
                     var items = (from c in dc.Commands
                                  join o in dc.Orders on c.Order_ID equals o.ID
                                  where o.ERP_ID == erpid && o.OrderID == orderid
+                                 orderby c.ID ascending
                                  select new CommandWMSOrder
                                  {
                                      ID = c.ID,

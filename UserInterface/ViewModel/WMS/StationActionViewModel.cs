@@ -127,6 +127,7 @@ namespace UserInterface.ViewModel
                                         {
                                             if (Command == CommandType.DropBox)
                                             {
+                                                DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Drop request: {c.Box_ID} to {c.TU_ID}");
                                                 var tul = new List<TU>() {
                                                     new TU
                                                     {
@@ -137,16 +138,18 @@ namespace UserInterface.ViewModel
                                                         ExpDate = DateTime.Now
                                                     }};
                                                 client.AddTUs(tul.ToArray());
-                                                DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Drop: {c.Box_ID} to {c.TU_ID}");
                                                 Boxes = "";
                                             }
                                             else if (Command == CommandType.PickBox)
                                             {
-                                                DBServiceWMS.DeleteBox(c.Box_ID);
-                                                DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Pick: {c.Box_ID} from {c.TU_ID}");
+                                                DBServiceWMS.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Pick request: {c.Box_ID} from {c.TU_ID}");
+                                                client.DeleteTU(new TU
+                                                {
+                                                    TU_ID = c.TU_ID,
+                                                    Box_ID = c.Box_ID,
+                                                });
                                                 Boxes = "";
                                             }
-
                                             client.CommandStatusChangedAsync(c.ID, (int)EnumCommandWMSStatus.Finished);
                                         }
                                     }

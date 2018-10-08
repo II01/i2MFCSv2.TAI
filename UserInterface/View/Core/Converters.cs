@@ -270,4 +270,23 @@ namespace UserInterface.View
             return 0;
         }
     }
+    public class StatusActiveToBool: IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                return (int)value == 1;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return 0;
+        }
+    }
 }

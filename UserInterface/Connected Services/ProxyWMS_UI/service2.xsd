@@ -68,18 +68,6 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="ReleaseRamp">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="destinationStartsWith" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="ReleaseRampResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="UpdatePlace">
     <xs:complexType>
       <xs:sequence>
@@ -140,6 +128,43 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteTUResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BoxEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="box" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BoxEntryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreTUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tuid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StoreTUIDResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateERPCommandStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="erpid" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/i2MFCS.WMS.Database.Tables" minOccurs="0" name="status" type="q8:CommandERP.CommandERPStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateERPCommandStatusResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>

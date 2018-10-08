@@ -28,30 +28,4 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DestinationEmptied">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="place" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DestinationEmptiedResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="OrderForRampActive">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="ramp" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="OrderForRampActiveResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="OrderForRampActiveResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
 </xs:schema>

@@ -252,6 +252,7 @@
         <views:AccessLevelL2 x:Key="AccessLevelL2" />
         <views:AccessLevelWMSL1 x:Key="AccessLevelWMSL1" />
         <views:AccessLevelWMSL2 x:Key="AccessLevelWMSL2" />
+        <views:StatusActiveToBool x:Key="StatusActiveToBool" />
 
         <!-- constants -->
         <sys:Int32 x:Key="accessLevel">0</sys:Int32>

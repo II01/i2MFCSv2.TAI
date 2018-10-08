@@ -21,6 +21,7 @@ namespace UserInterface.ViewModel
         private DBServiceWMS _dbservicewms;
         private BasicWarehouse _warehouse;
         private bool _validationEnabled;
+        private bool _isSelected;
         #endregion
 
         #region properties
@@ -244,6 +245,19 @@ namespace UserInterface.ViewModel
                 {
                     _data.OrderSKUBatch = value;
                     RaisePropertyChanged("OrderSKUBatch");
+                }
+            }
+        }
+
+        public bool IsSelected
+        {
+            get { return _isSelected; }
+            set
+            {
+                if (_isSelected != value)
+                {
+                    _isSelected = value;
+                    RaisePropertyChanged("IsSelected");
                 }
             }
         }

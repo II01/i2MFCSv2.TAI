@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using UserInterface.ProxyWMS_UI;
+using System.Windows.Threading;
 
 namespace UserInterface.ViewModel
 {
@@ -22,6 +23,8 @@ namespace UserInterface.ViewModel
         private int _tuid;
         private string _placeid;
         private List<string> _boxList;
+        private DispatcherTimer _timer;
+        List<string> _boxesAnnounced;
         #endregion
 
         #region properties
@@ -84,6 +87,7 @@ namespace UserInterface.ViewModel
         #region initialization
         public StationDropBoxViewModel() : base()
         {
+            _boxesAnnounced = new List<string>();
             SuggestTU = new RelayCommand(async () => await ExecuteSuggestTU(), CanExecuteSuggestTU);
         }
         public override void Initialize(BasicWarehouse warehouse)
@@ -93,6 +97,10 @@ namespace UserInterface.ViewModel
                 base.Initialize(warehouse);
                 OperationName = "Drop box";
                 _boxList = new List<string>();
+                _timer = new DispatcherTimer();
+                _timer.Interval = TimeSpan.FromMilliseconds(1000);
+                _timer.Tick += (sender, args) => {RaisePropertyChanged("Boxes");};
+                _timer.Start();
             }
             catch (Exception e)
             {
@@ -172,7 +180,15 @@ namespace UserInterface.ViewModel
                                         if (b != "")
                                         {
                                             if (DBServiceWMS.FindBoxByBoxID(b) == null)
+                                            {
+                                                if( b.Length == 9 && !_boxesAnnounced.Exists(p => p == b))  // announce box to WMS and ERP
+                                                    using (WMSToUIClient client = new WMSToUIClient())
+                                                    {
+                                                        client.BoxEntry(b);
+                                                        _boxesAnnounced.Add(b);
+                                                    }
                                                 validationResult = ResourceReader.GetString("ERR_NOBOXID");
+                                            }
                                             else if (DBServiceWMS.FindTUByBoxID(b) != null)
                                                 validationResult = ResourceReader.GetString("ERR_TUBOXEXISTS");
                                             else if (_boxList.Contains(b))
