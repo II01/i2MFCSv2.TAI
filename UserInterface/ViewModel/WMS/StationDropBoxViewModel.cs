@@ -13,6 +13,8 @@ using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using UserInterface.ProxyWMS_UI;
 using System.Windows.Threading;
+using GalaSoft.MvvmLight.Messaging;
+using UserInterface.Messages;
 
 namespace UserInterface.ViewModel
 {

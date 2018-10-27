@@ -42,16 +42,20 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Margin="0,0,10,0" Text="{Resx Selected}" 
+            <TextBlock Grid.Column="0" Text="{Resx ExcludeWout}" HorizontalAlignment="Right"/>
+            <CheckBox Grid.Column="1" Margin="10,0,0,0" IsChecked = "{Binding Path=ExcludeWout}"/>
+            <TextBlock Grid.Column="2" Margin="20,0,10,0" Text="{Resx Selected}" 
                        FontSize="{StaticResource BaseFontSize}" 
-                       VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
-            <TextBlock Grid.Column="1" Margin="0,0,0,0" Text="{Binding NumberOfSelectedItems}" 
+                       HorizontalAlignment="Right"/>
+            <TextBlock Grid.Column="3" Margin="0,0,0,0" Text="{Binding NumberOfSelectedItems}" 
                        FontSize="{StaticResource BaseFontSize}" 
-                       VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+                       HorizontalAlignment="Left"/>
         </Grid>
         <DataGrid Grid.Row="2"
-            x:Name="dgPlaceIDs" 
+            x:Name="dgBoxIDs" 
             ItemsSource="{Binding BoxIDList}" 
             dgx:DataGridFilter.IsAutoFilterEnabled="True"
             dgx:Tools.ApplyInitialSorting="True"
@@ -76,8 +80,7 @@
                 <i:EventTrigger EventName="SelectionChanged">
                     <cmd:EventToCommand
                         Command="{Binding SelectionChangedCommand}"
-                        CommandParameter="{Binding SelectedItems,
-                        ElementName=dgBoxIDs}" />
+                        CommandParameter="{Binding SelectedItems,ElementName=dgBoxIDs}" />
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>

@@ -4488,4 +4488,25 @@
   <data name="ERR_CLASS" xml:space="preserve">
     <value>Dimension class does not fit to location</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BarCode" xml:space="preserve">
+    <value>Barcode</value>
+  </data>
+  <data name="Front" xml:space="preserve">
+    <value>Front</value>
+  </data>
+  <data name="HeightClass" xml:space="preserve">
+    <value>Height class</value>
+  </data>
+  <data name="Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="OverHeight" xml:space="preserve">
+    <value>Overheight</value>
+  </data>
+  <data name="Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
 </root>

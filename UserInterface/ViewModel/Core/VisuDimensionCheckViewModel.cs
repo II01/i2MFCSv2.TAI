@@ -20,6 +20,7 @@ namespace UserInterface.ViewModel
         private bool _front;
         private bool _back;
         private bool _top;
+        private bool _hclass;
         private bool _barcode;
         private bool _mfcs;
         private ConveyorInfo _info;
@@ -97,6 +98,19 @@ namespace UserInterface.ViewModel
                 {
                     _top = value;
                     RaisePropertyChanged("TopValue");
+                }
+            }
+        }
+
+        public bool HClassValue
+        {
+            get { return _hclass; }
+            set
+            {
+                if (_hclass != value)
+                {
+                    _hclass = value;
+                    RaisePropertyChanged("HClassValue");
                 }
             }
         }
@@ -194,6 +208,7 @@ namespace UserInterface.ViewModel
                 FrontValue = _info.Material != 0 && _info.MaterialError != null && _info.MaterialError[2];
                 BackValue = _info.Material != 0 && _info.MaterialError != null && _info.MaterialError[3];
                 TopValue = _info.Material != 0 && _info.MaterialError != null && _info.MaterialError[4];
+                HClassValue = _info.Material != 0 && _info.MaterialError != null && _info.MaterialError[10];
                 BarCodeValue = _info.Material != 0 && _info.MaterialError != null && _info.MaterialError[7];
                 MFCSValue = _info.Material != 0 && _info.MaterialError != null && _info.MaterialError[9];
             }

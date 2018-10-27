@@ -34,6 +34,7 @@ namespace UserInterface.ViewModel
         private bool _enabledCC;
         private BasicWarehouse _warehouse;
         private DBServiceWMS _dbservicewms;
+        private bool _excludeWout = true;
         private int _accessLevel;
         private string _accessUser;
         private int _numberOfSelectedItems;
@@ -161,6 +162,23 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public bool ExcludeWout
+        {
+            get
+            {
+                return _excludeWout;
+            }
+            set
+            {
+                if (_excludeWout != value)
+                {
+                    _excludeWout = value;
+                    RaisePropertyChanged("ExcludeWout");
+                }
+            }
+        }
+
 
         public int NumberOfSelectedItems
         {
@@ -388,7 +406,7 @@ namespace UserInterface.ViewModel
             try
             {
                 string id = SelectedBoxID?.ID;
-                var BoxIDs = await _dbservicewms.GetBoxIDs();
+                var BoxIDs = await _dbservicewms.GetBoxIDs(ExcludeWout);
                 BoxIDList.Clear();
                 foreach (var p in BoxIDs)
                     BoxIDList.Add(new BoxIDViewModel

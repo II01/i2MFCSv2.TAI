@@ -119,15 +119,19 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public async Task<List<Box_ID>> GetBoxIDs()
+        public async Task<List<Box_ID>> GetBoxIDs(bool whOnly)
         {
             try
             {
                 using (var dc = new EntitiesWMS())
                 {
-                    var l = from p in dc.Box_ID
-                            where p.ID != "-"
-                            select p;
+                    var l = from b in dc.Box_ID
+                            join t in dc.TUs on b.ID equals t.Box_ID into joinedBT
+                            from bt in joinedBT.DefaultIfEmpty()
+                            join p in dc.Places on bt.TU_ID equals p.TU_ID into joinedBTP
+                            from btp in joinedBTP.DefaultIfEmpty()
+                            where b.ID != "-" && (!whOnly || (whOnly && btp != null && btp.PlaceID != "W:out"))
+                            select b;
                     return await l.ToListAsync();
                 }
             }

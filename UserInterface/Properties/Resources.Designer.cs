@@ -9340,6 +9340,24 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Barcode.
+        /// </summary>
+        public static string BarCode {
+            get {
+                return ResourceManager.GetString("BarCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to B.
         /// </summary>
         public static string BarcodeShort {
@@ -11581,11 +11599,29 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Front.
+        /// </summary>
+        public static string Front {
+            get {
+                return ResourceManager.GetString("Front", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Height.
         /// </summary>
         public static string Height {
             get {
                 return ResourceManager.GetString("Height", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height class.
+        /// </summary>
+        public static string HeightClass {
+            get {
+                return ResourceManager.GetString("HeightClass", resourceCulture);
             }
         }
         
@@ -11748,6 +11784,15 @@ namespace UserInterface.Properties {
         public static string LastChange {
             get {
                 return ResourceManager.GetString("LastChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        public static string Left {
+            get {
+                return ResourceManager.GetString("Left", resourceCulture);
             }
         }
         
@@ -12081,6 +12126,15 @@ namespace UserInterface.Properties {
         public static string Other_language {
             get {
                 return ResourceManager.GetString("Other_language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overheight.
+        /// </summary>
+        public static string OverHeight {
+            get {
+                return ResourceManager.GetString("OverHeight", resourceCulture);
             }
         }
         
@@ -12495,6 +12549,15 @@ namespace UserInterface.Properties {
         public static string Restart {
             get {
                 return ResourceManager.GetString("Restart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        public static string Right {
+            get {
+                return ResourceManager.GetString("Right", resourceCulture);
             }
         }
         
