@@ -1691,7 +1691,7 @@ namespace UserInterface.DataServiceWMS
                         if (mid == null)
                         {
                             dcm.MaterialIDs.Add(new MaterialID { ID = l.TUID, Size = 0, Weight = 10000 * l.DimensionWMS.Value });
-                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add MaterialID: |{l.TUID:d9}|");
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add MaterialID: |{l.TUID:d5}|");
                         }
                         else
                             mid.Weight = 10000*l.DimensionWMS.Value + mid.Weight % 10000;
@@ -1699,12 +1699,12 @@ namespace UserInterface.DataServiceWMS
                         if (place != null)
                         {
                             dcm.Places.Remove(place);
-                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, delete TU: |{place.Place1}|{place.Material:d9}|");
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, delete TU: |{place.Place1}|{place.Material:d5}|");
                         }
                         if (l.PlaceWMS != null && l.PlaceWMS.StartsWith("W") && l.PlaceWMS != "W:out")
                         {
                             dcm.Places.Add(new Place { Material = l.TUID, Place1 = l.PlaceWMS, Time = DateTime.Now });
-                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add TU: |{l.PlaceWMS}|{l.TUID:d9}|");
+                            AddLog(user, EnumLogWMS.Event, "UI", $"Update place MFCS, add TU: |{l.PlaceWMS}|{l.TUID:d5}|");
                         }
                         dcm.SaveChanges();
                     }

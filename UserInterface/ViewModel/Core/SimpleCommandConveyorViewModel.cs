@@ -42,7 +42,7 @@ namespace UserInterface.ViewModel
                 {
                     _command = value;
 //                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("P{0:d9}", _command.Material.Value) : "";
-                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("{0:d9}", _command.Material.Value) : "";
+                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("{0:d5}", _command.Material.Value) : "";
                     RaisePropertyChanged("Command");
                 }
             }
@@ -57,7 +57,7 @@ namespace UserInterface.ViewModel
                 {
                     _command.Material = value;
 //                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("P{0:d9}", _command.Material.Value) : "";
-                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("{0:d9}", _command.Material.Value) : "";
+                    MaterialStr = (_command.Material.HasValue && _command.Material.Value > 0) ? string.Format("{0:d5}", _command.Material.Value) : "";
                     RaisePropertyChanged("Material");
                 }
             }
@@ -118,7 +118,7 @@ namespace UserInterface.ViewModel
                                      ResourceReader.GetString(tstr),
                                      ResourceReader.GetString("TU"),
 //                                     _command.Material != null ? string.Format("P{0:d9}", _command.Material) : "",
-                                     _command.Material != null ? string.Format("{0:d9}", _command.Material) : "",
+                                     _command.Material != null ? string.Format("{0:d5}", _command.Material) : "",
                                      ResourceReader.GetString("From"),
                                      _command.Source ?? "",
                                      ResourceReader.GetString("To"),

@@ -84,7 +84,7 @@ namespace UserInterface.ViewModel
                 {
                     _material.ID = value;
 //                    IDString = _material.ID > 0 ? string.Format("P{0:d9}", _material.ID) : "";
-                    IDString = _material.ID > 0 ? string.Format("{0:d9}", _material.ID) : "";
+                    IDString = _material.ID > 0 ? string.Format("{0:d5}", _material.ID) : "";
                     RaisePropertyChanged("ID");
                 }
             }

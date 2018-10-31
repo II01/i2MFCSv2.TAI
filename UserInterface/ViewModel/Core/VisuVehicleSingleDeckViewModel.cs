@@ -247,7 +247,7 @@ namespace UserInterface.ViewModel
                 DetailsValueUpdate("POSL", Location);
                 DetailsValueUpdate("POSP", _info.FPosition != null ? String.Format("X:{0} Y:{1} Z:{2}", _info.FPosition.X * 10, _info.FPosition.Y * 10, _info.FPosition.Z * 10) : "");
 //                DetailsValueUpdate("TU", _info.Palette != null && _info.Palette.Barcode != 0 ? string.Format("P{0:d9}", _info.Palette.Barcode) : "");
-                DetailsValueUpdate("TU", _info.Palette != null && _info.Palette.Barcode != 0 ? string.Format("{0:d9}", _info.Palette.Barcode) : "");
+                DetailsValueUpdate("TU", _info.Palette != null && _info.Palette.Barcode != 0 ? string.Format("{0:d5}", _info.Palette.Barcode) : "");
                 DetailsValueUpdate("CMDE", _info.LastCommand);  //CraneCommandToString(info.LastCommand));
                 DetailsValueUpdate("CMDB", _info.LastBufferCommand); // CraneCommandToString(info.LastBufferCommand));
                 int i = 0;

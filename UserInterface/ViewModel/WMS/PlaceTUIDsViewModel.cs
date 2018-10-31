@@ -509,7 +509,7 @@ namespace UserInterface.ViewModel
                             using (WMSToUIClient client = new WMSToUIClient())
                             {
                                 client.BlockTU(Detailed.TUID, Detailed.BlockedQC, (int)EnumBlockedWMS.Quality);
-                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Request block TUID: |{Detailed.TUID:d9}|{Detailed.BlockedQC}|{(int)EnumBlockedWMS.Quality}|");
+                                _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Request block TUID: |{Detailed.TUID:d5}|{Detailed.BlockedQC}|{(int)EnumBlockedWMS.Quality}|");
                                 Selected.TUID = Detailed.TUID;
                                 Selected.PlaceID = Detailed.PlaceID;
                                 Selected.DimensionClass = Detailed.DimensionClass;

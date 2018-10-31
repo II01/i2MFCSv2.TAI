@@ -48,7 +48,7 @@ namespace UserInterface.ViewModel
                     _command = value;
                     MaterialStr = ((_command as CommandMaterial).Material.HasValue && (_command as CommandMaterial).Material.Value > 0) ?
 //                                  string.Format("P{0:d9}", (_command as CommandMaterial).Material.Value) : "";
-                                    string.Format("{0:d9}", (_command as CommandMaterial).Material.Value) : "";
+                                    string.Format("{0:d5}", (_command as CommandMaterial).Material.Value) : "";
                     RaisePropertyChanged("Command");
                 }
             }
@@ -64,7 +64,7 @@ namespace UserInterface.ViewModel
                     (_command as CommandMaterial).Material = value;
                     MaterialStr = ((_command as CommandMaterial).Material.HasValue && (_command as CommandMaterial).Material.Value > 0) ?
                                     //string.Format("P{0:d9}", (_command as CommandMaterial).Material.Value) : "";
-                                    string.Format("{0:d9}", (_command as CommandMaterial).Material.Value) : "";
+                                    string.Format("{0:d5}", (_command as CommandMaterial).Material.Value) : "";
                     RaisePropertyChanged("Material");
                 }
             }

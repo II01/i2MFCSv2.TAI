@@ -269,8 +269,8 @@
             <vm:VisualizationViewModel.Device>
                 <vm:VisuSegmentViewModel x:Key="T" DeviceName="T"/>
                 <vm:VisuSegmentViewModel x:Key="T1" DeviceName="T1"/>
-                <vm:VisuConveyorViewModel x:Key="T100" DeviceName="T100"/>
-                <vm:VisuDimensionCheckViewModel x:Key="DCT100" DeviceName="T100"/>
+                <vm:VisuConveyorViewModel x:Key="T041" DeviceName="T041"/>
+                <vm:VisuDimensionCheckViewModel x:Key="DCT041" DeviceName="T041"/>
                 <vm:VisuVehicleSingleDeckViewModel x:Key="C1" DeviceName="C1" Strategy="Strategy-C101"/>
             </vm:VisualizationViewModel.Device>
         </vm:VisualizationViewModel>

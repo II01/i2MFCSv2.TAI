@@ -15,10 +15,10 @@ namespace Database
                 case EnumTask.Cancel:
                 case EnumTask.Create:
                 case EnumTask.Delete:
-                    return String.Format("Command {0}: {1} P{2:d9} on {3} {4} ({5})", 
+                    return String.Format("Command {0}: {1} P{2:d5} on {3} {4} ({5})", 
                                          ID, Task, Material, Source, Status, r);
                 case EnumTask.Move:
-                    return String.Format("Command {0}: {1} P{2:d9} from {3} to {4} {5} ({6})", 
+                    return String.Format("Command {0}: {1} P{2:d5} from {3} to {4} {5} ({6})", 
                                          ID, Task, Material, Source, Target, Status, r);
                 default:
                     return "Task unknown...";

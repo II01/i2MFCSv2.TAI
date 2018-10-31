@@ -258,7 +258,7 @@ namespace UserInterface.ViewModel
                     if (Deck[deck].Model != null)
                     {
 //                        DetailsValueUpdate(string.Format("TU{0}", deck), Deck[deck].TransportUnit != 0 ? string.Format("P{0:d9}", Deck[deck].TransportUnit) : "");
-                        DetailsValueUpdate(string.Format("TU{0}", deck), Deck[deck].TransportUnit != 0 ? string.Format("{0:d9}", Deck[deck].TransportUnit) : "");
+                        DetailsValueUpdate(string.Format("TU{0}", deck), Deck[deck].TransportUnit != 0 ? string.Format("{0:d5}", Deck[deck].TransportUnit) : "");
                         DetailsValueUpdate(string.Format("CMDE{0}", deck), _info[deck].LastCommand);
                         DetailsValueUpdate(string.Format("CMDB{0}", deck), _info[deck].LastBufferCommand);
                         int i = 0;

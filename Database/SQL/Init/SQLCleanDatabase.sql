@@ -3,6 +3,8 @@ delete from [Event]
 delete from [Movement]
 delete from [Command]
 delete from [SimpleCommand]
+delete from [HistCommand]
+delete from [HistSimpleCommand]
 delete from [Place]
 delete from [MaterialID] 
 

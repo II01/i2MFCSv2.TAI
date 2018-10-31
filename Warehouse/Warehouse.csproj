@@ -188,7 +188,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Config\xmlconfigTAIsim.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Config\xmlconfigTAI.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\xmlconfigUITAIsim.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Config\xmlconfigUITAI.xml">

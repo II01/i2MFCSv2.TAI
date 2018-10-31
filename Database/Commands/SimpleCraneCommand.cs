@@ -14,12 +14,12 @@ namespace Database
             {
                 case EnumTask.Cancel:
                 case EnumTask.Create:
-                case EnumTask.Delete: return String.Format("Command {0}: {1} {2} P{3:d9} from {4} {5} ({6})", 
+                case EnumTask.Delete: return String.Format("Command {0}: {1} {2} P{3:d5} from {4} {5} ({6})", 
                                                            ID, Unit, Task, Material, Source, Status, r);
                 case EnumTask.Move: return String.Format("Command {0}: {1} {2} {3} {4} ({5})", 
                                                          ID, Unit, Task, Source, Status, r);
                 case EnumTask.Drop:
-                case EnumTask.Pick: return String.Format("Command {0}: {1} {2} P{3:d9} {4} {5} {6} ({7})", 
+                case EnumTask.Pick: return String.Format("Command {0}: {1} {2} P{3:d5} {4} {5} {6} ({7})", 
                                                          ID, Unit, Task, Material, Task == EnumTask.Drop ? "To" : "From", Source, Status, r);
             }
             return String.Format("Uknown task {0}", Task);

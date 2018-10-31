@@ -67,8 +67,8 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time_arrived}" 
                                         Width="175" Binding="{Binding ArrivedTime}" SortDirection="Descending" />
-                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Unit}" 
-                                        Width="100" Binding="{Binding Unit}" />
+<!--                    <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Unit}" 
+                                        Width="100" Binding="{Binding Unit}" /> -->
                     <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ID}" 
                                         Width="100" Binding="{Binding AlarmID}" dgx:DataGridFilterColumn.IsFilterVisible="False"/>
                     <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 

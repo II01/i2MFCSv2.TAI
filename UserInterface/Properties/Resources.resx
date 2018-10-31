@@ -1188,3063 +1188,6 @@
   <data name="DeleteCommand" xml:space="preserve">
     <value>Cancel Cmd</value>
   </data>
-  <data name="ALARM_000001" xml:space="preserve">
-    <value>MFC queue full</value>
-  </data>
-  <data name="ALARM_000002" xml:space="preserve">
-    <value>TCP IP chanel fault</value>
-  </data>
-  <data name="ALARM_000003" xml:space="preserve">
-    <value>segment0_02</value>
-  </data>
-  <data name="ALARM_000004" xml:space="preserve">
-    <value>segment0_03</value>
-  </data>
-  <data name="ALARM_000005" xml:space="preserve">
-    <value>segment0_04</value>
-  </data>
-  <data name="ALARM_000006" xml:space="preserve">
-    <value>segment0_05</value>
-  </data>
-  <data name="ALARM_000007" xml:space="preserve">
-    <value>segment0_06</value>
-  </data>
-  <data name="ALARM_000008" xml:space="preserve">
-    <value>segment0_07</value>
-  </data>
-  <data name="ALARM_000009" xml:space="preserve">
-    <value>segment0_08</value>
-  </data>
-  <data name="ALARM_000010" xml:space="preserve">
-    <value>phase alignment</value>
-  </data>
-  <data name="ALARM_000011" xml:space="preserve">
-    <value>c101 main switch (2Q1)</value>
-  </data>
-  <data name="ALARM_000012" xml:space="preserve">
-    <value>c201 main switch (3Q1)</value>
-  </data>
-  <data name="ALARM_000013" xml:space="preserve">
-    <value>s301 main switch (4Q1)</value>
-  </data>
-  <data name="ALARM_000014" xml:space="preserve">
-    <value>c401 main switch (7Q1)</value>
-  </data>
-  <data name="ALARM_000015" xml:space="preserve">
-    <value>c501 main switch (8Q1)</value>
-  </data>
-  <data name="ALARM_000016" xml:space="preserve">
-    <value>segment0_15</value>
-  </data>
-  <data name="ALARM_000017" xml:space="preserve">
-    <value>segment0_16</value>
-  </data>
-  <data name="ALARM_000018" xml:space="preserve">
-    <value>segment0_17</value>
-  </data>
-  <data name="ALARM_000019" xml:space="preserve">
-    <value>segment0_18</value>
-  </data>
-  <data name="ALARM_000020" xml:space="preserve">
-    <value>conveyor main switch (5Q1)</value>
-  </data>
-  <data name="ALARM_000021" xml:space="preserve">
-    <value>conveyor 24V (6F1)</value>
-  </data>
-  <data name="ALARM_000022" xml:space="preserve">
-    <value>main cabinet ventialtion (12F2)</value>
-  </data>
-  <data name="ALARM_000023" xml:space="preserve">
-    <value>sensors 24V (14F4)</value>
-  </data>
-  <data name="ALARM_000024" xml:space="preserve">
-    <value>frequency regulator 24V (14F5)</value>
-  </data>
-  <data name="ALARM_000025" xml:space="preserve">
-    <value>segment0_24</value>
-  </data>
-  <data name="ALARM_000026" xml:space="preserve">
-    <value>segment0_25</value>
-  </data>
-  <data name="ALARM_000027" xml:space="preserve">
-    <value>segment0_26</value>
-  </data>
-  <data name="ALARM_000028" xml:space="preserve">
-    <value>segment0_27</value>
-  </data>
-  <data name="ALARM_000029" xml:space="preserve">
-    <value>segment0_28</value>
-  </data>
-  <data name="ALARM_000030" xml:space="preserve">
-    <value>segment0_29</value>
-  </data>
-  <data name="ALARM_000031" xml:space="preserve">
-    <value>segment0_30</value>
-  </data>
-  <data name="ALARM_000032" xml:space="preserve">
-    <value>segment0_31</value>
-  </data>
-  <data name="ALARM_000033" xml:space="preserve">
-    <value>segment0_32</value>
-  </data>
-  <data name="ALARM_000034" xml:space="preserve">
-    <value>segment0_33</value>
-  </data>
-  <data name="ALARM_000035" xml:space="preserve">
-    <value>segment0_34</value>
-  </data>
-  <data name="ALARM_000036" xml:space="preserve">
-    <value>segment0_35</value>
-  </data>
-  <data name="ALARM_000037" xml:space="preserve">
-    <value>segment0_36</value>
-  </data>
-  <data name="ALARM_000038" xml:space="preserve">
-    <value>segment0_37</value>
-  </data>
-  <data name="ALARM_000039" xml:space="preserve">
-    <value>segment0_38</value>
-  </data>
-  <data name="ALARM_000040" xml:space="preserve">
-    <value>Stop button CP012</value>
-  </data>
-  <data name="ALARM_000041" xml:space="preserve">
-    <value>Stop button CP015</value>
-  </data>
-  <data name="ALARM_000042" xml:space="preserve">
-    <value>Stop button CP030</value>
-  </data>
-  <data name="ALARM_000043" xml:space="preserve">
-    <value>Stop button CP110</value>
-  </data>
-  <data name="ALARM_000044" xml:space="preserve">
-    <value>Stop button CP120</value>
-  </data>
-  <data name="ALARM_000045" xml:space="preserve">
-    <value>Stop button CP101</value>
-  </data>
-  <data name="ALARM_000046" xml:space="preserve">
-    <value>Stop button CP210</value>
-  </data>
-  <data name="ALARM_000047" xml:space="preserve">
-    <value>Stop button CP220</value>
-  </data>
-  <data name="ALARM_000048" xml:space="preserve">
-    <value>Stop button CP201</value>
-  </data>
-  <data name="ALARM_000049" xml:space="preserve">
-    <value>Stop button CP301</value>
-  </data>
-  <data name="ALARM_000050" xml:space="preserve">
-    <value>Stop button CP040</value>
-  </data>
-  <data name="ALARM_000051" xml:space="preserve">
-    <value>Stop button SB2</value>
-  </data>
-  <data name="ALARM_000052" xml:space="preserve">
-    <value>segment0_52</value>
-  </data>
-  <data name="ALARM_000053" xml:space="preserve">
-    <value>segment0_53</value>
-  </data>
-  <data name="ALARM_000054" xml:space="preserve">
-    <value>Safety contactor deactivated 11K1</value>
-  </data>
-  <data name="ALARM_000055" xml:space="preserve">
-    <value>Safety contactor deactivated 12K1</value>
-  </data>
-  <data name="ALARM_000056" xml:space="preserve">
-    <value>Safety contactor deactivated 13K1</value>
-  </data>
-  <data name="ALARM_000057" xml:space="preserve">
-    <value>Safety contactor deactivated 14K1</value>
-  </data>
-  <data name="ALARM_000058" xml:space="preserve">
-    <value>Safety contactor deactivated 15K1</value>
-  </data>
-  <data name="ALARM_000059" xml:space="preserve">
-    <value>Safety contactor deactivated 16K1</value>
-  </data>
-  <data name="ALARM_000060" xml:space="preserve">
-    <value>Safety contactor deactivated 17K1</value>
-  </data>
-  <data name="ALARM_000061" xml:space="preserve">
-    <value>segment0_61</value>
-  </data>
-  <data name="ALARM_000062" xml:space="preserve">
-    <value>segment0_62</value>
-  </data>
-  <data name="ALARM_000063" xml:space="preserve">
-    <value>segment0_63</value>
-  </data>
-  <data name="ALARM_000064" xml:space="preserve">
-    <value>segment0_64</value>
-  </data>
-  <data name="ALARM_000065" xml:space="preserve">
-    <value>segment0_65</value>
-  </data>
-  <data name="ALARM_000066" xml:space="preserve">
-    <value>segment0_66</value>
-  </data>
-  <data name="ALARM_000067" xml:space="preserve">
-    <value>segment0_67</value>
-  </data>
-  <data name="ALARM_000068" xml:space="preserve">
-    <value>segment0_68</value>
-  </data>
-  <data name="ALARM_000069" xml:space="preserve">
-    <value>CLV620 unreachable</value>
-  </data>
-  <data name="ALARM_000070" xml:space="preserve">
-    <value>frequency regulator T014 unreachable</value>
-  </data>
-  <data name="ALARM_000071" xml:space="preserve">
-    <value>frequency regulator T015 unreachable</value>
-  </data>
-  <data name="ALARM_000072" xml:space="preserve">
-    <value>frequency regulator T031_r unreachable</value>
-  </data>
-  <data name="ALARM_000073" xml:space="preserve">
-    <value>frequency regulator T031_c unreachable</value>
-  </data>
-  <data name="ALARM_000074" xml:space="preserve">
-    <value>frequency regulator T033 unreachable</value>
-  </data>
-  <data name="ALARM_000075" xml:space="preserve">
-    <value>frequency regulator T035 unreachable</value>
-  </data>
-  <data name="ALARM_000076" xml:space="preserve">
-    <value>frequency regulator T037 unreachable</value>
-  </data>
-  <data name="ALARM_000077" xml:space="preserve">
-    <value>frequency regulator T038 unreachable</value>
-  </data>
-  <data name="ALARM_000078" xml:space="preserve">
-    <value>frequency regulator T114 unreachable</value>
-  </data>
-  <data name="ALARM_000079" xml:space="preserve">
-    <value>frequency regulator T115 unreachable</value>
-  </data>
-  <data name="ALARM_000080" xml:space="preserve">
-    <value>frequency regulator T125 unreachable</value>
-  </data>
-  <data name="ALARM_000081" xml:space="preserve">
-    <value>frequency regulator T214 unreachable</value>
-  </data>
-  <data name="ALARM_000082" xml:space="preserve">
-    <value>frequency regulator T215 unreachable</value>
-  </data>
-  <data name="ALARM_000083" xml:space="preserve">
-    <value>frequency regulator T225 unreachable</value>
-  </data>
-  <data name="ALARM_000084" xml:space="preserve">
-    <value>crane 1 unreachable</value>
-  </data>
-  <data name="ALARM_000085" xml:space="preserve">
-    <value>crane 2 unreachable</value>
-  </data>
-  <data name="ALARM_000086" xml:space="preserve">
-    <value>shuttle 3 unreachable</value>
-  </data>
-  <data name="ALARM_000087" xml:space="preserve">
-    <value>segment0_87</value>
-  </data>
-  <data name="ALARM_000088" xml:space="preserve">
-    <value>segment0_88</value>
-  </data>
-  <data name="ALARM_000089" xml:space="preserve">
-    <value>segment0_89</value>
-  </data>
-  <data name="ALARM_000090" xml:space="preserve">
-    <value>segment0_90</value>
-  </data>
-  <data name="ALARM_000091" xml:space="preserve">
-    <value>segment0_91</value>
-  </data>
-  <data name="ALARM_000092" xml:space="preserve">
-    <value>segment0_92</value>
-  </data>
-  <data name="ALARM_000093" xml:space="preserve">
-    <value>segment0_93</value>
-  </data>
-  <data name="ALARM_000094" xml:space="preserve">
-    <value>segment0_94</value>
-  </data>
-  <data name="ALARM_000095" xml:space="preserve">
-    <value>segment0_95</value>
-  </data>
-  <data name="ALARM_000096" xml:space="preserve">
-    <value>segment0_96</value>
-  </data>
-  <data name="ALARM_001001" xml:space="preserve">
-    <value>MFC missmatch (segment T01)</value>
-  </data>
-  <data name="ALARM_001002" xml:space="preserve">
-    <value>segment1_01</value>
-  </data>
-  <data name="ALARM_001003" xml:space="preserve">
-    <value>segment1_02</value>
-  </data>
-  <data name="ALARM_001004" xml:space="preserve">
-    <value>segment1_03</value>
-  </data>
-  <data name="ALARM_001005" xml:space="preserve">
-    <value>segment1_04</value>
-  </data>
-  <data name="ALARM_001006" xml:space="preserve">
-    <value>segment1_05</value>
-  </data>
-  <data name="ALARM_001007" xml:space="preserve">
-    <value>segment1_06</value>
-  </data>
-  <data name="ALARM_001008" xml:space="preserve">
-    <value>segment1_07</value>
-  </data>
-  <data name="ALARM_001009" xml:space="preserve">
-    <value>segment1_08</value>
-  </data>
-  <data name="ALARM_001010" xml:space="preserve">
-    <value>T013 material missmatch</value>
-  </data>
-  <data name="ALARM_001011" xml:space="preserve">
-    <value>T013 running too long conveyor</value>
-  </data>
-  <data name="ALARM_001012" xml:space="preserve">
-    <value>T013 running too long hoist</value>
-  </data>
-  <data name="ALARM_001013" xml:space="preserve">
-    <value>T013 limit switch</value>
-  </data>
-  <data name="ALARM_001014" xml:space="preserve">
-    <value>T013 not ready (25Q1)</value>
-  </data>
-  <data name="ALARM_001015" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_001016" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_001017" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_001018" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_001019" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_001020" xml:space="preserve">
-    <value>T014 material missmatch</value>
-  </data>
-  <data name="ALARM_001021" xml:space="preserve">
-    <value>T014 running too long conveyor</value>
-  </data>
-  <data name="ALARM_001022" xml:space="preserve">
-    <value>T014 running too long hoist</value>
-  </data>
-  <data name="ALARM_001023" xml:space="preserve">
-    <value>T014 limit switch</value>
-  </data>
-  <data name="ALARM_001024" xml:space="preserve">
-    <value>T014 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_001025" xml:space="preserve">
-    <value>Spare 25</value>
-  </data>
-  <data name="ALARM_001026" xml:space="preserve">
-    <value>Spare 26</value>
-  </data>
-  <data name="ALARM_001027" xml:space="preserve">
-    <value>Spare 27</value>
-  </data>
-  <data name="ALARM_001028" xml:space="preserve">
-    <value>Spare 28</value>
-  </data>
-  <data name="ALARM_001029" xml:space="preserve">
-    <value>Spare 29</value>
-  </data>
-  <data name="ALARM_001030" xml:space="preserve">
-    <value>T015 material missmatch</value>
-  </data>
-  <data name="ALARM_001031" xml:space="preserve">
-    <value>T015 running too long conveyor</value>
-  </data>
-  <data name="ALARM_001032" xml:space="preserve">
-    <value>T015 running too long hoist</value>
-  </data>
-  <data name="ALARM_001033" xml:space="preserve">
-    <value>T015 limit switch</value>
-  </data>
-  <data name="ALARM_001034" xml:space="preserve">
-    <value>T015 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_001035" xml:space="preserve">
-    <value>Spare 35</value>
-  </data>
-  <data name="ALARM_001036" xml:space="preserve">
-    <value>Spare 36</value>
-  </data>
-  <data name="ALARM_001037" xml:space="preserve">
-    <value>Spare 37</value>
-  </data>
-  <data name="ALARM_001038" xml:space="preserve">
-    <value>Spare 38</value>
-  </data>
-  <data name="ALARM_001039" xml:space="preserve">
-    <value>Spare 39</value>
-  </data>
-  <data name="ALARM_001040" xml:space="preserve">
-    <value>A015 material missmatch</value>
-  </data>
-  <data name="ALARM_001041" xml:space="preserve">
-    <value>A015 running too long conveyor</value>
-  </data>
-  <data name="ALARM_001042" xml:space="preserve">
-    <value>A015 running too long hoist</value>
-  </data>
-  <data name="ALARM_001043" xml:space="preserve">
-    <value>A015 limit switch</value>
-  </data>
-  <data name="ALARM_001044" xml:space="preserve">
-    <value>A015 not ready (30Q1, 31F1, 32Q1, 33Q1, 34Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_002102" xml:space="preserve">
-    <value>segment2_01</value>
-  </data>
-  <data name="ALARM_002103" xml:space="preserve">
-    <value>segment2_02</value>
-  </data>
-  <data name="ALARM_002101" xml:space="preserve">
-    <value>MFC missmatch (segment T02A)</value>
-  </data>
-  <data name="ALARM_002104" xml:space="preserve">
-    <value>segment2_03</value>
-  </data>
-  <data name="ALARM_002105" xml:space="preserve">
-    <value>segment2_04</value>
-  </data>
-  <data name="ALARM_002106" xml:space="preserve">
-    <value>segment2_05</value>
-  </data>
-  <data name="ALARM_002107" xml:space="preserve">
-    <value>segment2_06</value>
-  </data>
-  <data name="ALARM_002108" xml:space="preserve">
-    <value>segment2_07</value>
-  </data>
-  <data name="ALARM_002109" xml:space="preserve">
-    <value>segment2_08</value>
-  </data>
-  <data name="ALARM_002110" xml:space="preserve">
-    <value>T021 material missmatch</value>
-  </data>
-  <data name="ALARM_002111" xml:space="preserve">
-    <value>T021 running too long conveyor</value>
-  </data>
-  <data name="ALARM_002112" xml:space="preserve">
-    <value>T021 running too long hoist</value>
-  </data>
-  <data name="ALARM_002113" xml:space="preserve">
-    <value>T021 limit switch</value>
-  </data>
-  <data name="ALARM_002114" xml:space="preserve">
-    <value>T021 not ready (39Q1, 40Q1, 41F1, 42Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_002115" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_002116" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_002117" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_002118" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_002119" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_002120" xml:space="preserve">
-    <value>T022 material missmatch</value>
-  </data>
-  <data name="ALARM_002121" xml:space="preserve">
-    <value>T022 running too long conveyor</value>
-  </data>
-  <data name="ALARM_002122" xml:space="preserve">
-    <value>T022 running too long hoist</value>
-  </data>
-  <data name="ALARM_002123" xml:space="preserve">
-    <value>T022 limit switch</value>
-  </data>
-  <data name="ALARM_002124" xml:space="preserve">
-    <value>T022 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_002125" xml:space="preserve">
-    <value>Spare 25</value>
-  </data>
-  <data name="ALARM_002126" xml:space="preserve">
-    <value>Spare 26</value>
-  </data>
-  <data name="ALARM_002127" xml:space="preserve">
-    <value>Spare 27</value>
-  </data>
-  <data name="ALARM_002128" xml:space="preserve">
-    <value>Spare 28</value>
-  </data>
-  <data name="ALARM_002129" xml:space="preserve">
-    <value>Spare 29</value>
-  </data>
-  <data name="ALARM_002130" xml:space="preserve">
-    <value>T023 material missmatch</value>
-  </data>
-  <data name="ALARM_002131" xml:space="preserve">
-    <value>T023 running too long conveyor</value>
-  </data>
-  <data name="ALARM_002132" xml:space="preserve">
-    <value>T023 running too long hoist</value>
-  </data>
-  <data name="ALARM_002133" xml:space="preserve">
-    <value>T023 limit switch</value>
-  </data>
-  <data name="ALARM_002134" xml:space="preserve">
-    <value>T023 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_002135" xml:space="preserve">
-    <value>Spare 35</value>
-  </data>
-  <data name="ALARM_002136" xml:space="preserve">
-    <value>Spare 36</value>
-  </data>
-  <data name="ALARM_002137" xml:space="preserve">
-    <value>Spare 37</value>
-  </data>
-  <data name="ALARM_002138" xml:space="preserve">
-    <value>Spare 38</value>
-  </data>
-  <data name="ALARM_002139" xml:space="preserve">
-    <value>Spare 39</value>
-  </data>
-  <data name="ALARM_002140" xml:space="preserve">
-    <value>T024 material missmatch</value>
-  </data>
-  <data name="ALARM_002141" xml:space="preserve">
-    <value>T024 running too long conveyor</value>
-  </data>
-  <data name="ALARM_002142" xml:space="preserve">
-    <value>T024 running too long hoist</value>
-  </data>
-  <data name="ALARM_002143" xml:space="preserve">
-    <value>T024 limit switch</value>
-  </data>
-  <data name="ALARM_002144" xml:space="preserve">
-    <value>T024 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_002201" xml:space="preserve">
-    <value>MFC missmatch (segment T02B)</value>
-  </data>
-  <data name="ALARM_002202" xml:space="preserve">
-    <value>segment3_01</value>
-  </data>
-  <data name="ALARM_002203" xml:space="preserve">
-    <value>segment3_02</value>
-  </data>
-  <data name="ALARM_002204" xml:space="preserve">
-    <value>segment3_03</value>
-  </data>
-  <data name="ALARM_002205" xml:space="preserve">
-    <value>segment3_04</value>
-  </data>
-  <data name="ALARM_002206" xml:space="preserve">
-    <value>segment3_05</value>
-  </data>
-  <data name="ALARM_002207" xml:space="preserve">
-    <value>segment3_06</value>
-  </data>
-  <data name="ALARM_002208" xml:space="preserve">
-    <value>segment3_07</value>
-  </data>
-  <data name="ALARM_002209" xml:space="preserve">
-    <value>segment3_08</value>
-  </data>
-  <data name="ALARM_002210" xml:space="preserve">
-    <value>T025 material missmatch</value>
-  </data>
-  <data name="ALARM_002211" xml:space="preserve">
-    <value>T025 running too long conveyor</value>
-  </data>
-  <data name="ALARM_002212" xml:space="preserve">
-    <value>T025 running too long hoist</value>
-  </data>
-  <data name="ALARM_002213" xml:space="preserve">
-    <value>T025 limit switch</value>
-  </data>
-  <data name="ALARM_002214" xml:space="preserve">
-    <value>T025 not ready (46Q1)</value>
-  </data>
-  <data name="ALARM_003101" xml:space="preserve">
-    <value>MFC missmatch (segment T03A)</value>
-  </data>
-  <data name="ALARM_003102" xml:space="preserve">
-    <value>segment4_01</value>
-  </data>
-  <data name="ALARM_003103" xml:space="preserve">
-    <value>segment4_02</value>
-  </data>
-  <data name="ALARM_003104" xml:space="preserve">
-    <value>segment4_03</value>
-  </data>
-  <data name="ALARM_003105" xml:space="preserve">
-    <value>segment4_04</value>
-  </data>
-  <data name="ALARM_003106" xml:space="preserve">
-    <value>segment4_05</value>
-  </data>
-  <data name="ALARM_003107" xml:space="preserve">
-    <value>segment4_06</value>
-  </data>
-  <data name="ALARM_003108" xml:space="preserve">
-    <value>segment4_07</value>
-  </data>
-  <data name="ALARM_003109" xml:space="preserve">
-    <value>segment4_08</value>
-  </data>
-  <data name="ALARM_003110" xml:space="preserve">
-    <value>T031 material missmatch</value>
-  </data>
-  <data name="ALARM_003111" xml:space="preserve">
-    <value>T031 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003112" xml:space="preserve">
-    <value>T031 running too long hoist</value>
-  </data>
-  <data name="ALARM_003113" xml:space="preserve">
-    <value>T031 limit switch</value>
-  </data>
-  <data name="ALARM_003114" xml:space="preserve">
-    <value>T031 not ready (35Q1, 36Q1, 37F1, 38Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_003115" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_003116" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_003117" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_003118" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_003119" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_003120" xml:space="preserve">
-    <value>A031B material missmatch</value>
-  </data>
-  <data name="ALARM_003121" xml:space="preserve">
-    <value>A031B running too long conveyor</value>
-  </data>
-  <data name="ALARM_003122" xml:space="preserve">
-    <value>A031B running too long hoist</value>
-  </data>
-  <data name="ALARM_003123" xml:space="preserve">
-    <value>A031B limit switch</value>
-  </data>
-  <data name="ALARM_003124" xml:space="preserve">
-    <value>A031B not ready (55Q1)</value>
-  </data>
-  <data name="ALARM_003125" xml:space="preserve">
-    <value>Spare 25</value>
-  </data>
-  <data name="ALARM_003126" xml:space="preserve">
-    <value>Spare 26</value>
-  </data>
-  <data name="ALARM_003127" xml:space="preserve">
-    <value>Spare 27</value>
-  </data>
-  <data name="ALARM_003128" xml:space="preserve">
-    <value>Spare 28</value>
-  </data>
-  <data name="ALARM_003129" xml:space="preserve">
-    <value>Spare 29</value>
-  </data>
-  <data name="ALARM_003130" xml:space="preserve">
-    <value>A031F material missmatch</value>
-  </data>
-  <data name="ALARM_003131" xml:space="preserve">
-    <value>A031F running too long conveyor</value>
-  </data>
-  <data name="ALARM_003132" xml:space="preserve">
-    <value>A031F running too long hoist</value>
-  </data>
-  <data name="ALARM_003133" xml:space="preserve">
-    <value>A031F limit switch</value>
-  </data>
-  <data name="ALARM_003134" xml:space="preserve">
-    <value>A031F not ready (57Q1)</value>
-  </data>
-  <data name="ALARM_003201" xml:space="preserve">
-    <value>MFC missmatch (segment T03B)</value>
-  </data>
-  <data name="ALARM_003202" xml:space="preserve">
-    <value>segment5_01</value>
-  </data>
-  <data name="ALARM_003203" xml:space="preserve">
-    <value>segment5_02</value>
-  </data>
-  <data name="ALARM_003204" xml:space="preserve">
-    <value>segment5_03</value>
-  </data>
-  <data name="ALARM_003205" xml:space="preserve">
-    <value>segment5_04</value>
-  </data>
-  <data name="ALARM_003206" xml:space="preserve">
-    <value>segment5_05</value>
-  </data>
-  <data name="ALARM_003207" xml:space="preserve">
-    <value>segment5_06</value>
-  </data>
-  <data name="ALARM_003208" xml:space="preserve">
-    <value>segment5_07</value>
-  </data>
-  <data name="ALARM_003209" xml:space="preserve">
-    <value>segment5_08</value>
-  </data>
-  <data name="ALARM_003210" xml:space="preserve">
-    <value>T032 material missmatch</value>
-  </data>
-  <data name="ALARM_003211" xml:space="preserve">
-    <value>T032 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003212" xml:space="preserve">
-    <value>T032 running too long hoist</value>
-  </data>
-  <data name="ALARM_003213" xml:space="preserve">
-    <value>T032 limit switch</value>
-  </data>
-  <data name="ALARM_003214" xml:space="preserve">
-    <value>T032 not ready (61Q1)</value>
-  </data>
-  <data name="ALARM_003301" xml:space="preserve">
-    <value>MFC missmatch (segment T03C)</value>
-  </data>
-  <data name="ALARM_003302" xml:space="preserve">
-    <value>segment6_01</value>
-  </data>
-  <data name="ALARM_003303" xml:space="preserve">
-    <value>segment6_02</value>
-  </data>
-  <data name="ALARM_003304" xml:space="preserve">
-    <value>segment6_03</value>
-  </data>
-  <data name="ALARM_003305" xml:space="preserve">
-    <value>segment6_04</value>
-  </data>
-  <data name="ALARM_003306" xml:space="preserve">
-    <value>segment6_05</value>
-  </data>
-  <data name="ALARM_003307" xml:space="preserve">
-    <value>segment6_06</value>
-  </data>
-  <data name="ALARM_003308" xml:space="preserve">
-    <value>segment6_07</value>
-  </data>
-  <data name="ALARM_003309" xml:space="preserve">
-    <value>segment6_08</value>
-  </data>
-  <data name="ALARM_003310" xml:space="preserve">
-    <value>T033 material missmatch</value>
-  </data>
-  <data name="ALARM_003311" xml:space="preserve">
-    <value>T033 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003312" xml:space="preserve">
-    <value>T033 running too long hoist</value>
-  </data>
-  <data name="ALARM_003313" xml:space="preserve">
-    <value>T033 limit switch</value>
-  </data>
-  <data name="ALARM_003314" xml:space="preserve">
-    <value>T033 not ready (63Q1)</value>
-  </data>
-  <data name="ALARM_003315" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_003316" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_003317" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_003318" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_003319" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_003320" xml:space="preserve">
-    <value>A033 material missmatch</value>
-  </data>
-  <data name="ALARM_003321" xml:space="preserve">
-    <value>A033 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003322" xml:space="preserve">
-    <value>A033 running too long hoist</value>
-  </data>
-  <data name="ALARM_003323" xml:space="preserve">
-    <value>A033 limit switch</value>
-  </data>
-  <data name="ALARM_003324" xml:space="preserve">
-    <value>A033 not ready (64Q1, 65F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_003401" xml:space="preserve">
-    <value>MFC missmatch (segment T03D)</value>
-  </data>
-  <data name="ALARM_003409" xml:space="preserve">
-    <value>segment7_08</value>
-  </data>
-  <data name="ALARM_003402" xml:space="preserve">
-    <value>segment7_01</value>
-  </data>
-  <data name="ALARM_003403" xml:space="preserve">
-    <value>segment7_02</value>
-  </data>
-  <data name="ALARM_003404" xml:space="preserve">
-    <value>segment7_03</value>
-  </data>
-  <data name="ALARM_003405" xml:space="preserve">
-    <value>segment7_04</value>
-  </data>
-  <data name="ALARM_003406" xml:space="preserve">
-    <value>segment7_05</value>
-  </data>
-  <data name="ALARM_003407" xml:space="preserve">
-    <value>segment7_06</value>
-  </data>
-  <data name="ALARM_003408" xml:space="preserve">
-    <value>segment7_07</value>
-  </data>
-  <data name="ALARM_003410" xml:space="preserve">
-    <value>T034 material missmatch</value>
-  </data>
-  <data name="ALARM_003411" xml:space="preserve">
-    <value>T034 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003412" xml:space="preserve">
-    <value>T034 running too long hoist</value>
-  </data>
-  <data name="ALARM_003413" xml:space="preserve">
-    <value>T034 limit switch</value>
-  </data>
-  <data name="ALARM_003414" xml:space="preserve">
-    <value>T034 not ready (67Q1)</value>
-  </data>
-  <data name="ALARM_003501" xml:space="preserve">
-    <value>MFC missmatch (segment T03E)</value>
-  </data>
-  <data name="ALARM_003502" xml:space="preserve">
-    <value>segment8_01</value>
-  </data>
-  <data name="ALARM_003503" xml:space="preserve">
-    <value>segment8_02</value>
-  </data>
-  <data name="ALARM_003504" xml:space="preserve">
-    <value>segment8_03</value>
-  </data>
-  <data name="ALARM_003505" xml:space="preserve">
-    <value>segment8_04</value>
-  </data>
-  <data name="ALARM_003506" xml:space="preserve">
-    <value>segment8_05</value>
-  </data>
-  <data name="ALARM_003507" xml:space="preserve">
-    <value>segment8_06</value>
-  </data>
-  <data name="ALARM_003508" xml:space="preserve">
-    <value>segment8_07</value>
-  </data>
-  <data name="ALARM_003509" xml:space="preserve">
-    <value>segment8_08</value>
-  </data>
-  <data name="ALARM_003510" xml:space="preserve">
-    <value>T035 material missmatch</value>
-  </data>
-  <data name="ALARM_003511" xml:space="preserve">
-    <value>T035 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003512" xml:space="preserve">
-    <value>T035 running too long hoist</value>
-  </data>
-  <data name="ALARM_003513" xml:space="preserve">
-    <value>T035 limit switch</value>
-  </data>
-  <data name="ALARM_003514" xml:space="preserve">
-    <value>T035 not ready (69Q1)</value>
-  </data>
-  <data name="ALARM_003515" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_003516" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_003517" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_003518" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_003519" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_003520" xml:space="preserve">
-    <value>A035 material missmatch</value>
-  </data>
-  <data name="ALARM_003521" xml:space="preserve">
-    <value>A035 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003522" xml:space="preserve">
-    <value>A035 running too long hoist</value>
-  </data>
-  <data name="ALARM_003523" xml:space="preserve">
-    <value>A035 limit switch</value>
-  </data>
-  <data name="ALARM_003524" xml:space="preserve">
-    <value>A035 not ready (70Q1, 71F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_003601" xml:space="preserve">
-    <value>MFC missmatch (segment T03F)</value>
-  </data>
-  <data name="ALARM_003602" xml:space="preserve">
-    <value>segment9_01</value>
-  </data>
-  <data name="ALARM_003603" xml:space="preserve">
-    <value>segment9_02</value>
-  </data>
-  <data name="ALARM_003604" xml:space="preserve">
-    <value>segment9_03</value>
-  </data>
-  <data name="ALARM_003605" xml:space="preserve">
-    <value>segment9_04</value>
-  </data>
-  <data name="ALARM_003606" xml:space="preserve">
-    <value>segment9_05</value>
-  </data>
-  <data name="ALARM_003607" xml:space="preserve">
-    <value>segment9_06</value>
-  </data>
-  <data name="ALARM_003608" xml:space="preserve">
-    <value>segment9_07</value>
-  </data>
-  <data name="ALARM_003609" xml:space="preserve">
-    <value>segment9_08</value>
-  </data>
-  <data name="ALARM_003610" xml:space="preserve">
-    <value>T036 material missmatch</value>
-  </data>
-  <data name="ALARM_003611" xml:space="preserve">
-    <value>T036 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003612" xml:space="preserve">
-    <value>T036 running too long hoist</value>
-  </data>
-  <data name="ALARM_003613" xml:space="preserve">
-    <value>T036 limit switch</value>
-  </data>
-  <data name="ALARM_003614" xml:space="preserve">
-    <value>T036 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_003701" xml:space="preserve">
-    <value>MFC missmatch (segment T03G)</value>
-  </data>
-  <data name="ALARM_003702" xml:space="preserve">
-    <value>segment10_01</value>
-  </data>
-  <data name="ALARM_003703" xml:space="preserve">
-    <value>segment10_02</value>
-  </data>
-  <data name="ALARM_003704" xml:space="preserve">
-    <value>segment10_03</value>
-  </data>
-  <data name="ALARM_003705" xml:space="preserve">
-    <value>segment10_04</value>
-  </data>
-  <data name="ALARM_003706" xml:space="preserve">
-    <value>segment10_05</value>
-  </data>
-  <data name="ALARM_003707" xml:space="preserve">
-    <value>segment10_06</value>
-  </data>
-  <data name="ALARM_003708" xml:space="preserve">
-    <value>segment10_07</value>
-  </data>
-  <data name="ALARM_003709" xml:space="preserve">
-    <value>segment10_08</value>
-  </data>
-  <data name="ALARM_003710" xml:space="preserve">
-    <value>T037 material missmatch</value>
-  </data>
-  <data name="ALARM_003711" xml:space="preserve">
-    <value>T037 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003712" xml:space="preserve">
-    <value>T037 running too long hoist</value>
-  </data>
-  <data name="ALARM_003713" xml:space="preserve">
-    <value>T037 limit switch</value>
-  </data>
-  <data name="ALARM_003714" xml:space="preserve">
-    <value>T037 not ready (73Q1, 74Q1, 75F1, 76Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_003715" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_003716" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_003717" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_003718" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_003719" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_003720" xml:space="preserve">
-    <value>A037 material missmatch</value>
-  </data>
-  <data name="ALARM_003721" xml:space="preserve">
-    <value>A037 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003722" xml:space="preserve">
-    <value>A037 running too long hoist</value>
-  </data>
-  <data name="ALARM_003723" xml:space="preserve">
-    <value>A037 limit switch</value>
-  </data>
-  <data name="ALARM_003724" xml:space="preserve">
-    <value>A037 not ready (77Q1, 78Q1, 79F1, 80Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_003725" xml:space="preserve">
-    <value>segment10_01</value>
-  </data>
-  <data name="ALARM_003726" xml:space="preserve">
-    <value>segment10_02</value>
-  </data>
-  <data name="ALARM_003727" xml:space="preserve">
-    <value>segment10_03</value>
-  </data>
-  <data name="ALARM_003728" xml:space="preserve">
-    <value>segment10_04</value>
-  </data>
-  <data name="ALARM_003729" xml:space="preserve">
-    <value>segment10_05</value>
-  </data>
-  <data name="ALARM_003730" xml:space="preserve">
-    <value>segment10_06</value>
-  </data>
-  <data name="ALARM_003731" xml:space="preserve">
-    <value>segment10_07</value>
-  </data>
-  <data name="ALARM_003732" xml:space="preserve">
-    <value>segment10_08</value>
-  </data>
-  <data name="ALARM_003733" xml:space="preserve">
-    <value>T037 material missmatch</value>
-  </data>
-  <data name="ALARM_003734" xml:space="preserve">
-    <value>T037 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003735" xml:space="preserve">
-    <value>T037 running too long hoist</value>
-  </data>
-  <data name="ALARM_003736" xml:space="preserve">
-    <value>T037 limit switch</value>
-  </data>
-  <data name="ALARM_003737" xml:space="preserve">
-    <value>T037 not ready (73Q1, 74Q1, 75F1, 76Q1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_003738" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_003739" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_003801" xml:space="preserve">
-    <value>MFC missmatch (segment T03H)</value>
-  </data>
-  <data name="ALARM_003802" xml:space="preserve">
-    <value>segment11_01</value>
-  </data>
-  <data name="ALARM_003803" xml:space="preserve">
-    <value>segment11_02</value>
-  </data>
-  <data name="ALARM_003804" xml:space="preserve">
-    <value>segment11_03</value>
-  </data>
-  <data name="ALARM_003805" xml:space="preserve">
-    <value>segment11_04</value>
-  </data>
-  <data name="ALARM_003806" xml:space="preserve">
-    <value>segment11_05</value>
-  </data>
-  <data name="ALARM_003807" xml:space="preserve">
-    <value>segment11_06</value>
-  </data>
-  <data name="ALARM_003808" xml:space="preserve">
-    <value>segment11_07</value>
-  </data>
-  <data name="ALARM_003809" xml:space="preserve">
-    <value>segment11_08</value>
-  </data>
-  <data name="ALARM_003810" xml:space="preserve">
-    <value>T038 material missmatch</value>
-  </data>
-  <data name="ALARM_003811" xml:space="preserve">
-    <value>T038 running too long conveyor</value>
-  </data>
-  <data name="ALARM_003812" xml:space="preserve">
-    <value>T038 running too long hoist</value>
-  </data>
-  <data name="ALARM_003813" xml:space="preserve">
-    <value>T038 limit switch</value>
-  </data>
-  <data name="ALARM_003814" xml:space="preserve">
-    <value>T038 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_004101" xml:space="preserve">
-    <value>MFC missmatch (segment T04A)</value>
-  </data>
-  <data name="ALARM_004102" xml:space="preserve">
-    <value>segment20_01</value>
-  </data>
-  <data name="ALARM_004103" xml:space="preserve">
-    <value>segment20_02</value>
-  </data>
-  <data name="ALARM_004104" xml:space="preserve">
-    <value>segment20_03</value>
-  </data>
-  <data name="ALARM_004105" xml:space="preserve">
-    <value>segment20_04</value>
-  </data>
-  <data name="ALARM_004106" xml:space="preserve">
-    <value>segment20_05</value>
-  </data>
-  <data name="ALARM_004107" xml:space="preserve">
-    <value>segment20_06</value>
-  </data>
-  <data name="ALARM_004108" xml:space="preserve">
-    <value>segment20_07</value>
-  </data>
-  <data name="ALARM_004109" xml:space="preserve">
-    <value>segment20_08</value>
-  </data>
-  <data name="ALARM_004110" xml:space="preserve">
-    <value>T041 material missmatch</value>
-  </data>
-  <data name="ALARM_004111" xml:space="preserve">
-    <value>T041 running too long conveyor</value>
-  </data>
-  <data name="ALARM_004112" xml:space="preserve">
-    <value>T041 running too long hoist</value>
-  </data>
-  <data name="ALARM_004113" xml:space="preserve">
-    <value>T041 limit switch</value>
-  </data>
-  <data name="ALARM_004114" xml:space="preserve">
-    <value>T041 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_004201" xml:space="preserve">
-    <value>MFC missmatch (segment T04B)</value>
-  </data>
-  <data name="ALARM_004202" xml:space="preserve">
-    <value>segment21_01</value>
-  </data>
-  <data name="ALARM_004203" xml:space="preserve">
-    <value>segment21_02</value>
-  </data>
-  <data name="ALARM_004204" xml:space="preserve">
-    <value>segment21_03</value>
-  </data>
-  <data name="ALARM_004205" xml:space="preserve">
-    <value>segment21_04</value>
-  </data>
-  <data name="ALARM_004206" xml:space="preserve">
-    <value>segment21_05</value>
-  </data>
-  <data name="ALARM_004207" xml:space="preserve">
-    <value>segment21_06</value>
-  </data>
-  <data name="ALARM_004208" xml:space="preserve">
-    <value>segment21_07</value>
-  </data>
-  <data name="ALARM_004209" xml:space="preserve">
-    <value>segment21_08</value>
-  </data>
-  <data name="ALARM_004210" xml:space="preserve">
-    <value>T042 material missmatch</value>
-  </data>
-  <data name="ALARM_004211" xml:space="preserve">
-    <value>T042 running too long conveyor</value>
-  </data>
-  <data name="ALARM_004212" xml:space="preserve">
-    <value>T042 running too long hoist</value>
-  </data>
-  <data name="ALARM_004213" xml:space="preserve">
-    <value>T042 limit switch</value>
-  </data>
-  <data name="ALARM_004214" xml:space="preserve">
-    <value>T042 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_011101" xml:space="preserve">
-    <value>MFC missmatch (segment T11A)</value>
-  </data>
-  <data name="ALARM_011102" xml:space="preserve">
-    <value>segment12_01</value>
-  </data>
-  <data name="ALARM_011103" xml:space="preserve">
-    <value>segment12_02</value>
-  </data>
-  <data name="ALARM_011104" xml:space="preserve">
-    <value>segment12_03</value>
-  </data>
-  <data name="ALARM_011105" xml:space="preserve">
-    <value>segment12_04</value>
-  </data>
-  <data name="ALARM_011106" xml:space="preserve">
-    <value>segment12_05</value>
-  </data>
-  <data name="ALARM_011107" xml:space="preserve">
-    <value>segment12_06</value>
-  </data>
-  <data name="ALARM_011108" xml:space="preserve">
-    <value>segment12_07</value>
-  </data>
-  <data name="ALARM_011109" xml:space="preserve">
-    <value>segment12_08</value>
-  </data>
-  <data name="ALARM_011110" xml:space="preserve">
-    <value>T111 material missmatch</value>
-  </data>
-  <data name="ALARM_011111" xml:space="preserve">
-    <value>T111 running too long conveyor</value>
-  </data>
-  <data name="ALARM_011112" xml:space="preserve">
-    <value>T111 running too long hoist</value>
-  </data>
-  <data name="ALARM_011113" xml:space="preserve">
-    <value>T111 limit switch</value>
-  </data>
-  <data name="ALARM_011114" xml:space="preserve">
-    <value>T111 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_011115" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_011116" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_011117" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_011118" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_011119" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_011120" xml:space="preserve">
-    <value>T112 material missmatch</value>
-  </data>
-  <data name="ALARM_011121" xml:space="preserve">
-    <value>T112 running too long conveyor</value>
-  </data>
-  <data name="ALARM_011122" xml:space="preserve">
-    <value>T112 running too long hoist</value>
-  </data>
-  <data name="ALARM_011123" xml:space="preserve">
-    <value>T112 limit switch</value>
-  </data>
-  <data name="ALARM_011124" xml:space="preserve">
-    <value>T112 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_011125" xml:space="preserve">
-    <value>Spare 25</value>
-  </data>
-  <data name="ALARM_011126" xml:space="preserve">
-    <value>Spare 26</value>
-  </data>
-  <data name="ALARM_011127" xml:space="preserve">
-    <value>Spare 27</value>
-  </data>
-  <data name="ALARM_011128" xml:space="preserve">
-    <value>Spare 28</value>
-  </data>
-  <data name="ALARM_011129" xml:space="preserve">
-    <value>Spare 29</value>
-  </data>
-  <data name="ALARM_011130" xml:space="preserve">
-    <value>T113 material missmatch</value>
-  </data>
-  <data name="ALARM_011131" xml:space="preserve">
-    <value>T113 running too long conveyor</value>
-  </data>
-  <data name="ALARM_011132" xml:space="preserve">
-    <value>T113 running too long hoist</value>
-  </data>
-  <data name="ALARM_011133" xml:space="preserve">
-    <value>T113 limit switch</value>
-  </data>
-  <data name="ALARM_011134" xml:space="preserve">
-    <value>T113 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_011135" xml:space="preserve">
-    <value>Spare 35</value>
-  </data>
-  <data name="ALARM_011136" xml:space="preserve">
-    <value>Spare 36</value>
-  </data>
-  <data name="ALARM_011137" xml:space="preserve">
-    <value>Spare 37</value>
-  </data>
-  <data name="ALARM_011138" xml:space="preserve">
-    <value>Spare 38</value>
-  </data>
-  <data name="ALARM_011139" xml:space="preserve">
-    <value>Spare 39</value>
-  </data>
-  <data name="ALARM_011140" xml:space="preserve">
-    <value>T114 material missmatch</value>
-  </data>
-  <data name="ALARM_011141" xml:space="preserve">
-    <value>T114 running too long conveyor</value>
-  </data>
-  <data name="ALARM_011142" xml:space="preserve">
-    <value>T114 running too long hoist</value>
-  </data>
-  <data name="ALARM_011143" xml:space="preserve">
-    <value>T114 limit switch</value>
-  </data>
-  <data name="ALARM_011144" xml:space="preserve">
-    <value>T114 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_011201" xml:space="preserve">
-    <value>MFC missmatch (segment T11B)</value>
-  </data>
-  <data name="ALARM_011202" xml:space="preserve">
-    <value>segment13_01</value>
-  </data>
-  <data name="ALARM_011203" xml:space="preserve">
-    <value>segment13_02</value>
-  </data>
-  <data name="ALARM_011204" xml:space="preserve">
-    <value>segment13_03</value>
-  </data>
-  <data name="ALARM_011205" xml:space="preserve">
-    <value>segment13_04</value>
-  </data>
-  <data name="ALARM_011206" xml:space="preserve">
-    <value>segment13_05</value>
-  </data>
-  <data name="ALARM_011207" xml:space="preserve">
-    <value>segment13_06</value>
-  </data>
-  <data name="ALARM_011208" xml:space="preserve">
-    <value>segment13_07</value>
-  </data>
-  <data name="ALARM_011209" xml:space="preserve">
-    <value>segment13_08</value>
-  </data>
-  <data name="ALARM_011210" xml:space="preserve">
-    <value>T115 material missmatch</value>
-  </data>
-  <data name="ALARM_011211" xml:space="preserve">
-    <value>T115 running too long conveyor</value>
-  </data>
-  <data name="ALARM_011212" xml:space="preserve">
-    <value>T115 running too long hoist</value>
-  </data>
-  <data name="ALARM_011213" xml:space="preserve">
-    <value>T115 limit switch</value>
-  </data>
-  <data name="ALARM_011214" xml:space="preserve">
-    <value>T115 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_012101" xml:space="preserve">
-    <value>MFC missmatch (segment T12A)</value>
-  </data>
-  <data name="ALARM_012102" xml:space="preserve">
-    <value>segment14_01</value>
-  </data>
-  <data name="ALARM_012103" xml:space="preserve">
-    <value>segment14_02</value>
-  </data>
-  <data name="ALARM_012104" xml:space="preserve">
-    <value>segment14_03</value>
-  </data>
-  <data name="ALARM_012105" xml:space="preserve">
-    <value>segment14_04</value>
-  </data>
-  <data name="ALARM_012106" xml:space="preserve">
-    <value>segment14_05</value>
-  </data>
-  <data name="ALARM_012107" xml:space="preserve">
-    <value>segment14_06</value>
-  </data>
-  <data name="ALARM_012108" xml:space="preserve">
-    <value>segment14_07</value>
-  </data>
-  <data name="ALARM_012109" xml:space="preserve">
-    <value>segment14_08</value>
-  </data>
-  <data name="ALARM_012110" xml:space="preserve">
-    <value>T121 material missmatch</value>
-  </data>
-  <data name="ALARM_012111" xml:space="preserve">
-    <value>T121 running too long conveyor</value>
-  </data>
-  <data name="ALARM_012112" xml:space="preserve">
-    <value>T121 running too long hoist</value>
-  </data>
-  <data name="ALARM_012113" xml:space="preserve">
-    <value>T121 limit switch</value>
-  </data>
-  <data name="ALARM_012114" xml:space="preserve">
-    <value>T121 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_012201" xml:space="preserve">
-    <value>MFC missmatch (segment T12B)</value>
-  </data>
-  <data name="ALARM_012202" xml:space="preserve">
-    <value>segment15_01</value>
-  </data>
-  <data name="ALARM_012203" xml:space="preserve">
-    <value>segment15_02</value>
-  </data>
-  <data name="ALARM_012204" xml:space="preserve">
-    <value>segment15_03</value>
-  </data>
-  <data name="ALARM_012205" xml:space="preserve">
-    <value>segment15_04</value>
-  </data>
-  <data name="ALARM_012206" xml:space="preserve">
-    <value>segment15_05</value>
-  </data>
-  <data name="ALARM_012207" xml:space="preserve">
-    <value>segment15_06</value>
-  </data>
-  <data name="ALARM_012208" xml:space="preserve">
-    <value>segment15_07</value>
-  </data>
-  <data name="ALARM_012209" xml:space="preserve">
-    <value>segment15_08</value>
-  </data>
-  <data name="ALARM_012210" xml:space="preserve">
-    <value>T122 material missmatch</value>
-  </data>
-  <data name="ALARM_012211" xml:space="preserve">
-    <value>T122 running too long conveyor</value>
-  </data>
-  <data name="ALARM_012212" xml:space="preserve">
-    <value>T122 running too long hoist</value>
-  </data>
-  <data name="ALARM_012213" xml:space="preserve">
-    <value>T122 limit switch</value>
-  </data>
-  <data name="ALARM_012214" xml:space="preserve">
-    <value>T122 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_012215" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_012216" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_012217" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_012218" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_012219" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_012220" xml:space="preserve">
-    <value>T123 material missmatch</value>
-  </data>
-  <data name="ALARM_012221" xml:space="preserve">
-    <value>T123 running too long conveyor</value>
-  </data>
-  <data name="ALARM_012222" xml:space="preserve">
-    <value>T123 running too long hoist</value>
-  </data>
-  <data name="ALARM_012223" xml:space="preserve">
-    <value>T123 limit switch</value>
-  </data>
-  <data name="ALARM_012224" xml:space="preserve">
-    <value>T123 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_012225" xml:space="preserve">
-    <value>Spare 25</value>
-  </data>
-  <data name="ALARM_012226" xml:space="preserve">
-    <value>Spare 26</value>
-  </data>
-  <data name="ALARM_012227" xml:space="preserve">
-    <value>Spare 27</value>
-  </data>
-  <data name="ALARM_012228" xml:space="preserve">
-    <value>Spare 28</value>
-  </data>
-  <data name="ALARM_012229" xml:space="preserve">
-    <value>Spare 29</value>
-  </data>
-  <data name="ALARM_012230" xml:space="preserve">
-    <value>T124 material missmatch</value>
-  </data>
-  <data name="ALARM_012231" xml:space="preserve">
-    <value>T124 running too long conveyor</value>
-  </data>
-  <data name="ALARM_012232" xml:space="preserve">
-    <value>T124 running too long hoist</value>
-  </data>
-  <data name="ALARM_012233" xml:space="preserve">
-    <value>T124 limit switch</value>
-  </data>
-  <data name="ALARM_012234" xml:space="preserve">
-    <value>T124 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_012235" xml:space="preserve">
-    <value>Spare 35</value>
-  </data>
-  <data name="ALARM_012236" xml:space="preserve">
-    <value>Spare 36</value>
-  </data>
-  <data name="ALARM_012237" xml:space="preserve">
-    <value>Spare 37</value>
-  </data>
-  <data name="ALARM_012238" xml:space="preserve">
-    <value>Spare 38</value>
-  </data>
-  <data name="ALARM_012239" xml:space="preserve">
-    <value>Spare 39</value>
-  </data>
-  <data name="ALARM_012240" xml:space="preserve">
-    <value>T125 material missmatch</value>
-  </data>
-  <data name="ALARM_012241" xml:space="preserve">
-    <value>T125 running too long conveyor</value>
-  </data>
-  <data name="ALARM_012242" xml:space="preserve">
-    <value>T125 running too long hoist</value>
-  </data>
-  <data name="ALARM_012243" xml:space="preserve">
-    <value>T125 limit switch</value>
-  </data>
-  <data name="ALARM_012244" xml:space="preserve">
-    <value>T125 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_021101" xml:space="preserve">
-    <value>MFC missmatch (segment T32)</value>
-  </data>
-  <data name="ALARM_021102" xml:space="preserve">
-    <value>segment16_01</value>
-  </data>
-  <data name="ALARM_021103" xml:space="preserve">
-    <value>segment16_02</value>
-  </data>
-  <data name="ALARM_021104" xml:space="preserve">
-    <value>segment16_03</value>
-  </data>
-  <data name="ALARM_021105" xml:space="preserve">
-    <value>segment16_04</value>
-  </data>
-  <data name="ALARM_021106" xml:space="preserve">
-    <value>segment16_05</value>
-  </data>
-  <data name="ALARM_021107" xml:space="preserve">
-    <value>segment16_06</value>
-  </data>
-  <data name="ALARM_021108" xml:space="preserve">
-    <value>segment16_07</value>
-  </data>
-  <data name="ALARM_021109" xml:space="preserve">
-    <value>segment16_08</value>
-  </data>
-  <data name="ALARM_021110" xml:space="preserve">
-    <value>T211 material missmatch</value>
-  </data>
-  <data name="ALARM_021111" xml:space="preserve">
-    <value>T211 running too long conveyor</value>
-  </data>
-  <data name="ALARM_021112" xml:space="preserve">
-    <value>T211 running too long hoist</value>
-  </data>
-  <data name="ALARM_021113" xml:space="preserve">
-    <value>T211 limit switch</value>
-  </data>
-  <data name="ALARM_021114" xml:space="preserve">
-    <value>T211 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_021115" xml:space="preserve">
-    <value>Spare 15</value>
-  </data>
-  <data name="ALARM_021116" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_021117" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_021118" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_021119" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_021120" xml:space="preserve">
-    <value>T212 material missmatch</value>
-  </data>
-  <data name="ALARM_021121" xml:space="preserve">
-    <value>T212 running too long conveyor</value>
-  </data>
-  <data name="ALARM_021122" xml:space="preserve">
-    <value>T212 running too long hoist</value>
-  </data>
-  <data name="ALARM_021123" xml:space="preserve">
-    <value>T212 limit switch</value>
-  </data>
-  <data name="ALARM_021124" xml:space="preserve">
-    <value>T212 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_021125" xml:space="preserve">
-    <value>Spare 25</value>
-  </data>
-  <data name="ALARM_021126" xml:space="preserve">
-    <value>Spare 26</value>
-  </data>
-  <data name="ALARM_021127" xml:space="preserve">
-    <value>Spare 27</value>
-  </data>
-  <data name="ALARM_021128" xml:space="preserve">
-    <value>Spare 28</value>
-  </data>
-  <data name="ALARM_021129" xml:space="preserve">
-    <value>Spare 29</value>
-  </data>
-  <data name="ALARM_021130" xml:space="preserve">
-    <value>T213 material missmatch</value>
-  </data>
-  <data name="ALARM_021131" xml:space="preserve">
-    <value>T213 running too long conveyor</value>
-  </data>
-  <data name="ALARM_021132" xml:space="preserve">
-    <value>T213 running too long hoist</value>
-  </data>
-  <data name="ALARM_021133" xml:space="preserve">
-    <value>T213 limit switch</value>
-  </data>
-  <data name="ALARM_021134" xml:space="preserve">
-    <value>T213 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_021135" xml:space="preserve">
-    <value>Spare 35</value>
-  </data>
-  <data name="ALARM_021136" xml:space="preserve">
-    <value>Spare 36</value>
-  </data>
-  <data name="ALARM_021137" xml:space="preserve">
-    <value>Spare 37</value>
-  </data>
-  <data name="ALARM_021138" xml:space="preserve">
-    <value>Spare 38</value>
-  </data>
-  <data name="ALARM_021139" xml:space="preserve">
-    <value>Spare 39</value>
-  </data>
-  <data name="ALARM_021140" xml:space="preserve">
-    <value>T214 material missmatch</value>
-  </data>
-  <data name="ALARM_021141" xml:space="preserve">
-    <value>T214 running too long conveyor</value>
-  </data>
-  <data name="ALARM_021142" xml:space="preserve">
-    <value>T214 running too long hoist</value>
-  </data>
-  <data name="ALARM_021143" xml:space="preserve">
-    <value>T214 limit switch</value>
-  </data>
-  <data name="ALARM_021144" xml:space="preserve">
-    <value>T214 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_021200" xml:space="preserve">
-    <value>MFC missmatch (segment T21B)</value>
-  </data>
-  <data name="ALARM_021201" xml:space="preserve">
-    <value>segment17_01</value>
-  </data>
-  <data name="ALARM_021202" xml:space="preserve">
-    <value>segment17_02</value>
-  </data>
-  <data name="ALARM_021203" xml:space="preserve">
-    <value>segment17_03</value>
-  </data>
-  <data name="ALARM_021204" xml:space="preserve">
-    <value>segment17_04</value>
-  </data>
-  <data name="ALARM_021205" xml:space="preserve">
-    <value>segment17_05</value>
-  </data>
-  <data name="ALARM_021206" xml:space="preserve">
-    <value>segment17_06</value>
-  </data>
-  <data name="ALARM_021207" xml:space="preserve">
-    <value>segment17_07</value>
-  </data>
-  <data name="ALARM_021208" xml:space="preserve">
-    <value>segment17_08</value>
-  </data>
-  <data name="ALARM_021210" xml:space="preserve">
-    <value>T215 material missmatch</value>
-  </data>
-  <data name="ALARM_021211" xml:space="preserve">
-    <value>T215 running too long conveyor</value>
-  </data>
-  <data name="ALARM_021212" xml:space="preserve">
-    <value>T215 running too long hoist</value>
-  </data>
-  <data name="ALARM_021213" xml:space="preserve">
-    <value>T215 limit switch</value>
-  </data>
-  <data name="ALARM_021214" xml:space="preserve">
-    <value>T215 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_022101" xml:space="preserve">
-    <value>MFC missmatch (segment T22A)</value>
-  </data>
-  <data name="ALARM_022102" xml:space="preserve">
-    <value>segment18_01</value>
-  </data>
-  <data name="ALARM_022103" xml:space="preserve">
-    <value>segment18_02</value>
-  </data>
-  <data name="ALARM_022104" xml:space="preserve">
-    <value>segment18_03</value>
-  </data>
-  <data name="ALARM_022105" xml:space="preserve">
-    <value>segment18_04</value>
-  </data>
-  <data name="ALARM_022106" xml:space="preserve">
-    <value>segment18_05</value>
-  </data>
-  <data name="ALARM_022107" xml:space="preserve">
-    <value>segment18_06</value>
-  </data>
-  <data name="ALARM_022108" xml:space="preserve">
-    <value>segment18_07</value>
-  </data>
-  <data name="ALARM_022109" xml:space="preserve">
-    <value>segment18_08</value>
-  </data>
-  <data name="ALARM_022110" xml:space="preserve">
-    <value>T221 material missmatch</value>
-  </data>
-  <data name="ALARM_022111" xml:space="preserve">
-    <value>T221 running too long conveyor</value>
-  </data>
-  <data name="ALARM_022112" xml:space="preserve">
-    <value>T221 running too long hoist</value>
-  </data>
-  <data name="ALARM_022113" xml:space="preserve">
-    <value>T221 limit switch</value>
-  </data>
-  <data name="ALARM_022114" xml:space="preserve">
-    <value>T221 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_022200" xml:space="preserve">
-    <value>MFC missmatch (segment T22B)</value>
-  </data>
-  <data name="ALARM_022201" xml:space="preserve">
-    <value>segment19_01</value>
-  </data>
-  <data name="ALARM_022202" xml:space="preserve">
-    <value>segment19_02</value>
-  </data>
-  <data name="ALARM_022203" xml:space="preserve">
-    <value>segment19_03</value>
-  </data>
-  <data name="ALARM_022204" xml:space="preserve">
-    <value>segment19_04</value>
-  </data>
-  <data name="ALARM_022205" xml:space="preserve">
-    <value>segment19_05</value>
-  </data>
-  <data name="ALARM_022206" xml:space="preserve">
-    <value>segment19_06</value>
-  </data>
-  <data name="ALARM_022207" xml:space="preserve">
-    <value>segment19_07</value>
-  </data>
-  <data name="ALARM_022208" xml:space="preserve">
-    <value>segment19_08</value>
-  </data>
-  <data name="ALARM_022210" xml:space="preserve">
-    <value>T222 material missmatch</value>
-  </data>
-  <data name="ALARM_022211" xml:space="preserve">
-    <value>T222 running too long conveyor</value>
-  </data>
-  <data name="ALARM_022212" xml:space="preserve">
-    <value>T222 running too long hoist</value>
-  </data>
-  <data name="ALARM_022213" xml:space="preserve">
-    <value>T222 limit switch</value>
-  </data>
-  <data name="ALARM_022214" xml:space="preserve">
-    <value>T222 not ready (85Q1)</value>
-  </data>
-  <data name="ALARM_022215" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_022216" xml:space="preserve">
-    <value>Spare 16</value>
-  </data>
-  <data name="ALARM_022217" xml:space="preserve">
-    <value>Spare 17</value>
-  </data>
-  <data name="ALARM_022218" xml:space="preserve">
-    <value>Spare 18</value>
-  </data>
-  <data name="ALARM_022219" xml:space="preserve">
-    <value>Spare 19</value>
-  </data>
-  <data name="ALARM_022220" xml:space="preserve">
-    <value>T223 material missmatch</value>
-  </data>
-  <data name="ALARM_022221" xml:space="preserve">
-    <value>T223 running too long conveyor</value>
-  </data>
-  <data name="ALARM_022222" xml:space="preserve">
-    <value>T223 running too long hoist</value>
-  </data>
-  <data name="ALARM_022223" xml:space="preserve">
-    <value>T223 limit switch</value>
-  </data>
-  <data name="ALARM_022224" xml:space="preserve">
-    <value>T223 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_022225" xml:space="preserve">
-    <value>Spare 25</value>
-  </data>
-  <data name="ALARM_022226" xml:space="preserve">
-    <value>Spare 26</value>
-  </data>
-  <data name="ALARM_022227" xml:space="preserve">
-    <value>Spare 27</value>
-  </data>
-  <data name="ALARM_022228" xml:space="preserve">
-    <value>Spare 28</value>
-  </data>
-  <data name="ALARM_022229" xml:space="preserve">
-    <value>Spare 29</value>
-  </data>
-  <data name="ALARM_022230" xml:space="preserve">
-    <value>T224 material missmatch</value>
-  </data>
-  <data name="ALARM_022231" xml:space="preserve">
-    <value>T224 running too long conveyor</value>
-  </data>
-  <data name="ALARM_022232" xml:space="preserve">
-    <value>T224 running too long hoist</value>
-  </data>
-  <data name="ALARM_022233" xml:space="preserve">
-    <value>T224 limit switch</value>
-  </data>
-  <data name="ALARM_022234" xml:space="preserve">
-    <value>T224 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_022235" xml:space="preserve">
-    <value>Spare 35</value>
-  </data>
-  <data name="ALARM_022236" xml:space="preserve">
-    <value>Spare 36</value>
-  </data>
-  <data name="ALARM_022237" xml:space="preserve">
-    <value>Spare 37</value>
-  </data>
-  <data name="ALARM_022238" xml:space="preserve">
-    <value>Spare 38</value>
-  </data>
-  <data name="ALARM_022239" xml:space="preserve">
-    <value>Spare 39</value>
-  </data>
-  <data name="ALARM_022240" xml:space="preserve">
-    <value>T225 material missmatch</value>
-  </data>
-  <data name="ALARM_022241" xml:space="preserve">
-    <value>T225 running too long conveyor</value>
-  </data>
-  <data name="ALARM_022242" xml:space="preserve">
-    <value>T225 running too long hoist</value>
-  </data>
-  <data name="ALARM_022243" xml:space="preserve">
-    <value>T225 limit switch</value>
-  </data>
-  <data name="ALARM_022244" xml:space="preserve">
-    <value>T225 not ready (43Q1, 44F1, frequency inverter)</value>
-  </data>
-  <data name="ALARM_100001" xml:space="preserve">
-    <value>Fuse control 230 VAC, +L01-202F2</value>
-  </data>
-  <data name="ALARM_100002" xml:space="preserve">
-    <value>Fuse control 24 VDC, +L01-203F7</value>
-  </data>
-  <data name="ALARM_100003" xml:space="preserve">
-    <value>Limit switch travel, +L01-205S1</value>
-  </data>
-  <data name="ALARM_100004" xml:space="preserve">
-    <value>Limit switch speed governor hoist - rope; +L01-205S2</value>
-  </data>
-  <data name="ALARM_100005" xml:space="preserve">
-    <value>E-STOP push button main cabinet, +L01-206S1</value>
-  </data>
-  <data name="ALARM_100006" xml:space="preserve">
-    <value>E-STOP over rail - doors, +L01-204K1</value>
-  </data>
-  <data name="ALARM_100007" xml:space="preserve">
-    <value>Limit switch speed governor hoist - overspeed; +L01-218S1</value>
-  </data>
-  <data name="ALARM_100008" xml:space="preserve">
-    <value>Protection travel brakes, +L01-212F1</value>
-  </data>
-  <data name="ALARM_100009" xml:space="preserve">
-    <value>Protection travel fan motors, +L01-212Q1</value>
-  </data>
-  <data name="ALARM_100010" xml:space="preserve">
-    <value>Protection hoist brakes, +L01-216F1</value>
-  </data>
-  <data name="ALARM_100011" xml:space="preserve">
-    <value>Protection hoist fan motors, +L01-216Q1</value>
-  </data>
-  <data name="ALARM_100012" xml:space="preserve">
-    <value>Protection forks C101 SD brake, +L01-219F1</value>
-  </data>
-  <data name="ALARM_100013" xml:space="preserve">
-    <value>Protection forks C101 DD brake, +L01-220F1</value>
-  </data>
-  <data name="ALARM_100014" xml:space="preserve">
-    <value>Protection forks C102 SD brake, +L01-222F1</value>
-  </data>
-  <data name="ALARM_100015" xml:space="preserve">
-    <value>Protection forks C102 DD brake, +L01-223F1</value>
-  </data>
-  <data name="ALARM_100016" xml:space="preserve">
-    <value>Limit switch hoist, +L02-236S1</value>
-  </data>
-  <data name="ALARM_100017" xml:space="preserve">
-    <value>Limit switch catching device - jaws, +L02-236S2</value>
-  </data>
-  <data name="ALARM_100018" xml:space="preserve">
-    <value>Cabin door 1, +L02-238S1</value>
-  </data>
-  <data name="ALARM_100019" xml:space="preserve">
-    <value>Cabin door 2, +L02-238S2</value>
-  </data>
-  <data name="ALARM_100020" xml:space="preserve">
-    <value>E-STOP push button cabin, +L02-238S3</value>
-  </data>
-  <data name="ALARM_100021" xml:space="preserve">
-    <value>No clearance between place 1 and left rack, +L02-241B4</value>
-  </data>
-  <data name="ALARM_100022" xml:space="preserve">
-    <value>No clearance between place 1 and left rack, +L02-241B3</value>
-  </data>
-  <data name="ALARM_100023" xml:space="preserve">
-    <value>No clearance between place 2 and left rack, +L02-242B4</value>
-  </data>
-  <data name="ALARM_100024" xml:space="preserve">
-    <value>No clearance between place 2 and left rack, +L02-243B3</value>
-  </data>
-  <data name="ALARM_100025" xml:space="preserve">
-    <value>Fork 1, depth 1 not at middle</value>
-  </data>
-  <data name="ALARM_100026" xml:space="preserve">
-    <value>Fork 1, depth 2 not at middle</value>
-  </data>
-  <data name="ALARM_100027" xml:space="preserve">
-    <value>Fork 2, depth 1 not at middle</value>
-  </data>
-  <data name="ALARM_100028" xml:space="preserve">
-    <value>Fork 2, depth 2 not at middle</value>
-  </data>
-  <data name="ALARM_100029" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100030" xml:space="preserve">
-    <value>Axis error: travel</value>
-  </data>
-  <data name="ALARM_100031" xml:space="preserve">
-    <value>Axis error: hoist</value>
-  </data>
-  <data name="ALARM_100032" xml:space="preserve">
-    <value>Axis error: fork 1, depth 1</value>
-  </data>
-  <data name="ALARM_100033" xml:space="preserve">
-    <value>Axis error: fork 1, depth 2</value>
-  </data>
-  <data name="ALARM_100034" xml:space="preserve">
-    <value>Axis error: fork 2, depth 1</value>
-  </data>
-  <data name="ALARM_100035" xml:space="preserve">
-    <value>Axis error: fork 2, depth 2</value>
-  </data>
-  <data name="ALARM_100036" xml:space="preserve">
-    <value>D425 startup fault</value>
-  </data>
-  <data name="ALARM_100037" xml:space="preserve">
-    <value>Travel motor running too long, +EXT-211M1</value>
-  </data>
-  <data name="ALARM_100038" xml:space="preserve">
-    <value>Hoist motor running too long, +EXT-215M1</value>
-  </data>
-  <data name="ALARM_100039" xml:space="preserve">
-    <value>Forks 1 SD motor running too long, +EXT-219M1</value>
-  </data>
-  <data name="ALARM_100040" xml:space="preserve">
-    <value>Forks 1 DD motor running too long, +EXT-220M1</value>
-  </data>
-  <data name="ALARM_100041" xml:space="preserve">
-    <value>Forks 2 SD motor running too long, +EXT-222M1</value>
-  </data>
-  <data name="ALARM_100042" xml:space="preserve">
-    <value>Forks 2 DD motor running too long, +EXT-223M1</value>
-  </data>
-  <data name="ALARM_100043" xml:space="preserve">
-    <value>Communication error with transport system PLC (receive direction)</value>
-  </data>
-  <data name="ALARM_100044" xml:space="preserve">
-    <value>Communication error with transport system PLC (send direction)</value>
-  </data>
-  <data name="ALARM_100045" xml:space="preserve">
-    <value>Communication error with MFCS (receive direction)</value>
-  </data>
-  <data name="ALARM_100046" xml:space="preserve">
-    <value>Communication error with MFCS (send direction)</value>
-  </data>
-  <data name="ALARM_100047" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100048" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100049" xml:space="preserve">
-    <value>Errorous value OF absolute encoder OR magnet switches - hoist</value>
-  </data>
-  <data name="ALARM_100050" xml:space="preserve">
-    <value>Errorous value OF absolute encoder OR magnet switches - travel</value>
-  </data>
-  <data name="ALARM_100051" xml:space="preserve">
-    <value>Automatic start not possible: wrong location</value>
-  </data>
-  <data name="ALARM_100052" xml:space="preserve">
-    <value>MFCS error</value>
-  </data>
-  <data name="ALARM_100053" xml:space="preserve">
-    <value>Material mismatch on deck 1</value>
-  </data>
-  <data name="ALARM_100054" xml:space="preserve">
-    <value>Material mismatch on deck 2</value>
-  </data>
-  <data name="ALARM_100055" xml:space="preserve">
-    <value>Automatic start not possible: deck 1 occupied</value>
-  </data>
-  <data name="ALARM_100056" xml:space="preserve">
-    <value>Automatic start not possible: deck 2 occupied</value>
-  </data>
-  <data name="ALARM_100057" xml:space="preserve">
-    <value>Automatic start not possible: deck 1 is empty</value>
-  </data>
-  <data name="ALARM_100058" xml:space="preserve">
-    <value>Automatic start not possible: deck 2 is empty</value>
-  </data>
-  <data name="ALARM_100059" xml:space="preserve">
-    <value>Barcode mismatch: deck 1</value>
-  </data>
-  <data name="ALARM_100060" xml:space="preserve">
-    <value>Barcode mismatch: deck 2</value>
-  </data>
-  <data name="ALARM_100061" xml:space="preserve">
-    <value>Pick not possible: deck 1, depth 1</value>
-  </data>
-  <data name="ALARM_100062" xml:space="preserve">
-    <value>Pick not possible: deck 2, depth 1</value>
-  </data>
-  <data name="ALARM_100063" xml:space="preserve">
-    <value>Pick not possible: deck 1, depth 2</value>
-  </data>
-  <data name="ALARM_100064" xml:space="preserve">
-    <value>Pick not possible: deck 2, depth 2</value>
-  </data>
-  <data name="ALARM_100065" xml:space="preserve">
-    <value>Drop not possible: deck 1, depth 1</value>
-  </data>
-  <data name="ALARM_100066" xml:space="preserve">
-    <value>Drop not possible: deck 2, depth 1</value>
-  </data>
-  <data name="ALARM_100067" xml:space="preserve">
-    <value>Drop not possible: deck 1, depth 2</value>
-  </data>
-  <data name="ALARM_100068" xml:space="preserve">
-    <value>Drop not possible: deck 2, depth 2</value>
-  </data>
-  <data name="ALARM_100069" xml:space="preserve">
-    <value>Underweight</value>
-  </data>
-  <data name="ALARM_100070" xml:space="preserve">
-    <value>Overweight</value>
-  </data>
-  <data name="ALARM_100071" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100072" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100073" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100074" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100075" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100076" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100077" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100078" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100079" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100080" xml:space="preserve">
-    <value>External E-STOP CP101</value>
-  </data>
-  <data name="ALARM_100081" xml:space="preserve">
-    <value>External E-STOP CP030</value>
-  </data>
-  <data name="ALARM_100082" xml:space="preserve">
-    <value>External door open</value>
-  </data>
-  <data name="ALARM_100083" xml:space="preserve">
-    <value>External light grind 111</value>
-  </data>
-  <data name="ALARM_100084" xml:space="preserve">
-    <value>External light grind 124</value>
-  </data>
-  <data name="ALARM_100085" xml:space="preserve">
-    <value>Manual mode supports only one command at one time</value>
-  </data>
-  <data name="ALARM_100086" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100087" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100088" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100089" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100090" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100091" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100092" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100093" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100094" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100095" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100096" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100097" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100098" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100099" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100100" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100101" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100102" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100103" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100104" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100105" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100106" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100107" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100108" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100109" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100110" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100111" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100112" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100113" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100114" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_100115" xml:space="preserve">
-    <value>Service M required</value>
-  </data>
-  <data name="ALARM_100116" xml:space="preserve">
-    <value>Service 3M required</value>
-  </data>
-  <data name="ALARM_100117" xml:space="preserve">
-    <value>Service 6M required</value>
-  </data>
-  <data name="ALARM_100118" xml:space="preserve">
-    <value>Service 12M required</value>
-  </data>
-  <data name="ALARM_100119" xml:space="preserve">
-    <value>Service 5 required</value>
-  </data>
-  <data name="ALARM_100120" xml:space="preserve">
-    <value>D425 message: drive object alarm</value>
-  </data>
-  <data name="ALARM_100121" xml:space="preserve">
-    <value>D425 message: drive object fault</value>
-  </data>
-  <data name="ALARM_100122" xml:space="preserve">
-    <value>D425 message: drive object safety</value>
-  </data>
-  <data name="ALARM_100123" xml:space="preserve">
-    <value>D425 message: execution fault</value>
-  </data>
-  <data name="ALARM_100124" xml:space="preserve">
-    <value>D425 message: peripheral fault</value>
-  </data>
-  <data name="ALARM_100125" xml:space="preserve">
-    <value>D425 message: tech fault</value>
-  </data>
-  <data name="ALARM_100126" xml:space="preserve">
-    <value>D425 message: time fault background</value>
-  </data>
-  <data name="ALARM_100127" xml:space="preserve">
-    <value>D425 message: time fault</value>
-  </data>
-  <data name="ALARM_100128" xml:space="preserve">
-    <value>D425 message: application fault</value>
-  </data>
-  <data name="ALARM_200001" xml:space="preserve">
-    <value>Fuse control 230 VAC, +L01-202F2</value>
-  </data>
-  <data name="ALARM_200002" xml:space="preserve">
-    <value>Fuse control 24 VDC, +L01-203F7</value>
-  </data>
-  <data name="ALARM_200003" xml:space="preserve">
-    <value>Limit switch travel, +L01-205S1</value>
-  </data>
-  <data name="ALARM_200004" xml:space="preserve">
-    <value>Limit switch speed governor hoist - rope; +L01-205S2</value>
-  </data>
-  <data name="ALARM_200005" xml:space="preserve">
-    <value>E-STOP push button main cabinet, +L01-206S1</value>
-  </data>
-  <data name="ALARM_200006" xml:space="preserve">
-    <value>E-STOP over rail - doors, +L01-204K1</value>
-  </data>
-  <data name="ALARM_200007" xml:space="preserve">
-    <value>Limit switch speed governor hoist - overspeed; +L01-218S1</value>
-  </data>
-  <data name="ALARM_200008" xml:space="preserve">
-    <value>Protection travel brakes, +L01-212F1</value>
-  </data>
-  <data name="ALARM_200009" xml:space="preserve">
-    <value>Protection travel fan motors, +L01-212Q1</value>
-  </data>
-  <data name="ALARM_200010" xml:space="preserve">
-    <value>Protection hoist brakes, +L01-216F1</value>
-  </data>
-  <data name="ALARM_200011" xml:space="preserve">
-    <value>Protection hoist fan motors, +L01-216Q1</value>
-  </data>
-  <data name="ALARM_200012" xml:space="preserve">
-    <value>Protection forks C101 SD brake, +L01-219F1</value>
-  </data>
-  <data name="ALARM_200013" xml:space="preserve">
-    <value>Protection forks C101 DD brake, +L01-220F1</value>
-  </data>
-  <data name="ALARM_200014" xml:space="preserve">
-    <value>Protection forks C102 SD brake, +L01-222F1</value>
-  </data>
-  <data name="ALARM_200015" xml:space="preserve">
-    <value>Protection forks C102 DD brake, +L01-223F1</value>
-  </data>
-  <data name="ALARM_200016" xml:space="preserve">
-    <value>Limit switch hoist, +L02-236S1</value>
-  </data>
-  <data name="ALARM_200017" xml:space="preserve">
-    <value>Limit switch catching device - jaws, +L02-236S2</value>
-  </data>
-  <data name="ALARM_200018" xml:space="preserve">
-    <value>Cabin door 1, +L02-238S1</value>
-  </data>
-  <data name="ALARM_200019" xml:space="preserve">
-    <value>Cabin door 2, +L02-238S2</value>
-  </data>
-  <data name="ALARM_200020" xml:space="preserve">
-    <value>E-STOP push button cabin, +L02-238S3</value>
-  </data>
-  <data name="ALARM_200021" xml:space="preserve">
-    <value>No clearance between place 1 and left rack, +L02-241B4</value>
-  </data>
-  <data name="ALARM_200022" xml:space="preserve">
-    <value>No clearance between place 1 and left rack, +L02-241B3</value>
-  </data>
-  <data name="ALARM_200023" xml:space="preserve">
-    <value>No clearance between place 2 and left rack, +L02-242B4</value>
-  </data>
-  <data name="ALARM_200024" xml:space="preserve">
-    <value>No clearance between place 2 and left rack, +L02-243B3</value>
-  </data>
-  <data name="ALARM_200025" xml:space="preserve">
-    <value>Fork 1, depth 1 not at middle</value>
-  </data>
-  <data name="ALARM_200026" xml:space="preserve">
-    <value>Fork 1, depth 2 not at middle</value>
-  </data>
-  <data name="ALARM_200027" xml:space="preserve">
-    <value>Fork 2, depth 1 not at middle</value>
-  </data>
-  <data name="ALARM_200028" xml:space="preserve">
-    <value>Fork 2, depth 2 not at middle</value>
-  </data>
-  <data name="ALARM_200029" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200030" xml:space="preserve">
-    <value>Axis error: travel</value>
-  </data>
-  <data name="ALARM_200031" xml:space="preserve">
-    <value>Axis error: hoist</value>
-  </data>
-  <data name="ALARM_200032" xml:space="preserve">
-    <value>Axis error: fork 1, depth 1</value>
-  </data>
-  <data name="ALARM_200033" xml:space="preserve">
-    <value>Axis error: fork 1, depth 2</value>
-  </data>
-  <data name="ALARM_200034" xml:space="preserve">
-    <value>Axis error: fork 2, depth 1</value>
-  </data>
-  <data name="ALARM_200035" xml:space="preserve">
-    <value>Axis error: fork 2, depth 2</value>
-  </data>
-  <data name="ALARM_200036" xml:space="preserve">
-    <value>D425 startup fault</value>
-  </data>
-  <data name="ALARM_200037" xml:space="preserve">
-    <value>Travel motor running too long, +EXT-211M1</value>
-  </data>
-  <data name="ALARM_200038" xml:space="preserve">
-    <value>Hoist motor running too long, +EXT-215M1</value>
-  </data>
-  <data name="ALARM_200039" xml:space="preserve">
-    <value>Forks 1 SD motor running too long, +EXT-219M1</value>
-  </data>
-  <data name="ALARM_200040" xml:space="preserve">
-    <value>Forks 1 DD motor running too long, +EXT-220M1</value>
-  </data>
-  <data name="ALARM_200041" xml:space="preserve">
-    <value>Forks 2 SD motor running too long, +EXT-222M1</value>
-  </data>
-  <data name="ALARM_200042" xml:space="preserve">
-    <value>Forks 2 DD motor running too long, +EXT-223M1</value>
-  </data>
-  <data name="ALARM_200043" xml:space="preserve">
-    <value>Communication error with transport system PLC (receive direction)</value>
-  </data>
-  <data name="ALARM_200044" xml:space="preserve">
-    <value>Communication error with transport system PLC (send direction)</value>
-  </data>
-  <data name="ALARM_200045" xml:space="preserve">
-    <value>Communication error with MFCS (receive direction)</value>
-  </data>
-  <data name="ALARM_200046" xml:space="preserve">
-    <value>Communication error with MFCS (send direction)</value>
-  </data>
-  <data name="ALARM_200047" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200048" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200049" xml:space="preserve">
-    <value>Errorous value OF absolute encoder OR magnet switches - hoist</value>
-  </data>
-  <data name="ALARM_200050" xml:space="preserve">
-    <value>Errorous value OF absolute encoder OR magnet switches - travel</value>
-  </data>
-  <data name="ALARM_200051" xml:space="preserve">
-    <value>Automatic start not possible: wrong location</value>
-  </data>
-  <data name="ALARM_200052" xml:space="preserve">
-    <value>MFCS error</value>
-  </data>
-  <data name="ALARM_200053" xml:space="preserve">
-    <value>Material mismatch on deck 1</value>
-  </data>
-  <data name="ALARM_200054" xml:space="preserve">
-    <value>Material mismatch on deck 2</value>
-  </data>
-  <data name="ALARM_200055" xml:space="preserve">
-    <value>Automatic start not possible: deck 1 occupied</value>
-  </data>
-  <data name="ALARM_200056" xml:space="preserve">
-    <value>Automatic start not possible: deck 2 occupied</value>
-  </data>
-  <data name="ALARM_200057" xml:space="preserve">
-    <value>Automatic start not possible: deck 1 is empty</value>
-  </data>
-  <data name="ALARM_200058" xml:space="preserve">
-    <value>Automatic start not possible: deck 2 is empty</value>
-  </data>
-  <data name="ALARM_200059" xml:space="preserve">
-    <value>Barcode mismatch: deck 1</value>
-  </data>
-  <data name="ALARM_200060" xml:space="preserve">
-    <value>Barcode mismatch: deck 2</value>
-  </data>
-  <data name="ALARM_200061" xml:space="preserve">
-    <value>Pick not possible: deck 1, depth 1</value>
-  </data>
-  <data name="ALARM_200062" xml:space="preserve">
-    <value>Pick not possible: deck 2, depth 1</value>
-  </data>
-  <data name="ALARM_200063" xml:space="preserve">
-    <value>Pick not possible: deck 1, depth 2</value>
-  </data>
-  <data name="ALARM_200064" xml:space="preserve">
-    <value>Pick not possible: deck 2, depth 2</value>
-  </data>
-  <data name="ALARM_200065" xml:space="preserve">
-    <value>Drop not possible: deck 1, depth 1</value>
-  </data>
-  <data name="ALARM_200066" xml:space="preserve">
-    <value>Drop not possible: deck 2, depth 1</value>
-  </data>
-  <data name="ALARM_200067" xml:space="preserve">
-    <value>Drop not possible: deck 1, depth 2</value>
-  </data>
-  <data name="ALARM_200068" xml:space="preserve">
-    <value>Drop not possible: deck 2, depth 2</value>
-  </data>
-  <data name="ALARM_200069" xml:space="preserve">
-    <value>Underweight</value>
-  </data>
-  <data name="ALARM_200070" xml:space="preserve">
-    <value>Overweight</value>
-  </data>
-  <data name="ALARM_200071" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200072" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200073" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200074" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200075" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200076" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200077" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200078" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200079" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200080" xml:space="preserve">
-    <value>External E-STOP CP101</value>
-  </data>
-  <data name="ALARM_200081" xml:space="preserve">
-    <value>External E-STOP CP030</value>
-  </data>
-  <data name="ALARM_200082" xml:space="preserve">
-    <value>External door open</value>
-  </data>
-  <data name="ALARM_200083" xml:space="preserve">
-    <value>External light grind 111</value>
-  </data>
-  <data name="ALARM_200084" xml:space="preserve">
-    <value>External light grind 124</value>
-  </data>
-  <data name="ALARM_200085" xml:space="preserve">
-    <value>Manual mode supports only one command at one time</value>
-  </data>
-  <data name="ALARM_200086" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200087" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200088" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200089" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200090" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200091" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200092" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200093" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200094" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200095" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200096" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200097" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200098" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200099" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200100" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200101" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200102" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200103" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200104" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200105" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200106" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200107" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200108" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200109" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200110" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200111" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200112" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200113" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200114" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_200115" xml:space="preserve">
-    <value>Service M required</value>
-  </data>
-  <data name="ALARM_200116" xml:space="preserve">
-    <value>Service 3M required</value>
-  </data>
-  <data name="ALARM_200117" xml:space="preserve">
-    <value>Service 6M required</value>
-  </data>
-  <data name="ALARM_200118" xml:space="preserve">
-    <value>Service 12M required</value>
-  </data>
-  <data name="ALARM_200119" xml:space="preserve">
-    <value>Service 5 required</value>
-  </data>
-  <data name="ALARM_200120" xml:space="preserve">
-    <value>D425 message: drive object alarm</value>
-  </data>
-  <data name="ALARM_200121" xml:space="preserve">
-    <value>D425 message: drive object fault</value>
-  </data>
-  <data name="ALARM_200122" xml:space="preserve">
-    <value>D425 message: drive object safety</value>
-  </data>
-  <data name="ALARM_200123" xml:space="preserve">
-    <value>D425 message: execution fault</value>
-  </data>
-  <data name="ALARM_200124" xml:space="preserve">
-    <value>D425 message: peripheral fault</value>
-  </data>
-  <data name="ALARM_200125" xml:space="preserve">
-    <value>D425 message: tech fault</value>
-  </data>
-  <data name="ALARM_200126" xml:space="preserve">
-    <value>D425 message: time fault background</value>
-  </data>
-  <data name="ALARM_200127" xml:space="preserve">
-    <value>D425 message: time fault</value>
-  </data>
-  <data name="ALARM_200128" xml:space="preserve">
-    <value>D425 message: application fault</value>
-  </data>
-  <data name="ALARM_300001" xml:space="preserve">
-    <value>Safety chain</value>
-  </data>
-  <data name="ALARM_300002" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300003" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300004" xml:space="preserve">
-    <value>24V fuse</value>
-  </data>
-  <data name="ALARM_300005" xml:space="preserve">
-    <value>External stop</value>
-  </data>
-  <data name="ALARM_300006" xml:space="preserve">
-    <value>Line module not ready (check power supply and main switch)</value>
-  </data>
-  <data name="ALARM_300007" xml:space="preserve">
-    <value>Limit switch, travel</value>
-  </data>
-  <data name="ALARM_300008" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300009" xml:space="preserve">
-    <value>Motor protection, travel</value>
-  </data>
-  <data name="ALARM_300010" xml:space="preserve">
-    <value>Fan protection, travel</value>
-  </data>
-  <data name="ALARM_300011" xml:space="preserve">
-    <value>E-Stop cabinet</value>
-  </data>
-  <data name="ALARM_300012" xml:space="preserve">
-    <value>Axis error, travel</value>
-  </data>
-  <data name="ALARM_300013" xml:space="preserve">
-    <value>Axis error, conveyor</value>
-  </data>
-  <data name="ALARM_300014" xml:space="preserve">
-    <value>Axis error, tilt</value>
-  </data>
-  <data name="ALARM_300015" xml:space="preserve">
-    <value>D425 startup fault</value>
-  </data>
-  <data name="ALARM_300016" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300017" xml:space="preserve">
-    <value>Conveyor communication error (sending)</value>
-  </data>
-  <data name="ALARM_300018" xml:space="preserve">
-    <value>Conveyor communication error (receiving)</value>
-  </data>
-  <data name="ALARM_300019" xml:space="preserve">
-    <value>MFCS communication error (receiving)</value>
-  </data>
-  <data name="ALARM_300020" xml:space="preserve">
-    <value>MFCS communication error (sending)</value>
-  </data>
-  <data name="ALARM_300021" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300022" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300023" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300024" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300025" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300026" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300027" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300028" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300029" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300030" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300031" xml:space="preserve">
-    <value>Running too long, travel</value>
-  </data>
-  <data name="ALARM_300032" xml:space="preserve">
-    <value>Running too long, conveyor</value>
-  </data>
-  <data name="ALARM_300033" xml:space="preserve">
-    <value>Running too long, tilt</value>
-  </data>
-  <data name="ALARM_300034" xml:space="preserve">
-    <value>Magnet and encoder position missmatch, travel</value>
-  </data>
-  <data name="ALARM_300035" xml:space="preserve">
-    <value>Trolley out of the working area</value>
-  </data>
-  <data name="ALARM_300036" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300037" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300038" xml:space="preserve">
-    <value>Material missmatch</value>
-  </data>
-  <data name="ALARM_300039" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300040" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300041" xml:space="preserve">
-    <value>Wrong location</value>
-  </data>
-  <data name="ALARM_300042" xml:space="preserve">
-    <value>Deck empty</value>
-  </data>
-  <data name="ALARM_300043" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300044" xml:space="preserve">
-    <value>Deck occupied</value>
-  </data>
-  <data name="ALARM_300045" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300046" xml:space="preserve">
-    <value>Unsuccessfull material move</value>
-  </data>
-  <data name="ALARM_300047" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300048" xml:space="preserve">
-    <value>Running too long, pickup</value>
-  </data>
-  <data name="ALARM_300049" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300050" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300051" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300052" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300053" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300054" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300055" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300056" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300057" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300058" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300059" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300060" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300061" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300062" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300063" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300064" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300065" xml:space="preserve">
-    <value>Rack overhang 11-14</value>
-  </data>
-  <data name="ALARM_300066" xml:space="preserve">
-    <value>Rack overhang 21-24</value>
-  </data>
-  <data name="ALARM_300067" xml:space="preserve">
-    <value>Rack overhang 31-34</value>
-  </data>
-  <data name="ALARM_300068" xml:space="preserve">
-    <value>Rack overhang 41-44</value>
-  </data>
-  <data name="ALARM_300069" xml:space="preserve">
-    <value>Rack overhang 51-54</value>
-  </data>
-  <data name="ALARM_300070" xml:space="preserve">
-    <value>Deck overhang</value>
-  </data>
-  <data name="ALARM_300071" xml:space="preserve">
-    <value>External E-Stop CP301</value>
-  </data>
-  <data name="ALARM_300072" xml:space="preserve">
-    <value>External E-Stop CP302</value>
-  </data>
-  <data name="ALARM_300073" xml:space="preserve">
-    <value>External E-Stop CP030</value>
-  </data>
-  <data name="ALARM_300074" xml:space="preserve">
-    <value>External Door 301</value>
-  </data>
-  <data name="ALARM_300075" xml:space="preserve">
-    <value>External Door 302</value>
-  </data>
-  <data name="ALARM_300076" xml:space="preserve">
-    <value>External light grid 38</value>
-  </data>
-  <data name="ALARM_300077" xml:space="preserve">
-    <value>External light grid 41</value>
-  </data>
-  <data name="ALARM_300078" xml:space="preserve">
-    <value>External light grid 42</value>
-  </data>
-  <data name="ALARM_300079" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300080" xml:space="preserve">
-    <value>Pallet in trolley area, conveyor 38</value>
-  </data>
-  <data name="ALARM_300081" xml:space="preserve">
-    <value>Pallet in trolley area, conveyor 41</value>
-  </data>
-  <data name="ALARM_300082" xml:space="preserve">
-    <value>Pallet in trolley area, conveyor 42</value>
-  </data>
-  <data name="ALARM_300083" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300084" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300085" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300086" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300087" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300088" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300089" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300090" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300091" xml:space="preserve">
-    <value>Barcode mismatch</value>
-  </data>
-  <data name="ALARM_300092" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300093" xml:space="preserve">
-    <value>MFCS: unknown error</value>
-  </data>
-  <data name="ALARM_300094" xml:space="preserve">
-    <value>MFCS: synchronization failure</value>
-  </data>
-  <data name="ALARM_300095" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300096" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300097" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300098" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300099" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300100" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300101" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300102" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300103" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300104" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300105" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300106" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300107" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300108" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300109" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300110" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300111" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300112" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300113" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300114" xml:space="preserve">
-    <value>Reserve</value>
-  </data>
-  <data name="ALARM_300115" xml:space="preserve">
-    <value>Service M required</value>
-  </data>
-  <data name="ALARM_300116" xml:space="preserve">
-    <value>Service 3M required</value>
-  </data>
-  <data name="ALARM_300117" xml:space="preserve">
-    <value>Service 6M required</value>
-  </data>
-  <data name="ALARM_300118" xml:space="preserve">
-    <value>Service 12M required</value>
-  </data>
-  <data name="ALARM_300119" xml:space="preserve">
-    <value>Service 5 required</value>
-  </data>
-  <data name="ALARM_300120" xml:space="preserve">
-    <value>D425 message: drive object alarm</value>
-  </data>
-  <data name="ALARM_300121" xml:space="preserve">
-    <value>D425 message: drive object fault</value>
-  </data>
-  <data name="ALARM_300122" xml:space="preserve">
-    <value>D425 message: drive object safety</value>
-  </data>
-  <data name="ALARM_300123" xml:space="preserve">
-    <value>D425 message: execution fault</value>
-  </data>
-  <data name="ALARM_300124" xml:space="preserve">
-    <value>D425 message: peripheral fault</value>
-  </data>
-  <data name="ALARM_300125" xml:space="preserve">
-    <value>D425 message: tech fault</value>
-  </data>
-  <data name="ALARM_300126" xml:space="preserve">
-    <value>D425 message: time fault background</value>
-  </data>
-  <data name="ALARM_300127" xml:space="preserve">
-    <value>D425 message: time fault</value>
-  </data>
-  <data name="ALARM_300128" xml:space="preserve">
-    <value>D425 message: application fault</value>
-  </data>
   <data name="EnumCommandERPStatus_Error" xml:space="preserve">
     <value>Error</value>
   </data>
@@ -4508,5 +1451,389 @@
   </data>
   <data name="Right" xml:space="preserve">
     <value>Right</value>
+  </data>
+  <data name="ALARM_100001" xml:space="preserve">
+    <value>drive communication (CU320)</value>
+  </data>
+  <data name="ALARM_100002" xml:space="preserve">
+    <value>peripheral IO modul unreachable (84A1)</value>
+  </data>
+  <data name="ALARM_100003" xml:space="preserve">
+    <value>periferal IO communication </value>
+  </data>
+  <data name="ALARM_100004" xml:space="preserve">
+    <value>peripheral IO modul unreachable (15A1)</value>
+  </data>
+  <data name="ALARM_100005" xml:space="preserve">
+    <value>conveyor frequency inverter unreachable (19U1)</value>
+  </data>
+  <data name="ALARM_100006" xml:space="preserve">
+    <value>conveyor barcode reader unrachable (24BG1)</value>
+  </data>
+  <data name="ALARM_100007" xml:space="preserve">
+    <value>alarm 7</value>
+  </data>
+  <data name="ALARM_100008" xml:space="preserve">
+    <value>alarm 8</value>
+  </data>
+  <data name="ALARM_100009" xml:space="preserve">
+    <value>TCP/IP communication error (crane)</value>
+  </data>
+  <data name="ALARM_100010" xml:space="preserve">
+    <value>telegram queue full (crane)</value>
+  </data>
+  <data name="ALARM_100011" xml:space="preserve">
+    <value>main switch (2Q1)</value>
+  </data>
+  <data name="ALARM_100012" xml:space="preserve">
+    <value>ready ventilation (3F3)</value>
+  </data>
+  <data name="ALARM_100013" xml:space="preserve">
+    <value>ready sensors (12F4)</value>
+  </data>
+  <data name="ALARM_100014" xml:space="preserve">
+    <value>ready 24V (53F6 or 82F2)</value>
+  </data>
+  <data name="ALARM_100015" xml:space="preserve">
+    <value>ready 230V (52F2 or 81F1)</value>
+  </data>
+  <data name="ALARM_100016" xml:space="preserve">
+    <value>tilt brake (26Q1)</value>
+  </data>
+  <data name="ALARM_100017" xml:space="preserve">
+    <value>compresspr (28Q1)</value>
+  </data>
+  <data name="ALARM_100018" xml:space="preserve">
+    <value>material missmatch (91B3 or 91B4)</value>
+  </data>
+  <data name="ALARM_100019" xml:space="preserve">
+    <value>gap check side 1 (89U3)</value>
+  </data>
+  <data name="ALARM_100020" xml:space="preserve">
+    <value>gap check side 2 (90U3)</value>
+  </data>
+  <data name="ALARM_100021" xml:space="preserve">
+    <value>rack occupied (91B1 or 91B2)</value>
+  </data>
+  <data name="ALARM_100022" xml:space="preserve">
+    <value>ready brake, travel (63F1) </value>
+  </data>
+  <data name="ALARM_100023" xml:space="preserve">
+    <value>ready brake, hoist (67F1) </value>
+  </data>
+  <data name="ALARM_100024" xml:space="preserve">
+    <value>ready brake, deck (70F1) </value>
+  </data>
+  <data name="ALARM_100025" xml:space="preserve">
+    <value>ready brake, chain (71F1) </value>
+  </data>
+  <data name="ALARM_100026" xml:space="preserve">
+    <value>alarm 26</value>
+  </data>
+  <data name="ALARM_100027" xml:space="preserve">
+    <value>ready fan, travel (63Q1)</value>
+  </data>
+  <data name="ALARM_100028" xml:space="preserve">
+    <value>ready fan, hoist (67Q1)</value>
+  </data>
+  <data name="ALARM_100029" xml:space="preserve">
+    <value>alarm 29</value>
+  </data>
+  <data name="ALARM_100030" xml:space="preserve">
+    <value>coveyor gap control</value>
+  </data>
+  <data name="ALARM_100031" xml:space="preserve">
+    <value>alarm 31</value>
+  </data>
+  <data name="ALARM_100032" xml:space="preserve">
+    <value>alarm 32</value>
+  </data>
+  <data name="ALARM_100033" xml:space="preserve">
+    <value>alarm 33</value>
+  </data>
+  <data name="ALARM_100034" xml:space="preserve">
+    <value>alarm 34</value>
+  </data>
+  <data name="ALARM_100035" xml:space="preserve">
+    <value>alarm 35</value>
+  </data>
+  <data name="ALARM_100036" xml:space="preserve">
+    <value>alarm 36</value>
+  </data>
+  <data name="ALARM_100037" xml:space="preserve">
+    <value>coveyor gap control</value>
+  </data>
+  <data name="ALARM_100038" xml:space="preserve">
+    <value>phase alignment</value>
+  </data>
+  <data name="ALARM_100039" xml:space="preserve">
+    <value>row two gap control</value>
+  </data>
+  <data name="ALARM_100040" xml:space="preserve">
+    <value>row three gap control</value>
+  </data>
+  <data name="ALARM_100041" xml:space="preserve">
+    <value>eStop button mobile panel</value>
+  </data>
+  <data name="ALARM_100042" xml:space="preserve">
+    <value>power rail eStop (5K1)</value>
+  </data>
+  <data name="ALARM_100043" xml:space="preserve">
+    <value>eStop button crane (56S1)</value>
+  </data>
+  <data name="ALARM_100044" xml:space="preserve">
+    <value>eStop button crane (56S2)</value>
+  </data>
+  <data name="ALARM_100045" xml:space="preserve">
+    <value>eStop button crane (85S2)</value>
+  </data>
+  <data name="ALARM_100046" xml:space="preserve">
+    <value>eStop button crane (29S2)</value>
+  </data>
+  <data name="ALARM_100047" xml:space="preserve">
+    <value>eStop button crane (29S1)</value>
+  </data>
+  <data name="ALARM_100048" xml:space="preserve">
+    <value>eStop button crane (30S1)</value>
+  </data>
+  <data name="ALARM_100049" xml:space="preserve">
+    <value>eStop button crane (32S1)</value>
+  </data>
+  <data name="ALARM_100050" xml:space="preserve">
+    <value>eStop button outside (32S1)</value>
+  </data>
+  <data name="ALARM_100051" xml:space="preserve">
+    <value>eStop safety light curtain M100</value>
+  </data>
+  <data name="ALARM_100052" xml:space="preserve">
+    <value>eStop safety light curtain top</value>
+  </data>
+  <data name="ALARM_100053" xml:space="preserve">
+    <value>alarm 53</value>
+  </data>
+  <data name="ALARM_100054" xml:space="preserve">
+    <value>alarm 54</value>
+  </data>
+  <data name="ALARM_100055" xml:space="preserve">
+    <value>incorrect travel magnet position (65S1, 65S2)</value>
+  </data>
+  <data name="ALARM_100056" xml:space="preserve">
+    <value>incorrect hoist magnet position (88S1, 88S2)</value>
+  </data>
+  <data name="ALARM_100057" xml:space="preserve">
+    <value>travel limit switch (55S1)</value>
+  </data>
+  <data name="ALARM_100058" xml:space="preserve">
+    <value>hoist limit switch (85S1)</value>
+  </data>
+  <data name="ALARM_100059" xml:space="preserve">
+    <value>eStop door open (30S2)</value>
+  </data>
+  <data name="ALARM_100060" xml:space="preserve">
+    <value>eStop door open (32S1)</value>
+  </data>
+  <data name="ALARM_100061" xml:space="preserve">
+    <value>maintenance platform not in position (55S3)</value>
+  </data>
+  <data name="ALARM_100062" xml:space="preserve">
+    <value>hoist caching jaws active (85S2)</value>
+  </data>
+  <data name="ALARM_100063" xml:space="preserve">
+    <value>hoist speed control steel rope broken (55S2)</value>
+  </data>
+  <data name="ALARM_100064" xml:space="preserve">
+    <value>hoist overspeed monitoring triggered (218S1) </value>
+  </data>
+  <data name="ALARM_100065" xml:space="preserve">
+    <value>travel axis not refferenced</value>
+  </data>
+  <data name="ALARM_100066" xml:space="preserve">
+    <value>hoist axis not refferenced</value>
+  </data>
+  <data name="ALARM_100067" xml:space="preserve">
+    <value>deck axis not refferenced</value>
+  </data>
+  <data name="ALARM_100068" xml:space="preserve">
+    <value>chain axis not refferenced</value>
+  </data>
+  <data name="ALARM_100069" xml:space="preserve">
+    <value>material move running too long</value>
+  </data>
+  <data name="ALARM_100070" xml:space="preserve">
+    <value>safety acknowlagment required</value>
+  </data>
+  <data name="ALARM_100071" xml:space="preserve">
+    <value>travel axis fault: &lt;field ref="0" /&gt;</value>
+  </data>
+  <data name="ALARM_100072" xml:space="preserve">
+    <value>hoist axis fault: &lt;field ref="0" /&gt;</value>
+  </data>
+  <data name="ALARM_100073" xml:space="preserve">
+    <value>deck axis fault: &lt;field ref="0" /&gt;</value>
+  </data>
+  <data name="ALARM_100074" xml:space="preserve">
+    <value>chain axis fault: &lt;field ref="0" /&gt;</value>
+  </data>
+  <data name="ALARM_100075" xml:space="preserve">
+    <value>travel axis, running too long</value>
+  </data>
+  <data name="ALARM_100076" xml:space="preserve">
+    <value>hoist axis, running too long</value>
+  </data>
+  <data name="ALARM_100077" xml:space="preserve">
+    <value>deck axis, running too long</value>
+  </data>
+  <data name="ALARM_100078" xml:space="preserve">
+    <value>chain axis, running too long</value>
+  </data>
+  <data name="ALARM_100079" xml:space="preserve">
+    <value>SLM not ready</value>
+  </data>
+  <data name="ALARM_100080" xml:space="preserve">
+    <value>alarm 80</value>
+  </data>
+  <data name="ALARM_100081" xml:space="preserve">
+    <value>order out of bounds</value>
+  </data>
+  <data name="ALARM_100082" xml:space="preserve">
+    <value>order location not big enough</value>
+  </data>
+  <data name="ALARM_100083" xml:space="preserve">
+    <value>order location locked</value>
+  </data>
+  <data name="ALARM_100084" xml:space="preserve">
+    <value>wrong order (pick/drop)</value>
+  </data>
+  <data name="ALARM_100085" xml:space="preserve">
+    <value>alarm 85</value>
+  </data>
+  <data name="ALARM_100086" xml:space="preserve">
+    <value>alarm 86</value>
+  </data>
+  <data name="ALARM_100087" xml:space="preserve">
+    <value>alarm 87</value>
+  </data>
+  <data name="ALARM_100088" xml:space="preserve">
+    <value>alarm 88</value>
+  </data>
+  <data name="ALARM_100089" xml:space="preserve">
+    <value>alarm 89</value>
+  </data>
+  <data name="ALARM_100090" xml:space="preserve">
+    <value>alarm 90</value>
+  </data>
+  <data name="ALARM_100091" xml:space="preserve">
+    <value>conveyor, MFC queue full</value>
+  </data>
+  <data name="ALARM_100092" xml:space="preserve">
+    <value>conveyor, tcpIp connection error</value>
+  </data>
+  <data name="ALARM_100093" xml:space="preserve">
+    <value>conveyor, main switch (3Q1)</value>
+  </data>
+  <data name="ALARM_100094" xml:space="preserve">
+    <value>conveyor, 24V fuse tripped (7F1)</value>
+  </data>
+  <data name="ALARM_100095" xml:space="preserve">
+    <value>conveyor, 240V fuse tripped (7F2)</value>
+  </data>
+  <data name="ALARM_100096" xml:space="preserve">
+    <value>conveyor, sesnor fuse tripped (12F3)</value>
+  </data>
+  <data name="ALARM_100097" xml:space="preserve">
+    <value>conveyor, ventilation fuse tripped (11F2)</value>
+  </data>
+  <data name="ALARM_100098" xml:space="preserve">
+    <value>conveyor, frequency inverter fuse tripped (12F4)</value>
+  </data>
+  <data name="ALARM_100099" xml:space="preserve">
+    <value>conveyor, eStop button pressed (29S1)</value>
+  </data>
+  <data name="ALARM_100100" xml:space="preserve">
+    <value>conveyor, eStop button pressed (29S2)</value>
+  </data>
+  <data name="ALARM_100101" xml:space="preserve">
+    <value>conveyor, T099 material missmatch</value>
+  </data>
+  <data name="ALARM_100102" xml:space="preserve">
+    <value>conveyor, T099 running too long chain</value>
+  </data>
+  <data name="ALARM_100103" xml:space="preserve">
+    <value>conveyor, running too long hoist</value>
+  </data>
+  <data name="ALARM_100104" xml:space="preserve">
+    <value>conveyor, drive ready (19Q1, 25Q1 or freqency inverter )</value>
+  </data>
+  <data name="ALARM_100105" xml:space="preserve">
+    <value>conveyor, T100 material missmatch</value>
+  </data>
+  <data name="ALARM_100106" xml:space="preserve">
+    <value>conveyor, T100 running too long chain</value>
+  </data>
+  <data name="ALARM_100107" xml:space="preserve">
+    <value>conveyor, T100 running too long hoist</value>
+  </data>
+  <data name="ALARM_100108" xml:space="preserve">
+    <value>conveyor, T100 drive ready (19Q1, 25Q1 or freqency inverter )</value>
+  </data>
+  <data name="ALARM_100109" xml:space="preserve">
+    <value>alarm 109</value>
+  </data>
+  <data name="ALARM_100110" xml:space="preserve">
+    <value>alarm 110</value>
+  </data>
+  <data name="ALARM_100111" xml:space="preserve">
+    <value>alarm 111</value>
+  </data>
+  <data name="ALARM_100112" xml:space="preserve">
+    <value>alarm 112</value>
+  </data>
+  <data name="ALARM_100113" xml:space="preserve">
+    <value>alarm 113</value>
+  </data>
+  <data name="ALARM_100114" xml:space="preserve">
+    <value>alarm 114</value>
+  </data>
+  <data name="ALARM_100115" xml:space="preserve">
+    <value>alarm 115</value>
+  </data>
+  <data name="ALARM_100116" xml:space="preserve">
+    <value>alarm 116</value>
+  </data>
+  <data name="ALARM_100117" xml:space="preserve">
+    <value>alarm 117</value>
+  </data>
+  <data name="ALARM_100118" xml:space="preserve">
+    <value>alarm 118</value>
+  </data>
+  <data name="ALARM_100119" xml:space="preserve">
+    <value>alarm 119</value>
+  </data>
+  <data name="ALARM_100120" xml:space="preserve">
+    <value>alarm 120</value>
+  </data>
+  <data name="ALARM_100121" xml:space="preserve">
+    <value>alarm 121</value>
+  </data>
+  <data name="ALARM_100122" xml:space="preserve">
+    <value>alarm 122</value>
+  </data>
+  <data name="ALARM_100123" xml:space="preserve">
+    <value>alarm 123</value>
+  </data>
+  <data name="ALARM_100124" xml:space="preserve">
+    <value>alarm 124</value>
+  </data>
+  <data name="ALARM_100125" xml:space="preserve">
+    <value>alarm 125</value>
+  </data>
+  <data name="ALARM_100126" xml:space="preserve">
+    <value>alarm 126</value>
+  </data>
+  <data name="ALARM_100127" xml:space="preserve">
+    <value>alarm 127</value>
+  </data>
+  <data name="ALARM_100128" xml:space="preserve">
+    <value>alarm 128</value>
   </data>
 </root>
