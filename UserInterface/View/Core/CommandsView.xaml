@@ -122,11 +122,11 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" >
+        <ScrollViewer Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" VerticalScrollBarVisibility="Auto">
             <Grid HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="20,0,0,0" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="175"/>
+<!--                    <RowDefinition Height="175"/> -->
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">

@@ -1762,7 +1762,7 @@
     <value>conveyor, running too long hoist</value>
   </data>
   <data name="ALARM_100104" xml:space="preserve">
-    <value>conveyor, drive ready (19Q1, 25Q1 or freqency inverter )</value>
+    <value>conveyor, barcode noread</value>
   </data>
   <data name="ALARM_100105" xml:space="preserve">
     <value>conveyor, T100 material missmatch</value>
@@ -1835,5 +1835,11 @@
   </data>
   <data name="ALARM_100128" xml:space="preserve">
     <value>alarm 128</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="DimensionCheck" xml:space="preserve">
+    <value>Dimension check</value>
   </data>
 </root>

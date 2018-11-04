@@ -196,7 +196,8 @@ namespace Warehouse.ConveyorUnits
                 if (tel.Confirmation != TelegramTransportTO.CONFIRMATION_PALETTETAKEN && tel.Confirmation != TelegramTransportTO.CONFIRMATION_PALETTEDELETED)
                     CreateOrUpdateMaterialID(tel.Palette);
 
-                if (tel.Confirmation == TelegramTransportTO.CONFIRMATION_NOTIFY)
+                if (tel.Confirmation == TelegramTransportTO.CONFIRMATION_NOTIFY ||
+                    tel.Confirmation == TelegramTransportTO.CONFIRMATION_DIMENSIONCHECKERROR)
                 {
 //                    Move(tel.Palette.Barcode, Warehouse.FindDeviceByPLC_ID(tel.Previous), this);
                     ConveyorBasic src = Warehouse.FindDeviceByPLC_ID(tel.Previous);

@@ -17,7 +17,7 @@
         d:DesignHeight="720"
         Width="1920"
         Height="1080"
-        WindowState="Normal"
+        WindowState="Maximized"
         Title="{Resx Title}"
         DataContext="{Binding Main, Source={StaticResource Locator}}"
         FontSize="{StaticResource BaseFontSize}"

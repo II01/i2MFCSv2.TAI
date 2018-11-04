@@ -173,7 +173,8 @@ namespace Warehouse.ConveyorUnits
                         Warehouse.OnCommandFinish?.Invoke(Command);
                     }
                     else if (cmd.Status == SimpleCommand.EnumStatus.Canceled &&
-                             (cmd.Task == SimpleCommand.EnumTask.Create || cmd.Task == SimpleCommand.EnumTask.Delete))
+                             (cmd.Task == SimpleCommand.EnumTask.Create || cmd.Task == SimpleCommand.EnumTask.Delete ||
+                              (cmd.Task == SimpleCommand.EnumTask.Move && Command.Task == Command.EnumCommandTask.SegmentHome)))
                     {
                         if ((int)cmd.Reason > 100)
                             Command.Reason = Command.EnumCommandReason.PLC;

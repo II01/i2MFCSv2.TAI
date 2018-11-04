@@ -467,7 +467,7 @@ namespace UserInterface.ViewModel
                 string io = _dbservicewms.GetParameter("Place.IOStation");
                 Operation = null;
                 EnabledCC = false;
-                _warehouse.DBService.CreateOrUpdateMaterialID(_activeTUID.ID, (_activeTUID.DimensionClass + 1) % 3, null);
+                _warehouse.DBService.CreateOrUpdateMaterialID(_activeTUID.ID, _activeTUID.DimensionClass % 2 + 1, null);
                 _warehouse.DBService.AddCommand(new CommandMaterial
                 {
                     Task = Database.Command.EnumCommandTask.CreateMaterial,

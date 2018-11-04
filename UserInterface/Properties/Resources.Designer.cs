@@ -1051,7 +1051,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to conveyor, drive ready (19Q1, 25Q1 or freqency inverter ).
+        ///   Looks up a localized string similar to conveyor, barcode noread.
         /// </summary>
         public static string ALARM_100104 {
             get {
@@ -1519,6 +1519,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change.
+        /// </summary>
+        public static string Change {
+            get {
+                return ResourceManager.GetString("Change", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change language.
         /// </summary>
         public static string Change_language {
@@ -1848,6 +1857,15 @@ namespace UserInterface.Properties {
         public static string Detailed_simple_commands {
             get {
                 return ResourceManager.GetString("Detailed_simple_commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dimension check.
+        /// </summary>
+        public static string DimensionCheck {
+            get {
+                return ResourceManager.GetString("DimensionCheck", resourceCulture);
             }
         }
         

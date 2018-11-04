@@ -75,6 +75,13 @@ namespace Warehouse.ConveyorUnits
                 // make material notify on place
                 base.OnTelegramTransportTO(t);
 
+                if( t!= null && t is TelegramTransportTO && 
+                    (t as TelegramTransportTO).Confirmation == TelegramTransportTO.CONFIRMATION_DIMENSIONCHECKERROR)
+                {
+                    ActiveRoute = null;
+                    ActiveMaterial = null;
+                }
+
                 // make junction calls in here
                 Strategy();
             }
@@ -134,9 +141,6 @@ namespace Warehouse.ConveyorUnits
                         throw new ConveyorJunctionException(String.Format("Command {0} does not match Place {1},{2}", Command.ToString(), Place.Place1, Place.Material));
                     }
 
-                    if (ActiveRoute != null)
-                        return;
-
                     if (Command == null)
                     {
                         SimpleCommand cmd = Warehouse.DBService.FindFirstFastConveyorSimpleCommand(ConveyorNamesOnCommunicator[CommunicatorName], Warehouse.SteeringCommands.AutomaticMode);
@@ -149,6 +153,9 @@ namespace Warehouse.ConveyorUnits
                             CreateAndSendTOTelegram(cmd);
                         }
                     }
+
+                    if (ActiveRoute != null)
+                        return;
 
                     if (Command == null && Place != null &&
                         Warehouse.Conveyor[Name].Remote() && Warehouse.Conveyor[Name].Automatic())     // Uros
@@ -164,7 +171,8 @@ namespace Warehouse.ConveyorUnits
                             CommandMaterial cmd = Warehouse.DBService.FindFirstCommand(Place.Material, Warehouse.SteeringCommands.RemoteMode);
                             bool error = false;
                             // check if dimension check failed
-                            if (Command_Status != null && (int)Command_Status.Palette.Barcode == Place.Material)
+                            if (!(this is ConveyorJunctionAndIOAndOutput) && 
+                                Command_Status != null && (int)Command_Status.Palette.Barcode == Place.Material)
                             {
                                 foreach (bool b in Command_Status.Palette.FaultCode)
                                     if (b)

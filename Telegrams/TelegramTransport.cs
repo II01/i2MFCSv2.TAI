@@ -29,6 +29,7 @@ namespace Telegrams
         public const int CONFIRMATION_PALETTETAKEN = 104;
         public const int CONFIRMATION_FAULT = 105;
         public const int CONFIRMATION_INITIALNOTIFY = 106;
+        public const int CONFIRMATION_DIMENSIONCHECKERROR = 107;
         public const int CONFIRMATION_PALETTEDELETED = 201;
         public const int CONFIRMATION_PALETTECREATED = 202;
 

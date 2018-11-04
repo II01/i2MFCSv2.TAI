@@ -82,7 +82,7 @@
           <Sensor Offset="6" Description="Middle" Reference="92B3,B4"/>
         </SensorList>
       </CraneInfo>
-      <HomePosition>W:11:02:04:1</HomePosition>
+      <HomePosition>W:11:01:04:1</HomePosition>
       <FinalDevice>false</FinalDevice>
     </Crane>
 
@@ -99,8 +99,7 @@
         <AlarmList>
         </AlarmList>
         <SensorList>
-          <Sensor Offset="0" Description="Occupied" Reference="128B1"/>
-          <Sensor Offset="4" Description="Forklift" Reference="128B2"/>
+          <Sensor Offset="0" Description="Occupied" Reference="20B2,B3"/>
         </SensorList>
       </ConveyorInfo>
       <CraneAddress Shelve="0" Travel="100" Height="0" Depth="1"/>
