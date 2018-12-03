@@ -1420,6 +1420,24 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bring Box.
+        /// </summary>
+        public static string BringBox {
+            get {
+                return ResourceManager.GetString("BringBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bring TU.
+        /// </summary>
+        public static string BringTray {
+            get {
+                return ResourceManager.GetString("BringTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Buffer.
         /// </summary>
         public static string Buffer {
@@ -2568,6 +2586,24 @@ namespace UserInterface.Properties {
         public static string EnumMovementTask_Move {
             get {
                 return ResourceManager.GetString("EnumMovementTask_Move", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bring Box.
+        /// </summary>
+        public static string EnumOrderOperation_BringBox {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_BringBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bring TU.
+        /// </summary>
+        public static string EnumOrderOperation_BringTray {
+            get {
+                return ResourceManager.GetString("EnumOrderOperation_BringTray", resourceCulture);
             }
         }
         

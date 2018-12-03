@@ -1842,4 +1842,16 @@
   <data name="DimensionCheck" xml:space="preserve">
     <value>Dimension check</value>
   </data>
+  <data name="BringBox" xml:space="preserve">
+    <value>Bring Box</value>
+  </data>
+  <data name="BringTray" xml:space="preserve">
+    <value>Bring TU</value>
+  </data>
+  <data name="EnumOrderOperation_BringBox" xml:space="preserve">
+    <value>Bring Box</value>
+  </data>
+  <data name="EnumOrderOperation_BringTray" xml:space="preserve">
+    <value>Bring TU</value>
+  </data>
 </root>

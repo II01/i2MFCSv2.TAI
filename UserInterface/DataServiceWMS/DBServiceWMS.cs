@@ -1863,6 +1863,36 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
+        public void CreateOrder_BringTUID(int tuid)
+        {
+            try
+            {
+                using (var dcw = new EntitiesWMS())
+                {
+                    dcw.Orders.Add(new Orders
+                    {
+                        ERP_ID = null,
+                        OrderID = GetLastUsedOrderID() + 1,
+                        SubOrderID = 1,
+                        SubOrderName = "Remove TUID",
+                        TU_ID = tuid,
+                        Box_ID = "-",
+                        SKU_ID = "-",
+                        SKU_Batch = "-",
+                        Destination = dcw.Parameters.Find("Place.IOStation").Value,
+                        Operation = (int)EnumOrderOperation.BringTray,
+                        Status = (int)EnumWMSOrderStatus.Waiting,
+                        ReleaseTime = DateTime.Now
+                    });
+                    dcw.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
         public void CreateOrder_RemoveTUID(int tuid)
         {
             try
@@ -1914,6 +1944,40 @@ namespace UserInterface.DataServiceWMS
                             SKU_Batch = dcw.Box_ID.Find(b).Batch,
                             Destination = dcw.Parameters.Find("Place.IOStation").Value,
                             Operation = (int)EnumOrderOperation.DropBox,
+                            Status = (int)EnumWMSOrderStatus.Waiting,
+                            ReleaseTime = DateTime.Now
+                        });
+                    }
+                    dcw.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+
+        public void CreateOrder_BringBox(List<string> boxes)
+        {
+            try
+            {
+                using (var dcw = new EntitiesWMS())
+                {
+                    var orderid = GetLastUsedOrderID() + 1;
+                    foreach (var b in boxes)
+                    {
+                        dcw.Orders.Add(new Orders
+                        {
+                            ERP_ID = null,
+                            OrderID = orderid,
+                            SubOrderID = 1,
+                            SubOrderName = "Pick box",
+                            TU_ID = dcw.TUs.First(p => p.Box_ID == b).TU_ID,
+                            Box_ID = b,
+                            SKU_ID = dcw.Box_ID.Find(b).SKU_ID,
+                            SKU_Batch = dcw.Box_ID.Find(b).Batch,
+                            Destination = dcw.Parameters.Find("Place.IOStation").Value,
+                            Operation = (int)EnumOrderOperation.BringBox,
                             Status = (int)EnumWMSOrderStatus.Waiting,
                             ReleaseTime = DateTime.Now
                         });

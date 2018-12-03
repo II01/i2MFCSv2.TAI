@@ -132,8 +132,8 @@
                                 Width="2*" Binding="{Binding BoxID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" FontSize="{StaticResource MidFontSize}"
                                 Width="2*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" FontSize="{StaticResource MidFontSize}"
-                                Width="3*" Binding="{Binding SKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUBatch}" FontSize="{StaticResource MidFontSize}"
+                                Width="3*" Binding="{Binding SKUBatch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>  -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" FontSize="{StaticResource MidFontSize}"
                                 Width="2*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
@@ -228,10 +228,10 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0" Text="{Resx StationTUID}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="0,0,10,0"/>
-            <TextBlock Grid.Column="1" Text="{Binding ActiveTUIDID}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
-            <TextBlock Grid.Column="3" Text="{Resx TUIDHeightClass}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="0,0,10,0"/>
-            <TextBlock Grid.Column="4" Text="{Binding ActiveTUIDHC}" FontSize="{StaticResource MidFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
+            <TextBlock Grid.Column="0" Text="{Resx StationTUID}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="0,0,10,0"/>
+            <TextBlock Grid.Column="1" Text="{Binding ActiveTUIDID}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
+            <TextBlock Grid.Column="3" Text="{Resx TUIDHeightClass}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="0,0,10,0"/>
+            <TextBlock Grid.Column="4" Text="{Binding ActiveTUIDHC}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         </Grid>
         <DataGrid Grid.Row="6" Grid.Column="3" Margin="0,0,0,0"
                 ItemsSource="{Binding DataListBoxes, Mode=TwoWay}" 
@@ -287,8 +287,8 @@
                                     Width="3*" Binding="{Binding BoxID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" 
                                     Width="3*" Binding="{Binding SKUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}" 
-                                    Width="3*" Binding="{Binding Batch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Batch}" 
+                                    Width="3*" Binding="{Binding Batch}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=ProdDate}" 
                                     Width="3*" Binding="{Binding ProdDate}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
@@ -327,9 +327,11 @@
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <Button Grid.Row="0" Content="{Resx StoreTray}" Command="{Binding CmdStoreTray}" Visibility="Visible"/>
-            <Button Grid.Row="2" Content="{Resx RemoveTray}" Command="{Binding CmdRemoveTray}" Visibility="Visible"/>
+            <Button Grid.Row="2" Content="{Resx BringTray}" Command="{Binding CmdBringTray}" Visibility="{Binding VisibleBringTray, Converter={StaticResource BoolToVisibility}}"/>
+            <Button Grid.Row="2" Content="{Resx RemoveTray}" Command="{Binding CmdRemoveTray}" Visibility="{Binding VisibleRemoveTray, Converter={StaticResource BoolToVisibility}}"/>
             <Button Grid.Row="4" Content="{Resx DropBox}" Command="{Binding CmdDropBox}" Visibility="Visible"/>
-            <Button Grid.Row="6" Content="{Resx PickBox}" Command="{Binding CmdPickBox}" Visibility="Visible"/>
+            <Button Grid.Row="6" Content="{Resx BringBox}" Command="{Binding CmdBringBox}" Visibility="{Binding VisibleBringBox, Converter={StaticResource BoolToVisibility}}"/>
+            <Button Grid.Row="6" Content="{Resx PickBox}" Command="{Binding CmdPickBox}" Visibility="{Binding VisiblePickBox, Converter={StaticResource BoolToVisibility}}"/>
        </Grid>
 
         <Grid Grid.Row="6" Grid.Column="4" Margin="20,0,0,0">

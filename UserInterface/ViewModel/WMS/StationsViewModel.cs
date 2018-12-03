@@ -23,7 +23,7 @@ namespace UserInterface.ViewModel
 {
     public sealed class StationsViewModel : ViewModelBase
     {
-        public enum CommandType { None = 0, ChangeHeightClass, ActivateOrder, CancelOrder, StoreTray, RemoveTray, DropBox, PickBox };
+        public enum CommandType { None = 0, ChangeHeightClass, ActivateOrder, CancelOrder, StoreTray, BringTray, RemoveTray, DropBox, BringBox, PickBox };
 
         #region members
         private CommandType _selectedCmd;
@@ -51,6 +51,10 @@ namespace UserInterface.ViewModel
         private DispatcherTimer _timer;
         private ViewModelBase _activevm;
         private bool _visibleOperation;
+        private bool _visibleBringTray;
+        private bool _visibleRemoveTray;
+        private bool _visibleBringBox;
+        private bool _visiblePickBox;
         #endregion
 
         #region properites
@@ -62,8 +66,10 @@ namespace UserInterface.ViewModel
         public RelayCommand CmdStop { get; private set; }
         public RelayCommand CmdChangeHC { get; private set; }
         public RelayCommand CmdStoreTray { get; private set; }
+        public RelayCommand CmdBringTray { get; private set; }
         public RelayCommand CmdRemoveTray { get; private set; }
         public RelayCommand CmdDropBox { get; private set; }
+        public RelayCommand CmdBringBox { get; private set; }
         public RelayCommand CmdPickBox { get; private set; }
         public RelayCommand Cancel { get; private set; }
         public RelayCommand Confirm { get; private set; }
@@ -286,6 +292,56 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public bool VisibleBringTray
+        {
+            get { return _visibleBringTray; }
+            set
+            {
+                if (_visibleBringTray != value)
+                {
+                    _visibleBringTray = value;
+                    RaisePropertyChanged("VisibleBringTray");
+                }
+            }
+        }
+        public bool VisibleRemoveTray
+        {
+            get { return _visibleRemoveTray; }
+            set
+            {
+                if (_visibleRemoveTray != value)
+                {
+                    _visibleRemoveTray = value;
+                    RaisePropertyChanged("VisibleRemoveTray");
+                }
+            }
+        }
+        public bool VisibleBringBox
+        {
+            get { return _visibleBringBox; }
+            set
+            {
+                if (_visibleBringBox != value)
+                {
+                    _visibleBringBox = value;
+                    RaisePropertyChanged("VisibleBringBox");
+                }
+            }
+        }
+
+        public bool VisiblePickBox
+        {
+            get { return _visiblePickBox; }
+            set
+            {
+                if (_visiblePickBox != value)
+                {
+                    _visiblePickBox = value;
+                    RaisePropertyChanged("VisiblePickBox");
+                }
+            }
+        }
         public int AccessLevel
         {
             get
@@ -325,9 +381,11 @@ namespace UserInterface.ViewModel
             CmdStop = new RelayCommand(() => ExecuteStop(), CanExecuteStop);
             CmdChangeHC = new RelayCommand(() => ExecuteChangeHC(), CanExecuteChangeHC);
             CmdStoreTray = new RelayCommand(() => ExecuteStoreTray(), CanExecuteStoreTray);
-            CmdRemoveTray = new RelayCommand(() => ExecuteRemoveTray(), CanExecuteRemoveTray);
+            CmdBringTray = new RelayCommand(() => ExecuteBringRemoveTray(CommandType.BringTray), CanExecuteBringRemoveTray);
+            CmdRemoveTray = new RelayCommand(() => ExecuteBringRemoveTray(CommandType.RemoveTray), CanExecuteBringRemoveTray);
             CmdDropBox = new RelayCommand(() => ExecuteDropBox(), CanExecuteDropBox);
-            CmdPickBox = new RelayCommand(() => ExecutePickBox(), CanExecutePickBox);
+            CmdBringBox = new RelayCommand(() => ExecuteBringPickBox(CommandType.BringBox), CanExecuteBringPickBox);
+            CmdPickBox = new RelayCommand(() => ExecuteBringPickBox(CommandType.PickBox), CanExecuteBringPickBox);
             Cancel = new RelayCommand(() => ExecuteCancel(), CanExecuteCancel);
             Confirm = new RelayCommand(() => ExecuteConfirm(), CanExecuteConfirm);
             KeyDown = new RelayCommand<MessageKeyPressed>(async (k) => await ExecuteKeyPressed(k));
@@ -338,6 +396,10 @@ namespace UserInterface.ViewModel
             _warehouse = warehouse;
             _dbservicewms = new DBServiceWMS(_warehouse);
             VisibleOperation = false;
+            VisibleBringTray = false;
+            VisibleRemoveTray = true;
+            VisibleBringBox = false;
+            VisiblePickBox = true;
             try
             {
                 DataListOrder = new ObservableCollection<ReleaseOrderViewModel>();
@@ -534,11 +596,11 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecuteRemoveTray()
+        private void ExecuteBringRemoveTray(CommandType cmd)
         {
             try
             {
-                _selectedCmd = CommandType.RemoveTray;
+                _selectedCmd = cmd;
                 EditEnabled = true;
                 EnabledCC = true;
                 VisibleOperation = true;
@@ -554,7 +616,7 @@ namespace UserInterface.ViewModel
             }
         }
 
-        private bool CanExecuteRemoveTray()
+        private bool CanExecuteBringRemoveTray()
         {
             try
             {
@@ -600,11 +662,11 @@ namespace UserInterface.ViewModel
                 return false;
             }
         }
-        private void ExecutePickBox()
+        private void ExecuteBringPickBox(CommandType cmd)
         {
             try
             {
-                _selectedCmd = CommandType.PickBox;
+                _selectedCmd = cmd;
                 EditEnabled = true;
                 EnabledCC = true;
                 VisibleOperation = true;
@@ -620,7 +682,7 @@ namespace UserInterface.ViewModel
             }
         }
 
-        private bool CanExecutePickBox()
+        private bool CanExecuteBringPickBox()
         {
             try
             {
@@ -656,17 +718,25 @@ namespace UserInterface.ViewModel
                             if (CanExecuteStoreTray())
                                 ExecuteStoreTray();
                             break;
+                        case ".TB.":
+                            if (CanExecuteBringRemoveTray())
+                                ExecuteBringRemoveTray(CommandType.BringTray);
+                            break;
                         case ".TR.":
-                            if (CanExecuteRemoveTray())
-                                ExecuteRemoveTray();
+                            if (CanExecuteBringRemoveTray())
+                                ExecuteBringRemoveTray(CommandType.RemoveTray);
                             break;
                         case ".BD.":
                             if (CanExecuteDropBox())
                                 ExecuteDropBox();
                             break;
+                        case ".BB.":
+                            if (CanExecuteBringPickBox())
+                                ExecuteBringPickBox(CommandType.BringBox);
+                            break;
                         case ".BP.":
-                            if (CanExecutePickBox())
-                                ExecutePickBox();
+                            if (CanExecuteBringPickBox())
+                                ExecuteBringPickBox(CommandType.PickBox);
                             break;
                         case ".CN.":
                             if (CanExecuteCancel())
@@ -763,11 +833,17 @@ namespace UserInterface.ViewModel
 //                              _dbservicewms.CreateOrder_StoreTUID((Operation as StationStoreTrayViewModel).TUID);
                             }
                             break;
+                        case CommandType.BringTray:
+                            _dbservicewms.CreateOrder_BringTUID((Operation as StationRemoveTrayViewModel).TUID);
+                            break;
                         case CommandType.RemoveTray:
                             _dbservicewms.CreateOrder_RemoveTUID((Operation as StationRemoveTrayViewModel).TUID);
                             break;
                         case CommandType.DropBox:
                             _dbservicewms.CreateOrder_DropBox((Operation as StationDropBoxViewModel).TUID, (Operation as StationDropBoxViewModel).BoxList);
+                            break;
+                        case CommandType.BringBox:
+                            _dbservicewms.CreateOrder_BringBox((Operation as StationPickBoxViewModel).BoxList);
                             break;
                         case CommandType.PickBox:
                             _dbservicewms.CreateOrder_PickBox((Operation as StationPickBoxViewModel).BoxList);
@@ -818,6 +894,12 @@ namespace UserInterface.ViewModel
                 if (!(_activevm is StationsViewModel))
                     return;
 
+                VisibleRemoveTray = _dbservicewms.CanStoreTray(_dbservicewms.GetParameter("Place.IOStation"));
+                VisibleBringTray = !VisibleRemoveTray;
+                VisibleBringBox = !VisibleRemoveTray;
+                VisiblePickBox = VisibleRemoveTray;
+
+                CommandManager.InvalidateRequerySuggested();        // forces buttons to refresh
                 await ExecuteRefreshOrders();
                 await ExecuteRefreshCommandWMS();
                 await ExecuteRefreshBoxes();
