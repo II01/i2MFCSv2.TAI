@@ -158,9 +158,9 @@ namespace UserInterface.Services
         ConfirmStore = 2, 
         MoveTray = 3,
         DropBox = 4,
-        BringBox = 5, 
-        PickBox = 6,
-        BringTray = 7,
+        BringTray = 5,
+        BringBox = 6, 
+        PickBox = 7,
         RetrieveTray = 8,
         ConfirmFinish = 9
     }
