@@ -23,6 +23,7 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region properties
+        public bool RemoveTray { get; set; }
         public string TUIDstr
         {
             get { return _tuidstr; }
@@ -74,7 +75,10 @@ namespace UserInterface.ViewModel
             try
             {
                 base.Initialize(warehouse);
-                OperationName = "Remove tray";
+                if (RemoveTray)
+                    OperationName = "Remove tray";
+                else
+                    OperationName = "Bring tray";
             }
             catch (Exception e)
             {
@@ -108,7 +112,7 @@ namespace UserInterface.ViewModel
                                     var place = DBServiceWMS.FindPlaceByTUID(TUID);
                                     if (place == null || place.PlaceID == "W:out")
                                         validationResult = ResourceReader.GetString("ERR_TUID");
-                                    else if (!DBServiceWMS.IsTUIDEmpty(place.TU_ID))
+                                    else if (RemoveTray && !DBServiceWMS.IsTUIDEmpty(place.TU_ID))
                                         validationResult = ResourceReader.GetString("ERR_TUIDFULL");
                                     PlaceID = place?.PlaceID;
                                 }

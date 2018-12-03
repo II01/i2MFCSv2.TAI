@@ -1,0 +1,1304 @@
+2018-12-03 20:00:21:051->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:00:21:350->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:00:21:725->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:00:21:761->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:00:43:068->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:00:43:380->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:00:43:753->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:00:43:787->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:01:05:086->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:01:05:395->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:01:05:782->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:01:05:820->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:01:27:108->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:01:27:413->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:01:27:804->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:01:27:846->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:01:49:131->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:01:49:440->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:01:49:833->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:01:49:876->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:02:11:154->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:02:11:462->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:02:11:861->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:02:11:910->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:02:33:176->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:02:33:483->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:02:33:899->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:02:33:936->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:02:55:196->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:02:55:502->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:02:55:922->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:02:55:976->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:03:17:217->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:03:17:528->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:03:17:956->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:03:17:998->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:03:39:236->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:03:39:548->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:03:39:981->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:03:40:027->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:04:01:254->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:04:01:563->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:04:02:003->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:04:02:050->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:04:23:273->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:04:23:580->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:04:24:026->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:04:24:080->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:04:45:299->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:04:45:606->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:04:46:057->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:04:46:115->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:05:07:319->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:05:07:623->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:05:08:077->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:05:08:138->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:05:29:337->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:05:29:650->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:05:30:102->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:05:30:169->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:05:51:370->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:05:51:681->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:05:52:131->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:05:52:199->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:06:13:388->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:06:13:701->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:06:14:149->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:06:14:226->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:06:35:410->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:06:35:728->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:06:36:177->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:06:36:258->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:06:57:429->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:06:57:757->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:06:58:198->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:06:58:288->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:07:19:444->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:07:19:783->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:07:20:230->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:07:20:316->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:07:41:466->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:07:41:809->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:07:42:260->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:07:42:348->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:08:03:487->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:08:03:844->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:08:04:278->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:08:04:378->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:08:25:509->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:08:25:863->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:08:26:301->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:08:26:409->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:08:47:536->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:08:47:895->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:08:48:332->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:08:48:440->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:09:09:561->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:09:09:924->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:09:10:394->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:09:10:508->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:09:31:577->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:09:31:954->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:09:32:422->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:09:32:539->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:09:53:594->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:09:53:985->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:09:54:449->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:09:54:576->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:10:15:624->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:10:16:013->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:10:16:483->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:10:16:608->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:10:37:655->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:10:38:045->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:10:38:510->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:10:38:639->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:10:59:683->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:11:00:078->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:11:00:530->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:11:00:673->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:11:21:714->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:11:22:104->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:11:22:563->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:11:22:703->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:11:43:746->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:11:44:136->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:11:44:593->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:11:44:733->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:12:05:776->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:12:06:167->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:12:06:619->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:12:06:759->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:12:27:809->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:12:28:195->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:12:28:650->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:12:28:793->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:12:49:843->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:12:50:212->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:12:50:680->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:12:50:823->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:13:11:871->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:13:12:231->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:13:12:702->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:13:12:854->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:13:33:902->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:13:34:258->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:13:34:730->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:13:34:885->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:13:55:934->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:13:56:274->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:13:56:762->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:13:56:913->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:14:17:959->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:14:18:302->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:14:18:789->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:14:18:945->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:14:39:989->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:14:40:332->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:14:40:818->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:14:40:974->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:15:02:022->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:15:02:348->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:15:02:849->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:15:03:006->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:15:24:054->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:15:24:365->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:15:24:877->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:15:25:035->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:15:46:079->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:15:46:395->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:15:46:909->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:15:47:066->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:16:08:111->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:16:08:424->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:16:08:940->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:16:09:100->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:16:30:141->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:16:30:453->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:16:30:970->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:16:31:133->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:16:52:170->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:16:52:487->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:16:53:001->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:16:53:165->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:17:14:186->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:17:14:522->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:17:15:020->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:17:15:186->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:17:36:216->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:17:36:551->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:17:37:047->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:17:37:218->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:17:58:235->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:17:58:574->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:17:59:076->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:17:59:247->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:18:20:264->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:18:20:606->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:18:21:109->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:18:21:278->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:18:42:294->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:18:42:640->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:18:43:135->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:18:43:312->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:19:04:324->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:19:04:666->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:19:05:166->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:19:05:340->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:19:26:342->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:19:26:685->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:19:27:186->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:19:27:370->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:19:48:373->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:19:48:711->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:19:49:213->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:19:49:405->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:20:10:404->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:20:10:730->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:20:11:251->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:20:11:433->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:20:32:428->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:20:32:765->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:20:33:284->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:20:33:460->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:20:54:444->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:20:54:787->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:20:55:314->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:20:55:481->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:21:16:461->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:21:16:808->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:21:17:345->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:21:17:511->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:21:38:490->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:21:38:838->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:21:39:366->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:21:39:538->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:22:00:520->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:22:00:870->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:22:01:402->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:22:01:571->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:22:22:536->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:22:22:896->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:22:23:433->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:22:23:600->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:22:44:554->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:22:44:927->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:22:45:463->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:22:45:628->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:23:06:581->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:23:06:958->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:23:07:492->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:23:07:659->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:23:28:596->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:23:28:986->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:23:29:517->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:23:29:690->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:23:50:627->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:23:51:015->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:23:51:546->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:23:51:725->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:24:12:661->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:24:13:034->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:24:13:581->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:24:13:755->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:24:34:687->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:24:35:064->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:24:35:607->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:24:35:788->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:24:56:715->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:24:57:097->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:24:57:638->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:24:57:815->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:25:18:746->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:25:19:122->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:25:19:673->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:25:19:841->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:25:40:763->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:25:41:138->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:25:41:705->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:25:41:873->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:26:02:803->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:26:03:169->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:26:03:730->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:26:03:907->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:26:24:836->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:26:25:188->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:26:25:749->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:26:25:938->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:26:46:854->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:26:47:216->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:26:47:779->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:26:47:975->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:27:08:894->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:27:09:245->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:27:09:810->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:27:09:997->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:27:30:924->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:27:31:262->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:27:31:837->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:27:32:031->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:27:52:955->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:27:53:278->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:27:53:860->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:27:54:061->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:28:14:985->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:28:15:293->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:28:15:884->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:28:16:096->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:28:37:005->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:28:37:323->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:28:37:913->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:28:38:131->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:28:59:040->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:28:59:351->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:28:59:946->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:29:00:162->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:29:21:066->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:29:21:384->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:29:21:975->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:29:22:191->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:29:43:084->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:29:43:416->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:29:44:004->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:29:44:213->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:30:05:113->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:30:05:444->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:30:06:023->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:30:06:246->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:30:27:131->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:30:27:473->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:30:28:053->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:30:28:280->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:30:49:160->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:30:49:502->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:30:50:090->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:30:50:314->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:31:11:197->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:31:11:533->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:31:12:122->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:31:12:347->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:31:33:223->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:31:33:552->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:31:34:148->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:31:34:382->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:31:55:250->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:31:55:578->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:31:56:179->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:31:56:413->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:32:17:281->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:32:17:611->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:32:18:211->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:32:18:443->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:32:39:313->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:32:39:639->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:32:40:246->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:32:40:469->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:33:01:342->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:33:01:659->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:33:02:265->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:33:02:501->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:33:23:371->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:33:23:684->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:33:24:295->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:33:24:533->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:33:45:403->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:33:45:714->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:33:46:326->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:33:46:567->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:34:07:435->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:34:07:747->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:34:08:356->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:34:08:600->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:34:29:465->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:34:29:777->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:34:30:385->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:34:30:635->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:34:51:504->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:34:51:808->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:34:52:414->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:34:52:666->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:35:13:525->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:35:13:839->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:35:14:448->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:35:14:698->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:35:35:555->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:35:35:875->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:35:36:483->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:35:36:730->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:35:57:587->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:35:57:900->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:35:58:512->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:35:58:757->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:36:19:620->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:36:19:934->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:36:20:542->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:36:20:791->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:36:41:652->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:36:41:960->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:36:42:572->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:36:42:821->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:37:03:680->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:37:03:992->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:37:04:607->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:37:04:851->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:37:25:697->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:37:26:009->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:37:26:634->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:37:26:881->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:37:47:724->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:37:48:039->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:37:48:668->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:37:48:901->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:38:09:757->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:38:10:073->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:38:10:697->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:38:10:932->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:38:31:793->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:38:32:099->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:38:32:726->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:38:32:960->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:38:53:817->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:38:54:130->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:38:54:755->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:38:54:994->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:39:15:859->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:39:16:163->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:39:16:785->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:39:17:023->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:39:37:879->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:39:38:193->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:39:38:817->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:39:39:055->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:39:59:910->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:40:00:223->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:40:00:850->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:40:01:082->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:40:21:944->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:40:22:241->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:40:22:883->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:40:23:115->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:40:43:978->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:40:44:272->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:40:44:913->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:40:45:149->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:41:06:007->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:41:06:300->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:41:06:940->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:41:07:179->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:41:28:039->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:41:28:321->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:41:28:960->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:41:29:206->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:41:50:067->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:41:50:350->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:41:50:988->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:41:51:238->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:42:12:083->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:42:12:378->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:42:13:021->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:42:13:273->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:42:34:116->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:42:34:398->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:42:35:048->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:42:35:307->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:42:56:144->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:42:56:428->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:42:57:069->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:42:57:336->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:43:18:176->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:43:18:457->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:43:19:095->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:43:19:366->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:43:40:204->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:43:40:488->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:43:41:130->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:43:41:394->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:44:02:235->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:44:02:521->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:44:03:158->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:44:03:426->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:44:24:270->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:44:24:550->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:44:25:189->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:44:25:455->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:44:46:299->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:44:46:580->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:44:47:221->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:44:47:486->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:45:08:334->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:45:08:616->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:45:09:250->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:45:09:517->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:45:30:358->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:45:30:657->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:45:31:279->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:45:31:547->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:45:52:388->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:45:52:690->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:45:53:299->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:45:53:578->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:46:14:415->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:46:14:722->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:46:15:329->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:46:15:609->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:46:36:438->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:46:36:752->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:46:37:358->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:46:37:641->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:46:58:466->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:46:58:782->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:46:59:377->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:46:59:672->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:47:20:498->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:47:20:812->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:47:21:407->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:47:21:703->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:47:42:530->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:47:42:840->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:47:43:439->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:47:43:735->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:48:04:563->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:48:04:860->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:48:05:471->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:48:05:763->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:48:26:591->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:48:26:893->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:48:27:497->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:48:27:795->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:48:48:623->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:48:48:920->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:48:49:526->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:48:49:826->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:49:10:651->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:49:10:953->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:49:11:560->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:49:11:862->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:49:32:685->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:49:32:981->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:49:33:599->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:49:33:894->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:49:54:715->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:49:55:012->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:49:55:630->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:49:55:922->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:50:16:734->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:50:17:044->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:50:17:660->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:50:17:952->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:50:38:766->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:50:39:063->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:50:39:689->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:50:39:984->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:51:00:795->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:51:01:098->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:51:01:718->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:51:02:016->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:51:22:826->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:51:23:125->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:51:23:747->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:51:24:046->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:51:44:858->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:51:45:151->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:51:45:777->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:51:46:077->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:52:06:885->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:52:07:181->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:52:07:818->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:52:08:104->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:52:28:919->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:52:29:212->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:52:29:848->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:52:30:134->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:52:50:949->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:52:51:230->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:52:51:882->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:52:52:165->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:53:12:979->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:53:13:261->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:53:13:916->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:53:14:198->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:53:35:009->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:53:35:292->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:53:35:956->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:53:36:228->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:53:57:040->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:53:57:325->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:53:57:989->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:53:58:260->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:54:19:076->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:54:19:356->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:54:20:017->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:54:20:295->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:54:41:106->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:54:41:382->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:54:42:051->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:54:42:327->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:55:03:134->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:55:03:400->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:55:04:069->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:55:04:357->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:55:25:162->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:55:25:431->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:55:26:102->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:55:26:386->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:55:47:195->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:55:47:462->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:55:48:134->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:55:48:416->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:56:09:225->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:56:09:493->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:56:10:164->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:56:10:449->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:56:31:255->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:56:31:527->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:56:32:182->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:56:32:478->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:56:53:274->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:56:53:553->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:56:54:210->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:56:54:507->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:57:15:305->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:57:15:585->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:57:16:241->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:57:16:544->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:57:37:334->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:57:37:615->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:57:38:271->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:57:38:581->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:57:59:363->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:57:59:642->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:58:00:304->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:58:00:603->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:58:21:397->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:58:21:674->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:58:22:333->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:58:22:636->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:58:43:433->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:58:43:694->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:58:44:365->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:58:44:675->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:59:05:468->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:59:05:722->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:59:06:404->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:59:06:694->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:59:27:504->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:59:27:746->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:59:28:432->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:59:28:722->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:59:49:533->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2001:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:59:49:776->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2003:Send (TcpCommunication.cs 115)
+
+2018-12-03 20:59:50:462->EXCEPTION:PLC_Crane:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2004:Receive (TcpCommunication.cs 199)
+
+2018-12-03 20:59:50:755->EXCEPTION:PLC_Conveyor:A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond 192.168.1.203:2002:Receive (TcpCommunication.cs 199)
+

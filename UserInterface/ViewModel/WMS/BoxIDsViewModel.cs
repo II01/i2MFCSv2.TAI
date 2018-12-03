@@ -357,6 +357,8 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Add:
+                            if (DetailedBoxID.BoxID.Batch == "")
+                                DetailedBoxID.BoxID.Batch = "-";
                             _dbservicewms.AddBoxID(DetailedBoxID.BoxID);
                             _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
                                                 String.Format("BoxID added: id: {0}", DetailedBoxID.ID));
@@ -365,6 +367,8 @@ namespace UserInterface.ViewModel
                             _dbservicewms.AddLog(_accessUser, EnumLogWMS.Event, "UI", $"Add BoxID: {DetailedBoxID.BoxID.ToString()}");
                             break;
                         case CommandType.Edit:
+                            if (DetailedBoxID.BoxID.Batch == "")
+                                DetailedBoxID.BoxID.Batch = "-";
                             _dbservicewms.UpdateBoxID(DetailedBoxID.BoxID);
                             _warehouse.AddEvent(Event.EnumSeverity.Event, Event.EnumType.Material,
                                                 String.Format("BoxID changed: id: {0}", DetailedBoxID.ID));

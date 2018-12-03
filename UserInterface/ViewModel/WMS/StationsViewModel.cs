@@ -605,6 +605,7 @@ namespace UserInterface.ViewModel
                 EnabledCC = true;
                 VisibleOperation = true;
                 Operation = new StationRemoveTrayViewModel();
+                (Operation as StationRemoveTrayViewModel).RemoveTray = cmd == CommandType.RemoveTray;
                 Operation.Initialize(_warehouse);
                 Operation.ValidationEnabled = true;
                 Operation.SetFocus = true;
