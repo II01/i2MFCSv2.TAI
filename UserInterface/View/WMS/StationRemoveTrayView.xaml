@@ -31,17 +31,19 @@
                    VerticalAlignment="Top" FontWeight="Medium"/>
         <TextBox Grid.Row="0" Grid.Column="1" Margin="20,0,0,0" 
                  Name="tbTUID"
-                   FontSize="{StaticResource LargeFontSize}" 
-                   VerticalAlignment="Top" FontWeight="Medium"
-                   Text="{Binding TUIDstr, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
+                 IsEnabled="{Binding EnableEntry}"
+                 FontSize="{StaticResource LargeFontSize}" 
+                 VerticalAlignment="Top" FontWeight="Medium"
+                 Text="{Binding TUIDstr, Converter={StaticResource PalletStringAndStringWithLeadingZeros}, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}">
         </TextBox>
         <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,0" Text="{Resx PlaceID}"
                 FontSize="{StaticResource LargeFontSize}" 
                 VerticalAlignment="Top" FontWeight="Medium"/>
         <TextBox Grid.Row="2" Grid.Column="1" Margin="20,0,0,0" 
                  IsReadOnly="True"
-                FontSize="{StaticResource LargeFontSize}" 
-                VerticalAlignment="Top" FontWeight="Medium"
-                Text="{Binding PlaceID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                 IsEnabled="{Binding EnableEntry}"
+                 FontSize="{StaticResource LargeFontSize}" 
+                 VerticalAlignment="Top" FontWeight="Medium"
+                 Text="{Binding PlaceID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

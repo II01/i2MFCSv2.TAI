@@ -92,8 +92,10 @@
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Margin="10,0,0,20" Content="{Resx Block}" Command="{Binding Block}" />
-                <Button Margin="10,0,0,20" Content="{Resx Unblock}" Command="{Binding Unblock}" />
+                <Button Margin="10,0,0,20" Content="{Resx Block}" Command="{Binding Block}" 
+                        IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
+                <Button Margin="10,0,0,20" Content="{Resx Unblock}" Command="{Binding Unblock}"
+                        IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
                 <!--                <Button Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/> -->
             </StackPanel>
             <ContentControl x:Name="ccPlaceID" 

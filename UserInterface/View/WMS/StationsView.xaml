@@ -127,7 +127,7 @@
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Operation}" FontSize="{StaticResource MidFontSize}"
                                 Width="2*" Binding="{Binding Operation}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TUID}" FontSize="{StaticResource MidFontSize}"
-                                Width="2*" Binding="{Binding TUID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                Width="2*" Binding="{Binding TUID, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=BoxID}" FontSize="{StaticResource MidFontSize}"
                                 Width="2*" Binding="{Binding BoxID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=SKUID}" FontSize="{StaticResource MidFontSize}"
@@ -229,8 +229,8 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="{Resx StationTUID}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="0,0,10,0"/>
-            <TextBlock Grid.Column="1" Text="{Binding ActiveTUIDID}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
-            <TextBlock Grid.Column="3" Text="{Resx TUIDHeightClass}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="0,0,10,0"/>
+            <TextBlock Grid.Column="1" Text="{Binding ActiveTUIDID, Converter={StaticResource PalletIntAndString}}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
+            <TextBlock Grid.Column="3" Text="{Resx Height}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium" Margin="0,0,10,0"/>
             <TextBlock Grid.Column="4" Text="{Binding ActiveTUIDHC}" FontSize="{StaticResource LargeFontSize}" VerticalAlignment="Bottom" FontWeight="Medium"/>
         </Grid>
         <DataGrid Grid.Row="6" Grid.Column="3" Margin="0,0,0,0"
@@ -311,8 +311,10 @@
                 <RowDefinition Height="15   "/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Margin="0,0,0,0" Content="{Resx Activate}" Command="{Binding CmdStart}" Visibility="Visible"/>
-            <Button Grid.Row="2" Margin="0,0,0,0" Content="{Resx Cancel}" Command="{Binding CmdStop}" Visibility="Visible"/>
+            <Button Grid.Row="0" Margin="0,0,0,0" Content="{Resx Activate}" Command="{Binding CmdStart}" Visibility="Visible"
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}"/>
+            <Button Grid.Row="2" Margin="0,0,0,0" Content="{Resx Cancel}" Command="{Binding CmdStop}" Visibility="Visible"
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}"/>
             <Button Grid.Row="12" Margin="0,0,0,0" Content="{Resx Refresh}" Command="{Binding CmdRefresh}"/>
         </Grid>
 
@@ -326,13 +328,30 @@
                 <RowDefinition Height="15"/>
                 <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
-            <Button Grid.Row="0" Content="{Resx StoreTray}" Command="{Binding CmdStoreTray}" Visibility="Visible"/>
-            <Button Grid.Row="2" Content="{Resx BringTray}" Command="{Binding CmdBringTray}" Visibility="{Binding VisibleBringTray, Converter={StaticResource BoolToVisibility}}"/>
-            <Button Grid.Row="2" Content="{Resx RemoveTray}" Command="{Binding CmdRemoveTray}" Visibility="{Binding VisibleRemoveTray, Converter={StaticResource BoolToVisibility}}"/>
-            <Button Grid.Row="4" Content="{Resx DropBox}" Command="{Binding CmdDropBox}" Visibility="Visible"/>
-            <Button Grid.Row="6" Content="{Resx BringBox}" Command="{Binding CmdBringBox}" Visibility="{Binding VisibleBringBox, Converter={StaticResource BoolToVisibility}}"/>
-            <Button Grid.Row="6" Content="{Resx PickBox}" Command="{Binding CmdPickBox}" Visibility="{Binding VisiblePickBox, Converter={StaticResource BoolToVisibility}}"/>
-       </Grid>
+            <Button Grid.Row="0" Content="{Resx StoreTray}" 
+                    Command="{Binding CmdStoreTray}" 
+                    Visibility="Visible"
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}"/>
+            <Button Grid.Row="2" Content="{Resx BringTray}" 
+                    Command="{Binding CmdBringTray}" 
+                    Visibility="{Binding VisibleBringTray, Converter={StaticResource BoolToVisibility}}"
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}"/>
+            <Button Grid.Row="2" Content="{Resx RemoveTray}" 
+                    Command="{Binding CmdRemoveTray}" 
+                    Visibility="{Binding VisibleRemoveTray, Converter={StaticResource BoolToVisibility}}"
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
+            <Button Grid.Row="4" Content="{Resx DropBox}" 
+                    Command="{Binding CmdDropBox}" 
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
+            <Button Grid.Row="6" Content="{Resx BringBox}" 
+                    Command="{Binding CmdBringBox}" 
+                    Visibility="{Binding VisibleBringBox, Converter={StaticResource BoolToVisibility}}"
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
+            <Button Grid.Row="6" Content="{Resx PickBox}" 
+                    Command="{Binding CmdPickBox}" 
+                    Visibility="{Binding VisiblePickBox, Converter={StaticResource BoolToVisibility}}"
+                    IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
+        </Grid>
 
         <Grid Grid.Row="6" Grid.Column="4" Margin="20,0,0,0">
             <Grid.RowDefinitions>

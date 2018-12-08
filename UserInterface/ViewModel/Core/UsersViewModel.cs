@@ -250,15 +250,15 @@ namespace UserInterface.ViewModel
                 }
                 catch { }
                 // MFCS user
-                if(false && !valid )
+                if(!valid)
                 {
-                    User usr = _warehouse.DBService.GetUserPassword(User);
+                    User usr = _warehouse.DBService.GetUserPassword(User.ToUpper());
                     if (usr != null && usr.Password == Password)
                         valid = true;    
                 }
                 if(valid)
                 {
-                    User usr = _warehouse.DBService.GetUserPassword(User);
+                    User usr = _warehouse.DBService.GetUserPassword(User.ToUpper());
                     if (usr != null)
                     {
                         App.AccessLevel = usr.AccessLevel;
@@ -375,6 +375,8 @@ namespace UserInterface.ViewModel
                 Detailed.Initialize(_warehouse);
                 Detailed.ValidationEnabled = true;
                 Detailed.UserName = Selected.UserName;
+                Detailed.Password1 = Selected.Password1;
+                Detailed.Password2 = Selected.Password2;
                 Detailed.AccessLevelWMS = Selected.AccessLevelWMS;
                 Detailed.AccessLevelMFCS = Selected.AccessLevelMFCS;
             }
@@ -469,12 +471,22 @@ namespace UserInterface.ViewModel
                     switch (_selectedCommand)
                     {
                         case CommandType.Add:
-                            _warehouse.DBService.AddUser(new User { User1 = Detailed.UserName, Password = "", AccessLevel = 10 * (int)Detailed.AccessLevelWMS + (int)Detailed.AccessLevelMFCS });
+                            _warehouse.DBService.AddUser(new User
+                            {
+                                User1 = Detailed.UserName.ToUpper(),
+                                Password = Detailed.Password1,
+                                AccessLevel = 10 * (int)Detailed.AccessLevelWMS + (int)Detailed.AccessLevelMFCS
+                            });
                             DataList.Add(new UserViewModel { UserName = Detailed.UserName, AccessLevelWMS = Detailed.AccessLevelWMS, AccessLevelMFCS = Detailed.AccessLevelMFCS});
                             Selected = DataList.FirstOrDefault(p => p.UserName == Detailed.UserName);
                             break;
                         case CommandType.Edit:
-                            _warehouse.DBService.UpdateUser(new User { User1 = Detailed.UserName, AccessLevel = 10 * (int)Detailed.AccessLevelWMS + (int)Detailed.AccessLevelMFCS });
+                            _warehouse.DBService.UpdateUser(new User
+                            {
+                                User1 = Detailed.UserName,
+                                Password = Detailed.Password1,
+                                AccessLevel = 10 * (int)Detailed.AccessLevelWMS + (int)Detailed.AccessLevelMFCS
+                            });
                             Selected.UserName = Detailed.UserName;
                             Selected.AccessLevelWMS = Detailed.AccessLevelWMS;
                             Selected.AccessLevelMFCS = Detailed.AccessLevelMFCS;
@@ -596,6 +608,8 @@ namespace UserInterface.ViewModel
                         new UserViewModel
                         {
                             UserName = p.User1.ToUpper(),
+                            Password1 = p.Password,
+                            Password2 = p.Password,
                             AccessLevelWMS = (EnumUserAccessLevel)(p.AccessLevel/10),
                             AccessLevelMFCS = (EnumUserAccessLevel)(p.AccessLevel%10)
                         });

@@ -242,8 +242,8 @@ namespace UserInterface.ViewModel
                     Description = SelectedSKUID.Description,
                     DefaultQty = SelectedSKUID.DefaultQty,
                     Unit = SelectedSKUID.Unit,
-                    Length = SelectedSKUID.Length,
-                    Width = SelectedSKUID.Width,
+                    Layout = SelectedSKUID.Layout,
+                    Capacity = SelectedSKUID.Capacity,
                     Height = SelectedSKUID.Height,
                     Weight = SelectedSKUID.Weight,
                     FrequencyClass = SelectedSKUID.FrequencyClass
@@ -326,8 +326,8 @@ namespace UserInterface.ViewModel
                             SelectedSKUID.Description = DetailedSKUID.Description;
                             SelectedSKUID.DefaultQty = DetailedSKUID.DefaultQty;
                             SelectedSKUID.Unit = DetailedSKUID.Unit;
-                            SelectedSKUID.Length = DetailedSKUID.Length;
-                            SelectedSKUID.Width = DetailedSKUID.Width;
+                            SelectedSKUID.Layout = DetailedSKUID.Layout;
+                            SelectedSKUID.Capacity = DetailedSKUID.Capacity;
                             SelectedSKUID.Height = DetailedSKUID.Height;
                             SelectedSKUID.Weight = DetailedSKUID.Weight;
                             SelectedSKUID.FrequencyClass = DetailedSKUID.FrequencyClass;
@@ -377,8 +377,8 @@ namespace UserInterface.ViewModel
                         Unit = p.Unit,
                         Weight = p.Weight,
                         FrequencyClass = p.FrequencyClass,
-                        Length = p.Length,
-                        Width = p.Width,
+                        Layout = p.Layout,
+                        Capacity = p.Capacity,
                         Height = p.Height
                     });
                 foreach (var l in SKUIDList)

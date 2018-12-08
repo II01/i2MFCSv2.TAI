@@ -192,6 +192,33 @@ namespace UserInterface.View
         }
     }
 
+    public class PalletStringAndStringWithLeadingZeros : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                return (value == null) ? "" : string.Format("{0:d5}", int.Parse(((string)value)));
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            try
+            {
+                return value;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+    }
+
     public class AccessLevelL1 : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

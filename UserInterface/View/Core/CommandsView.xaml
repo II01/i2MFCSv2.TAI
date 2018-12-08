@@ -63,29 +63,29 @@
             FontSize="{StaticResource BaseFontSize}">
             <DataGrid.Columns >
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=WMS_ID}" 
-                                    Width="100" Binding="{Binding WMS_ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding WMS_ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=MFCS_ID}" 
-                                    Width="100" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding ID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Task}" 
-                                    Width="100" Binding="{Binding Task}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding Task}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=TU}" 
-                                    Width="100" Binding="{Binding Material, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding Material, Converter={StaticResource PalletIntAndString}}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Source}" 
-                                    Width="100" Binding="{Binding Source}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding Source}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Target}" 
-                                    Width="100" Binding="{Binding Target}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Segment}" 
+                                    Width="2*" Binding="{Binding Target}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Segment}"  
                                     Width="100" Binding="{Binding Segment}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=CancelID}" 
-                                    Width="100" Binding="{Binding CommandID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Priority}" 
-                                    Width="100" Binding="{Binding Priority}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Info}" 
-                                    Width="*" Binding="{Binding Info}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding CommandID}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Priority}" 
+                                    Width="100" Binding="{Binding Priority}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
+<!--                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Info}"  
+                                    Width="*" Binding="{Binding Info}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Status}" 
-                                    Width="100" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="2*" Binding="{Binding Status}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Time}" 
-                                    Width="150" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                                    Width="3*" Binding="{Binding Time}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">

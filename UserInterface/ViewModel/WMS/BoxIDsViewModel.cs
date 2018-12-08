@@ -415,9 +415,10 @@ namespace UserInterface.ViewModel
                 foreach (var p in BoxIDs)
                     BoxIDList.Add(new BoxIDViewModel
                     {
-                        ID = p.ID,
-                        SKUID = p.SKU_ID,
-                        Batch = p.Batch
+                        ID = p.BoxID,
+                        SKUID = p.SKUID,
+                        Batch = p.Batch,
+                        TUID = p.TUID??0
                     });
                 foreach (var l in BoxIDList)
                     l.Initialize(_warehouse);

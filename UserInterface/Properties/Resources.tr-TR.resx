@@ -1348,7 +1348,7 @@
     <value>alarm 36</value>
   </data>
   <data name="ALARM_100037" xml:space="preserve">
-    <value>Konveyör Boşluk Kontrolü</value>
+    <value>yanlış İşlem sonrası platform dolu</value>
   </data>
   <data name="ALARM_100038" xml:space="preserve">
     <value>Faz Ayarı</value>
@@ -1438,7 +1438,7 @@
     <value>Kaldırma Referans Noktasında Değil</value>
   </data>
   <data name="ALARM_100067" xml:space="preserve">
-    <value>Cihaz Açısı Referans Noktasında Değil</value>
+    <value>Platform Açısı Referans Noktasında Değil</value>
   </data>
   <data name="ALARM_100068" xml:space="preserve">
     <value> Zincir Referans Noktasında Değil</value>
@@ -1468,7 +1468,7 @@
     <value>Kaldırma (Açı) Uzun süre Çalışma Hatası</value>
   </data>
   <data name="ALARM_100077" xml:space="preserve">
-    <value>Cihaz (Açı) Uzun süre Çalışma Hatası</value>
+    <value>Platform(Açı) Uzun süre Çalışma Hatası</value>
   </data>
   <data name="ALARM_100078" xml:space="preserve">
     <value>Zincir (Açı) Uzun süre Çalışma Hatası</value>
@@ -1501,7 +1501,7 @@
     <value>alarm 87</value>
   </data>
   <data name="ALARM_100088" xml:space="preserve">
-    <value>alarm 88</value>
+    <value>MFSC hatası, crane durdurma isteği</value>
   </data>
   <data name="ALARM_100089" xml:space="preserve">
     <value>alarm 89</value>
@@ -1841,5 +1841,35 @@
   </data>
   <data name="EnumOrderOperation_None" xml:space="preserve">
     <value>-</value>
+  </data>
+  <data name="BringBox" xml:space="preserve">
+    <value>Kutu Getir</value>
+  </data>
+  <data name="BringTray" xml:space="preserve">
+    <value>Tepsi Getir</value>
+  </data>
+  <data name="EnumOrderOperation_BringBox" xml:space="preserve">
+    <value>Kutu Getir</value>
+  </data>
+  <data name="EnumOrderOperation_BringTray" xml:space="preserve">
+    <value>Tepsi Getir</value>
+  </data>
+  <data name="Capacity" xml:space="preserve">
+    <value>Kapasite</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Düzenleme</value>
+  </data>
+  <data name="ERR_BOXNOTONSTATION" xml:space="preserve">
+    <value>Kutu istasyonda değil</value>
+  </data>
+  <data name="ERR_NOTSAMESKUID" xml:space="preserve">
+    <value>Kutu saklama birimi aynı değìl</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Yükseklik</value>
+  </data>
+  <data name="ERR_PASSWORD" xml:space="preserve">
+    <value>Şifre uyuşmazlığı</value>
   </data>
 </root>

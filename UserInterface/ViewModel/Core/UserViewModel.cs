@@ -14,6 +14,8 @@ namespace UserInterface.ViewModel
     {
         #region members
         private string _userName;
+        private string _password1;
+        private string _password2;
         private EnumUserAccessLevel _accessLevelWMS;
         private EnumUserAccessLevel _accessLevelMFCS;
         private bool _allPropertiesValid = false;
@@ -33,6 +35,32 @@ namespace UserInterface.ViewModel
                 {
                     _userName = value;
                     RaisePropertyChanged("UserName");
+                }
+            }
+        }
+        public string Password1
+        {
+            get { return _password1; }
+            set
+            {
+                if (_password1 != value)
+                {
+                    _password1 = value;
+                    RaisePropertyChanged("Password1");
+                    RaisePropertyChanged("Password2");
+                }
+            }
+        }
+        public string Password2
+        {
+            get { return _password2; }
+            set
+            {
+                if (_password2 != value)
+                {
+                    _password2 = value;
+                    RaisePropertyChanged("Password2");
+                    RaisePropertyChanged("Password1");
                 }
             }
         }
@@ -141,6 +169,11 @@ namespace UserInterface.ViewModel
                             case "UserName":
                                 if (_editEnabledUser && (_warehouse.DBService.GetUser(_userName) != null || _userName.Length == 0))
                                     validationResult = ResourceReader.GetString("ERR_USER");
+                                break;
+                            case "Password1":
+                            case "Password2":
+                                if (Password1 != Password2)
+                                    validationResult = ResourceReader.GetString("ERR_PASSWORD");
                                 break;
                         }
                     }

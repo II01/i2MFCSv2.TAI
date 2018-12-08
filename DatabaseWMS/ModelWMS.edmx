@@ -155,9 +155,9 @@
           <Property Name="Unit" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Weight" Type="float" Nullable="false" />
           <Property Name="FrequencyClass" Type="int" Nullable="false" />
-          <Property Name="Length" Type="int" Nullable="false" />
-          <Property Name="Width" Type="int" Nullable="false" />
           <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="Layout" Type="int" Nullable="false" />
+          <Property Name="Capacity" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TU_ID">
           <Key>
@@ -954,12 +954,12 @@
           <Property Name="Unit" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Weight" Type="Double" Nullable="false" />
           <Property Name="FrequencyClass" Type="Int32" Nullable="false" />
-          <Property Name="Length" Type="Int32" Nullable="false" />
-          <Property Name="Width" Type="Int32" Nullable="false" />
           <Property Name="Height" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Box_ID" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Package_ID_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="Box_ID" />
           <NavigationProperty Name="HistOrders" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_HistOrders_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="HistOrders" />
           <NavigationProperty Name="Orders" Relationship="i2MFCS.WMS.Database.Tables.WMSContextModel.FK_dbo_Orders_dbo_SKU_ID_SKU_ID" FromRole="SKU_ID" ToRole="Orders" />
+          <Property Name="Layout" Type="Int32" Nullable="false" />
+          <Property Name="Capacity" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="TU_ID">
           <Key>
@@ -1489,9 +1489,9 @@
           <EntitySetMapping Name="SKU_ID">
             <EntityTypeMapping TypeName="i2MFCS.WMS.Database.Tables.WMSContextModel.SKU_ID">
               <MappingFragment StoreEntitySet="SKU_ID">
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="Layout" ColumnName="Layout" />
                 <ScalarProperty Name="Height" ColumnName="Height" />
-                <ScalarProperty Name="Width" ColumnName="Width" />
-                <ScalarProperty Name="Length" ColumnName="Length" />
                 <ScalarProperty Name="FrequencyClass" ColumnName="FrequencyClass" />
                 <ScalarProperty Name="Weight" ColumnName="Weight" />
                 <ScalarProperty Name="Unit" ColumnName="Unit" />

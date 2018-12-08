@@ -1561,7 +1561,7 @@
     <value>alarm 36</value>
   </data>
   <data name="ALARM_100037" xml:space="preserve">
-    <value>coveyor gap control</value>
+    <value>deck incorrectly occupied after operation</value>
   </data>
   <data name="ALARM_100038" xml:space="preserve">
     <value>phase alignment</value>
@@ -1714,7 +1714,7 @@
     <value>alarm 87</value>
   </data>
   <data name="ALARM_100088" xml:space="preserve">
-    <value>alarm 88</value>
+    <value>mfsc error, crane stop request</value>
   </data>
   <data name="ALARM_100089" xml:space="preserve">
     <value>alarm 89</value>
@@ -1853,5 +1853,23 @@
   </data>
   <data name="EnumOrderOperation_BringTray" xml:space="preserve">
     <value>Bring TU</value>
+  </data>
+  <data name="Capacity" xml:space="preserve">
+    <value>Capacity</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="ERR_BOXNOTONSTATION" xml:space="preserve">
+    <value>Box not on IO station</value>
+  </data>
+  <data name="ERR_NOTSAMESKUID" xml:space="preserve">
+    <value>Boxes have different SKUID</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="ERR_PASSWORD" xml:space="preserve">
+    <value>Passwords do not match</value>
   </data>
 </root>

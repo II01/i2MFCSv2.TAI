@@ -38,7 +38,7 @@ namespace UserInterface.ViewModel
                 if (_boxes != value)
                 {
                     _boxes = value;
-                    Regex regex = new Regex(@"[0-9]+[0-9\s]*");
+                    Regex regex = new Regex(@"[0-9A-Z]+[-0-9A-Z\s]*");
                     if (!regex.IsMatch(_boxes))
                         _boxes = "";
                     RaisePropertyChanged("Boxes");

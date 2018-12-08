@@ -22,6 +22,7 @@ namespace UserInterface.ViewModel
         #endregion
 
         #region properties
+        public bool PickBox { get; set; }
 
         public string Boxes
         {
@@ -31,7 +32,7 @@ namespace UserInterface.ViewModel
                 if (_boxes != value)
                 {
                     _boxes = value;
-                    Regex regex = new Regex(@"[0-9]+[0-9\s]*");
+                    Regex regex = new Regex(@"[0-9A-Z]+[-0-9A-Z\s]*");
                     if (!regex.IsMatch(_boxes))
                         _boxes = "";
                     RaisePropertyChanged("Boxes");
@@ -63,7 +64,10 @@ namespace UserInterface.ViewModel
             try
             {
                 base.Initialize(warehouse);
-                OperationName = "Pick box";
+                if (PickBox)
+                    OperationName = "Pick box";
+                else
+                    OperationName = "Bring box";
             }
             catch (Exception e)
             {
@@ -112,8 +116,11 @@ namespace UserInterface.ViewModel
                                     var x = DBServiceWMS.GetTUIDsForBoxes(_boxList);
                                     if (x.Count == 0)
                                         validationResult = ResourceReader.GetString("ERR_NOTUID");
-                                    if (x.Count > 1)
+                                    else if (x.Count > 1)
                                         validationResult = ResourceReader.GetString("ERR_MANYTUIDFORBOXES");
+                                    else if (PickBox && 
+                                            DBServiceWMS.GetPlaceWithTUID(x[0]).PlaceID != DBServiceWMS.GetParameter("Place.IOStation"))
+                                        validationResult = ResourceReader.GetString("ERR_BOXNOTONSTATION");
                                 }
                                 break;
 

@@ -194,7 +194,12 @@ namespace Warehouse.ConveyorUnits
             {
                 // update materialID
                 if (tel.Confirmation != TelegramTransportTO.CONFIRMATION_PALETTETAKEN && tel.Confirmation != TelegramTransportTO.CONFIRMATION_PALETTEDELETED)
+                {
+                    // TAI specific: change hc to 2 if we can store to higher rack
+                    if (tel.SenderTransport == 100 && Warehouse.DBService.IsRackSlotHC2Empty())
+                        tel.Palette.Weight = (ushort)(20000 + tel.Palette.Weight % 10000);
                     CreateOrUpdateMaterialID(tel.Palette);
+                }
 
                 if (tel.Confirmation == TelegramTransportTO.CONFIRMATION_NOTIFY ||
                     tel.Confirmation == TelegramTransportTO.CONFIRMATION_DIMENSIONCHECKERROR)

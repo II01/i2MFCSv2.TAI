@@ -14,6 +14,7 @@ namespace UserInterface.ViewModel
     {
         #region members
         private Box_ID _boxid;
+        private int _tuid;
         private List<string> _SKUIDs;
         
         private bool _allPropertiesValid = false;
@@ -89,6 +90,19 @@ namespace UserInterface.ViewModel
             }
         }
 
+        public int TUID
+        {
+            get { return _tuid; }
+            set
+            {
+                if (_tuid != value)
+                {
+                    _tuid = value;
+                    RaisePropertyChanged("TUID");
+                }
+            }
+        }
+
         public bool EditVisible
         {
             get { return _editVisible; }
@@ -146,6 +160,7 @@ namespace UserInterface.ViewModel
         {
             _boxid = new Box_ID();
             _SKUIDs = new List<string>();
+            _tuid = 0;
             Validator = new PropertyValidator();
             ValidationEnabled = false;
         }

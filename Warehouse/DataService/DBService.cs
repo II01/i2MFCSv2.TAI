@@ -480,17 +480,21 @@ namespace Warehouse.DataService
 
         public void AddEvent(Event.EnumSeverity s, Event.EnumType t, string str, DateTime dt)
         {
-            using (var dc = new MFCSEntities())
+            try
             {
-                dc.Events.Add(new Event
+                using (var dc = new MFCSEntities())
                 {
-                    Severity = s,
-                    Type = t,
-                    Text = str,
-                    Time = dt
-                });
-                dc.SaveChanges();
+                    dc.Events.Add(new Event
+                    {
+                        Severity = s,
+                        Type = t,
+                        Text = str,
+                        Time = dt
+                    });
+                    dc.SaveChanges();
+                }
             }
+            catch { }
         }
 
 
@@ -1249,7 +1253,7 @@ namespace Warehouse.DataService
             {
                 using (var dc = new MFCSEntities())
                 {
-                    return dc.Users.FirstOrDefault(p => p.User1.ToUpper() == user.ToUpper());
+                    return dc.Users.FirstOrDefault(p => p.User1 == user);
                 }
             }
             catch (Exception e)
@@ -1452,7 +1456,7 @@ namespace Warehouse.DataService
             {
                 using (var dc = new MFCSEntities())
                 {
-                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == user.User1.ToUpper());
+                    var u = dc.Users.FirstOrDefault(p => p.User1 == user.User1);
                     dc.Users.Remove(u);
                     dc.SaveChanges();
                 }
@@ -1469,8 +1473,9 @@ namespace Warehouse.DataService
             {
                 using (var dc = new MFCSEntities())
                 {
-                    var u = dc.Users.FirstOrDefault(p => p.User1.ToUpper() == user.User1.ToUpper());
+                    var u = dc.Users.FirstOrDefault(p => p.User1 == user.User1);
                     u.AccessLevel = user.AccessLevel;
+                    u.Password = user.Password;
                     dc.SaveChanges();
                 }
             }
@@ -1499,6 +1504,21 @@ namespace Warehouse.DataService
                     }
                     dc.SaveChanges();
                     return mid;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(string.Format("{0}.{1}: {2}", this.GetType().Name, (new StackTrace()).GetFrame(0).GetMethod().Name, e.Message));
+            }
+        }
+        public bool IsRackSlotHC2Empty ()
+        {
+            try
+            {
+                using (var dc = new MFCSEntities())
+                {
+                    return  dc.PlaceIDs.Any(p => (p.ID.StartsWith("W:1") || p.ID.StartsWith("W:2")) &&
+                                                 !p.Blocked && p.Size == 2 && !p.Place.Any());
                 }
             }
             catch (Exception e)

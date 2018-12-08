@@ -110,28 +110,28 @@ namespace UserInterface.ViewModel
             }
         }
 
-        public int Length
+        public int Layout
         {
-            get { return _skuid.Length; }
+            get { return _skuid.Layout; }
             set
             {
-                if (_skuid.Length != value)
+                if (_skuid.Layout != value)
                 {
-                    _skuid.Length = value;
-                    RaisePropertyChanged("Length");
+                    _skuid.Layout = value;
+                    RaisePropertyChanged("Layout");
                 }
             }
         }
 
-        public int Width
+        public int Capacity
         {
-            get { return _skuid.Width; }
+            get { return _skuid.Capacity; }
             set
             {
-                if (_skuid.Width != value)
+                if (_skuid.Capacity != value)
                 {
-                    _skuid.Width = value;
-                    RaisePropertyChanged("Width");
+                    _skuid.Capacity = value;
+                    RaisePropertyChanged("Capacity");
                 }
             }
         }

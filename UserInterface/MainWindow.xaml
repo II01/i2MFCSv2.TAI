@@ -116,11 +116,12 @@
                            IsEnabled="True"/>
                 <TreeViewItem  Header="{Resx SKUIDs}" 
                                Tag="{Binding SKUIDs, Source={StaticResource Locator}}" 
-                               IsEnabled="True"/>
+                               IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
                 <TreeViewItem  Header="{Resx BoxIDs}" 
                            Tag="{Binding BoxIDs, Source={StaticResource Locator}}" 
-                           IsEnabled="True"/>
-                <TreeViewItem Header ="{Resx Extras}" IsExpanded="False" IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}">
+                           IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL2}}"/>
+                <TreeViewItem Header ="{Resx Extras}" IsExpanded="False" 
+                              IsEnabled="{Binding AccessLevel, Converter={StaticResource AccessLevelWMSL1}}">
 
 <!--                    <TreeViewItem  Header="{Resx PrepareOrders}" 
                            Tag="{Binding Orders, Source={StaticResource Locator}}" 
@@ -198,7 +199,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="User" Margin="20,0,0,0"/>
+            <Label Content="{Resx User}" Margin="20,0,0,0"/>
             <Label Grid.Column="1" Content="{Binding User}" Margin="10,0,0,0"/>
         </Grid>
         <Label Grid.Row="3" Content="{Binding CurrentTime}" Margin="20,0,0,0"/>

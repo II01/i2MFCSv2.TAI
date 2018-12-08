@@ -69,10 +69,10 @@
                                     Width="*" Binding="{Binding Weight}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=FrequencyClass}" 
                                     Width="*" Binding="{Binding FrequencyClass}" dgx:DataGridFilterColumn.IsFilterVisible="True"/> -->
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Length}" 
-                                    Width="*" Binding="{Binding Length}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
-                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Width}" 
-                                    Width="*" Binding="{Binding Width}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Layout}" 
+                                    Width="*" Binding="{Binding Layout}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
+                <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Capacity}" 
+                                    Width="*" Binding="{Binding Capacity}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
                 <DataGridTextColumn Header="{Resx ResxName=UserInterface.Properties.Resources, Key=Height}" 
                                     Width="*" Binding="{Binding Height}" dgx:DataGridFilterColumn.IsFilterVisible="True"/>
             </DataGrid.Columns>
@@ -132,7 +132,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
-        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Orientation="Vertical">
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Orientation="Vertical">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
             </StackPanel>
@@ -140,7 +140,7 @@
                 <Button Name="bAdd" Margin="0,0,0,20" Content="{Resx Add}" Command="{Binding Add}"/>
                 <Button Name="bEdit" Margin="10,0,0,20" Content="{Resx Edit}" Command="{Binding Edit}"/>
             </StackPanel>
-            <ContentControl x:Name="ccSKUID" 
+            <ContentControl x:Name="ccSKUID"
                         IsEnabled="{Binding EditEnabled}"                       
                         Content="{Binding DetailedSKUID}"
                         HorizontalAlignment="Stretch" 

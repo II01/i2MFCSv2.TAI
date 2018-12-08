@@ -106,8 +106,8 @@ namespace UserInterface.DataServiceWMS
                         l.Unit = SKUID.Unit;
                         l.Weight = SKUID.Weight;
                         l.FrequencyClass = SKUID.FrequencyClass;
-                        l.Length = SKUID.Length;
-                        l.Width = SKUID.Width;
+                        l.Layout = SKUID.Layout;
+                        l.Capacity = SKUID.Capacity;
                         l.Height = SKUID.Height;
                         dc.SaveChanges();
                     }
@@ -119,7 +119,7 @@ namespace UserInterface.DataServiceWMS
             }
         }
 
-        public async Task<List<Box_ID>> GetBoxIDs(bool whOnly)
+        public async Task<List<BoxTUID>> GetBoxIDs(bool whOnly)
         {
             try
             {
@@ -131,7 +131,13 @@ namespace UserInterface.DataServiceWMS
                             join p in dc.Places on bt.TU_ID equals p.TU_ID into joinedBTP
                             from btp in joinedBTP.DefaultIfEmpty()
                             where b.ID != "-" && (!whOnly || (whOnly && btp != null && btp.PlaceID != "W:out"))
-                            select b;
+                            select new BoxTUID
+                            {
+                                BoxID = b.ID,
+                                SKUID = b.SKU_ID,
+                                Batch = b.Batch,
+                                TUID = btp.TU_ID
+                            };
                     return await l.ToListAsync();
                 }
             }

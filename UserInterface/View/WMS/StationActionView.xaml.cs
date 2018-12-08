@@ -14,7 +14,7 @@ namespace UserInterface.View
         /// <summary>
         /// Initializes a new instance of the AlarmOverviewView class.
         /// </summary>
-        private static readonly Regex regex = new Regex(@"[0-9\s]+");
+        private static readonly Regex regex = new Regex(@"[-0-9A-Z\s]+");
 
         public StationActionView()
         {

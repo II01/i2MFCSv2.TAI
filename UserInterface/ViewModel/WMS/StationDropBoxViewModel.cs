@@ -23,6 +23,7 @@ namespace UserInterface.ViewModel
         #region members
         private string _boxes;
         private int _tuid;
+        private string _tuidstr;
         private string _placeid;
         private List<string> _boxList;
         private DispatcherTimer _timer;
@@ -45,6 +46,21 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+
+        public string TUIDstr
+        {
+            get { return _tuid != 0 ? _tuid.ToString() : ""; }
+            set
+            {
+                if (_tuidstr != value)
+                {
+                    _tuidstr = value;
+                    TUID = Int32.TryParse(_tuidstr, out int res) ? res : 0;
+                    RaisePropertyChanged("TUIDstr");
+                }
+            }
+        }
+
         public string PlaceID
         {
             get { return _placeid; }
@@ -65,7 +81,7 @@ namespace UserInterface.ViewModel
                 if (_boxes != value)
                 {
                     _boxes = value;
-                    Regex regex = new Regex(@"[0-9]+[0-9\s]*");
+                    Regex regex = new Regex(@"[0-9A-Z]+[-0-9A-Z\s]*");
                     if (!regex.IsMatch(_boxes))
                         _boxes = "";
                     RaisePropertyChanged("Boxes");
@@ -120,6 +136,7 @@ namespace UserInterface.ViewModel
                 using (WMSToUIClient client = new WMSToUIClient())
                 {
                     TUID = await client.SuggestTUIDAsync(_boxList.ToArray());
+                    TUIDstr = TUID.ToString();
                     var place = DBServiceWMS.GetPlaceWithTUID(TUID);
                     PlaceID = place != null ? place.PlaceID : "-";
                 }
@@ -159,6 +176,7 @@ namespace UserInterface.ViewModel
                         switch (propertyName)
                         {
                             case "TUID":
+                            case "TUIDstr":
                                 if (TUID == 0)
                                     validationResult = ResourceReader.GetString("ERR_TUID");
                                 else
@@ -183,7 +201,8 @@ namespace UserInterface.ViewModel
                                         {
                                             if (DBServiceWMS.FindBoxByBoxID(b) == null)
                                             {
-                                                if( b.Length == 9 && !_boxesAnnounced.Exists(p => p == b))  // announce box to WMS and ERP
+                                                if( b.Length == 14 && b[4] == '-' && b[9] == '-' && 
+                                                    !_boxesAnnounced.Exists(p => p == b))  // announce box to WMS and ERP
                                                     using (WMSToUIClient client = new WMSToUIClient())
                                                     {
                                                         client.BoxEntry(b);
@@ -198,6 +217,13 @@ namespace UserInterface.ViewModel
                                             else
                                                 _boxList.Add(b);
                                         }
+                                    }
+                                    if (validationResult == String.Empty && _boxList.Count > 1)
+                                    {
+                                        var skuid = DBServiceWMS.FindBoxByBoxID(_boxList[0]).SKU_ID;
+                                        foreach (var b in _boxList)
+                                            if (DBServiceWMS.FindBoxByBoxID(b).SKU_ID != skuid)
+                                                validationResult = ResourceReader.GetString("ERR_NOTSAMESKUID");
                                     }
                                 }
                                 if (validationResult != String.Empty)

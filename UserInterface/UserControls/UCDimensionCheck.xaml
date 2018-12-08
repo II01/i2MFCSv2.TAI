@@ -40,27 +40,27 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Column="0" Grid.Row="0" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx Left}"/>
             <TextBlock Grid.Column="0" Grid.Row="1" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx Right}"/>
-<!--            <TextBlock Grid.Column="0" Grid.Row="2" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx Front}"/>
-            <TextBlock Grid.Column="0" Grid.Row="3" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx Back}"/> -->
-            <TextBlock Grid.Column="0" Grid.Row="2" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx OverHeight}"/>
-            <TextBlock Grid.Column="0" Grid.Row="3" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx HeightClass}"/>
-            <TextBlock Grid.Column="0" Grid.Row="4" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx BarCode}"/>
-            <TextBlock Grid.Column="0" Grid.Row="5" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx MFCS}"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx Front}"/>
+            <TextBlock Grid.Column="0" Grid.Row="3" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx Back}"/>
+            <TextBlock Grid.Column="0" Grid.Row="4" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx OverHeight}"/>
+            <TextBlock Grid.Column="0" Grid.Row="5" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx HeightClass}"/>
+            <TextBlock Grid.Column="0" Grid.Row="6" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx BarCode}"/>
+            <TextBlock Grid.Column="0" Grid.Row="7" Foreground="Gray" FontSize="{StaticResource MidFontSize}" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Resx MFCS}"/>
             <Ellipse  Grid.Column="1" Grid.Row="0" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
                   Fill="{Binding LeftValue, Converter={StaticResource BoolToBrush}}"/>
             <Ellipse  Grid.Column="1" Grid.Row="1" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
                   Fill="{Binding RightValue, Converter={StaticResource BoolToBrush}}"/>
-<!--            <Ellipse  Grid.Column="1" Grid.Row="2" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
+            <Ellipse  Grid.Column="1" Grid.Row="2" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
                   Fill="{Binding FrontValue, Converter={StaticResource BoolToBrush}}"/>
             <Ellipse  Grid.Column="1" Grid.Row="3" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
-                  Fill="{Binding BackValue, Converter={StaticResource BoolToBrush}}"/> -->
-            <Ellipse  Grid.Column="1" Grid.Row="2" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
-                  Fill="{Binding TopValue, Converter={StaticResource BoolToBrush}}"/>
-            <Ellipse  Grid.Column="1" Grid.Row="3" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
-                  Fill="{Binding HClassValue, Converter={StaticResource BoolToBrush}}"/>
+                  Fill="{Binding BackValue, Converter={StaticResource BoolToBrush}}"/>
             <Ellipse  Grid.Column="1" Grid.Row="4" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
-                  Fill="{Binding BarCodeValue, Converter={StaticResource BoolToBrush}}"/>
+                  Fill="{Binding TopValue, Converter={StaticResource BoolToBrush}}"/>
             <Ellipse  Grid.Column="1" Grid.Row="5" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
+                  Fill="{Binding HClassValue, Converter={StaticResource BoolToBrush}}"/>
+            <Ellipse  Grid.Column="1" Grid.Row="6" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
+                  Fill="{Binding BarCodeValue, Converter={StaticResource BoolToBrush}}"/>
+            <Ellipse  Grid.Column="1" Grid.Row="7" Width="15" Height="15" Stroke="Gray" StrokeThickness="2" Margin="20,0,0,0" HorizontalAlignment="Left"
                   Fill="{Binding MFCSValue, Converter={StaticResource BoolToBrush}}"/>
         </Grid>
     </Grid>

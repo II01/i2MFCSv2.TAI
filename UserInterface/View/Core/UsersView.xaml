@@ -59,7 +59,8 @@
                         Command="{Binding ReduceDB}" IsEnabled="{Binding EnabledReduceDB}"/>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="2" Visibility="{Binding EnabledUserManagement, Converter={StaticResource BoolToVisibility}}">
+        <Grid Grid.Row="1" Grid.Column="2"
+              Visibility="{Binding EnabledUserManagement, Converter={StaticResource BoolToVisibility}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
@@ -67,7 +68,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="20"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Text="{Resx UserManagement}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="{StaticResource MidFontSize}" FontWeight="Medium"/>
             <DataGrid Grid.Row="1"
@@ -98,6 +99,8 @@
             <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Name="bRefresh" Margin="0,0,0,10" Content="{Resx Refresh}" Command="{Binding Refresh}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Margin="10,0,0,20" Content="{Resx Add}" Command="{Binding Add}" />

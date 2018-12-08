@@ -448,7 +448,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to coveyor gap control.
+        ///   Looks up a localized string similar to deck incorrectly occupied after operation.
         /// </summary>
         public static string ALARM_100037 {
             get {
@@ -907,7 +907,7 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to alarm 88.
+        ///   Looks up a localized string similar to mfsc error, crane stop request.
         /// </summary>
         public static string ALARM_100088 {
             get {
@@ -1533,6 +1533,15 @@ namespace UserInterface.Properties {
         public static string CancelSubOrder {
             get {
                 return ResourceManager.GetString("CancelSubOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capacity.
+        /// </summary>
+        public static string Capacity {
+            get {
+                return ResourceManager.GetString("Capacity", resourceCulture);
             }
         }
         
@@ -3085,6 +3094,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Box not on IO station.
+        /// </summary>
+        public static string ERR_BOXNOTONSTATION {
+            get {
+                return ResourceManager.GetString("ERR_BOXNOTONSTATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dimension class does not fit to location.
         /// </summary>
         public static string ERR_CLASS {
@@ -3265,6 +3283,15 @@ namespace UserInterface.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Boxes have different SKUID.
+        /// </summary>
+        public static string ERR_NOTSAMESKUID {
+            get {
+                return ResourceManager.GetString("ERR_NOTSAMESKUID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not warehouse location.
         /// </summary>
         public static string ERR_NOTWH {
@@ -3297,6 +3324,15 @@ namespace UserInterface.Properties {
         public static string ERR_ORDERID {
             get {
                 return ResourceManager.GetString("ERR_ORDERID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Passwords do not match.
+        /// </summary>
+        public static string ERR_PASSWORD {
+            get {
+                return ResourceManager.GetString("ERR_PASSWORD", resourceCulture);
             }
         }
         
@@ -3819,6 +3855,15 @@ namespace UserInterface.Properties {
         public static string LastChange {
             get {
                 return ResourceManager.GetString("LastChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Layout.
+        /// </summary>
+        public static string Layout {
+            get {
+                return ResourceManager.GetString("Layout", resourceCulture);
             }
         }
         
@@ -4692,6 +4737,15 @@ namespace UserInterface.Properties {
         public static string Simple_commands {
             get {
                 return ResourceManager.GetString("Simple_commands", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Height.
+        /// </summary>
+        public static string Size {
+            get {
+                return ResourceManager.GetString("Size", resourceCulture);
             }
         }
         

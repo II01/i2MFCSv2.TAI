@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
         <TextBlock Text="{Resx BoxID}" Grid.Row="0" Margin="0,0,0,10"/>
         <TextBlock Text="{Resx SKUID}" Grid.Row="1" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
-        <TextBlock Text="{Resx Batch}" Grid.Row="2" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>
+<!--        <TextBlock Text="{Resx Batch}" Grid.Row="2" Margin="0,0,0,10" Visibility="{Binding EditVisible, Converter={StaticResource BoolToVisibility}}"/>-->
         
         <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,10" 
                  Text = "{Binding Path=ID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding AddEnabled}"/>
@@ -32,8 +32,8 @@
                   IsEditable="True"
                   SelectedItem = "{Binding Path=SKUID, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" 
                   ItemsSource="{Binding SKUIDs}"/>
-        <TextBox Grid.Row="2    " Grid.Column="2" Margin="0,0,0,10" 
-                 Text="{Binding Path=Batch,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/>
+<!--        <TextBox Grid.Row="2    " Grid.Column="2" Margin="0,0,0,10" 
+                 Text="{Binding Path=Batch,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged }"/> -->
     </Grid>
 
 </UserControl>

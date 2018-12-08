@@ -377,7 +377,7 @@ namespace Warehouse.ConveyorUnits
             try
             {
                 if (pal != null)
-                    Warehouse.DBService.CreateOrUpdateMaterialID((int)pal.Barcode, pal.Weight/10000, pal.Weight%10000);
+                    Warehouse.DBService.CreateOrUpdateMaterialID((int)pal.Barcode, pal.Weight / 10000, pal.Weight % 10000);
             }
             catch (Exception ex)
             {

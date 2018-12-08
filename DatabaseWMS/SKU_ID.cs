@@ -28,9 +28,9 @@ namespace DatabaseWMS
         public string Unit { get; set; }
         public double Weight { get; set; }
         public int FrequencyClass { get; set; }
-        public int Length { get; set; }
-        public int Width { get; set; }
         public int Height { get; set; }
+        public int Layout { get; set; }
+        public int Capacity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Box_ID> Box_ID { get; set; }

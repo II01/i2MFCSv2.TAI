@@ -20,6 +20,7 @@ namespace UserInterface.ViewModel
         private string _tuidstr;
         private int _tuid;
         private string _placeid;
+        private bool _enableEntry;
         #endregion
 
         #region properties
@@ -64,6 +65,18 @@ namespace UserInterface.ViewModel
                 }
             }
         }
+        public bool EnableEntry
+        {
+            get { return _enableEntry; }
+            set
+            {
+                if (_enableEntry != value)
+                {
+                    _enableEntry = value;
+                    RaisePropertyChanged("EnableEntry");
+                }
+            }
+        }
         #endregion
 
         #region initialization
@@ -76,9 +89,16 @@ namespace UserInterface.ViewModel
             {
                 base.Initialize(warehouse);
                 if (RemoveTray)
+                {
                     OperationName = "Remove tray";
+                    TUIDstr = DBServiceWMS.GetTUIDOnPlaceID(DBServiceWMS.GetParameter("Place.IOStation")).ID.ToString();
+                    EnableEntry = false;
+                }
                 else
+                {
                     OperationName = "Bring tray";
+                    EnableEntry = true;
+                }
             }
             catch (Exception e)
             {
